@@ -8,8 +8,8 @@ from pathlib import Path
 
 DATA_DIR = Path("data")
 
-PASS1_DIR = DATA_DIR / "pass1_threads"
-PASS2_DIR = DATA_DIR / "pass2_threads_md"
+PASS1_DIR = DATA_DIR / "pass1_threads_general"
+PASS2_DIR = DATA_DIR / "pass2_threads_general"
 
 GOOD_IN_1 = DATA_DIR / "pass2_good_input1.json"
 GOOD_OUT_1 = DATA_DIR / "pass2_good_output1.md"

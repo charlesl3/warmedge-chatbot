@@ -7,8 +7,8 @@ from pathlib import Path
 # Paths
 # ------------------------
 
-INPUT_PATH = Path("data/raw/goldenskate_boots_blades.json")
-OUTPUT_DIR = Path("data/pass1_threads")
+INPUT_PATH = Path("data/raw/goldenskate_generalQA.json")
+OUTPUT_DIR = Path("data/pass1_threads_general")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

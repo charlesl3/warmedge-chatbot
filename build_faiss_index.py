@@ -10,7 +10,7 @@ from sentence_transformers import SentenceTransformer
 # PATH SETUP
 # -------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent  # put scripts in GoldenSkate root
-PASS2_MD_DIR = PROJECT_ROOT / "data" / "pass2_threads_md"
+PASS2_MD_DIR = PROJECT_ROOT / "data" / "pass2_threads_equipment"
 STORE_DIR = PROJECT_ROOT / "rag_store"
 
 INDEX_PATH = STORE_DIR / "goldenskate_pass2.faiss"
