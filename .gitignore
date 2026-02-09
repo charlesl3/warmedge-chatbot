@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# FAISS / data artifacts
+rag_store/
+data/
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/

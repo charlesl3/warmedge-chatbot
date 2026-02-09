@@ -1,0 +1,5156 @@
+<!DOCTYPE html>
+<html id="XF" lang="en-US" dir="LTR"
+	data-xf="2.3"
+	data-app="public"
+	
+	
+	data-template="forum_view"
+	data-container-key="node-979"
+	data-content-key="forum-979"
+	data-logged-in="false"
+	data-cookie-prefix="gs_"
+	data-csrf="1768316973,5a6dfd8861beb9d86c0afe2634d374cb"
+	class="has-no-js template-forum_view XenBase layout-boxed style-light sidebar-right    xb-toggled xb-sidebar-show "
+	>
+<head>
+<link rel="preload" href="styles/fonts/fa/fa-regular-400.woff2?_v=5.15.1" as="font" type="font/woff2" crossorigin="anonymous" />
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB'],
+        'wait_for_update': 500
+    });
+    gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'wait_for_update': 500
+    });
+</script>
+
+
+	<!-- MailerLite Universal -->
+	<script>
+		(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+		.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+		n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+		(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+		ml('account', '1250760');
+	</script>
+	<!-- End MailerLite Universal -->
+
+	
+<!-- Snack Media Browsi start-->
+	
+	<script src="https://cdn.browsiprod.com/bootstrap/bootstrap.js" id="browsi-tag" data-pubKey="SnackMedia" data-siteKey="d_mapping" async></script>
+
+<!-- Snack Media Browsi end-->
+
+<!-- Snack Media ABR Start -->
+
+    
+        <script type="text/javascript" async src="https://btloader.com/tag?o=5180208835985408&upapi=true" defer></script>
+    
+
+<!-- Snack Media ABR End -->
+	
+<!-- Snack Media Bottom floating ad start-->
+
+	<div id="snack-sticky-manual"></div>
+
+<!-- Snack Media Bottom floating ad end-->
+
+
+	<!-- Snack Media Consent start-->
+	<script src='https://widgets.snack-projects.co.uk/gdpr/snack-cmp_v2.min.js' id='snack-cmp' async></script>
+	<!-- Snack Media Consent end-->
+	<script src="https://snack-scripts.b-cdn.net/intentiq/IIQUniversalID.js"></script>
+
+
+
+	<meta name="pbstck_context:site_name" content="goldenskate.com" />
+	<meta name="pbstck_context:website" content="goldenskate.com" />
+	<script async src="https://boot.pbstck.com/v1/adm/bdae337b-4e32-4b11-8c9b-af4faa48763c"></script>
+
+
+	
+	<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+	<script type="text/javascript" async=true>
+	(function() {
+	  var host = window.location.hostname;
+	  var element = document.createElement('script');
+	  var firstScript = document.getElementsByTagName('script')[0];
+	  var url = 'https://quantcast.mgr.consensu.org'
+		.concat('/choice/', '6C8Hu1X80F82Q', '/', host, '/choice.js')
+	  var uspTries = 0;
+	  var uspTriesLimit = 3;
+	  element.async = true;
+	  element.type = 'text/javascript';
+	  element.src = url;
+
+	  firstScript.parentNode.insertBefore(element, firstScript);
+
+	  function makeStub() {
+		var TCF_LOCATOR_NAME = '__tcfapiLocator';
+		var queue = [];
+		var win = window;
+		var cmpFrame;
+
+		function addFrame() {
+		  var doc = win.document;
+		  var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+		  if (!otherCMP) {
+			if (doc.body) {
+			  var iframe = doc.createElement('iframe');
+
+			  iframe.style.cssText = 'display:none';
+			  iframe.name = TCF_LOCATOR_NAME;
+			  doc.body.appendChild(iframe);
+			} else {
+			  setTimeout(addFrame, 5);
+			}
+		  }
+		  return !otherCMP;
+		}
+
+		function tcfAPIHandler() {
+		  var gdprApplies;
+		  var args = arguments;
+
+		  if (!args.length) {
+			return queue;
+		  } else if (args[0] === 'setGdprApplies') {
+			if (
+			  args.length > 3 &&
+			  args[2] === 2 &&
+			  typeof args[3] === 'boolean'
+			) {
+			  gdprApplies = args[3];
+			  if (typeof args[2] === 'function') {
+				args[2]('set', true);
+			  }
+			}
+		  } else if (args[0] === 'ping') {
+			var retr = {
+			  gdprApplies: gdprApplies,
+			  cmpLoaded: false,
+			  cmpStatus: 'stub'
+			};
+
+			if (typeof args[2] === 'function') {
+			  args[2](retr);
+			}
+		  } else {
+			queue.push(args);
+		  }
+		}
+
+		function postMessageEventHandler(event) {
+		  var msgIsString = typeof event.data === 'string';
+		  var json = {};
+
+		  try {
+			if (msgIsString) {
+			  json = JSON.parse(event.data);
+			} else {
+			  json = event.data;
+			}
+		  } catch (ignore) {}
+
+		  var payload = json.__tcfapiCall;
+
+		  if (payload) {
+			window.__tcfapi(
+			  payload.command,
+			  payload.version,
+			  function(retValue, success) {
+				var returnMsg = {
+				  __tcfapiReturn: {
+					returnValue: retValue,
+					success: success,
+					callId: payload.callId
+				  }
+				};
+				if (msgIsString) {
+				  returnMsg = JSON.stringify(returnMsg);
+				}
+				event.source.postMessage(returnMsg, '*');
+			  },
+			  payload.parameter
+			);
+		  }
+		}
+
+		while (win) {
+		  try {
+			if (win.frames[TCF_LOCATOR_NAME]) {
+			  cmpFrame = win;
+			  break;
+			}
+		  } catch (ignore) {}
+
+		  if (win === window.top) {
+			break;
+		  }
+		  win = win.parent;
+		}
+		if (!cmpFrame) {
+		  addFrame();
+		  win.__tcfapi = tcfAPIHandler;
+		  win.addEventListener('message', postMessageEventHandler, false);
+		}
+	  };
+
+	  makeStub();
+
+	  var uspStubFunction = function() {
+		var arg = arguments;
+		if (typeof window.__uspapi !== uspStubFunction) {
+		  setTimeout(function() {
+			if (typeof window.__uspapi !== 'undefined') {
+			  window.__uspapi.apply(window.__uspapi, arg);
+			}
+		  }, 500);
+		}
+	  };
+
+	  var checkIfUspIsReady = function() {
+		uspTries++;
+		if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		  console.warn('USP is not accessible');
+		} else {
+		  clearInterval(uspInterval);
+		}
+	  };
+
+	  if (typeof window.__uspapi === 'undefined') {
+		window.__uspapi = uspStubFunction;
+		var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	  }
+	})();
+	</script>
+	<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+	
+	
+	
+	
+
+	<meta charset="utf-8" />
+	<title>General Chat and Questions | Page 51 | Golden Skate</title>
+	<link rel="manifest" href="/forum/webmanifest.php">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	
+		<meta name="theme-color" content="#185886" />
+	
+
+	<meta name="apple-mobile-web-app-title" content="Golden Skate">
+	
+		<link rel="apple-touch-icon" href="/forum/data/assets/logo/icon192.png">
+		
+
+	
+		<link rel="canonical" href="https://www.goldenskate.com/forum/forums/general-chat-and-questions.979/page-51" />
+	
+		<link rel="alternate" type="application/rss+xml" title="RSS feed for General Chat and Questions" href="/forum/forums/general-chat-and-questions.979/index.rss" />
+	
+		<link rel="prev" href="/forum/forums/general-chat-and-questions.979/page-50" />
+	
+		<link rel="next" href="/forum/forums/general-chat-and-questions.979/page-52" />
+	
+
+	
+		
+	
+	
+	<meta property="og:site_name" content="Golden Skate" />
+
+
+	
+	
+		
+	
+	
+	<meta property="og:type" content="website" />
+
+
+	
+	
+		
+	
+	
+	
+		<meta property="og:title" content="General Chat and Questions" />
+		<meta property="twitter:title" content="General Chat and Questions" />
+	
+
+
+	
+	
+		
+	
+	
+	
+		<meta name="description" content="Questions on personal progress, elements, coaching, testing, general advice, etc." />
+		<meta property="og:description" content="Questions on personal progress, elements, coaching, testing, general advice, etc." />
+		<meta property="twitter:description" content="Questions on personal progress, elements, coaching, testing, general advice, etc." />
+	
+
+
+	
+	
+		
+	
+	
+	<meta property="og:url" content="https://www.goldenskate.com/forum/forums/general-chat-and-questions.979/page-51" />
+
+
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+
+	<link rel="stylesheet" href="/forum/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=3&amp;l=1&amp;d=1768242857&amp;k=0190896c3615da9704347837144c33d724f50fe7" />
+
+	<link rel="stylesheet" href="/forum/css.php?css=public%3Ashare_controls.less%2Cpublic%3Astructured_list.less%2Cpublic%3Axb.less%2Cpublic%3Aextra.less&amp;s=3&amp;l=1&amp;d=1768242857&amp;k=e5e5128bec44c62258f40370812583a202d3c768" />
+
+
+	
+		<script src="/forum/js/xf/preamble.min.js?_v=36c059a0"></script>
+	
+
+	
+	<script src="/forum/js/vendor/vendor-compiled.js?_v=36c059a0" defer></script>
+	<script src="/forum/js/xf/core-compiled.js?_v=36c059a0" defer></script>
+
+	<script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: true,
+				pushAppServerKey: 'BN2Rto9spjHKNm6MafPMlxuoWo2EYbf3tibJhgJYrCvjUJaHhwNz0u69ET07LeFLu9cBUQyDGOt1OGd-Mdh85xE',
+				url: {
+					fullBase: 'https://www.goldenskate.com/forum/',
+					basePath: '/forum/',
+					css: '/forum/css.php?css=__SENTINEL__&s=3&l=1&d=1768242857',
+					js: '/forum/js/__SENTINEL__?_v=36c059a0',
+					icon: '/forum/data/local/icons/__VARIANT__.svg?v=1768192830#__NAME__',
+					iconInline: '/forum/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/forum/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'gs_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '1768316973,5a6dfd8861beb9d86c0afe2634d374cb',
+				js: {},
+				fullJs: false,
+				css: {"public:share_controls.less":true,"public:structured_list.less":true,"public:xb.less":true,"public:extra.less":true},
+				time: {
+					now: 1768316973,
+					today: 1768280400,
+					todayDow: 2,
+					tomorrow: 1768366800,
+					yesterday: 1768194000,
+					week: 1767762000,
+					month: 1767243600,
+					year: 1767243600
+				},
+				style: {
+					light: '',
+					dark: '',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'l',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: '0',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 16777216,
+				uploadMaxWidth: 1000,
+				uploadMaxHeight: 0,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"bfddb1d5","xf\/embed.js":"83b1007e","xf\/form.js":"83b1007e","xf\/structure.js":"bfddb1d5","xf\/tooltip.js":"83b1007e"},
+				jsState: {},
+				publicMetadataLogoUrl: '',
+				publicPushBadgeUrl: 'https://www.goldenskate.com/forum/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+"time.day": "{count} day",
+"time.days": "{count} days",
+"time.hour": "{count} hour",
+"time.hours": "{count} hours",
+"time.minute": "{count} minute",
+"time.minutes": "{count} minutes",
+"time.month": "{count} month",
+"time.months": "{count} months",
+"time.second": "{count} second",
+"time.seconds": "{count} seconds",
+"time.week": "time.week",
+"time.weeks": "{count} weeks",
+"time.year": "{count} year",
+"time.years": "{count} years",
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at Golden Skate",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	</script>
+
+	
+
+
+
+
+
+
+	
+		<link rel="icon" type="image/png" href="https://www.goldenskate.com/favicon.ico" sizes="32x32" />
+	
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-E68QVX6YGB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-E68QVX6YGB', {
+			// 
+			
+			
+		});
+	</script>
+
+	
+</head>
+<body data-template="forum_view">
+
+<div class="p-pageWrapper" id="top">
+<div class="p-pageWrapper--helper"></div>
+
+	
+
+	
+	
+<div class="xb-page-wrapper xb-canvasNoCollapse">
+	
+	
+	<div class="xb-page-wrapper--helper"></div>
+	
+	
+	<header class="p-header" id="header">
+		<div class="p-header-inner">
+			<div class="p-header-content">
+				<div class="p-header-logo p-header-logo--image">
+					<a href="https://www.goldenskate.com/">
+						
+						
+
+	
+
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations="{&quot;default&quot;:{&quot;1&quot;:&quot;\/forum\/data\/assets\/logo\/logo.png&quot;,&quot;2&quot;:null}}">
+		
+		
+		
+
+		
+
+		<img src="/forum/data/assets/logo/logo.png"  width="" height="" alt="Golden Skate"  />
+	</picture>
+
+
+						
+					</a>
+				</div>
+
+				
+			
+			
+			
+			</div>
+		</div>
+	</header>
+	
+		
+	
+<div class="xb-content-wrapper">
+	<div class="navigation-helper"></div>
+
+	
+	
+
+	
+		<div class="p-navSticky p-navSticky--primary" data-xf-init="sticky-header">
+			
+		<div class="p-nav--wrapper">
+		<nav class="p-nav">
+			<div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				<div class="p-nav-smallLogo">
+					<a href="https://www.goldenskate.com/">
+							
+						<div class="logo-default">
+						
+
+	
+
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations="{&quot;default&quot;:{&quot;1&quot;:&quot;\/forum\/data\/assets\/logo\/logo.png&quot;,&quot;2&quot;:null}}">
+		
+		
+		
+
+		
+
+		<img src="/forum/data/assets/logo/logo.png"  width="" height="" alt="Golden Skate"  />
+	</picture>
+
+
+						</div>
+						
+					
+					</a>
+				</div>
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource">
+							
+								<li class="navforums">
+									
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="/forum/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="1"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/forum/whats-new/posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li class="navxfmg">
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="/forum/media/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="xfmg">Media</a>
+
+
+		<a data-xf-key="2"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/forum/whats-new/media/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="xfmgNewMedia">New media</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/forum/whats-new/media-comments/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="xfmgNewComments">New comments</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li class="navwhatsNew">
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="/forum/whats-new/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="whatsNew">What's new</a>
+
+
+		<a data-xf-key="3"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/forum/featured/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="featured">Featured content</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/forum/whats-new/posts/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="whatsNewPosts">New posts</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/forum/whats-new/media/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="xfmgWhatsNewNewMedia">New media</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/forum/whats-new/latest-activity"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	 rel="nofollow"
+	
+	data-nav-id="latestActivity">Latest activity</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li class="navaddonFlarePubAwards">
+									
+	<div class="p-navEl " >
+	
+
+		
+	
+	<a href="/forum/award-system/list"
+	class="p-navEl-link "
+	
+	data-xf-key="4"
+	data-nav-id="addonFlarePubAwards">Awards</a>
+
+
+		
+
+		
+	
+	</div>
+
+								</li>
+							
+								<li class="navinformation">
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+			
+				<a data-xf-key="5"
+					data-xf-click="menu"
+					data-menu-pos-ref="< .p-navEl"
+					class="p-navEl-linkHolder"
+					role="button"
+					tabindex="0"
+					aria-expanded="false"
+					aria-haspopup="true">
+					
+	
+	<span 
+	class="p-navEl-link p-navEl-link--menuTrigger "
+	
+	
+	data-nav-id="information">Info</span>
+
+				</a>
+			
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/forum/help/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="Help">Help</a>
+
+	
+
+				
+					
+	
+	
+	<a href="https://www.goldenskate.com/forum/help/guidelines/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="ForumGuidelines">Forum Guidelines</a>
+
+	
+
+				
+					
+	
+	
+	<a href="https://www.goldenskate.com/forum/account/preferences"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="YourPreferences">Your Preferences</a>
+
+	
+
+				
+					
+	
+	
+	<a href="https://www.goldenskate.com/forum/help/privacy-policy/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="PrivacyPolicy">Privacy Policy</a>
+
+	
+
+				
+					
+	
+	
+	<a href="https://www.goldenskate.com/forum/help/terms/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="TermsOfUse">Terms of Use (TOU)</a>
+
+	
+
+				
+					
+	
+	
+	<a href="https://www.goldenskate.com/forum/misc/contact"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="Contact">Contact Us</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+								<li class="navmembers">
+									
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="/forum/members/"
+	class="p-navEl-link p-navEl-link--splitMenu "
+	
+	
+	data-nav-id="members">Members</a>
+
+
+		<a data-xf-key="6"
+			data-xf-click="menu"
+			data-menu-pos-ref="< .p-navEl"
+			class="p-navEl-splitTrigger"
+			role="button"
+			tabindex="0"
+			aria-label="Toggle expanded"
+			aria-expanded="false"
+			aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="/forum/online/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="currentVisitors">Current visitors</a>
+
+	
+
+				
+					
+	
+	
+	<a href="/forum/standings/"
+	class="menu-linkRow u-indentDepth0 js-offCanvasCopy "
+	
+	
+	data-nav-id="pc_statics">Leaderboard</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+								</li>
+							
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+				
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							<a href="/forum/login/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn"
+								data-xf-click="overlay" data-follow-redirects="on">
+								<span class="p-navgroup-linkText">Log in</span>
+							</a>
+							
+								<a href="/forum/login/register" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register"
+									data-xf-click="overlay" data-follow-redirects="on">
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+						
+					</div>
+
+					<div class="p-navgroup p-discovery p-discovery--noSearch">
+						<a href="/forum/whats-new/"
+							class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew"
+							aria-label="What&#039;s new"
+							title="What&#039;s new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+					</div>
+				</div>
+					
+			</div>
+		</nav>
+		</div>
+	
+		</div>
+		
+		
+			<div class="p-sectionLinks--wrapper">
+			<div class="p-sectionLinks">
+				<div class="p-sectionLinks-inner">
+				<div class="hScroller" data-xf-init="h-scroller">
+					<div class="hScroller-scroll">
+						<ul class="p-sectionLinks-list">
+							
+								<li>
+									
+	<div class="p-navEl " >
+	
+
+		
+	
+	<a href="/forum/whats-new/posts/"
+	class="p-navEl-link "
+	
+	data-xf-key="alt+1"
+	data-nav-id="newPosts">New posts</a>
+
+
+		
+
+		
+	
+	</div>
+
+								</li>
+							
+						</ul>
+					</div>
+				</div>
+			<div class="p-sectionLinks-right">
+				
+				
+			</div>
+			</div>
+		</div>
+		</div>
+			
+	
+		
+
+	<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+		<div class="offCanvasMenu-content--inner">
+		
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="/forum/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator" />
+					
+						<div class="offCanvasMenu-linkHolder">
+							<a href="/forum/login/register" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator" />
+					
+				</div>
+			
+			<div class="offCanvasMenu-subHeader">Navigation</div>
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS">
+					<div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="/forum/styles/default/xenforo/add_to_home.mp4"
+										width="280" height="480" autoplay loop muted playsinline></video>
+								</p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+			<div class="offCanvasMenu-subHeader">More options</div>
+			
+			
+			
+				
+					<div class="offCanvasMenu-linkHolder">
+						<a href="/forum/misc/contact" class="offCanvasMenu-link" data-menu-close="true" data-nav-id="contactUs" data-xf-click="overlay">Contact us</a>
+					</div>
+				
+			
+			<div class="offCanvasMenu-linkHolder">
+				<a class="offCanvasMenu-link" data-menu-close="true" data-nav-id="closeMenu" role="button" tabindex="0" aria-label="Close">Close Menu</a>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+	
+	
+	
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			
+			<!--XF:EXTRA_OUTPUT-->
+
+			
+
+			
+
+			 
+			
+
+		
+		<!-- Billboard - top of the page -->
+		<div style="margin:10px auto 10px auto; text-align:center; width:100%; min-height: 250px;">
+		    <div id="snack-incontent-wide-1"></div>
+		</div>
+			<!-- /Billboard - top of the page -->
+
+	
+
+
+			
+	
+		<div class="p-breadcrumbs--parent ">
+		<ul class="p-breadcrumbs "
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/" itemprop="item">
+			<span itemprop="name">Forums</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/#main-arena.5" itemprop="item">
+			<span itemprop="name">Main Arena</span>
+		</a>
+		<meta itemprop="position" content="2" />
+	</li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/categories/the-lutz-corner.980/" itemprop="item">
+			<span itemprop="name">The Lutz Corner</span>
+		</a>
+		<meta itemprop="position" content="3" />
+	</li>
+
+				
+			
+		</ul>
+		
+		</div>
+	
+
+			
+			
+
+			
+	<noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br />You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+			 
+				
+			
+				
+			<div class="p-body-header">
+			
+					
+				<div class="test">
+						
+							<div class="p-title ">
+								
+									
+										<h1 class="p-title-value">General Chat and Questions</h1>
+									
+									
+								
+							</div>
+						
+
+						
+							<div class="p-description">Questions on personal progress, elements, coaching, testing, general advice, etc.</div>
+						
+					</div>
+			
+				</div>
+			
+			
+			
+
+			<div class="p-body-main  ">
+				
+				<div class="p-body-contentCol"></div>
+				
+
+				
+
+				<div class="p-body-content">
+					
+					
+					
+						
+					
+					
+					<div class="p-body-pageContent">
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block " data-xf-init="" data-type="thread" data-href="/forum/inline-mod/">
+
+	<div class="block-outer"><div class="block-outer-main"><nav class="pageNavWrapper pageNavWrapper--full ">
+
+
+
+<div class="pageNav pageNav--skipStart pageNav--skipEnd">
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-50" class="pageNav-jump pageNav-jump--prev">Prev</a>
+	
+
+	<ul class="pageNav-main">
+		
+
+	
+		<li class="pageNav-page "><a href="/forum/forums/general-chat-and-questions.979/">1</a></li>
+	
+
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipStart">
+					<a data-xf-init="tooltip" title="Go to page"
+						data-xf-click="menu"
+						role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="48"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--earlier"><a href="/forum/forums/general-chat-and-questions.979/page-49">49</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--earlier"><a href="/forum/forums/general-chat-and-questions.979/page-50">50</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--current "><a href="/forum/forums/general-chat-and-questions.979/page-51">51</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="/forum/forums/general-chat-and-questions.979/page-52">52</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="/forum/forums/general-chat-and-questions.979/page-53">53</a></li>
+	
+
+		
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+					<a data-xf-init="tooltip" title="Go to page"
+						data-xf-click="menu"
+						role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="54"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+
+	
+		<li class="pageNav-page "><a href="/forum/forums/general-chat-and-questions.979/page-61">61</a></li>
+	
+
+	</ul>
+
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-52" class="pageNav-jump pageNav-jump--next">Next</a>
+	
+</div>
+
+<div class="pageNavSimple">
+	
+		<a href="/forum/forums/general-chat-and-questions.979/"
+			class="pageNavSimple-el pageNavSimple-el--first"
+			data-xf-init="tooltip" title="First">
+			<i aria-hidden="true"></i> <span class="u-srOnly">First</span>
+		</a>
+		<a href="/forum/forums/general-chat-and-questions.979/page-50" class="pageNavSimple-el pageNavSimple-el--prev">
+			<i aria-hidden="true"></i> Prev
+		</a>
+	
+
+	<a class="pageNavSimple-el pageNavSimple-el--current"
+		data-xf-init="tooltip" title="Go to page"
+		data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+		51 of 61
+	</a>
+	
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="51"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-52" class="pageNavSimple-el pageNavSimple-el--next">
+			Next <i aria-hidden="true"></i>
+		</a>
+		<a href="/forum/forums/general-chat-and-questions.979/page-61"
+			class="pageNavSimple-el pageNavSimple-el--last"
+			data-xf-init="tooltip" title="Last">
+			<i aria-hidden="true"></i> <span class="u-srOnly">Last</span>
+		</a>
+	
+</div>
+
+</nav>
+
+
+
+</div></div>
+
+	<div class="block-container">
+
+		
+			<div class="block-filterBar">
+				<div class="filterBar">
+					
+
+					<a class="filterBar-menuTrigger" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">Filters</a>
+					<div class="menu menu--wide" data-menu="menu" aria-hidden="true"
+						data-href="/forum/forums/general-chat-and-questions.979/filters"
+						data-load-target=".js-filterMenuBody">
+						<div class="menu-content">
+							<h4 class="menu-header">Show only:</h4>
+							<div class="js-filterMenuBody">
+								<div class="menu-row">Loading…</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		
+
+		<div class="block-body">
+			
+				<div class="structItemContainer">
+					
+
+	
+
+	
+
+
+
+					
+						
+
+						<div class="structItemContainer-group js-threadList">
+							
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62155" data-author="briipop">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/briipop.44987/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="44987" data-xf-init="member-tooltip" style="background-color: #3d3d0f; color: #cccc33">
+			<span class="avatar-u44987-s" role="img" aria-label="briipop">B</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/am-i-too-late-to-become-professional.62155/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/am-i-too-late-to-become-professional.62155/preview"
+					>
+					Am I too late to become professional?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/briipop.44987/" class="username " dir="auto" data-user-id="44987" data-xf-init="member-tooltip">briipop</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/am-i-too-late-to-become-professional.62155/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2016-12-29T01:24:26-0500" data-timestamp="1482992666" data-date="Dec 29, 2016" data-time="1:24 AM" data-short="Dec &#039;16" title="Dec 29, 2016 at 1:24 AM">Dec 29, 2016</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/am-i-too-late-to-become-professional.62155/page-2">2</a>
+						
+							<a href="/forum/threads/am-i-too-late-to-become-professional.62155/page-3">3</a>
+						
+							<a href="/forum/threads/am-i-too-late-to-become-professional.62155/page-4">4</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+61
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>27K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/am-i-too-late-to-become-professional.62155/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-17T12:27:23-0500" data-timestamp="1487352443" data-date="Feb 17, 2017" data-time="12:27 PM" data-short="Feb &#039;17" title="Feb 17, 2017 at 12:27 PM">Feb 17, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62821" data-author="nikki1215">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/nikki1215.45367/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45367" data-xf-init="member-tooltip" style="background-color: #a36629; color: #e6bf99">
+			<span class="avatar-u45367-s" role="img" aria-label="nikki1215">N</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/question-from-a-beginner.62821/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/question-from-a-beginner.62821/preview"
+					>
+					Question from a beginner
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/nikki1215.45367/" class="username " dir="auto" data-user-id="45367" data-xf-init="member-tooltip">nikki1215</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/question-from-a-beginner.62821/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-12T07:32:51-0500" data-timestamp="1486902771" data-date="Feb 12, 2017" data-time="7:32 AM" data-short="Feb &#039;17" title="Feb 12, 2017 at 7:32 AM">Feb 12, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+14
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>3K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/question-from-a-beginner.62821/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-14T12:32:19-0500" data-timestamp="1487093539" data-date="Feb 14, 2017" data-time="12:32 PM" data-short="Feb &#039;17" title="Feb 14, 2017 at 12:32 PM">Feb 14, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/tgee.44391/" class="username " dir="auto" data-user-id="44391" data-xf-init="member-tooltip">TGee</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/tgee.44391/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="44391" data-xf-init="member-tooltip" style="background-color: #d6b85c; color: #66531a">
+			<span class="avatar-u44391-s" role="img" aria-label="TGee">T</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62792" data-author="Coebalt">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/coebalt.45346/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45346" data-xf-init="member-tooltip" style="background-color: #663399; color: #bf9fdf">
+			<span class="avatar-u45346-s" role="img" aria-label="Coebalt">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/need-advice-on-motivation-and-conditioning.62792/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/need-advice-on-motivation-and-conditioning.62792/preview"
+					>
+					Need advice on Motivation and Conditioning
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/coebalt.45346/" class="username " dir="auto" data-user-id="45346" data-xf-init="member-tooltip">Coebalt</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/need-advice-on-motivation-and-conditioning.62792/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-09T11:08:23-0500" data-timestamp="1486656503" data-date="Feb 9, 2017" data-time="11:08 AM" data-short="Feb &#039;17" title="Feb 9, 2017 at 11:08 AM">Feb 9, 2017</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/need-advice-on-motivation-and-conditioning.62792/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+33
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>5K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/need-advice-on-motivation-and-conditioning.62792/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-14T10:14:35-0500" data-timestamp="1487085275" data-date="Feb 14, 2017" data-time="10:14 AM" data-short="Feb &#039;17" title="Feb 14, 2017 at 10:14 AM">Feb 14, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/coebalt.45346/" class="username " dir="auto" data-user-id="45346" data-xf-init="member-tooltip">Coebalt</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/coebalt.45346/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45346" data-xf-init="member-tooltip" style="background-color: #663399; color: #bf9fdf">
+			<span class="avatar-u45346-s" role="img" aria-label="Coebalt">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62803" data-author="Arwen17">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/arwen17.45153/" class="avatar avatar--s" data-user-id="45153" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/45/45153.jpg?1600239971" srcset="/forum/data/avatars/m/45/45153.jpg?1600239971 2x" alt="Arwen17" class="avatar-u45153-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/why-are-sit-spins-so-hard-for-adults.62803/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/why-are-sit-spins-so-hard-for-adults.62803/preview"
+					>
+					Why are sit spins so hard for adults?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/arwen17.45153/" class="username " dir="auto" data-user-id="45153" data-xf-init="member-tooltip">Arwen17</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/why-are-sit-spins-so-hard-for-adults.62803/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-10T13:18:59-0500" data-timestamp="1486750739" data-date="Feb 10, 2017" data-time="1:18 PM" data-short="Feb &#039;17" title="Feb 10, 2017 at 1:18 PM">Feb 10, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+16
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>19K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/why-are-sit-spins-so-hard-for-adults.62803/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-13T15:46:19-0500" data-timestamp="1487018779" data-date="Feb 13, 2017" data-time="3:46 PM" data-short="Feb &#039;17" title="Feb 13, 2017 at 3:46 PM">Feb 13, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/vlaurend.12865/" class="username " dir="auto" data-user-id="12865" data-xf-init="member-tooltip">vlaurend</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/vlaurend.12865/" class="avatar avatar--xxs" data-user-id="12865" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/12/12865.jpg?1600239930"  alt="vlaurend" class="avatar-u12865-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62819" data-author="Coebalt">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/coebalt.45346/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45346" data-xf-init="member-tooltip" style="background-color: #663399; color: #bf9fdf">
+			<span class="avatar-u45346-s" role="img" aria-label="Coebalt">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/blisters-and-how-to-treat-them.62819/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/blisters-and-how-to-treat-them.62819/preview"
+					>
+					Blisters and how to treat them?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/coebalt.45346/" class="username " dir="auto" data-user-id="45346" data-xf-init="member-tooltip">Coebalt</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/blisters-and-how-to-treat-them.62819/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-12T01:48:50-0500" data-timestamp="1486882130" data-date="Feb 12, 2017" data-time="1:48 AM" data-short="Feb &#039;17" title="Feb 12, 2017 at 1:48 AM">Feb 12, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+10
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>7K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/blisters-and-how-to-treat-them.62819/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-13T09:48:05-0500" data-timestamp="1486997285" data-date="Feb 13, 2017" data-time="9:48 AM" data-short="Feb &#039;17" title="Feb 13, 2017 at 9:48 AM">Feb 13, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/figureskaterdude.45353/" class="username " dir="auto" data-user-id="45353" data-xf-init="member-tooltip">figureskaterdude</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/figureskaterdude.45353/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45353" data-xf-init="member-tooltip" style="background-color: #339999; color: #061313">
+			<span class="avatar-u45353-s" role="img" aria-label="figureskaterdude">F</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62807" data-author="doubleoxer">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/doubleoxer.45355/" class="avatar avatar--s" data-user-id="45355" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/45/45355.jpg?1611499504" srcset="/forum/data/avatars/m/45/45355.jpg?1611499504 2x" alt="doubleoxer" class="avatar-u45355-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/brand-new-skater.62807/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/brand-new-skater.62807/preview"
+					>
+					Brand new skater!
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/doubleoxer.45355/" class="username " dir="auto" data-user-id="45355" data-xf-init="member-tooltip">doubleoxer</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/brand-new-skater.62807/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-10T21:17:09-0500" data-timestamp="1486779429" data-date="Feb 10, 2017" data-time="9:17 PM" data-short="Feb &#039;17" title="Feb 10, 2017 at 9:17 PM">Feb 10, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+18
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>3K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/brand-new-skater.62807/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-13T08:59:34-0500" data-timestamp="1486994374" data-date="Feb 13, 2017" data-time="8:59 AM" data-short="Feb &#039;17" title="Feb 13, 2017 at 8:59 AM">Feb 13, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/doubleoxer.45355/" class="username " dir="auto" data-user-id="45355" data-xf-init="member-tooltip">doubleoxer</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/doubleoxer.45355/" class="avatar avatar--xxs" data-user-id="45355" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/45/45355.jpg?1611499504"  alt="doubleoxer" class="avatar-u45355-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62829" data-author="Livster">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/livster.45371/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45371" data-xf-init="member-tooltip" style="background-color: #ebadcc; color: #b82e73">
+			<span class="avatar-u45371-s" role="img" aria-label="Livster">L</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/need-some-advice-on-getting-back-into-it.62829/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/need-some-advice-on-getting-back-into-it.62829/preview"
+					>
+					Need some advice on getting back into it
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/livster.45371/" class="username " dir="auto" data-user-id="45371" data-xf-init="member-tooltip">Livster</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/need-some-advice-on-getting-back-into-it.62829/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-12T17:28:27-0500" data-timestamp="1486938507" data-date="Feb 12, 2017" data-time="5:28 PM" data-short="Feb &#039;17" title="Feb 12, 2017 at 5:28 PM">Feb 12, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+4
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>1K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/need-some-advice-on-getting-back-into-it.62829/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-13T08:51:35-0500" data-timestamp="1486993895" data-date="Feb 13, 2017" data-time="8:51 AM" data-short="Feb &#039;17" title="Feb 13, 2017 at 8:51 AM">Feb 13, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/tavi.31271/" class="username " dir="auto" data-user-id="31271" data-xf-init="member-tooltip">Tavi...</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/tavi.31271/" class="avatar avatar--xxs" data-user-id="31271" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/31/31271.jpg?1600239938"  alt="Tavi..." class="avatar-u31271-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62806" data-author="Daydream">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/daydream.45304/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/lesson-2-what-a-blast.62806/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/lesson-2-what-a-blast.62806/preview"
+					>
+					Lesson #2! What a blast!
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/lesson-2-what-a-blast.62806/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-10T20:18:16-0500" data-timestamp="1486775896" data-date="Feb 10, 2017" data-time="8:18 PM" data-short="Feb &#039;17" title="Feb 10, 2017 at 8:18 PM">Feb 10, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+5
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>1K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/lesson-2-what-a-blast.62806/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-11T21:09:38-0500" data-timestamp="1486865378" data-date="Feb 11, 2017" data-time="9:09 PM" data-short="Feb &#039;17" title="Feb 11, 2017 at 9:09 PM">Feb 11, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/daydream.45304/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62733" data-author="TheNoviceSkater">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/thenoviceskater.45212/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45212" data-xf-init="member-tooltip" style="background-color: #1f7a3d; color: #70db94">
+			<span class="avatar-u45212-s" role="img" aria-label="TheNoviceSkater">T</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/starting-figure-skating-at-age-17.62733/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/starting-figure-skating-at-age-17.62733/preview"
+					>
+					Starting Figure Skating At Age 17
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/thenoviceskater.45212/" class="username " dir="auto" data-user-id="45212" data-xf-init="member-tooltip">TheNoviceSkater</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/starting-figure-skating-at-age-17.62733/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-03T23:25:20-0500" data-timestamp="1486182320" data-date="Feb 3, 2017" data-time="11:25 PM" data-short="Feb &#039;17" title="Feb 3, 2017 at 11:25 PM">Feb 3, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+7
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>8K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/starting-figure-skating-at-age-17.62733/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-11T20:30:16-0500" data-timestamp="1486863016" data-date="Feb 11, 2017" data-time="8:30 PM" data-short="Feb &#039;17" title="Feb 11, 2017 at 8:30 PM">Feb 11, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/skatemomoftwo.41764/" class="username " dir="auto" data-user-id="41764" data-xf-init="member-tooltip">skatemomoftwo</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/skatemomoftwo.41764/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="41764" data-xf-init="member-tooltip" style="background-color: #ccebad; color: #73b82e">
+			<span class="avatar-u41764-s" role="img" aria-label="skatemomoftwo">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62810" data-author="Ylyzybyth">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/ylyzybyth.45235/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45235" data-xf-init="member-tooltip" style="background-color: #d67a5c; color: #662d1a">
+			<span class="avatar-u45235-s" role="img" aria-label="Ylyzybyth">Y</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/so-i-want-to-be-a-figure-skater-sort-of.62810/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/so-i-want-to-be-a-figure-skater-sort-of.62810/preview"
+					>
+					So I want to be a figure skater(sort of)
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/ylyzybyth.45235/" class="username " dir="auto" data-user-id="45235" data-xf-init="member-tooltip">Ylyzybyth</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/so-i-want-to-be-a-figure-skater-sort-of.62810/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-11T02:48:55-0500" data-timestamp="1486799335" data-date="Feb 11, 2017" data-time="2:48 AM" data-short="Feb &#039;17" title="Feb 11, 2017 at 2:48 AM">Feb 11, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+4
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>2K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/so-i-want-to-be-a-figure-skater-sort-of.62810/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-11T09:31:09-0500" data-timestamp="1486823469" data-date="Feb 11, 2017" data-time="9:31 AM" data-short="Feb &#039;17" title="Feb 11, 2017 at 9:31 AM">Feb 11, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/ylyzybyth.45235/" class="username " dir="auto" data-user-id="45235" data-xf-init="member-tooltip">Ylyzybyth</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/ylyzybyth.45235/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45235" data-xf-init="member-tooltip" style="background-color: #d67a5c; color: #662d1a">
+			<span class="avatar-u45235-s" role="img" aria-label="Ylyzybyth">Y</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62749" data-author="Daydream">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/daydream.45304/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/skate-recommendations.62749/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/skate-recommendations.62749/preview"
+					>
+					Skate recommendations?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/skate-recommendations.62749/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-05T02:29:05-0500" data-timestamp="1486279745" data-date="Feb 5, 2017" data-time="2:29 AM" data-short="Feb &#039;17" title="Feb 5, 2017 at 2:29 AM">Feb 5, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+10
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>2K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/skate-recommendations.62749/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-10T15:19:57-0500" data-timestamp="1486757997" data-date="Feb 10, 2017" data-time="3:19 PM" data-short="Feb &#039;17" title="Feb 10, 2017 at 3:19 PM">Feb 10, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62765" data-author="Daydream">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/daydream.45304/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/first-lesson-done.62765/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/first-lesson-done.62765/preview"
+					>
+					First lesson done!
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/first-lesson-done.62765/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-06T21:39:01-0500" data-timestamp="1486435141" data-date="Feb 6, 2017" data-time="9:39 PM" data-short="Feb &#039;17" title="Feb 6, 2017 at 9:39 PM">Feb 6, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+4
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>1K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/first-lesson-done.62765/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-09T17:09:49-0500" data-timestamp="1486678189" data-date="Feb 9, 2017" data-time="5:09 PM" data-short="Feb &#039;17" title="Feb 9, 2017 at 5:09 PM">Feb 9, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/daydream.45304/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62747" data-author="Daydream">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/daydream.45304/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/tips-for-beginner-returning-to-the-sport.62747/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/tips-for-beginner-returning-to-the-sport.62747/preview"
+					>
+					Tips for Beginner/returning to the sport?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/tips-for-beginner-returning-to-the-sport.62747/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-05T02:22:35-0500" data-timestamp="1486279355" data-date="Feb 5, 2017" data-time="2:22 AM" data-short="Feb &#039;17" title="Feb 5, 2017 at 2:22 AM">Feb 5, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+19
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>3K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/tips-for-beginner-returning-to-the-sport.62747/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-09T17:08:24-0500" data-timestamp="1486678104" data-date="Feb 9, 2017" data-time="5:08 PM" data-short="Feb &#039;17" title="Feb 9, 2017 at 5:08 PM">Feb 9, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/daydream.45304/" class="username " dir="auto" data-user-id="45304" data-xf-init="member-tooltip">Daydream</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/daydream.45304/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45304" data-xf-init="member-tooltip" style="background-color: #993333; color: #df9f9f">
+			<span class="avatar-u45304-s" role="img" aria-label="Daydream">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62775" data-author="Sk8mom07">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/sk8mom07.45330/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45330" data-xf-init="member-tooltip" style="background-color: #3366cc; color: #c2d1f0">
+			<span class="avatar-u45330-s" role="img" aria-label="Sk8mom07">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/advice.62775/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/advice.62775/preview"
+					>
+					Advice
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/sk8mom07.45330/" class="username " dir="auto" data-user-id="45330" data-xf-init="member-tooltip">Sk8mom07</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/advice.62775/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-08T04:10:29-0500" data-timestamp="1486545029" data-date="Feb 8, 2017" data-time="4:10 AM" data-short="Feb &#039;17" title="Feb 8, 2017 at 4:10 AM">Feb 8, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+6
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>2K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/advice.62775/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-09T07:23:59-0500" data-timestamp="1486643039" data-date="Feb 9, 2017" data-time="7:23 AM" data-short="Feb &#039;17" title="Feb 9, 2017 at 7:23 AM">Feb 9, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/lynnems.25055/" class="username " dir="auto" data-user-id="25055" data-xf-init="member-tooltip">lynnems</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/lynnems.25055/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="25055" data-xf-init="member-tooltip" style="background-color: #145233; color: #47d18c">
+			<span class="avatar-u25055-s" role="img" aria-label="lynnems">L</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62754" data-author="Nathan13">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/nathan13.42890/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="42890" data-xf-init="member-tooltip" style="background-color: #339933; color: #061306">
+			<span class="avatar-u42890-s" role="img" aria-label="Nathan13">N</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/help-with-scoring-along-with-competitions.62754/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/help-with-scoring-along-with-competitions.62754/preview"
+					>
+					Help with Scoring along with Competitions
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/nathan13.42890/" class="username " dir="auto" data-user-id="42890" data-xf-init="member-tooltip">Nathan13</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/help-with-scoring-along-with-competitions.62754/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-05T16:39:19-0500" data-timestamp="1486330759" data-date="Feb 5, 2017" data-time="4:39 PM" data-short="Feb &#039;17" title="Feb 5, 2017 at 4:39 PM">Feb 5, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+5
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>3K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/help-with-scoring-along-with-competitions.62754/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-07T16:49:41-0500" data-timestamp="1486504181" data-date="Feb 7, 2017" data-time="4:49 PM" data-short="Feb &#039;17" title="Feb 7, 2017 at 4:49 PM">Feb 7, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/gkelly.102/" class="username " dir="auto" data-user-id="102" data-xf-init="member-tooltip">gkelly</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/gkelly.102/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="102" data-xf-init="member-tooltip" style="background-color: #6629a3; color: #bf99e6">
+			<span class="avatar-u102-s" role="img" aria-label="gkelly">G</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62703" data-author="jersey1302">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/jersey1302.43268/" class="avatar avatar--s" data-user-id="43268" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/43/43268.jpg?1600239962"  alt="jersey1302" class="avatar-u43268-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/lutz-help.62703/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/lutz-help.62703/preview"
+					>
+					Lutz..help!
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/jersey1302.43268/" class="username " dir="auto" data-user-id="43268" data-xf-init="member-tooltip">jersey1302</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/lutz-help.62703/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-01T23:21:53-0500" data-timestamp="1486009313" data-date="Feb 1, 2017" data-time="11:21 PM" data-short="Feb &#039;17" title="Feb 1, 2017 at 11:21 PM">Feb 1, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+7
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>2K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/lutz-help.62703/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-06T23:05:33-0500" data-timestamp="1486440333" data-date="Feb 6, 2017" data-time="11:05 PM" data-short="Feb &#039;17" title="Feb 6, 2017 at 11:05 PM">Feb 6, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/jersey1302.43268/" class="username " dir="auto" data-user-id="43268" data-xf-init="member-tooltip">jersey1302</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/jersey1302.43268/" class="avatar avatar--xxs" data-user-id="43268" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/43/43268.jpg?1600239962"  alt="jersey1302" class="avatar-u43268-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62710" data-author="Arwen17">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/arwen17.45153/" class="avatar avatar--s" data-user-id="45153" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/45/45153.jpg?1600239971" srcset="/forum/data/avatars/m/45/45153.jpg?1600239971 2x" alt="Arwen17" class="avatar-u45153-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/am-i-underbooted-or-just-weak.62710/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/am-i-underbooted-or-just-weak.62710/preview"
+					>
+					Am I &quot;underbooted&quot; or just weak?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/arwen17.45153/" class="username " dir="auto" data-user-id="45153" data-xf-init="member-tooltip">Arwen17</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/am-i-underbooted-or-just-weak.62710/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-02T21:30:08-0500" data-timestamp="1486089008" data-date="Feb 2, 2017" data-time="9:30 PM" data-short="Feb &#039;17" title="Feb 2, 2017 at 9:30 PM">Feb 2, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+7
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>4K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/am-i-underbooted-or-just-weak.62710/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-06T14:02:40-0500" data-timestamp="1486407760" data-date="Feb 6, 2017" data-time="2:02 PM" data-short="Feb &#039;17" title="Feb 6, 2017 at 2:02 PM">Feb 6, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62627" data-author="Fai Fai">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/fai-fai.44555/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="44555" data-xf-init="member-tooltip" style="background-color: #993366; color: #df9fbf">
+			<span class="avatar-u44555-s" role="img" aria-label="Fai Fai">F</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/question-about-cold-feet.62627/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/question-about-cold-feet.62627/preview"
+					>
+					Question about cold feet
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/fai-fai.44555/" class="username " dir="auto" data-user-id="44555" data-xf-init="member-tooltip">Fai Fai</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/question-about-cold-feet.62627/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-26T13:58:01-0500" data-timestamp="1485457081" data-date="Jan 26, 2017" data-time="1:58 PM" data-short="Jan &#039;17" title="Jan 26, 2017 at 1:58 PM">Jan 26, 2017</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/question-about-cold-feet.62627/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+32
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>13K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/question-about-cold-feet.62627/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-05T08:20:43-0500" data-timestamp="1486300843" data-date="Feb 5, 2017" data-time="8:20 AM" data-short="Feb &#039;17" title="Feb 5, 2017 at 8:20 AM">Feb 5, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/fai-fai.44555/" class="username " dir="auto" data-user-id="44555" data-xf-init="member-tooltip">Fai Fai</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/fai-fai.44555/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="44555" data-xf-init="member-tooltip" style="background-color: #993366; color: #df9fbf">
+			<span class="avatar-u44555-s" role="img" aria-label="Fai Fai">F</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62688" data-author="CS270">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/cs270.45222/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45222" data-xf-init="member-tooltip" style="background-color: #333366; color: #8888c3">
+			<span class="avatar-u45222-s" role="img" aria-label="CS270">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/problems-with-my-new-skates-please-help.62688/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/problems-with-my-new-skates-please-help.62688/preview"
+					>
+					Problems with my new skates - please help!
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/cs270.45222/" class="username " dir="auto" data-user-id="45222" data-xf-init="member-tooltip">CS270</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/problems-with-my-new-skates-please-help.62688/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-31T07:33:09-0500" data-timestamp="1485865989" data-date="Jan 31, 2017" data-time="7:33 AM" data-short="Jan &#039;17" title="Jan 31, 2017 at 7:33 AM">Jan 31, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+7
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>4K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/problems-with-my-new-skates-please-help.62688/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-04T14:37:02-0500" data-timestamp="1486237022" data-date="Feb 4, 2017" data-time="2:37 PM" data-short="Feb &#039;17" title="Feb 4, 2017 at 2:37 PM">Feb 4, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/pink-ice.44304/" class="username " dir="auto" data-user-id="44304" data-xf-init="member-tooltip">Pink Ice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/pink-ice.44304/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="44304" data-xf-init="member-tooltip" style="background-color: #333366; color: #8888c3">
+			<span class="avatar-u44304-s" role="img" aria-label="Pink Ice">P</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62714" data-author="Carrie76">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/carrie76.45288/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45288" data-xf-init="member-tooltip" style="background-color: #cc66cc; color: #602060">
+			<span class="avatar-u45288-s" role="img" aria-label="Carrie76">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/advice-needed-re-daughter-not-progressing.62714/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/advice-needed-re-daughter-not-progressing.62714/preview"
+					>
+					Advice needed re: daughter not progressing
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/carrie76.45288/" class="username " dir="auto" data-user-id="45288" data-xf-init="member-tooltip">Carrie76</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/advice-needed-re-daughter-not-progressing.62714/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-02T23:37:53-0500" data-timestamp="1486096673" data-date="Feb 2, 2017" data-time="11:37 PM" data-short="Feb &#039;17" title="Feb 2, 2017 at 11:37 PM">Feb 2, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+6
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>6K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/advice-needed-re-daughter-not-progressing.62714/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-04T09:35:12-0500" data-timestamp="1486218912" data-date="Feb 4, 2017" data-time="9:35 AM" data-short="Feb &#039;17" title="Feb 4, 2017 at 9:35 AM">Feb 4, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/concorde.21497/" class="username " dir="auto" data-user-id="21497" data-xf-init="member-tooltip">concorde</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/concorde.21497/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="21497" data-xf-init="member-tooltip" style="background-color: #669999; color: #1f2e2e">
+			<span class="avatar-u21497-s" role="img" aria-label="concorde">C</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62709" data-author="Arwen17">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/arwen17.45153/" class="avatar avatar--s" data-user-id="45153" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/45/45153.jpg?1600239971" srcset="/forum/data/avatars/m/45/45153.jpg?1600239971 2x" alt="Arwen17" class="avatar-u45153-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/desired-number-of-revolutions-per-spin.62709/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/desired-number-of-revolutions-per-spin.62709/preview"
+					>
+					Desired number of revolutions per spin?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/arwen17.45153/" class="username " dir="auto" data-user-id="45153" data-xf-init="member-tooltip">Arwen17</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/desired-number-of-revolutions-per-spin.62709/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-02-02T21:01:54-0500" data-timestamp="1486087314" data-date="Feb 2, 2017" data-time="9:01 PM" data-short="Feb &#039;17" title="Feb 2, 2017 at 9:01 PM">Feb 2, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+1
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>4K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/desired-number-of-revolutions-per-spin.62709/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-03T00:04:48-0500" data-timestamp="1486098288" data-date="Feb 3, 2017" data-time="12:04 AM" data-short="Feb &#039;17" title="Feb 3, 2017 at 12:04 AM">Feb 3, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/gkelly.102/" class="username " dir="auto" data-user-id="102" data-xf-init="member-tooltip">gkelly</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/gkelly.102/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="102" data-xf-init="member-tooltip" style="background-color: #6629a3; color: #bf99e6">
+			<span class="avatar-u102-s" role="img" aria-label="gkelly">G</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62517" data-author="Jessie Crishaun">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/jessie-crishaun.45168/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45168" data-xf-init="member-tooltip" style="background-color: #c2c2f0; color: #3333cc">
+			<span class="avatar-u45168-s" role="img" aria-label="Jessie Crishaun">J</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/too-old-to-skate-competitively.62517/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/too-old-to-skate-competitively.62517/preview"
+					>
+					Too old to skate competitively?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/jessie-crishaun.45168/" class="username " dir="auto" data-user-id="45168" data-xf-init="member-tooltip">Jessie Crishaun</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/too-old-to-skate-competitively.62517/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-21T23:59:49-0500" data-timestamp="1485061189" data-date="Jan 21, 2017" data-time="11:59 PM" data-short="Jan &#039;17" title="Jan 21, 2017 at 11:59 PM">Jan 21, 2017</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/too-old-to-skate-competitively.62517/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+24
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>8K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/too-old-to-skate-competitively.62517/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-02-01T23:57:45-0500" data-timestamp="1486011465" data-date="Feb 1, 2017" data-time="11:57 PM" data-short="Feb &#039;17" title="Feb 1, 2017 at 11:57 PM">Feb 1, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/jersey1302.43268/" class="username " dir="auto" data-user-id="43268" data-xf-init="member-tooltip">jersey1302</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/jersey1302.43268/" class="avatar avatar--xxs" data-user-id="43268" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/43/43268.jpg?1600239962"  alt="jersey1302" class="avatar-u43268-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62261" data-author="Maruitenshi">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/maruitenshi.45023/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45023" data-xf-init="member-tooltip" style="background-color: #adebcc; color: #2eb873">
+			<span class="avatar-u45023-s" role="img" aria-label="Maruitenshi">M</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/synthetic-ice-experience.62261/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/synthetic-ice-experience.62261/preview"
+					>
+					Synthetic Ice - Experience?
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/maruitenshi.45023/" class="username " dir="auto" data-user-id="45023" data-xf-init="member-tooltip">Maruitenshi</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/synthetic-ice-experience.62261/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-04T17:41:54-0500" data-timestamp="1483569714" data-date="Jan 4, 2017" data-time="5:41 PM" data-short="Jan &#039;17" title="Jan 4, 2017 at 5:41 PM">Jan 4, 2017</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/synthetic-ice-experience.62261/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+21
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>17K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/synthetic-ice-experience.62261/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-31T23:15:15-0500" data-timestamp="1485922515" data-date="Jan 31, 2017" data-time="11:15 PM" data-short="Feb &#039;17" title="Jan 31, 2017 at 11:15 PM">Jan 31, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/jersey1302.43268/" class="username " dir="auto" data-user-id="43268" data-xf-init="member-tooltip">jersey1302</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/jersey1302.43268/" class="avatar avatar--xxs" data-user-id="43268" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/43/43268.jpg?1600239962"  alt="jersey1302" class="avatar-u43268-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-60385" data-author="JoelBecker">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/joelbecker.44354/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="44354" data-xf-init="member-tooltip" style="background-color: #6666cc; color: #ececf9">
+			<span class="avatar-u44354-s" role="img" aria-label="JoelBecker">J</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/n.60385/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/n.60385/preview"
+					>
+					N
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/joelbecker.44354/" class="username " dir="auto" data-user-id="44354" data-xf-init="member-tooltip">JoelBecker</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/n.60385/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2016-09-09T18:05:41-0400" data-timestamp="1473458741" data-date="Sep 9, 2016" data-time="6:05 PM" data-short="Sep &#039;16" title="Sep 9, 2016 at 6:05 PM">Sep 9, 2016</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/n.60385/page-2">2</a>
+						
+							<a href="/forum/threads/n.60385/page-3">3</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+43
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>19K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/n.60385/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-31T22:59:05-0500" data-timestamp="1485921545" data-date="Jan 31, 2017" data-time="10:59 PM" data-short="Feb &#039;17" title="Jan 31, 2017 at 10:59 PM">Jan 31, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/jersey1302.43268/" class="username " dir="auto" data-user-id="43268" data-xf-init="member-tooltip">jersey1302</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/jersey1302.43268/" class="avatar avatar--xxs" data-user-id="43268" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/43/43268.jpg?1600239962"  alt="jersey1302" class="avatar-u43268-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-51363" data-author="gsk8">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/gsk8.1/" class="avatar avatar--s" data-user-id="1" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/0/1.jpg?1767114082" srcset="/forum/data/avatars/m/0/1.jpg?1767114082 2x" alt="gsk8" class="avatar-u1-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/ina-bauer-move.51363/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/ina-bauer-move.51363/preview"
+					>
+					Ina Bauer move
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/gsk8.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin">gsk8</span></a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/ina-bauer-move.51363/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2014-07-22T12:47:26-0400" data-timestamp="1406047646" data-date="Jul 22, 2014" data-time="12:47 PM" data-short="Jul &#039;14" title="Jul 22, 2014 at 12:47 PM">Jul 22, 2014</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/ina-bauer-move.51363/page-6">6</a>
+						
+							<a href="/forum/threads/ina-bauer-move.51363/page-7">7</a>
+						
+							<a href="/forum/threads/ina-bauer-move.51363/page-8">8</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+156
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>107K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/ina-bauer-move.51363/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-31T07:02:03-0500" data-timestamp="1485864123" data-date="Jan 31, 2017" data-time="7:02 AM" data-short="Jan &#039;17" title="Jan 31, 2017 at 7:02 AM">Jan 31, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/tzazu.38949/" class="username " dir="auto" data-user-id="38949" data-xf-init="member-tooltip">tzazu</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/tzazu.38949/" class="avatar avatar--xxs" data-user-id="38949" data-xf-init="member-tooltip">
+			<img src="/forum/data/avatars/s/38/38949.jpg?1600239954"  alt="tzazu" class="avatar-u38949-s" width="48" height="48" loading="lazy" /> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-50177" data-author="euroskate">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/euroskate.15338/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="15338" data-xf-init="member-tooltip" style="background-color: #3b2b2b; color: #9d7b7b">
+			<span class="avatar-u15338-s" role="img" aria-label="euroskate">E</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/figure-skating-books.50177/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/figure-skating-books.50177/preview"
+					>
+					Figure Skating books
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/euroskate.15338/" class="username " dir="auto" data-user-id="15338" data-xf-init="member-tooltip">euroskate</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/figure-skating-books.50177/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2014-04-02T03:35:43-0400" data-timestamp="1396424143" data-date="Apr 2, 2014" data-time="3:35 AM" data-short="Apr &#039;14" title="Apr 2, 2014 at 3:35 AM">Apr 2, 2014</time></a></li>
+						
+					</ul>
+
+					
+						<span class="structItem-pageJump">
+						
+							<a href="/forum/threads/figure-skating-books.50177/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+20
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>12K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/figure-skating-books.50177/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-30T14:38:07-0500" data-timestamp="1485805087" data-date="Jan 30, 2017" data-time="2:38 PM" data-short="Jan &#039;17" title="Jan 30, 2017 at 2:38 PM">Jan 30, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/slushbucket.45248/" class="username " dir="auto" data-user-id="45248" data-xf-init="member-tooltip">slushbucket</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/slushbucket.45248/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="45248" data-xf-init="member-tooltip" style="background-color: #e0c285; color: #8f6b24">
+			<span class="avatar-u45248-s" role="img" aria-label="slushbucket">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62303" data-author="new2sk8">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/new2sk8.44802/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="44802" data-xf-init="member-tooltip" style="background-color: #a38329; color: #141005">
+			<span class="avatar-u44802-s" role="img" aria-label="new2sk8">N</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/foot-pod-for-tracking-speed-and-distance.62303/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/foot-pod-for-tracking-speed-and-distance.62303/preview"
+					>
+					Foot pod for tracking speed and distance
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/new2sk8.44802/" class="username " dir="auto" data-user-id="44802" data-xf-init="member-tooltip">new2sk8</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/foot-pod-for-tracking-speed-and-distance.62303/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-07T02:04:26-0500" data-timestamp="1483772666" data-date="Jan 7, 2017" data-time="2:04 AM" data-short="Jan &#039;17" title="Jan 7, 2017 at 2:04 AM">Jan 7, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+11
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>4K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/foot-pod-for-tracking-speed-and-distance.62303/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-27T20:38:46-0500" data-timestamp="1485567526" data-date="Jan 27, 2017" data-time="8:38 PM" data-short="Jan &#039;17" title="Jan 27, 2017 at 8:38 PM">Jan 27, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62521" data-author="NumberOneRobot">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/numberonerobot.42381/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="42381" data-xf-init="member-tooltip" style="background-color: #7a1f7a; color: #db70db">
+			<span class="avatar-u42381-s" role="img" aria-label="NumberOneRobot">N</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/off-ice-training-for-elite-skaters.62521/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/off-ice-training-for-elite-skaters.62521/preview"
+					>
+					Off-ice training for elite skaters
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/numberonerobot.42381/" class="username " dir="auto" data-user-id="42381" data-xf-init="member-tooltip">NumberOneRobot</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/off-ice-training-for-elite-skaters.62521/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-22T01:55:43-0500" data-timestamp="1485068143" data-date="Jan 22, 2017" data-time="1:55 AM" data-short="Jan &#039;17" title="Jan 22, 2017 at 1:55 AM">Jan 22, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+7
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>3K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/off-ice-training-for-elite-skaters.62521/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-26T14:39:18-0500" data-timestamp="1485459558" data-date="Jan 26, 2017" data-time="2:39 PM" data-short="Jan &#039;17" title="Jan 26, 2017 at 2:39 PM">Jan 26, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62583" data-author="SmallAminal">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/smallaminal.44222/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="44222" data-xf-init="member-tooltip" style="background-color: #996699; color: #2e1f2e">
+			<span class="avatar-u44222-s" role="img" aria-label="SmallAminal">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/masculine-substitute-for-kiss-n-cry-tote.62583/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/masculine-substitute-for-kiss-n-cry-tote.62583/preview"
+					>
+					&quot;Masculine&quot; substitute for Kiss n&#039; Cry Tote
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/smallaminal.44222/" class="username " dir="auto" data-user-id="44222" data-xf-init="member-tooltip">SmallAminal</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/masculine-substitute-for-kiss-n-cry-tote.62583/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-24T15:35:51-0500" data-timestamp="1485290151" data-date="Jan 24, 2017" data-time="3:35 PM" data-short="Jan &#039;17" title="Jan 24, 2017 at 3:35 PM">Jan 24, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+18
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>5K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/masculine-substitute-for-kiss-n-cry-tote.62583/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-25T18:22:17-0500" data-timestamp="1485386537" data-date="Jan 25, 2017" data-time="6:22 PM" data-short="Jan &#039;17" title="Jan 25, 2017 at 6:22 PM">Jan 25, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/roaringmice.281/" class="username " dir="auto" data-user-id="281" data-xf-init="member-tooltip">RoaringMice</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/roaringmice.281/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="281" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u281-s" role="img" aria-label="RoaringMice">R</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+									
+	
+		
+
+	
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-62567" data-author="Skaterfrancesca">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="/forum/members/skaterfrancesca.45196/" class="avatar avatar--s avatar--default avatar--default--dynamic" data-user-id="45196" data-xf-init="member-tooltip" style="background-color: #669933; color: #0d1306">
+			<span class="avatar-u45196-s" role="img" aria-label="Skaterfrancesca">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+
+				
+				
+				<a href="/forum/threads/double-axel.62567/" class="" data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/forum/threads/double-axel.62567/preview"
+					>
+					Double axel??
+				</a>
+			
+
+</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts">
+						<li><a href="/forum/members/skaterfrancesca.45196/" class="username " dir="auto" data-user-id="45196" data-xf-init="member-tooltip">Skaterfrancesca</a></li>
+						<li class="structItem-startDate"><a href="/forum/threads/double-axel.62567/" rel="nofollow"><time  class="u-dt" dir="auto" datetime="2017-01-23T23:08:21-0500" data-timestamp="1485230901" data-date="Jan 23, 2017" data-time="11:08 PM" data-short="Jan &#039;17" title="Jan 23, 2017 at 11:08 PM">Jan 23, 2017</time></a></li>
+						
+					</ul>
+
+					
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+			<dl class="pairs pairs--justified">
+				<dt>Replies</dt>
+				<dd>
+
+9
+
+</dd>
+			</dl>
+			<dl class="pairs pairs--justified structItem-minor">
+				<dt>Views</dt>
+				<dd>8K</dd>
+			</dl>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="/forum/threads/double-axel.62567/latest" rel="nofollow"><time  class="structItem-latestDate u-dt" dir="auto" datetime="2017-01-25T12:38:52-0500" data-timestamp="1485365932" data-date="Jan 25, 2017" data-time="12:38 PM" data-short="Jan &#039;17" title="Jan 25, 2017 at 12:38 PM">Jan 25, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="/forum/members/posha.17358/" class="username " dir="auto" data-user-id="17358" data-xf-init="member-tooltip">posha</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="/forum/members/posha.17358/" class="avatar avatar--xxs avatar--default avatar--default--dynamic" data-user-id="17358" data-xf-init="member-tooltip" style="background-color: #669933; color: #0d1306">
+			<span class="avatar-u17358-s" role="img" aria-label="posha">P</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+	
+
+
+								
+								
+							
+						</div>
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="block-outer block-outer--after">
+		<div class="block-outer-main"><nav class="pageNavWrapper pageNavWrapper--full ">
+
+
+
+<div class="pageNav pageNav--skipStart pageNav--skipEnd">
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-50" class="pageNav-jump pageNav-jump--prev">Prev</a>
+	
+
+	<ul class="pageNav-main">
+		
+
+	
+		<li class="pageNav-page "><a href="/forum/forums/general-chat-and-questions.979/">1</a></li>
+	
+
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipStart">
+					<a data-xf-init="tooltip" title="Go to page"
+						data-xf-click="menu"
+						role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="48"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--earlier"><a href="/forum/forums/general-chat-and-questions.979/page-49">49</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--earlier"><a href="/forum/forums/general-chat-and-questions.979/page-50">50</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--current "><a href="/forum/forums/general-chat-and-questions.979/page-51">51</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="/forum/forums/general-chat-and-questions.979/page-52">52</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="/forum/forums/general-chat-and-questions.979/page-53">53</a></li>
+	
+
+		
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+					<a data-xf-init="tooltip" title="Go to page"
+						data-xf-click="menu"
+						role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="54"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+
+	
+		<li class="pageNav-page "><a href="/forum/forums/general-chat-and-questions.979/page-61">61</a></li>
+	
+
+	</ul>
+
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-52" class="pageNav-jump pageNav-jump--next">Next</a>
+	
+</div>
+
+<div class="pageNavSimple">
+	
+		<a href="/forum/forums/general-chat-and-questions.979/"
+			class="pageNavSimple-el pageNavSimple-el--first"
+			data-xf-init="tooltip" title="First">
+			<i aria-hidden="true"></i> <span class="u-srOnly">First</span>
+		</a>
+		<a href="/forum/forums/general-chat-and-questions.979/page-50" class="pageNavSimple-el pageNavSimple-el--prev">
+			<i aria-hidden="true"></i> Prev
+		</a>
+	
+
+	<a class="pageNavSimple-el pageNavSimple-el--current"
+		data-xf-init="tooltip" title="Go to page"
+		data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+		51 of 61
+	</a>
+	
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/forum/forums/general-chat-and-questions.979/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="51"  min="1" max="61" step="1" required="required" data-menu-autofocus="true" /></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+		<a href="/forum/forums/general-chat-and-questions.979/page-52" class="pageNavSimple-el pageNavSimple-el--next">
+			Next <i aria-hidden="true"></i>
+		</a>
+		<a href="/forum/forums/general-chat-and-questions.979/page-61"
+			class="pageNavSimple-el pageNavSimple-el--last"
+			data-xf-init="tooltip" title="Last">
+			<i aria-hidden="true"></i> <span class="u-srOnly">Last</span>
+		</a>
+	
+</div>
+
+</nav>
+
+
+
+</div>
+		
+		
+			<div class="block-outer-opposite">
+				
+					<a href="/forum/login/" class="button button--link button--wrap" data-xf-click="overlay"><span class="button-text">
+						You must log in or register to post here.
+					</span></a>
+				
+			</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+					
+				
+				</div>
+
+				
+			</div>
+
+			
+			
+			
+	
+		<div class="p-breadcrumbs--parent p-breadcrumbs--bottom">
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom"
+			itemscope itemtype="https://schema.org/BreadcrumbList">
+			
+				
+
+				
+				
+
+				
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/" itemprop="item">
+			<span itemprop="name">Forums</span>
+		</a>
+		<meta itemprop="position" content="1" />
+	</li>
+
+				
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/#main-arena.5" itemprop="item">
+			<span itemprop="name">Main Arena</span>
+		</a>
+		<meta itemprop="position" content="2" />
+	</li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="/forum/categories/the-lutz-corner.980/" itemprop="item">
+			<span itemprop="name">The Lutz Corner</span>
+		</a>
+		<meta itemprop="position" content="3" />
+	</li>
+
+				
+			
+		</ul>
+		
+		</div>
+	
+
+			
+
+		
+		<!-- Billboard - Bottom of the page -->
+		<div style="margin:10px auto 10px auto; text-align:center; width:100%; min-height: 250px;">
+		    <div id="snack-incontent-wide-2"></div>
+		</div>
+		<!-- /Billboard - bottom of the page -->
+
+	
+
+		
+		
+		</div>
+	</div>
+</div> <!-- closing xb-content-wrapper -->
+<footer class="p-footer" id="footer">
+	<div class="p-footer--container footer-stretched">
+
+	
+	
+	
+		
+			<div class="p-footer-custom">
+	<div class="p-footer-inner">
+
+		
+
+		<div class="xb-footer--wrapper">
+
+			
+				<div class="xb-footer-block xb-footer-block-1">
+					
+						
+					
+					
+	
+			
+			<img src="https://www.goldenskate.com/forum/data/assets/logo/logo.png" />
+<p>Founded in 1999, Golden Skate is your international resource site and discussion board for the sport of Figure Skating.</p>
+			
+
+					
+				</div>
+			
+
+			
+				<div class="xb-footer-block xb-footer-block-2">
+					
+					
+	
+			
+			<h3>Home</h3>
+<ul class="footerList">
+<li><a href="https://www.goldenskate.com/">Main</a></li>
+<li><a href="https://www.goldenskate.com/category/news/">News & Coverage</a></li>
+<li><a href="https://www.goldenskate.com/events/">Upcoming Events</a></li>
+<li><a href="https://www.goldenskate.com/figure-skating-results/">Competition Results</a></li>
+</ul>
+			
+
+					
+				</div>
+			
+
+			
+				<div class="xb-footer-block xb-footer-block-3">
+					
+					
+	
+			
+			<h3>Resources</h3>
+<ul class="footerList">
+<li><a href="https://www.goldenskate.com/forum/help/">Help</a></li>
+<li><a href="https://www.goldenskate.com/forum/account/account-details">Your Account</a></li>
+<li><a href="https://www.goldenskate.com/forum/account/security">Change Password</a></li>
+<li><a href="https://www.goldenskate.com/forum/help/terms/">Terms of Use</a></li>
+</ul>
+			
+
+					
+				</div>
+			
+
+			
+				<div class="xb-footer-block xb-footer-block-4">
+					
+					
+	
+			
+			
+			
+
+					
+						
+	
+
+	
+		<div class="p-socialDescription"><h3>Connect with us</h3></div>
+	
+	
+	<div class="shareButtons shareButtons--iconic">
+		
+
+			
+				<a class="shareButtons-button shareButtons-button--brand shareButtons-button--facebook" href="https://www.facebook.com/GSK8T" target="_blank" rel="noopener">
+					<i class="fa--xf fab fa-facebook-f "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/brands.svg?v=1768192830#facebook-f"></use></svg></i>
+					<span>Facebook</span>
+				</a>
+			
+
+			
+				<a class="shareButtons-button shareButtons-button--brand shareButtons-button--twitter" href="https://www.twitter.com/goldenskate" target="_blank" rel="noopener">
+					<i class="fa--xf fab fa-x "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-hidden="true" ><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></i>
+					<span>X</span>
+				</a>
+			
+			
+			
+			
+			
+				<a class="shareButtons-button shareButtons-button--brand shareButtons-button--youtube" href="https://www.youtube.com/user/g0ldsk8" target="_blank" rel="noopener">
+					<i class="fa--xf fab fa-youtube "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/brands.svg?v=1768192830#youtube"></use></svg></i>
+					<span>youtube</span>
+				</a>
+			
+			
+			
+
+			
+			
+			
+			
+			
+				<a class="shareButtons-button shareButtons-button--brand shareButtons-button--instagram" href="https://www.instagram.com/goldsk8" target="_blank" rel="noopener">
+					<i class="fa--xf fab fa-instagram "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/brands.svg?v=1768192830#instagram"></use></svg></i>
+					<span>Instagram</span>
+				</a>
+			
+						
+			
+			
+			
+			
+			
+						
+			
+				<a class="shareButtons-button shareButtons-button--brand shareButtons-button--pinterest" href="https://www.pinterest.com/goldenskate" target="_blank" rel="noopener">
+					<i class="fa--xf fab fa-pinterest-p "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/brands.svg?v=1768192830#pinterest-p"></use></svg></i>
+					<span>Pinterest</span>
+				</a>
+			
+						
+			
+			
+			
+					
+			
+			
+			
+			
+			
+				
+			
+				<a class="shareButtons-button shareButtons-button--email" href="/forum/misc/contact" data-xf-click="overlay">
+					<i class="fa--xf fal fa-envelope "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/light.svg?v=1768192830#envelope"></use></svg></i>
+					<span>Contact us</span>
+				</a>
+			
+
+			
+			
+		
+	</div>
+
+					
+				</div>
+			
+			
+			
+
+		</div>
+
+		
+
+	</div>
+</div>
+
+
+
+
+
+
+		
+
+		
+			<div class="p-footer-copyright">
+				<div class="p-footer-inner">
+					<div class="p-footer-copyright--flex">
+						
+							
+								<div class="copyright-left">
+									
+										
+										© Golden Skate 1999-2026
+									
+								</div>
+							
+								
+							
+								<div class="copyright-right">	
+									
+									
+											
+	<div class="p-footer-default">
+	<div class="p-footer-inner">
+		<div class="p-footer-row">	
+			
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList">
+						
+						
+							
+								<li><a href="/forum/misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+							<li><a href="/forum/help/terms/">Terms and rules</a></li>
+						
+
+						
+							<li><a href="/forum/help/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="/forum/help/">Help</a></li>
+						
+						
+						<li><a href="https://www.goldenskate.com/forum/help/guidelines/">Forum Guidelines</a></li>
+
+						
+							<li><a href="https://www.goldenskate.com/">Home</a></li>
+						
+
+					
+						<li><a href="/forum/forums/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf fal fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/light.svg?v=1768192830#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+									
+									
+								</div>
+							
+						
+					</div>
+				</div>
+			</div>
+		
+		
+		
+		</div>
+	</footer>
+</div> <!-- closing p-pageWrapper -->
+	
+</div> <!-- closing xb-pageWrapper -->
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf fal fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/light.svg?v=1768192830#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+	<div class="u-scrollButtons js-scrollButtons" data-trigger-type="up">
+		<a href="#top" class="button button--scroll" data-xf-click="scroll-to"><span class="button-text"><i class="fa--xf fal fa-arrow-up "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" ><use href="/forum/data/local/icons/light.svg?v=1768192830#arrow-up"></use></svg></i><span class="u-srOnly">Top</span></span></a>
+		
+		
+	</div>
+
+	
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1" />
+	</form>
+
+	
+
+
+
+
+
+	<script src="https://secureaddisplay.com/au/bmd/"></script>
+
+
+<!-- 
+<script id="709f216237e4435ba13302b249493a51"> 
+(new Image()).src = 'https://capi.connatix.com/tr/si?token=f2c9a5a7-b063-46bc-8c0b-bd1cd34cbf3a&cid=a821a8e3-bc2e-4dbf-9d9a-469b20b5afbc';
+cnxps.cmd.push(function() {
+    cnxps({
+        playerId: "f2c9a5a7-b063-46bc-8c0b-bd1cd34cbf3a"
+    }).render("709f216237e4435ba13302b249493a51");
+});
+</script>
+ -->
+
+<!-- XenBase Version: 2.3.4 -->
+
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"23bfec74fa2a4a29af8f9a42e4f28453","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bd5d0be9bc5811f',t:'MTc2ODMxNjk3Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
