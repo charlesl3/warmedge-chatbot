@@ -10,20 +10,18 @@ from rag.intents import (
 )
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "rag_answer.txt"
+TOP_K = 6
 
 
 def answer_question(question: str, history: list[dict]) -> str:
-    # Blank input guard
     if is_blank(question):
         return "Please ask a valid figure skating related question."
 
-    # Social / small talk (NO RAG)
     if is_social_message(question):
         return handle_social_message(question)
 
-    # Real figure skating question → RAG
     prompt = PROMPT_PATH.read_text(encoding="utf-8")
-    docs = retrieve(question)
+    docs = retrieve(question, k=TOP_K)
 
     llm_input = build_llm_input(
         prompt=prompt,

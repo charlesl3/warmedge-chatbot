@@ -1,32 +1,15 @@
 import json
 from pathlib import Path
 
-import os
-import logging
-import warnings
-
-# Silence Hugging Face Hub warnings (best-effort)
-os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
-os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
-os.environ["TRANSFORMERS_VERBOSITY"] = "error"
-
-warnings.filterwarnings(
-    "ignore",
-    message="You are sending unauthenticated requests to the HF Hub.*",
-)
-
-logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
-logging.getLogger("transformers").setLevel(logging.ERROR)
-logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
-
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
 
-
+# --------------------------------------------------
+# Paths
+# --------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-PASS2_MD_DIR = PROJECT_ROOT / "data" / "pass2_threads_md"
 STORE_DIR = PROJECT_ROOT / "rag_store"
 
 INDEX_PATH = STORE_DIR / "goldenskate_pass2.faiss"
@@ -36,39 +19,72 @@ EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 MAX_CHARS_PER_DOC_IN_CONTEXT = 9000
 
 
+# --------------------------------------------------
+# Utils
+# --------------------------------------------------
 def l2_normalize(v: np.ndarray) -> np.ndarray:
     return v / (np.linalg.norm(v) + 1e-12)
 
 
+# --------------------------------------------------
+# Load index + metadata
+# --------------------------------------------------
 def load_index_and_meta():
+    if not INDEX_PATH.exists():
+        raise FileNotFoundError("FAISS index not found. Run build_faiss_index.py first.")
+    if not META_PATH.exists():
+        raise FileNotFoundError("Meta file not found. Run build_faiss_index.py first.")
+
     index = faiss.read_index(str(INDEX_PATH))
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
-    return index, meta
 
-
-def retrieve(query: str, k: int = 6):
-    index, meta = load_index_and_meta()
-    ids = meta["ids"]
     paths = meta.get("paths")
+    if paths is None:
+        raise ValueError("Meta file missing 'paths' field")
+
+    if index.ntotal != len(paths):
+        raise ValueError("FAISS index size and meta paths length mismatch")
+
+    return index, paths
+
+
+# --------------------------------------------------
+# Retrieval
+# --------------------------------------------------
+def retrieve(query: str, k: int = 6):
+    index, paths = load_index_and_meta()
 
     model = SentenceTransformer(EMBED_MODEL_NAME)
-    q_emb = model.encode([query], convert_to_numpy=True).astype("float32")[0]
-    q_emb = l2_normalize(q_emb).astype("float32")
 
-    D, I = index.search(np.expand_dims(q_emb, axis=0), k)
+    # Embed query ONLY
+    q_emb = model.encode([query], convert_to_numpy=True).astype("float32")[0]
+    q_emb = l2_normalize(q_emb)
+
+    # Search
+    scores, indices = index.search(np.expand_dims(q_emb, axis=0), k)
 
     results = []
-    for score, idx in zip(D[0], I[0]):
+
+    for idx in indices[0]:
         if idx < 0:
             continue
 
-        doc_id = ids[idx]
-        p = Path(paths[idx]) if paths else PASS2_MD_DIR / f"{doc_id}.md"
+        md_path = Path(paths[idx])
+        if not md_path.exists():
+            continue
 
-        text = p.read_text(encoding="utf-8", errors="ignore").strip()
+        text = md_path.read_text(encoding="utf-8", errors="ignore").strip()
+        if not text:
+            continue
+
         if len(text) > MAX_CHARS_PER_DOC_IN_CONTEXT:
             text = text[:MAX_CHARS_PER_DOC_IN_CONTEXT] + "\n\n[TRUNCATED]\n"
 
-        results.append({"text": text})
+        results.append(
+            {
+                "text": text,
+                "source_path": str(md_path),
+            }
+        )
 
     return results
