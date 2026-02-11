@@ -53,7 +53,7 @@ def chat(req: ChatRequest):
 
     # 🔎 DEBUG ENV CHECK
     print("========== ENV DEBUG ==========")
-    print("HF TOKEN VALUE:", os.getenv("HF_API_TOKEN"))
+    print("HF TOKEN VALUE:", os.getenv("HF_TOKEN"))
     print("ENV KEYS:", list(os.environ.keys()))
     print("================================")
 

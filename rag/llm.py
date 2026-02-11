@@ -23,10 +23,10 @@ API_URL = "https://router.huggingface.co/v1/chat/completions"
 
 
 def run_llm(prompt: str) -> str:
-    token = os.getenv("HF_API_TOKEN")  # ← moved here
+    token = os.getenv("HF_TOKEN")  # ← moved here
 
     if not token:
-        return "HF_API_TOKEN not set."
+        return "HF_TOKEN not set."
 
     headers = {
         "Authorization": f"Bearer {token}",
