@@ -19,17 +19,17 @@ import os
 import requests
 
 MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
-API_URL = f"https://router.huggingface.co/v1/chat/completions"
-
-HF_TOKEN = os.getenv("HF_API_TOKEN")
+API_URL = "https://router.huggingface.co/v1/chat/completions"
 
 
 def run_llm(prompt: str) -> str:
-    if not HF_TOKEN:
+    token = os.getenv("HF_API_TOKEN")  # ← moved here
+
+    if not token:
         return "HF_API_TOKEN not set."
 
     headers = {
-        "Authorization": f"Bearer {HF_TOKEN}",
+        "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
     }
 
