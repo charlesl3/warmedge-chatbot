@@ -23,6 +23,7 @@ app.add_middleware(
     allow_origins=[
         "https://warmedge.org",
         "https://www.warmedge.org",
+        "https://warmedge.vercel.app",
         "http://localhost:3000",
     ],
     allow_credentials=True,
@@ -49,6 +50,13 @@ def root():
 # -------------------------
 @app.post("/chat")
 def chat(req: ChatRequest):
+
+    # 🔎 DEBUG ENV CHECK
+    print("========== ENV DEBUG ==========")
+    print("HF TOKEN VALUE:", os.getenv("HF_API_TOKEN"))
+    print("ENV KEYS:", list(os.environ.keys()))
+    print("================================")
+
     message = req.message.strip()
     history = req.history or []
 
@@ -87,7 +95,6 @@ def chat(req: ChatRequest):
         }
 
     except Exception as e:
-        # 🔥 THIS IS THE KEY PART 🔥
         print("=== LLM ERROR ===")
         traceback.print_exc()
         print("=================")
