@@ -108,7 +108,6 @@ INDEX_PATH = STORE_DIR / "goldenskate_pass2.faiss"
 META_PATH = STORE_DIR / "goldenskate_pass2_meta.json"
 
 EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-MAX_CHARS_PER_DOC_IN_CONTEXT = 9000
 
 
 # --------------------------------------------------
@@ -131,24 +130,24 @@ def load_index_and_meta():
     print("Loaded index size:", index.ntotal)
 
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
-    paths = meta.get("paths")
 
-    if paths is None:
-        raise ValueError("Meta file missing 'paths' field")
+    documents = meta.get("documents")
+    if documents is None:
+        raise ValueError("Meta file missing 'documents'. Rebuild index.")
 
-    print("Meta paths count:", len(paths))
+    print("Meta documents count:", len(documents))
 
-    if index.ntotal != len(paths):
-        raise ValueError("FAISS index size and meta paths length mismatch")
+    if index.ntotal != len(documents):
+        raise ValueError("FAISS index size and meta documents mismatch")
 
-    return index, paths
+    return index, documents
 
 
 # --------------------------------------------------
 # Retrieval
 # --------------------------------------------------
 def retrieve(query: str, k: int = 6):
-    index, paths = load_index_and_meta()
+    index, documents = load_index_and_meta()
 
     print("Retrieval k:", k)
     print("Embedding model:", EMBED_MODEL_NAME)
@@ -156,7 +155,7 @@ def retrieve(query: str, k: int = 6):
 
     model = SentenceTransformer(EMBED_MODEL_NAME)
 
-    # Embed query ONLY
+    # Embed query
     q_emb = model.encode([query], convert_to_numpy=True).astype("float32")[0]
     q_emb = l2_normalize(q_emb)
 
@@ -172,28 +171,17 @@ def retrieve(query: str, k: int = 6):
         if idx < 0:
             continue
 
-        md_path = Path(paths[idx])
-        print("Checking path:", md_path)
-        print("Exists:", md_path.exists())
+        doc = documents[int(idx)]
+        text = doc.get("text", "").strip()
+        source_path = doc.get("source_path", "")
 
-        if not md_path.exists():
-            continue
-
-        text = md_path.read_text(encoding="utf-8", errors="ignore").strip()
         if not text:
             continue
 
-        if len(text) > MAX_CHARS_PER_DOC_IN_CONTEXT:
-            text = text[:MAX_CHARS_PER_DOC_IN_CONTEXT] + "\n\n[TRUNCATED]\n"
-
-        print("Chunk length:", len(text))
-
-        results.append(
-            {
-                "text": text,
-                "source_path": str(md_path),
-            }
-        )
+        results.append({
+            "text": text,
+            "source_path": source_path
+        })
 
     print("Total retrieved chunks:", len(results))
 
