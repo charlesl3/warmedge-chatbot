@@ -5,7 +5,7 @@ __pycache__/
 .env
 
 # FAISS / data artifacts
-rag_store/
+#rag_store/
 data/
 
 # OS
