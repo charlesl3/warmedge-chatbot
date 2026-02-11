@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>WarmEdge Chat Test</title>
+</head>
+<body>
+  <h3>WarmEdge Chatbot (Local Test)</h3>
+
+  <textarea id="input" rows="4" cols="50" placeholder="Ask a skating question..."></textarea><br><br>
+  <button onclick="send()">Send</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    let history = [];
+
+    async function send() {
+      const message = document.getElementById("input").value;
+
+      const res = await fetch("http://127.0.0.1:8000/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: message,
+          history: history
+        })
+      });
+
+      const data = await res.json();
+      history = data.history;
+
+      document.getElementById("output").textContent = data.reply;
+    }
+  </script>
+</body>
+</html>
