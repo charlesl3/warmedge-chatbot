@@ -110,7 +110,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import traceback
-import os
 
 from rag.answer import answer_question
 from rag.intents import (
@@ -139,11 +138,16 @@ app.add_middleware(
 )
 
 # -------------------------
+# Backend-owned history
+# (Matches chat_loop logic)
+# -------------------------
+GLOBAL_HISTORY = []
+
+# -------------------------
 # Request schema
 # -------------------------
 class ChatRequest(BaseModel):
     message: str
-    history: list = []
 
 # -------------------------
 # Health check
@@ -157,53 +161,47 @@ def root():
 # -------------------------
 @app.post("/chat")
 def chat(req: ChatRequest):
+    global GLOBAL_HISTORY
 
     message = req.message.strip()
-    history = req.history or []
 
     try:
-        # 1) Blank input
+        # 1️⃣ Blank input
         if is_blank(message):
             return {
                 "reply": "Please ask a valid figure skating related question.",
-                "history": history,
                 "end": False,
             }
 
-        # 2) Social / preset path (NO LLM)
+        # 2️⃣ Social / small talk (NO RAG)
         if is_social_message(message):
             reply = handle_social_message(message)
 
-            # Append like real conversation
-            history.append({"role": "user", "content": message})
-            history.append({"role": "assistant", "content": reply})
+            GLOBAL_HISTORY.append({"role": "user", "content": message})
+            GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
 
             return {
                 "reply": reply,
-                "history": history,
                 "end": is_farewell(message),
             }
 
-        # 3) REAL LLM / RAG PATH
+        # 3️⃣ REAL RAG PATH
+        # EXACT match to chat_loop.py
 
-        # Append user FIRST (like local loop)
-        history.append({"role": "user", "content": message})
+        # Append user
+        GLOBAL_HISTORY.append({"role": "user", "content": message})
 
-        # Optional: trim to last N turns (prevents token explosion)
-        MAX_TURNS = 6
-        history = history[-MAX_TURNS * 2:]
-
+        # Generate answer with full history
         reply = answer_question(
             question=message,
-            history=history,
+            history=GLOBAL_HISTORY,
         )
 
-        # Append assistant reply
-        history.append({"role": "assistant", "content": reply})
+        # Append assistant
+        GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
 
         return {
             "reply": reply,
-            "history": history,
             "end": False,
         }
 
@@ -214,6 +212,5 @@ def chat(req: ChatRequest):
 
         return {
             "reply": "Something went wrong.",
-            "history": history,
             "end": False,
         }
