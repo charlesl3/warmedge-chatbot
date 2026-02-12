@@ -111,6 +111,14 @@ EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 # --------------------------------------------------
+# Simple in-process caches (load once per server process)
+# --------------------------------------------------
+_CACHED_INDEX = None
+_CACHED_DOCS = None
+_CACHED_MODEL = None
+
+
+# --------------------------------------------------
 # Utils
 # --------------------------------------------------
 def l2_normalize(v: np.ndarray) -> np.ndarray:
@@ -118,9 +126,14 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 
 # --------------------------------------------------
-# Load index + metadata
+# Load index + metadata (cached)
 # --------------------------------------------------
 def load_index_and_meta():
+    global _CACHED_INDEX, _CACHED_DOCS
+
+    if _CACHED_INDEX is not None and _CACHED_DOCS is not None:
+        return _CACHED_INDEX, _CACHED_DOCS
+
     if not INDEX_PATH.exists():
         raise FileNotFoundError("FAISS index not found. Run build_faiss_index.py first.")
     if not META_PATH.exists():
@@ -140,34 +153,78 @@ def load_index_and_meta():
     if index.ntotal != len(documents):
         raise ValueError("FAISS index size and meta documents mismatch")
 
+    _CACHED_INDEX = index
+    _CACHED_DOCS = documents
+
     return index, documents
+
+
+# --------------------------------------------------
+# Load embedding model (cached)
+# --------------------------------------------------
+def get_embed_model():
+    global _CACHED_MODEL
+    if _CACHED_MODEL is None:
+        print("Loading embedding model:", EMBED_MODEL_NAME)
+        _CACHED_MODEL = SentenceTransformer(EMBED_MODEL_NAME)
+    return _CACHED_MODEL
 
 
 # --------------------------------------------------
 # Retrieval
 # --------------------------------------------------
 def retrieve(query: str, k: int = 6):
+    """
+    Returns:
+    {
+        "results": [...],
+        "scores": [...],
+        "indices": [...],
+        "top_score": float | None
+    }
+    """
+
+    q = (query or "").strip()
+
+    # --------------------------------------------------
+    # Early exit for low-information queries
+    # --------------------------------------------------
+    if len(q) < 10 or len(q.split()) < 3:
+        print("Query too short/low-info, skipping retrieval:", repr(q))
+        return {
+            "results": [],
+            "scores": [],
+            "indices": [],
+            "top_score": None,
+        }
+
     index, documents = load_index_and_meta()
 
     print("Retrieval k:", k)
-    print("Embedding model:", EMBED_MODEL_NAME)
     print("Query:", query)
 
-    model = SentenceTransformer(EMBED_MODEL_NAME)
+    model = get_embed_model()
 
+    # --------------------------------------------------
     # Embed query
+    # --------------------------------------------------
     q_emb = model.encode([query], convert_to_numpy=True).astype("float32")[0]
     q_emb = l2_normalize(q_emb)
 
+    # --------------------------------------------------
     # Search
+    # --------------------------------------------------
     scores, indices = index.search(np.expand_dims(q_emb, axis=0), k)
 
     print("Retrieved indices:", indices)
     print("Retrieved scores:", scores)
 
+    idx_list = indices[0].tolist()
+    score_list = scores[0].tolist()
+
     results = []
 
-    for idx in indices[0]:
+    for idx in idx_list:
         if idx < 0:
             continue
 
@@ -183,6 +240,14 @@ def retrieve(query: str, k: int = 6):
             "source_path": source_path
         })
 
+    top_score = score_list[0] if score_list else None
+
+    print("Top score:", top_score)
     print("Total retrieved chunks:", len(results))
 
-    return results
+    return {
+        "results": results,
+        "scores": score_list,
+        "indices": idx_list,
+        "top_score": top_score,
+    }

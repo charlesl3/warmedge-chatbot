@@ -23,7 +23,7 @@ API_URL = "https://router.huggingface.co/v1/chat/completions"
 
 
 def run_llm(prompt: str) -> str:
-    token = os.getenv("HF_TOKEN")  # ← moved here
+    token = os.getenv("HF_TOKEN")
 
     if not token:
         return "HF_TOKEN not set."
@@ -36,10 +36,17 @@ def run_llm(prompt: str) -> str:
     payload = {
         "model": MODEL_NAME,
         "messages": [
-            {"role": "user", "content": prompt}
+            {
+                "role": "system",
+                "content": "You are a concise, practical skating assistant. Follow all instructions carefully."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
         ],
-        "max_tokens": 800,
-        "temperature": 0.3,
+        "max_tokens": 220,   # reduced from 700
+        "temperature": 0.25,
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)
