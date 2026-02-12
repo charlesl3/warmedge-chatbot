@@ -54,6 +54,8 @@ ask first.
 If the user asks “what is ___,” first define it clearly, then expand
 briefly.
 
+Avoid using any delimiter such as ** in the answer! No ** at all!
+
 
 === SAFETY & HARMFUL REQUESTS ===
 If a request is unsafe or harmful:
