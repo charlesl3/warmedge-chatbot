@@ -54,7 +54,7 @@ ask first.
 If the user asks “what is ___,” first define it clearly, then expand
 briefly.
 
-Avoid using any delimiter such as ** in the answer! No ** at all!
+DO NOT use ** or * in the answer! No ** or * at all!
 
 
 === SAFETY & HARMFUL REQUESTS ===

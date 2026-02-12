@@ -189,7 +189,7 @@ def retrieve(query: str, k: int = 6):
     # --------------------------------------------------
     # Early exit for low-information queries
     # --------------------------------------------------
-    if len(q) < 10 or len(q.split()) < 3:
+    if len(q) < 2:
         print("Query too short/low-info, skipping retrieval:", repr(q))
         return {
             "results": [],
