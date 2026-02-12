@@ -46,7 +46,7 @@ from rag.intents import (
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "rag_answer.txt"
 TOP_K = 6
-MIN_TOP_SCORE = 0.30  # tune later if needed
+MIN_TOP_SCORE = 0.1  # tune later if needed
 
 
 def answer_question(question: str, history: list[dict]) -> str:
