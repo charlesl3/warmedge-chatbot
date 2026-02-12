@@ -139,9 +139,12 @@ app.add_middleware(
 
 # -------------------------
 # Backend-owned history
-# (Matches chat_loop logic)
 # -------------------------
 GLOBAL_HISTORY = []
+
+# How many full turns to keep
+MAX_TURNS = 4  # 4 user + 4 assistant messages
+
 
 # -------------------------
 # Request schema
@@ -149,12 +152,14 @@ GLOBAL_HISTORY = []
 class ChatRequest(BaseModel):
     message: str
 
+
 # -------------------------
 # Health check
 # -------------------------
 @app.get("/")
 def root():
     return {"status": "ok"}
+
 
 # -------------------------
 # Chat endpoint
@@ -180,18 +185,20 @@ def chat(req: ChatRequest):
             GLOBAL_HISTORY.append({"role": "user", "content": message})
             GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
 
+            # Trim after append
+            GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
+
             return {
                 "reply": reply,
                 "end": is_farewell(message),
             }
 
         # 3️⃣ REAL RAG PATH
-        # EXACT match to chat_loop.py
 
         # Append user
         GLOBAL_HISTORY.append({"role": "user", "content": message})
 
-        # Generate answer with full history
+        # Generate answer
         reply = answer_question(
             question=message,
             history=GLOBAL_HISTORY,
@@ -199,6 +206,9 @@ def chat(req: ChatRequest):
 
         # Append assistant
         GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
+
+        # Trim AFTER assistant response
+        GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
 
         return {
             "reply": reply,
