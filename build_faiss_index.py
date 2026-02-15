@@ -109,6 +109,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 
 PASS2_EQUIP_DIR = DATA_DIR / "pass2_threads_equipment"
 PASS2_GENERAL_DIR = DATA_DIR / "pass2_threads_general"
+RULES_DIR = DATA_DIR / "rules_rag_units"   # 🔥 NEW INPUT
 
 STORE_DIR = PROJECT_ROOT / "rag_store"
 STORE_DIR.mkdir(parents=True, exist_ok=True)
@@ -128,11 +129,21 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 
 def collect_md_files():
+    folders = [
+        PASS2_EQUIP_DIR,
+        PASS2_GENERAL_DIR,
+        RULES_DIR,  # 🔥 included
+    ]
+
     files = []
-    for folder in [PASS2_EQUIP_DIR, PASS2_GENERAL_DIR]:
+
+    for folder in folders:
         if not folder.exists():
-            raise RuntimeError(f"Missing folder: {folder}")
+            print(f"Warning: Missing folder {folder}")
+            continue
+
         files.extend(sorted(folder.rglob("*.md")))
+
     return files
 
 
@@ -143,7 +154,7 @@ def main():
     md_files = collect_md_files()
 
     if not md_files:
-        raise RuntimeError("No markdown files found in pass2 folders.")
+        raise RuntimeError("No markdown files found.")
 
     print(f"Found {len(md_files)} markdown files.")
 
@@ -161,7 +172,6 @@ def main():
         if len(text) > MAX_CHARS_PER_DOC:
             text = text[:MAX_CHARS_PER_DOC] + "\n\n[TRUNCATED]\n"
 
-        # Store relative path for reference (portable)
         rel_path = str(md_path.relative_to(PROJECT_ROOT))
 
         documents.append({

@@ -193,8 +193,9 @@ If new knowledge units are added:
 - Misspellings tolerated (LLM handles fuzzy input)
 - Prevent silent blending of old + new systems
 - Free Skate ≠ Freestyle rule enforced
+- test contents added: Singles, MITF for standard and adults
 
 ## TO DO
 
-- Test concrete contents
+- test contents: pattern dance solo
 - 
