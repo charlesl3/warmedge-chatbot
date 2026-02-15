@@ -110,6 +110,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import traceback
+import re
 
 from rag.answer import answer_question
 from rag.intents import (
@@ -144,6 +145,25 @@ GLOBAL_HISTORY = []
 
 # How many full turns to keep
 MAX_TURNS = 4  # 4 user + 4 assistant messages
+
+
+# -------------------------
+# Output Cleaning Layer
+# -------------------------
+def clean_output(text: str) -> str:
+    # Remove bold markdown (**text**)
+    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+
+    # Remove italic markdown (*text*)
+    text = re.sub(r'\*(.*?)\*', r'\1', text)
+
+    # Remove stray backticks
+    text = re.sub(r'`+', '', text)
+
+    # Remove markdown headers (# Heading)
+    text = re.sub(r'^#+\s*', '', text, flags=re.MULTILINE)
+
+    return text
 
 
 # -------------------------
@@ -182,10 +202,12 @@ def chat(req: ChatRequest):
         if is_social_message(message):
             reply = handle_social_message(message)
 
+            # 🔥 Clean social reply too
+            reply = clean_output(reply)
+
             GLOBAL_HISTORY.append({"role": "user", "content": message})
             GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
 
-            # Trim after append
             GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
 
             return {
@@ -204,10 +226,13 @@ def chat(req: ChatRequest):
             history=GLOBAL_HISTORY,
         )
 
+        # 🔥 Clean model output BEFORE storing & returning
+        reply = clean_output(reply)
+
         # Append assistant
         GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
 
-        # Trim AFTER assistant response
+        # Trim history
         GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
 
         return {
