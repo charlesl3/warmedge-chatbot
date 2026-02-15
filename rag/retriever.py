@@ -111,7 +111,7 @@ EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 # --------------------------------------------------
-# Simple in-process caches (load once per server process)
+# In-process caches
 # --------------------------------------------------
 _CACHED_INDEX = None
 _CACHED_DOCS = None
@@ -135,23 +135,30 @@ def load_index_and_meta():
         return _CACHED_INDEX, _CACHED_DOCS
 
     if not INDEX_PATH.exists():
-        raise FileNotFoundError("FAISS index not found. Run build_faiss_index.py first.")
+        raise FileNotFoundError(
+            "FAISS index not found. Run build_faiss_index.py first."
+        )
+
     if not META_PATH.exists():
-        raise FileNotFoundError("Meta file not found. Run build_faiss_index.py first.")
+        raise FileNotFoundError(
+            "Meta file not found. Run build_faiss_index.py first."
+        )
 
     index = faiss.read_index(str(INDEX_PATH))
-    print("Loaded index size:", index.ntotal)
+    print("Loaded FAISS index size:", index.ntotal)
 
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
-
     documents = meta.get("documents")
+
     if documents is None:
         raise ValueError("Meta file missing 'documents'. Rebuild index.")
 
     print("Meta documents count:", len(documents))
 
     if index.ntotal != len(documents):
-        raise ValueError("FAISS index size and meta documents mismatch")
+        raise ValueError(
+            "FAISS index size and meta documents mismatch."
+        )
 
     _CACHED_INDEX = index
     _CACHED_DOCS = documents
@@ -164,9 +171,11 @@ def load_index_and_meta():
 # --------------------------------------------------
 def get_embed_model():
     global _CACHED_MODEL
+
     if _CACHED_MODEL is None:
         print("Loading embedding model:", EMBED_MODEL_NAME)
         _CACHED_MODEL = SentenceTransformer(EMBED_MODEL_NAME)
+
     return _CACHED_MODEL
 
 
@@ -180,28 +189,28 @@ def retrieve(query: str, k: int = 6):
         "results": [...],
         "scores": [...],
         "indices": [...],
-        "top_score": float | None
+        "top_score": float | None,
+        "sources": [...]
     }
     """
 
     q = (query or "").strip()
 
-    # --------------------------------------------------
-    # Early exit for low-information queries
-    # --------------------------------------------------
     if len(q) < 2:
-        print("Query too short/low-info, skipping retrieval:", repr(q))
+        print("Query too short. Skipping retrieval:", repr(q))
         return {
             "results": [],
             "scores": [],
             "indices": [],
             "top_score": None,
+            "sources": [],
         }
 
     index, documents = load_index_and_meta()
 
-    print("Retrieval k:", k)
+    print("\n================ RETRIEVAL DEBUG ================")
     print("Query:", query)
+    print("k:", k)
 
     model = get_embed_model()
 
@@ -212,19 +221,22 @@ def retrieve(query: str, k: int = 6):
     q_emb = l2_normalize(q_emb)
 
     # --------------------------------------------------
-    # Search
+    # Search deeper pool for better rule recall
     # --------------------------------------------------
-    scores, indices = index.search(np.expand_dims(q_emb, axis=0), k)
+    search_k = k * 3
 
-    print("Retrieved indices:", indices)
-    print("Retrieved scores:", scores)
+    scores, indices = index.search(
+        np.expand_dims(q_emb, axis=0),
+        search_k
+    )
 
     idx_list = indices[0].tolist()
     score_list = scores[0].tolist()
 
-    results = []
+    rules_results = []
+    thread_results = []
 
-    for idx in idx_list:
+    for idx, score in zip(idx_list, score_list):
         if idx < 0:
             continue
 
@@ -235,19 +247,51 @@ def retrieve(query: str, k: int = 6):
         if not text:
             continue
 
-        results.append({
+        item = {
             "text": text,
-            "source_path": source_path
-        })
+            "source_path": source_path,
+            "score": score
+        }
 
-    top_score = score_list[0] if score_list else None
+        if "rules_rag_units" in source_path:
+            rules_results.append(item)
+        else:
+            thread_results.append(item)
 
+    # --------------------------------------------------
+    # PRIORITY MERGE: rules first, then threads
+    # --------------------------------------------------
+    merged = rules_results + thread_results
+    merged = merged[:k]
+
+    results = [
+        {"text": r["text"], "source_path": r["source_path"]}
+        for r in merged
+    ]
+
+    sources = [r["source_path"] for r in merged]
+    final_scores = [r["score"] for r in merged]
+    final_indices = [
+        idx_list[i]
+        for i in range(len(merged))
+    ]
+
+    top_score = final_scores[0] if final_scores else None
+
+    # --------------------------------------------------
+    # Debug output
+    # --------------------------------------------------
     print("Top score:", top_score)
-    print("Total retrieved chunks:", len(results))
+    print("Retrieved source paths (after prioritization):")
+    for i, src in enumerate(sources):
+        print(f"{i+1}. {src}")
+
+    print("==================================================\n")
 
     return {
         "results": results,
-        "scores": score_list,
-        "indices": idx_list,
+        "scores": final_scores,
+        "indices": final_indices,
         "top_score": top_score,
+        "sources": sources,
     }
