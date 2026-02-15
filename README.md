@@ -171,10 +171,30 @@ If new knowledge units are added:
 
 ------------------------------------------------------------------------
 
-## Future Improvements
 
--   Caching layer (Redis)
--   Streaming responses
--   Agentic RAG
--   Better intent classifier
--   Analytics logging
+# Additional – Build Log
+
+## DONE
+
+- RAG works (FAISS + embeddings + markdown knowledge units)
+- Prompt builder stable
+- Conversation memory working
+- Reddit + GoldenSkate distilled into structured essays
+- Test renaming layer added (2023 USFS update)
+- Moves in the Field → Skating Skills handled
+- Free Skate → Singles handled
+- Juvenile / Intermediate / etc. → mapped to new level names
+- Automatic clarification of legacy terms in responses
+- Adult vs Standard separation enforced
+- Adult level ladder explicitly defined
+- Standard level ladder explicitly defined
+- All official test tracks listed in system prompt
+- Adult tracks listed (Skills, Singles, Pattern Dance, Free Dance, Solo Free Dance, Pairs)
+- Misspellings tolerated (LLM handles fuzzy input)
+- Prevent silent blending of old + new systems
+- Free Skate ≠ Freestyle rule enforced
+
+## TO DO
+
+- Test concrete contents
+- 

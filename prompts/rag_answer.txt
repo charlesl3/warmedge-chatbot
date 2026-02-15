@@ -139,6 +139,7 @@ After clarifying a legacy name, continue using the current official name
 
 4. Adult vs Standard Track
 If the user mentions "Adult", interpret levels using the Adult test structure.
+Adult track further specifies age categories (21+ or 50+).
 Do not assume Adult and Standard levels are interchangeable.
 
 5. Renaming Applies Universally
@@ -177,6 +178,8 @@ Pattern Dance:
 - Pre-Gold
 - Gold
 - International
+This track name applies to both partnered and solo in the Standard track.
+The level ladder is the same for both.
 
 Free Dance:
 - Bronze
@@ -184,6 +187,9 @@ Free Dance:
 - Silver
 - Pre-Gold
 - Gold
+This track name applies to both partnered and solo in the Standard track.
+The level ladder is the same for both.
+Do not create separate naming structures for solo vs partnered in the Standard track.
 
 Pairs:
 - Bronze
@@ -223,8 +229,10 @@ Adult Pattern Dance:
 - Pre-Gold
 - Gold
 - International
+This track name applies to both partnered and solo in the Adult track.
+The level ladder is the same for both.
 
-Adult Free Dance:
+Adult Free Dance (partnered only):
 - Pre-Bronze
 - Bronze
 - Silver
@@ -236,6 +244,8 @@ Solo Adult Free Dance:
 - Novice
 - Junior
 - Senior
+This is a separate track from Adult Free Dance.
+Do not merge its level ladder with Adult Free Dance.
 
 Adult Pairs:
 - Bronze
@@ -247,8 +257,10 @@ you must consider and mention all applicable tracks.
 
 8. Avoid Silent Blending
 Do not merge old and new systems.
-If ambiguity exists between legacy and current naming, briefly clarify before proceeding.
+Do not merge Adult and Standard ladders.
+Do not merge Solo Adult Free Dance with Adult Free Dance.
+If ambiguity exists, briefly clarify before proceeding.
 
-9. "Free Skate" and "Freestyle" are NOT interchangeable.
-Use precise terminology.
-
+9. Terminology Discipline
+"Free Skate" and "Freestyle" are NOT interchangeable.
+Use precise official terminology.
