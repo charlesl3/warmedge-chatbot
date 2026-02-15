@@ -111,6 +111,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import traceback
 import re
+import uuid
 
 from rag.answer import answer_question
 from rag.intents import (
@@ -139,30 +140,21 @@ app.add_middleware(
 )
 
 # -------------------------
-# Backend-owned history
+# Per-session history storage
 # -------------------------
-GLOBAL_HISTORY = []
+SESSIONS = {}
 
-# How many full turns to keep
-MAX_TURNS = 4  # 4 user + 4 assistant messages
+MAX_TURNS = 4
 
 
 # -------------------------
-# Output Cleaning Layer
+# Output cleaning
 # -------------------------
 def clean_output(text: str) -> str:
-    # Remove bold markdown (**text**)
     text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
-
-    # Remove italic markdown (*text*)
     text = re.sub(r'\*(.*?)\*', r'\1', text)
-
-    # Remove stray backticks
     text = re.sub(r'`+', '', text)
-
-    # Remove markdown headers (# Heading)
     text = re.sub(r'^#+\s*', '', text, flags=re.MULTILINE)
-
     return text
 
 
@@ -171,6 +163,7 @@ def clean_output(text: str) -> str:
 # -------------------------
 class ChatRequest(BaseModel):
     message: str
+    session_id: str | None = None
 
 
 # -------------------------
@@ -186,65 +179,60 @@ def root():
 # -------------------------
 @app.post("/chat")
 def chat(req: ChatRequest):
-    global GLOBAL_HISTORY
-
-    message = req.message.strip()
-
     try:
-        # 1️⃣ Blank input
+        message = req.message.strip()
+
+        # Generate or reuse session
+        session_id = req.session_id or str(uuid.uuid4())
+
+        if session_id not in SESSIONS:
+            SESSIONS[session_id] = []
+
+        history = SESSIONS[session_id]
+
+        # 1️⃣ Blank
         if is_blank(message):
             return {
                 "reply": "Please ask a valid figure skating related question.",
+                "session_id": session_id,
                 "end": False,
             }
 
-        # 2️⃣ Social / small talk (NO RAG)
+        # 2️⃣ Social
         if is_social_message(message):
-            reply = handle_social_message(message)
+            reply = clean_output(handle_social_message(message))
 
-            # 🔥 Clean social reply too
-            reply = clean_output(reply)
-
-            GLOBAL_HISTORY.append({"role": "user", "content": message})
-            GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
-
-            GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
+            history.append({"role": "user", "content": message})
+            history.append({"role": "assistant", "content": reply})
+            SESSIONS[session_id] = history[-MAX_TURNS * 2 :]
 
             return {
                 "reply": reply,
+                "session_id": session_id,
                 "end": is_farewell(message),
             }
 
-        # 3️⃣ REAL RAG PATH
+        # 3️⃣ RAG path
+        history.append({"role": "user", "content": message})
 
-        # Append user
-        GLOBAL_HISTORY.append({"role": "user", "content": message})
-
-        # Generate answer
         reply = answer_question(
             question=message,
-            history=GLOBAL_HISTORY,
+            history=history,
         )
 
-        # 🔥 Clean model output BEFORE storing & returning
         reply = clean_output(reply)
 
-        # Append assistant
-        GLOBAL_HISTORY.append({"role": "assistant", "content": reply})
-
-        # Trim history
-        GLOBAL_HISTORY = GLOBAL_HISTORY[-MAX_TURNS * 2 :]
+        history.append({"role": "assistant", "content": reply})
+        SESSIONS[session_id] = history[-MAX_TURNS * 2 :]
 
         return {
             "reply": reply,
+            "session_id": session_id,
             "end": False,
         }
 
     except Exception:
-        print("=== LLM ERROR ===")
         traceback.print_exc()
-        print("=================")
-
         return {
             "reply": "Something went wrong.",
             "end": False,

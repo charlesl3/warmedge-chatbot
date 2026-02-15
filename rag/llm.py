@@ -45,8 +45,8 @@ def run_llm(prompt: str) -> str:
                 "content": prompt
             }
         ],
-        "max_tokens": 400,   # reduced from 700
-        "temperature": 0.25,
+        "max_tokens": 500,   # reduced from 700
+        "temperature": 0.1,
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)

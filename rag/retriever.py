@@ -182,22 +182,17 @@ def get_embed_model():
 # --------------------------------------------------
 # Retrieval
 # --------------------------------------------------
-def retrieve(query: str, k: int = 6):
+def retrieve(query: str, k: int = 6, track: str | None = None):
     """
-    Returns:
-    {
-        "results": [...],
-        "scores": [...],
-        "indices": [...],
-        "top_score": float | None,
-        "sources": [...]
-    }
+    track:
+        None        -> no filtering
+        "adult"     -> only adult rule units
+        "standard"  -> only standard rule units
     """
 
     q = (query or "").strip()
 
     if len(q) < 2:
-        print("Query too short. Skipping retrieval:", repr(q))
         return {
             "results": [],
             "scores": [],
@@ -207,91 +202,62 @@ def retrieve(query: str, k: int = 6):
         }
 
     index, documents = load_index_and_meta()
-
-    print("\n================ RETRIEVAL DEBUG ================")
-    print("Query:", query)
-    print("k:", k)
-
     model = get_embed_model()
 
-    # --------------------------------------------------
     # Embed query
-    # --------------------------------------------------
     q_emb = model.encode([query], convert_to_numpy=True).astype("float32")[0]
     q_emb = l2_normalize(q_emb)
 
-    # --------------------------------------------------
-    # Search deeper pool for better rule recall
-    # --------------------------------------------------
-    search_k = k * 3
-
     scores, indices = index.search(
         np.expand_dims(q_emb, axis=0),
-        search_k
+        k * 4  # search wider pool for filtering
     )
 
     idx_list = indices[0].tolist()
     score_list = scores[0].tolist()
 
-    rules_results = []
-    thread_results = []
+    results = []
+    sources = []
+    filtered_scores = []
 
     for idx, score in zip(idx_list, score_list):
         if idx < 0:
             continue
 
         doc = documents[int(idx)]
-        text = doc.get("text", "").strip()
         source_path = doc.get("source_path", "")
+        text = doc.get("text", "").strip()
 
         if not text:
             continue
 
-        item = {
+        # -------- TRACK FILTERING --------
+        if track == "adult":
+            if "_adult" not in source_path:
+                continue
+
+        elif track == "standard":
+            if "_standard" not in source_path:
+                continue
+
+        results.append({
             "text": text,
-            "source_path": source_path,
-            "score": score
-        }
+            "source_path": source_path
+        })
 
-        if "rules_rag_units" in source_path:
-            rules_results.append(item)
-        else:
-            thread_results.append(item)
+        sources.append(source_path)
+        filtered_scores.append(score)
 
-    # --------------------------------------------------
-    # PRIORITY MERGE: rules first, then threads
-    # --------------------------------------------------
-    merged = rules_results + thread_results
-    merged = merged[:k]
+        if len(results) >= k:
+            break
 
-    results = [
-        {"text": r["text"], "source_path": r["source_path"]}
-        for r in merged
-    ]
-
-    sources = [r["source_path"] for r in merged]
-    final_scores = [r["score"] for r in merged]
-    final_indices = [
-        idx_list[i]
-        for i in range(len(merged))
-    ]
-
-    top_score = final_scores[0] if final_scores else None
-
-    # --------------------------------------------------
-    # Debug output
-    # --------------------------------------------------
-    print("Top score:", top_score)
-    print("Retrieved source paths (after prioritization):")
-    for i, src in enumerate(sources):
-        print(f"{i+1}. {src}")
-
-    print("==================================================\n")
+    top_score = filtered_scores[0] if filtered_scores else None
 
     return {
         "results": results,
-        "scores": final_scores,
-        "indices": final_indices,
+        "scores": filtered_scores,
+        "indices": idx_list,
         "top_score": top_score,
         "sources": sources,
     }
+
