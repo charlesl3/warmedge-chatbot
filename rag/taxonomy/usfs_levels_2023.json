@@ -1,0 +1,46 @@
+{
+  "track_renaming": {
+    "moves in the field": "skating skills",
+    "free skate": "singles"
+  },
+
+  "legacy_level_renaming_standard": {
+    "pre-juvenile": "pre-bronze",
+    "juvenile": "bronze",
+    "intermediate": "pre-silver",
+    "novice": "silver",
+    "junior": "pre-gold",
+    "senior": "gold"
+  },
+
+  "current_tracks": [
+    "skating skills",
+    "singles",
+    "pairs",
+    "free dance",
+    "pattern dance"
+  ],
+
+  "current_standard_levels": [
+    "pre-preliminary",
+    "preliminary",
+    "pre-bronze",
+    "bronze",
+    "pre-silver",
+    "silver",
+    "pre-gold",
+    "gold",
+    "international"
+  ],
+
+  "current_adult_levels": [
+    "pre-bronze",
+    "bronze",
+    "silver",
+    "gold",
+    "intermediate",
+    "novice",
+    "junior",
+    "senior"
+  ]
+}
