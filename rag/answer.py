@@ -34,7 +34,7 @@
 
 
 from pathlib import Path
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from rag.retriever import retrieve
 from rag.prompt_builder import build_llm_input
@@ -48,7 +48,7 @@ from rag.intents import (
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "rag_answer.txt"
 
 TOP_K = 6
-MIN_TOP_SCORE = 0.15
+MIN_TOP_SCORE = 0.1
 
 
 # --------------------------------------------------
@@ -58,14 +58,11 @@ def normalize_legacy_terms(question: str) -> str:
     q = question.lower()
 
     replacements = {
-        # Discipline normalization
         "free skate": "singles",
         "free skating": "singles",
         "moves in the field": "skating skills",
         "mitf": "skating skills",
         "mift": "skating skills",
-
-        # Level normalization (hyphen fixes)
         "pre silver": "pre-silver",
         "pre gold": "pre-gold",
         "pre bronze": "pre-bronze",
@@ -84,25 +81,32 @@ def normalize_legacy_terms(question: str) -> str:
     return q
 
 
-
 # --------------------------------------------------
-# STRICT Track Inference (NO history, NO guessing)
+# Track Inference
 # --------------------------------------------------
 def infer_track(question: str) -> str:
     q = question.lower()
 
-    # Explicit override to standard
     if "not adult" in q or "standard" in q or "non-adult" in q:
         return "standard"
 
-    # Explicit adult only if word appears
     if "adult" in q:
         return "adult"
 
-    # 🔥 CRITICAL RULE:
-    # If the word "adult" does NOT appear,
-    # ALWAYS assume Standard.
     return "standard"
+
+
+# --------------------------------------------------
+# Clarify Decision
+# --------------------------------------------------
+def weak_retrieval(top_score: Optional[float]) -> bool:
+    return top_score is None or top_score < MIN_TOP_SCORE
+
+
+def clarify_message(track: str) -> str:
+    if track == "adult":
+        return "Could you clarify your Adult level (for example: Adult Pre-Bronze, Adult Bronze, etc.)?"
+    return "Could you clarify which level you are referring to (for example: Pre-Preliminary, Pre-Bronze, Bronze, etc.)?"
 
 
 # --------------------------------------------------
@@ -116,29 +120,56 @@ def answer_question(question: str, history: List[Dict]) -> str:
     if is_social_message(question):
         return handle_social_message(question)
 
-    # 1️⃣ Normalize legacy naming FIRST
     normalized_question = normalize_legacy_terms(question)
-
-    # 2️⃣ STRICT track inference
     track = infer_track(normalized_question)
 
-    # 3️⃣ Retrieve ONLY from that track
+    # -------------------------
+    # 1️⃣ Primary Retrieval (track filtered)
+    # -------------------------
     retrieval = retrieve(
         normalized_question,
         k=TOP_K,
-        track=track
+        track=track,
     )
 
-    if retrieval["top_score"] is None:
-        return "Could you clarify your question?"
+    # -------------------------
+    # 2️⃣ Fallback Retrieval (no track filter)
+    # -------------------------
+    if weak_retrieval(retrieval.get("top_score")):
+        fallback = retrieve(
+            normalized_question,
+            k=TOP_K,
+            track=None,
+        )
+        if not weak_retrieval(fallback.get("top_score")):
+            retrieval = fallback
 
-    if retrieval["top_score"] < MIN_TOP_SCORE:
-        return "Could you clarify which level you are referring to?"
+    # -------------------------
+    # 3️⃣ RAG DEBUG DISPLAY
+    # -------------------------
+    print("\n===== RAG DEBUG =====")
+    print("Original Question:", question)
+    print("Normalized Question:", normalized_question)
+    print("Track Used:", track)
+    print("Top Score:", retrieval.get("top_score"))
+    print("Results Count:", len(retrieval.get("results", [])))
 
-    # 4️⃣ Load base prompt
+    for i, src in enumerate(retrieval.get("sources", []), 1):
+        print(f"Result {i} source:", src)
+
+    print("======================\n")
+
+    # -------------------------
+    # 4️⃣ If Still Weak → Clarify
+    # -------------------------
+    if weak_retrieval(retrieval.get("top_score")):
+        return clarify_message(track)
+
+    # -------------------------
+    # 5️⃣ Build Prompt
+    # -------------------------
     prompt = PROMPT_PATH.read_text(encoding="utf-8")
 
-    # 5️⃣ Build LLM input
     llm_input = build_llm_input(
         prompt=prompt,
         question=normalized_question,
@@ -146,5 +177,7 @@ def answer_question(question: str, history: List[Dict]) -> str:
         history=history,
     )
 
-    # 6️⃣ Generate response
+    # -------------------------
+    # 6️⃣ Call LLM
+    # -------------------------
     return run_llm(llm_input)

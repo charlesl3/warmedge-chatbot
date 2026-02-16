@@ -18,7 +18,7 @@
 import os
 import requests
 
-MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
+MODEL_NAME = "openai/gpt-oss-20b"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
 
 
@@ -26,7 +26,7 @@ def run_llm(prompt: str) -> str:
     token = os.getenv("HF_TOKEN")
 
     if not token:
-        return "HF_TOKEN not set."
+        raise RuntimeError("HF_TOKEN not set.")
 
     headers = {
         "Authorization": f"Bearer {token}",
@@ -45,8 +45,8 @@ def run_llm(prompt: str) -> str:
                 "content": prompt
             }
         ],
-        "max_tokens": 500,   # reduced from 700
-        "temperature": 0.1,
+        "max_tokens": 800,
+        "temperature": 0.2,
     }
 
     response = requests.post(API_URL, headers=headers, json=payload)
@@ -57,4 +57,26 @@ def run_llm(prompt: str) -> str:
         raise RuntimeError(response.text)
 
     data = response.json()
-    return data["choices"][0]["message"]["content"]
+
+    if "choices" not in data or len(data["choices"]) == 0:
+        raise RuntimeError(f"Unexpected response format: {data}")
+
+    message = data["choices"][0]["message"]
+    content = (message.get("content") or "").strip()
+
+    # 🚨 Guard against blank model output
+    if not content:
+        print("WARNING: Model returned empty content. Retrying once...")
+        retry = requests.post(API_URL, headers=headers, json=payload)
+
+        if retry.status_code == 200:
+            retry_data = retry.json()
+            retry_message = retry_data["choices"][0]["message"]
+            retry_content = (retry_message.get("content") or "").strip()
+
+            if retry_content:
+                return retry_content
+
+        return "I need a moment — could you repeat that question?"
+
+    return content
