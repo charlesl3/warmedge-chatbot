@@ -273,3 +273,5 @@ If ambiguity exists, briefly clarify before proceeding.
 "Singles" and "Skating Skills" are NOT interchangeable.
 "Singles" and "solo" are NOT interchangeable.
 Use precise official terminology.
+
+10. If the user does not mention "adult", always provide contents of the standard track! Never provide adult contents if the original question does not exactly and explicitly include the word, "adult".
