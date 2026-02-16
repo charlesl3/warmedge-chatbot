@@ -195,6 +195,8 @@ If new knowledge units are added:
 - Free Skate ≠ Freestyle rule enforced
 - test contents added: Singles, MITF for standard and adults
 - Model's provider was removed, because of hugging face, so I changed to openai's model
+- more history appending logics
+- added a few good manual units
 
 ## TO DO
 

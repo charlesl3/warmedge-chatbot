@@ -109,7 +109,8 @@ DATA_DIR = PROJECT_ROOT / "data"
 
 PASS2_EQUIP_DIR = DATA_DIR / "pass2_threads_equipment"
 PASS2_GENERAL_DIR = DATA_DIR / "pass2_threads_general"
-RULES_DIR = DATA_DIR / "rules_rag_units"   # 🔥 NEW INPUT
+RULES_DIR = DATA_DIR / "rules_rag_units"
+MANUAL_RAG_DIR = DATA_DIR / "manual_rag"
 
 STORE_DIR = PROJECT_ROOT / "rag_store"
 STORE_DIR.mkdir(parents=True, exist_ok=True)
@@ -130,9 +131,10 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 def collect_md_files():
     folders = [
+        MANUAL_RAG_DIR,      # manual priority
+        RULES_DIR,
         PASS2_EQUIP_DIR,
         PASS2_GENERAL_DIR,
-        RULES_DIR,  # 🔥 included
     ]
 
     files = []
@@ -179,8 +181,9 @@ def main():
             "source_path": rel_path
         })
 
-        emb = model.encode([text], convert_to_numpy=True).astype("float32")[0]
+        emb = model.encode(text, convert_to_numpy=True).astype("float32")
         emb = l2_normalize(emb)
+
         embeddings.append(emb)
 
     if not embeddings:
@@ -188,6 +191,7 @@ def main():
 
     X = np.vstack(embeddings).astype("float32")
 
+    # Cosine similarity via inner product on normalized vectors
     index = faiss.IndexFlatIP(X.shape[1])
     index.add(X)
 

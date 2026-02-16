@@ -188,9 +188,12 @@ def chat(req: ChatRequest):
         if session_id not in SESSIONS:
             SESSIONS[session_id] = []
 
-        history = SESSIONS[session_id]
+        # Always work on a copy first
+        history = list(SESSIONS[session_id])
 
+        # -------------------------
         # 1️⃣ Blank
+        # -------------------------
         if is_blank(message):
             return {
                 "reply": "Please ask a valid figure skating related question.",
@@ -198,12 +201,16 @@ def chat(req: ChatRequest):
                 "end": False,
             }
 
+        # -------------------------
         # 2️⃣ Social
+        # -------------------------
         if is_social_message(message):
             reply = clean_output(handle_social_message(message))
 
             history.append({"role": "user", "content": message})
             history.append({"role": "assistant", "content": reply})
+
+            # Commit trimmed history
             SESSIONS[session_id] = history[-MAX_TURNS * 2 :]
 
             return {
@@ -212,18 +219,22 @@ def chat(req: ChatRequest):
                 "end": is_farewell(message),
             }
 
-        # 3️⃣ RAG path
-        history.append({"role": "user", "content": message})
+        # -------------------------
+        # 3️⃣ RAG Path
+        # -------------------------
+        # Append user message to working copy only
+        working_history = history + [{"role": "user", "content": message}]
 
         reply = answer_question(
             question=message,
-            history=history,
+            history=working_history,
         )
 
         reply = clean_output(reply)
 
-        history.append({"role": "assistant", "content": reply})
-        SESSIONS[session_id] = history[-MAX_TURNS * 2 :]
+        # Only commit if generation succeeded
+        working_history.append({"role": "assistant", "content": reply})
+        SESSIONS[session_id] = working_history[-MAX_TURNS * 2 :]
 
         return {
             "reply": reply,
