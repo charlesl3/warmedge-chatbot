@@ -107,7 +107,7 @@ STORE_DIR = PROJECT_ROOT / "rag_store"
 INDEX_PATH = STORE_DIR / "goldenskate_pass2.faiss"
 META_PATH = STORE_DIR / "goldenskate_pass2_meta.json"
 
-EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
 
 
 # --------------------------------------------------
