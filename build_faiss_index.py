@@ -1,4 +1,5 @@
-# whole faiss, no chunk
+# whole faiss, manual_rag chunked only
+
 import json
 from pathlib import Path
 
@@ -37,7 +38,7 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 def collect_md_files():
     folders = [
-        MANUAL_RAG_DIR,      # manual priority
+        MANUAL_RAG_DIR,      # manual first
         RULES_DIR,
         PASS2_EQUIP_DIR,
         PASS2_GENERAL_DIR,
@@ -72,32 +73,78 @@ def main():
     embeddings = []
 
     for md_path in md_files:
-        text = md_path.read_text(encoding="utf-8", errors="ignore").strip()
 
+        text = md_path.read_text(encoding="utf-8", errors="ignore").strip()
         if not text:
             continue
 
-        if len(text) > MAX_CHARS_PER_DOC:
-            text = text[:MAX_CHARS_PER_DOC] + "\n\n[TRUNCATED]\n"
-
         rel_path = str(md_path.relative_to(PROJECT_ROOT))
 
-        documents.append({
-            "text": text,
-            "source_path": rel_path
-        })
+        # -------------------------------------------------
+        # 1️⃣ Manual RAG → chunk by H2 (## )
+        # -------------------------------------------------
+        if md_path.is_relative_to(MANUAL_RAG_DIR):
 
-        emb = model.encode(text, convert_to_numpy=True).astype("float32")
-        emb = l2_normalize(emb)
+            parts = text.split("\n## ")
 
-        embeddings.append(emb)
+            # Intro section before first H2 (shared prefix)
+            shared_prefix = parts[0].strip() if parts else ""
+
+            for i, part in enumerate(parts[1:], start=1):
+
+                chunk_body = "## " + part.strip()
+
+                if shared_prefix:
+                    chunk_text = shared_prefix + "\n\n" + chunk_body
+                else:
+                    chunk_text = chunk_body
+
+                if len(chunk_text) > MAX_CHARS_PER_DOC:
+                    chunk_text = chunk_text[:MAX_CHARS_PER_DOC] + "\n\n[TRUNCATED]\n"
+
+                documents.append({
+                    "text": chunk_text,
+                    "source_path": rel_path,
+                    "chunk_type": "manual",
+                    "chunk_id": f"{rel_path}::chunk_{i}"
+                })
+
+                emb = model.encode(
+                    chunk_text,
+                    convert_to_numpy=True
+                ).astype("float32")
+
+                emb = l2_normalize(emb)
+                embeddings.append(emb)
+
+        # -------------------------------------------------
+        # 2️⃣ Everything else → whole document
+        # -------------------------------------------------
+        else:
+
+            if len(text) > MAX_CHARS_PER_DOC:
+                text = text[:MAX_CHARS_PER_DOC] + "\n\n[TRUNCATED]\n"
+
+            documents.append({
+                "text": text,
+                "source_path": rel_path,
+                "chunk_type": "full_doc"
+            })
+
+            emb = model.encode(
+                text,
+                convert_to_numpy=True
+            ).astype("float32")
+
+            emb = l2_normalize(emb)
+            embeddings.append(emb)
 
     if not embeddings:
         raise RuntimeError("No embeddings created.")
 
     X = np.vstack(embeddings).astype("float32")
 
-    # Cosine similarity via inner product on normalized vectors
+    # Cosine similarity via inner product
     index = faiss.IndexFlatIP(X.shape[1])
     index.add(X)
 
@@ -121,4 +168,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

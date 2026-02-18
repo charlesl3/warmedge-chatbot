@@ -185,6 +185,20 @@ def chat(req: ChatRequest):
         # Generate or reuse session
         session_id = req.session_id or str(uuid.uuid4())
 
+        # =========================
+        # DEBUG: Session Tracking
+        # =========================
+        existing_history = SESSIONS.get(session_id, [])
+
+        print("\n===== SESSION DEBUG =====")
+        print("Incoming session_id:", req.session_id)
+        print("Using session_id:", session_id)
+        print("Session exists:", session_id in SESSIONS)
+        print("History length BEFORE:", len(existing_history))
+        if existing_history:
+            print("Last message in history:", existing_history[-1])
+        print("=========================\n")
+
         if session_id not in SESSIONS:
             SESSIONS[session_id] = []
 
