@@ -197,8 +197,11 @@ If new knowledge units are added:
 - Model's provider was removed, because of hugging face, so I changed to openai's model
 - more history appending logics
 - added a few good manual units
+- fixed memory issue - it was because the front end did not send back session id
+- added wiki pages for all skaters! - huge!
+- test contents: singles standard split
 
 ## TO DO
 
-- test contents: singles standard split
-- 
+- competition rag building
+- add a feature for users to clean the screen
