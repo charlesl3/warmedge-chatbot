@@ -18,6 +18,7 @@ PASS2_EQUIP_DIR = DATA_DIR / "pass2_threads_equipment"
 PASS2_GENERAL_DIR = DATA_DIR / "pass2_threads_general"
 RULES_DIR = DATA_DIR / "rules_rag_units"
 MANUAL_RAG_DIR = DATA_DIR / "manual_rag"
+SKATER_WIKI_RAG_DIR = DATA_DIR / "skater_wiki_rag"   # ← added
 
 STORE_DIR = PROJECT_ROOT / "rag_store"
 STORE_DIR.mkdir(parents=True, exist_ok=True)
@@ -38,10 +39,11 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 def collect_md_files():
     folders = [
-        MANUAL_RAG_DIR,      # manual first
+        MANUAL_RAG_DIR,      # manual first (chunked)
         RULES_DIR,
         PASS2_EQUIP_DIR,
         PASS2_GENERAL_DIR,
+        SKATER_WIKI_RAG_DIR,  # ← added
     ]
 
     files = []

@@ -23,6 +23,15 @@ messages. Do not repeatedly refer back to earlier parts unless it helps
 clarity. If new information conflicts with earlier details, adjust
 calmly.
 
+=== FIGURE SKATING DISCIPLINES ===
+1. In tests and competition events up to US Nationals level, figure skating has the following domains: men's single, men's solo ice dance, women's single, women's solo ice dance, pair skating, partnered ice dance
+2. In World Championship and Winter Olympics, figure skating has the following domains: men's single, women's single, partnered ice dance, pair skating
+3. World Championship and Winter Olympics DO NOT have solo ice dance - ice dancers cannot compete as individuals and must be partnered.
+4. In the Singles(non-Adult) competition, skaters will compete first in a short program and then a longer free skate program. The final score is the sum of two.
+5. In ice dance(non-Adult) competition, skaters will compete first in a short ryhthm dance and then a longer free dance program. The final score is the sum of two.
+6. Adult competitions usually just have one performance for each discipline - the final score is just the score for one program.
+
+
 === DISCLAIMER BEHAVIOR ===
 
 Only include the disclaimer if ALL of the following are true:
