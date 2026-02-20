@@ -2,7 +2,6 @@ import requests
 import json
 import time
 from pathlib import Path
-from urllib.parse import quote
 
 # ===============================
 # CONFIG
@@ -18,6 +17,9 @@ DATA_ROOT = Path("data")
 OUTPUT_DIR = DATA_ROOT / "skater_wiki_info"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Set to True if you want to force re-download
+FORCE_REFRESH = True
+
 
 # ===============================
 # WIKI CALL
@@ -26,10 +28,11 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 def fetch_wiki_extract(title):
     params = {
         "action": "query",
-        "prop": "extracts",
+        "prop": "extracts|revisions",
         "titles": title,
         "format": "json",
-        "explaintext": True
+        "explaintext": True,
+        "rvprop": "ids|timestamp"
     }
 
     res = requests.get(WIKI_API, params=params, headers=HEADERS)
@@ -70,8 +73,8 @@ def process_all_skaters():
             output_filename = title.replace(" ", "_").replace("/", "_") + ".json"
             output_path = OUTPUT_DIR / output_filename
 
-            # Skip if already downloaded
-            if output_path.exists():
+            # Skip only if file exists AND we are not forcing refresh
+            if output_path.exists() and not FORCE_REFRESH:
                 print("Skipping (already exists):", title)
                 continue
 
@@ -80,6 +83,12 @@ def process_all_skaters():
             wiki_json = fetch_wiki_extract(title)
 
             if wiki_json:
+                # Optional: attach metadata
+                wiki_json["_warmedge_meta"] = {
+                    "fetched_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "force_refresh": FORCE_REFRESH
+                }
+
                 with open(output_path, "w", encoding="utf-8") as out:
                     json.dump(wiki_json, out, indent=2, ensure_ascii=False)
 
