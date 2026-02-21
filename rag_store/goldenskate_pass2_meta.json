@@ -38,6 +38,222 @@
       "chunk_id": "data/manual_rag/2026_Winter_Olympics.md::chunk_6"
     },
     {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## Athlete Entries by Nation (RAG Units)\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_1"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Armenia in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs: Karina Akopova / Nikita Rakhmanin\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_2"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Australia in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs: Anastasiia Golubeva / Hektor Giotopoulos Moore\\\nIce Dance: Holly Harris / Jason Chan\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_3"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Austria in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Olga Mikutina\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_4"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Azerbaijan in 2026 winter olympics\n\nMen: Vladimir Litvintsev\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_5"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Belgium in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Loena Hendrickx, Nina Pinzarrone\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_6"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Bulgaria in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Alexandra Feigin\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_7"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Canada in 2026 winter olympics\n\nMen: Stephen Gogolev\\\nWomen: Madeline Schizas\\\nPairs:\\\n- Lia Pereira / Trennt Michaud\\\n- Deanna Stellato-Dudek / Maxime Deschamps\\\nIce Dance:\\\n- Piper Gilles / Paul Poirier\\\n- Marjorie Lajoie / Zachary Lagha\\\n- Marie-Jade Lauriault / Romain Le Gac\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_8"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team China in 2026 winter olympics\n\nMen: Jin Boyang\\\nWomen: Zhang Ruiyang\\\nPairs: Sui Wenjing / Han Cong\\\nIce Dance: Wang Shiyue / Liu Xinyu\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_9"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Chinese Taipei in 2026 winter olympics\n\nMen: Li Yu-Hsiang\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_10"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Czech Republic in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance:\\\n- Natálie Taschlerová / Filip Taschler\\\n- Kateřina Mrázková / Daniel Mrázek\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_11"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Estonia in 2026 winter olympics\n\nMen: Aleksandr Selevko\\\nWomen: Niina Petrõkina\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_12"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Finland in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Iida Karhunen\\\nPairs: no skaters attending this event\\\nIce Dance: Juulia Turkkila / Matthias Versluis\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_13"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team France in 2026 winter olympics\n\nMen: Kévin Aymoz, Adam Siao Him Fa\\\nWomen: Lorine Schild\\\nPairs: Camille Kovalev / Pavel Kovalev\\\nIce Dance:\\\n- Laurence Fournier Beaudry / Guillaume Cizeron\\\n- Evgeniia Lopareva / Geoffrey Brissaud\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_14"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Georgia in 2026 winter olympics\n\nMen: Nika Egadze\\\nWomen: Anastasiia Gubanova\\\nPairs: Anastasiia Metelkina / Luka Berulava\\\nIce Dance: Diana Davis / Gleb Smolkin\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_15"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Germany in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs:\\\n- Minerva Fabienne Hase / Nikita Volodin\\\n- Annika Hocke / Robert Kunkel\\\nIce Dance: Jennifer Janse van Rensburg / Benjamin Steffan\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_16"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Great Britain in 2026 winter olympics\n\nMen: Edward Appleby\\\nWomen: Kristen Spours\\\nPairs: Anastasia Vaipan-Law / Luke Digby\\\nIce Dance:\\\n- Phebe Bekker / James Hernandez\\\n- Lilah Fear / Lewis Gibson\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_17"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Hungary in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs: Maria Pavlova / Alexei Sviatchenko\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_18"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Individual Neutral Athletes in 2026 winter olympics\n\nMen: Petr Gumennik\\\nWomen: Adeliia Petrosian, Viktoriia Safonova\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_19"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Israel in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Mariia Seniuk\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_20"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Italy in 2026 winter olympics\n\nMen: Daniel Grassl, Matteo Rizzo\\\nWomen: Lara Naki Gutmann\\\nPairs:\\\n- Sara Conti / Niccolò Macii\\\n- Rebecca Ghilardi / Filippo Ambrosini\\\nIce Dance: Charlène Guignard / Marco Fabbri\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_21"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Japan in 2026 winter olympics\n\nMen: Yuma Kagiyama, Kao Miura, Shun Sato\\\nWomen: Mone Chiba, Ami Nakai, Kaori Sakamoto\\\nPairs:\\\n- Riku Miura / Ryuichi Kihara\\\n- Yuna Nagaoka / Sumitada Moriguchi\\\nIce Dance: Utana Yoshida / Masaya Morita\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_22"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Kazakhstan in 2026 winter olympics\n\nMen: Mikhail Shaidorov\\\nWomen: Sofia Samodelkina\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_23"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Latvia in 2026 winter olympics\n\nMen: Fedirs Kuļišs, Deniss Vasiļjevs\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_24"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Lithuania in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Meda Variakojytė\\\nPairs: no skaters attending this event\\\nIce Dance: Allison Reed / Saulius Ambrulevičius\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_25"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Mexico in 2026 winter olympics\n\nMen: Donovan Carrillo\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_26"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Netherlands in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: no skaters attending this event\\\nPairs: Daria Danilova / Michel Tsiba\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_27"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Poland in 2026 winter olympics\n\nMen: Vladimir Samoilov\\\nWomen: Ekaterina Kurakova\\\nPairs: Ioulia Chtchetinina / Michał Woźniak\\\nIce Dance: Sofiia Dovhal / Wiktor Kulesza\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_28"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Romania in 2026 winter olympics\n\nMen: no skaters attending this event\\\nWomen: Julia Sauter\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_29"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Slovakia in 2026 winter olympics\n\nMen: Adam Hagara\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_30"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team South Korea in 2026 winter olympics\n\nMen: Cha Jun-hwan, Kim Hyun-gyeom\\\nWomen: Lee Hae-in, Shin Ji-a\\\nPairs: no skaters attending this event\\\nIce Dance: Hannah Lim / Ye Quan\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_31"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Spain in 2026 winter olympics\n\nMen: Tomàs-Llorenç Guarino Sabaté\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance:\\\n- Olivia Smart / Tim Dieck\\\n- Sofía Val / Asaf Kazimov\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_32"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Sweden in 2026 winter olympics\n\nMen: Andreas Nordebäck\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: Milla Ruud Reitan / Nikolaj Majorov\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_33"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Switzerland in 2026 winter olympics\n\nMen: Lukas Britschgi\\\nWomen: Livia Kaiser, Kimmy Repond\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_34"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team Ukraine in 2026 winter olympics\n\nMen: Kyrylo Marsak\\\nWomen: no skaters attending this event\\\nPairs: no skaters attending this event\\\nIce Dance: no skaters attending this event\n\n------------------------------------------------------------------------",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_35"
+    },
+    {
+      "text": "# Figure Skating at the 2026 Winter Olympics\n\n## team United States in 2026 winter olympics\n\nMen: Ilia Malinin, Maxim Naumov, Andrew Torgashev\\\nWomen: Amber Glenn, Isabeau Levito, Alysa Liu\\\nPairs:\\\n- Emily Chan / Spencer Howe\\\n- Ellie Kam / Daniel O'Shea\\\nIce Dance:\\\n- Christina Carreira / Anthony Ponomarenko\\\n- Madison Chock / Evan Bates\\\n- Emilea Zingas / Vadym Kolesnik",
+      "source_path": "data/manual_rag/2026_winter_olympics_names.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/2026_winter_olympics_names.md::chunk_36"
+    },
+    {
       "text": "# Category: Turns\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating turns are edge-based directional changes performed\nprimarily on one foot (except for two-foot turns such as mohawks and\nchoctaws). They are foundational elements in Skating Skills tests, step\nsequences, transitions, and ice dance.\n\nAll turns require: - A clearly established entry edge - Controlled\nrotation around a stable axis - A clean exit edge - Continuous flow\nwithout scraping or stepping\n\nEdge notation: - FO = Forward Outside - FI = Forward Inside - BO =\nBackward Outside - BI = Backward Inside\n\nAll turns can be performed on either foot and in both rotational\ndirections.\n\n------------------------------------------------------------------------\n\n## Turn: Three Turn\n\n### Definition\n\nThree Turn is A one-foot turn that changes direction (forward ↔ backward), changes\nedge (outside ↔ inside), and changes lobe direction. The tracing\nresembles the number 3 because the entry and exit curves form opposing\narcs.\n\n### Edge Structure\n\nFO → BI\\\nFI → BO\\\nBO → FI\\\nBI → FO\n\n### Variants\n\nPerformed on either foot and in both clockwise and counterclockwise\nrotation.\n\n### Technical Characteristics\n\n-   Entry edge must be clearly established before rotation begins\n-   Rotation occurs in the direction of the curve\n-   Controlled body check at the pivot point\n-   Immediate, clean exit edge without scraping\n-   Continuous flow maintained after the turn\n\n### Common Errors\n\n-   Flat or shallow entry edge\n-   Excessive upper body rotation\n-   Scraped or stepped exit\n-   Loss of lobe shape\n\n### Notes\n\nThree turns are among the first advanced turns taught and are heavily\nused in Skating Skills tests and step sequences.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/figure_skating_turns.md",
       "chunk_type": "manual",
@@ -212,58 +428,64 @@
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_1"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Salchow\n\n### Definition\n\nSalchow is An edge jump that takes off from a back inside edge without toe\nassistance.\n\n### Takeoff Structure\n\n-   Entry edge: Back Inside (BI)\n-   Assist: None\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Deep back inside edge\n-   Controlled upper body alignment\n-   Free leg swing generates lift\n-   Centered rotational axis\n\n### Common Errors\n\n-   Shallow entry edge\n-   Excessive upper body swing\n-   Leaning inside on landing\n\n### Notes\n\nTypically the first double jump learned by many skaters.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Salchow\n\n### Definition\n\nSalchow is An edge jump that takes off from a back inside edge without toe\nassistance.\n\n### Takeoff Structure\n\n-   Entry edge: Back Inside (BI)\n-   Assist: None\n-   Landing edge: Back Outside (BO)",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_2"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Loop\n\n### Definition\n\nLoop is An edge jump that takes off directly from a back outside edge and lands\non the same back outside edge without toe assistance.\n\n### Takeoff Structure\n\n-   Entry edge: Back Outside (BO)\n-   Assist: None\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Strong ankle stability\n-   Vertical lift without toe support\n-   Tight air position\n-   Controlled landing check\n\n### Common Errors\n\n-   Edge flattening\n-   Insufficient lift\n-   Off-axis landing\n\n### Notes\n\nCommonly used as the second jump in combinations.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Euler (aka half loop)\n### Definition\nEuler Jump is an edge jump that takes off from a back outside edge without toe\nassistance but lands on the backward inside edge, not outside edge (which is a loop jump). It is NOT a toe jump or toe loop jump!\n\n### Takeoff Structure\n\n-   Entry edge: Back outside (BO)\n-   Assist: None\n-   Landing edge: Back Inside of another leg (BI)\n\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Deep back inside edge\n-   Controlled upper body alignment\n-   Free leg swing generates lift\n-   Centered rotational axis\n\n### Common Errors\n\n-   Shallow entry edge\n-   Excessive upper body swing\n-   Leaning inside on landing\n\n### Notes\n\nTypically the first double jump learned by many skaters.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_3"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Flip\n\n### Definition\n\nFlip jump is A toe-assisted jump that takes off from a back inside edge with toe pick\nsupport.\n\n### Takeoff Structure\n\n-   Entry edge: Back Inside (BI)\n-   Assist: Toe pick\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Clear inside edge at takeoff\n-   Controlled toe placement\n-   Strong vertical lift\n-   Balanced landing edge\n\n### Common Errors\n\n-   Edge change before takeoff\n-   Excessive pre-rotation\n-   Weak toe assist\n\n### Edge Call\n\nIf taken off from an outside edge, it is called a \"lip.\"\n\n### Notes\n\nRequires strong edge discipline for clean execution.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Loop\n\n### Definition\n\nLoop is An edge jump that takes off directly from a back outside edge and lands\non the same back outside edge without toe assistance.\n\n### Takeoff Structure\n\n-   Entry edge: Back Outside (BO)\n-   Assist: None\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Strong ankle stability\n-   Vertical lift without toe support\n-   Tight air position\n-   Controlled landing check\n\n### Common Errors\n\n-   Edge flattening\n-   Insufficient lift\n-   Off-axis landing\n\n### Notes\n\nCommonly used as the second jump in combinations.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_4"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Lutz\n\n### Definition\n\nLutz jump is A toe-assisted jump that takes off from a long back outside edge with\ncounter-rotation before toe insertion.\n\n### Takeoff Structure\n\n-   Entry edge: Back Outside (BO)\n-   Assist: Toe pick\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Sustained outside edge\n-   Strong counter-rotation control\n-   Stable vertical axis\n-   Clean landing check\n\n### Common Errors\n\n-   Edge collapse to inside\n-   Excessive pre-rotation\n-   Under-rotation\n\n### Edge Call\n\nIf taken off from an inside edge, it is called a \"flutz.\"\n\n### Notes\n\nConsidered one of the most technically demanding toe jumps.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Flip\n\n### Definition\n\nFlip jump is A toe-assisted jump that takes off from a back inside edge with toe pick\nsupport.\n\n### Takeoff Structure\n\n-   Entry edge: Back Inside (BI)\n-   Assist: Toe pick\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Clear inside edge at takeoff\n-   Controlled toe placement\n-   Strong vertical lift\n-   Balanced landing edge\n\n### Common Errors\n\n-   Edge change before takeoff\n-   Excessive pre-rotation\n-   Weak toe assist\n\n### Edge Call\n\nIf taken off from an outside edge, it is called a \"lip.\"\n\n### Notes\n\nRequires strong edge discipline for clean execution.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_5"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Axel\n\n### Definition\n\nAxel jump is An edge jump that takes off from a forward outside edge, requiring an\nadditional half rotation due to forward takeoff.\n\n### Takeoff Structure\n\n-   Entry edge: Forward Outside (FO)\n-   Assist: None\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle Axel = 1.5 rotations\\\nDouble Axel = 2.5 rotations\\\nTriple Axel = 3.5 rotations\\\nQuad Axel = 4.5 rotations\n\n### Technical Characteristics\n\n-   Strong forward edge control\n-   Explosive vertical lift\n-   Tight rotational axis\n-   Precise landing timing\n\n### Common Errors\n\n-   Insufficient height\n-   Leaning forward at takeoff\n-   Under-rotation\n\n### Notes\n\nThe only jump that takes off forward, structurally distinct from all\nothers.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Lutz\n\n### Definition\n\nLutz jump is A toe-assisted jump that takes off from a long back outside edge with\ncounter-rotation before toe insertion.\n\n### Takeoff Structure\n\n-   Entry edge: Back Outside (BO)\n-   Assist: Toe pick\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle, Double, Triple, Quad\n\n### Technical Characteristics\n\n-   Sustained outside edge\n-   Strong counter-rotation control\n-   Stable vertical axis\n-   Clean landing check\n\n### Common Errors\n\n-   Edge collapse to inside\n-   Excessive pre-rotation\n-   Under-rotation\n\n### Edge Call\n\nIf taken off from an inside edge, it is called a \"flutz.\"\n\n### Notes\n\nConsidered one of the most technically demanding toe jumps.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_6"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Double Jumps\n\n### Definition\n\nA jump completing two full revolutions in the air (Axel requires 2.5\nrotations).\n\n### Technical Characteristics\n\n-   Increased rotational speed\n-   Stronger air compression\n-   Higher vertical lift than singles\n\n### Notes\n\nAll six jump types exist at the double level.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Jump: Axel\n\n### Definition\n\nAxel jump is An edge jump that takes off from a forward outside edge, requiring an\nadditional half rotation due to forward takeoff.\n\n### Takeoff Structure\n\n-   Entry edge: Forward Outside (FO)\n-   Assist: None\n-   Landing edge: Back Outside (BO)\n\n### Rotation Levels\n\nSingle Axel = 1.5 rotations\\\nDouble Axel = 2.5 rotations\\\nTriple Axel = 3.5 rotations\\\nQuad Axel = 4.5 rotations\n\n### Technical Characteristics\n\n-   Strong forward edge control\n-   Explosive vertical lift\n-   Tight rotational axis\n-   Precise landing timing\n\n### Common Errors\n\n-   Insufficient height\n-   Leaning forward at takeoff\n-   Under-rotation\n\n### Notes\n\nThe only jump that takes off forward, structurally distinct from all\nothers.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_7"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Triple Jumps\n\n### Definition\n\nA jump completing three full revolutions in the air (Axel requires 3.5\nrotations).\n\n### Technical Characteristics\n\n-   Extremely tight air position\n-   Rapid angular velocity\n-   Clean landing check\n\n### Historical Milestones\n\n-   First ratified triple Axel: Vern Taylor (USA), 1978 World\n    Championships\n-   First woman to land ratified triple Axel internationally: Midori Ito\n    (Japan), 1988 NHK Trophy\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Double Jumps\n\n### Definition\n\nA jump completing two full revolutions in the air (Axel requires 2.5\nrotations).\n\n### Technical Characteristics\n\n-   Increased rotational speed\n-   Stronger air compression\n-   Higher vertical lift than singles\n\n### Notes\n\nAll six jump types exist at the double level.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_8"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Quadruple Jumps\n\n### Definition\n\nA jump completing four full revolutions in the air (Axel requires 4.5\nrotations).\n\n### Historical Milestones\n\n-   Quad toe loop: Kurt Browning (Canada), 1988 World Championships\n-   Quad salchow: Timothy Goebel (USA), 1998 Junior Grand Prix Final\n-   Quad lutz: Brandon Mroz (USA), 2011 NHK Trophy\n-   Quad flip: Shoma Uno (Japan), 2016 Team Challenge Cup\n-   Quad loop: Yuzuru Hanyu (Japan), 2016 Autumn Classic International\n-   Quad axel: Ilia Malinin (USA), 2022 U.S. International Classic\n\n### Notes\n\nThe quad Axel is currently the most technically demanding ratified jump.\n\n------------------------------------------------------------------------",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Triple Jumps\n\n### Definition\n\nA jump completing three full revolutions in the air (Axel requires 3.5\nrotations).\n\n### Technical Characteristics\n\n-   Extremely tight air position\n-   Rapid angular velocity\n-   Clean landing check\n\n### Historical Milestones\n\n-   First ratified triple Axel: Vern Taylor (USA), 1978 World\n    Championships\n-   First woman to land ratified triple Axel internationally: Midori Ito\n    (Japan), 1988 NHK Trophy\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_9"
     },
     {
-      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Quintuple Jumps\n\n### Definition\n\nA theoretical jump completing five full revolutions in the air (Axel\nwould require 5.5 rotations).\n\n### Status\n\n-   Listed in the ISU Scale of Values\n-   Not ratified in senior international competition\n\n### Notes\n\nAttempts have been reported in training but not officially ratified.\n\n------------------------------------------------------------------------\n\nEnd of document.",
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Quadruple Jumps\n\n### Definition\n\nA jump completing four full revolutions in the air (Axel requires 4.5\nrotations).\n\n### Historical Milestones\n\n-   Quad toe loop: Kurt Browning (Canada), 1988 World Championships\n-   Quad salchow: Timothy Goebel (USA), 1998 Junior Grand Prix Final\n-   Quad lutz: Brandon Mroz (USA), 2011 NHK Trophy\n-   Quad flip: Shoma Uno (Japan), 2016 Team Challenge Cup\n-   Quad loop: Yuzuru Hanyu (Japan), 2016 Autumn Classic International\n-   Quad axel: Ilia Malinin (USA), 2022 U.S. International Classic\n\n### Notes\n\nThe quad Axel is currently the most technically demanding ratified jump.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/type_of_jumps.md",
       "chunk_type": "manual",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_10"
+    },
+    {
+      "text": "# Category: Jumps\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nFigure skating jumps are categorized by takeoff edge, toe assistance,\nand number of rotations completed in the air. There are six fundamental\njump types. All competitive multi-rotation jumps are built from these\nsix technical foundations.\n\nEach jump requires: - A clearly defined entry edge - Controlled takeoff\nmechanics - Air position alignment for rotation - Clean landing on a\nback outside edge (except special cases in combinations)\n\n------------------------------------------------------------------------\n\n## Concept: Quintuple Jumps\n\n### Definition\n\nA theoretical jump completing five full revolutions in the air (Axel\nwould require 5.5 rotations).\n\n### Status\n\n-   Listed in the ISU Scale of Values\n-   Not ratified in senior international competition\n\n### Notes\n\nAttempts have been reported in training but not officially ratified.\n\n------------------------------------------------------------------------\n\nEnd of document.",
+      "source_path": "data/manual_rag/type_of_jumps.md",
+      "chunk_type": "manual",
+      "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
     },
     {
       "text": "# Discipline: Adult Skating Skills\n# Track: Adult (21+)\n# Level: Adult Bronze\n# Former Name before July 2023: Adult Bronze Moves in the Field (MITF) \n\n\nThis document describes the Adult Bronze Skating Skills test requirements.\n\n---\nBelow are what is inside of Adult Bronze Skating Skills test (formerly Adult Bronze Moves in the Field, or MITF):\n\n## 1. Forward & Backward Perimeter Power Stroking\n- Consistent quality crossovers\n- Solid edge pushing\n- Good ice coverage\n- Lobes aligned on axis\n- Proper weight shift on backward inside two-foot transition\n\n## 2. Forward Power Three-Turns\n- Basic flow and strength\n- Proper weight shift on transitions\n- Power generated from backward inside edge\n- Correct edges after three-turn\n- Well-formed lobes\n- Axis maintained\n\n## 3. Alternating Backward Crossovers to Backward Outside Edges\n- Good speed and acceleration\n- Strong posture\n- Clear ice coverage\n- Controlled sustained extensions\n- Equal lobe size\n\n## 4. Forward Circle Eight\n- Round circles similar in size\n- Proper edge push\n- Body control through repetition\n\n## 5. Five-Step Mohawk Sequence\n- Good ice coverage\n- Even beat and rhythm\n- Correct edges\n- Extended free leg\n- Mohawks placed near one-third of lobe",
