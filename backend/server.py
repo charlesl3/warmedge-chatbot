@@ -121,7 +121,20 @@ from rag.intents import (
     handle_social_message,
 )
 
+from rag.retriever import load_index_and_meta, get_embed_model
+
+
 app = FastAPI()
+
+# -------------------------
+# PRELOAD RAG AT STARTUP
+# -------------------------
+@app.on_event("startup")
+def preload_rag():
+    print("Preloading RAG system...")
+    load_index_and_meta()
+    get_embed_model()
+    print("RAG preloaded.")
 
 # -------------------------
 # CORS
