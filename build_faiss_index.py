@@ -47,10 +47,10 @@ def classify_document(md_path: Path):
     """
 
     if md_path.is_relative_to(MANUAL_RAG_DIR):
-        return "manual", "manual_curated", 3
+        return "manual", "manual_curated", 2
 
     if md_path.is_relative_to(RULES_DIR):
-        return "rules", "official_rules", 3
+        return "rules", "official_rules", 1
 
     if md_path.is_relative_to(GENERAL_WIKI_RAG_DIR):
         return "wiki_general", "wiki_reference", 2
@@ -62,10 +62,10 @@ def classify_document(md_path: Path):
         return "wiki_skater", "wiki_reference", 2
 
     if md_path.is_relative_to(PASS2_EQUIP_DIR):
-        return "forum_equipment", "forum_distilled", 1
+        return "forum_equipment", "forum_distilled", 3
 
     if md_path.is_relative_to(PASS2_GENERAL_DIR):
-        return "forum_general", "forum_distilled", 1
+        return "forum_general", "forum_distilled", 3
 
     return "other", "unknown", 0
 
