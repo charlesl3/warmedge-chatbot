@@ -1,7 +1,13 @@
 from rag.level_taxonomy import detect_legacy_term
 
 
-def build_llm_input(prompt: str, question: str, docs: list[dict], history: list[dict]) -> str:
+def build_llm_input(
+    prompt: str,
+    question: str,
+    docs: list[str],   # ← changed
+    history: list[dict]
+) -> str:
+
     parts = []
 
     # Base system prompt
@@ -17,8 +23,8 @@ def build_llm_input(prompt: str, question: str, docs: list[dict], history: list[
             parts.append(
                 f'Important: If the user refers to the legacy test name '
                 f'"{normalization["legacy_track"]}" '
-                f'(including minor spelling variations or slightly different phrasing), '
-                f'you must clarify that it was renamed to '
+                f'(including minor spelling variations), '
+                f'clarify that it was renamed to '
                 f'"{normalization["mapped_track"]}" in July 2023 '
                 f'and use the current name in your response.'
             )
@@ -30,7 +36,7 @@ def build_llm_input(prompt: str, question: str, docs: list[dict], history: list[
                 f'Important: If the user refers to the legacy level '
                 f'"{normalization["legacy_level"]}" '
                 f'(including minor spelling variations), '
-                f'you must clarify that it was renamed to '
+                f'clarify that it was renamed to '
                 f'"{normalization["mapped_level"]}" in July 2023 '
                 f'and use the current level name in your response.'
             )
@@ -40,7 +46,7 @@ def build_llm_input(prompt: str, question: str, docs: list[dict], history: list[
         if normalization.get("is_adult"):
             parts.append(
                 "Note: This question concerns the Adult test track. "
-                "Interpret levels using the Adult level structure."
+                "Interpret levels using the Adult structure."
             )
             parts.append("")
 
@@ -57,11 +63,11 @@ def build_llm_input(prompt: str, question: str, docs: list[dict], history: list[
     parts.append("")
 
     # Retrieved documents
-    parts.append("Relevant skating experiences:")
+    parts.append("Relevant skating knowledge:")
     parts.append("")
 
-    for d in docs:
-        parts.append(d["text"])
+    for text in docs:
+        parts.append(text)
         parts.append("")
 
     # Final instruction

@@ -1,38 +1,3 @@
-# from pathlib import Path
-#
-# from rag.retriever import retrieve
-# from rag.prompt_builder import build_llm_input
-# from rag.llm import run_ollama
-# from rag.intents import (
-#     is_blank,
-#     is_social_message,
-#     handle_social_message,
-# )
-#
-# PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "rag_answer.txt"
-# TOP_K = 6
-#
-#
-# def answer_question(question: str, history: list[dict]) -> str:
-#     if is_blank(question):
-#         return "Please ask a valid figure skating related question."
-#
-#     if is_social_message(question):
-#         return handle_social_message(question)
-#
-#     prompt = PROMPT_PATH.read_text(encoding="utf-8")
-#     docs = retrieve(question, k=TOP_K)
-#
-#     llm_input = build_llm_input(
-#         prompt=prompt,
-#         question=question,
-#         docs=docs,
-#         history=history,
-#     )
-#
-#     return run_ollama(llm_input)
-
-
 from pathlib import Path
 from typing import List, Dict, Optional
 
@@ -110,6 +75,40 @@ def clarify_message(track: str) -> str:
 
 
 # --------------------------------------------------
+# Priority Boosting
+# --------------------------------------------------
+def apply_priority_boost(retrieval: Dict) -> Dict:
+    """
+    Adjust scores slightly using metadata priority.
+    Does not break original ordering if no scores available.
+    """
+
+    if "scores" not in retrieval or "sources" not in retrieval:
+        return retrieval
+
+    boosted = []
+
+    for score, meta in zip(retrieval["scores"], retrieval["sources"]):
+        priority = meta.get("priority", 0)
+        adjusted_score = score * (1 + 0.08 * priority)
+        boosted.append(adjusted_score)
+
+    # Re-sort based on adjusted scores
+    ranked = sorted(
+        zip(boosted, retrieval["results"], retrieval["sources"]),
+        key=lambda x: x[0],
+        reverse=True,
+    )
+
+    retrieval["scores"] = [r[0] for r in ranked]
+    retrieval["results"] = [r[1] for r in ranked]
+    retrieval["sources"] = [r[2] for r in ranked]
+    retrieval["top_score"] = retrieval["scores"][0] if retrieval["scores"] else None
+
+    return retrieval
+
+
+# --------------------------------------------------
 # Main Answer Function
 # --------------------------------------------------
 def answer_question(question: str, history: List[Dict]) -> str:
@@ -132,6 +131,9 @@ def answer_question(question: str, history: List[Dict]) -> str:
         track=track,
     )
 
+    # Apply metadata-based score boosting
+    retrieval = apply_priority_boost(retrieval)
+
     # -------------------------
     # 2️⃣ Fallback Retrieval (no track filter)
     # -------------------------
@@ -141,6 +143,8 @@ def answer_question(question: str, history: List[Dict]) -> str:
             k=TOP_K,
             track=None,
         )
+        fallback = apply_priority_boost(fallback)
+
         if not weak_retrieval(fallback.get("top_score")):
             retrieval = fallback
 
@@ -154,8 +158,12 @@ def answer_question(question: str, history: List[Dict]) -> str:
     print("Top Score:", retrieval.get("top_score"))
     print("Results Count:", len(retrieval.get("results", [])))
 
-    for i, src in enumerate(retrieval.get("sources", []), 1):
-        print(f"Result {i} source:", src)
+    for i, meta in enumerate(retrieval.get("sources", []), 1):
+        print(f"\nResult {i}")
+        print("  Source:", meta.get("source_path"))
+        print("  Type:", meta.get("doc_type"))
+        print("  Group:", meta.get("source_group"))
+        print("  Priority:", meta.get("priority"))
 
     print("======================\n")
 

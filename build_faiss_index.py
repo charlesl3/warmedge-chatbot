@@ -17,13 +17,15 @@ PASS2_GENERAL_DIR = DATA_DIR / "pass2_threads_general"
 RULES_DIR = DATA_DIR / "rules_rag_units"
 MANUAL_RAG_DIR = DATA_DIR / "manual_rag"
 SKATER_WIKI_RAG_DIR = DATA_DIR / "skater_wiki_rag"
-ELEMENT_WIKI_RAG_DIR = DATA_DIR / "element_wiki_rag"  # ✅ added
+ELEMENT_WIKI_RAG_DIR = DATA_DIR / "element_wiki_rag"
+GENERAL_WIKI_RAG_DIR = DATA_DIR / "general_wiki_rag"   # ✅ NEW
 
 STORE_DIR = PROJECT_ROOT / "rag_store"
 STORE_DIR.mkdir(parents=True, exist_ok=True)
 
-INDEX_PATH = STORE_DIR / "goldenskate_pass2.faiss"
-META_PATH = STORE_DIR / "goldenskate_pass2_meta.json"
+# Renamed — this is now your master index
+INDEX_PATH = STORE_DIR / "warmedge_master_index.faiss"
+META_PATH = STORE_DIR / "warmedge_master_meta.json"
 
 EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
 MAX_CHARS_PER_DOC = 9000
@@ -36,6 +38,38 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
     return v / (np.linalg.norm(v) + 1e-12)
 
 
+def classify_document(md_path: Path):
+    """
+    Returns:
+        doc_type: fine-grained type
+        source_group: broader category
+        priority: retrieval weight hint (0–3)
+    """
+
+    if md_path.is_relative_to(MANUAL_RAG_DIR):
+        return "manual", "manual_curated", 3
+
+    if md_path.is_relative_to(RULES_DIR):
+        return "rules", "official_rules", 3
+
+    if md_path.is_relative_to(GENERAL_WIKI_RAG_DIR):
+        return "wiki_general", "wiki_reference", 2
+
+    if md_path.is_relative_to(ELEMENT_WIKI_RAG_DIR):
+        return "wiki_element", "wiki_reference", 2
+
+    if md_path.is_relative_to(SKATER_WIKI_RAG_DIR):
+        return "wiki_skater", "wiki_reference", 2
+
+    if md_path.is_relative_to(PASS2_EQUIP_DIR):
+        return "forum_equipment", "forum_distilled", 1
+
+    if md_path.is_relative_to(PASS2_GENERAL_DIR):
+        return "forum_general", "forum_distilled", 1
+
+    return "other", "unknown", 0
+
+
 def collect_md_files():
     folders = [
         MANUAL_RAG_DIR,
@@ -43,7 +77,8 @@ def collect_md_files():
         PASS2_EQUIP_DIR,
         PASS2_GENERAL_DIR,
         SKATER_WIKI_RAG_DIR,
-        ELEMENT_WIKI_RAG_DIR,  # ✅ included
+        ELEMENT_WIKI_RAG_DIR,
+        GENERAL_WIKI_RAG_DIR,  # ✅ included
     ]
 
     files = []
@@ -81,14 +116,14 @@ def main():
             continue
 
         rel_path = str(md_path.relative_to(PROJECT_ROOT))
+        doc_type, source_group, priority = classify_document(md_path)
 
         # =================================================
         # 1️⃣ Manual RAG → chunk by H2
         # =================================================
-        if md_path.is_relative_to(MANUAL_RAG_DIR):
+        if doc_type == "manual":
 
             parts = text.split("\n## ")
-
             shared_prefix = parts[0].strip() if parts else ""
 
             for i, part in enumerate(parts[1:], start=1):
@@ -107,7 +142,10 @@ def main():
                     "text": chunk_text,
                     "source_path": rel_path,
                     "chunk_type": "manual_chunk",
-                    "doc_type": "manual",
+                    "doc_type": doc_type,
+                    "source_group": source_group,
+                    "priority": priority,
+                    "title": md_path.stem,
                     "chunk_id": f"{rel_path}::chunk_{i}"
                 })
 
@@ -123,25 +161,14 @@ def main():
             if len(text) > MAX_CHARS_PER_DOC:
                 text = text[:MAX_CHARS_PER_DOC] + "\n\n[TRUNCATED]\n"
 
-            # determine doc type
-            if md_path.is_relative_to(ELEMENT_WIKI_RAG_DIR):
-                doc_type = "wiki_element"
-            elif md_path.is_relative_to(SKATER_WIKI_RAG_DIR):
-                doc_type = "wiki_skater"
-            elif md_path.is_relative_to(RULES_DIR):
-                doc_type = "rules"
-            elif md_path.is_relative_to(PASS2_EQUIP_DIR):
-                doc_type = "forum_equipment"
-            elif md_path.is_relative_to(PASS2_GENERAL_DIR):
-                doc_type = "forum_general"
-            else:
-                doc_type = "other"
-
             documents.append({
                 "text": text,
                 "source_path": rel_path,
                 "chunk_type": "full_doc",
-                "doc_type": doc_type
+                "doc_type": doc_type,
+                "source_group": source_group,
+                "priority": priority,
+                "title": md_path.stem
             })
 
             emb = model.encode(text, convert_to_numpy=True).astype("float32")
@@ -153,7 +180,7 @@ def main():
 
     X = np.vstack(embeddings).astype("float32")
 
-    # cosine similarity via inner product
+    # Cosine similarity via inner product
     index = faiss.IndexFlatIP(X.shape[1])
     index.add(X)
 
@@ -161,6 +188,8 @@ def main():
 
     meta = {
         "embed_model_name": EMBED_MODEL_NAME,
+        "index_type": "cosine_similarity_IP",
+        "total_vectors": int(index.ntotal),
         "documents": documents
     }
 
