@@ -40,20 +40,38 @@ def l2_normalize(v: np.ndarray) -> np.ndarray:
 
 def classify_document(md_path: Path):
     """
+    Classifies a document based on directory location.
+
     Returns:
         doc_type: fine-grained type
         source_group: broader category
-        priority: retrieval weight hint (0–3)
+        priority: retrieval weight hint (0–4)
+
+    Authority ladder:
+        4 → official rules (ground truth)
+        3 → manually curated structured knowledge
+        2 → wiki-style reference material
+        1 → distilled forum content
+        0 → unknown / fallback
     """
 
-    if md_path.is_relative_to(MANUAL_RAG_DIR):
-        return "manual", "manual_curated", 3
-
+    # -------------------------
+    # Level 4 — Official Rules
+    # -------------------------
     if md_path.is_relative_to(RULES_DIR):
-        return "rules", "official_rules", 3
+        return "rules", "official_rules", 6
 
+    # -------------------------
+    # Level 3 — Manual Curated
+    # -------------------------
+    if md_path.is_relative_to(MANUAL_RAG_DIR):
+        return "manual", "manual_curated", 5
+
+    # -------------------------
+    # Level 2 — Wiki References
+    # -------------------------
     if md_path.is_relative_to(GENERAL_WIKI_RAG_DIR):
-        return "wiki_general", "wiki_reference", 3
+        return "wiki_general", "wiki_reference", 2
 
     if md_path.is_relative_to(ELEMENT_WIKI_RAG_DIR):
         return "wiki_element", "wiki_reference", 2
@@ -61,12 +79,18 @@ def classify_document(md_path: Path):
     if md_path.is_relative_to(SKATER_WIKI_RAG_DIR):
         return "wiki_skater", "wiki_reference", 2
 
+    # -------------------------
+    # Level 1 — Forum Distilled
+    # -------------------------
     if md_path.is_relative_to(PASS2_EQUIP_DIR):
         return "forum_equipment", "forum_distilled", 1
 
     if md_path.is_relative_to(PASS2_GENERAL_DIR):
         return "forum_general", "forum_distilled", 1
 
+    # -------------------------
+    # Level 0 — Unknown
+    # -------------------------
     return "other", "unknown", 0
 
 

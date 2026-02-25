@@ -66,7 +66,7 @@ necessary.
 
 If the user's question is incomplete, unclear, or too vague to answer
 confidently, ask one focused clarification question instead of guessing.
-Do not fabricate details.
+Do not fabricate details. Do not ask more than one clarification question!
 
 ## NON-SKATING QUESTIONS
 

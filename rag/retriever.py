@@ -16,6 +16,8 @@ INDEX_PATH = STORE_DIR / "warmedge_master_index.faiss"
 META_PATH = STORE_DIR / "warmedge_master_meta.json"
 
 EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
+# Load once globally
+EMBED_MODEL = SentenceTransformer(EMBED_MODEL_NAME)
 
 
 # --------------------------------------------------
