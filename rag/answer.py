@@ -55,7 +55,7 @@ BRANDS = [
     "graf",
     "aura",
     "eclipse",
-    "Paramount",
+    "paramount",
     "wilson",
     "jw"
 ]
