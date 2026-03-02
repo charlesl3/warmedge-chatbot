@@ -25,6 +25,10 @@ FALLBACK_SHORT_THRESHOLD = 0.40
 # If we merge, make the current message dominate
 CURRENT_WEIGHT = 2
 
+# Brand injection retrieval settings
+BRAND_INJECT_K = 2
+RAW_K = 30
+
 
 # --------------------------------------------------
 # Debug Printer
@@ -42,7 +46,7 @@ def cosine_sim(a: np.ndarray, b: np.ndarray) -> float:
 
 
 # --------------------------------------------------
-# Brand Detection (NEW)
+# Brand Detection
 # --------------------------------------------------
 BRANDS = [
     "edea",
@@ -57,7 +61,8 @@ BRANDS = [
     "eclipse",
     "paramount",
     "wilson",
-    "jw"
+    "jw",
+    "harlick",
 ]
 
 
@@ -120,7 +125,7 @@ def build_retrieval_query(question: str, history: List[Dict]) -> Tuple[str, bool
     previous_user = user_msgs[-2]
 
     # --------------------------------------------------
-    # 🔥 BRAND CONFLICT GUARD
+    # BRAND CONFLICT GUARD
     # --------------------------------------------------
     previous_brand = extract_brand(previous_user)
     current_brand = extract_brand(question)
@@ -194,6 +199,61 @@ def clarify_message(track: str) -> str:
 
 
 # --------------------------------------------------
+# Brand Injection Retrieval (Two-stage)
+# --------------------------------------------------
+def retrieve_with_brand_injection(query: str, track: str, raw_k: int) -> Tuple[Dict, bool, Optional[str]]:
+    """
+    Returns:
+      retrieval: Dict with keys results/sources/scores/top_score (same shape as retrieve())
+      injected: bool whether we injected brand retrieval
+      brand: detected brand (lowercase string) if injected
+    """
+    brand = extract_brand(query)
+    injected = False
+
+    main = retrieve(query, k=raw_k, track=track)
+
+    if not brand:
+        return main, injected, None
+
+    brand_ret = retrieve(brand, k=BRAND_INJECT_K, track=track)
+    injected = True
+
+    # Merge: brand docs first, then main docs; dedupe by source_path
+    seen_paths = set()
+    merged_results = []
+    merged_sources = []
+    merged_scores = []
+
+    def add_block(ret: Dict):
+        for text, meta, score in zip(
+            ret.get("results", []),
+            ret.get("sources", []),
+            ret.get("scores", []),
+        ):
+            path = meta.get("source_path")
+            # If no path exists, do not dedupe (rare, but safer)
+            key = path if path else (meta.get("title"), meta.get("doc_type"), score)
+            if key in seen_paths:
+                continue
+            seen_paths.add(key)
+            merged_results.append(text)
+            merged_sources.append(meta)
+            merged_scores.append(score)
+
+    add_block(brand_ret)
+    add_block(main)
+
+    merged = {
+        "results": merged_results,
+        "sources": merged_sources,
+        "scores": merged_scores,
+        "top_score": merged_scores[0] if merged_scores else None,
+    }
+    return merged, injected, brand
+
+
+# --------------------------------------------------
 # Priority Boosting
 # --------------------------------------------------
 def apply_priority_boost(retrieval: Dict) -> Dict:
@@ -256,12 +316,10 @@ def answer_question(question: str, history: List[Dict]) -> str:
 
     t_retrieve_start = time.time()
 
-    RAW_K = 30
-
-    retrieval = retrieve(
-        retrieval_query,
-        k=RAW_K,
+    retrieval, injected_flag, injected_brand = retrieve_with_brand_injection(
+        query=retrieval_query,
         track=track,
+        raw_k=RAW_K,
     )
 
     retrieval = apply_priority_boost(retrieval)
@@ -273,6 +331,8 @@ def answer_question(question: str, history: List[Dict]) -> str:
         debug_print("Original Question:", question)
         debug_print("Merged?         :", merged_flag)
         debug_print("Retrieval Query :", retrieval_query)
+        debug_print("Brand Injected? :", injected_flag)
+        debug_print("Injected Brand  :", injected_brand)
         debug_print("Top Score       :", retrieval.get("top_score"))
         debug_print("Results Count   :", len(retrieval.get("results", [])))
 
