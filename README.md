@@ -206,8 +206,9 @@ If new knowledge units are added:
 - fixed memory issue - it was because the front end did not send back session id
 - added wiki pages for all skaters! - huge!
 - test contents: singles standard split
+- add a feature for users to clean the screen
 
 ## TO DO
 
 - competition rag building
-- add a feature for users to clean the screen
+
