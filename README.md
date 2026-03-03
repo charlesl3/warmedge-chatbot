@@ -1,184 +1,96 @@
-# WarmEdge Chatbot
+# WarmGPT Backend (WarmEdge Chatbot)
 
-A local-first, production-ready figure skating chatbot built with:
+Production-ready Retrieval-Augmented Generation (RAG) system for figure
+skating knowledge.
 
--   FAISS vector search\
--   SentenceTransformers embeddings\
--   LLM-based answer generation\
--   Intent routing for conversational control\
--   FastAPI backend
+## Overview
 
-This repository contains the backend service only.\
-The frontend (Next.js / Vercel) consumes this API via HTTP.
+WarmGPT converts unstructured skating discussions (Reddit, GoldenSkate,
+Wiki) into structured knowledge and delivers grounded answers using a
+retrieval-first pipeline.
 
-------------------------------------------------------------------------
+**Stack** - FAISS (vector search) - SentenceTransformers (embeddings) -
+Intent routing (rule-based) - Modular LLM layer - FastAPI backend -
+Railway deployment
 
-## How to run?
-
-The best way to run WarmGPT without risk of errors is via the public frontend.  [Click here](https://warmedge.vercel.app/chat)
+Frontend (Next.js / Vercel) consumes this API via HTTP.
 
 ------------------------------------------------------------------------
 
-## Architecture Overview
+## Architecture
 
-User Question\
-→ Intent Router\
-→ Retrieval (FAISS)\
-→ Prompt Builder\
-→ LLM\
-→ Response
+User → Intent Router → FAISS Retrieval → Prompt Builder → LLM → Response
 
-The system is designed to be:
-
--   Deterministic at retrieval layer
--   Modular at LLM layer
--   Replaceable across model providers
--   Deployable on Railway
+Design principles: - Retrieval-first (no blind LLM calls) -
+Deterministic search layer - Modular model abstraction - Clear
+separation of frontend and backend
 
 ------------------------------------------------------------------------
 
-## Project Structure
+## Key Components
 
-backend/ server.py \# FastAPI entrypoint (API server) api_stub.py \#
-Local test endpoint test_api_local.py \# Manual local API test
+### Retrieval
 
-chat/ chat_loop.py \# CLI testing loop (local development)
-
-data/ pass1\_\* \# Raw cleaned thread batches pass2\_\* \# Structured
-knowledge units raw/ \# Original scraped data
-
-prompts/ rag_answer.txt \# Main RAG answer system prompt
-
-rag/ answer.py \# Orchestrates retrieval + LLM retriever.py \# FAISS
-search logic prompt_builder.py \# Formats final LLM prompt intents.py \#
-Intent classification llm.py \# LLM API call (HF / other)
-
-rag_store/ *.faiss \# Vector index *\_meta.json \# Metadata for indexed
-documents
-
-------------------------------------------------------------------------
-
-## Core Concepts
-
-### 1. Retrieval (FAISS)
-
--   Embeddings generated using SentenceTransformers
--   Stored in FAISS index
+-   Embeddings stored in FAISS
+-   Top-k similarity search
 -   Metadata stored separately
--   Top-k relevant documents retrieved per query
 
-### 2. Intent Routing
+### Intent Routing
 
-Simple rule-based intent detection: - greeting - general question -
-knowledge lookup
+-   Greeting
+-   Social message
+-   Knowledge lookup Reduces unnecessary LLM calls.
 
-Used to avoid unnecessary LLM calls.
+### LLM Layer
 
-### 3. LLM Layer
-
-LLM is called only after: - Retrieval - Prompt assembly - Intent
-filtering
-
-Currently uses HuggingFace Router API.
+-   Called only after retrieval
+-   Provider abstracted and replaceable
 
 ------------------------------------------------------------------------
 
-## Environment Variables
+## How to Run
 
-Required:
-
-HF_API_TOKEN=your_token_here
-
+The best bug-free way is to run from our website: [Click here](https://warmedge.vercel.app/chat)
 
 ------------------------------------------------------------------------
 
-## Local Development
+## Run Locally (optional)
 
-### 1. Create virtual environment
-
-conda activate warmedge-chatbot
-
-or
-
-python -m venv venv source venv/bin/activate
-
-### 2. Install dependencies
-
+``` bash
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-
-### 3. Run local API server
-
 uvicorn backend.server:app --reload
+```
 
 Test:
 
-curl -X POST http://localhost:8000/chat -H "Content-Type:
-application/json" -d '{"message":"hi","history":\[\]}'
-
-### 4. Run CLI testing loop
-
-python -m chat.chat_loop
+``` bash
+curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"message":"hi","history":[]}'
+```
 
 ------------------------------------------------------------------------
 
 ## Deployment (Railway)
 
-1.  Push code to GitHub
-2.  Connect repository to Railway
-3.  Add environment variable: HF_API_TOKEN
-4.  Ensure start command is:
-
-uvicorn backend.server:app --host 0.0.0.0 --port 8080
-
-5.  Wait for deployment
-6.  Test:
-
-https://warmedge-chatbot-production.up.railway.app
+-   Push to GitHub
+-   Connect repo to Railway
+-   Set environment variable: HF_API_TOKEN=your_token_here
+-   Start command: uvicorn backend.server:app --host 0.0.0.0 --port 8080
 
 ------------------------------------------------------------------------
 
-## Frontend Integration (Vercel)
+## My Contribution
 
-Frontend sends:
-
-POST /chat\
-Body:
-
-{ "message": "user input", "history": \[\] }
-
-Backend returns:
-
-{ "reply": "...", "history": \[...\], "end": false }
-
-Set in Vercel:
-
-NEXT_PUBLIC_CHAT_API_URL= https://warmedge.vercel.app/chat
+-   Designed full RAG architecture
+-   Built knowledge distillation pipeline
+-   Implemented FAISS retrieval + intent routing
+-   Structured prompt builder + LLM abstraction
+-   Deployed production backend (Railway)
 
 ------------------------------------------------------------------------
 
-## Rebuilding FAISS Index
-
-If new knowledge units are added:
-
-1.  Regenerate embeddings
-2.  Rebuild FAISS index
-3.  Replace files in rag_store/
-4.  Redeploy backend
-
-------------------------------------------------------------------------
-
-## Status
-
--   Retrieval: stable
--   Intent routing: working
--   LLM layer: modular
--   Production deployment: active
--   Frontend integration: complete
-
-------------------------------------------------------------------------
-
-
-# Additional – Build Log
+## Engineering Logs
 
 ## DONE
 
@@ -211,4 +123,3 @@ If new knowledge units are added:
 ## TO DO
 
 - competition rag building
-
