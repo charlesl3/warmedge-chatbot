@@ -15,7 +15,7 @@ The frontend (Next.js / Vercel) consumes this API via HTTP.
 
 ## How to run?
 
-The best way to run WarmGPT without risk of errors is via the public frontend.  [WarmGPT](https://warmedge.vercel.app/chat)
+The best way to run WarmGPT without risk of errors is via the public frontend.  [Click here](https://warmedge.vercel.app/chat)
 
 ------------------------------------------------------------------------
 
