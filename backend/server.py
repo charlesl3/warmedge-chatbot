@@ -1,111 +1,3 @@
-# from fastapi import FastAPI
-# from fastapi.middleware.cors import CORSMiddleware
-# from pydantic import BaseModel
-# import traceback
-# import os
-#
-# # ---- imports from your existing code ----
-# from rag.answer import answer_question
-# from rag.intents import (
-#     is_blank,
-#     is_social_message,
-#     is_farewell,
-#     handle_social_message,
-# )
-#
-# app = FastAPI()
-#
-# # -------------------------
-# # CORS (REQUIRED for browser)
-# # -------------------------
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=[
-#         "https://warmedge.org",
-#         "https://www.warmedge.org",
-#         "https://warmedge.vercel.app",
-#         "http://localhost:3000",
-#     ],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-#
-# # -------------------------
-# # Request schema
-# # -------------------------
-# class ChatRequest(BaseModel):
-#     message: str
-#     history: list = []
-#
-# # -------------------------
-# # Health check (optional)
-# # -------------------------
-# @app.get("/")
-# def root():
-#     return {"status": "ok"}
-#
-# # -------------------------
-# # Chat endpoint
-# # -------------------------
-# @app.post("/chat")
-# def chat(req: ChatRequest):
-#
-#     # 🔎 DEBUG ENV CHECK
-#     print("========== ENV DEBUG ==========")
-#     print("HF TOKEN VALUE:", os.getenv("HF_TOKEN"))
-#     print("ENV KEYS:", list(os.environ.keys()))
-#     print("================================")
-#
-#     message = req.message.strip()
-#     history = req.history or []
-#
-#     try:
-#         # 1) Blank input
-#         if is_blank(message):
-#             return {
-#                 "reply": "Please ask a valid figure skating related question.",
-#                 "history": history,
-#                 "end": False,
-#             }
-#
-#         # 2) Social / preset path (NO LLM)
-#         if is_social_message(message):
-#             reply = handle_social_message(message)
-#             return {
-#                 "reply": reply,
-#                 "history": history,
-#                 "end": is_farewell(message),
-#             }
-#
-#         # 3) REAL LLM / RAG PATH
-#         reply = answer_question(
-#             question=message,
-#             history=history,
-#         )
-#
-#         return {
-#             "reply": reply,
-#             "history": history
-#             + [
-#                 {"role": "user", "content": message},
-#                 {"role": "assistant", "content": reply},
-#             ],
-#             "end": False,
-#         }
-#
-#     except Exception as e:
-#         print("=== LLM ERROR ===")
-#         traceback.print_exc()
-#         print("=================")
-#
-#         return {
-#             "reply": "Something went wrong.",
-#             "history": history,
-#             "end": False,
-#         }
-
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -122,6 +14,9 @@ from rag.intents import (
 )
 
 from rag.retriever import load_index_and_meta, get_embed_model
+
+# NEW: persistent storage
+from backend.chat_storage import load_chats, save_chats
 
 
 app = FastAPI()
@@ -153,7 +48,7 @@ app.add_middleware(
 )
 
 # -------------------------
-# Per-session history storage
+# Per-session history storage (RAM)
 # -------------------------
 SESSIONS = {}
 
@@ -237,6 +132,14 @@ def chat(req: ChatRequest):
             history.append({"role": "user", "content": message})
             history.append({"role": "assistant", "content": reply})
 
+            # Save to persistent storage
+            chats = load_chats()
+            if session_id not in chats:
+                chats[session_id] = []
+            chats[session_id].append({"role": "user", "content": message})
+            chats[session_id].append({"role": "assistant", "content": reply})
+            save_chats(chats)
+
             # Commit trimmed history
             SESSIONS[session_id] = history[-MAX_TURNS * 2 :]
 
@@ -249,8 +152,16 @@ def chat(req: ChatRequest):
         # -------------------------
         # 3️⃣ RAG Path
         # -------------------------
+
         # Append user message to working copy only
         working_history = history + [{"role": "user", "content": message}]
+
+        # Save user message to disk
+        chats = load_chats()
+        if session_id not in chats:
+            chats[session_id] = []
+        chats[session_id].append({"role": "user", "content": message})
+        save_chats(chats)
 
         reply = answer_question(
             question=message,
@@ -259,8 +170,14 @@ def chat(req: ChatRequest):
 
         reply = clean_output(reply)
 
-        # Only commit if generation succeeded
         working_history.append({"role": "assistant", "content": reply})
+
+        # Save assistant reply to disk
+        chats = load_chats()
+        chats[session_id].append({"role": "assistant", "content": reply})
+        save_chats(chats)
+
+        # Commit trimmed RAM history
         SESSIONS[session_id] = working_history[-MAX_TURNS * 2 :]
 
         return {
