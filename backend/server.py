@@ -163,6 +163,7 @@ def chat(req: ChatRequest):
         chats[session_id].append({"role": "user", "content": message})
         save_chats(chats)
 
+
         reply = answer_question(
             question=message,
             history=working_history,
@@ -176,6 +177,7 @@ def chat(req: ChatRequest):
         chats = load_chats()
         chats[session_id].append({"role": "assistant", "content": reply})
         save_chats(chats)
+        print("CHAT STORAGE:", chats)
 
         # Commit trimmed RAM history
         SESSIONS[session_id] = working_history[-MAX_TURNS * 2 :]
