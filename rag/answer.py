@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import List, Dict, Optional, Tuple
 import time
 import numpy as np
+import json
 
 from rag.retriever import retrieve, EMBED_MODEL
 from rag.prompt_builder import build_llm_input
@@ -18,12 +19,11 @@ TOP_K = 6
 MIN_TOP_SCORE = 0.1
 DEBUG = True
 
-# Similarity thresholds
 MERGE_THRESHOLD = 0.60
 FALLBACK_SHORT_THRESHOLD = 0.40
-
-# If we merge, make the current message dominate
 CURRENT_WEIGHT = 2
+
+FEEDBACK_PATH = "backend/feedback_memory.json"
 
 
 # --------------------------------------------------
@@ -42,23 +42,70 @@ def cosine_sim(a: np.ndarray, b: np.ndarray) -> float:
 
 
 # --------------------------------------------------
-# Brand Detection (NEW)
+# Feedback Memory
+# --------------------------------------------------
+def load_feedback_memory():
+    try:
+        with open(FEEDBACK_PATH, "r") as f:
+            return json.load(f)
+    except:
+        return []
+
+
+def boost_with_feedback(query_embedding: np.ndarray, retrieval: Dict) -> Dict:
+    memory = load_feedback_memory()
+
+    if not memory or "sources" not in retrieval:
+        return retrieval
+
+    doc_boost = {}
+
+    for group in memory:
+        doc = group.get("doc")
+        examples = group.get("examples", [])
+
+        for ex in examples:
+            emb = np.array(ex["embedding"])
+            sim = cosine_sim(query_embedding, emb)
+
+            if sim > 0.75:
+                doc_boost[doc] = doc_boost.get(doc, 0) + sim
+
+    boosted_scores = []
+
+    for score, meta in zip(retrieval["scores"], retrieval["sources"]):
+        doc_id = meta.get("source_path") or meta.get("source_group")
+        boost = doc_boost.get(doc_id, 0)
+        boosted_scores.append(score + boost)
+
+    ranked = sorted(
+        zip(boosted_scores, retrieval["results"], retrieval["sources"]),
+        key=lambda x: x[0],
+        reverse=True,
+    )
+
+    ranked = ranked[:TOP_K]
+
+    retrieval["scores"] = [r[0] for r in ranked]
+    retrieval["results"] = [r[1] for r in ranked]
+    retrieval["sources"] = [r[2] for r in ranked]
+    retrieval["top_score"] = retrieval["scores"][0] if retrieval["scores"] else None
+
+    if DEBUG:
+        debug_print("\n===== FEEDBACK BOOST DEBUG =====")
+        debug_print("Boosted docs:", doc_boost)
+        debug_print("===============================\n")
+
+    return retrieval
+
+
+# --------------------------------------------------
+# Brand Detection
 # --------------------------------------------------
 BRANDS = [
-    "edea",
-    "jackson",
-    "mk",
-    "john wilson",
-    "wilson",
-    "riedell",
-    "risport",
-    "graf",
-    "aura",
-    "eclipse",
-    "paramount",
-    "wilson",
-    "jw",
-    "Harlick",
+    "edea", "jackson", "mk", "john wilson", "wilson",
+    "riedell", "risport", "graf", "aura", "eclipse",
+    "paramount", "wilson", "jw", "harlick",
 ]
 
 
@@ -71,7 +118,7 @@ def extract_brand(text: str) -> Optional[str]:
 
 
 # --------------------------------------------------
-# Legacy Term Normalization
+# Normalization
 # --------------------------------------------------
 def normalize_legacy_terms(question: str) -> str:
     q = question.lower()
@@ -101,18 +148,14 @@ def normalize_legacy_terms(question: str) -> str:
 
 
 # --------------------------------------------------
-# Weighted merge builder
+# Merge Logic
 # --------------------------------------------------
 def build_weighted_merged_query(previous_user: str, current_user: str) -> str:
     current_part = " ".join([current_user] * max(1, CURRENT_WEIGHT))
     return f"{previous_user} {current_part}"
 
 
-# --------------------------------------------------
-# Semantic Retrieval Query Builder (with brand guard)
-# --------------------------------------------------
 def build_retrieval_query(question: str, history: List[Dict]) -> Tuple[str, bool]:
-
     user_msgs = [m["content"] for m in history if m["role"] == "user"]
 
     if len(user_msgs) < 2:
@@ -120,24 +163,12 @@ def build_retrieval_query(question: str, history: List[Dict]) -> Tuple[str, bool
 
     previous_user = user_msgs[-2]
 
-    # --------------------------------------------------
-    # 🔥 BRAND CONFLICT GUARD
-    # --------------------------------------------------
-    previous_brand = extract_brand(previous_user)
-    current_brand = extract_brand(question)
+    prev_brand = extract_brand(previous_user)
+    curr_brand = extract_brand(question)
 
-    if previous_brand and current_brand and previous_brand != current_brand:
-        if DEBUG:
-            debug_print("\n===== MERGE DEBUG =====")
-            debug_print("Brand conflict detected")
-            debug_print("Previous brand:", previous_brand)
-            debug_print("Current brand :", current_brand)
-            debug_print("→ NO MERGE\n")
+    if prev_brand and curr_brand and prev_brand != curr_brand:
         return question, False
 
-    # --------------------------------------------------
-    # Semantic similarity check
-    # --------------------------------------------------
     emb_prev = EMBED_MODEL.encode(previous_user, convert_to_numpy=True)
     emb_curr = EMBED_MODEL.encode(question, convert_to_numpy=True)
 
@@ -147,19 +178,9 @@ def build_retrieval_query(question: str, history: List[Dict]) -> Tuple[str, bool
     sim_prev_curr = cosine_sim(emb_prev, emb_curr)
     sim_prev_merged = cosine_sim(emb_prev, emb_merged)
 
-    if DEBUG:
-        debug_print("\n===== MERGE DEBUG =====")
-        debug_print("Previous:", previous_user)
-        debug_print("Current :", question)
-        debug_print(f"Prev-Curr similarity   = {sim_prev_curr:.4f}")
-        debug_print(f"Prev-Merged similarity = {sim_prev_merged:.4f}")
-        debug_print("=======================\n")
-
-    # Rule 1
     if sim_prev_merged > MERGE_THRESHOLD:
         return build_weighted_merged_query(previous_user, question), True
 
-    # Rule 2
     if len(question.split()) <= 6 and sim_prev_curr > FALLBACK_SHORT_THRESHOLD:
         return build_weighted_merged_query(previous_user, question), True
 
@@ -171,61 +192,37 @@ def build_retrieval_query(question: str, history: List[Dict]) -> Tuple[str, bool
 # --------------------------------------------------
 def infer_track(question: str) -> str:
     q = question.lower()
-
-    if "not adult" in q or "standard" in q or "non-adult" in q:
-        return "standard"
-
     if "adult" in q:
         return "adult"
-
     return "standard"
 
 
 # --------------------------------------------------
-# Clarify Decision
+# Retrieval Quality
 # --------------------------------------------------
 def weak_retrieval(top_score: Optional[float]) -> bool:
     return top_score is None or top_score < MIN_TOP_SCORE
 
 
 def clarify_message(track: str) -> str:
-    if track == "adult":
-        return "Could you clarify your Adult level (for example: Adult Pre-Bronze, Adult Bronze, etc.)?"
-    return "Could you clarify which level you are referring to (for example: Pre-Preliminary, Pre-Bronze, Bronze, etc.)?"
+    return "Could you clarify which level you are referring to?"
 
 
 # --------------------------------------------------
-# Priority Boosting
+# Priority Boost
 # --------------------------------------------------
 def apply_priority_boost(retrieval: Dict) -> Dict:
-
-    if "scores" not in retrieval or "sources" not in retrieval:
-        return retrieval
-
     boosted = []
 
     for score, meta in zip(retrieval["scores"], retrieval["sources"]):
         priority = meta.get("priority", 0)
-        adjusted_score = score + 0.35 * priority
-        boosted.append(adjusted_score)
+        boosted.append(score + 0.35 * priority)
 
     ranked = sorted(
         zip(boosted, retrieval["results"], retrieval["sources"]),
         key=lambda x: x[0],
         reverse=True,
-    )
-
-    manual_chunks = [
-        item for item in ranked
-        if item[2].get("doc_type") == "manual"
-    ]
-
-    if manual_chunks:
-        top_manual = max(manual_chunks, key=lambda x: x[0])
-        if all(r[2].get("doc_type") != "manual" for r in ranked[:3]):
-            ranked.insert(0, top_manual)
-
-    ranked = ranked[:TOP_K]
+    )[:TOP_K]
 
     retrieval["scores"] = [r[0] for r in ranked]
     retrieval["results"] = [r[1] for r in ranked]
@@ -236,78 +233,66 @@ def apply_priority_boost(retrieval: Dict) -> Dict:
 
 
 # --------------------------------------------------
-# Main Answer Function
+# Extract doc ids
 # --------------------------------------------------
-def answer_question(question: str, history: List[Dict]) -> str:
+def extract_retrieved_doc_ids(retrieval: Dict) -> List[str]:
+    ids = []
+    seen = set()
 
-    total_start = time.time()
+    for meta in retrieval.get("sources", []):
+        doc_id = meta.get("source_path") or meta.get("source_group")
+        if doc_id and doc_id not in seen:
+            seen.add(doc_id)
+            ids.append(doc_id)
+
+    return ids
+
+
+# --------------------------------------------------
+# Main Answer
+# --------------------------------------------------
+def answer_question(question: str, history: List[Dict]):
 
     if is_blank(question):
-        return "Please ask a valid figure skating related question."
+        return "Please ask a valid question."
 
     if is_social_message(question):
         return handle_social_message(question)
 
-    normalized_question = normalize_legacy_terms(question)
-
-    retrieval_query, merged_flag = build_retrieval_query(normalized_question, history)
+    normalized = normalize_legacy_terms(question)
+    retrieval_query, _ = build_retrieval_query(normalized, history)
     retrieval_query = normalize_legacy_terms(retrieval_query)
 
-    track = infer_track(normalized_question)
+    track = infer_track(normalized)
 
-    t_retrieve_start = time.time()
+    query_embedding = EMBED_MODEL.encode(retrieval_query, convert_to_numpy=True)
 
-    RAW_K = 30
-
-    retrieval = retrieve(
-        retrieval_query,
-        k=RAW_K,
-        track=track,
-    )
+    retrieval = retrieve(retrieval_query, k=30, track=track)
 
     retrieval = apply_priority_boost(retrieval)
 
-    retrieve_time = time.time() - t_retrieve_start
-
-    if DEBUG:
-        debug_print("\n===== RAG DEBUG =====")
-        debug_print("Original Question:", question)
-        debug_print("Merged?         :", merged_flag)
-        debug_print("Retrieval Query :", retrieval_query)
-        debug_print("Top Score       :", retrieval.get("top_score"))
-        debug_print("Results Count   :", len(retrieval.get("results", [])))
-
-        for i, meta in enumerate(retrieval.get("sources", []), 1):
-            debug_print(f"\nResult {i}")
-            debug_print("  Source Path :", meta.get("source_path"))
-            debug_print("  Type        :", meta.get("doc_type"))
-            debug_print("  Group       :", meta.get("source_group"))
-            debug_print("  Priority    :", meta.get("priority"))
-
-        debug_print("======================\n")
+    # 🔥 KEY: learning happens here
+    retrieval = boost_with_feedback(query_embedding, retrieval)
 
     if weak_retrieval(retrieval.get("top_score")):
         return clarify_message(track)
 
-    prompt = PROMPT_PATH.read_text(encoding="utf-8")
+    prompt = PROMPT_PATH.read_text()
 
     llm_input = build_llm_input(
         prompt=prompt,
-        question=normalized_question,
+        question=normalized,
         docs=retrieval["results"],
         history=history,
     )
 
-    t_llm_start = time.time()
     response = run_llm(llm_input)
-    llm_time = time.time() - t_llm_start
-    total_time = time.time() - total_start
 
-    if DEBUG:
-        debug_print("\n===== TIMING DEBUG =====")
-        debug_print(f"Retrieve time : {retrieve_time:.4f}s")
-        debug_print(f"LLM time      : {llm_time:.4f}s")
-        debug_print(f"Total time    : {total_time:.4f}s")
-        debug_print("========================\n")
+    # 🔥 CLEAN SIGNAL
+    retrieved_docs = extract_retrieved_doc_ids(retrieval)[:2]
 
-    return response
+    return {
+        "reply": response,
+        "retrieved_docs": retrieved_docs,
+        "query_embedding": query_embedding.tolist(),
+    }
