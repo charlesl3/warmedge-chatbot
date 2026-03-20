@@ -395,6 +395,7 @@ def chat(req: ChatRequest):
             "reply": reply,
             "session_id": session_id,
             "message_id": assistant_message_id,
+            "sources": retrieved_docs[:2],
             "end": False,
         }
 
