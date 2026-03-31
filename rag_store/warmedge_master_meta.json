@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 6847,
+  "total_vectors": 6902,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1592,6 +1592,556 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2005 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2005 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships to utilize the ISU Judging System (IJS) for all disciplines, replacing the 6.0 system.\n\n---",
+      "source_path": "data/manual_rag/worlds_2005.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2005",
+      "chunk_id": "data/manual_rag/worlds_2005.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2005 ISU World Figure Skating Championships\n* **Event Name:** 2005 ISU World Figure Skating Championships\n* **Location:** Luzhniki Palace of Sports, Moscow, Russia\n* **Dates:** March 14 – 20, 2005\n* **Host:** Figure Skating Federation of Russia / ISU\n* **Major Milestone:** This was a historic event as it marked the full implementation of the New Judging System (Points System) at the World Championships level. It also featured a dominant performance by the host nation, Russia, which won three of the four gold medals.\n\n---",
+      "source_path": "data/manual_rag/worlds_2005.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2005",
+      "chunk_id": "data/manual_rag/worlds_2005.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2005 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2005 ISU World Figure Skating Championships\n**Stéphane Lambiel** (Switzerland) won his first World title, delivering two quad toes in his free skate. He became the first Swiss man to win the gold since 1947.\n* **Gold:** **Stéphane Lambiel** (Switzerland) — Total Score: 261.77\n* **Silver:** **Jeffrey Buttle** (Canada) — Total Score: 245.69\n* **Bronze:** **Evan Lysacek** (United States) — Total Score: 239.53 (First World medal for the future Olympic champion)\n\n### 3.2 Women's Singles: 2005 ISU World Figure Skating Championships\n**Irina Slutskaya** (Russia) reclaimed her World title in front of a home crowd, winning her second gold medal. The competition was notable for being the first under the IJS, which rewarded her technical difficulty and triple-triple combinations.\n* **Gold:** **Irina Slutskaya** (Russia) — Total Score: 222.71\n* **Silver:** **Sasha Cohen** (United States) — Total Score: 214.39\n* **Bronze:** **Carolina Kostner** (Italy) — Total Score: 200.56 (First World medal for the future World champion)\n\n### 3.3 Pairs: 2005 ISU World Figure Skating Championships\n**Tatiana Totmianina and Maxim Marinin** (Russia) successfully defended their World title. Their victory was particularly emotional following Totmianina's serious fall at Skate America earlier in the season.\n* **Gold:** **Tatiana Totmianina / Maxim Marinin** (Russia) — Total Score: 198.49\n* **Silver:** **Maria Petrova / Alexei Tikhonov** (Russia) — Total Score: 188.21\n* **Bronze:** **Zhang Dan / Zhang Hao** (China) — Total Score: 180.22\n\n### 3.4 Ice Dance: 2005 ISU World Figure Skating Championships\n**Tatiana Navka and Roman Kostomarov** (Russia) successfully defended their World title, leading throughout the competition from the compulsory dance to the free dance.\n* **Gold:** **Tatiana Navka / Roman Kostomarov** (Russia) — Total Score: 227.81\n* **Silver:** **Tanith Belbin / Benjamin Agosto** (United States) — Total Score: 221.26 (First World medal for the American duo)\n* **Bronze:** **Elena Grushina / Ruslan Goncharov** (Ukraine) — Total Score: 213.95\n\n---",
+      "source_path": "data/manual_rag/worlds_2005.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2005",
+      "chunk_id": "data/manual_rag/worlds_2005.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2005 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 3 | 1 | 0 | 4 |\n| 2 | **Switzerland (SUI)** | 1 | 0 | 0 | 1 |\n| 3 | **United States (USA)** | 0 | 2 | 1 | 3 |\n| 4 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 5 | **Italy (ITA)** | 0 | 0 | 1 | 1 |\n| 5 | **China (CHN)** | 0 | 0 | 1 | 1 |\n| 5 | **Ukraine (UKR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2005.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2005",
+      "chunk_id": "data/manual_rag/worlds_2005.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2005 ISU World Figure Skating Championships\n`Moscow 2005`, `Stephane Lambiel first gold`, `Irina Slutskaya 2nd title`, `IJS debut Worlds`, `Totmianina Marinin defense`, `Navka Kostomarov defense`, `Luzhniki Palace Results`, `ISU World Results 2005`.",
+      "source_path": "data/manual_rag/worlds_2005.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2005",
+      "chunk_id": "data/manual_rag/worlds_2005.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2006 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2006 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2006 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that followed the 2006 Torino Winter Olympics and saw significant transitions in the sport's leadership.\n\n---",
+      "source_path": "data/manual_rag/worlds_2006.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2006",
+      "chunk_id": "data/manual_rag/worlds_2006.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2006 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2006 ISU World Figure Skating Championships\n* **Event Name:** 2006 ISU World Figure Skating Championships\n* **Location:** Pengrowth Saddledome, Calgary, Alberta, Canada\n* **Dates:** March 20 – 26, 2006\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This was the first World Championship held in Calgary since 1972. Following the Olympics, several top contenders withdrew, allowing for a new tier of athletes to reach the podium for the first time.\n\n---",
+      "source_path": "data/manual_rag/worlds_2006.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2006",
+      "chunk_id": "data/manual_rag/worlds_2006.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2006 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2006 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2006 ISU World Figure Skating Championships\n**Stéphane Lambiel** (Switzerland) successfully defended his World title, becoming the first Swiss man to win back-to-back world golds. He won despite a recurring knee injury.\n* **Gold:** **Stéphane Lambiel** (Switzerland) — Total Score: 274.22\n* **Silver:** **Brian Joubert** (France) — Total Score: 270.83\n* **Bronze:** **Evan Lysacek** (United States) — Total Score: 255.22 (Second consecutive World bronze)\n\n### 3.2 Women's Singles: 2006 ISU World Figure Skating Championships\n**Kimmie Meissner** (USA) won her first and only World title in her debut senior World appearance, landing seven triple jumps in her free skate to move from third to first.\n* **Gold:** **Kimmie Meissner** (United States) — Total Score: 189.87\n* **Silver:** **Fumie Suguri** (Japan) — Total Score: 186.35\n* **Bronze:** **Sasha Cohen** (United States) — Total Score: 185.98 (The Olympic silver medalist led after the short program)\n\n### 3.3 Pairs: 2006 ISU World Figure Skating Championships\n**Pang Qing and Tong Jian** (China) won their first World title, leading a Chinese 1st and 2nd finish. This marked the beginning of their status as the top pair in the world during the post-Olympic cycle.\n* **Gold:** **Pang Qing / Tong Jian** (China) — Total Score: 189.20\n* **Silver:** **Zhang Dan / Zhang Hao** (China) — Total Score: 186.42\n* **Bronze:** **Maria Petrova / Alexei Tikhonov** (Russia) — Total Score: 186.22\n\n### 3.4 Ice Dance: 2006 ISU World Figure Skating Championships\n**Albena Denkova and Maxim Staviski** (Bulgaria) won their first World title, becoming the first-ever Bulgarian skaters to win a gold medal at the World Figure Skating Championships.\n* **Gold:** **Albena Denkova / Maxim Staviski** (Bulgaria) — Total Score: 199.14\n* **Silver:** **Marie-France Dubreuil / Patrice Lauzon** (Canada) — Total Score: 198.69\n* **Bronze:** **Tanith Belbin / Benjamin Agosto** (United States) — Total Score: 196.47\n\n---",
+      "source_path": "data/manual_rag/worlds_2006.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2006",
+      "chunk_id": "data/manual_rag/worlds_2006.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2006 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2006 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 0 | 3 | 4 |\n| 2 | **China (CHN)** | 1 | 1 | 0 | 2 |\n| 3 | **Switzerland (SUI)** | 1 | 0 | 0 | 1 |\n| 3 | **Bulgaria (BUL)** | 1 | 0 | 0 | 1 |\n| 5 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 5 | **Japan (JPN)** | 0 | 1 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 8 | **Russia (RUS)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2006.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2006",
+      "chunk_id": "data/manual_rag/worlds_2006.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2006 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2006 ISU World Figure Skating Championships\n`Calgary 2006`, `Stephane Lambiel defense`, `Kimmie Meissner gold`, `Pang Tong first title`, `Denkova Staviski history`, `Pengrowth Saddledome Results`, `Post-Torino Worlds`, `ISU World Results 2006`.",
+      "source_path": "data/manual_rag/worlds_2006.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2006",
+      "chunk_id": "data/manual_rag/worlds_2006.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2007 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2007 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2007 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that saw the rise of a new generation of skaters and multiple world-record performances.\n\n---",
+      "source_path": "data/manual_rag/worlds_2007.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2007",
+      "chunk_id": "data/manual_rag/worlds_2007.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2007 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2007 ISU World Figure Skating Championships\n* **Event Name:** 2007 ISU World Figure Skating Championships\n* **Location:** Tokyo Metropolitan Gymnasium, Tokyo, Japan\n* **Dates:** March 19 – 25, 2007\n* **Host:** Japan Federation / ISU\n* **Major Milestone:** This was the first time the World Championships were held in Tokyo since 1985. It featured a historic debut for Yuna Kim, who set a new world record in the short program, and the first World title for Miki Ando on home ice.\n\n---",
+      "source_path": "data/manual_rag/worlds_2007.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2007",
+      "chunk_id": "data/manual_rag/worlds_2007.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2007 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2007 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2007 ISU World Figure Skating Championships\n**Brian Joubert** (France) won his first and only World title, becoming the first Frenchman to win the world gold in 42 years (since Alain Calmat in 1965).\n* **Gold:** **Brian Joubert** (France) — Total Score: 240.85\n* **Silver:** **Daisuke Takahashi** (Japan) — Total Score: 237.95 (First-ever World medal for a Japanese man)\n* **Bronze:** **Stephane Lambiel** (Switzerland) — Total Score: 233.35\n\n### 3.2 Women's Singles: 2007 ISU World Figure Skating Championships\n**Miki Ando** (Japan) won the gold medal in a highly competitive field, leading a historic 1st and 2nd place finish for Japan on home ice.\n* **Gold:** **Miki Ando** (Japan) — Total Score: 195.09\n* **Silver:** **Mao Asada** (Japan) — Total Score: 194.47 (Set a new world record for the free skate score: 133.13)\n* **Bronze:** **Yuna Kim** (South Korea) — Total Score: 186.14 (Set a new world record for the short program score: 71.95 in her senior World debut)\n\n### 3.3 Pairs: 2007 ISU World Figure Skating Championships\n**Shen Xue and Zhao Hongbo** (China) won their third and final World title together, delivering a flawless performance before their first temporary retirement.\n* **Gold:** **Shen Xue / Zhao Hongbo** (China) — Total Score: 203.50\n* **Silver:** **Pang Qing / Tong Jian** (China) — Total Score: 188.46\n* **Bronze:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 187.39 (First World medal for the partnership)\n\n### 3.4 Ice Dance: 2007 ISU World Figure Skating Championships\n**Albena Denkova and Maxim Staviski** (Bulgaria) successfully defended their World title, securing their second consecutive gold medal.\n* **Gold:** **Albena Denkova / Maxim Staviski** (Bulgaria) — Total Score: 201.76\n* **Silver:** **Marie-France Dubreuil / Patrice Lauzon** (Canada) — Total Score: 200.46\n* **Bronze:** **Tanith Belbin / Benjamin Agosto** (United States) — Total Score: 195.43\n\n---",
+      "source_path": "data/manual_rag/worlds_2007.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2007",
+      "chunk_id": "data/manual_rag/worlds_2007.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2007 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2007 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Japan (JPN)** | 1 | 2 | 0 | 3 |\n| 2 | **China (CHN)** | 1 | 1 | 0 | 2 |\n| 3 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 3 | **Bulgaria (BUL)** | 1 | 0 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 6 | **Switzerland (SUI)** | 0 | 0 | 1 | 1 |\n| 6 | **South Korea (KOR)** | 0 | 0 | 1 | 1 |\n| 6 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| 6 | **United States (USA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2007.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2007",
+      "chunk_id": "data/manual_rag/worlds_2007.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2007 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2007 ISU World Figure Skating Championships\n`Tokyo 2007`, `Brian Joubert first gold`, `Miki Ando 2007`, `Yuna Kim short program record`, `Mao Asada free skate record`, `Shen Zhao 3rd title`, `Denkova Staviski defense`, `Tokyo Metropolitan Gymnasium Results`, `ISU World Results 2007`.",
+      "source_path": "data/manual_rag/worlds_2007.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2007",
+      "chunk_id": "data/manual_rag/worlds_2007.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2008 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2008 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2008 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship marked by significant first-time world titles for several athletes.\n\n---",
+      "source_path": "data/manual_rag/worlds_2008.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2008",
+      "chunk_id": "data/manual_rag/worlds_2008.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2008 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2008 ISU World Figure Skating Championships\n* **Event Name:** 2008 ISU World Figure Skating Championships\n* **Location:** Scandinavium, Gothenburg, Sweden\n* **Dates:** March 17 – 23, 2008\n* **Host:** Skate Sweden / ISU\n* **Major Milestone:** This event was the first World Championship to crown Mao Asada, Jeffrey Buttle, and the pair Savchenko/Szolkowy as champions. It also saw a historic podium for French ice dance.\n\n---",
+      "source_path": "data/manual_rag/worlds_2008.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2008",
+      "chunk_id": "data/manual_rag/worlds_2008.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2008 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2008 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2008 ISU World Figure Skating Championships\n**Jeffrey Buttle** (Canada) won his first and only World title, delivering a clean and artistically superior free skate that did not include a quadruple jump, highlighting the judging system's balance of technical and component scores at the time.\n* **Gold:** **Jeffrey Buttle** (Canada) — Total Score: 245.17\n* **Silver:** **Brian Joubert** (France) — Total Score: 231.22\n* **Bronze:** **Johnny Weir** (United States) — Total Score: 221.84\n\n### 3.2 Women's Singles: 2008 ISU World Figure Skating Championships\n**Mao Asada** (Japan) captured her first World gold medal after a dramatic free skate where she recovered from a fall on a triple Axel attempt at the very start of her program.\n* **Gold:** **Mao Asada** (Japan) — Total Score: 185.56\n* **Silver:** **Carolina Kostner** (Italy) — Total Score: 184.68\n* **Bronze:** **Yuna Kim** (South Korea) — Total Score: 183.23 (Second consecutive World bronze)\n\n### 3.3 Pairs: 2008 ISU World Figure Skating Championships\n**Aljona Savchenko and Robin Szolkowy** (Germany) won their first World title, beginning a period of international dominance in the pairs discipline. \n* **Gold:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 202.86\n* **Silver:** **Dan Zhang / Hao Zhang** (China) — Total Score: 197.82\n* **Bronze:** **Jessica Dubé / Bryce Davison** (Canada) — Total Score: 192.78\n\n### 3.4 Ice Dance: 2008 ISU World Figure Skating Championships\n**Isabelle Delobel and Olivier Schoenfelder** (France) won their first World title on European ice, marking a peak in their long-standing partnership.\n* **Gold:** **Isabelle Delobel / Olivier Schoenfelder** (France) — Total Score: 212.94\n* **Silver:** **Jana Khokhlova / Sergei Novitski** (Russia) — Total Score: 203.26\n* **Bronze:** **Sinead Kerr / John Kerr** (Great Britain) — Total Score: 196.99 (Significant breakthrough for British ice dance)\n\n---",
+      "source_path": "data/manual_rag/worlds_2008.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2008",
+      "chunk_id": "data/manual_rag/worlds_2008.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2008 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2008 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 2 | **Japan (JPN)** | 1 | 0 | 0 | 1 |\n| 2 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 2 | **France (FRA)** | 1 | 1 | 0 | 2 |\n| 5 | **Italy (ITA)** | 0 | 1 | 0 | 1 |\n| 5 | **China (CHN)** | 0 | 1 | 0 | 1 |\n| 5 | **Russia (RUS)** | 0 | 1 | 0 | 1 |\n| 8 | **United States (USA)** | 0 | 0 | 1 | 1 |\n| 8 | **South Korea (KOR)** | 0 | 0 | 1 | 1 |\n| 8 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2008.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2008",
+      "chunk_id": "data/manual_rag/worlds_2008.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2008 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2008 ISU World Figure Skating Championships\n`Gothenburg 2008`, `Jeffrey Buttle gold`, `Mao Asada first title`, `Savchenko Szolkowy first gold`, `Delobel Schoenfelder history`, `Scandinavium Results`, `ISU World Results 2008`.",
+      "source_path": "data/manual_rag/worlds_2008.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2008",
+      "chunk_id": "data/manual_rag/worlds_2008.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2009 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2009 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2009 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that served as the primary qualification event for the 2010 Vancouver Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2009.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2009",
+      "chunk_id": "data/manual_rag/worlds_2009.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2009 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2009 ISU World Figure Skating Championships\n* **Event Name:** 2009 ISU World Figure Skating Championships\n* **Location:** Staples Center, Los Angeles, California, United States\n* **Dates:** March 23 – 29, 2009\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This event was the first World Championship to crown Yuna Kim as champion. It also featured the first world records set under the ISU Judging System (IJS) for the women's short program and total score.\n\n---",
+      "source_path": "data/manual_rag/worlds_2009.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2009",
+      "chunk_id": "data/manual_rag/worlds_2009.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2009 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2009 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2009 ISU World Figure Skating Championships\n**Evan Lysacek** (USA) won his first World title on home ice, becoming the first American man to win the world gold since 1996. He achieved this without attempting a quadruple jump, relying on superior program components and technical execution.\n* **Gold:** **Evan Lysacek** (United States) — Total Score: 242.23\n* **Silver:** **Patrick Chan** (Canada) — Total Score: 237.58\n* **Bronze:** **Brian Joubert** (France) — Total Score: 235.97\n\n### 3.2 Women's Singles: 2009 ISU World Figure Skating Championships\n**Yuna Kim** (South Korea) made history by becoming the first female skater to break the 200-point barrier under the IJS. Her victory marked South Korea's first-ever gold medal at the World Figure Skating Championships.\n* **Gold:** **Yuna Kim** (South Korea) — Total Score: 207.71 (World Record)\n* **Silver:** **Joannie Rochette** (Canada) — Total Score: 191.29 (First World medal for a Canadian woman since 1988)\n* **Bronze:** **Miki Ando** (Japan) — Total Score: 190.38\n\n### 3.3 Pairs: 2009 ISU World Figure Skating Championships\n**Aljona Savchenko and Robin Szolkowy** (Germany) successfully defended their title, winning their second consecutive World gold medal with a dominant performance in both segments.\n* **Gold:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 203.48\n* **Silver:** **Dan Zhang / Hao Zhang** (China) — Total Score: 186.52\n* **Bronze:** **Yuko Kavaguti / Alexander Smirnov** (Russia) — Total Score: 186.39\n\n### 3.4 Ice Dance: 2009 ISU World Figure Skating Championships\n**Oksana Domnina and Maxim Shabalin** (Russia) captured their first World title, leading a diverse podium that included teams from North America and Europe.\n* **Gold:** **Oksana Domnina / Maxim Shabalin** (Russia) — Total Score: 206.30\n* **Silver:** **Tanith Belbin / Benjamin Agosto** (United States) — Total Score: 205.08\n* **Bronze:** **Tessa Virtue / Scott Moir** (Canada) — Total Score: 200.40\n\n---",
+      "source_path": "data/manual_rag/worlds_2009.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2009",
+      "chunk_id": "data/manual_rag/worlds_2009.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2009 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2009 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 1 | 0 | 2 |\n| 2 | **Russia (RUS)** | 1 | 0 | 1 | 2 |\n| 3 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 3 | **South Korea (KOR)** | 1 | 0 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 2 | 1 | 3 |\n| 6 | **China (CHN)** | 0 | 1 | 0 | 1 |\n| 7 | **Japan (JPN)** | 0 | 0 | 1 | 1 |\n| 7 | **France (FRA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2009.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2009",
+      "chunk_id": "data/manual_rag/worlds_2009.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2009 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2009 ISU World Figure Skating Championships\n`Los Angeles 2009`, `Evan Lysacek first gold`, `Yuna Kim 200-point barrier`, `Joannie Rochette history`, `Savchenko Szolkowy defense`, `Olympic Qualification Worlds`, `Staples Center Results`, `ISU World Results 2009`.",
+      "source_path": "data/manual_rag/worlds_2009.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2009",
+      "chunk_id": "data/manual_rag/worlds_2009.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2010 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2010 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2010 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the championship that immediately followed the 2010 Vancouver Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2010.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2010",
+      "chunk_id": "data/manual_rag/worlds_2010.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2010 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2010 ISU World Figure Skating Championships\n* **Event Name:** 2010 ISU World Figure Skating Championships\n* **Location:** Palavela, Turin, Italy\n* **Dates:** March 22 – 28, 2010\n* **Host:** Federazione Italiana Sport del Ghiaccio / ISU\n* **Major Milestone:** This was the final World Championship to feature the Compulsory Dance and Original Dance in the ice dance discipline before they were merged into the Short Dance. It was also notable for Mao Asada and Daisuke Takahashi securing a historic gold sweep for Japan in the singles events.\n\n---",
+      "source_path": "data/manual_rag/worlds_2010.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2010",
+      "chunk_id": "data/manual_rag/worlds_2010.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2010 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2010 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2010 ISU World Figure Skating Championships\n**Daisuke Takahashi** (Japan) made history by becoming the first Japanese man to ever win a World Figure Skating title, capping off a comeback season after a major knee injury.\n* **Gold:** **Daisuke Takahashi** (Japan) — Total Score: 257.70\n* **Silver:** **Patrick Chan** (Canada) — Total Score: 247.22\n* **Bronze:** **Brian Joubert** (France) — Total Score: 241.74\n\n### 3.2 Women's Singles: 2010 ISU World Figure Skating Championships\n**Mao Asada** (Japan) reclaimed her World title, defeating her Olympic rival Yuna Kim. Asada successfully landed two triple Axels in her free skate to secure the gold.\n* **Gold:** **Mao Asada** (Japan) — Total Score: 197.58\n* **Silver:** **Yuna Kim** (South Korea) — Total Score: 190.79\n* **Bronze:** **Laura Lepistö** (Finland) — Total Score: 178.62 (First-ever World singles medal for a Finnish woman)\n\n### 3.3 Pairs: 2010 ISU World Figure Skating Championships\n**Pang Qing and Tong Jian** (China) won their second World title, delivering a technically precise performance that moved them from second in the short program to first overall.\n* **Gold:** **Pang Qing / Tong Jian** (China) — Total Score: 211.39\n* **Silver:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 204.74\n* **Bronze:** **Yuko Kavaguti / Alexander Smirnov** (Russia) — Total Score: 203.79\n\n### 3.4 Ice Dance: 2010 ISU World Figure Skating Championships\n**Tessa Virtue and Scott Moir** (Canada) won their first World title, following their Olympic gold in Vancouver. They became the first North American ice dance team to win the World title in the same year as their Olympic gold.\n* **Gold:** **Tessa Virtue / Scott Moir** (Canada) — Total Score: 224.43\n* **Silver:** **Meryl Davis / Charlie White** (United States) — Total Score: 223.03\n* **Bronze:** **Federica Faiella / Massimo Scali** (Italy) — Total Score: 197.85 (Podium finish on home ice)\n\n---",
+      "source_path": "data/manual_rag/worlds_2010.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2010",
+      "chunk_id": "data/manual_rag/worlds_2010.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2010 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2010 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Japan (JPN)** | 2 | 0 | 0 | 2 |\n| 2 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 3 | **China (CHN)** | 1 | 0 | 0 | 1 |\n| 4 | **South Korea (KOR)** | 0 | 1 | 0 | 1 |\n| 4 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 7 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 7 | **Finland (FIN)** | 0 | 0 | 1 | 1 |\n| 7 | **Italy (ITA)** | 0 | 0 | 1 | 1 |\n| 7 | **Russia (RUS)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2010.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2010",
+      "chunk_id": "data/manual_rag/worlds_2010.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2010 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2010 ISU World Figure Skating Championships\n`Turin 2010`, `Daisuke Takahashi first gold`, `Mao Asada 2nd title`, `Tessa Virtue Scott Moir first gold`, `Pang Tong 2nd title`, `Palavela Results`, `Post-Vancouver Worlds`, `ISU World Results 2010`.",
+      "source_path": "data/manual_rag/worlds_2010.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2010",
+      "chunk_id": "data/manual_rag/worlds_2010.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2011 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2011 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2011 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting an event historically significant for its relocation following the Tōhoku earthquake and tsunami.\n\n---",
+      "source_path": "data/manual_rag/worlds_2011.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2011",
+      "chunk_id": "data/manual_rag/worlds_2011.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2011 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2011 ISU World Figure Skating Championships\n* **Event Name:** 2011 ISU World Figure Skating Championships\n* **Location:** Megasport Arena, Moscow, Russia\n* **Dates:** April 24 – May 1, 2011\n* **Host:** Figure Skating Federation of Russia / ISU\n* **Major Milestone:** Originally scheduled for Tokyo, Japan, the event was postponed and moved to Moscow due to the 2011 Tōhoku earthquake and tsunami. It was the first World Championship to crown Meryl Davis and Charlie White as champions.\n\n---",
+      "source_path": "data/manual_rag/worlds_2011.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2011",
+      "chunk_id": "data/manual_rag/worlds_2011.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2011 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2011 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2011 ISU World Figure Skating Championships\n**Patrick Chan** (Canada) won his first World title in record-breaking fashion, setting new world records for the short program, free skate, and total score.\n* **Gold:** **Patrick Chan** (Canada) — Total Score: 280.98 (World Record)\n* **Silver:** **Takahiko Kozuka** (Japan) — Total Score: 258.41\n* **Bronze:** **Artur Gachinski** (Russia) — Total Score: 241.86 (World debut medal)\n\n### 3.2 Women's Singles: 2011 ISU World Figure Skating Championships\n**Miki Ando** (Japan) won her second World title, narrowly defeating the reigning Olympic champion Yuna Kim in a highly emotional competition.\n* **Gold:** **Miki Ando** (Japan) — Total Score: 195.79\n* **Silver:** **Yuna Kim** (South Korea) — Total Score: 194.50\n* **Bronze:** **Carolina Kostner** (Italy) — Total Score: 184.68\n\n### 3.3 Pairs: 2011 ISU World Figure Skating Championships\n**Aljona Savchenko and Robin Szolkowy** (Germany) reclaimed their World title, delivering a flawless free skate that included a throw triple flip and earned them their third gold medal.\n* **Gold:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 217.85\n* **Silver:** **Tatiana Volosozhar / Maxim Trankov** (Russia) — Total Score: 210.73 (First season as a partnership)\n* **Bronze:** **Pang Qing / Tong Jian** (China) — Total Score: 204.12\n\n### 3.4 Ice Dance: 2011 ISU World Figure Skating Championships\n**Meryl Davis and Charlie White** (United States) made history by becoming the first-ever American ice dance team to win a World gold medal.\n* **Gold:** **Meryl Davis / Charlie White** (United States) — Total Score: 185.27\n* **Silver:** **Tessa Virtue / Scott Moir** (Canada) — Total Score: 181.79\n* **Bronze:** **Maia Shibutani / Alex Shibutani** (United States) — Total Score: 163.79 (First World medal for the siblings)\n\n---",
+      "source_path": "data/manual_rag/worlds_2011.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2011",
+      "chunk_id": "data/manual_rag/worlds_2011.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2011 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2011 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Japan (JPN)** | 1 | 1 | 0 | 2 |\n| 1 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 3 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 4 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 5 | **Russia (RUS)** | 0 | 1 | 1 | 2 |\n| 6 | **South Korea (KOR)** | 0 | 1 | 0 | 1 |\n| 7 | **Italy (ITA)** | 0 | 0 | 1 | 1 |\n| 7 | **China (CHN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2011.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2011",
+      "chunk_id": "data/manual_rag/worlds_2011.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2011 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2011 ISU World Figure Skating Championships\n`Moscow 2011`, `Patrick Chan World Record`, `Miki Ando 2nd title`, `Meryl Davis Charlie White first gold`, `Davis White Shibutani podium`, `Savchenko Szolkowy 3rd title`, `Megasport Arena`, `Tokyo relocation`, `ISU World Results 2011`.",
+      "source_path": "data/manual_rag/worlds_2011.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2011",
+      "chunk_id": "data/manual_rag/worlds_2011.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2012 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2012 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2012 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that featured the defense of multiple world titles and the emergence of a new generation of skaters.\n\n---",
+      "source_path": "data/manual_rag/worlds_2012.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2012",
+      "chunk_id": "data/manual_rag/worlds_2012.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2012 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2012 ISU World Figure Skating Championships\n* **Event Name:** 2012 ISU World Figure Skating Championships\n* **Location:** Palais des Expositions, Nice, France\n* **Dates:** March 26 – April 1, 2012\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This was the first time the World Championships were held in Nice. The event was notable for a high-scoring Men's competition and the first World medals for several future Olympic champions.\n\n---",
+      "source_path": "data/manual_rag/worlds_2012.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2012",
+      "chunk_id": "data/manual_rag/worlds_2012.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2012 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2012 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2012 ISU World Figure Skating Championships\n**Patrick Chan** (Canada) successfully defended his World title, winning his second consecutive gold medal. Despite a fall in his free skate, his high technical difficulty and skating skills kept him ahead of the field.\n* **Gold:** **Patrick Chan** (Canada) — Total Score: 266.11\n* **Silver:** **Daisuke Takahashi** (Japan) — Total Score: 259.66\n* **Bronze:** **Yuzuru Hanyu** (Japan) — Total Score: 251.06 (Historic senior World debut medal)\n\n### 3.2 Women's Singles: 2012 ISU World Figure Skating Championships\n**Carolina Kostner** (Italy) won her first-ever World title in her tenth appearance at the championships, delivering a masterful free skate that solidified her status as a legendary figure in the sport.\n* **Gold:** **Carolina Kostner** (Italy) — Total Score: 189.94\n* **Silver:** **Alena Leonova** (Russia) — Total Score: 184.28 (First Russian woman on the podium since 2005)\n* **Bronze:** **Akiko Suzuki** (Japan) — Total Score: 180.68\n\n### 3.3 Pairs: 2012 ISU World Figure Skating Championships\n**Aljona Savchenko and Robin Szolkowy** (Germany) successfully defended their title, capturing their fourth World gold medal together in a narrow victory over the Russian pair.\n* **Gold:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 201.39\n* **Silver:** **Tatiana Volosozhar / Maxim Trankov** (Russia) — Total Score: 201.28\n* **Bronze:** **Narumi Takahashi / Mervin Tran** (Japan) — Total Score: 189.69 (First-ever World pairs medal for Japan)\n\n### 3.4 Ice Dance: 2012 ISU World Figure Skating Championships\n**Tessa Virtue and Scott Moir** (Canada) reclaimed their World title, defeating the defending champions Davis and White in a competition marked by exceptional technical precision and artistry.\n* **Gold:** **Tessa Virtue / Scott Moir** (Canada) — Total Score: 182.65\n* **Silver:** **Meryl Davis / Charlie White** (United States) — Total Score: 178.62\n* **Bronze:** **Nathalie Péchalat / Fabian Bourzat** (France) — Total Score: 173.18\n\n---",
+      "source_path": "data/manual_rag/worlds_2012.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2012",
+      "chunk_id": "data/manual_rag/worlds_2012.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2012 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2012 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 2 | 0 | 0 | 2 |\n| 2 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 2 | **Italy (ITA)** | 1 | 0 | 0 | 1 |\n| 4 | **Japan (JPN)** | 0 | 1 | 3 | 4 |\n| 5 | **Russia (RUS)** | 0 | 2 | 0 | 2 |\n| 6 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 7 | **France (FRA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2012.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2012",
+      "chunk_id": "data/manual_rag/worlds_2012.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2012 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2012 ISU World Figure Skating Championships\n`Nice 2012`, `Patrick Chan defense`, `Carolina Kostner first gold`, `Yuzuru Hanyu debut medal`, `Virtue Moir 2012`, `Savchenko Szolkowy 4th title`, `Palais des Expositions`, `ISU World Results 2012`.",
+      "source_path": "data/manual_rag/worlds_2012.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2012",
+      "chunk_id": "data/manual_rag/worlds_2012.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2013 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2013 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2013 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that served as the primary qualification event for the 2014 Sochi Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2013.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2013",
+      "chunk_id": "data/manual_rag/worlds_2013.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2013 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2013 ISU World Figure Skating Championships\n* **Event Name:** 2013 ISU World Figure Skating Championships\n* **Location:** Budweiser Gardens, London, Ontario, Canada\n* **Dates:** March 11 – 17, 2013\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This event was the definitive pre-Olympic showdown, determining the number of entries each country would receive for the 2014 Winter Olympics. It featured the return of Yuna Kim to the world stage.\n\n---",
+      "source_path": "data/manual_rag/worlds_2013.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2013",
+      "chunk_id": "data/manual_rag/worlds_2013.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2013 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2013 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2013 ISU World Figure Skating Championships\n**Patrick Chan** (Canada) won his third consecutive World title on home ice, despite a challenging free skate. He managed to hold off a strong push from Denis Ten to secure the gold.\n* **Gold:** **Patrick Chan** (Canada) — Total Score: 267.78\n* **Silver:** **Denis Ten** (Kazakhstan) — Total Score: 266.48 (First-ever World medal for Kazakhstan)\n* **Bronze:** **Javier Fernández** (Spain) — Total Score: 249.06 (First-ever World medal for Spain)\n\n### 3.2 Women's Singles: 2013 ISU World Figure Skating Championships\n**Yuna Kim** (South Korea) delivered a dominant performance in her first World Championship since 2011, winning the gold medal by a staggering margin of over 20 points.\n* **Gold:** **Yuna Kim** (South Korea) — Total Score: 218.31\n* **Silver:** **Carolina Kostner** (Italy) — Total Score: 197.89\n* **Bronze:** **Mao Asada** (Japan) — Total Score: 196.47\n\n### 3.3 Pairs: 2013 ISU World Figure Skating Championships\n**Tatiana Volosozhar and Maxim Trankov** (Russia) captured their first World title, setting a new world record for the total score under the judging system at that time.\n* **Gold:** **Tatiana Volosozhar / Maxim Trankov** (Russia) — Total Score: 225.71 (World Record)\n* **Silver:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 205.56\n* **Bronze:** **Meagan Duhamel / Eric Radford** (Canada) — Total Score: 204.57\n\n### 3.4 Ice Dance: 2013 ISU World Figure Skating Championships\n**Meryl Davis and Charlie White** (United States) reclaimed their World title, defeating the reigning Olympic champions Virtue and Moir in a closely fought contest.\n* **Gold:** **Meryl Davis / Charlie White** (United States) — Total Score: 189.56\n* **Silver:** **Tessa Virtue / Scott Moir** (Canada) — Total Score: 185.04\n* **Bronze:** **Ekaterina Bobrova / Dmitri Soloviev** (Russia) — Total Score: 169.19\n\n---",
+      "source_path": "data/manual_rag/worlds_2013.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2013",
+      "chunk_id": "data/manual_rag/worlds_2013.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2013 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2013 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 1 | 1 | 1 | 3 |\n| 2 | **Russia (RUS)** | 1 | 0 | 1 | 2 |\n| 3 | **United States (USA)** | 1 | 0 | 0 | 1 |\n| 3 | **South Korea (KOR)** | 1 | 0 | 0 | 1 |\n| 5 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 5 | **Italy (ITA)** | 0 | 1 | 0 | 1 |\n| 5 | **Kazakhstan (KAZ)** | 0 | 1 | 0 | 1 |\n| 8 | **Spain (ESP)** | 0 | 0 | 1 | 1 |\n| 8 | **Japan (JPN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2013.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2013",
+      "chunk_id": "data/manual_rag/worlds_2013.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2013 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2013 ISU World Figure Skating Championships\n`London Ontario 2013`, `Patrick Chan three-peat`, `Yuna Kim comeback`, `Denis Ten history`, `Volosozhar Trankov World Record`, `Davis White 2nd title`, `Olympic Qualification Worlds`, `Budweiser Gardens Results`.",
+      "source_path": "data/manual_rag/worlds_2013.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2013",
+      "chunk_id": "data/manual_rag/worlds_2013.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2014 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2014 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2014 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the championship that immediately followed the 2014 Sochi Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2014.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2014",
+      "chunk_id": "data/manual_rag/worlds_2014.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2014 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2014 ISU World Figure Skating Championships\n* **Event Name:** 2014 ISU World Figure Skating Championships\n* **Location:** Saitama Super Arena, Saitama, Japan\n* **Dates:** March 24 – 30, 2014\n* **Host:** Japan Federation / ISU\n* **Major Milestone:** This event was the first World Championship held in Japan since 2007. It was notable for several Olympic medalists successfully defending their momentum to win World titles.\n\n---",
+      "source_path": "data/manual_rag/worlds_2014.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2014",
+      "chunk_id": "data/manual_rag/worlds_2014.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2014 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2014 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2014 ISU World Figure Skating Championships\n**Yuzuru Hanyu** (Japan) completed a historic season by winning the World title shortly after his Olympic gold in Sochi. He overcame a short program deficit behind Tatsuki Machida to win by less than 0.35 points.\n* **Gold:** **Yuzuru Hanyu** (Japan) — Total Score: 282.59\n* **Silver:** **Tatsuki Machida** (Japan) — Total Score: 282.26\n* **Bronze:** **Javier Fernández** (Spain) — Total Score: 275.93\n\n### 3.2 Women's Singles: 2014 ISU World Figure Skating Championships\n**Mao Asada** (Japan) won her third World title, setting a new world record for the short program score (78.66) and delighting the home crowd after a challenging Olympic individual event.\n* **Gold:** **Mao Asada** (Japan) — Total Score: 216.69 (World Record Short Program)\n* **Silver:** **Yulia Lipnitskaya** (Russia) — Total Score: 207.50\n* **Bronze:** **Carolina Kostner** (Italy) — Total Score: 203.83\n\n### 3.3 Pairs: 2014 ISU World Figure Skating Championships\n**Aljona Savchenko and Robin Szolkowy** (Germany) won their fifth and final World title together. They announced their retirement as a pair immediately following the competition.\n* **Gold:** **Aljona Savchenko / Robin Szolkowy** (Germany) — Total Score: 224.88\n* **Silver:** **Ksenia Stolbova / Fedor Klimov** (Russia) — Total Score: 215.92\n* **Bronze:** **Meagan Duhamel / Eric Radford** (Canada) — Total Score: 210.84\n\n### 3.4 Ice Dance: 2014 ISU World Figure Skating Championships\n**Anna Cappellini and Luca Lanotte** (Italy) won their first World title in a remarkably close competition, where the top three teams were separated by less than one point.\n* **Gold:** **Anna Cappellini / Luca Lanotte** (Italy) — Total Score: 175.43\n* **Silver:** **Kaitlyn Weaver / Andrew Poje** (Canada) — Total Score: 175.41\n* **Bronze:** **Nathalie Péchalat / Fabian Bourzat** (France) — Total Score: 175.37\n\n---",
+      "source_path": "data/manual_rag/worlds_2014.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2014",
+      "chunk_id": "data/manual_rag/worlds_2014.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2014 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2014 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Japan (JPN)** | 2 | 1 | 0 | 3 |\n| 2 | **Italy (ITA)** | 1 | 0 | 1 | 2 |\n| 3 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 4 | **Russia (RUS)** | 0 | 2 | 0 | 2 |\n| 5 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 6 | **Spain (ESP)** | 0 | 0 | 1 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2014.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2014",
+      "chunk_id": "data/manual_rag/worlds_2014.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2014 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2014 ISU World Figure Skating Championships\n`Saitama 2014`, `Yuzuru Hanyu Olympic World double`, `Mao Asada World Record`, `Savchenko Szolkowy 5th title`, `Cappellini Lanotte gold`, `Post-Sochi Worlds`, `Saitama Super Arena Results`, `ISU World Results 2014`.",
+      "source_path": "data/manual_rag/worlds_2014.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2014",
+      "chunk_id": "data/manual_rag/worlds_2014.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2015 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2015 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2015 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that saw the first-ever World gold medal for Spain and the beginning of several dominant championship streaks.\n\n---",
+      "source_path": "data/manual_rag/worlds_2015.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2015",
+      "chunk_id": "data/manual_rag/worlds_2015.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2015 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2015 ISU World Figure Skating Championships\n* **Event Name:** 2015 ISU World Figure Skating Championships\n* **Location:** Oriental Sports Center, Shanghai, China\n* **Dates:** March 23 – 29, 2015\n* **Host:** Chinese Figure Skating Association / ISU\n* **Major Milestone:** This was the first time the World Figure Skating Championships were held in China. It featured historic results for European and North American skaters on Asian ice.\n\n---",
+      "source_path": "data/manual_rag/worlds_2015.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2015",
+      "chunk_id": "data/manual_rag/worlds_2015.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2015 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2015 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2015 ISU World Figure Skating Championships\n**Javier Fernández** (Spain) made history by winning his first World title, becoming the first Spaniard to ever win a World Championship in figure skating. He defeated the reigning Olympic champion Yuzuru Hanyu.\n* **Gold:** **Javier Fernández** (Spain) — Total Score: 273.90\n* **Silver:** **Yuzuru Hanyu** (Japan) — Total Score: 271.08\n* **Bronze:** **Denis Ten** (Kazakhstan) — Total Score: 267.72\n\n### 3.2 Women's Singles: 2015 ISU World Figure Skating Championships\n**Elizaveta Tuktamysheva** (Russia) capped off a dominant season by winning the gold medal. She became one of the few women in history to successfully land a triple Axel in international competition during this event.\n* **Gold:** **Elizaveta Tuktamysheva** (Russia) — Total Score: 210.36\n* **Silver:** **Satoko Miyahara** (Japan) — Total Score: 193.60\n* **Bronze:** **Elena Radionova** (Russia) — Total Score: 191.44\n\n### 3.3 Pairs: 2015 ISU World Figure Skating Championships\n**Meagan Duhamel and Eric Radford** (Canada) won their first World title, completing an undefeated season. Their performance was highlighted by a successful throw quadruple Salchow.\n* **Gold:** **Meagan Duhamel / Eric Radford** (Canada) — Total Score: 221.53\n* **Silver:** **Sui Wenjing / Han Cong** (China) — Total Score: 214.12\n* **Bronze:** **Pang Qing / Tong Jian** (China) — Total Score: 212.77 (Final competitive event for the veteran pair)\n\n### 3.4 Ice Dance: 2015 ISU World Figure Skating Championships\n**Gabriella Papadakis and Guillaume Cizeron** (France) won their first World title in only their second senior World appearance, rising from 13th place the previous year to the top of the podium.\n* **Gold:** **Gabriella Papadakis / Guillaume Cizeron** (France) — Total Score: 184.28\n* **Silver:** **Madison Chock / Evan Bates** (United States) — Total Score: 181.34\n* **Bronze:** **Kaitlyn Weaver / Andrew Poje** (Canada) — Total Score: 179.42\n\n---",
+      "source_path": "data/manual_rag/worlds_2015.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2015",
+      "chunk_id": "data/manual_rag/worlds_2015.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2015 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2015 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 1 | 0 | 1 | 2 |\n| 1 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 3 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 3 | **Spain (ESP)** | 1 | 0 | 0 | 1 |\n| 5 | **Japan (JPN)** | 0 | 2 | 0 | 2 |\n| 6 | **China (CHN)** | 0 | 1 | 1 | 2 |\n| 7 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 8 | **Kazakhstan (KAZ)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2015.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2015",
+      "chunk_id": "data/manual_rag/worlds_2015.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2015 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2015 ISU World Figure Skating Championships\n`Shanghai 2015`, `Javier Fernandez first title`, `Elizaveta Tuktamysheva Triple Axel`, `Duhamel Radford undefeated`, `Papadakis Cizeron breakthrough`, `Oriental Sports Center Results`, `ISU World Results 2015`.",
+      "source_path": "data/manual_rag/worlds_2015.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2015",
+      "chunk_id": "data/manual_rag/worlds_2015.md::chunk_5"
     },
     {
       "text": "# Reference: 2016 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2016 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2016 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that featured historic firsts for several nations and a high-stakes competition at the TD Garden.\n\n---",
