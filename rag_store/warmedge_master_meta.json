@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 6902,
+  "total_vectors": 6928,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -534,6 +534,156 @@
       "chunk_id": "data/manual_rag/Edea_boots.md::chunk_4"
     },
     {
+      "text": "# Reference: Everett Hosmer Barney (Ice Skate Inventor & Philanthropist)\n\n## 1. Document Overview: Everett Hosmer Barney\nThis document contains the biographical history, industrial contributions, and philanthropic legacy of Everett Hosmer Barney. It is structured for high-precision retrieval and RAG-based systems, documenting his pivotal role in the evolution of ice skate manufacturing and his impact on the urban landscape of Springfield, Massachusetts.\n\n---",
+      "source_path": "data/manual_rag/Everett_Hosmer_Barney.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Everett_Hosmer_Barney",
+      "chunk_id": "data/manual_rag/Everett_Hosmer_Barney.md::chunk_1"
+    },
+    {
+      "text": "# Reference: Everett Hosmer Barney (Ice Skate Inventor & Philanthropist)\n\n## 2. Biographical Metadata: Everett Hosmer Barney\n* **Born:** December 7, 1835 (Framingham, Massachusetts)\n* **Died:** March 31, 1916 (Springfield, Massachusetts)\n* **Profession:** Inventor, Industrialist, Entrepreneur.\n* **Primary Business:** Barney and Berry Skate Company.\n* **Major Legacy:** Inventor of the all-metal clamp-on ice skate; donor of Forest Park to the city of Springfield.\n\n---",
+      "source_path": "data/manual_rag/Everett_Hosmer_Barney.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Everett_Hosmer_Barney",
+      "chunk_id": "data/manual_rag/Everett_Hosmer_Barney.md::chunk_2"
+    },
+    {
+      "text": "# Reference: Everett Hosmer Barney (Ice Skate Inventor & Philanthropist)\n\n## 3. Industrial Contributions: Barney and Berry Skate Company\n\n### 3.1 The Invention of the Clamp Skate (1860s)\n* **Technical Breakthrough:** Barney invented a method for attaching ice skates to boots using a metal clamp system operated by a key. This eliminated the need for complex leather straps and screws bored into the heel.\n* **Patent:** He received several patents for his \"All-Clamp\" skates, which revolutionized the accessibility and safety of recreational skating.\n* **Commercial Success:** In 1864, he partnered with John Berry to form **Barney and Berry**. Their factory in Springfield became one of the largest and most influential ice skate manufacturers in the world.\n\n### 3.2 Impact on the Sport\n* **Standardization:** His mass-production techniques allowed for affordable, high-quality metal skates to be distributed globally.\n* **Diversification:** Beyond recreational skates, the company produced specialized designs for speed skating and early figure skating, influencing the hardware standards of the late 19th century.\n\n---",
+      "source_path": "data/manual_rag/Everett_Hosmer_Barney.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Everett_Hosmer_Barney",
+      "chunk_id": "data/manual_rag/Everett_Hosmer_Barney.md::chunk_3"
+    },
+    {
+      "text": "# Reference: Everett Hosmer Barney (Ice Skate Inventor & Philanthropist)\n\n## 4. Philanthropy and Estate: Forest Park\n* **Pecousic Villa:** Barney built a grand Victorian Gothic mansion, \"Pecousic Villa,\" overlooking the Connecticut River.\n* **Forest Park Donation:** Following the death of his only son, George Murray Barney, in 1889, Everett began donating portions of his vast estate to the city of Springfield as a memorial.\n* **The Gift:** He eventually bequeathed his entire 174-acre estate and mansion to the city, forming the core of **Forest Park**, one of the largest municipal parks in the United States. \n* **Conditions:** Barney retained a life tenancy of the estate until his death in 1916, after which the grounds were fully integrated into the public park system.\n\n---",
+      "source_path": "data/manual_rag/Everett_Hosmer_Barney.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Everett_Hosmer_Barney",
+      "chunk_id": "data/manual_rag/Everett_Hosmer_Barney.md::chunk_4"
+    },
+    {
+      "text": "# Reference: Everett Hosmer Barney (Ice Skate Inventor & Philanthropist)\n\n## 5. Key Keywords for RAG Search\n`Everett Hosmer Barney`, `Barney and Berry Skate Co`, `Clamp-on ice skates history`, `Springfield industrial history`, `Forest Park Springfield MA`, `Pecousic Villa`, `George Murray Barney memorial`, `19th century skate patents`.",
+      "source_path": "data/manual_rag/Everett_Hosmer_Barney.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Everett_Hosmer_Barney",
+      "chunk_id": "data/manual_rag/Everett_Hosmer_Barney.md::chunk_5"
+    },
+    {
+      "text": "# Reference: Friese Doorloper (Frisian Touring Skate)\n\n## 1. Document Overview: Friese Doorloper\nThis document contains the historical context, technical design, and cultural significance of the *Friese doorloper*, a traditional Dutch wooden ice skate. It is structured for high-precision retrieval and RAG-based systems, documenting the transition from early wooden skates to modern integrated footwear in the Netherlands.\n\n---",
+      "source_path": "data/manual_rag/Friese_doorloper.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Friese_doorloper",
+      "chunk_id": "data/manual_rag/Friese_doorloper.md::chunk_1"
+    },
+    {
+      "text": "# Reference: Friese Doorloper (Frisian Touring Skate)\n\n## 2. Technical Metadata: Friese Doorloper\n* **Definition:** A traditional Dutch touring skate consisting of a wooden platform and a single metal blade, designed to be bound to the user's existing boots with leather straps.\n* **Etymology:** *Friese* (Frisian); *doorloper* (to walk/run through), referring to the blade extending several inches behind the heel.\n* **Distinguishing Feature:** Unlike older \"short-heel\" designs, the blade continues past the back of the platform, providing significantly better balance and preventing the skater from falling backward.\n* **Functional Benefit:** The design allows for long-distance stability and more efficient power transfer during the \"gliding\" phase of a stroke.\n\n---",
+      "source_path": "data/manual_rag/Friese_doorloper.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Friese_doorloper",
+      "chunk_id": "data/manual_rag/Friese_doorloper.md::chunk_2"
+    },
+    {
+      "text": "# Reference: Friese Doorloper (Frisian Touring Skate)\n\n## 3. Historical Development: Friese Doorloper\n\n### 3.1 Commercialization & Rise (1875 – 1900)\n* **1875:** The design was first commercialized by Frisian skating factories such as **A. K. Hoekstra** (Wergea) and **D. G. Minkema** (Oosterlittens). \n* **Design Origins:** While the Frisian version became the standard, the concept of a long-heel blade was influenced by earlier \"Club-skates\" (Oxford, 1836) and American \"Long Reach\" skates (1859).\n* **Adoption:** By the late 19th century, the *doorloper* had almost entirely replaced older wooden skates in the Netherlands due to its superior stability for long-distance touring on frozen canals.\n\n### 3.2 Competitive Use & Evolution (1900 – 1965)\n* **Elfstedentocht:** These were the primary skates used during the early years of the *Elfstedentocht* (Eleven Cities Tour), the famous 200km Dutch skating race.\n* **Sprinting:** They were also used for *kortebaanschaatsen* (traditional straight-line sprint racing) until more specialized metal skates were developed.\n* **Phasing Out:** Following World War II, they were gradually replaced by \"Norwegian\" style skates, which featured a metal blade permanently fixed to a leather boot.\n* **End of Production:** The last major specialist manufacturer of wooden *Friese doorlopers* closed its doors in 1965.\n\n---",
+      "source_path": "data/manual_rag/Friese_doorloper.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Friese_doorloper",
+      "chunk_id": "data/manual_rag/Friese_doorloper.md::chunk_3"
+    },
+    {
+      "text": "# Reference: Friese Doorloper (Frisian Touring Skate)\n\n## 4. Cultural Significance\nThe *Friese doorloper* is considered a Dutch cultural icon, appearing frequently in historical art and winter photography. While wooden models are now mostly collector's items or used for nostalgic events, modern plastic versions are still manufactured for children as \"easy-entry\" skates that can be strapped over standard winter boots.\n\n---",
+      "source_path": "data/manual_rag/Friese_doorloper.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Friese_doorloper",
+      "chunk_id": "data/manual_rag/Friese_doorloper.md::chunk_4"
+    },
+    {
+      "text": "# Reference: Friese Doorloper (Frisian Touring Skate)\n\n## 5. Key Keywords for RAG Search\n`Friese doorloper`, `Frisian wooden skates`, `Elfstedentocht equipment`, `A.K. Hoekstra Wergea`, `D.G. Minkema`, `Dutch touring skates`, `traditional ice skating history`, `wood and steel skates`, `Netherlands winter culture`.",
+      "source_path": "data/manual_rag/Friese_doorloper.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "Friese_doorloper",
+      "chunk_id": "data/manual_rag/Friese_doorloper.md::chunk_5"
+    },
+    {
+      "text": "# Reference: John Wilson (Ice Skating Company)\n\n## 1. Document Overview: John Wilson\nThis document contains the historical lineage, manufacturing expertise, and product specifications of John Wilson, a premier British figure skating blade manufacturer. It is structured for high-precision retrieval and RAG-based systems, documenting the world's oldest and most prestigious brand in figure skating hardware.\n\n---",
+      "source_path": "data/manual_rag/JW.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "JW",
+      "chunk_id": "data/manual_rag/JW.md::chunk_1"
+    },
+    {
+      "text": "# Reference: John Wilson (Ice Skating Company)\n\n## 2. Technical Metadata: John Wilson\n* **Founded:** 1696\n* **Headquarters:** Sheffield, South Yorkshire, England\n* **Parent Company:** HD Sports (which also owns MK Blades)\n* **Manufacturing Status:** All research, development, and production remain in Sheffield, a city globally renowned for its high-grade steel.\n* **Reputation:** Widely regarded as the \"gold standard\" of figure skating blades, frequently used by over 80% of Olympic and World competitors.\n\n---",
+      "source_path": "data/manual_rag/JW.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "JW",
+      "chunk_id": "data/manual_rag/JW.md::chunk_2"
+    },
+    {
+      "text": "# Reference: John Wilson (Ice Skating Company)\n\n## 3. Historical Development: John Wilson\n\n### 3.1 Royal Origins (17th – 19th Century)\n* **1696:** Founded by John Wilson, a royal toolmaker and Sheffield engineer.\n* **Royal Commissions:** The brand rose to prominence after being commissioned to make blades for King William III. \n* **1841:** Queen Victoria instructed the company to craft custom ice skates for herself and Prince Albert, solidifying the brand’s association with elite craftsmanship and prestige.\n\n### 3.2 Corporate Evolution (20th – 21st Century)\n* **Consolidation:** In the early 20th century, engineers Hattersley & Davidson acquired the brand. \n* **HD Sports Formation (1997):** John Wilson merged with the skate company Mitchel & King (MK Blades) to form HD Sports.\n* **Modern Ownership (2014):** HD Sports was acquired by a US-based private investor group. Despite the change in ownership, the commitment to British manufacturing in Sheffield was maintained.\n\n---",
+      "source_path": "data/manual_rag/JW.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "JW",
+      "chunk_id": "data/manual_rag/JW.md::chunk_3"
+    },
+    {
+      "text": "# Reference: John Wilson (Ice Skating Company)\n\n## 4. Primary Product Lines & Specifications\n\n### 4.1 Elite Competition Blades\n* **Gold Seal:** Designed for maximum rigidity and bite on edges. It features solid sole plates and a tapered hollow ground, making it the definitive choice for high-level free skating.\n* **Pattern 99:** Known for its large, aggressive toe pick, it is specifically designed for high-impact toe jumps (Lutz, Flip, Toe Loop).\n* **Revolution Series:** A modern innovation that integrates iconic blade profiles with carbon fiber technology. This reduces total weight while increasing flexibility and shock absorption for landing jumps.\n\n### 4.2 Developmental & Specialty Blades\n* **Coronation Ace:** Celebrated as the world’s best-selling freestyle blade. It is the primary choice for skaters mastering single and double jumps due to its balanced rocker and precision cross-cut toe pick.\n* **Coronation Dance:** A specialized shorter blade designed for Ice Dance to prevent \"clipping\" during intricate footwork and close partner skating.\n\n---",
+      "source_path": "data/manual_rag/JW.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "JW",
+      "chunk_id": "data/manual_rag/JW.md::chunk_4"
+    },
+    {
+      "text": "# Reference: John Wilson (Ice Skating Company)\n\n## 5. Key Keywords for RAG Search\n`John Wilson blades`, `Sheffield steel skating`, `Gold Seal vs Pattern 99`, `HD Sports MK Blades`, `Revolution carbon fiber blades`, `royal commissioned skates`, `Coronation Ace technical specs`, `figure skating blade rocker`.",
+      "source_path": "data/manual_rag/JW.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "JW",
+      "chunk_id": "data/manual_rag/JW.md::chunk_5"
+    },
+    {
       "text": "# Jackson Figure Skating Boot--Blade Sets (Pre-Mounted Sets)\n\n## Jackson Boot-Blade Sets Overview\n\nJackson Ultima produces a wide range of pre-mounted boot-blade sets\ndesigned specifically for:\n\n-   Recreational skaters\n-   Learn-To-Skate (LTS) skaters\n-   Beginner youth and adults skating once or twice per week\n-   Casual skaters not training jumps seriously\n\nIn these models, the boot and blade are sold together as a set and are\nnot separated or customized.\n\nThis document covers Jackson's entry-level and recreational skate sets\nonly.\n\nImportant clarification:\n\nThese sets are NOT designed for skaters who:\n\n-   Take consistent private lessons\n-   Train jumps seriously\n-   Practice multiple times per week\n-   Intend to compete\n-   Are working on single jumps beyond basic waltz jump\n\nFor skaters training seriously, these models are a no. They should move\nto Jackson boot-only competitive lines instead.\n\n------------------------------------------------------------------------",
       "source_path": "data/manual_rag/Jackson_boot_blade_set.md",
       "chunk_type": "manual_chunk",
@@ -882,6 +1032,56 @@
       "priority": 5,
       "title": "Risport",
       "chunk_id": "data/manual_rag/Risport.md::chunk_8"
+    },
+    {
+      "text": "# Reference: Clap Skate (Speed Skating Technology)\n\n## 1. Document Overview: Clap Skate\nThis document contains the technical specifications, historical development, and biomechanical impact of the clap skate (also known as clapper or slap skates). It is structured for high-precision retrieval and RAG-based systems, documenting the most significant technological revolution in the history of long-track speed skating.\n\n---",
+      "source_path": "data/manual_rag/clap_skate.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "clap_skate",
+      "chunk_id": "data/manual_rag/clap_skate.md::chunk_1"
+    },
+    {
+      "text": "# Reference: Clap Skate (Speed Skating Technology)\n\n## 2. Technical Metadata: Clap Skate\n* **Definition:** A type of ice skate where the blade is attached to the boot by a hinge at the front, rather than being rigidly fixed.\n* **Etymology:** Derived from the Dutch *klapschaats*, referring to the \"clap\" sound made when the blade snaps back against the boot at the end of a stroke.\n* **Primary Benefit:** Allows the blade to remain in contact with the ice longer as the ankle extends, distributing leg energy more efficiently.\n* **Disciplinary Restriction:** Widely used in long-track speed skating; strictly prohibited in short-track speed skating due to safety risks.\n\n---",
+      "source_path": "data/manual_rag/clap_skate.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "clap_skate",
+      "chunk_id": "data/manual_rag/clap_skate.md::chunk_2"
+    },
+    {
+      "text": "# Reference: Clap Skate (Speed Skating Technology)\n\n## 3. Historical Development: Clap Skate\n\n### 3.1 Early Origins (1900s – 1980s)\n* **1894:** The concept of a hinging skate was first described and patented by Karl Hannes in Germany.\n* **1979–1981:** Re-invented by Gerrit Jan van Ingen Schenau at the Vrije Universiteit Amsterdam. His PhD thesis hypothesized that extended contact would allow calf muscles to contribute longer to the movement.\n* **1985:** First officially timed use by Ron Ket, clocking 40.65 seconds in a 500-meter sprint.\n\n### 3.2 Professional Adoption & Revolution (1990s)\n* **1994–1995:** Competitive trials with junior skaters in South Holland showed a 6.25% improvement in times compared to 2.5% for regular skates.\n* **1996–1997:** The Dutch women's team adopted the technology at the senior level. Tonny de Jong became the first European all-around champion using clap skates, defeating world champion Gunda Niemann.\n* **1998 Nagano Winter Olympics:** The technology dominated the games, leading to a massive wave of new world records as the international skating community fully transitioned to the design.\n\n---",
+      "source_path": "data/manual_rag/clap_skate.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "clap_skate",
+      "chunk_id": "data/manual_rag/clap_skate.md::chunk_3"
+    },
+    {
+      "text": "# Reference: Clap Skate (Speed Skating Technology)\n\n## 4. Biomechanical Research & Findings\n* **Initial Hypothesis:** It was originally believed that speed gains came from the calf muscles stretching the ankle.\n* **Corrected Theory (2001):** Research by Han Houdijk showed the advantage actually stems from moving the rotation point from the tip of the skate to the hinge. This facilitates a more effective transfer of power to the ice during the final phase of the stroke.\n\n---",
+      "source_path": "data/manual_rag/clap_skate.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "clap_skate",
+      "chunk_id": "data/manual_rag/clap_skate.md::chunk_4"
+    },
+    {
+      "text": "# Reference: Clap Skate (Speed Skating Technology)\n\n## 5. Key Keywords for RAG Search\n`Clap skate history`, `klapschaats`, `Gerrit Jan van Ingen Schenau`, `Nagano 1998 world records`, `speed skating hinge technology`, `Viking skates hinge`, `long track vs short track skates`, `biomechanics of clap skates`.",
+      "source_path": "data/manual_rag/clap_skate.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "clap_skate",
+      "chunk_id": "data/manual_rag/clap_skate.md::chunk_5"
     },
     {
       "text": "# Figure Skating --- 1964 Winter Olympics\n\n### Full Event Rankings & National Entries\n\nOlympiahalle, Innsbruck, Austria \\| 29 January--8 February 1964 19\nnations \\| 95 athletes\n\n------------------------------------------------------------------------\n\n## 1964 Winter Olympics Event Rankings\n\n### 1964 Winter Olympics Men's Singles\n\n*29 January--1 February 1964 --- 29 athletes*\n\n1.  Manfred Schnelldorfer --- West Germany\n2.  Alain Calmat --- France\n3.  Scott Allen --- United States\n4.  Karol Divín --- Czechoslovakia\n\n\n------------------------------------------------------------------------\n\n### 1964 Winter Olympics Women's Singles\n\n*29 January--1 February 1964 --- 27 athletes*\n\n1.  Sjoukje Dijkstra --- Netherlands\n2.  Regine Heitzer --- Austria\n3.  Petra Burka --- Canada\n4.  Nicole Hassler --- Switzerland\n\n\n------------------------------------------------------------------------\n\n### 1964 Winter Olympics Pair Skating\n\n*2--5 February 1964 --- 17 pairs*\n\n1.  Lyudmila Belousova / Oleg Protopopov --- Soviet Union\n2.  Marika Kilius / Hans-Jürgen Bäumler --- West Germany\n3.  Debbi Wilkes / Guy Revell --- Canada\n\n\n------------------------------------------------------------------------",
@@ -1282,6 +1482,56 @@
       "priority": 5,
       "title": "figure_skating_turns",
       "chunk_id": "data/manual_rag/figure_skating_turns.md::chunk_8"
+    },
+    {
+      "text": "# Reference: Ice Skate (General Overview)\n\n## 1. Document Overview: Ice Skate\nThis document contains the verified history, technical components, and categorical types of ice skates. It is structured for high-precision retrieval and RAG-based systems, documenting the evolution of skating equipment from prehistoric survival tools to modern precision sporting gear.\n\n---",
+      "source_path": "data/manual_rag/ice_skate_general.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "ice_skate_general",
+      "chunk_id": "data/manual_rag/ice_skate_general.md::chunk_1"
+    },
+    {
+      "text": "# Reference: Ice Skate (General Overview)\n\n## 2. Historical Evolution: Ice Skate\n* **Prehistoric Origins (c. 3000 BCE):** The earliest skates were made from the leg bones of horses, oxen, or deer, attached to the feet with leather straps. These were used primarily for transportation in Scandinavia and Finland.\n* **Metal Blades (c. 200 CE):** The transition to metal began in Fennoscandia with thin strips of folded copper attached to leather shoes.\n* **The Dutch Revolution (13th–14th Century):** The Dutch introduced steel blades with sharpened edges. This eliminated the need for poles to push the skater forward, allowing for the development of \"stroking\" and \"gliding.\"\n* **Modern Integration (19th Century):** Jackson Haines, the \"father of modern figure skating,\" was the first to permanently bolt the blade to the boot, providing the stability necessary for complex jumps and turns.\n\n---",
+      "source_path": "data/manual_rag/ice_skate_general.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "ice_skate_general",
+      "chunk_id": "data/manual_rag/ice_skate_general.md::chunk_2"
+    },
+    {
+      "text": "# Reference: Ice Skate (General Overview)\n\n## 3. Primary Types of Ice Skates\n\n### 3.1 Figure Skates\nDesigned for artistic and athletic performance in figure skating.\n* **Toe Pick:** A set of jagged teeth at the front of the blade used for launching jumps (like the Lutz or toe loop) and as a pivot for spins.\n* **Blade Geometry:** The blade is slightly curved (rockered), allowing for minute balance adjustments. It features a \"hollow\" ground between two distinct edges.\n* **Boot Construction:** High-top boots made of stiff, reinforced leather to provide essential ankle support for landing jumps.\n\n### 3.2 Ice Hockey Skates\nBuilt for speed, durability, and rapid changes in direction.\n* **Blade:** Shorter and more deeply rockered than a figure skate to facilitate tight turns. It lacks a toe pick to prevent tripping during fast strides.\n* **Boot:** Constructed from molded plastic, ballistic nylon, or synthetic composites to protect the foot from puck impacts and skate blades.\n* **Goalie Variant:** Features a lower center of gravity, a longer blade with less rocker for lateral stability, and a \"cowling\" (hardened plastic shell) for maximum protection.\n\n### 3.3 Speed Skates\nOptimized for maintaining high velocity over long distances.\n* **Long Track (Clap Skates):** Features a hinge at the toe, allowing the blade to remain on the ice longer during a stride.\n* **Short Track:** Features extremely long, thin blades that are often offset to one side to allow the skater to lean into corners at high speeds without the boot touching the ice.\n\n---",
+      "source_path": "data/manual_rag/ice_skate_general.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "ice_skate_general",
+      "chunk_id": "data/manual_rag/ice_skate_general.md::chunk_3"
+    },
+    {
+      "text": "# Reference: Ice Skate (General Overview)\n\n## 4. Technical Components\n* **The Blade:** Typically made of tempered carbon steel, stainless steel, or lightweight aluminum with a steel runner.\n* **The Edges:** Most blades (except for some speed skates) are ground with a concave groove, creating an \"inside edge\" and an \"outside edge\" which allow the skater to grip the ice.\n* **Stanchions:** The vertical pillars that connect the blade to the sole and heel plates of the boot.\n\n---",
+      "source_path": "data/manual_rag/ice_skate_general.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "ice_skate_general",
+      "chunk_id": "data/manual_rag/ice_skate_general.md::chunk_4"
+    },
+    {
+      "text": "# Reference: Ice Skate (General Overview)\n\n## 5. Key Keywords for RAG Search\n`Ice skate anatomy`, `bone skates history`, `Jackson Haines innovation`, `toe pick function`, `hockey vs figure blades`, `IJS equipment standards`, `skate blade rocker`, `historical skating transportation`.",
+      "source_path": "data/manual_rag/ice_skate_general.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "ice_skate_general",
+      "chunk_id": "data/manual_rag/ice_skate_general.md::chunk_5"
     },
     {
       "text": "# Category: Advanced Elements\n\n# Discipline: Figure Skating\n\n# Knowledge Type: Manual\n\nThis file contains specialized, stylistic, and non-basic figure skating\nelements frequently referenced in choreography, commentary, and program\nanalysis. These elements enhance musical interpretation, choreography,\nand Program Component Scores (PCS). Strong execution may also contribute\npositively to Grade of Execution (GOE) where applicable.\n\n------------------------------------------------------------------------\n\n## Element: Ina Bauer\n\n### Definition\n\nIna Bauer is A two-foot edge position with staggered feet and open hips, performed on\ncontinuous glide with both blades on the ice.\n\n### Variants\n\n-   Forward Ina Bauer\\\n-   Backward Ina Bauer\\\n-   Deep-edge Ina Bauer\\\n-   Layback Ina Bauer (torso arched backward)\n\n### Technical Characteristics\n\n-   Both feet on clearly defined edges\\\n-   External hip rotation\\\n-   Continuous glide without stepping\\\n-   Controlled upper body extension\n\n### Common Errors\n\n-   Flat or shallow edges\\\n-   Insufficient knee bend\\\n-   Breaking glide mid-position\n\n### Notes\n\nFrequently used as a dramatic transition element and in choreographic\nsequences.\n\n------------------------------------------------------------------------",
@@ -62119,6 +62369,15 @@
       "source_group": "wiki_reference",
       "priority": 2,
       "title": "World_Figure_Sport_Society"
+    },
+    {
+      "text": "# Figure Skating Terms: The Comprehensive Glossary\n\nThis document provides a full-length technical summary of the terminology used in international figure skating, covering maneuvers, scoring shorthand, and competition rules.\n\n---\n\n### figure skating term with initial of 0-9 & Symbols\n* **3 Turn:** A one-foot turn where the skater changes edge, leaving a \"3\" shaped tracing.\n* **4CC:** The **Four Continents Figure Skating Championships**.\n* **6.0 System:** The historical scoring method (pre-2004) where skaters were judged on a scale of 0.0 to 6.0.\n* **10% Bonus:** A scoring credit for jumps performed in the latter half of a program to reward stamina.\n\n---\n\n### figure skating term with initial of A\n* **A:** The scoring code for an **Axel**.\n* **Age-eligible:** Rules defining if a skater is old enough for Senior (15+) or within the window for Junior (13-19) competition.\n* **Arabesque:** A position with the free leg extended straight back, parallel to the ice.\n* **Attitude:** A leg position where the free leg is lifted behind with the knee bent at a 90-degree angle.\n* **Axel Jump:** The only jump with a forward take-off. It includes an extra half-rotation (e.g., a Triple Axel is 3.5 revolutions).\n\n---\n\n### figure skating term with initial of B\n* **Backflip:** A reverse somersault. Banned for decades, it was re-legalized by the ISU in 2024.\n* **Backspin:** A spin performed on a back outside edge.\n* **Base Value:** The fixed point score assigned to an element before quality is assessed.\n* **Besti Squat:** A spread-eagle variation with deep knee bends, named after Natalia Bestemianova.\n* **Biellmann Spin:** A catch-foot spin where the leg is pulled over the head from behind.\n* **Boards:** The vertical barrier surrounding the ice surface.\n* **Bracket Turn:** A one-foot turn where the \"point\" of the turn faces away from the center of the curve (looks like a `}`).\n* **Butterfly Jump:** A flying spin entry with a scissoring leg motion and a horizontal torso.\n* **Bye:** Automatic advancement to a higher-level competition without qualifying.\n\n---\n\n### figure skating term with initial of C\n* **Camel Spin:** A spin in the arabesque position.\n* **Cantilever:** A move where the skater glides on deep edges with the torso leaning back parallel to the ice.\n* **Carry Lift:** A pair lift where the partner is carried across the ice without rotation.\n* **Catch-foot:** Any spin or spiral where the skater holds their blade/leg with their hand.\n* **Centered:** A spin that rotates in place without \"traveling\" across the ice.\n* **Chack / Chacked:** When a skater’s performance is cut from a television broadcast.\n* **Change-foot Spin:** A spin that transitions from the left foot to the right (or vice-versa).\n* **Chasse:** An ice dance step where the free foot is placed beside the skating foot, then the skating foot is lifted.\n* **Check:** Using the upper body to \"brake\" or stop the rotation of a jump or spin.\n* **Choctaw Turn:** A two-foot turn involving a change of edge and a change of lobe (direction).\n* **Charlotte Spiral:** A 180-degree vertical split where the skater’s head is down near the skating knee.\n* **Code of Points (CoP):** The technical term for the IJS scoring system.\n* **Combination:** Two or more elements (jumps or spins) performed with no turns or steps in between.\n* **Compulsory Figures:** Geometric patterns (circles, loops) formerly the core of the sport; removed in 1990.\n* **Counter Turn:** A one-foot turn on the same edge but moving from one circle (lobe) to another.\n* **Cross Roll:** In ice dance, a series of outside edges where the free foot crosses over the skating foot.\n* **Crossover:** The basic stroke for gaining speed on a curve.\n\n---\n\n### figure skating term with initial of D – G\n* **Dance Lift:** A lift in ice dance where the lifter's hands cannot go above their head.\n* **Death Drop:** A flying spin entry that looks like a falling motion.\n* **Death Spiral:** A pair move where the man pivots while holding the woman’s hand as she circles him on a deep edge.\n* **Double:** A jump with two rotations (Double Axel is 2.5).\n* **Downgraded:** A jump missing $\\geq 0.5$ rotations (marked with `<<` on the score sheet).\n* **Edge:** The inside or outside ridge of the blade.\n* **Edge Violation:** Taking off for a Lutz on an inside edge or a Flip on an outside edge (marked with `e`).\n* **Flip Jump:** A toe-assisted jump taken from a back *inside* edge.\n* **Flutz:** Slang for a Lutz jump done with an incorrect inside edge.\n* **GOE (Grade of Execution):** A judge’s mark from -5 to +5 on the quality of an element.\n\n---\n\n### figure skating term with initial of H – L\n* **Haircutter:** A layback spin where the free leg is pulled close to the head.\n* **Hollow:** The groove between the two edges of a figure skating blade.\n* **Hydroblading:** Gliding on a very deep edge with the body stretched nearly flat against the ice.\n* **IJS (ISU Judging System):** The modern points-based scoring system.\n* **Ina Bauer:** A move on parallel blades (one forward, one back) on different edges.\n* **Jump Sequence:** Two jumps linked by a small hop or turn (different from a combination).\n* **Kiss and Cry:** The designated area where skaters wait for their scores.\n* **Layback Spin:** An upright spin where the skater's back is arched backward.\n* **Lutz:** A toe-assisted jump taken from a back *outside* edge.\n\n---\n\n### figure skating term with initial of S – Z\n* **Salchow:** An edge jump taken from a back inside edge.\n* **Sit Spin:** A spin performed in a crouched position.\n* **Spiral:** A glide on one foot with the free leg held above hip level.\n* **Spread Eagle:** Gliding on two feet with the heels facing each other and toes out.\n* **Step Sequence:** A complex series of turns, steps, and hops covering the ice.\n* **Toe Loop:** A toe-assisted jump taken from a back outside edge.\n* **Twizzle:** A fast, multi-rotational turn on one foot while moving.\n* **Under-rotated:** A jump missing between $0.25$ and $0.5$ rotations (marked with `<`).\n* **Walley:** A jump taken from a back inside edge without a toe-pick assist.\n* **Zayak Rule:** Limits the repetition of the same triple or quadruple jump in a program.\n* **Zagitova Rule:** Limits the number of jump elements that can receive a 10% bonus in the second half.",
+      "source_path": "data/element_wiki_rag/glossary.md",
+      "chunk_type": "full_doc",
+      "doc_type": "wiki_element",
+      "source_group": "wiki_reference",
+      "priority": 2,
+      "title": "glossary"
     },
     {
       "text": "# 2024–25 national figure skating championships\n\nSource: Wikipedia – General Figure Skating Category\n\nNational figure skating championships for the 2024–25 season began on July 1, 2024, and ended on June 30, 2025, with most competitions taking place from December 2024 to January 2025. They were held to crown national champions and to serve as part of the selection process for international events, such as the 2025 ISU Championships. Medals were awarded in the disciplines of men's singles, women's singles, pairs, and ice dance. Several countries chose to organize their national championships together with their neighbors; the results were subsequently divided into national podiums.\n\n== National competitions ==\nCode key\n\nColor key\n\n== Senior medalists ==\n\n=== Men's singles ===\n\n=== Women's singles ===\n\n=== Pairs ===\n\n=== Ice dance ===\n\n== Junior medalists ==\n\n=== Men's singles ===\n\n=== Women's singles ===\n\n=== Pairs ===\n\n=== Ice dance ===",
