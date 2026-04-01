@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 6928,
+  "total_vectors": 6978,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,506 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1995 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1995 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the mid-point of the 1990s and the rise of a new generation of technical powerhouses.\n\n---",
+      "source_path": "data/manual_rag/worlds_1995.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1995",
+      "chunk_id": "data/manual_rag/worlds_1995.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1995 ISU World Figure Skating Championships\n* **Event Name:** 1995 ISU World Figure Skating Championships\n* **Location:** National Exhibition Centre, Birmingham, England\n* **Dates:** March 7 – 12, 1995\n* **Host:** British Ice Skating / ISU\n* **Major Milestone:** This event was historic for Chinese figure skating, as Lu Chen became the first-ever World Champion from China. It also marked the beginning of a legendary rivalry in ice dance between the teams of Grishuk/Platov and Krylova/Ovsyannikov.\n\n---",
+      "source_path": "data/manual_rag/worlds_1995.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1995",
+      "chunk_id": "data/manual_rag/worlds_1995.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1995 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1995 ISU World Figure Skating Championships\n**Elvis Stojko** (Canada) successfully defended his World title. Known for his \"power skating\" and technical consistency, he overcame a strong field that included several established European and North American veterans.\n* **Gold:** **Elvis Stojko** (Canada)\n* **Silver:** **Todd Eldredge** (United States)\n* **Bronze:** **Philippe Candeloro** (France)\n\n### 3.2 Women's Singles: 1995 ISU World Figure Skating Championships\n**Lu Chen** (China) made history by winning the gold medal, the first for China in any figure skating discipline. She delivered a technically flawless and artistically mature program to \"The Last Emperor,\" defeating a field that included a 14-year-old Michelle Kwan in her senior debut.\n* **Gold:** **Lu Chen** (China)\n* **Silver:** **Surya Bonaly** (France)\n* **Bronze:** **Nicole Bobek** (United States) (The reigning U.S. Champion)\n\n### 3.3 Pairs: 1995 ISU World Figure Skating Championships\n**Radka Kovaříková and René Novotný** (Czech Republic) won the gold medal. This was a significant achievement for the Czech Republic, marking their only World title in the pairs discipline. \n* **Gold:** **Radka Kovaříková / René Novotný** (Czech Republic)\n* **Silver:** **Evgenia Shishkova / Vadim Naumov** (Russia)\n* **Bronze:** **Jenni Meno / Todd Sand** (United States)\n\n### 3.4 Ice Dance: 1995 ISU World Figure Skating Championships\n**Oksana Grishuk and Evgeni Platov** (Russia) successfully defended their title, winning their second consecutive World gold medal. Their win continued the era of \"Russian Speed,\" characterized by intricate footwork and high-tempo transitions.\n* **Gold:** **Oksana Grishuk / Evgeni Platov** (Russia)\n* **Silver:** **Susanna Rahkamo / Petri Kokko** (Finland) (A historic first silver for Finland)\n* **Bronze:** **Sophie Moniotte / Pascal Lavanchy** (France)\n\n---",
+      "source_path": "data/manual_rag/worlds_1995.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1995",
+      "chunk_id": "data/manual_rag/worlds_1995.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1995 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 1 | 1 | 0 | 2 |\n| 2 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 3 | **China (CHN)** | 1 | 0 | 0 | 1 |\n| 4 | **Czech Republic (CZE)** | 1 | 0 | 0 | 1 |\n| 5 | **France (FRA)** | 0 | 1 | 2 | 3 |\n| 6 | **United States (USA)** | 0 | 1 | 2 | 3 |\n| 7 | **Finland (FIN)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1995.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1995",
+      "chunk_id": "data/manual_rag/worlds_1995.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1995 ISU World Figure Skating Championships\n`Birmingham 1995`, `Lu Chen first gold`, `Elvis Stojko defense`, `Radka Kovarikova history`, `Grishuk Platov 2nd title`, `National Exhibition Centre Results`, `Surya Bonaly silver`, `Last Emperor Lu Chen`, `ISU World Results 1995`.",
+      "source_path": "data/manual_rag/worlds_1995.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1995",
+      "chunk_id": "data/manual_rag/worlds_1995.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1996 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1996 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1996 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the official start of the \"Kwan Era\" and the continued dominance of the Russian school in pairs and dance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1996.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1996",
+      "chunk_id": "data/manual_rag/worlds_1996.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1996 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1996 ISU World Figure Skating Championships\n* **Event Name:** 1996 ISU World Figure Skating Championships\n* **Location:** Northlands Coliseum, Edmonton, Alberta, Canada\n* **Dates:** March 17 – 24, 1996\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This championship was defined by 15-year-old Michelle Kwan winning her first World title, signaling a generational shift in ladies' skating. It was also the first World Championship where a skater (Elvis Stojko) attempted a quadruple-triple combination in the free skate (though it was not fully credited at the time).\n\n---",
+      "source_path": "data/manual_rag/worlds_1996.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1996",
+      "chunk_id": "data/manual_rag/worlds_1996.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1996 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1996 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1996 ISU World Figure Skating Championships\n**Todd Eldredge** (USA) won his only World gold medal, delivering a clean and classically elegant performance. He defeated the defending champion Elvis Stojko, who was struggling with a hamstring injury.\n* **Gold:** **Todd Eldredge** (United States)\n* **Silver:** **Ilia Kulik** (Russia)\n* **Bronze:** **Rudy Galindo** (United States) (A historic bronze for the reigning U.S. Champion)\n\n### 3.2 Women's Singles: 1996 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) won her first World title in a dramatic showdown with Lu Chen. Performing to \"Salome,\" Kwan's technical precision and budding artistry earned her the gold over the defending champion.\n* **Gold:** **Michelle Kwan** (United States)\n* **Silver:** **Lu Chen** (China)\n* **Bronze:** **Irina Slutskaya** (Russia) (The first World medal for the future multi-time champion)\n\n### 3.3 Pairs: 1996 ISU World Figure Skating Championships\n**Marina Eltsova and Andrei Bushkov** (Russia) captured the gold medal. The competition was notable for the technical difficulty displayed by the top three teams, all representing the Russian or German schools of skating.\n* **Gold:** **Marina Eltsova / Andrei Bushkov** (Russia)\n* **Silver:** **Mandy Wötzel / Ingo Steuer** (Germany)\n* **Bronze:** **Jenni Meno / Todd Sand** (United States)\n\n### 3.4 Ice Dance: 1996 ISU World Figure Skating Championships\n**Oksana Grishuk and Evgeni Platov** (Russia) successfully defended their title, winning their third consecutive World gold medal. Their high-speed \"Rock-n-Roll\" program set a new standard for athletic intensity in ice dance.\n* **Gold:** **Oksana Grishuk / Evgeni Platov** (Russia)\n* **Silver:** **Anjelika Krylova / Oleg Ovsyannikov** (Russia)\n* **Bronze:** **Shae-Lynn Bourne / Victor Kraatz** (Canada) (The first-ever World medal in ice dance for Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1996.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1996",
+      "chunk_id": "data/manual_rag/worlds_1996.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1996 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1996 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 2 | 2 | 1 | 5 |\n| 2 | **United States (USA)** | 2 | 0 | 2 | 4 |\n| 3 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 3 | **China (CHN)** | 0 | 1 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1996.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1996",
+      "chunk_id": "data/manual_rag/worlds_1996.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1996 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1996 ISU World Figure Skating Championships\n`Edmonton 1996`, `Michelle Kwan first gold`, `Todd Eldredge 1996`, `Rudy Galindo bronze`, `Grishuk Platov 3rd title`, `Northlands Coliseum Results`, `Salome Michelle Kwan`, `Shae-Lynn Bourne history`, `ISU World Results 1996`.",
+      "source_path": "data/manual_rag/worlds_1996.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1996",
+      "chunk_id": "data/manual_rag/worlds_1996.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1997 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1997 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1997 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the penultimate World Championships held prior to the 1998 Nagano Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1997.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1997",
+      "chunk_id": "data/manual_rag/worlds_1997.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1997 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1997 ISU World Figure Skating Championships\n* **Event Name:** 1997 ISU World Figure Skating Championships\n* **Location:** Lausanne, Switzerland\n* **Dates:** March 16 – 23, 1997\n* **Host:** Swiss Skating / ISU\n* **Major Milestone:** This championship was defined by a surge in technical difficulty across all disciplines. It featured the first time a woman (Tara Lipinski) won the World title at the age of 14, and the first time a skater (Elvis Stojko) landed a quadruple-triple jump combination in a World Championship.\n\n---",
+      "source_path": "data/manual_rag/worlds_1997.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1997",
+      "chunk_id": "data/manual_rag/worlds_1997.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1997 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1997 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1997 ISU World Figure Skating Championships\n**Elvis Stojko** (Canada) captured his third and final World gold medal. His performance was historic for landing a **quadruple toe loop-triple toe loop combination**, the first of its kind ever successfully executed at the World Championships.\n* **Gold:** **Elvis Stojko** (Canada)\n* **Silver:** **Todd Eldredge** (United States)\n* **Bronze:** **Alexei Yagudin** (Russia) — (His first World medal at age 17)\n\n### 3.2 Women's Singles: 1997 ISU World Figure Skating Championships\n**Tara Lipinski** (USA) made history by becoming the youngest-ever World Figure Skating Champion at age 14. She defeated the defending champion, Michelle Kwan, by landing a triple loop-triple loop combination, which was technically superior at the time.\n* **Gold:** **Tara Lipinski** (United States)\n* **Silver:** **Michelle Kwan** (United States)\n* **Bronze:** **Vanessa Gusmeroli** (France)\n\n### 3.3 Pairs: 1997 ISU World Figure Skating Championships\n**Mandy Wötzel and Ingo Steuer** (Germany) won their only World gold medal. They overcame a strong field that included the rising Russian team of Berezhnaya and Sikharulidze.\n* **Gold:** **Mandy Wötzel / Ingo Steuer** (Germany)\n* **Silver:** **Marina Eltsova / Andrei Bushkov** (Russia)\n* **Bronze:** **Oksana Kazakova / Artur Dmitriev** (Russia)\n\n### 3.4 Ice Dance: 1997 ISU World Figure Skating Championships\n**Oksana Grishuk and Evgeni Platov** (Russia) continued their absolute dominance of the discipline, winning their fourth consecutive World title. \n* **Gold:** **Oksana Grishuk / Evgeni Platov** (Russia)\n* **Silver:** **Anjelika Krylova / Oleg Ovsyannikov** (Russia)\n* **Bronze:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1997.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1997",
+      "chunk_id": "data/manual_rag/worlds_1997.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1997 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1997 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 1 | 2 | 2 | 5 |\n| 2 | **United States (USA)** | 1 | 2 | 0 | 3 |\n| 3 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 4 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 5 | **France (FRA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1997.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1997",
+      "chunk_id": "data/manual_rag/worlds_1997.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1997 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1997 ISU World Figure Skating Championships\n`Lausanne 1997`, `Tara Lipinski youngest champion`, `Elvis Stojko quad-triple`, `Michelle Kwan silver 1997`, `Grishuk Platov 4th title`, `Lausanne World Results`, `triple loop-triple loop Lipinski`, `ISU World Results 1997`.",
+      "source_path": "data/manual_rag/worlds_1997.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1997",
+      "chunk_id": "data/manual_rag/worlds_1997.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1998 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1998 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1998 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first post-Olympic World Championship of the \"Nagano Era\" and the beginning of several legendary careers.\n\n---",
+      "source_path": "data/manual_rag/worlds_1998.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1998",
+      "chunk_id": "data/manual_rag/worlds_1998.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1998 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1998 ISU World Figure Skating Championships\n* **Event Name:** 1998 ISU World Figure Skating Championships\n* **Location:** Target Center, Minneapolis, Minnesota, United States\n* **Dates:** March 28 – April 5, 1998\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** Held just weeks after the 1998 Nagano Winter Olympics, this event was notable for the \"changing of the guard\" in several disciplines. It featured Michelle Kwan's iconic \"Lyra Angelica\" performance and the first World title for Alexei Yagudin.\n\n---",
+      "source_path": "data/manual_rag/worlds_1998.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1998",
+      "chunk_id": "data/manual_rag/worlds_1998.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1998 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1998 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1998 ISU World Figure Skating Championships\n**Alexei Yagudin** (Russia) won his first World title at the age of 18, taking advantage of the absence of Olympic Champion Ilya Kulik. This victory marked the start of Yagudin’s three-year dominance of the sport.\n* **Gold:** **Alexei Yagudin** (Russia)\n* **Silver:** **Todd Eldredge** (United States)\n* **Bronze:** **Evgeni Plushenko** (Russia) — (His debut World medal at age 15)\n\n### 3.2 Women's Singles: 1998 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) delivered what many consider the greatest performance in skating history. Skating to \"Lyra Angelica,\" she earned a record-breaking **seven perfect 6.0s** for presentation in the free skate to reclaim her World title.\n* **Gold:** **Michelle Kwan** (United States)\n* **Silver:** **Irina Slutskaya** (Russia)\n* **Bronze:** **Maria Butyrskaya** (Russia)\n\n### 3.3 Pairs: 1998 ISU World Figure Skating Championships\n**Elena Berezhnaya and Anton Sikharulidze** (Russia) won their first World gold medal. Their victory continued the long-standing Russian tradition of excellence in the pairs discipline following the retirement of the Grishuk/Platov era.\n* **Gold:** **Elena Berezhnaya / Anton Sikharulidze** (Russia)\n* **Silver:** **Jenni Meno / Todd Sand** (United States)\n* **Bronze:** **Peggy Schwarz / Mirko Müller** (Germany)\n\n### 3.4 Ice Dance: 1998 ISU World Figure Skating Championships\n**Anjelika Krylova and Oleg Ovsyannikov** (Russia) captured their first World title. The event saw a shift in the ice dance rankings following the professional retirement of the reigning Olympic champions.\n* **Gold:** **Anjelika Krylova / Oleg Ovsyannikov** (Russia)\n* **Silver:** **Marina Anissina / Gwendal Peizerat** (France)\n* **Bronze:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1998.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1998",
+      "chunk_id": "data/manual_rag/worlds_1998.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1998 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1998 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 3 | 1 | 2 | 6 |\n| 2 | **United States (USA)** | 1 | 2 | 0 | 3 |\n| 3 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 4 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n| 4 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1998.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1998",
+      "chunk_id": "data/manual_rag/worlds_1998.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1998 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1998 ISU World Figure Skating Championships\n`Minneapolis 1998`, `Michelle Kwan Lyra Angelica`, `Alexei Yagudin first gold`, `Evgeni Plushenko debut medal`, `Berezhnaya Sikharulidze 1998`, `Target Center Results`, `seven 6.0s Michelle Kwan`, `ISU World Results 1998`.",
+      "source_path": "data/manual_rag/worlds_1998.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1998",
+      "chunk_id": "data/manual_rag/worlds_1998.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1999 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1999 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1999 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship that saw the first-ever World title for a Russian woman and the continuation of the Yagudin era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1999.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1999",
+      "chunk_id": "data/manual_rag/worlds_1999.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1999 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1999 ISU World Figure Skating Championships\n* **Event Name:** 1999 ISU World Figure Skating Championships\n* **Location:** Hartwall Areena, Helsinki, Finland\n* **Dates:** March 21 – 28, 1999\n* **Host:** Finnish Figure Skating Association / ISU\n* **Major Milestone:** This event was historic for the women's discipline, as Maria Butyrskaya became the first Russian woman in history to win the World Figure Skating Championship gold medal. It also marked the first time Russia won three out of four gold medals in the post-Soviet era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1999.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1999",
+      "chunk_id": "data/manual_rag/worlds_1999.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1999 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1999 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1999 ISU World Figure Skating Championships\n**Alexei Yagudin** (Russia) successfully defended his World title, winning his second consecutive gold medal. The competition was a showcase of the high-technical standard of the Russian men's school, with Yagudin leading a 1st and 2nd place finish for his country.\n* **Gold:** **Alexei Yagudin** (Russia)\n* **Silver:** **Evgeni Plushenko** (Russia) — (His first World medal at age 16)\n* **Bronze:** **Michael Weiss** (United States) — (First World medal for the American champion)\n\n### 3.2 Women's Singles: 1999 ISU World Figure Skating Championships\n**Maria Butyrskaya** (Russia) achieved a career-defining victory, capturing the gold at age 26. She defeated the defending champion Michelle Kwan in a closely contested free skate.\n* **Gold:** **Maria Butyrskaya** (Russia)\n* **Silver:** **Michelle Kwan** (United States)\n* **Bronze:** **Julia Soldatova** (Russia)\n\n### 3.3 Pairs: 2000 ISU World Figure Skating Championships\n**Elena Berezhnaya and Anton Sikharulidze** (Russia) defended their World title, narrowly defeating the top Chinese pair. This win solidified their status as the favorites heading into the next Olympic cycle.\n* **Gold:** **Elena Berezhnaya / Anton Sikharulidze** (Russia)\n* **Silver:** **Shen Xue / Zhao Hongbo** (China) — (The first-ever World medal for a Chinese pair)\n* **Bronze:** **Dorota Zagórska / Mariusz Siudek** (Poland) — (A historic first World medal for Poland)\n\n### 3.4 Ice Dance: 1999 ISU World Figure Skating Championships\n**Anjelika Krylova and Oleg Ovsyannikov** (Russia) won their second consecutive World title. They announced their retirement shortly after the event due to Krylova's recurring back injury.\n* **Gold:** **Anjelika Krylova / Oleg Ovsyannikov** (Russia)\n* **Silver:** **Marina Anissina / Gwendal Peizerat** (France)\n* **Bronze:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1999.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1999",
+      "chunk_id": "data/manual_rag/worlds_1999.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1999 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1999 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 4 | 1 | 1 | 6 |\n| 2 | **United States (USA)** | 0 | 1 | 1 | 2 |\n| 3 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 3 | **China (CHN)** | 0 | 1 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n| 5 | **Poland (POL)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1999.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1999",
+      "chunk_id": "data/manual_rag/worlds_1999.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1999 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1999 ISU World Figure Skating Championships\n`Helsinki 1999`, `Maria Butyrskaya first gold`, `Alexei Yagudin defense`, `Evgeni Plushenko silver`, `Shen Zhao first medal`, `Hartwall Areena Results`, `Russian sweep 1999`, `ISU World Results 1999`.",
+      "source_path": "data/manual_rag/worlds_1999.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1999",
+      "chunk_id": "data/manual_rag/worlds_1999.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2000 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2000 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2000 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final World Championship of the 20th century.\n\n---",
+      "source_path": "data/manual_rag/worlds_2000.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2000",
+      "chunk_id": "data/manual_rag/worlds_2000.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2000 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2000 ISU World Figure Skating Championships\n* **Event Name:** 2000 ISU World Figure Skating Championships\n* **Location:** Palais des Congrès, Nice, France\n* **Dates:** March 26 – April 2, 2000\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This championship was defined by the peak of the Yagudin-Plushenko rivalry and the return of Michelle Kwan to the top of the podium after losing her title the previous year. It was also the first World Championship to award a medal to a Chinese pair (Shen/Zhao).\n\n---",
+      "source_path": "data/manual_rag/worlds_2000.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2000",
+      "chunk_id": "data/manual_rag/worlds_2000.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2000 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2000 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2000 ISU World Figure Skating Championships\n**Alexei Yagudin** (Russia) successfully defended his title, winning his third consecutive World gold medal. Despite a strong push from younger rival Evgeni Plushenko, Yagudin's \"Tosca\" free skate secured the victory.\n* **Gold:** **Alexei Yagudin** (Russia)\n* **Silver:** **Elvis Stojko** (Canada) — (His final career World medal)\n* **Bronze:** **Todd Eldredge** (United States)\n\n### 3.2 Women's Singles: 2000 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) reclaimed her World title from Maria Butyrskaya. Performing to \"The Red Violin,\" Kwan delivered a flawless free skate that earned several 6.0s for presentation, marking her third World gold.\n* **Gold:** **Michelle Kwan** (United States)\n* **Silver:** **Irina Slutskaya** (Russia)\n* **Bronze:** **Maria Butyrskaya** (Russia)\n\n### 3.3 Pairs: 2000 ISU World Figure Skating Championships\n**Maria Petrova and Alexei Tikhonov** (Russia) won their only World title in a closely contested field. This event was also significant for the silver medal finish of Shen Xue and Zhao Hongbo, marking China's arrival as a permanent pairs power.\n* **Gold:** **Maria Petrova / Alexei Tikhonov** (Russia)\n* **Silver:** **Shen Xue / Zhao Hongbo** (China)\n* **Bronze:** **Sarah Abitbol / Stéphane Bernadis** (France) — (A historic home-ice medal for France)\n\n### 3.4 Ice Dance: 2000 ISU World Figure Skating Championships\n**Marina Anissina and Gwendal Peizerat** (France) won their first World title on home ice, bringing the crowd to its feet with their innovative and athletic style.\n* **Gold:** **Marina Anissina / Gwendal Peizerat** (France)\n* **Silver:** **Barbara Fusar-Poli / Maurizio Margaglio** (Italy)\n* **Bronze:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_2000.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2000",
+      "chunk_id": "data/manual_rag/worlds_2000.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2000 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2000 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 2 | 1 | 1 | 4 |\n| 2 | **France (FRA)** | 1 | 0 | 1 | 2 |\n| 3 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 4 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 5 | **China (CHN)** | 0 | 1 | 0 | 1 |\n| 5 | **Italy (ITA)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2000.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2000",
+      "chunk_id": "data/manual_rag/worlds_2000.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2000 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2000 ISU World Figure Skating Championships\n`Nice 2000`, `Michelle Kwan 3rd title`, `Alexei Yagudin 3-peat`, `Anissina Peizerat gold`, `Shen Zhao first silver`, `Palais des Congrès Results`, `Elvis Stojko final medal`, `ISU World Results 2000`.",
+      "source_path": "data/manual_rag/worlds_2000.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2000",
+      "chunk_id": "data/manual_rag/worlds_2000.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2001 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2001 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2001 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final World Championships held prior to the 2002 Salt Lake City Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2001.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2001",
+      "chunk_id": "data/manual_rag/worlds_2001.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2001 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2001 ISU World Figure Skating Championships\n* **Event Name:** 2001 ISU World Figure Skating Championships\n* **Location:** General Motors Place, Vancouver, British Columbia, Canada\n* **Dates:** March 17 – 25, 2001\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This championship was a critical Olympic qualifier and featured a historic showdown in the men’s and women’s singles disciplines, further intensifying the rivalries between Yagudin/Plushenko and Kwan/Slutskaya.\n\n---",
+      "source_path": "data/manual_rag/worlds_2001.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2001",
+      "chunk_id": "data/manual_rag/worlds_2001.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2001 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2001 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2001 ISU World Figure Skating Championships\n**Evgeni Plushenko** (Russia) won his first World title, ending the three-year winning streak of his compatriot and rival Alexei Yagudin. Plushenko landed a quadruple-triple-double combination to secure the gold.\n* **Gold:** **Evgeni Plushenko** (Russia)\n* **Silver:** **Alexei Yagudin** (Russia)\n* **Bronze:** **Todd Eldredge** (United States)\n\n### 3.2 Women's Singles: 2001 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) successfully defended her title, winning her fourth World gold medal. Despite a strong challenge from Irina Slutskaya, Kwan's artistic marks and a clean free skate to \"Song of the Black Swan\" secured the victory.\n* **Gold:** **Michelle Kwan** (United States)\n* **Silver:** **Irina Slutskaya** (Russia)\n* **Bronze:** **Sarah Hughes** (United States)\n\n### 3.3 Pairs: 2001 ISU World Figure Skating Championships\n**Jamie Salé and David Pelletier** (Canada) won the gold medal on home ice, becoming the first Canadian pair to win the World title since 1993. This victory set the stage for their legendary Olympic performance the following year.\n* **Gold:** **Jamie Salé / David Pelletier** (Canada)\n* **Silver:** **Elena Berezhnaya / Anton Sikharulidze** (Russia)\n* **Bronze:** **Shen Xue / Zhao Hongbo** (China)\n\n### 3.4 Ice Dance: 2001 ISU World Figure Skating Championships\n**Barbara Fusar-Poli and Maurizio Margaglio** (Italy) made history by becoming the first Italian ice dancers to win a World Championship gold medal.\n* **Gold:** **Barbara Fusar-Poli / Maurizio Margaglio** (Italy)\n* **Silver:** **Marina Anissina / Gwendal Peizerat** (France)\n* **Bronze:** **Irina Lobacheva / Ilia Averbukh** (Russia)\n\n---",
+      "source_path": "data/manual_rag/worlds_2001.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2001",
+      "chunk_id": "data/manual_rag/worlds_2001.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2001 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2001 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 1 | 3 | 1 | 5 |\n| 2 | **United States (USA)** | 1 | 0 | 2 | 3 |\n| 3 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 3 | **Italy (ITA)** | 1 | 0 | 0 | 1 |\n| 5 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 6 | **China (CHN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2001.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2001",
+      "chunk_id": "data/manual_rag/worlds_2001.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2001 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2001 ISU World Figure Skating Championships\n`Vancouver 2001`, `Evgeni Plushenko first gold`, `Michelle Kwan 4th title`, `Sale Pelletier home gold`, `Italy first ice dance gold`, `General Motors Place Results`, `Pre-Olympic Worlds 2001`, `ISU World Results 2001`.",
+      "source_path": "data/manual_rag/worlds_2001.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2001",
+      "chunk_id": "data/manual_rag/worlds_2001.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2002 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2002 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2002 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first major international competition following the controversial 2002 Salt Lake City Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_2002.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2002",
+      "chunk_id": "data/manual_rag/worlds_2002.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2002 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2002 ISU World Figure Skating Championships\n* **Event Name:** 2002 ISU World Figure Skating Championships\n* **Location:** Nagano White Ring, Nagano, Japan\n* **Dates:** March 16 – 24, 2002\n* **Host:** Japan Skating Federation / ISU\n* **Major Milestone:** Held in the same venue as the 1998 Winter Olympics, this championship was marked by the absence of several Olympic medalists (such as Sarah Hughes and Alexei Yagudin) but saw the rise of new dominant forces, particularly in the pairs and women's disciplines.\n\n---",
+      "source_path": "data/manual_rag/worlds_2002.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2002",
+      "chunk_id": "data/manual_rag/worlds_2002.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2002 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2002 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2002 ISU World Figure Skating Championships\n**Alexei Yagudin** (Russia) withdrew from the event due to injury, leaving the door open for his rival. **Evgeni Plushenko** (Russia) took the gold medal, showcasing his technical prowess despite the post-Olympic fatigue.\n* **Gold:** **Evgeni Plushenko** (Russia)\n* **Silver:** **Takeshi Honda** (Japan) — (A historic first World medal for a Japanese man)\n* **Bronze:** **Alexander Abt** (Russia)\n\n### 3.2 Women's Singles: 2002 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) entered as the favorite but was upset by **Irina Slutskaya** (Russia), who won her first World title. This victory was a significant redemption for Slutskaya after her narrow silver-medal finish at the Olympics just weeks prior.\n* **Gold:** **Irina Slutskaya** (Russia)\n* **Silver:** **Michelle Kwan** (United States)\n* **Bronze:** **Fumie Suguri** (Japan)\n\n### 3.3 Pairs: 2002 ISU World Figure Skating Championships\n**Shen Xue and Zhao Hongbo** (China) made history by becoming the first Chinese pair to win a World Championship. Their victory signaled the end of decades of Soviet/Russian dominance in the pairs discipline.\n* **Gold:** **Shen Xue / Zhao Hongbo** (China)\n* **Silver:** **Tatiana Totmianina / Maxim Marinin** (Russia)\n* **Bronze:** **Kyoko Ina / John Zimmerman** (United States)\n\n### 3.4 Ice Dance: 2002 ISU World Figure Skating Championships\n**Irina Lobacheva and Ilia Averbukh** (Russia) captured their only World title. The event was notable for the absence of the Olympic champions Anissina/Peizerat.\n* **Gold:** **Irina Lobacheva / Ilia Averbukh** (Russia)\n* **Silver:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n* **Bronze:** **Galit Chait / Sergei Sakhnovski** (Israel) — (The first and only World medal in figure skating for Israel)\n\n---",
+      "source_path": "data/manual_rag/worlds_2002.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2002",
+      "chunk_id": "data/manual_rag/worlds_2002.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2002 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2002 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 3 | 1 | 1 | 5 |\n| 2 | **China (CHN)** | 1 | 0 | 0 | 1 |\n| 3 | **Japan (JPN)** | 0 | 1 | 1 | 2 |\n| 4 | **United States (USA)** | 0 | 1 | 1 | 2 |\n| 5 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 6 | **Israel (ISR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2002.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2002",
+      "chunk_id": "data/manual_rag/worlds_2002.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2002 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2002 ISU World Figure Skating Championships\n`Nagano 2002`, `Irina Slutskaya first gold`, `Shen Zhao history`, `Evgeni Plushenko 2002`, `Michelle Kwan silver`, `Israel first world medal`, `Takeshi Honda home ice`, `White Ring Nagano Results`, `ISU World Results 2002`.",
+      "source_path": "data/manual_rag/worlds_2002.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2002",
+      "chunk_id": "data/manual_rag/worlds_2002.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2003 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2003 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2003 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a championship held in North America that featured the continued dominance of established legends.\n\n---",
+      "source_path": "data/manual_rag/worlds_2003.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2003",
+      "chunk_id": "data/manual_rag/worlds_2003.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2003 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2003 ISU World Figure Skating Championships\n* **Event Name:** 2003 ISU World Figure Skating Championships\n* **Location:** MCI Center, Washington, D.C., United States\n* **Dates:** March 24 – 30, 2003\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This was the penultimate World Championship to use the 6.0 scoring system. It was notable for Michelle Kwan winning her fifth and final World title on home ice, tying the record for most World titles by an American woman.\n\n---",
+      "source_path": "data/manual_rag/worlds_2003.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2003",
+      "chunk_id": "data/manual_rag/worlds_2003.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2003 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2003 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2003 ISU World Figure Skating Championships\n**Evgeni Plushenko** (Russia) reclaimed the World title after a fierce battle with Timothy Goebel. Plushenko's technical complexity, including his trademark quadruple-triple-double combinations, secured his second gold medal.\n* **Gold:** **Evgeni Plushenko** (Russia)\n* **Silver:** **Timothy Goebel** (United States)\n* **Bronze:** **Takeshi Honda** (Japan)\n\n### 3.2 Women's Singles: 2003 ISU World Figure Skating Championships\n**Michelle Kwan** (USA) delivered a legendary performance to \"Aranjuez,\" earning a standing ovation and perfect 6.0s for presentation. This victory marked her fifth World title (1996, 1998, 2000, 2001, 2003).\n* **Gold:** **Michelle Kwan** (United States)\n* **Silver:** **Elena Sokolova** (Russia)\n* **Bronze:** **Fumie Suguri** (Japan)\n\n### 3.3 Pairs: 2003 ISU World Figure Skating Championships\n**Shen Xue and Zhao Hongbo** (China) successfully defended their World title. Their win solidified China's emergence as the dominant force in pairs skating during the early 2000s.\n* **Gold:** **Shen Xue / Zhao Hongbo** (China)\n* **Silver:** **Tatiana Totmianina / Maxim Marinin** (Russia)\n* **Bronze:** **Maria Petrova / Alexei Tikhonov** (Russia)\n\n### 3.4 Ice Dance: 2003 ISU World Figure Skating Championships\n**Shae-Lynn Bourne and Victor Kraatz** (Canada) made history by becoming the first North American ice dance team to win a World Championship gold medal.\n* **Gold:** **Shae-Lynn Bourne / Victor Kraatz** (Canada)\n* **Silver:** **Irina Lobacheva / Ilia Averbukh** (Russia)\n* **Bronze:** **Albena Denkova / Maxim Staviski** (Bulgaria) (First World medal for Bulgaria)\n\n---",
+      "source_path": "data/manual_rag/worlds_2003.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2003",
+      "chunk_id": "data/manual_rag/worlds_2003.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2003 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2003 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 1 | 3 | 1 | 5 |\n| 2 | **United States (USA)** | 1 | 1 | 0 | 2 |\n| 3 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 3 | **China (CHN)** | 1 | 0 | 0 | 1 |\n| 5 | **Japan (JPN)** | 0 | 0 | 2 | 2 |\n| 6 | **Bulgaria (BUL)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2003.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2003",
+      "chunk_id": "data/manual_rag/worlds_2003.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2003 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2003 ISU World Figure Skating Championships\n`Washington DC 2003`, `Michelle Kwan 5th title`, `Evgeni Plushenko 2003`, `Bourne Kraatz history`, `Shen Zhao defense`, `MCI Center Results`, `last 6.0 era`, `ISU World Results 2003`.",
+      "source_path": "data/manual_rag/worlds_2003.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2003",
+      "chunk_id": "data/manual_rag/worlds_2003.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 2004 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2004 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2004 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final World Championship conducted entirely under the traditional 6.0 scoring system before the transition to the ISU Judging System (IJS).\n\n---",
+      "source_path": "data/manual_rag/worlds_2004.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2004",
+      "chunk_id": "data/manual_rag/worlds_2004.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 2004 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 2004 ISU World Figure Skating Championships\n* **Event Name:** 2004 ISU World Figure Skating Championships\n* **Location:** Westfalenhalle, Dortmund, Germany\n* **Dates:** March 22 – 28, 2004\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** This event was historically significant as the last time the \"6.0\" ordinal system was used at a World Championship. It also featured Shizuka Arakawa becoming the first Japanese woman to win the World title since 1994.\n\n---",
+      "source_path": "data/manual_rag/worlds_2004.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2004",
+      "chunk_id": "data/manual_rag/worlds_2004.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 2004 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 2004 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 2004 ISU World Figure Skating Championships\n**Evgeni Plushenko** (Russia) captured his third World title, delivering a dominant performance despite the presence of a strong international field. \n* **Gold:** **Evgeni Plushenko** (Russia)\n* **Silver:** **Brian Joubert** (France)\n* **Bronze:** **Stefan Lindemann** (Germany) (A historic home-ice medal for Germany)\n\n### 3.2 Women's Singles: 2004 ISU World Figure Skating Championships\n**Shizuka Arakawa** (Japan) won the gold medal with a technically superior free skate that included seven triple jumps. This victory signaled the start of a golden era for Japanese women's skating.\n* **Gold:** **Shizuka Arakawa** (Japan)\n* **Silver:** **Sasha Cohen** (United States)\n* **Bronze:** **Michelle Kwan** (United States) (Her 9th and final career World medal)\n\n### 3.3 Pairs: 2004 ISU World Figure Skating Championships\n**Tatiana Totmianina and Maxim Marinin** (Russia) won their first World title, beginning their reign as the premier pairs team leading up to the 2006 Olympics.\n* **Gold:** **Tatiana Totmianina / Maxim Marinin** (Russia)\n* **Silver:** **Shen Xue / Zhao Hongbo** (China)\n* **Bronze:** **Pang Qing / Tong Jian** (China)\n\n### 3.4 Ice Dance: 2004 ISU World Figure Skating Championships\n**Tatiana Navka and Roman Kostomarov** (Russia) won their first World title, marking a shift in the ice dance hierarchy toward the Russian school of technique and drama.\n* **Gold:** **Tatiana Navka / Roman Kostomarov** (Russia)\n* **Silver:** **Albena Denkova / Maxim Staviski** (Bulgaria)\n* **Bronze:** **Kati Winkler / René Lohse** (Germany)\n\n---",
+      "source_path": "data/manual_rag/worlds_2004.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2004",
+      "chunk_id": "data/manual_rag/worlds_2004.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 2004 ISU World Figure Skating Championships\n\n## 4. Medal Table: 2004 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 3 | 0 | 0 | 3 |\n| 2 | **Japan (JPN)** | 1 | 0 | 0 | 1 |\n| 3 | **United States (USA)** | 0 | 1 | 1 | 2 |\n| 4 | **China (CHN)** | 0 | 1 | 1 | 2 |\n| 5 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 5 | **Bulgaria (BUL)** | 0 | 1 | 0 | 1 |\n| 7 | **Germany (GER)** | 0 | 0 | 2 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_2004.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2004",
+      "chunk_id": "data/manual_rag/worlds_2004.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 2004 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 2004 ISU World Figure Skating Championships\n`Dortmund 2004`, `Shizuka Arakawa first gold`, `Evgeni Plushenko 3rd title`, `Michelle Kwan final medal`, `Navka Kostomarov first title`, `last 6.0 scoring Worlds`, `Westfalenhalle Results`, `ISU World Results 2004`.",
+      "source_path": "data/manual_rag/worlds_2004.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_2004",
+      "chunk_id": "data/manual_rag/worlds_2004.md::chunk_5"
     },
     {
       "text": "# Reference: 2005 ISU World Figure Skating Championships\n\n## 1. Document Overview: 2005 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 2005 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships to utilize the ISU Judging System (IJS) for all disciplines, replacing the 6.0 system.\n\n---",
