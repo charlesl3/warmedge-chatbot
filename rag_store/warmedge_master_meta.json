@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 6978,
+  "total_vectors": 7008,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,306 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1989 World Figure Skating Championships\n\n## 1. Document Overview: 1989 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1989 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a landmark year in the technical evolution of the sport, specifically the first successful landing of a quadruple jump at a World Championships.\n\n---",
+      "source_path": "data/manual_rag/worlds_1989.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1989",
+      "chunk_id": "data/manual_rag/worlds_1989.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1989 World Figure Skating Championships\n\n## 2. Event Metadata: 1989 World Figure Skating Championships\n* **Event Name:** 1989 World Figure Skating Championships\n* **Location:** Palais Omnisports de Paris-Bercy, Paris, France\n* **Dates:** March 14 – 19, 1989\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This event is historically significant for **Kurt Browning** landing the first ratified quadruple jump (a quadruple toe loop) in World Championship competition, signaling the start of the \"quad era\" in men's skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1989.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1989",
+      "chunk_id": "data/manual_rag/worlds_1989.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1989 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1989 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1989 World Figure Skating Championships\n**Kurt Browning** (Canada) made history by winning his first World title. While the competition was fierce, his successful execution of the quadruple toe loop revolutionized the technical expectations for the men's discipline.\n* **Gold:** **Kurt Browning** (Canada)\n* **Silver:** **Christopher Bowman** (United States)\n* **Bronze:** **Grzegorz Filipowski** (Poland) — (The first-ever World medal for Poland in figure skating)\n\n### 3.2 Women's Singles: 1989 World Figure Skating Championships\n**Midori Ito** (Japan) became the first Asian skater to win a World Figure Skating title. Her victory was secured by her extraordinary jumping ability, including a triple Axel, which set her apart from the rest of the field.\n* **Gold:** **Midori Ito** (Japan)\n* **Silver:** **Claudia Leistner** (West Germany)\n* **Bronze:** **Jill Trenary** (United States)\n\n### 3.3 Pairs: 1989 World Figure Skating Championships\n**Ekaterina Gordeeva and Sergei Grinkov** (Soviet Union) returned to the top of the podium to claim their third World title. They were noted for their seamless synchronization and high-level technical elements that defined the Soviet school of pairs skating.\n* **Gold:** **Ekaterina Gordeeva / Sergei Grinkov** (Soviet Union)\n* **Silver:** **Cindy Landry / Lyndon Johnston** (Canada)\n* **Bronze:** **Elena Bechke / Denis Petrov** (Soviet Union)\n\n### 3.4 Ice Dance: 1989 World Figure Skating Championships\n**Marina Klimova and Sergei Ponomarenko** (Soviet Union) won their first World gold medal, taking over the mantle from their legendary compatriots Bestemianova and Bukin. Their victory marked the beginning of their multi-year dominance in the sport.\n* **Gold:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Silver:** **Maya Usova / Alexander Zhulin** (Soviet Union)\n* **Bronze:** **Isabelle Duchesnay / Paul Duchesnay** (France)\n\n---",
+      "source_path": "data/manual_rag/worlds_1989.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1989",
+      "chunk_id": "data/manual_rag/worlds_1989.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1989 World Figure Skating Championships\n\n## 4. Medal Table: 1989 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 1 | 1 | 4 |\n| 2 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 3 | **Japan (JPN)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 1 | 2 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 6 | **Poland (POL)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1989.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1989",
+      "chunk_id": "data/manual_rag/worlds_1989.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1989 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1989 World Figure Skating Championships\n`Paris 1989`, `Kurt Browning first quad`, `Midori Ito 1989 gold`, `Gordeeva Grinkov 3rd title`, `Klimova Ponomarenko first gold`, `Filipowski Poland medal`, `Palais Omnisports Results`, `ISU World Results 1989`.",
+      "source_path": "data/manual_rag/worlds_1989.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1989",
+      "chunk_id": "data/manual_rag/worlds_1989.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1990 World Figure Skating Championships\n\n## 1. Document Overview: 1990 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1990 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final year that \"Compulsory Figures\" were included in the singles competitions before being abolished by the ISU.\n\n---",
+      "source_path": "data/manual_rag/worlds_1990.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1990",
+      "chunk_id": "data/manual_rag/worlds_1990.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1990 World Figure Skating Championships\n\n## 2. Event Metadata: 1990 World Figure Skating Championships\n* **Event Name:** 1990 World Figure Skating Championships\n* **Location:** Halifax Metro Centre, Halifax, Nova Scotia, Canada\n* **Dates:** March 6 – 11, 1990\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This championship marked the end of an era in figure skating; it was the last time Compulsory Figures (school figures) were contested at a World Championship. From 1991 onward, singles events consisted only of the Short Program and Free Skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1990.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1990",
+      "chunk_id": "data/manual_rag/worlds_1990.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1990 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1990 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1990 World Figure Skating Championships\n**Kurt Browning** (Canada) successfully defended his World title on home ice. He became the first man to win back-to-back titles since the mid-1980s, overcoming a strong challenge from Viktor Petrenko.\n* **Gold:** **Kurt Browning** (Canada)\n* **Silver:** **Viktor Petrenko** (Soviet Union)\n* **Bronze:** **Christopher Bowman** (United States)\n\n### 3.2 Women's Singles: 1990 World Figure Skating Championships\n**Jill Trenary** (United States) won the gold medal, benefiting from her strong performance in the final-ever compulsory figures segment. Midori Ito of Japan won the free skating with a historic performance but could not overcome the points gap from the figures.\n* **Gold:** **Jill Trenary** (United States)\n* **Silver:** **Midori Ito** (Japan)\n* **Bronze:** **Holly Cook** (United States)\n\n### 3.3 Pairs: 1990 World Figure Skating Championships\n**Ekaterina Gordeeva and Sergei Grinkov** (Soviet Union) captured their fourth World title. Their performance in Halifax is often cited as one of the most technically perfect displays of pair skating in the history of the sport.\n* **Gold:** **Ekaterina Gordeeva / Sergei Grinkov** (Soviet Union)\n* **Silver:** **Isabelle Brasseur / Lloyd Eisler** (Canada)\n* **Bronze:** **Natalia Mishkutenok / Artur Dmitriev** (Soviet Union)\n\n### 3.4 Ice Dance: 1990 World Figure Skating Championships\n**Marina Klimova and Sergei Ponomarenko** (Soviet Union) won their second consecutive World gold medal. They led a dominant Soviet contingent that took two of the three podium spots, showcasing the classical Russian style.\n* **Gold:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Silver:** **Isabelle Duchesnay / Paul Duchesnay** (France)\n* **Bronze:** **Maya Usova / Alexander Zhulin** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1990.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1990",
+      "chunk_id": "data/manual_rag/worlds_1990.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1990 World Figure Skating Championships\n\n## 4. Medal Table: 1990 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 1 | 2 | 5 |\n| 2 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 3 | **United States (USA)** | 1 | 0 | 2 | 3 |\n| 4 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 4 | **Japan (JPN)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1990.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1990",
+      "chunk_id": "data/manual_rag/worlds_1990.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1990 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1990 World Figure Skating Championships\n`Halifax 1990`, `Last Compulsory Figures`, `Kurt Browning 1990 gold`, `Jill Trenary World Champion`, `Gordeeva Grinkov 4th title`, `Midori Ito 1990 silver`, `Klimova Ponomarenko 1990`, `ISU World Results 1990`.",
+      "source_path": "data/manual_rag/worlds_1990.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1990",
+      "chunk_id": "data/manual_rag/worlds_1990.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1991 World Figure Skating Championships\n\n## 1. Document Overview: 1991 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1991 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final World Championship where the Soviet Union (USSR) competed as a single entity before its dissolution.\n\n---",
+      "source_path": "data/manual_rag/worlds_1991.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1991",
+      "chunk_id": "data/manual_rag/worlds_1991.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1991 World Figure Skating Championships\n\n## 2. Event Metadata: 1991 World Figure Skating Championships\n* **Event Name:** 1991 World Figure Skating Championships\n* **Location:** Olympiahalle, Munich, Germany\n* **Dates:** March 12 – 17, 1991\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** This was the first World Championship held in a reunified Germany. It also marked the historic first-ever clean sweep of the Ladies' podium by a single nation (the United States).\n\n---",
+      "source_path": "data/manual_rag/worlds_1991.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1991",
+      "chunk_id": "data/manual_rag/worlds_1991.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1991 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1991 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1991 World Figure Skating Championships\n**Kurt Browning** (Canada) successfully defended his title to win his third consecutive World gold medal. He held off a strong challenge from Viktor Petrenko and Todd Eldredge in a high-caliber technical field.\n* **Gold:** **Kurt Browning** (Canada)\n* **Silver:** **Viktor Petrenko** (Soviet Union)\n* **Bronze:** **Todd Eldredge** (United States)\n\n### 3.2 Women's Singles: 1991 World Figure Skating Championships\nThis event made history as the **United States** became the first nation to sweep all three medals in the Ladies' discipline at a World Championship. **Kristi Yamaguchi** won her first World title, leading teammates Tonya Harding and Nancy Kerrigan.\n* **Gold:** **Kristi Yamaguchi** (United States)\n* **Silver:** **Tonya Harding** (United States) — (First woman to land a Triple Axel at the World Championships)\n* **Bronze:** **Nancy Kerrigan** (United States)\n\n### 3.3 Pairs: 1991 World Figure Skating Championships\n**Natalia Mishkutenok and Artur Dmitriev** (Soviet Union) claimed their first World title. They were praised for their artistic \"Dream of Love\" program, which set a new standard for the pairs discipline heading into the 1992 Olympics.\n* **Gold:** **Natalia Mishkutenok / Artur Dmitriev** (Soviet Union)\n* **Silver:** **Isabelle Brasseur / Lloyd Eisler** (Canada)\n* **Bronze:** **Natasha Kuchiki / Todd Sand** (United States)\n\n### 3.4 Ice Dance: 1991 World Figure Skating Championships\n**Isabelle Duchesnay and Paul Duchesnay** (France) won the gold medal on \"home-adjacent\" territory, known for their revolutionary and avant-garde choreography. They narrowly defeated the legendary Soviet teams.\n* **Gold:** **Isabelle Duchesnay / Paul Duchesnay** (France)\n* **Silver:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Bronze:** **Maya Usova / Alexander Zhulin** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1991.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1991",
+      "chunk_id": "data/manual_rag/worlds_1991.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1991 World Figure Skating Championships\n\n## 4. Medal Table: 1991 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 1 | 2 | 1 | 4 |\n| 2 | **United States (USA)** | 1 | 1 | 3 | 5 |\n| 3 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 4 | **France (FRA)** | 1 | 0 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1991.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1991",
+      "chunk_id": "data/manual_rag/worlds_1991.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1991 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1991 World Figure Skating Championships\n`Munich 1991`, `US Ladies sweep 1991`, `Kristi Yamaguchi 1991 gold`, `Tonya Harding triple axel 1991`, `Kurt Browning 3rd title`, `Duchesnay brothers gold`, `Mishkutenok Dmitriev 1991`, `ISU World Results 1991`.",
+      "source_path": "data/manual_rag/worlds_1991.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1991",
+      "chunk_id": "data/manual_rag/worlds_1991.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1992 World Figure Skating Championships\n\n## 1. Document Overview: 1992 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1992 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transitional year where athletes from the former Soviet Union competed as the \"Unified Team\" (CIS) following the dissolution of the USSR.\n\n---",
+      "source_path": "data/manual_rag/worlds_1992.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1992",
+      "chunk_id": "data/manual_rag/worlds_1992.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1992 World Figure Skating Championships\n\n## 2. Event Metadata: 1992 World Figure Skating Championships\n* **Event Name:** 1992 World Figure Skating Championships\n* **Location:** Oakland-Alameda County Coliseum Arena, Oakland, California, USA\n* **Dates:** March 24 – 29, 1992\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** Held one month after the 1992 Albertville Winter Olympics, this was the final World Championship for many legends of the \"school figures\" transition era. It was also the first time the event was held in California since 1966.\n\n---",
+      "source_path": "data/manual_rag/worlds_1992.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1992",
+      "chunk_id": "data/manual_rag/worlds_1992.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1992 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1992 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1992 World Figure Skating Championships\n**Viktor Petrenko** (CIS) added a World title to his 1992 Olympic gold medal, cementing his dominance for the year. He delivered a technically superior performance that beat out three-time champion Kurt Browning.\n* **Gold:** **Viktor Petrenko** (CIS)\n* **Silver:** **Kurt Browning** (Canada)\n* **Bronze:** **Elvis Stojko** (Canada)\n\n### 3.2 Women's Singles: 1992 World Figure Skating Championships\n**Kristi Yamaguchi** (USA) successfully defended her World title on home soil. This event was notable for the dominance of the North American and Chinese skaters, as Yamaguchi and Nancy Kerrigan took the top two spots.\n* **Gold:** **Kristi Yamaguchi** (USA)\n* **Silver:** **Nancy Kerrigan** (USA)\n* **Bronze:** **Chen Lu** (China) — (This was the first-ever World medal for China in any figure skating discipline)\n\n### 3.3 Pairs: 1992 World Figure Skating Championships\n**Natalia Mishkutenok and Artur Dmitriev** (CIS) continued their era of dominance. Fresh off their Olympic gold, they produced a nearly flawless program to secure the World title over the Czechoslovakian pair.\n* **Gold:** **Natalia Mishkutenok / Artur Dmitriev** (CIS)\n* **Silver:** **Radka Kovaříková / René Novotný** (Czechoslovakia)\n* **Bronze:** **Isabelle Brasseur / Lloyd Eisler** (Canada)\n\n### 3.4 Ice Dance: 1992 World Figure Skating Championships\n**Marina Klimova and Sergei Ponomarenko** (CIS) won their third and final World title before turning professional. They were known for their innovative \"modern\" style in their final competitive season, leading a full podium sweep for the Unified Team.\n* **Gold:** **Marina Klimova / Sergei Ponomarenko** (CIS)\n* **Silver:** **Maya Usova / Alexander Zhulin** (CIS)\n* **Bronze:** **Oksana Grishuk / Evgeni Platov** (CIS)\n\n---",
+      "source_path": "data/manual_rag/worlds_1992.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1992",
+      "chunk_id": "data/manual_rag/worlds_1992.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1992 World Figure Skating Championships\n\n## 4. Medal Table: 1992 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Unified Team (CIS)** | 3 | 1 | 1 | 5 |\n| 2 | **United States (USA)** | 1 | 1 | 0 | 2 |\n| 3 | **Canada (CAN)** | 0 | 1 | 2 | 3 |\n| 4 | **Czechoslovakia (TCH)** | 0 | 1 | 0 | 1 |\n| 5 | **China (CHN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1992.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1992",
+      "chunk_id": "data/manual_rag/worlds_1992.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1992 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1992 World Figure Skating Championships\n`Oakland 1992`, `Kristi Yamaguchi gold 1992`, `Viktor Petrenko 1992 Worlds`, `Chen Lu first Chinese medal`, `Unified Team CIS skating`, `Klimova Ponomarenko ice dance`, `Mishkutenok Dmitriev pairs`, `ISU World Results 1992`.",
+      "source_path": "data/manual_rag/worlds_1992.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1992",
+      "chunk_id": "data/manual_rag/worlds_1992.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1993 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1993 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1993 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships where Russia competed as an independent nation following the dissolution of the Soviet Union.\n\n---",
+      "source_path": "data/manual_rag/worlds_1993.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1993",
+      "chunk_id": "data/manual_rag/worlds_1993.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1993 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1993 ISU World Figure Skating Championships\n* **Event Name:** 1993 ISU World Figure Skating Championships\n* **Location:** Sportovní hala, Prague, Czech Republic\n* **Dates:** March 9 – 14, 1993\n* **Host:** Czech Figure Skating Association / ISU\n* **Major Milestone:** This was the first World Championship held after the split of Czechoslovakia (becoming the Czech Republic and Slovakia). It also served as a primary qualifying event for the 1994 Lillehammer Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1993.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1993",
+      "chunk_id": "data/manual_rag/worlds_1993.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1993 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1993 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1993 ISU World Figure Skating Championships\n**Kurt Browning** (Canada) won his fourth and final World gold medal. His victory solidified his status as one of the greatest performers in the sport's history before the emergence of the \"quadruple jump\" era as a standard requirement.\n* **Gold:** **Kurt Browning** (Canada)\n* **Silver:** **Elvis Stojko** (Canada) — (The first 1-2 finish for Canadian men)\n* **Bronze:** **Alexei Urmanov** (Russia)\n\n### 3.2 Women's Singles: 1993 ISU World Figure Skating Championships\n**Oksana Baiul** (Ukraine) made a sensational debut, winning the gold medal at just 15 years old. Her victory was unexpected and marked the rise of Ukraine as a powerhouse in the ladies' discipline.\n* **Gold:** **Oksana Baiul** (Ukraine)\n* **Silver:** **Surya Bonaly** (France)\n* **Bronze:** **Chen Lu** (China) — (The first-ever World medal for China in figure skating)\n\n\n\n### 3.3 Pairs: 1993 ISU World Figure Skating Championships\n**Isabelle Brasseur and Lloyd Eisler** (Canada) captured the gold medal, breaking a streak of Soviet/Russian dominance. They were known for their high-amplitude triple twists and powerful lifts.\n* **Gold:** **Isabelle Brasseur / Lloyd Eisler** (Canada)\n* **Silver:** **Mandy Wötzel / Ingo Steuer** (Germany)\n* **Bronze:** **Evgenia Shishkova / Vadim Naumov** (Russia)\n\n\n\n### 3.4 Ice Dance: 1993 ISU World Figure Skating Championships\n**Maya Usova and Alexander Zhulin** (Russia) won their only World title. They defeated their long-time rivals and compatriots, Krylova and Fedorov, in a display of classical Russian ice dance technique.\n* **Gold:** **Maya Usova / Alexander Zhulin** (Russia)\n* **Silver:** **Anjelika Krylova / Vladimir Fedorov** (Russia)\n* **Bronze:** **Susanna Rahkamo / Petri Kokko** (Finland)\n\n---",
+      "source_path": "data/manual_rag/worlds_1993.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1993",
+      "chunk_id": "data/manual_rag/worlds_1993.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1993 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1993 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 2 | 1 | 0 | 3 |\n| 2 | **Russia (RUS)** | 1 | 1 | 2 | 4 |\n| 3 | **Ukraine (UKR)** | 1 | 0 | 0 | 1 |\n| 4 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 4 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 6 | **China (CHN)** | 0 | 0 | 1 | 1 |\n| 6 | **Finland (FIN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1993.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1993",
+      "chunk_id": "data/manual_rag/worlds_1993.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1993 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1993 ISU World Figure Skating Championships\n`Prague 1993`, `Oksana Baiul debut gold`, `Kurt Browning 4th title`, `Chen Lu first medal`, `Usova Zhulin 1993`, `Sportovni hala Results`, `first Russian independent Worlds`, `ISU World Results 1993`.",
+      "source_path": "data/manual_rag/worlds_1993.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1993",
+      "chunk_id": "data/manual_rag/worlds_1993.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1994 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1994 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1994 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the post-Olympic transition and the rise of new international stars.\n\n---",
+      "source_path": "data/manual_rag/worlds_1994.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1994",
+      "chunk_id": "data/manual_rag/worlds_1994.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1994 ISU World Figure Skating Championships\n\n## 2. Event Metadata: 1994 ISU World Figure Skating Championships\n* **Event Name:** 1994 ISU World Figure Skating Championships\n* **Location:** Makuhari Messe, Chiba, Japan\n* **Dates:** March 20 – 27, 1994\n* **Host:** Japan Skating Federation / ISU\n* **Major Milestone:** Held just one month after the 1994 Lillehammer Winter Olympics, this championship saw several Olympic medalists skip the event, allowing for a \"changing of the guard.\" It was also the first time a Japanese woman (Yuka Sato) won the World title on home ice.\n\n---",
+      "source_path": "data/manual_rag/worlds_1994.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1994",
+      "chunk_id": "data/manual_rag/worlds_1994.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1994 ISU World Figure Skating Championships\n\n## 3. Disciplinary Results: 1994 ISU World Figure Skating Championships\n\n### 3.1 Men's Singles: 1994 ISU World Figure Skating Championships\n**Elvis Stojko** (Canada) captured his first World gold medal. Known for his technical innovations, he became the first skater to land a **quadruple toe loop-double toe loop combination** at a World Championships.\n* **Gold:** **Elvis Stojko** (Canada)\n* **Silver:** **Philippe Candeloro** (France)\n* **Bronze:** **Viacheslav Zagorodniuk** (Ukraine)\n\n### 3.2 Women's Singles: 1994 ISU World Figure Skating Championships\n**Yuka Sato** (Japan) won the gold medal in a highly emotional performance on home ice. She narrowly defeated Surya Bonaly in a controversial 5-4 split decision among the judges. Bonaly famously refused to stand on the podium during the medal ceremony in protest of the result.\n* **Gold:** **Yuka Sato** (Japan)\n* **Silver:** **Surya Bonaly** (France)\n* **Bronze:** **Tanja Szewczenko** (Germany)\n\n### 3.3 Pairs: 1994 ISU World Figure Skating Championships\n**Evgenia Shishkova and Vadim Naumov** (Russia) won their only World title. They successfully navigated a field that saw the absence of the reigning Olympic champions, Gordeeva and Grinkov.\n* **Gold:** **Evgenia Shishkova / Vadim Naumov** (Russia)\n* **Silver:** **Isabelle Brasseur / Lloyd Eisler** (Canada)\n* **Bronze:** **Marina Eltsova / Andrei Bushkov** (Russia)\n\n### 3.4 Ice Dance: 1994 ISU World Figure Skating Championships\n**Oksana Grishuk and Evgeni Platov** (Russia) won their first World gold medal, beginning their four-year undefeated streak at the World Championships. \n* **Gold:** **Oksana Grishuk / Evgeni Platov** (Russia)\n* **Silver:** **Sophie Moniotte / Pascal Lavanchy** (France)\n* **Bronze:** **Anjelika Krylova / Vladimir Fedorov** (Russia)\n\n---",
+      "source_path": "data/manual_rag/worlds_1994.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1994",
+      "chunk_id": "data/manual_rag/worlds_1994.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1994 ISU World Figure Skating Championships\n\n## 4. Medal Table: 1994 ISU World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Russia (RUS)** | 2 | 0 | 2 | 4 |\n| 2 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 3 | **Japan (JPN)** | 1 | 0 | 0 | 1 |\n| 4 | **France (FRA)** | 0 | 3 | 0 | 3 |\n| 5 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| 5 | **Ukraine (UKR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1994.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1994",
+      "chunk_id": "data/manual_rag/worlds_1994.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1994 ISU World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1994 ISU World Figure Skating Championships\n`Chiba 1994`, `Yuka Sato first gold`, `Elvis Stojko first gold`, `Surya Bonaly podium protest`, `Grishuk Platov first title`, `Makuhari Messe Results`, `post-Lillehammer Worlds`, `ISU World Results 1994`.",
+      "source_path": "data/manual_rag/worlds_1994.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1994",
+      "chunk_id": "data/manual_rag/worlds_1994.md::chunk_5"
     },
     {
       "text": "# Reference: 1995 ISU World Figure Skating Championships\n\n## 1. Document Overview: 1995 ISU World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1995 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the mid-point of the 1990s and the rise of a new generation of technical powerhouses.\n\n---",
