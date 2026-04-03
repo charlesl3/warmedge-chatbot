@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7008,
+  "total_vectors": 7063,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,556 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1978 World Figure Skating Championships\n\n## 1. Document Overview: 1978 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1978 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a peak year of the Cold War-era skating rivalries and the emergence of several technical powerhouses.\n\n---",
+      "source_path": "data/manual_rag/worlds_1978.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1978",
+      "chunk_id": "data/manual_rag/worlds_1978.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1978 World Figure Skating Championships\n\n## 2. Event Metadata: 1978 World Figure Skating Championships\n* **Event Name:** 1978 World Figure Skating Championships\n* **Location:** National Ice Skating Association, Ottawa, Ontario, Canada\n* **Dates:** March 7 – 12, 1978\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This event was the first time the World Championships were held in Ottawa. It featured the continuation of the legendary **Rodnina and Zaitsev** winning streak and marked the first World title for the American champion **Charles Tickner**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1978.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1978",
+      "chunk_id": "data/manual_rag/worlds_1978.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1978 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1978 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1978 World Figure Skating Championships\n**Charles Tickner** (United States) won the gold medal in a competitive field, defeating the defending champion Jan Hoffmann. Tickner's balanced performance across the compulsory figures and the free skating earned him his first and only World title.\n* **Gold:** **Charles Tickner** (United States)\n* **Silver:** **Jan Hoffmann** (East Germany)\n* **Bronze:** **Robin Cousins** (Great Britain) — (His first World Championship medal)\n\n### 3.2 Women's Singles: 1978 World Figure Skating Championships\n**Anett Pötzsch** (East Germany) captured her first World title, initiating her era of dominance. She defeated the defending champion Linda Fratianne, largely due to her mathematically superior scores in the compulsory figures segment.\n* **Gold:** **Anett Pötzsch** (East Germany)\n* **Silver:** **Linda Fratianne** (United States)\n* **Bronze:** **Susanna Driano** (Italy)\n\n### 3.3 Pairs: 1978 World Figure Skating Championships\n**Irina Rodnina and Alexander Zaitsev** (Soviet Union) won their sixth consecutive World title as a pair (and Rodnina's tenth consecutive title overall). Their victory extended one of the longest undefeated streaks in the history of international sport.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Tai Babilonia / Randy Gardner** (United States)\n* **Bronze:** **Manuela Mager / Uwe Bewersdorff** (East Germany)\n\n### 3.4 Ice Dance: 1978 World Figure Skating Championships\n**Natalia Linichuk and Gennadi Karponosov** (Soviet Union) won their first World gold medal. They successfully filled the void left by the retirement of the legendary Pakhomova and Gorshkov, maintaining the Soviet Union's grip on the ice dance discipline.\n* **Gold:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n* **Silver:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n* **Bronze:** **Krisztina Regőczy / András Sallay** (Hungary)\n\n---",
+      "source_path": "data/manual_rag/worlds_1978.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1978",
+      "chunk_id": "data/manual_rag/worlds_1978.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1978 World Figure Skating Championships\n\n## 4. Medal Table: 1978 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 1 | 0 | 3 |\n| 2 | **East Germany (GDR)** | 1 | 1 | 1 | 3 |\n| 3 | **United States (USA)** | 1 | 2 | 0 | 3 |\n| 4 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n| 4 | **Italy (ITA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1978.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1978",
+      "chunk_id": "data/manual_rag/worlds_1978.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1978 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1978 World Figure Skating Championships\n`Ottawa 1978`, `Charles Tickner gold`, `Anett Pötzsch 1978`, `Rodnina Zaitsev 6th title`, `Linichuk Karponosov first gold`, `Babilonia Gardner 1978 silver`, `Skate Canada Results`, `ISU World Results 1978`.",
+      "source_path": "data/manual_rag/worlds_1978.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1978",
+      "chunk_id": "data/manual_rag/worlds_1978.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1979 World Figure Skating Championships\n\n## 1. Document Overview: 1979 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1979 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the penultimate World Championship of the 1970s and the establishing of Olympic favorites for the 1980 Lake Placid Games.\n\n---",
+      "source_path": "data/manual_rag/worlds_1979.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1979",
+      "chunk_id": "data/manual_rag/worlds_1979.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1979 World Figure Skating Championships\n\n## 2. Event Metadata: 1979 World Figure Skating Championships\n* **Event Name:** 1979 World Figure Skating Championships\n* **Location:** Wiener Stadthalle, Vienna, Austria\n* **Dates:** March 13 – 18, 1979\n* **Host:** Österreichischer Eiskunstlaufverband / ISU\n* **Major Milestone:** This championship was a critical pre-Olympic test. It was notable for the return of the legendary pairs team Rodnina and Zaitsev and the emergence of several skaters who would dominate the early 1980s. It also highlighted the ongoing debate between technical athleticism (jumps) and classical compulsory figures.\n\n---",
+      "source_path": "data/manual_rag/worlds_1979.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1979",
+      "chunk_id": "data/manual_rag/worlds_1979.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1979 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1979 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1979 World Figure Skating Championships\n**Vladimir Kovalev** (Soviet Union) won his second and final World title. He relied on a strong showing in the compulsory figures and short program to maintain his lead over the more athletically explosive Robin Cousins and Jan Hoffmann.\n* **Gold:** **Vladimir Kovalev** (Soviet Union)\n* **Silver:** **Robin Cousins** (Great Britain)\n* **Bronze:** **Jan Hoffmann** (East Germany)\n\n### 3.2 Women's Singles: 1979 World Figure Skating Championships\n**Linda Fratianne** (United States) reclaimed her World title from the defending champion Anett Pötzsch. The competition was incredibly close, decided by the balance between Fratianne's superior free skating and Pötzsch's dominance in the compulsory figures.\n* **Gold:** **Linda Fratianne** (United States)\n* **Silver:** **Anett Pötzsch** (East Germany)\n* **Bronze:** **Emi Watanabe** (Japan) — (The first-ever World medal for Japan in figure skating)\n\n### 3.3 Pairs: 1979 World Figure Skating Championships\n**Tai Babilonia and Randy Gardner** (United States) captured the gold medal, breaking a 14-year-long Soviet winning streak in the pairs discipline. This historic victory was possible due to the absence of Rodnina and Zaitsev (who were on a hiatus for the birth of their son).\n* **Gold:** **Tai Babilonia / Randy Gardner** (United States)\n* **Silver:** **Marina Cherkasova / Sergei Shakhrai** (Soviet Union)\n* **Bronze:** **Sabine Baeß / Tassilo Thierbach** (East Germany)\n\n### 3.4 Ice Dance: 1979 World Figure Skating Championships\n**Natalia Linichuk and Gennadi Karponosov** (Soviet Union) won their second consecutive World gold medal. They continued the high-speed, technically dense Soviet style of ice dancing, leading a field that saw the rise of the Hungarian and British teams.\n* **Gold:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n* **Silver:** **Krisztina Regőczy / András Sallay** (Hungary)\n* **Bronze:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1979.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1979",
+      "chunk_id": "data/manual_rag/worlds_1979.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1979 World Figure Skating Championships\n\n## 4. Medal Table: 1979 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 1 | 1 | 4 |\n| 2 | **United States (USA)** | 2 | 0 | 0 | 2 |\n| 3 | **East Germany (GDR)** | 0 | 1 | 2 | 3 |\n| 4 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 1 | 0 | 1 |\n| 6 | **Japan (JPN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1979.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1979",
+      "chunk_id": "data/manual_rag/worlds_1979.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1979 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1979 World Figure Skating Championships\n`Vienna 1979`, `Linda Fratianne 1979 gold`, `Babilonia Gardner historic gold`, `Vladimir Kovalev second title`, `Emi Watanabe first medal`, `Linichuk Karponosov 1979`, `Wiener Stadthalle Results`, `ISU World Results 1979`.",
+      "source_path": "data/manual_rag/worlds_1979.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1979",
+      "chunk_id": "data/manual_rag/worlds_1979.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1980 World Figure Skating Championships\n\n## 1. Document Overview: 1980 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1980 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of the sport immediately following the 1980 Lake Placid Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1980.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1980",
+      "chunk_id": "data/manual_rag/worlds_1980.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1980 World Figure Skating Championships\n\n## 2. Event Metadata: 1980 World Figure Skating Championships\n* **Event Name:** 1980 World Figure Skating Championships\n* **Location:** Westfalenhalle, Dortmund, West Germany\n* **Dates:** March 11 – 16, 1980\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** Held just weeks after the 1980 Winter Olympics, this event was notable for the absence of several Olympic champions who chose to turn professional. It served as the final competitive appearance for several stalwarts of the 1970s era and marked a changing of the guard in the international standings.\n\n---",
+      "source_path": "data/manual_rag/worlds_1980.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1980",
+      "chunk_id": "data/manual_rag/worlds_1980.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1980 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1980 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1980 World Figure Skating Championships\n**Jan Hoffmann** (East Germany) reclaimed the World title in his final competitive season. Following the retirement of Olympic champion Robin Cousins (who did not compete here), Hoffmann utilized his technical precision and veteran experience to secure his second World gold medal.\n* **Gold:** **Jan Hoffmann** (East Germany)\n* **Silver:** **Charles Tickner** (United States)\n* **Bronze:** **David Santee** (United States)\n\n### 3.2 Women's Singles: 1980 World Figure Skating Championships\n**Anett Pötzsch** (East Germany) added a World title to her 1980 Olympic gold, confirming her status as the dominant female skater of the year. She was renowned for her mastery of compulsory figures, which gave her a significant lead heading into the free skating.\n* **Gold:** **Anett Pötzsch** (East Germany)\n* **Silver:** **Dagmar Lurz** (West Germany)\n* **Bronze:** **Linda Fratianne** (United States)\n\n### 3.3 Pairs: 1980 World Figure Skating Championships\n**Marina Cherkasova and Sergei Shakhrai** (Soviet Union) won the gold medal. In the absence of the legendary Rodnina and Zaitsev, they stepped up to continue the Soviet legacy, performing high-difficulty technical elements including a quadruple twist attempt.\n* **Gold:** **Marina Cherkasova / Sergei Shakhrai** (Soviet Union)\n* **Silver:** **Manuela Mager / Uwe Bewersdorff** (East Germany)\n* **Bronze:** **Marina Pestova / Stanislav Leonovich** (Soviet Union)\n\n### 3.4 Ice Dance: 1980 World Figure Skating Championships\n**Krisztina Regőczy and András Sallay** (Hungary) captured the gold medal in a highly emotional victory. After a controversial silver medal at the Olympics, the Hungarian pair won the World title, marking the first time a non-Soviet team had won the Ice Dance world title since 1975.\n* **Gold:** **Krisztina Regőczy / András Sallay** (Hungary)\n* **Silver:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n* **Bronze:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1980.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1980",
+      "chunk_id": "data/manual_rag/worlds_1980.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1980 World Figure Skating Championships\n\n## 4. Medal Table: 1980 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **East Germany (GDR)** | 2 | 1 | 0 | 3 |\n| 2 | **Soviet Union (URS)** | 1 | 1 | 2 | 4 |\n| 3 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 2 | 3 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1980.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1980",
+      "chunk_id": "data/manual_rag/worlds_1980.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1980 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1980 World Figure Skating Championships\n`Dortmund 1980`, `Jan Hoffmann final gold`, `Anett Pötzsch 1980 gold`, `Regőczy Sallay Hungary`, `Cherkasova Shakhrai pairs`, `post-Olympic Worlds 1980`, `Westfalenhalle Results`, `ISU World Results 1980`.",
+      "source_path": "data/manual_rag/worlds_1980.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1980",
+      "chunk_id": "data/manual_rag/worlds_1980.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1981 World Figure Skating Championships\n\n## 1. Document Overview: 1981 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1981 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the start of the dominant four-year championship runs for several of the sport's most famous icons.\n\n---",
+      "source_path": "data/manual_rag/worlds_1981.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1981",
+      "chunk_id": "data/manual_rag/worlds_1981.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1981 World Figure Skating Championships\n\n## 2. Event Metadata: 1981 World Figure Skating Championships\n* **Event Name:** 1981 World Figure Skating Championships\n* **Location:** Hartford Civic Center, Hartford, Connecticut, USA\n* **Dates:** March 3 – 8, 1981\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This championship marked the first World titles for **Scott Hamilton** and the legendary ice dance team **Torvill and Dean**. It was also the first World Championship held in the United States since 1975, following the post-Olympic retirement of many 1980 Lake Placid stars.\n\n---",
+      "source_path": "data/manual_rag/worlds_1981.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1981",
+      "chunk_id": "data/manual_rag/worlds_1981.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1981 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1981 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1981 World Figure Skating Championships\n**Scott Hamilton** (United States) won his first World title, beginning a legendary undefeated streak that would last until his retirement in 1984. He capitalized on his strong compulsory figures and a dynamic free skating performance to overcome the European favorites.\n* **Gold:** **Scott Hamilton** (United States)\n* **Silver:** **David Santee** (United States)\n* **Bronze:** **Igor Bobrin** (Soviet Union)\n\n### 3.2 Women's Singles: 1981 World Figure Skating Championships\n**Denise Biellmann** (Switzerland) won the gold medal, becoming the first Swiss woman to do so. She was celebrated for her extraordinary flexibility and technical innovation, specifically the \"Biellmann spin,\" which became a mandated high-level element in the sport thereafter.\n* **Gold:** **Denise Biellmann** (Switzerland)\n* **Silver:** **Elaine Zayak** (United States)\n* **Bronze:** **Claudia Kristofics-Binder** (Austria)\n\n### 3.3 Pairs: 1981 World Figure Skating Championships\n**Irina Vorobieva and Igor Lisovsky** (Soviet Union) captured the gold medal, maintaining the Soviet Union's long-standing dominance in the pairs discipline. They were noted for their powerful athletic style and high-amplitude throws.\n* **Gold:** **Irina Vorobieva / Igor Lisovsky** (Soviet Union)\n* **Silver:** **Sabine Baeß / Tassilo Thierbach** (East Germany)\n* **Bronze:** **Christina Riegel / Andreas Nischwitz** (West Germany)\n\n### 3.4 Ice Dance: 1981 World Figure Skating Championships\n**Jayne Torvill and Christopher Dean** (Great Britain) won their first World gold medal. Their performance in Hartford marked a revolution in ice dance, as they began to move away from traditional ballroom constraints toward more theatrical and cohesive storytelling on ice.\n* **Gold:** **Jayne Torvill / Christopher Dean** (Great Britain)\n* **Silver:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n* **Bronze:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1981.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1981",
+      "chunk_id": "data/manual_rag/worlds_1981.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1981 World Figure Skating Championships\n\n## 4. Medal Table: 1981 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 2 | 0 | 3 |\n| 2 | **Soviet Union (URS)** | 1 | 1 | 2 | 4 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 3 | **Switzerland (SUI)** | 1 | 0 | 0 | 1 |\n| 5 | **East Germany (GDR)** | 0 | 1 | 0 | 1 |\n| 6 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n| 6 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1981.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1981",
+      "chunk_id": "data/manual_rag/worlds_1981.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1981 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1981 World Figure Skating Championships\n`Hartford 1981`, `Scott Hamilton first gold`, `Denise Biellmann 1981`, `Biellmann spin origin`, `Torvill and Dean first title`, `Vorobieva Lisovsky pairs`, `Hartford Civic Center Results`, `ISU World Results 1981`.",
+      "source_path": "data/manual_rag/worlds_1981.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1981",
+      "chunk_id": "data/manual_rag/worlds_1981.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1982 World Figure Skating Championships\n\n## 1. Document Overview: 1982 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1982 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year of technical transition and the rise of dominant American and British champions.\n\n---",
+      "source_path": "data/manual_rag/worlds_1982.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1982",
+      "chunk_id": "data/manual_rag/worlds_1982.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1982 World Figure Skating Championships\n\n## 2. Event Metadata: 1982 World Figure Skating Championships\n* **Event Name:** 1982 World Figure Skating Championships\n* **Location:** Brøndby Hall, Copenhagen, Denmark\n* **Dates:** March 9 – 14, 1982\n* **Host:** Dansk Skøjte Union / ISU\n* **Major Milestone:** This was the first and only time the World Figure Skating Championships were hosted in Denmark. The event solidified the technical standard of the early 1980s, particularly in the Men's and Ladies' disciplines, where American skaters held the top titles.\n\n---",
+      "source_path": "data/manual_rag/worlds_1982.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1982",
+      "chunk_id": "data/manual_rag/worlds_1982.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1982 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1982 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1982 World Figure Skating Championships\n**Scott Hamilton** (United States) successfully defended his World title, winning his second consecutive gold medal. He demonstrated superior consistency across the compulsory figures and the free skating, holding off a strong European challenge.\n* **Gold:** **Scott Hamilton** (United States)\n* **Silver:** **Norbert Schramm** (West Germany)\n* **Bronze:** **Brian Pockar** (Canada)\n\n### 3.2 Women's Singles: 1982 World Figure Skating Championships\n**Elaine Zayak** (United States) won the gold medal, overcoming a 7th-place finish in the compulsory figures. Her victory was a historic moment for technical skating, as she landed seven triple jumps in her free skating program, a feat that led to the eventual creation of the \"Zayak Rule\" to limit jump repetitions.\n* **Gold:** **Elaine Zayak** (United States)\n* **Silver:** **Katarina Witt** (East Germany) — (Her first World Championship podium appearance)\n* **Bronze:** **Claudia Kristofics-Binder** (Austria)\n\n### 3.3 Pairs: 1982 World Figure Skating Championships\n**Sabine Baeß and Tassilo Thierbach** (East Germany) won the gold medal, becoming the first pair from the GDR to win the World title. They defeated the defending champions from the Soviet Union by showcasing a high level of technical difficulty and unison.\n* **Gold:** **Sabine Baeß / Tassilo Thierbach** (East Germany)\n* **Silver:** **Marina Pestova / Stanislav Leonovich** (Soviet Union)\n* **Bronze:** **Caitlin Carruthers / Peter Carruthers** (United States)\n\n### 3.4 Ice Dance: 1982 World Figure Skating Championships\n**Jayne Torvill and Christopher Dean** (Great Britain) won their second consecutive World gold medal. Their performance in Copenhagen continued to redefine the artistic boundaries of ice dance, earning them a clean sweep of first-place ordinals from the judges.\n* **Gold:** **Jayne Torvill / Christopher Dean** (Great Britain)\n* **Silver:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Bronze:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1982.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1982",
+      "chunk_id": "data/manual_rag/worlds_1982.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1982 World Figure Skating Championships\n\n## 4. Medal Table: 1982 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 0 | 1 | 3 |\n| 2 | **East Germany (GDR)** | 1 | 1 | 0 | 2 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **Soviet Union (URS)** | 0 | 2 | 1 | 3 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n| 6 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1982.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1982",
+      "chunk_id": "data/manual_rag/worlds_1982.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1982 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1982 World Figure Skating Championships\n`Copenhagen 1982`, `Elaine Zayak 1982 gold`, `Scott Hamilton 2nd title`, `Torvill and Dean 1982`, `Sabine Baess Tassilo Thierbach`, `Katarina Witt first medal`, `Zayak Rule origins`, `ISU World Results 1982`.",
+      "source_path": "data/manual_rag/worlds_1982.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1982",
+      "chunk_id": "data/manual_rag/worlds_1982.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1983 World Figure Skating Championships\n\n## 1. Document Overview: 1983 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1983 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the crucial pre-Olympic year that established the dominant favorites for the 1984 Sarajevo Winter Games.\n\n---",
+      "source_path": "data/manual_rag/worlds_1983.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1983",
+      "chunk_id": "data/manual_rag/worlds_1983.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1983 World Figure Skating Championships\n\n## 2. Event Metadata: 1983 World Figure Skating Championships\n* **Event Name:** 1983 World Figure Skating Championships\n* **Location:** Helsinki Ice Hall, Helsinki, Finland\n* **Dates:** March 7 – 12, 1983\n* **Host:** Finnish Figure Skating Association / ISU\n* **Major Milestone:** This event marked the third consecutive World title for Scott Hamilton and the beginning of the historic \"perfect 6.0\" era for Torvill and Dean. It was also the first time the World Championships were hosted in Finland.\n\n---",
+      "source_path": "data/manual_rag/worlds_1983.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1983",
+      "chunk_id": "data/manual_rag/worlds_1983.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1983 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1983 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1983 World Figure Skating Championships\n**Scott Hamilton** (United States) continued his absolute dominance of the men's field, winning his third straight World gold medal. While Norbert Schramm won the free skating segment, Hamilton's massive lead in the compulsory figures and short program secured the overall victory.\n* **Gold:** **Scott Hamilton** (United States)\n* **Silver:** **Norbert Schramm** (West Germany)\n* **Bronze:** **Brian Orser** (Canada) — (His first World Championship medal)\n\n### 3.2 Women's Singles: 1983 World Figure Skating Championships\n**Rosalynn Sumners** (United States) won the gold medal, succeeding her compatriot Elaine Zayak. The podium was a preview of the upcoming Olympic battle, featuring a young Katarina Witt who earned her first-ever World medal.\n* **Gold:** **Rosalynn Sumners** (United States)\n* **Silver:** **Claudia Leistner** (West Germany)\n* **Bronze:** **Katarina Witt** (East Germany)\n\n### 3.3 Pairs: 1983 World Figure Skating Championships\n**Elena Valova and Oleg Vasiliev** (Soviet Union) won their first World title. They introduced a higher level of athletic speed and side-by-side technical consistency that allowed them to overtake the defending East German champions.\n* **Gold:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Silver:** **Sabine Baeß / Tassilo Thierbach** (East Germany)\n* **Bronze:** **Barbara Underhill / Paul Martini** (Canada)\n\n### 3.4 Ice Dance: 1983 World Figure Skating Championships\n**Jayne Torvill and Christopher Dean** (Great Britain) successfully defended their title, winning their third consecutive World gold medal. They made history by receiving the first-ever perfect 6.0 scores for artistic impression in the history of the World Championships ice dance competition.\n* **Gold:** **Jayne Torvill / Christopher Dean** (Great Britain)\n* **Silver:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Bronze:** **Judy Blumberg / Michael Seibert** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1983.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1983",
+      "chunk_id": "data/manual_rag/worlds_1983.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1983 World Figure Skating Championships\n\n## 4. Medal Table: 1983 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 0 | 1 | 3 |\n| 2 | **Soviet Union (URS)** | 1 | 1 | 0 | 2 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **West Germany (FRG)** | 0 | 2 | 0 | 2 |\n| 5 | **East Germany (GDR)** | 0 | 1 | 1 | 2 |\n| 6 | **Canada (CAN)** | 0 | 0 | 2 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1983.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1983",
+      "chunk_id": "data/manual_rag/worlds_1983.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1983 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1983 World Figure Skating Championships\n`Helsinki 1983`, `Scott Hamilton 3rd gold`, `Rosalynn Sumners 1983`, `Torvill and Dean first 6.0`, `Valova Vasiliev first title`, `Katarina Witt first medal`, `Brian Orser 1983 bronze`, `ISU World Results 1983`.",
+      "source_path": "data/manual_rag/worlds_1983.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1983",
+      "chunk_id": "data/manual_rag/worlds_1983.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1984 World Figure Skating Championships\n\n## 1. Document Overview: 1984 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1984 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final competitive appearance of several of the greatest legends in the sport's history following the 1984 Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1984.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1984",
+      "chunk_id": "data/manual_rag/worlds_1984.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1984 World Figure Skating Championships\n\n## 2. Event Metadata: 1984 World Figure Skating Championships\n* **Event Name:** 1984 World Figure Skating Championships\n* **Location:** National Ice Skating Association, Ottawa, Ontario, Canada\n* **Dates:** March 20 – 25, 1984\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** Held one month after the Sarajevo Winter Olympics, this event was the competitive \"swan song\" for **Scott Hamilton**, **Torvill and Dean**, and **Valova and Vasiliev**. It was the last time these era-defining athletes competed in an ISU Championship.\n\n---",
+      "source_path": "data/manual_rag/worlds_1984.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1984",
+      "chunk_id": "data/manual_rag/worlds_1984.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1984 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1984 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1984 World Figure Skating Championships\n**Scott Hamilton** (United States) won his fourth consecutive and final World title. His victory capped off a perfect four-year undefeated streak in major international competition. Brian Orser of Canada won the free skating segment but finished second overall due to Hamilton's lead in the compulsory figures.\n* **Gold:** **Scott Hamilton** (United States)\n* **Silver:** **Brian Orser** (Canada)\n* **Bronze:** **Alexander Fadeev** (Soviet Union)\n\n### 3.2 Women's Singles: 1984 World Figure Skating Championships\n**Katarina Witt** (East Germany) won her first World title, confirming her status as the new queen of figure skating after her Olympic triumph. She narrowly defeated the defending champion Rosalynn Sumners, who retired from amateur competition following this event.\n* **Gold:** **Katarina Witt** (East Germany)\n* **Silver:** **Anna Kondrashova** (Soviet Union)\n* **Bronze:** **Elaine Zayak** (United States)\n\n### 3.3 Pairs: 1984 World Figure Skating Championships\n**Barbara Underhill and Paul Martini** (Canada) captured the gold medal in a massive upset on home ice. They defeated the reigning Olympic champions Valova and Vasiliev with an emotional and technically clean performance that is considered one of the greatest moments in Canadian skating history.\n* **Gold:** **Barbara Underhill / Paul Martini** (Canada)\n* **Silver:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Bronze:** **Sabine Baeß / Tassilo Thierbach** (East Germany)\n\n### 3.4 Ice Dance: 1984 World Figure Skating Championships\n**Jayne Torvill and Christopher Dean** (Great Britain) won their fourth and final World title. They received a record-breaking string of perfect 6.0 marks for artistic impression, concluding their amateur career with a performance that many consider the gold standard of the discipline.\n* **Gold:** **Jayne Torvill / Christopher Dean** (Great Britain)\n* **Silver:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Bronze:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1984.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1984",
+      "chunk_id": "data/manual_rag/worlds_1984.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1984 World Figure Skating Championships\n\n## 4. Medal Table: 1984 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 1 | 1 | 0 | 2 |\n| 2 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 2 | **East Germany (GDR)** | 1 | 0 | 1 | 2 |\n| 4 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 5 | **Soviet Union (URS)** | 0 | 3 | 2 | 5 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1984.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1984",
+      "chunk_id": "data/manual_rag/worlds_1984.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1984 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1984 World Figure Skating Championships\n`Ottawa 1984`, `Scott Hamilton final gold`, `Katarina Witt first World title`, `Torvill and Dean 1984`, `Underhill Martini upset`, `Barbara Underhill 1984 gold`, `Brian Orser 1984 silver`, `ISU World Results 1984`.",
+      "source_path": "data/manual_rag/worlds_1984.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1984",
+      "chunk_id": "data/manual_rag/worlds_1984.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1985 World Figure Skating Championships\n\n## 1. Document Overview: 1985 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1985 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a period of intense rivalry between the Soviet Union and East Germany, as well as the transition of many 1984 Olympic stars out of the amateur ranks.\n\n---",
+      "source_path": "data/manual_rag/worlds_1985.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1985",
+      "chunk_id": "data/manual_rag/worlds_1985.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1985 World Figure Skating Championships\n\n## 2. Event Metadata: 1985 World Figure Skating Championships\n* **Event Name:** 1985 World Figure Skating Championships\n* **Location:** Ryogoku Kokugikan, Tokyo, Japan\n* **Dates:** March 3 – 10, 1985\n* **Host:** Japan Skating Federation / ISU\n* **Major Milestone:** This was the first time the World Championships were held in Tokyo since 1977. It marked the definitive rise of **Alexander Fadeev** and the continuation of **Katarina Witt’s** global dominance following her Olympic gold in Sarajevo.\n\n---",
+      "source_path": "data/manual_rag/worlds_1985.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1985",
+      "chunk_id": "data/manual_rag/worlds_1985.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1985 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1985 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1985 World Figure Skating Championships\n**Alexander Fadeev** (Soviet Union) won his only World title with a technically commanding performance. He successfully utilized the points gained in the compulsory figures to hold off Brian Orser, who won the free skating segment but finished with the silver medal overall.\n* **Gold:** **Alexander Fadeev** (Soviet Union)\n* **Silver:** **Brian Orser** (Canada)\n* **Bronze:** **Brian Boitano** (United States)\n\n### 3.2 Women's Singles: 1985 World Figure Skating Championships\n**Katarina Witt** (East Germany) successfully defended her World title. Despite a strong challenge from the American women and her teammate Kira Ivanova, Witt's competitive composure and artistic marks secured her the gold medal.\n* **Gold:** **Katarina Witt** (East Germany)\n* **Silver:** **Kira Ivanova** (Soviet Union)\n* **Bronze:** **Tiffany Chin** (United States)\n\n### 3.3 Pairs: 1985 World Figure Skating Championships\n**Elena Valova and Oleg Vasiliev** (Soviet Union) reclaimed the World title after losing it the previous year. They led a strong Soviet pairs contingent that showcased superior speed and unison, elements that would define the discipline for the remainder of the decade.\n* **Gold:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Silver:** **Larisa Selezneva / Oleg Makarov** (Soviet Union)\n* **Bronze:** **Katherina Matousek / Lloyd Eisler** (Canada)\n\n### 3.4 Ice Dance: 1985 World Figure Skating Championships\n**Natalia Bestemianova and Andrei Bukin** (Soviet Union) won their first World gold medal. Following the retirement of Torvill and Dean, they became the undisputed leaders of the ice dance world, beginning a four-year streak of World Championship victories.\n* **Gold:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Silver:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Bronze:** **Judy Blumberg / Michael Seibert** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1985.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1985",
+      "chunk_id": "data/manual_rag/worlds_1985.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1985 World Figure Skating Championships\n\n## 4. Medal Table: 1985 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 3 | 3 | 0 | 6 |\n| 2 | **East Germany (GDR)** | 1 | 0 | 0 | 1 |\n| 3 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 4 | **United States (USA)** | 0 | 0 | 3 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1985.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1985",
+      "chunk_id": "data/manual_rag/worlds_1985.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1985 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1985 World Figure Skating Championships\n`Tokyo 1985`, `Alexander Fadeev gold`, `Katarina Witt 1985`, `Bestemianova Bukin first gold`, `Valova Vasiliev reclaim title`, `Brian Orser 1985 silver`, `Ryogoku Kokugikan Results`, `ISU World Results 1985`.",
+      "source_path": "data/manual_rag/worlds_1985.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1985",
+      "chunk_id": "data/manual_rag/worlds_1985.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1986 World Figure Skating Championships\n\n## 1. Document Overview: 1986 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1986 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year of significant shifts in world rankings and the rise of several future Olympic icons.\n\n---",
+      "source_path": "data/manual_rag/worlds_1986.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1986",
+      "chunk_id": "data/manual_rag/worlds_1986.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1986 World Figure Skating Championships\n\n## 2. Event Metadata: 1986 World Figure Skating Championships\n* **Event Name:** 1986 World Figure Skating Championships\n* **Location:** Patinoire des Vernets, Geneva, Switzerland\n* **Dates:** March 18 – 23, 1986\n* **Host:** Swiss Skating Federation / ISU\n* **Major Milestone:** This championship was notable for the first World title won by the legendary pair **Gordeeva and Grinkov**, who would go on to become one of the most famous teams in history. It also saw the first American woman to win the World title since 1980.\n\n---",
+      "source_path": "data/manual_rag/worlds_1986.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1986",
+      "chunk_id": "data/manual_rag/worlds_1986.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1986 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1986 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1986 World Figure Skating Championships\n**Brian Boitano** (United States) won his first World title, signaling his ascent as a dominant force in the sport. He defeated the defending champion Alexander Fadeev through a combination of technical precision and strong compulsory figures.\n* **Gold:** **Brian Boitano** (United States)\n* **Silver:** **Brian Orser** (Canada)\n* **Bronze:** **Alexander Fadeev** (Soviet Union)\n\n### 3.2 Women's Singles: 1986 World Figure Skating Championships\n**Debi Thomas** (United States) made history by becoming the first African-American to win a World Figure Skating title. She defeated the two-time defending champion Katarina Witt in a tightly contested battle that highlighted Thomas's athletic jumping ability.\n* **Gold:** **Debi Thomas** (United States)\n* **Silver:** **Katarina Witt** (East Germany)\n* **Bronze:** **Tiffany Chin** (United States)\n\n### 3.3 Pairs: 1986 World Figure Skating Championships\n**Ekaterina Gordeeva and Sergei Grinkov** (Soviet Union) won their first World gold medal at the ages of 14 and 19, respectively. Their youth, technical prowess, and artistic harmony immediately established them as the new standard-bearers for pair skating.\n* **Gold:** **Ekaterina Gordeeva / Sergei Grinkov** (Soviet Union)\n* **Silver:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Bronze:** **Cynthia Coull / Mark Rowsom** (Canada)\n\n### 3.4 Ice Dance: 1986 World Figure Skating Championships\n**Natalia Bestemianova and Andrei Bukin** (Soviet Union) successfully defended their title, winning their second consecutive World gold medal. They continued the Soviet tradition of theatrical and highly athletic ice dance programs.\n* **Gold:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Silver:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Bronze:** **Natalia Annenko / Genrikh Sretenski** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1986.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1986",
+      "chunk_id": "data/manual_rag/worlds_1986.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1986 World Figure Skating Championships\n\n## 4. Medal Table: 1986 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 2 | 6 |\n| 2 | **United States (USA)** | 2 | 0 | 1 | 3 |\n| 3 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 3 | **East Germany (GDR)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1986.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1986",
+      "chunk_id": "data/manual_rag/worlds_1986.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1986 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1986 World Figure Skating Championships\n`Geneva 1986`, `Brian Boitano first gold`, `Debi Thomas 1986 World Champion`, `Gordeeva Grinkov first title`, `Bestemianova Bukin 1986`, `Tiffany Chin 1986 bronze`, `Patinoire des Vernets Results`, `ISU World Results 1986`.",
+      "source_path": "data/manual_rag/worlds_1986.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1986",
+      "chunk_id": "data/manual_rag/worlds_1986.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1987 World Figure Skating Championships\n\n## 1. Document Overview: 1987 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1987 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the crucial pre-Olympic year that set the stage for the 1988 Calgary Winter Games.\n\n---",
+      "source_path": "data/manual_rag/worlds_1987.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1987",
+      "chunk_id": "data/manual_rag/worlds_1987.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1987 World Figure Skating Championships\n\n## 2. Event Metadata: 1987 World Figure Skating Championships\n* **Event Name:** 1987 World Figure Skating Championships\n* **Location:** Riverfront Coliseum, Cincinnati, Ohio, USA\n* **Dates:** March 10 – 15, 1987\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This championship is famous for the \"Battle of the Brians\" in the men's discipline and the intense rivalry between Katarina Witt and Debi Thomas. It also showcased the increasing technical difficulty in pairs and ice dance as the sport moved toward the end of the 1980s.\n\n---",
+      "source_path": "data/manual_rag/worlds_1987.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1987",
+      "chunk_id": "data/manual_rag/worlds_1987.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1987 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1987 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1987 World Figure Skating Championships\n**Brian Orser** (Canada) captured his first and only World title. He delivered two nearly flawless programs to defeat his main rival, Brian Boitano, marking a significant victory in their multi-year rivalry leading up to the 1988 Olympics.\n* **Gold:** **Brian Orser** (Canada)\n* **Silver:** **Brian Boitano** (United States)\n* **Bronze:** **Alexander Fadeev** (Soviet Union)\n\n### 3.2 Women's Singles: 1987 World Figure Skating Championships\n**Katarina Witt** (East Germany) reclaimed her World title from the defending champion, Debi Thomas. Witt's artistic presentation and competitive consistency allowed her to edge out the American skater in a closely contested final.\n* **Gold:** **Katarina Witt** (East Germany)\n* **Silver:** **Debi Thomas** (United States)\n* **Bronze:** **Caryn Kadavy** (United States)\n\n### 3.3 Pairs: 1987 World Figure Skating Championships\n**Ekaterina Gordeeva and Sergei Grinkov** (Soviet Union) successfully defended their World title. Their performance was noted for its incredible speed and the \"Quadruple Twist,\" a high-risk element that few pairs could execute at the time.\n* **Gold:** **Ekaterina Gordeeva / Sergei Grinkov** (Soviet Union)\n* **Silver:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Bronze:** **Jill Watson / Peter Oppegard** (United States)\n\n### 3.4 Ice Dance: 1987 World Figure Skating Championships\n**Natalia Bestemianova and Andrei Bukin** (Soviet Union) continued their reign, winning their third consecutive World title. They were widely considered unbeatable during this period, known for their dramatic and high-energy \"Russian Style\" of ice dancing.\n* **Gold:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Silver:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Bronze:** **Tracy Wilson / Rob McCall** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1987.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1987",
+      "chunk_id": "data/manual_rag/worlds_1987.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1987 World Figure Skating Championships\n\n## 4. Medal Table: 1987 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 1 | 5 |\n| 2 | **United States (USA)** | 0 | 2 | 2 | 4 |\n| 3 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 4 | **East Germany (GDR)** | 1 | 0 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1987.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1987",
+      "chunk_id": "data/manual_rag/worlds_1987.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1987 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1987 World Figure Skating Championships\n`Cincinnati 1987`, `Brian Orser first gold`, `Katarina Witt 1987`, `Gordeeva Grinkov quad twist`, `Bestemianova Bukin 3rd title`, `Battle of the Brians 1987`, `Riverfront Coliseum Results`, `ISU World Results 1987`.",
+      "source_path": "data/manual_rag/worlds_1987.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1987",
+      "chunk_id": "data/manual_rag/worlds_1987.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1988 World Figure Skating Championships\n\n## 1. Document Overview: 1988 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1988 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the post-Olympic World Championships where several legendary skaters concluded their amateur careers.\n\n---",
+      "source_path": "data/manual_rag/worlds_1988.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1988",
+      "chunk_id": "data/manual_rag/worlds_1988.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1988 World Figure Skating Championships\n\n## 2. Event Metadata: 1988 World Figure Skating Championships\n* **Event Name:** 1988 World Figure Skating Championships\n* **Location:** Budapest Sportcsarnok, Budapest, Hungary\n* **Dates:** March 22 – 27, 1988\n* **Host:** Hungarian Skating Federation / ISU\n* **Major Milestone:** Held shortly after the 1988 Calgary Winter Olympics, this event featured the final competitive performances of icons like Katarina Witt and the legendary ice dance team Bestemianova and Bukin. It was also the site of the first successfully landed quadruple jump in competition (though not yet ratified as a \"clean\" landing by all standards until 1989).\n\n---",
+      "source_path": "data/manual_rag/worlds_1988.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1988",
+      "chunk_id": "data/manual_rag/worlds_1988.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1988 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1988 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1988 World Figure Skating Championships\n**Brian Boitano** (United States) won his second World title, following his \"Battle of the Brians\" Olympic victory. This event was also notable for **Kurt Browning** (Canada) landing the first quadruple toe loop in competition, although he finished 6th overall.\n* **Gold:** **Brian Boitano** (United States)\n* **Silver:** **Brian Orser** (Canada)\n* **Bronze:** **Viktor Petrenko** (Soviet Union)\n\n### 3.2 Women's Singles: 1988 World Figure Skating Championships\n**Katarina Witt** (East Germany) won her fourth and final World title before retiring from amateur competition. She successfully defended her crown against Elizabeth Manley and Debi Thomas in a repeat of the Olympic podium.\n* **Gold:** **Katarina Witt** (East Germany)\n* **Silver:** **Elizabeth Manley** (Canada)\n* **Bronze:** **Debi Thomas** (United States)\n\n### 3.3 Pairs: 1988 World Figure Skating Championships\n**Elena Valova and Oleg Vasiliev** (Soviet Union) captured their third World title, reclaiming the top spot after being defeated the previous year. They demonstrated the classic strength and unison of the Soviet pairs school.\n* **Gold:** **Elena Valova / Oleg Vasiliev** (Soviet Union)\n* **Silver:** **Ekaterina Gordeeva / Sergei Grinkov** (Soviet Union)\n* **Bronze:** **Larisa Selezneva / Oleg Makarov** (Soviet Union)\n\n### 3.4 Ice Dance: 1988 World Figure Skating Championships\n**Natalia Bestemianova and Andrei Bukin** (Soviet Union) won their fourth consecutive World gold medal. This was their final major international appearance, capping off one of the most decorated careers in ice dance history with a perfect set of first-place ordinals.\n* **Gold:** **Natalia Bestemianova / Andrei Bukin** (Soviet Union)\n* **Silver:** **Marina Klimova / Sergei Ponomarenko** (Soviet Union)\n* **Bronze:** **Tracy Wilson / Rob McCall** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1988.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1988",
+      "chunk_id": "data/manual_rag/worlds_1988.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1988 World Figure Skating Championships\n\n## 4. Medal Table: 1988 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 2 | 6 |\n| 2 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 3 | **East Germany (GDR)** | 1 | 0 | 0 | 1 |\n| 4 | **Canada (CAN)** | 0 | 2 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1988.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1988",
+      "chunk_id": "data/manual_rag/worlds_1988.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1988 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1988 World Figure Skating Championships\n`Budapest 1988`, `Katarina Witt final gold`, `Brian Boitano 1988`, `Bestemianova Bukin retirement`, `Kurt Browning first quad attempt`, `Valova Vasiliev 3rd title`, `ISU World Results 1988`, `post-Olympic Worlds 1988`.",
+      "source_path": "data/manual_rag/worlds_1988.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1988",
+      "chunk_id": "data/manual_rag/worlds_1988.md::chunk_5"
     },
     {
       "text": "# Reference: 1989 World Figure Skating Championships\n\n## 1. Document Overview: 1989 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1989 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a landmark year in the technical evolution of the sport, specifically the first successful landing of a quadruple jump at a World Championships.\n\n---",
