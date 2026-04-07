@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7063,
+  "total_vectors": 7133,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,706 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1964 World Figure Skating Championships\n\n## 1. Document Overview: 1964 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1964 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of the sport following the 1964 Innsbruck Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1964.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1964",
+      "chunk_id": "data/manual_rag/worlds_1964.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1964 World Figure Skating Championships\n\n## 2. Event Metadata: 1964 World Figure Skating Championships\n* **Event Name:** 1964 World Figure Skating Championships\n* **Location:** Westfalenhalle, Dortmund, West Germany\n* **Dates:** February 25 – March 1, 1964\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** Held weeks after the Innsbruck Olympics, this championship was the final amateur competition for several legends, including **Sjoukje Dijkstra** and **Marika Kilius / Hans-Jürgen Bäumler**. It was the second time Dortmund hosted the event, utilizing the prestigious Westfalenhalle venue.\n\n---",
+      "source_path": "data/manual_rag/worlds_1964.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1964",
+      "chunk_id": "data/manual_rag/worlds_1964.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1964 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1964 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1964 World Figure Skating Championships\n**Manfred Schnelldorfer** (West Germany) added the World title to his 1964 Olympic gold medal. He delivered a technically sound performance on home soil to defeat Alain Calmat and Karol Divín. His victory marked the peak of West German men's skating in the 1960s.\n* **Gold:** **Manfred Schnelldorfer** (West Germany)\n* **Silver:** **Alain Calmat** (France)\n* **Bronze:** **Karol Divín** (Czechoslovakia)\n\n### 3.2 Women's Singles: 1964 World Figure Skating Championships\n**Sjoukje Dijkstra** (Netherlands) won her third consecutive and final World title. Following her Olympic triumph, she remained undefeated, ending her competitive career as one of the most dominant female skaters in history, known for her powerful jumping and athletic presence.\n* **Gold:** **Sjoukje Dijkstra** (Netherlands)\n* **Silver:** **Regine Heitzer** (Austria)\n* **Bronze:** **Nicole Hassler** (France)\n\n### 3.3 Pairs: 1964 World Figure Skating Championships\n**Marika Kilius and Hans-Jürgen Bäumler** (West Germany) successfully defended their World title. Their performance in Dortmund was a celebrated homecoming following their Olympic silver. They narrowly defeated the rising Soviet pair, the Protopopovs, in a clash of artistic styles.\n* **Gold:** **Marika Kilius / Hans-Jürgen Bäumler** (West Germany)\n* **Silver:** **Ludmila Belousova / Oleg Protopopov** (Soviet Union)\n* **Bronze:** **Debbi Wilkes / Guy Revell** (Canada)\n\n### 3.4 Ice Dance: 1964 World Figure Skating Championships\n**Eva Romanová and Pavel Roman** (Czechoslovakia) won their third consecutive World gold medal. The siblings continued to redefine ice dance with high-energy programs and technical precision, maintaining their status as the premier dance team of the early 1960s.\n* **Gold:** **Eva Romanová / Pavel Roman** (Czechoslovakia)\n* **Silver:** **Paulette Doan / Kenneth Ormsby** (Canada)\n* **Bronze:** **Janet Sawbridge / David Hickinbottom** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1964.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1964",
+      "chunk_id": "data/manual_rag/worlds_1964.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1964 World Figure Skating Championships\n\n## 4. Medal Table: 1964 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **West Germany (FRG)** | 2 | 0 | 0 | 2 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 0 | 1 | 2 |\n| 3 | **Netherlands (NED)** | 1 | 0 | 0 | 1 |\n| 4 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 4 | **France (FRA)** | 0 | 1 | 1 | 2 |\n| 6 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 6 | **Soviet Union (URS)** | 0 | 1 | 0 | 1 |\n| 8 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1964.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1964",
+      "chunk_id": "data/manual_rag/worlds_1964.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1964 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1964 World Figure Skating Championships\n`Dortmund 1964`, `Manfred Schnelldorfer gold`, `Sjoukje Dijkstra final gold`, `Kilius Baumler 1964`, `Eva Romanova 3rd gold`, `Post-Olympic Worlds 1964`, `Westfalenhalle Results`, `ISU World Results 1964`.",
+      "source_path": "data/manual_rag/worlds_1964.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1964",
+      "chunk_id": "data/manual_rag/worlds_1964.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1965 World Figure Skating Championships\n\n## 1. Document Overview: 1965 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1965 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the mid-1960s era and the first World titles for legendary figures who would define the sport's aesthetic for years to come.\n\n---",
+      "source_path": "data/manual_rag/worlds_1965.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1965",
+      "chunk_id": "data/manual_rag/worlds_1965.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1965 World Figure Skating Championships\n\n## 2. Event Metadata: 1965 World Figure Skating Championships\n* **Event Name:** 1965 World Figure Skating Championships\n* **Location:** Broadmoor World Arena, Colorado Springs, Colorado, USA\n* **Dates:** March 2 – 7, 1965\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This championship is historically significant for the first World title won by **Ludmila Protopopova and Oleg Protopopov**, marking the official beginning of the Soviet Union's multi-decade dominance in pairs skating. It also featured the first World title for **Alain Calmat** in his final competitive appearance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1965.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1965",
+      "chunk_id": "data/manual_rag/worlds_1965.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1965 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1965 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1965 World Figure Skating Championships\n**Alain Calmat** (France) won his first and only World title. After several years of finishing on the podium behind Emmerich Danzer and Karol Divín, Calmat's victory in Colorado Springs was a crowning achievement for French skating, occurring just before his retirement to pursue a career in medicine.\n* **Gold:** **Alain Calmat** (France)\n* **Silver:** **Scott Allen** (United States)\n* **Bronze:** **Donald Knight** (Canada)\n\n### 3.2 Women's Singles: 1965 World Figure Skating Championships\n**Petra Burka** (Canada) won the gold medal, becoming the first woman to successfully land a triple Salchow in international competition. Her victory highlighted the increasing technical difficulty in the ladies' discipline, as she defeated the rising American star Peggy Fleming.\n* **Gold:** **Petra Burka** (Canada)\n* **Silver:** **Regine Heitzer** (Austria)\n* **Bronze:** **Peggy Fleming** (United States)\n\n### 3.3 Pairs: 1965 World Figure Skating Championships\n**Ludmila Protopopova and Oleg Protopopov** (Soviet Union) won their first World gold medal. Their performance at the Broadmoor World Arena was a landmark in the sport, introducing a lyrical, balletic style that emphasized the \"oneness\" of the pair, fundamentally changing how the discipline was judged.\n* **Gold:** **Ludmila Protopopova / Oleg Protopopov** (Soviet Union)\n* **Silver:** **Vivian Joseph / Ronald Joseph** (United States)\n* **Bronze:** **Tatiana Zhuk / Alexander Gorelik** (Soviet Union)\n\n### 3.4 Ice Dance: 1965 World Figure Skating Championships\n**Eva Romanová and Pavel Roman** (Czechoslovakia) won their fourth consecutive and final World gold medal. They retired after this event as one of the most successful ice dance teams of the pre-Olympic ice dance era, known for their innovative choreography and brother-sister synchronization.\n* **Gold:** **Eva Romanová / Pavel Roman** (Czechoslovakia)\n* **Silver:** **Janet Sawbridge / David Hickinbottom** (Great Britain)\n* **Bronze:** **Lorna Dyer / John Carrell** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1965.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1965",
+      "chunk_id": "data/manual_rag/worlds_1965.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1965 World Figure Skating Championships\n\n## 4. Medal Table: 1965 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 1 | 0 | 1 | 2 |\n| 1 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 3 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 3 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 5 | **United States (USA)** | 0 | 2 | 2 | 4 |\n| 6 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 6 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1965.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1965",
+      "chunk_id": "data/manual_rag/worlds_1965.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1965 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1965 World Figure Skating Championships\n`Colorado Springs 1965`, `Alain Calmat gold`, `Petra Burka triple Salchow`, `Protopopov first gold`, `Eva Romanova final title`, `Broadmoor World Arena Results`, `ISU World Results 1965`, `Soviet pairs beginnings`.",
+      "source_path": "data/manual_rag/worlds_1965.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1965",
+      "chunk_id": "data/manual_rag/worlds_1965.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1966 World Figure Skating Championships\n\n## 1. Document Overview: 1966 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1966 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the mid-1960s technical shift and the first World titles for several of the sport's most enduring legends.\n\n---",
+      "source_path": "data/manual_rag/worlds_1966.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1966",
+      "chunk_id": "data/manual_rag/worlds_1966.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1966 World Figure Skating Championships\n\n## 2. Event Metadata: 1966 World Figure Skating Championships\n* **Event Name:** 1966 World Figure Skating Championships\n* **Location:** Davos Ice Stadium, Davos, Switzerland\n* **Dates:** February 22 – 27, 1966\n* **Host:** Swiss Skating Federation / ISU\n* **Major Milestone:** This championship was held at the historic outdoor rink in Davos, one of the traditional homes of international skating. It marked the first World titles for **Peggy Fleming**, **Emmerich Danzer**, and the ice dance team **Towler and Ford**, signaling a definitive change in the global hierarchy of the sport.\n\n---",
+      "source_path": "data/manual_rag/worlds_1966.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1966",
+      "chunk_id": "data/manual_rag/worlds_1966.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1966 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1966 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1966 World Figure Skating Championships\n**Emmerich Danzer** (Austria) won his first World gold medal. His victory initiated a period of Austrian dominance in the men's discipline. Danzer was celebrated for his exceptional fluidity and the \"Viennese School\" style of skating, which emphasized classical lines and musicality.\n* **Gold:** **Emmerich Danzer** (Austria)\n* **Silver:** **Wolfgang Schwarz** (Austria)\n* **Bronze:** **Gary Visconti** (United States)\n\n### 3.2 Women's Singles: 1966 World Figure Skating Championships\n**Peggy Fleming** (United States) won her first World title, beginning a three-year reign as the world's premier female skater. Her victory was a significant emotional milestone for U.S. Figure Skating, as she became the first American woman to win the world title since the 1961 plane crash that decimated the national team.\n* **Gold:** **Peggy Fleming** (United States)\n* **Silver:** **Gabriele Seyfert** (East Germany)\n* **Bronze:** **Petra Burka** (Canada)\n\n### 3.3 Pairs: 1966 World Figure Skating Championships\n**Ludmila Protopopova and Oleg Protopopov** (Soviet Union) successfully defended their title, winning their second consecutive World gold medal. They defeated the rising Soviet pair Tatiana Zhuk and Alexander Gorelik, further establishing the \"Protopopov style\" as the dominant aesthetic in pairs skating.\n* **Gold:** **Ludmila Protopopova / Oleg Protopopov** (Soviet Union)\n* **Silver:** **Tatiana Zhuk / Alexander Gorelik** (Soviet Union)\n* **Bronze:** **Cynthia Kauffman / Ronald Kauffman** (United States)\n\n### 3.4 Ice Dance: 1966 World Figure Skating Championships\n**Diane Towler and Bernard Ford** (Great Britain) won their first World gold medal. Their victory marked the beginning of their four-year undefeated streak and solidified Great Britain's reputation as the primary innovators of modern ice dance.\n* **Gold:** **Diane Towler / Bernard Ford** (Great Britain)\n* **Silver:** **Yvonne Suddick / Roger Kennerson** (Great Britain)\n* **Bronze:** **Lorna Dyer / John Carrell** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1966.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1966",
+      "chunk_id": "data/manual_rag/worlds_1966.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1966 World Figure Skating Championships\n\n## 4. Medal Table: 1966 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 1 | **Great Britain (GBR)** | 1 | 1 | 0 | 2 |\n| 1 | **Soviet Union (URS)** | 1 | 1 | 0 | 2 |\n| 4 | **United States (USA)** | 1 | 0 | 3 | 4 |\n| 5 | **East Germany (GDR)** | 0 | 1 | 0 | 1 |\n| 6 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1966.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1966",
+      "chunk_id": "data/manual_rag/worlds_1966.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1966 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1966 World Figure Skating Championships\n`Davos 1966`, `Peggy Fleming first gold`, `Emmerich Danzer first gold`, `Protopopov second title`, `Towler Ford first gold`, `Davos Ice Stadium Results`, `ISU World Results 1966`, `US Skating recovery 1966`.",
+      "source_path": "data/manual_rag/worlds_1966.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1966",
+      "chunk_id": "data/manual_rag/worlds_1966.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1967 World Figure Skating Championships\n\n## 1. Document Overview: 1967 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1967 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of the mid-1960s skating era and the emergence of the legendary champions who would dominate the 1968 Winter Olympics.\n\n---",
+      "source_path": "data/manual_rag/worlds_1967.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1967",
+      "chunk_id": "data/manual_rag/worlds_1967.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1967 World Figure Skating Championships\n\n## 2. Event Metadata: 1967 World Figure Skating Championships\n* **Event Name:** 1967 World Figure Skating Championships\n* **Location:** Wiener Stadthalle, Vienna, Austria\n* **Dates:** February 28 – March 4, 1967\n* **Host:** Österreichischer Eiskunstlaufverband / ISU\n* **Major Milestone:** This event was held in the \"Mecca\" of figure skating at the time, Vienna. It solidified the global standing of **Peggy Fleming** and **Emmerich Danzer** as the undisputed world leaders in their respective disciplines heading into the Olympic year.\n\n---",
+      "source_path": "data/manual_rag/worlds_1967.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1967",
+      "chunk_id": "data/manual_rag/worlds_1967.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1967 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1967 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1967 World Figure Skating Championships\n**Emmerich Danzer** (Austria) won his second consecutive World title on home ice. He led a historic sweep for the Austrian men, who took two of the three podium spots. Danzer’s victory was attributed to his nearly perfect compulsory figures and an elegant, classically styled free program.\n* **Gold:** **Emmerich Danzer** (Austria)\n* **Silver:** **Wolfgang Schwarz** (Austria)\n* **Bronze:** **Gary Visconti** (United States)\n\n### 3.2 Women's Singles: 1967 World Figure Skating Championships\n**Peggy Fleming** (United States) successfully defended her title, winning her second consecutive World gold medal. Her performance was noted for its ethereal quality and technical precision, marking her as the heavy favorite for the upcoming 1968 Olympics.\n* **Gold:** **Peggy Fleming** (United States)\n* **Silver:** **Gabriele Seyfert** (East Germany)\n* **Bronze:** **Hana Mašková** (Czechoslovakia)\n\n### 3.3 Pairs: 1967 World Figure Skating Championships\n**Ludmila Protopopova and Oleg Protopopov** (Soviet Union) won their third consecutive World gold medal. They continued to refine their \"Life in Art\" philosophy, which prioritized the seamless blend of athletic elements with classical ballet choreography, a style that would influence pairs skating for decades.\n* **Gold:** **Ludmila Protopopova / Oleg Protopopov** (Soviet Union)\n* **Silver:** **Margot Glockshuber / Wolfgang Danne** (West Germany)\n* **Bronze:** **Cynthia Kauffman / Ronald Kauffman** (United States)\n\n### 3.4 Ice Dance: 1967 World Figure Skating Championships\n**Diane Towler and Bernard Ford** (Great Britain) won their second consecutive World gold medal. They led a dominant British ice dance contingent that swept the entire podium, demonstrating the UK's absolute technical authority over the discipline during this period.\n* **Gold:** **Diane Towler / Bernard Ford** (Great Britain)\n* **Silver:** **Lorna Dyer / John Carrell** (United States)\n* **Bronze:** **Yvonne Suddick / Malcolm Cannon** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1967.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1967",
+      "chunk_id": "data/manual_rag/worlds_1967.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1967 World Figure Skating Championships\n\n## 4. Medal Table: 1967 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 1 | **Great Britain (GBR)** | 1 | 0 | 1 | 2 |\n| 1 | **United States (USA)** | 1 | 1 | 2 | 4 |\n| 4 | **Soviet Union (URS)** | 1 | 0 | 0 | 1 |\n| 5 | **East Germany (GDR)** | 0 | 1 | 0 | 1 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 7 | **Czechoslovakia (TCH)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1967.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1967",
+      "chunk_id": "data/manual_rag/worlds_1967.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1967 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1967 World Figure Skating Championships\n`Vienna 1967`, `Emmerich Danzer 2nd gold`, `Peggy Fleming 1967`, `Protopopov 3rd title`, `Towler Ford 2nd gold`, `British sweep 1967`, `Wiener Stadthalle Results`, `ISU World Results 1967`.",
+      "source_path": "data/manual_rag/worlds_1967.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1967",
+      "chunk_id": "data/manual_rag/worlds_1967.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1968 World Figure Skating Championships\n\n## 1. Document Overview: 1968 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1968 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of the sport following the 1968 Grenoble Winter Olympics and the final amateur performances of several legendary icons.\n\n---",
+      "source_path": "data/manual_rag/worlds_1968.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1968",
+      "chunk_id": "data/manual_rag/worlds_1968.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1968 World Figure Skating Championships\n\n## 2. Event Metadata: 1968 World Figure Skating Championships\n* **Event Name:** 1968 World Figure Skating Championships\n* **Location:** Geneva, Switzerland\n* **Dates:** February 27 – March 3, 1968\n* **Host:** Swiss Skating Federation / ISU\n* **Major Milestone:** Held immediately following the Winter Olympics, this championship served as the final competitive appearance for **Peggy Fleming**, **Emmerich Danzer**, and **Beier/Bernier**. It also marked the fourth consecutive World title for the legendary **Protopopovs**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1968.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1968",
+      "chunk_id": "data/manual_rag/worlds_1968.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1968 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1968 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1968 World Figure Skating Championships\n**Emmerich Danzer** (Austria) won his third consecutive World title. After a disappointing fourth-place finish at the Olympics due to a mistake in the compulsory figures, Danzer reclaimed his dominance in Geneva, showcasing the artistic and technical balance that made him the premier male skater of the late 1960s.\n* **Gold:** **Emmerich Danzer** (Austria)\n* **Silver:** **Tim Wood** (United States)\n* **Bronze:** **Patrick Péra** (France)\n\n### 3.2 Women's Singles: 1968 World Figure Skating Championships\n**Peggy Fleming** (United States) won her third consecutive and final World title. Her victory in Geneva followed her iconic Olympic gold in Grenoble, cementing her status as the face of international figure skating and the athlete who led the American recovery after the 1961 tragedy.\n* **Gold:** **Peggy Fleming** (United States)\n* **Silver:** **Gabriele Seyfert** (East Germany)\n* **Bronze:** **Hana Mašková** (Czechoslovakia)\n\n### 3.3 Pairs: 1968 World Figure Skating Championships\n**Ludmila Protopopova and Oleg Protopopov** (Soviet Union) won their fourth consecutive World title. They continued to refine their \"classical ballet on ice\" style, emphasizing long edges, lyrical movements, and emotional depth, which defined the \"Protopopov era\" of pairs skating.\n* **Gold:** **Ludmila Protopopova / Oleg Protopopov** (Soviet Union)\n* **Silver:** **Tatiana Zhuk / Alexander Gorelik** (Soviet Union)\n* **Bronze:** **Margot Glockshuber / Wolfgang Danne** (West Germany)\n\n### 3.4 Ice Dance: 1968 World Figure Skating Championships\n**Diane Towler and Bernard Ford** (Great Britain) won their third consecutive World gold medal. They remained the undisputed leaders of the discipline, further developing the technical complexity and rhythmic precision that would lead to ice dance eventually being accepted into the Olympic program.\n* **Gold:** **Diane Towler / Bernard Ford** (Great Britain)\n* **Silver:** **Yvonne Suddick / Malcolm Cannon** (Great Britain)\n* **Bronze:** **Janet Sawbridge / Jon Lane** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1968.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1968",
+      "chunk_id": "data/manual_rag/worlds_1968.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1968 World Figure Skating Championships\n\n## 4. Medal Table: 1968 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 1 | 1 | 2 | 4 |\n| 2 | **Soviet Union (URS)** | 1 | 1 | 0 | 2 |\n| 2 | **United States (USA)** | 1 | 1 | 0 | 2 |\n| 4 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 5 | **East Germany (GDR)** | 0 | 1 | 0 | 1 |\n| 6 | **Czechoslovakia (TCH)** | 0 | 0 | 1 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 6 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1968.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1968",
+      "chunk_id": "data/manual_rag/worlds_1968.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1968 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1968 World Figure Skating Championships\n`Geneva 1968`, `Peggy Fleming final gold`, `Emmerich Danzer 3rd title`, `Protopopov 4th gold`, `Towler Ford 3rd gold`, `Post-Olympic Worlds 1968`, `Geneva Results`, `ISU World Results 1968`.",
+      "source_path": "data/manual_rag/worlds_1968.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1968",
+      "chunk_id": "data/manual_rag/worlds_1968.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1969 World Figure Skating Championships\n\n## 1. Document Overview: 1969 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1969 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the start of several legendary championship streaks and the transition from the post-1968 Olympic season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1969.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1969",
+      "chunk_id": "data/manual_rag/worlds_1969.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1969 World Figure Skating Championships\n\n## 2. Event Metadata: 1969 World Figure Skating Championships\n* **Event Name:** 1969 World Figure Skating Championships\n* **Location:** Broadmoor World Arena, Colorado Springs, Colorado, USA\n* **Dates:** February 25 – March 2, 1969\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This event marked the first World title for **Irina Rodnina**, who would go on to win 10 consecutive World titles (the first four with Alexei Ulanov). It was also the first World Championship of the new Olympic cycle, establishing the new leaders of the sport following the retirement of legends like Peggy Fleming and Emmerich Danzer.\n\n---",
+      "source_path": "data/manual_rag/worlds_1969.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1969",
+      "chunk_id": "data/manual_rag/worlds_1969.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1969 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1969 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1969 World Figure Skating Championships\n**Tim Wood** (United States) won his first World title, following his silver medal at the 1968 Olympics. He established himself as the premier men's skater by combining technical accuracy in compulsory figures with a polished and athletic free skating performance.\n* **Gold:** **Tim Wood** (United States)\n* **Silver:** **Ondrej Nepela** (Czechoslovakia)\n* **Bronze:** **Patrick Péra** (France)\n\n### 3.2 Women's Singles: 1969 World Figure Skating Championships\n**Gabriele Seyfert** (East Germany) won her first World gold medal. Having finished second to Peggy Fleming for several years, Seyfert became the first woman from East Germany to win the World title, showcasing the high level of technical training that would soon make her nation a skating powerhouse.\n* **Gold:** **Gabriele Seyfert** (East Germany)\n* **Silver:** **Beatrix Schuba** (Austria)\n* **Bronze:** **Zsuzsa Almássy** (Hungary)\n\n### 3.3 Pairs: 1969 World Figure Skating Championships\n**Irina Rodnina and Alexei Ulanov** (Soviet Union) won their first World title. They performed with a revolutionary speed and athletic intensity that signaled a departure from the more lyrical \"Protopopov style,\" defeating the legendary two-time Olympic champions Ludmila and Oleg Protopopov.\n* **Gold:** **Irina Rodnina / Alexei Ulanov** (Soviet Union)\n* **Silver:** **Tamara Moskvina / Alexei Mishin** (Soviet Union)\n* **Bronze:** **Virginia Thompson / William McLachlan** (United States)\n\n### 3.4 Ice Dance: 1969 World Figure Skating Championships\n**Diane Towler and Bernard Ford** (Great Britain) won their fourth and final World gold medal. They retired after this event, having dominated the discipline for nearly half a decade and setting the standard for the modern \"English style\" of ice dance.\n* **Gold:** **Diane Towler / Bernard Ford** (Great Britain)\n* **Silver:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Bronze:** **Judy Schwomeyer / James Sladky** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1969.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1969",
+      "chunk_id": "data/manual_rag/worlds_1969.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1969 World Figure Skating Championships\n\n## 4. Medal Table: 1969 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 1 | 2 | 0 | 3 |\n| 2 | **United States (USA)** | 1 | 0 | 2 | 3 |\n| 3 | **East Germany (GDR)** | 1 | 0 | 0 | 1 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 5 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 5 | **Czechoslovakia (TCH)** | 0 | 1 | 0 | 1 |\n| 7 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 7 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1969.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1969",
+      "chunk_id": "data/manual_rag/worlds_1969.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1969 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1969 World Figure Skating Championships\n`Colorado Springs 1969`, `Tim Wood first gold`, `Gabriele Seyfert first gold`, `Rodnina Ulanov first title`, `Towler Ford final gold`, `Broadmoor World Arena Results`, `ISU World Results 1969`, `Protopopov transition`.",
+      "source_path": "data/manual_rag/worlds_1969.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1969",
+      "chunk_id": "data/manual_rag/worlds_1969.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1970 World Figure Skating Championships\n\n## 1. Document Overview: 1970 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1970 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the start of a decade defined by the rise of the Soviet Union as a dominant force in nearly every discipline.\n\n---",
+      "source_path": "data/manual_rag/worlds_1970.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1970",
+      "chunk_id": "data/manual_rag/worlds_1970.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1970 World Figure Skating Championships\n\n## 2. Event Metadata: 1970 World Figure Skating Championships\n* **Event Name:** 1970 World Figure Skating Championships\n* **Location:** Hala Tivoli, Ljubljana, Yugoslavia\n* **Dates:** March 3 – 8, 1970\n* **Host:** Yugoslav Skating Federation / ISU\n* **Major Milestone:** This was the first time the World Figure Skating Championships were held in Yugoslavia. It is historically significant for the first World titles won by legendary skaters **Tim Wood**, **Gabriele Seyfert**, and the ice dance team **Pakhomova and Gorshkov**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1970.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1970",
+      "chunk_id": "data/manual_rag/worlds_1970.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1970 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1970 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1970 World Figure Skating Championships\n**Tim Wood** (United States) successfully defended his World title, winning his second consecutive gold medal. He utilized his mastery of compulsory figures to build an early lead, which he maintained with a strong free skating performance against a rising European field.\n* **Gold:** **Tim Wood** (United States)\n* **Silver:** **Ondrej Nepela** (Czechoslovakia)\n* **Bronze:** **Günter Zöller** (East Germany)\n\n### 3.2 Women's Singles: 1970 World Figure Skating Championships\n**Gabriele Seyfert** (East Germany) won her second and final World gold medal. As a pioneer of athletic ladies' skating under the coaching of Jutta Müller, Seyfert’s performance was characterized by powerful jumps and high artistic presentation.\n* **Gold:** **Gabriele Seyfert** (East Germany)\n* **Silver:** **Beatrix Schuba** (Austria)\n* **Bronze:** **Julie Lynn Holmes** (United States)\n\n### 3.3 Pairs: 1970 World Figure Skating Championships\n**Irina Rodnina and Alexei Ulanov** (Soviet Union) won their second consecutive World title. They showcased a level of speed and technical unison that had never been seen in pairs skating, further distancing themselves from their Soviet teammates and international rivals.\n* **Gold:** **Irina Rodnina / Alexei Ulanov** (Soviet Union)\n* **Silver:** **Liudmila Smirnova / Andrei Suraikin** (Soviet Union)\n* **Bronze:** **Heidemarie Steiner / Heinz-Ulrich Walther** (East Germany)\n\n### 3.4 Ice Dance: 1970 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) won their first World gold medal. Their victory ended the long-standing British dominance of the discipline and introduced a more athletic, orchestral, and dramatic style to ice dance that would dominate the sport for the next two decades.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Judy Schwomeyer / James Sladky** (United States)\n* **Bronze:** **Angelika Buck / Erich Buck** (West Germany)\n\n---",
+      "source_path": "data/manual_rag/worlds_1970.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1970",
+      "chunk_id": "data/manual_rag/worlds_1970.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1970 World Figure Skating Championships\n\n## 4. Medal Table: 1970 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 1 | 0 | 3 |\n| 2 | **United States (USA)** | 1 | 1 | 1 | 3 |\n| 3 | **East Germany (GDR)** | 1 | 0 | 2 | 3 |\n| 4 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 4 | **Czechoslovakia (TCH)** | 0 | 1 | 0 | 1 |\n| 6 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1970.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1970",
+      "chunk_id": "data/manual_rag/worlds_1970.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1970 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1970 World Figure Skating Championships\n`Ljubljana 1970`, `Tim Wood 2nd gold`, `Gabriele Seyfert 1970`, `Rodnina Ulanov second title`, `Pakhomova Gorshkov first gold`, `Hala Tivoli Results`, `ISU World Results 1970`, `Soviet dominance beginning`.",
+      "source_path": "data/manual_rag/worlds_1970.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1970",
+      "chunk_id": "data/manual_rag/worlds_1970.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1971 World Figure Skating Championships\n\n## 1. Document Overview: 1971 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1971 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the penultimate year of the \"Compulsory Figures Dominance\" era and the establishment of the Soviet Union as a multi-disciplinary powerhouse.\n\n---",
+      "source_path": "data/manual_rag/worlds_1971.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1971",
+      "chunk_id": "data/manual_rag/worlds_1971.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1971 World Figure Skating Championships\n\n## 2. Event Metadata: 1971 World Figure Skating Championships\n* **Event Name:** 1971 World Figure Skating Championships\n* **Location:** Palais des Sports, Lyon, France\n* **Dates:** February 23 – 28, 1971\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This championship marked the first World titles for two of the most technically precise skaters in history: **Ondrej Nepela** and **Beatrix \"Trixi\" Schuba**. It also highlighted the growing influence of the Soviet Union across all four disciplines, a trend that would define the decade.\n\n---",
+      "source_path": "data/manual_rag/worlds_1971.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1971",
+      "chunk_id": "data/manual_rag/worlds_1971.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1971 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1971 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1971 World Figure Skating Championships\n**Ondrej Nepela** (Czechoslovakia) won his first World title. He was renowned for his exceptional mastery of compulsory figures, which allowed him to build a lead that even the more athletic free skaters, like Sergei Chetverukhin, could not overcome.\n* **Gold:** **Ondrej Nepela** (Czechoslovakia)\n* **Silver:** **Sergei Chetverukhin** (Soviet Union)\n* **Bronze:** **Günter Zöller** (East Germany)\n\n### 3.2 Women's Singles: 1971 World Figure Skating Championships\n**Beatrix \"Trixi\" Schuba** (Austria) captured her first World gold medal. Schuba is often cited as the greatest compulsory figure skater of all time; her tracings were so precise they were considered legendary. Despite finishing 7th in the free skating segment, her massive lead from the figures secured the overall gold.\n* **Gold:** **Beatrix Schuba** (Austria)\n* **Silver:** **Julie Lynn Holmes** (United States)\n* **Bronze:** **Karen Magnussen** (Canada)\n\n### 3.3 Pairs: 1971 World Figure Skating Championships\n**Irina Rodnina and Alexei Ulanov** (Soviet Union) won their third consecutive World title. They were celebrated for their unprecedented speed and the difficulty of their side-by-side jumps, setting a technical benchmark that forced international competitors to increase their athletic training.\n* **Gold:** **Irina Rodnina / Alexei Ulanov** (Soviet Union)\n* **Silver:** **Liudmila Smirnova / Andrei Suraikin** (Soviet Union)\n* **Bronze:** **Alicia Starbuck / Kenneth Shelley** (United States)\n\n### 3.4 Ice Dance: 1971 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) won their second consecutive World gold medal. Their victory in Lyon solidified their \"Russian Style\"—characterized by dramatic, folk-inspired choreography and intricate footwork—as the new gold standard for the discipline.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Angelika Buck / Erich Buck** (West Germany)\n* **Bronze:** **Judy Schwomeyer / James Sladky** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1971.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1971",
+      "chunk_id": "data/manual_rag/worlds_1971.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1971 World Figure Skating Championships\n\n## 4. Medal Table: 1971 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 0 | 4 |\n| 2 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 2 | 3 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n| 6 | **East Germany (GDR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1971.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1971",
+      "chunk_id": "data/manual_rag/worlds_1971.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1971 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1971 World Figure Skating Championships\n`Lyon 1971`, `Ondrej Nepela first gold`, `Trixi Schuba 1971`, `Rodnina Ulanov 3rd title`, `Pakhomova Gorshkov 2nd gold`, `Compulsory Figures dominance`, `Palais des Sports Results`, `ISU World Results 1971`.",
+      "source_path": "data/manual_rag/worlds_1971.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1971",
+      "chunk_id": "data/manual_rag/worlds_1971.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1972 World Figure Skating Championships\n\n## 1. Document Overview: 1972 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1972 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the conclusion of several major careers following the 1972 Sapporo Winter Olympics and the final year before the implementation of the \"Short Program.\"\n\n---",
+      "source_path": "data/manual_rag/worlds_1972.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1972",
+      "chunk_id": "data/manual_rag/worlds_1972.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1972 World Figure Skating Championships\n\n## 2. Event Metadata: 1972 World Figure Skating Championships\n* **Event Name:** 1972 World Figure Skating Championships\n* **Location:** Scotiabank Saddledome (then Calgary Stampede Corral), Calgary, Alberta, Canada\n* **Dates:** March 7 – 11, 1972\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This was the first time the World Championships were held in Calgary. The event was marked by the dramatic dissolution of the Rodnina/Ulanov partnership immediately following their victory and served as the final competitive appearance for Olympic legend Trixi Schuba.\n\n---",
+      "source_path": "data/manual_rag/worlds_1972.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1972",
+      "chunk_id": "data/manual_rag/worlds_1972.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1972 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1972 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1972 World Figure Skating Championships\n**Ondrej Nepela** (Czechoslovakia) successfully defended his World title, adding to his 1972 Olympic gold medal. He maintained a significant lead through the compulsory figures, which was his greatest strength, holding off Sergei Chetverukhin and Vladimir Kovalev.\n* **Gold:** **Ondrej Nepela** (Czechoslovakia)\n* **Silver:** **Sergei Chetverukhin** (Soviet Union)\n* **Bronze:** **Vladimir Kovalev** (Soviet Union)\n\n### 3.2 Women's Singles: 1972 World Figure Skating Championships\n**Beatrix \"Trixi\" Schuba** (Austria) won her second and final World gold medal. Despite finishing lower in the free skating segment compared to Janet Lynn, Schuba's massive mathematical lead from the compulsory figures secured her the title. This discrepancy famously accelerated the ISU's decision to introduce the Short Program the following year.\n* **Gold:** **Beatrix Schuba** (Austria)\n* **Silver:** **Karen Magnussen** (Canada)\n* **Bronze:** **Janet Lynn** (United States)\n\n### 3.3 Pairs: 1972 World Figure Skating Championships\n**Irina Rodnina and Alexei Ulanov** (Soviet Union) won their fourth consecutive and final World title together. The event was highly publicized due to the personal tension between the partners; Ulanov had become romantically involved with the silver medalist Liudmila Smirnova, leading to the legendary split and Rodnina's subsequent pairing with Alexander Zaitsev.\n* **Gold:** **Irina Rodnina / Alexei Ulanov** (Soviet Union)\n* **Silver:** **Liudmila Smirnova / Andrei Suraikin** (Soviet Union)\n* **Bronze:** **Alicia Starbuck / Kenneth Shelley** (United States)\n\n### 3.4 Ice Dance: 1972 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) won their third consecutive World gold medal. They continued to refine the \"Russian Style\" of ice dance, which emphasized dramatic flair and orchestral music, setting them apart from the more traditional ballroom styles of the West German and British teams.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Angelika Buck / Erich Buck** (West Germany)\n* **Bronze:** **Judy Schwomeyer / James Sladky** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1972.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1972",
+      "chunk_id": "data/manual_rag/worlds_1972.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1972 World Figure Skating Championships\n\n## 4. Medal Table: 1972 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 1 | 5 |\n| 2 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 4 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 4 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **United States (USA)** | 0 | 0 | 3 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1972.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1972",
+      "chunk_id": "data/manual_rag/worlds_1972.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1972 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1972 World Figure Skating Championships\n`Calgary 1972`, `Ondrej Nepela 2nd gold`, `Trixi Schuba final gold`, `Rodnina Ulanov final title`, `Pakhomova Gorshkov 3rd gold`, `Janet Lynn 1972 bronze`, `Stampede Corral Results`, `ISU World Results 1972`.",
+      "source_path": "data/manual_rag/worlds_1972.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1972",
+      "chunk_id": "data/manual_rag/worlds_1972.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1973 World Figure Skating Championships\n\n## 1. Document Overview: 1973 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1973 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a major shift in the sport's scoring structure and the debut of one of the most successful pairings in history.\n\n---",
+      "source_path": "data/manual_rag/worlds_1973.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1973",
+      "chunk_id": "data/manual_rag/worlds_1973.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1973 World Figure Skating Championships\n\n## 2. Event Metadata: 1973 World Figure Skating Championships\n* **Event Name:** 1973 World Figure Skating Championships\n* **Location:** Bratislava Ice Arena, Bratislava, Czechoslovakia\n* **Dates:** February 26 – March 3, 1973\n* **Host:** Czechoslovak Skating Federation / ISU\n* **Major Milestone:** This was the first World Championship to implement the \"Short Program\" (then called the Technical Program) in the singles disciplines. This reduced the weight of Compulsory Figures, moving the sport toward more athletic and televised free skating performances.\n\n---",
+      "source_path": "data/manual_rag/worlds_1973.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1973",
+      "chunk_id": "data/manual_rag/worlds_1973.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1973 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1973 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1973 World Figure Skating Championships\n**Ondrej Nepela** (Czechoslovakia) won his third consecutive World title in front of a home crowd. This was his final competitive appearance, capping off a career that included Olympic gold and a dominant run as the premier men's skater of the early 1970s.\n* **Gold:** **Ondrej Nepela** (Czechoslovakia)\n* **Silver:** **Sergei Chetverukhin** (Soviet Union)\n* **Bronze:** **Jan Hoffmann** (East Germany)\n\n### 3.2 Women's Singles: 1973 World Figure Skating Championships\n**Beatrix \"Trixi\" Schuba** having retired, the title was won by **Maria Jelinek** (Canada) following a close battle. However, the event is often remembered for the rising technical standard of Janet Lynn and Dorothy Hamill.\n* **Gold:** **Karen Magnussen** (Canada)\n* **Silver:** **Janet Lynn** (United States)\n* **Bronze:** **Christine Errath** (East Germany)\n\n### 3.3 Pairs: 1973 World Figure Skating Championships\nThis event marked the historic debut of **Irina Rodnina and Alexander Zaitsev** (Soviet Union). Following the breakup of Rodnina’s previous partnership with Ulanov, she and Zaitsev won their first World title together, starting a legendary undefeated streak.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Liudmila Smirnova / Alexei Ulanov** (Soviet Union)\n* **Bronze:** **Manuela Groß / Uwe Kagelmann** (East Germany)\n\n### 3.4 Ice Dance: 1973 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) won their fourth World title. They continued to dominate the discipline with their innovative \"Russian Style,\" which combined classical balletic movements with high-speed technical footwork.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Angelika Buck / Erich Buck** (West Germany)\n* **Bronze:** **Hilary Green / Glyn Watts** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1973.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1973",
+      "chunk_id": "data/manual_rag/worlds_1973.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1973 World Figure Skating Championships\n\n## 4. Medal Table: 1973 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 0 | 4 |\n| 2 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 4 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **East Germany (GDR)** | 0 | 0 | 3 | 3 |\n| 7 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1973.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1973",
+      "chunk_id": "data/manual_rag/worlds_1973.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1973 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1973 World Figure Skating Championships\n`Bratislava 1973`, `Ondrej Nepela final gold`, `Rodnina Zaitsev first title`, `Karen Magnussen 1973`, `Pakhomova Gorshkov 4th gold`, `First Short Program 1973`, `Czechoslovak Results`, `ISU World Results 1973`.",
+      "source_path": "data/manual_rag/worlds_1973.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1973",
+      "chunk_id": "data/manual_rag/worlds_1973.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1974 World Figure Skating Championships\n\n## 1. Document Overview: 1974 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1974 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a pivotal year in the technical development of the sport and the continued dominance of Soviet and East German skaters.\n\n---",
+      "source_path": "data/manual_rag/worlds_1974.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1974",
+      "chunk_id": "data/manual_rag/worlds_1974.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1974 World Figure Skating Championships\n\n## 2. Event Metadata: 1974 World Figure Skating Championships\n* **Event Name:** 1974 World Figure Skating Championships\n* **Location:** Olympiahalle, Munich, West Germany\n* **Dates:** March 5 – 10, 1974\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** This championship was notable for the return of the event to Munich and featured the first World title for **Jan Hoffmann**. It also reinforced the technical transition in the Ladies' discipline following the retirement of Trixi Schuba.\n\n---",
+      "source_path": "data/manual_rag/worlds_1974.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1974",
+      "chunk_id": "data/manual_rag/worlds_1974.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1974 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1974 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1974 World Figure Skating Championships\n**Jan Hoffmann** (East Germany) won his first World title. He demonstrated a high level of technical difficulty and consistency in the free skating segment to defeat Sergei Volkov and Toller Cranston, the latter of whom was celebrated for his revolutionary artistic style.\n* **Gold:** **Jan Hoffmann** (East Germany)\n* **Silver:** **Sergei Volkov** (Soviet Union)\n* **Bronze:** **Toller Cranston** (Canada)\n\n### 3.2 Women's Singles: 1974 World Figure Skating Championships\n**Christine Errath** (East Germany) won the gold medal, succeeding the era of pure compulsory figure specialists. She led a strong East German contingent, defeating Dorothy Hamill and Dianne de Leeuw in a competition that began to place higher value on athletic jumping ability.\n* **Gold:** **Christine Errath** (East Germany)\n* **Silver:** **Dorothy Hamill** (United States)\n* **Bronze:** **Dianne de Leeuw** (Netherlands)\n\n### 3.3 Pairs: 1974 World Figure Skating Championships\n**Irina Rodnina and Alexander Zaitsev** (Soviet Union) won their second consecutive World title as a pair. Their performance was a masterclass in synchronization and speed, further distancing themselves from the rest of the international field.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Romy Kermer / Rolf Österreich** (East Germany)\n* **Bronze:** **Liudmila Smirnova / Alexei Ulanov** (Soviet Union)\n\n### 3.4 Ice Dance: 1974 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) reclaimed their World title, winning their fifth gold medal. After a brief interruption in their streak the previous year, they returned to the top of the podium with their signature dramatic and complex Russian style.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Hilary Green / Glyn Watts** (Great Britain)\n* **Bronze:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1974.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1974",
+      "chunk_id": "data/manual_rag/worlds_1974.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1974 World Figure Skating Championships\n\n## 4. Medal Table: 1974 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **East Germany (GDR)** | 2 | 1 | 0 | 3 |\n| 2 | **Soviet Union (URS)** | 2 | 1 | 2 | 5 |\n| 3 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 3 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 5 | **Canada (CAN)** | 0 | 0 | 1 | 1 |\n| 5 | **Netherlands (NED)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1974.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1974",
+      "chunk_id": "data/manual_rag/worlds_1974.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1974 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1974 World Figure Skating Championships\n`Munich 1974`, `Jan Hoffmann first gold`, `Christine Errath 1974`, `Rodnina Zaitsev second title`, `Pakhomova Gorshkov 5th gold`, `Toller Cranston 1974 bronze`, `Olympiahalle Results`, `ISU World Results 1974`.",
+      "source_path": "data/manual_rag/worlds_1974.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1974",
+      "chunk_id": "data/manual_rag/worlds_1974.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1975 World Figure Skating Championships\n\n## 1. Document Overview: 1975 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1975 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of the mid-1970s era and the intense technical competition leading into the 1976 Olympic season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1975.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1975",
+      "chunk_id": "data/manual_rag/worlds_1975.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1975 World Figure Skating Championships\n\n## 2. Event Metadata: 1975 World Figure Skating Championships\n* **Event Name:** 1975 World Figure Skating Championships\n* **Location:** Broadmoor World Arena, Colorado Springs, Colorado, USA\n* **Dates:** March 4 – 8, 1975\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This event marked the final World Championship for several top contenders before the 1976 Olympics. It was the first time since 1969 that the championships returned to Colorado Springs, a high-altitude venue that often challenged the skaters' stamina during long programs.\n\n---",
+      "source_path": "data/manual_rag/worlds_1975.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1975",
+      "chunk_id": "data/manual_rag/worlds_1975.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1975 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1975 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1975 World Figure Skating Championships\n**Sergei Volkov** (Soviet Union) won the gold medal, becoming the first Soviet man to win a World Figure Skating title. He overcame a strong challenge from Vladimir Kovalev and John Curry by delivering a consistent performance across both the compulsory figures and the free skating.\n* **Gold:** **Sergei Volkov** (Soviet Union)\n* **Silver:** **Vladimir Kovalev** (Soviet Union)\n* **Bronze:** **John Curry** (Great Britain)\n\n### 3.2 Women's Singles: 1975 World Figure Skating Championships\n**Dianne de Leeuw** (Netherlands) won the gold medal, representing the pinnacle of Dutch figure skating. She defeated the defending champion Christine Errath and the rising American star Dorothy Hamill in a competition where the results were heavily influenced by the technical marks in the free skating segment.\n* **Gold:** **Dianne de Leeuw** (Netherlands)\n* **Silver:** **Dorothy Hamill** (United States)\n* **Bronze:** **Christine Errath** (East Germany)\n\n### 3.3 Pairs: 1975 World Figure Skating Championships\n**Irina Rodnina and Alexander Zaitsev** (Soviet Union) won their third consecutive World title together. Their performance at high altitude was noted for its incredible speed and power, further distancing them from their international rivals.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Romy Kermer / Rolf Österreich** (East Germany)\n* **Bronze:** **Manuela Groß / Uwe Kagelmann** (East Germany)\n\n### 3.4 Ice Dance: 1975 World Figure Skating Championships\n**Irina Moiseeva and Andrei Minenkov** (Soviet Union) won their first World gold medal. This event marked a significant shift in the ice dance hierarchy as they defeated the established favorites, signaling a new era of Soviet dominance in the discipline.\n* **Gold:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n* **Silver:** **Colleen O'Connor / James Millns** (United States)\n* **Bronze:** **Hilary Green / Glyn Watts** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1975.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1975",
+      "chunk_id": "data/manual_rag/worlds_1975.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1975 World Figure Skating Championships\n\n## 4. Medal Table: 1975 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 3 | 1 | 0 | 4 |\n| 2 | **Netherlands (NED)** | 1 | 0 | 0 | 1 |\n| 3 | **United States (USA)** | 0 | 2 | 0 | 2 |\n| 4 | **East Germany (GDR)** | 0 | 1 | 2 | 3 |\n| 5 | **Great Britain (GBR)** | 0 | 0 | 2 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1975.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1975",
+      "chunk_id": "data/manual_rag/worlds_1975.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1975 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1975 World Figure Skating Championships\n`Colorado Springs 1975`, `Sergei Volkov first gold`, `Dianne de Leeuw 1975`, `Rodnina Zaitsev 3rd title`, `Moiseeva Minenkov first gold`, `Broadmoor World Arena Results`, `ISU World Results 1975`.",
+      "source_path": "data/manual_rag/worlds_1975.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1975",
+      "chunk_id": "data/manual_rag/worlds_1975.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1976 World Figure Skating Championships\n\n## 1. Document Overview: 1976 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1976 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of the sport following the 1976 Innsbruck Winter Olympics and the retirement of several all-time legends.\n\n---",
+      "source_path": "data/manual_rag/worlds_1976.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1976",
+      "chunk_id": "data/manual_rag/worlds_1976.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1976 World Figure Skating Championships\n\n## 2. Event Metadata: 1976 World Figure Skating Championships\n* **Event Name:** 1976 World Figure Skating Championships\n* **Location:** Scandinavium, Gothenburg, Sweden\n* **Dates:** March 2 – 7, 1976\n* **Host:** Svenska Konståkningsförbundet / ISU\n* **Major Milestone:** This event was the competitive farewell for the most successful ice dance team in history, **Pakhomova and Gorshkov**. It also saw the rise of **John Curry**, who completed a historic \"Triple Crown\" by winning the European, Olympic, and World titles in the same calendar year.\n\n---",
+      "source_path": "data/manual_rag/worlds_1976.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1976",
+      "chunk_id": "data/manual_rag/worlds_1976.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1976 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1976 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1976 World Figure Skating Championships\n**John Curry** (Great Britain) won the gold medal, cementing his legacy as one of the greatest artistic skaters of all time. His victory in Gothenburg followed his Olympic gold in Innsbruck, making him the undisputed champion of 1976 before his retirement to professional skating.\n* **Gold:** **John Curry** (Great Britain)\n* **Silver:** **Vladimir Kovalev** (Soviet Union)\n* **Bronze:** **Jan Hoffmann** (East Germany)\n\n### 3.2 Women's Singles: 1976 World Figure Skating Championships\n**Dorothy Hamill** (United States) won the gold medal, following her iconic Olympic victory. Known for her \"Wedge\" haircut and the \"Hamill camel\" spin, her win in Gothenburg was her first and only World title, as she turned professional immediately following the event.\n* **Gold:** **Dorothy Hamill** (United States)\n* **Silver:** **Christine Errath** (East Germany)\n* **Bronze:** **Dianne de Leeuw** (Netherlands)\n\n### 3.3 Pairs: 1976 World Figure Skating Championships\n**Irina Rodnina and Alexander Zaitsev** (Soviet Union) won their fourth consecutive World title together. This victory marked Rodnina's eighth consecutive World pairs gold medal (having won four previously with Alexei Ulanov), continuing the longest winning streak in the discipline's history.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Romy Kermer / Rolf Österreich** (East Germany)\n* **Bronze:** **Irina Vorobieva / Alexandr Vlasov** (Soviet Union)\n\n### 3.4 Ice Dance: 1976 World Figure Skating Championships\n**Lyudmila Pakhomova and Aleksandr Gorshkov** (Soviet Union) won their sixth and final World title. They retired after this event as the most decorated ice dancers in history, having been instrumental in getting ice dance recognized as an Olympic sport.\n* **Gold:** **Lyudmila Pakhomova / Aleksandr Gorshkov** (Soviet Union)\n* **Silver:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n* **Bronze:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1976.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1976",
+      "chunk_id": "data/manual_rag/worlds_1976.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1976 World Figure Skating Championships\n\n## 4. Medal Table: 1976 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 2 | 2 | 2 | 6 |\n| 2 | **United States (USA)** | 1 | 0 | 0 | 1 |\n| 2 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **East Germany (GDR)** | 0 | 2 | 1 | 3 |\n| 5 | **Netherlands (NED)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1976.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1976",
+      "chunk_id": "data/manual_rag/worlds_1976.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1976 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1976 World Figure Skating Championships\n`Gothenburg 1976`, `John Curry 1976 gold`, `Dorothy Hamill World Champion`, `Pakhomova Gorshkov final gold`, `Rodnina Zaitsev 4th title`, `Scandinavium Results`, `Post-Olympic Worlds 1976`, `ISU World Results 1976`.",
+      "source_path": "data/manual_rag/worlds_1976.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1976",
+      "chunk_id": "data/manual_rag/worlds_1976.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1977 World Figure Skating Championships\n\n## 1. Document Overview: 1977 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1977 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships of the post-Innsbruck Olympic cycle and a significant shift in technical standards for the late 1970s.\n\n---",
+      "source_path": "data/manual_rag/worlds_1977.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1977",
+      "chunk_id": "data/manual_rag/worlds_1977.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1977 World Figure Skating Championships\n\n## 2. Event Metadata: 1977 World Figure Skating Championships\n* **Event Name:** 1977 World Figure Skating Championships\n* **Location:** Yoyogi National Gymnasium, Tokyo, Japan\n* **Dates:** March 1 – 6, 1977\n* **Host:** Japan Skating Federation / ISU\n* **Major Milestone:** This was the first time the World Figure Skating Championships were held in Asia. It marked the beginning of Japan's journey as a major host for international skating and featured the first World titles for icons **Vladimir Kovalev** and **Linda Fratianne**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1977.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1977",
+      "chunk_id": "data/manual_rag/worlds_1977.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1977 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1977 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1977 World Figure Skating Championships\n**Vladimir Kovalev** (Soviet Union) captured his first World title. Despite a strong free skating performance by Jan Hoffmann, Kovalev's lead in the compulsory figures proved insurmountable. This event also saw the emergence of Minoru Sano, who gave the home crowd a historic performance.\n* **Gold:** **Vladimir Kovalev** (Soviet Union)\n* **Silver:** **Jan Hoffmann** (East Germany)\n* **Bronze:** **Minoru Sano** (Japan) — (The first-ever World medal for a Japanese man)\n\n### 3.2 Women's Singles: 1977 World Figure Skating Championships\n**Linda Fratianne** (United States) won her first World gold medal, signaling the start of her rivalry with Anett Pötzsch. Fratianne's technical prowess in the jumping elements allowed her to overtake the European field in the free skating segment.\n* **Gold:** **Linda Fratianne** (United States)\n* **Silver:** **Anett Pötzsch** (East Germany)\n* **Bronze:** **Dagmar Lurz** (West Germany)\n\n### 3.3 Pairs: 1977 World Figure Skating Championships\n**Irina Rodnina and Alexander Zaitsev** (Soviet Union) won their fifth consecutive World title together. Their performance further solidified their status as the most dominant pair in history, continuing a streak that remained unchallenged throughout the mid-70s.\n* **Gold:** **Irina Rodnina / Alexander Zaitsev** (Soviet Union)\n* **Silver:** **Irina Vorobieva / Alexandr Vlasov** (Soviet Union)\n* **Bronze:** **Tai Babilonia / Randy Gardner** (United States)\n\n### 3.4 Ice Dance: 1977 World Figure Skating Championships\n**Irina Moiseeva and Andrei Minenkov** (Soviet Union) won their second World gold medal. They successfully defended their position as the top ice dance team in the world following the retirement of Pakhomova and Gorshkov the previous year.\n* **Gold:** **Irina Moiseeva / Andrei Minenkov** (Soviet Union)\n* **Silver:** **Janet Thompson / Warren Maxwell** (Great Britain)\n* **Bronze:** **Natalia Linichuk / Gennadi Karponosov** (Soviet Union)\n\n---",
+      "source_path": "data/manual_rag/worlds_1977.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1977",
+      "chunk_id": "data/manual_rag/worlds_1977.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1977 World Figure Skating Championships\n\n## 4. Medal Table: 1977 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Soviet Union (URS)** | 3 | 1 | 1 | 5 |\n| 2 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 3 | **East Germany (GDR)** | 0 | 2 | 0 | 2 |\n| 4 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 5 | **Japan (JPN)** | 0 | 0 | 1 | 1 |\n| 5 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1977.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1977",
+      "chunk_id": "data/manual_rag/worlds_1977.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1977 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1977 World Figure Skating Championships\n`Tokyo 1977`, `Vladimir Kovalev 1977`, `Linda Fratianne first gold`, `Minoru Sano historic bronze`, `Rodnina Zaitsev 5th title`, `Moiseeva Minenkov 1977`, `Yoyogi National Gymnasium Results`, `ISU World Results 1977`.",
+      "source_path": "data/manual_rag/worlds_1977.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1977",
+      "chunk_id": "data/manual_rag/worlds_1977.md::chunk_5"
     },
     {
       "text": "# Reference: 1978 World Figure Skating Championships\n\n## 1. Document Overview: 1978 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1978 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a peak year of the Cold War-era skating rivalries and the emergence of several technical powerhouses.\n\n---",
