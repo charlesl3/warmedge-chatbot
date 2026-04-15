@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7133,
+  "total_vectors": 7164,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,316 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 1. Document Overview: 1958 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1958 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of mid-century technical standards and the competitive dominance of the North American singles field.\n\n---",
+      "source_path": "data/manual_rag/worlds_1958.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1958",
+      "chunk_id": "data/manual_rag/worlds_1958.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 2. Event Metadata: 1958 World Figure Skating Championships\n* **Event Name:** 1958 World Figure Skating Championships\n* **Location:** Palais des Sports, Paris, France\n* **Dates:** February 13 – 15, 1958\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This championship solidified the era of North American dominance in singles skating. Despite competing on European soil in Paris, the podiums in both Men's and Ladies' singles were led by American athletes, maintaining a multi-year winning streak for the United States.\n\n---",
+      "source_path": "data/manual_rag/worlds_1958.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1958",
+      "chunk_id": "data/manual_rag/worlds_1958.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 3. Disciplinary Results: 1958 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1958 World Figure Skating Championships\n**David Jenkins** (United States) successfully defended his title, winning his second consecutive World gold medal. He delivered a powerful performance that combined technical jumping superiority with a high ordinal score, leading an American 1-2 finish. Alain Giletti, despite the support of the home crowd, finished in the bronze medal position.\n* **Gold:** **David Jenkins** (United States) — 1745.2 points\n* **Silver:** **Tim Brown** (United States) — 1684.4 points\n* **Bronze:** **Alain Giletti** (France) — 1682.7 points\n\n### 3.2 Women's Singles: 1958 World Figure Skating Championships\n**Carol Heiss** (United States) won her third consecutive World title. She demonstrated a clear technical gap between herself and the rest of the field, particularly in her jumping height and landing flow. Her victory continued a decade-long trend of American women leading the global rankings.\n* **Gold:** **Carol Heiss** (United States)\n* **Silver:** **Ingrid Wendl** (Austria)\n* **Bronze:** **Hanna Walter** (Austria)\n\n### 3.3 Pairs: 1958 World Figure Skating Championships\n**Barbara Wagner and Robert Paul** (Canada) won their second consecutive World title. They were praised for their technical innovation, particularly their athletic approach to lifts and synchronization, which set the standard for the modern pair program.\n* **Gold:** **Barbara Wagner / Robert Paul** (Canada)\n* **Silver:** **Věra Suchánková / Zdeněk Doležal** (Czechoslovakia)\n* **Bronze:** **Maria Jelinek / Otto Jelinek** (Canada)\n\n### 3.4 Ice Dance: 1958 World Figure Skating Championships\n**June Markham and Courtney Jones** (Great Britain) successfully defended their World title. Their performance was a masterclass in the \"English Style\" of ice dance, which emphasized deep edges, close hold positions, and ballroom-inspired carriage.\n* **Gold:** **June Markham / Courtney Jones** (Great Britain)\n* **Silver:** **Geraldine Fenton / William McLachlan** (Canada)\n* **Bronze:** **Andrée Anderson / Donald Jacoby** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1958.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1958",
+      "chunk_id": "data/manual_rag/worlds_1958.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 4. Medal Table: 1958 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 1 | 2 | 5 |\n| 2 | **Canada (CAN)** | 1 | 1 | 1 | 3 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 1 | 1 | 2 |\n| 5 | **Czechoslovakia (TCH)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1958.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1958",
+      "chunk_id": "data/manual_rag/worlds_1958.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 5. Key Keywords for RAG Search: 1958 World Figure Skating Championships\n`Paris 1958`, `David Jenkins 2nd gold`, `Tim Brown silver`, `Alain Giletti bronze`, `Carol Heiss 3rd title`, `Wagner Paul 2nd gold`, `June Markham Courtney Jones`, `Palais des Sports Results`, `ISU World Results 1958`.",
+      "source_path": "data/manual_rag/worlds_1958.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1958",
+      "chunk_id": "data/manual_rag/worlds_1958.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1959 World Figure Skating Championships\n\n## 1. Document Overview: 1959 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1959 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the penultimate championships of the 1950s and the establishing of the dominant favorites for the 1960 Olympic season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1959.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1959",
+      "chunk_id": "data/manual_rag/worlds_1959.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1959 World Figure Skating Championships\n\n## 2. Event Metadata: 1959 World Figure Skating Championships\n* **Event Name:** 1959 World Figure Skating Championships\n* **Location:** Broadmoor World Arena, Colorado Springs, Colorado, USA\n* **Dates:** February 24 – 28, 1959\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This event marked the return of the championships to the Broadmoor World Arena, a venue that would become synonymous with elite figure skating in North America. It featured the fourth consecutive title win for **Carol Heiss** and the third for **David Jenkins**, solidifying American singles dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1959.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1959",
+      "chunk_id": "data/manual_rag/worlds_1959.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1959 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1959 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1959 World Figure Skating Championships\n**David Jenkins** (United States) won his third consecutive World gold medal. His performance was characterized by powerful athleticism and the technical precision that ran in the Jenkins family (following his brother Hayes Alan Jenkins). He comfortably defeated Donald Jackson and Tim Brown.\n* **Gold:** **David Jenkins** (United States)\n* **Silver:** **Donald Jackson** (Canada)\n* **Bronze:** **Tim Brown** (United States)\n\n### 3.2 Women's Singles: 1959 World Figure Skating Championships\n**Carol Heiss** (United States) won her fourth consecutive World title. Heiss was at the peak of her technical powers, displaying a combination of double and triple jumps that were ahead of their time, leaving the rest of the international field, led by Hanna Walter and Sjoukje Dijkstra, to compete for the silver.\n* **Gold:** **Carol Heiss** (United States)\n* **Silver:** **Hanna Walter** (Austria)\n* **Bronze:** **Sjoukje Dijkstra** (Netherlands)\n\n### 3.3 Pairs: 1959 World Figure Skating Championships\n**Barbara Wagner and Robert Paul** (Canada) won their third consecutive World title. They were noted for their innovative lifts and side-by-side unison, which began to separate the Canadian and North American pairs style from the more traditional European schools.\n* **Gold:** **Barbara Wagner / Robert Paul** (Canada)\n* **Silver:** **Marika Kilius / Hans-Jürgen Bäumler** (West Germany)\n* **Bronze:** **Nancy Ludington / Ronald Ludington** (United States)\n\n### 3.4 Ice Dance: 1959 World Figure Skating Championships\n**Doreen Denny and Courtney Jones** (Great Britain) won their first World gold medal as a partnership. Courtney Jones had previously won titles with June Markham, but this victory established a new partnership that would continue Britain's uninterrupted streak of excellence in the discipline.\n* **Gold:** **Doreen Denny / Courtney Jones** (Great Britain)\n* **Silver:** **Andrée Anderson / Donald Jacoby** (United States)\n* **Bronze:** **Geraldine Fenton / William McLachlan** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1959.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1959",
+      "chunk_id": "data/manual_rag/worlds_1959.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1959 World Figure Skating Championships\n\n## 4. Medal Table: 1959 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 1 | 2 | 5 |\n| 2 | **Canada (CAN)** | 1 | 1 | 1 | 3 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 4 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **Netherlands (NED)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1959.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1959",
+      "chunk_id": "data/manual_rag/worlds_1959.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1959 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1959 World Figure Skating Championships\n`Colorado Springs 1959`, `David Jenkins 3rd gold`, `Carol Heiss 4th title`, `Wagner Paul 3rd gold`, `Doreen Denny Courtney Jones first gold`, `Broadmoor World Arena Results`, `ISU World Results 1959`.",
+      "source_path": "data/manual_rag/worlds_1959.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1959",
+      "chunk_id": "data/manual_rag/worlds_1959.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1960 World Figure Skating Championships\n\n## 1. Document Overview: 1960 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1960 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the conclusion of the pre-1961 era and the peak of the late 1950s legendary champions.\n\n---",
+      "source_path": "data/manual_rag/worlds_1960.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1960",
+      "chunk_id": "data/manual_rag/worlds_1960.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1960 World Figure Skating Championships\n\n## 2. Event Metadata: 1960 World Figure Skating Championships\n* **Event Name:** 1960 World Figure Skating Championships\n* **Location:** Vancouver Forum, Vancouver, British Columbia, Canada\n* **Dates:** March 1 – 5, 1960\n* **Host:** Skate Canada / ISU\n* **Major Milestone:** This was the first time the World Championships were held in Western Canada. Following the 1960 Squaw Valley Winter Olympics, this event served as the professional farewell for several all-time greats, including **Alain Giletti**, **Carol Heiss**, and **David Jenkins**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1960.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1960",
+      "chunk_id": "data/manual_rag/worlds_1960.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1960 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1960 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1960 World Figure Skating Championships\n**Alain Giletti** (France) won the gold medal, reclaiming the title he first won in 1958. In a highly competitive field, he defeated the reigning Olympic Champion David Jenkins. Giletti was celebrated for his classic European style and exceptional command of the ice.\n* **Gold:** **Alain Giletti** (France)\n* **Silver:** **Donald Jackson** (Canada)\n* **Bronze:** **Alain Calmat** (France)\n\n### 3.2 Women's Singles: 1960 World Figure Skating Championships\n**Carol Heiss** (United States) won her fifth consecutive World title. This victory cemented her status as one of the most dominant female skaters in history. Having also won the Olympic gold just weeks prior, she retired from amateur competition immediately after this event to pursue a film career.\n* **Gold:** **Carol Heiss** (United States)\n* **Silver:** **Sjoukje Dijkstra** (Netherlands)\n* **Bronze:** **Barbara Roles** (United States)\n\n### 3.3 Pairs: 1960 World Figure Skating Championships\n**Barbara Wagner and Robert Paul** (Canada) won their fourth consecutive World title. Their performance in Vancouver was a triumphant homecoming following their Olympic gold medal win in Squaw Valley. They remained undefeated on the world stage from 1957 through their retirement in 1960.\n* **Gold:** **Barbara Wagner / Robert Paul** (Canada)\n* **Silver:** **Maria Jelinek / Otto Jelinek** (Canada)\n* **Bronze:** **Marika Kilius / Hans-Jürgen Bäumler** (West Germany)\n\n### 3.4 Ice Dance: 1960 World Figure Skating Championships\n**Doreen Denny and Courtney Jones** (Great Britain) won their second consecutive World gold medal. Their victory continued the \"Golden Age\" of British ice dance, characterized by a refined ballroom aesthetic and superior edge quality that set the international standard.\n* **Gold:** **Doreen Denny / Courtney Jones** (Great Britain)\n* **Silver:** **Virginia Thompson / William McLachlan** (Canada)\n* **Bronze:** **Christiane Guhel / Jean Paul Guhel** (France)\n\n---",
+      "source_path": "data/manual_rag/worlds_1960.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1960",
+      "chunk_id": "data/manual_rag/worlds_1960.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1960 World Figure Skating Championships\n\n## 4. Medal Table: 1960 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 1 | 3 | 0 | 4 |\n| 2 | **France (FRA)** | 1 | 0 | 2 | 3 |\n| 3 | **United States (USA)** | 1 | 0 | 1 | 2 |\n| 4 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 5 | **Netherlands (NED)** | 0 | 1 | 0 | 1 |\n| 6 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1960.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1960",
+      "chunk_id": "data/manual_rag/worlds_1960.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1960 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1960 World Figure Skating Championships\n`Vancouver 1960`, `Alain Giletti gold`, `Carol Heiss 5th title`, `Wagner Paul final gold`, `Doreen Denny Courtney Jones`, `Vancouver Forum Results`, `ISU World Results 1960`, `Post-Olympic Worlds 1960`.",
+      "source_path": "data/manual_rag/worlds_1960.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1960",
+      "chunk_id": "data/manual_rag/worlds_1960.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 1. Document Overview: 1961 World Figure Skating Championships (In Memoriam)\nThis document records the circumstances surrounding the cancellation of the 1961 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the most significant tragedy in the history of the sport and the \"Void Year\" in the International Skating Union (ISU) records.\n\n---",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 2. Event Metadata: 1961 World Figure Skating Championships\n* **Original Location:** Prague, Czechoslovakia\n* **Scheduled Dates:** February 22 – 26, 1961\n* **Status:** **CANCELLED**\n* **Reason for Cancellation:** The crash of **Sabena Flight 548** on February 15, 1961.\n* **Historical Context:** Following the crash, the ISU Executive Committee met and determined that holding the competition would be impossible given the state of mourning and the loss of an entire national delegation. The event was deferred to Prague for the following year (1962).\n\n---",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 3. The Tragedy: Sabena Flight 548\nOn February 15, 1961, a Boeing 707 traveling from New York City to Brussels crashed during its landing approach. All 72 people on board were killed, including one person on the ground.\n* **The U.S. Delegation:** The entire 18-member U.S. World Team perished. This included skaters, coaches (notably **Maribel Vinson-Owen**), officials, and family members.\n* **Global Impact:** The tragedy led to a worldwide outpouring of grief and a permanent change in how national teams travel; many organizations now ensure that entire teams do not travel on the same flight.\n\n---",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 4. Notable Athletes Lost: 1961 U.S. World Team\nWhile no World medals were awarded in 1961, the following athletes were the reigning U.S. Champions and top contenders for the 1961 World titles:\n\n| Discipline | Perished U.S. Champions |\n| :--- | :--- |\n| **Men's Singles** | **Bradley Lord** |\n| **Ladies' Singles** | **Laurence Owen** |\n| **Pairs** | **Maribel Owen / Dudley Richards** |\n| **Ice Dance** | **Diane Sherbloom / Larry Pierce** |\n\n---",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 5. Legacy and Recovery\n* **1961 Memorial Fund:** Established shortly after the crash to provide financial assistance to aspiring young skaters. This fund is credited with the eventual resurgence of U.S. figure skating, supporting future champions like Peggy Fleming.\n* **ISU 1962:** The World Championships returned to Prague in 1962, where the skating community held a formal memorial for the 1961 team before competition resumed.\n\n---",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1961 - The Cancelled World Figure Skating Championships\n\n## 6. Key Keywords for RAG Search: 1961 World Figure Skating Championships\n`1961 World Figure Skating Championships cancellation`, `Sabena Flight 548 crash`, `1961 US Figure Skating Team tragedy`, `Maribel Vinson-Owen`, `Laurence Owen 1961`, `Prague 1961 cancellation`, `ISU history 1961`, `Void Year 1961`.",
+      "source_path": "data/manual_rag/worlds_1961.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1961",
+      "chunk_id": "data/manual_rag/worlds_1961.md::chunk_6"
+    },
+    {
+      "text": "# Reference: 1962 World Figure Skating Championships\n\n## 1. Document Overview: 1962 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1962 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a deeply emotional return to international competition following the tragic 1961 season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1962.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1962",
+      "chunk_id": "data/manual_rag/worlds_1962.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1962 World Figure Skating Championships\n\n## 2. Event Metadata: 1962 World Figure Skating Championships\n* **Event Name:** 1962 World Figure Skating Championships\n* **Location:** Sportovní hala ČSTV, Prague, Czechoslovakia\n* **Dates:** March 14 – 17, 1962\n* **Host:** Czechoslovak Skating Federation / ISU\n* **Major Milestone:** This championship was originally scheduled for 1961 but was cancelled due to the crash of **Sabena Flight 548**, which claimed the lives of the entire U.S. figure skating team. The 1962 event served as a somber reunion for the skating world and featured **Donald Jackson** landing the first-ever triple Lutz in international competition.\n\n---",
+      "source_path": "data/manual_rag/worlds_1962.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1962",
+      "chunk_id": "data/manual_rag/worlds_1962.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1962 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1962 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1962 World Figure Skating Championships\n**Donald Jackson** (Canada) delivered what is often cited as one of the greatest free skating performances in history. Entering the final segment in second place, he landed the first-ever **triple Lutz** and received seven perfect 6.0 scores to secure Canada's first-ever World title in the men's event.\n* **Gold:** **Donald Jackson** (Canada)\n* **Silver:** **Karol Divín** (Czechoslovakia)\n* **Bronze:** **Alain Calmat** (France)\n\n### 3.2 Women's Singles: 1962 World Figure Skating Championships\n**Sjoukje Dijkstra** (Netherlands) won her first World title, beginning a three-year era of dominance. She was celebrated for her immense physical power and technical superiority in the compulsory figures, which established a lead that was impossible for her competitors to close.\n* **Gold:** **Sjoukje Dijkstra** (Netherlands)\n* **Silver:** **Wendy Griner** (Canada)\n* **Bronze:** **Regine Heitzer** (Austria)\n\n### 3.3 Pairs: 1962 World Figure Skating Championships\n**Maria Jelinek and Otto Jelinek** (Canada) won the gold medal in a victory charged with political drama. The siblings had defected from Czechoslovakia as children following the post-war Communist takeover; their return to Prague to compete was a major international news story, ending in a triumphant gold for the Canadian pair.\n* **Gold:** **Maria Jelinek / Otto Jelinek** (Canada)\n* **Silver:** **Ludmila Belousova / Oleg Protopopov** (Soviet Union)\n* **Bronze:** **Debbi Wilkes / Guy Revell** (Canada)\n\n### 3.4 Ice Dance: 1962 World Figure Skating Championships\n**Eva Romanová and Pavel Roman** (Czechoslovakia) captured the gold medal, delighting the home crowd in Prague. Their victory was historic as it broke a long-standing British monopoly on the ice dance discipline and established the siblings as the new leaders of the sport.\n* **Gold:** **Eva Romanová / Pavel Roman** (Czechoslovakia)\n* **Silver:** **Linda Shearman / Michael Phillips** (Great Britain)\n* **Bronze:** **Virginia Thompson / William McLachlan** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1962.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1962",
+      "chunk_id": "data/manual_rag/worlds_1962.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1962 World Figure Skating Championships\n\n## 4. Medal Table: 1962 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 2 | 1 | 2 | 5 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 1 | 0 | 2 |\n| 3 | **Netherlands (NED)** | 1 | 0 | 0 | 1 |\n| 4 | **Soviet Union (URS)** | 0 | 1 | 0 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 6 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1962.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1962",
+      "chunk_id": "data/manual_rag/worlds_1962.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1962 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1962 World Figure Skating Championships\n`Prague 1962`, `Donald Jackson triple Lutz`, `Sjoukje Dijkstra first gold`, `Jelinek siblings Prague return`, `Eva Romanova first gold`, `Sabena Flight 548 aftermath`, `Sportovní hala Results`, `ISU World Results 1962`.",
+      "source_path": "data/manual_rag/worlds_1962.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1962",
+      "chunk_id": "data/manual_rag/worlds_1962.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1963 World Figure Skating Championships\n\n## 1. Document Overview: 1963 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1963 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the continued recovery of international skating and the rise of new European and North American stars in the early 1960s.\n\n---",
+      "source_path": "data/manual_rag/worlds_1963.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1963",
+      "chunk_id": "data/manual_rag/worlds_1963.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1963 World Figure Skating Championships\n\n## 2. Event Metadata: 1963 World Figure Skating Championships\n* **Event Name:** 1963 World Figure Skating Championships\n* **Location:** Cortina d'Ampezzo, Italy\n* **Dates:** February 28 – March 3, 1963\n* **Host:** Federazione Italiana Sport del Ghiaccio / ISU\n* **Major Milestone:** Held in the iconic 1956 Olympic venue, this championship was the first time Italy hosted the World Championships. It was marked by the successful defense of titles by **Donald McPherson**, **Sjoukje Dijkstra**, and **Marika Kilius / Hans-Jürgen Bäumler**, solidifying the hierarchy leading into the 1964 Olympic season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1963.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1963",
+      "chunk_id": "data/manual_rag/worlds_1963.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1963 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1963 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1963 World Figure Skating Championships\n**Donald McPherson** (Canada) won the gold medal, completing a historic sweep of the Canadian, North American, and World titles in a single season. He was noted for his exceptional jumping ability and technical consistency, which allowed him to defeat the European favorites, Alain Calmat and Manfred Schnelldorfer.\n* **Gold:** **Donald McPherson** (Canada)\n* **Silver:** **Alain Calmat** (France)\n* **Bronze:** **Manfred Schnelldorfer** (West Germany)\n\n### 3.2 Women's Singles: 1963 World Figure Skating Championships\n**Sjoukje Dijkstra** (Netherlands) won her second consecutive World gold medal. Her physical strength and mastery of compulsory figures made her nearly unbeatable during this period. She maintained a significant lead over Regine Heitzer and Nicole Hassler throughout the competition.\n* **Gold:** **Sjoukje Dijkstra** (Netherlands)\n* **Silver:** **Regine Heitzer** (Austria)\n* **Bronze:** **Nicole Hassler** (France)\n\n### 3.3 Pairs: 1963 World Figure Skating Championships\n**Marika Kilius and Hans-Jürgen Bäumler** (West Germany) won their first World gold medal. Their victory ended the reign of Canadian pairs and marked the beginning of West Germany's prominence in the discipline. They were celebrated for their speed and the charismatic \"showmanship\" they brought to the ice.\n* **Gold:** **Marika Kilius / Hans-Jürgen Bäumler** (West Germany)\n* **Silver:** **Ludmila Belousova / Oleg Protopopov** (Soviet Union)\n* **Bronze:** **Tatiana Zhuk / Alexander Gavrilov** (Soviet Union)\n\n### 3.4 Ice Dance: 1963 World Figure Skating Championships\n**Eva Romanová and Pavel Roman** (Czechoslovakia) successfully defended their title, winning their second consecutive World gold medal. The siblings were instrumental in popularizing a more rhythmic and technically demanding style of ice dancing that moved away from purely traditional ballroom interpretations.\n* **Gold:** **Eva Romanová / Pavel Roman** (Czechoslovakia)\n* **Silver:** **Linda Shearman / Michael Phillips** (Great Britain)\n* **Bronze:** **Paulette Doan / Kenneth Ormsby** (Canada)\n\n---",
+      "source_path": "data/manual_rag/worlds_1963.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1963",
+      "chunk_id": "data/manual_rag/worlds_1963.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1963 World Figure Skating Championships\n\n## 4. Medal Table: 1963 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Canada (CAN)** | 1 | 0 | 1 | 2 |\n| 1 | **West Germany (FRG)** | 1 | 0 | 1 | 2 |\n| 3 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 3 | **Netherlands (NED)** | 1 | 0 | 0 | 1 |\n| 5 | **Soviet Union (URS)** | 0 | 1 | 1 | 2 |\n| 5 | **France (FRA)** | 0 | 1 | 1 | 2 |\n| 7 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 7 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1963.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1963",
+      "chunk_id": "data/manual_rag/worlds_1963.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1963 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1963 World Figure Skating Championships\n`Cortina d'Ampezzo 1963`, `Donald McPherson gold`, `Sjoukje Dijkstra 1963`, `Kilius Baumler first gold`, `Eva Romanova 2nd gold`, `Stadio Olimpico del Ghiaccio Results`, `ISU World Results 1963`, `Soviet pairs emergence`.",
+      "source_path": "data/manual_rag/worlds_1963.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1963",
+      "chunk_id": "data/manual_rag/worlds_1963.md::chunk_5"
     },
     {
       "text": "# Reference: 1964 World Figure Skating Championships\n\n## 1. Document Overview: 1964 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1964 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of the sport following the 1964 Innsbruck Winter Olympics.\n\n---",
