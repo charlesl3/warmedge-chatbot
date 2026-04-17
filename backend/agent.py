@@ -10,7 +10,7 @@ def needs_clarification(query: str):
     # -------------------------
     vague_patterns = ["this", "that", "good", "which", "should"]
 
-    if len(tokens) <= 5 and any(p in tokens for p in vague_patterns):
+    if len(tokens) <= 2 and any(p in tokens for p in vague_patterns):
         return True, "vague short query"
 
     # -------------------------
@@ -30,7 +30,7 @@ def needs_clarification(query: str):
 
         # --- prefix-based (double/triple/quad) ---
         for t in tokens:
-            if t.startswith("double") or t.startswith("triple") or t.startswith("quad"):
+            if t.startswith("single") or t.startswith("double") or t.startswith("triple") or t.startswith("quad"):
                 return True
 
         # --- shorthand patterns (1a, 2a, 3f, 4t, etc.) ---
