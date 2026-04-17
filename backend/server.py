@@ -333,13 +333,16 @@ def chat(req: ChatRequest):
             }
 
         # -------------------------
-        # AGENT DECISION LAYER
+        # BUILD STATE FIRST
         # -------------------------
-        clarify, reason = needs_clarification(message)
-        print(f"[AGENT] clarify={clarify}, reason={reason}")
-
         state = build_skater_state(message)
         print("[STATE]", state)
+
+        # -------------------------
+        # AGENT DECISION (NOW HISTORY-AWARE)
+        # -------------------------
+        clarify, reason = needs_clarification(message, history)
+        print(f"[AGENT] clarify={clarify}, reason={reason}")
 
         working_history = history + [{"role": "user", "content": message}]
 
@@ -354,37 +357,48 @@ def chat(req: ChatRequest):
         })
         save_chats(chats)
 
+        # -------------------------
+        # SMART CLARIFICATION LOGIC
+        # -------------------------
         if clarify:
-            reply = (
-                "Could you tell me your level and what you want to use it for? "
-                "I can give a more precise answer."
+            # 🚨 NEW: check if prior context exists
+            has_prior_context = any(
+                ("axel" in m["content"].lower() or
+                 re.search(r"\b[1-4][aflst]\b", m["content"].lower()))
+                for m in history if m["role"] == "user"
             )
 
-            assistant_message_id = str(uuid.uuid4())
+            if not has_prior_context:
+                reply = (
+                    "Could you tell me your level and what you want to use it for? "
+                    "I can give a more precise answer."
+                )
 
-            working_history.append({
-                "role": "assistant",
-                "content": reply
-            })
+                assistant_message_id = str(uuid.uuid4())
 
-            chats[session_id]["messages"].append({
-                "id": assistant_message_id,
-                "role": "assistant",
-                "content": reply
-            })
-            save_chats(chats)
+                working_history.append({
+                    "role": "assistant",
+                    "content": reply
+                })
 
-            SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+                chats[session_id]["messages"].append({
+                    "id": assistant_message_id,
+                    "role": "assistant",
+                    "content": reply
+                })
+                save_chats(chats)
 
-            return {
-                "reply": reply,
-                "session_id": session_id,
-                "message_id": assistant_message_id,
-                "end": False,
-            }
+                SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+
+                return {
+                    "reply": reply,
+                    "session_id": session_id,
+                    "message_id": assistant_message_id,
+                    "end": False,
+                }
 
         # -------------------------
-        # RAG path (unchanged)
+        # RAG PATH (UNCHANGED)
         # -------------------------
         rag_result = answer_question(
             question=message,
