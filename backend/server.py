@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
+from backend.agent import needs_clarification  # NEW
+
 
 import traceback
 import re
@@ -281,7 +283,9 @@ def chat(req: ChatRequest):
 
         history = list(SESSIONS[session_id])
 
+        # -------------------------
         # Blank input
+        # -------------------------
         if is_blank(message):
             return {
                 "reply": "Please ask a valid figure skating related question.",
@@ -289,7 +293,9 @@ def chat(req: ChatRequest):
                 "end": False,
             }
 
+        # -------------------------
         # Social message
+        # -------------------------
         if is_social_message(message):
 
             reply = clean_output(handle_social_message(message))
@@ -314,7 +320,6 @@ def chat(req: ChatRequest):
             })
 
             save_chats(chats)
-
             SESSIONS[session_id] = history[-MAX_TURNS * 2:]
 
             return {
@@ -325,8 +330,10 @@ def chat(req: ChatRequest):
             }
 
         # -------------------------
-        # RAG path
+        # AGENT DECISION LAYER
         # -------------------------
+        clarify, reason = needs_clarification(message)
+        print(f"[AGENT] clarify={clarify}, reason={reason}")
 
         working_history = history + [{"role": "user", "content": message}]
 
@@ -339,9 +346,40 @@ def chat(req: ChatRequest):
             "role": "user",
             "content": message
         })
-
         save_chats(chats)
 
+        if clarify:
+            reply = (
+                "Could you tell me your level and what you want to use it for? "
+                "I can give a more precise answer."
+            )
+
+            assistant_message_id = str(uuid.uuid4())
+
+            working_history.append({
+                "role": "assistant",
+                "content": reply
+            })
+
+            chats[session_id]["messages"].append({
+                "id": assistant_message_id,
+                "role": "assistant",
+                "content": reply
+            })
+            save_chats(chats)
+
+            SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+
+            return {
+                "reply": reply,
+                "session_id": session_id,
+                "message_id": assistant_message_id,
+                "end": False,
+            }
+
+        # -------------------------
+        # RAG path (unchanged)
+        # -------------------------
         rag_result = answer_question(
             question=message,
             history=working_history,
