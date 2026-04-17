@@ -1,4 +1,5 @@
 from rag.level_taxonomy import detect_legacy_term
+from backend.agent import build_skater_state
 
 
 def build_llm_input(
@@ -69,6 +70,25 @@ def build_llm_input(
     for text in docs:
         parts.append(text)
         parts.append("")
+
+    # ---- Inject inferred state ----
+    state = build_skater_state(question)  # you'll pass or compute this
+
+    parts.append("User skating profile:")
+    parts.append(f"- Skill level: {state.get('skill_level')}")
+    parts.append(f"- Signals: {state.get('signals')}")
+    parts.append(f"- Jump level: {state.get('jump_level')}")
+    parts.append(f"- Body: {state.get('height_class')}, {state.get('weight_class')}")
+    parts.append(f"- Experience: {state.get('experience_type')}")
+    parts.append("")
+
+    parts.append(
+        "Important rules:\n"
+        "- Do NOT treat Axel or above as beginner.\n"
+        "- Recommend appropriate stiffness for heavier skaters.\n"
+        "- Avoid beginner equipment unless clearly beginner.\n"
+    )
+    parts.append("")
 
     # Final instruction
     parts.append(

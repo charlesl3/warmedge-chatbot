@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from backend.agent import needs_clarification  # NEW
+from backend.agent import build_skater_state
+
+
 
 
 import traceback
@@ -334,6 +337,9 @@ def chat(req: ChatRequest):
         # -------------------------
         clarify, reason = needs_clarification(message)
         print(f"[AGENT] clarify={clarify}, reason={reason}")
+
+        state = build_skater_state(message)
+        print("[STATE]", state)
 
         working_history = history + [{"role": "user", "content": message}]
 
