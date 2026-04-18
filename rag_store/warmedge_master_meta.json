@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7164,
+  "total_vectors": 7219,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,556 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1947 World Figure Skating Championships\n\n## 1. Document Overview: 1947 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1947 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships held after a seven-year hiatus due to World War II (1940–1946).\n\n---",
+      "source_path": "data/manual_rag/worlds_1947.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1947",
+      "chunk_id": "data/manual_rag/worlds_1947.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1947 World Figure Skating Championships\n\n## 2. Event Metadata: 1947 World Figure Skating Championships\n* **Event Name:** 1947 World Figure Skating Championships\n* **Location:** Stockholm, Sweden\n* **Dates:** February 13 – 17, 1947\n* **Host:** Svenska Konståkningsförbundet / ISU\n* **Major Milestone:** This event marked the \"Post-War Resurrection\" of international figure skating. Because the championships had been suspended since 1939, an entire generation of skaters had aged out or seen their careers interrupted. As a result, the 1947 podiums featured entirely new faces compared to the pre-war era, with the exclusion of athletes from Germany and Japan.\n\n---",
+      "source_path": "data/manual_rag/worlds_1947.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1947",
+      "chunk_id": "data/manual_rag/worlds_1947.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1947 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1947 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1947 World Figure Skating Championships\n**Hans Gerschwiler** (Switzerland) won the gold medal. He was the first post-war champion, continuing the European tradition of mastery in compulsory figures. He narrowly defeated the young American Dick Button, who was making his international debut and would go on to revolutionize the sport the following year.\n* **Gold:** **Hans Gerschwiler** (Switzerland) — Ordinal: 7\n* **Silver:** **Dick Button** (United States) — Ordinal: 8\n* **Bronze:** **Arthur Apfel** (Great Britain) — Ordinal: 16\n\n### 3.2 Women's Singles: 1947 World Figure Skating Championships\n**Barbara Ann Scott** (Canada) won the gold medal, becoming the first North American woman to win a World title. Her victory in Stockholm was a massive cultural event in Canada and signaled a permanent shift in the sport's power balance toward North America. She defeated the top European challengers with a blend of athleticism and classic elegance.\n* **Gold:** **Barbara Ann Scott** (Canada) — Ordinal: 10.5\n* **Silver:** **Daphne Walker** (Great Britain) — Ordinal: 22\n* **Bronze:** **Gretchen Merrill** (United States) — Ordinal: 26.5\n\n### 3.3 Pairs: 1947 World Figure Skating Championships\n**Micheline Lannoy and Pierre Baugniet** (Belgium) won the gold medal. Their performance was a standout for its technical difficulty for the time and their exceptional synchronization. This victory established them as the heavy favorites for the 1948 Olympics.\n* **Gold:** **Micheline Lannoy / Pierre Baugniet** (Belgium) — Ordinal: 11\n* **Silver:** **Karol Kennedy / Peter Kennedy** (United States) — Ordinal: 14.5\n* **Bronze:** **Suzanne Diskeuve / Edmond Verbustel** (Belgium) — Ordinal: 15.5\n\n### 3.4 Ice Dance: 1947 World Figure Skating Championships\n**Note:** In 1947, Ice Dance remained an unofficial and largely regional discipline, primarily practiced in Great Britain. It was not included as part of the World Championship program in Stockholm.\n\n---",
+      "source_path": "data/manual_rag/worlds_1947.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1947",
+      "chunk_id": "data/manual_rag/worlds_1947.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1947 World Figure Skating Championships\n\n## 4. Medal Table: 1947 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Belgium (BEL)** | 1 | 0 | 1 | 2 |\n| 2 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 2 | **Switzerland (SUI)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 2 | 1 | 3 |\n| 5 | **Great Britain (GBR)** | 0 | 1 | 1 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1947.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1947",
+      "chunk_id": "data/manual_rag/worlds_1947.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1947 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1947 World Figure Skating Championships\n`Stockholm 1947`, `First post-war championships`, `Hans Gerschwiler gold`, `Barbara Ann Scott first world title`, `Lannoy Baugniet first gold`, `Dick Button debut`, `ISU World Results 1947`, `Post-war skating revival`.",
+      "source_path": "data/manual_rag/worlds_1947.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1947",
+      "chunk_id": "data/manual_rag/worlds_1947.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1948 World Figure Skating Championships\n\n## 1. Document Overview: 1948 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1948 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first post-Olympic World Championship of the modern era and the beginning of the \"American Revolution\" in men's singles.\n\n---",
+      "source_path": "data/manual_rag/worlds_1948.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1948",
+      "chunk_id": "data/manual_rag/worlds_1948.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1948 World Figure Skating Championships\n\n## 2. Event Metadata: 1948 World Figure Skating Championships\n* **Event Name:** 1948 World Figure Skating Championships\n* **Location:** Davos Ice Stadium, Davos, Switzerland\n* **Dates:** February 11 – 15, 1948\n* **Host:** Swiss Skating Federation / ISU\n* **Major Milestone:** Held immediately following the 1948 St. Moritz Winter Olympics, this championship served as the definitive confirmation of the new world order in figure skating. It featured the first World title for **Dick Button**, who introduced a level of athleticism never before seen in the sport, and the final World title for the legendary **Barbara Ann Scott**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1948.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1948",
+      "chunk_id": "data/manual_rag/worlds_1948.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1948 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1948 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1948 World Figure Skating Championships\n**Dick Button** (United States) won his first World gold medal. Fresh from his Olympic victory, Button utilized his revolutionary double Axel and high-flying jumping style to defeat the European champion Hans Gerschwiler. This victory marked the first time an American man had ever won the World Figure Skating title, ending decades of European dominance.\n* **Gold:** **Dick Button** (United States) — Ordinal: 11\n* **Silver:** **Hans Gerschwiler** (Switzerland) — Ordinal: 19\n* **Bronze:** **Ede Király** (Hungary) — Ordinal: 28\n\n### 3.2 Women's Singles: 1948 World Figure Skating Championships\n**Barbara Ann Scott** (Canada) successfully defended her title, winning her second consecutive World gold medal. Scott, known as \"Canada's Sweetheart,\" was celebrated for her perfect compulsory figures and graceful free skating. Following this win, she retired from amateur competition to turn professional.\n* **Gold:** **Barbara Ann Scott** (Canada) — Ordinal: 7\n* **Silver:** **Eva Pawlik** (Austria) — Ordinal: 25\n* **Bronze:** **Jiřina Nekolová** (Czechoslovakia) — Ordinal: 32\n\n### 3.3 Pairs: 1948 World Figure Skating Championships\n**Micheline Lannoy and Pierre Baugniet** (Belgium) won the gold medal, adding the World title to their 1948 Olympic gold. They were the premier pair of the immediate post-war period, recognized for their sophisticated unison and classical European style. They defeated the Hungarian pair Kékesy and Király in a close contest.\n* **Gold:** **Micheline Lannoy / Pierre Baugniet** (Belgium) — Ordinal: 7\n* **Silver:** **Andrea Kékesy / Ede Király** (Hungary) — Ordinal: 15\n* **Bronze:** **Anne-Grit Olsson / Sture Olsson** (Sweden) — Ordinal: 22\n\n### 3.4 Ice Dance: 1948 World Figure Skating Championships\n**Note:** In 1948, Ice Dance was still an **unofficial** international discipline. It was primarily a British-led exhibition event during this period, as the ISU worked toward establishing formal rules for international competition.\n\n---",
+      "source_path": "data/manual_rag/worlds_1948.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1948",
+      "chunk_id": "data/manual_rag/worlds_1948.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1948 World Figure Skating Championships\n\n## 4. Medal Table: 1948 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 0 | 0 | 1 |\n| 1 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 1 | **Belgium (BEL)** | 1 | 0 | 0 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 1 | 1 | 2 |\n| 5 | **Switzerland (SUI)** | 0 | 1 | 0 | 1 |\n| 5 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 7 | **Czechoslovakia (TCH)** | 0 | 0 | 1 | 1 |\n| 7 | **Sweden (SWE)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1948.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1948",
+      "chunk_id": "data/manual_rag/worlds_1948.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1948 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1948 World Figure Skating Championships\n`Davos 1948`, `Dick Button first world title`, `Barbara Ann Scott final gold`, `Lannoy Baugniet gold`, `Post-Olympic Worlds 1948`, `Davos Ice Stadium Results`, `ISU World Results 1948`, `End of European Men's dominance`.",
+      "source_path": "data/manual_rag/worlds_1948.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1948",
+      "chunk_id": "data/manual_rag/worlds_1948.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1949 World Figure Skating Championships\n\n## 1. Document Overview: 1949 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1949 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the third post-war championship and a significant shift in the power balance of international figure skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1949.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1949",
+      "chunk_id": "data/manual_rag/worlds_1949.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1949 World Figure Skating Championships\n\n## 2. Event Metadata: 1949 World Figure Skating Championships\n* **Event Name:** 1949 World Figure Skating Championships\n* **Location:** Paris, France\n* **Dates:** February 16 – 18, 1949\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This event marked the final World Championship for the legendary **Dick Button** before the \"Triple Revolution\" began, and the first World title for Czechoslovakia’s **Alena Vrzáňová**. It was also the first time since the war that the championships were held in the French capital.\n\n---",
+      "source_path": "data/manual_rag/worlds_1949.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1949",
+      "chunk_id": "data/manual_rag/worlds_1949.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1949 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1949 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1949 World Figure Skating Championships\n**Dick Button** (United States) won his second consecutive World gold medal. Button's athleticism continued to redefine the sport, as he outclassed the European field with superior height in his jumps and greater speed in his footwork. He defeated Ede Király of Hungary by a significant margin in total points.\n* **Gold:** **Dick Button** (United States) — Ordinal: 5\n* **Silver:** **Ede Király** (Hungary) — Ordinal: 12\n* **Bronze:** **Edi Rada** (Austria) — Ordinal: 13\n\n### 3.2 Women's Singles: 1949 World Figure Skating Championships\n**Alena Vrzáňová** (Czechoslovakia) won the gold medal, becoming the first Czechoslovak woman to win the World title. She defeated the reigning European stars and the top American, Yvonne Sherman. Her victory was seen as a technical triumph, blending the traditional European school of figures with more modern free skating elements.\n* **Gold:** **Alena Vrzáňová** (Czechoslovakia) — Ordinal: 7\n* **Silver:** **Yvonne Sherman** (United States) — Ordinal: 17\n* **Bronze:** **Jeannette Altwegg** (Great Britain) — Ordinal: 18\n\n### 3.3 Pairs: 1949 World Figure Skating Championships\n**Andrea Kékesy and Ede Király** (Hungary) won the gold medal. They were the premier pair of the late 1940s, known for their sophisticated choreography and unison. Their victory in Paris added to their 1948 Olympic silver and solidified Hungarian dominance in the pairs discipline during this era.\n* **Gold:** **Andrea Kékesy / Ede Király** (Hungary) — Ordinal: 7\n* **Silver:** **Karol Kennedy / Peter Kennedy** (United States) — Ordinal: 14.5\n* **Bronze:** **Ann-Grit Olsson / Sture Olsson** (Sweden) — Ordinal: 22.5\n\n### 3.4 Ice Dance: 1949 World Figure Skating Championships\n**Note:** In 1949, Ice Dance was still an **unofficial** international event. It would not be officially integrated into the ISU World Championships as a medal sport until 1952.\n* **Winners:** **Reginald Wilkie / Daphne Wallis** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1949.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1949",
+      "chunk_id": "data/manual_rag/worlds_1949.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1949 World Figure Skating Championships\n\n## 4. Medal Table: 1949 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 1 | 0 | 2 |\n| 1 | **Hungary (HUN)** | 1 | 1 | 0 | 2 |\n| 3 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n| 4 | **Sweden (SWE)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1949.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1949",
+      "chunk_id": "data/manual_rag/worlds_1949.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1949 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1949 World Figure Skating Championships\n`Paris 1949`, `Dick Button 2nd gold`, `Alena Vrzáňová first gold`, `Kékesy Király gold`, `Kennedy siblings silver`, `Post-war Paris skating`, `ISU World Results 1949`.",
+      "source_path": "data/manual_rag/worlds_1949.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1949",
+      "chunk_id": "data/manual_rag/worlds_1949.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1950 World Figure Skating Championships\n\n## 1. Document Overview: 1950 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1950 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the midpoint of the post-war recovery era and the total dominance of North American athletes in the singles disciplines.\n\n---",
+      "source_path": "data/manual_rag/worlds_1950.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1950",
+      "chunk_id": "data/manual_rag/worlds_1950.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1950 World Figure Skating Championships\n\n## 2. Event Metadata: 1950 World Figure Skating Championships\n* **Event Name:** 1950 World Figure Skating Championships\n* **Location:** Wembley Ice Arena, London, United Kingdom\n* **Dates:** March 6 – 8, 1950\n* **Host:** National Skating Association of Great Britain / ISU\n* **Major Milestone:** Held at the iconic Wembley Ice Arena, this championship was characterized by a clean sweep of the gold medals by North American skaters (USA and Canada). It marked the third consecutive title for **Dick Button** and the second for **Alena Vrzáňová**, who famously defected to the West shortly after this event.\n\n---",
+      "source_path": "data/manual_rag/worlds_1950.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1950",
+      "chunk_id": "data/manual_rag/worlds_1950.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1950 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1950 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1950 World Figure Skating Championships\n**Dick Button** (United States) won his third consecutive World gold medal. His performance further widened the gap between the \"American School\" of athletic, high-velocity skating and the more traditional European style. He defeated Ede Király and his fellow countryman Hayes Alan Jenkins.\n* **Gold:** **Dick Button** (United States) — Ordinal: 7\n* **Silver:** **Ede Király** (Hungary) — Ordinal: 14\n* **Bronze:** **Hayes Alan Jenkins** (United States) — Ordinal: 25\n\n### 3.2 Women's Singles: 1950 World Figure Skating Championships\n**Alena Vrzáňová** (Czechoslovakia) successfully defended her title, winning her second consecutive World gold medal. Despite the political tension in her home country, she delivered a technically superior performance to defeat the American Jeannette Altwegg. Vrzáňová used this trip to London to seek political asylum, never returning to Czechoslovakia.\n* **Gold:** **Alena Vrzáňová** (Czechoslovakia) — Ordinal: 12\n* **Silver:** **Jeannette Altwegg** (Great Britain) — Ordinal: 18\n* **Bronze:** **Yvonne Sherman** (United States) — Ordinal: 23\n\n### 3.3 Pairs: 1950 World Figure Skating Championships\n**Karol Kennedy and Peter Kennedy** (United States) won the gold medal. The siblings from Seattle became the first American pair to win a World title, utilizing their characteristic speed and high-difficulty lifts to narrowly defeat the reigning European champions from Hungary.\n* **Gold:** **Karol Kennedy / Peter Kennedy** (United States) — Ordinal: 15\n* **Silver:** **Jennifer Nicks / John Nicks** (Great Britain) — Ordinal: 28.5\n* **Bronze:** **Marianna Nagy / László Nagy** (Hungary) — Ordinal: 32\n\n### 3.4 Ice Dance: 1950 World Figure Skating Championships\n**Note:** In 1950, Ice Dance was still conducted as an **unofficial** international competition. Great Britain continued to set the standard for the discipline as it moved toward official ISU championship status.\n* **Winners:** **Lois Duff-Sutton / Michael Sutton** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1950.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1950",
+      "chunk_id": "data/manual_rag/worlds_1950.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1950 World Figure Skating Championships\n\n## 4. Medal Table: 1950 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 0 | 2 | 4 |\n| 2 | **Czechoslovakia (TCH)** | 1 | 0 | 0 | 1 |\n| 3 | **Great Britain (GBR)** | 0 | 2 | 0 | 2 |\n| 4 | **Hungary (HUN)** | 0 | 1 | 1 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1950.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1950",
+      "chunk_id": "data/manual_rag/worlds_1950.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1950 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1950 World Figure Skating Championships\n`London 1950`, `Wembley Ice Arena`, `Dick Button 3rd gold`, `Alena Vrzáňová defection`, `Kennedy siblings first gold`, `Post-war skating dominance`, `ISU World Results 1950`.",
+      "source_path": "data/manual_rag/worlds_1950.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1950",
+      "chunk_id": "data/manual_rag/worlds_1950.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1951 World Figure Skating Championships\n\n## 1. Document Overview: 1951 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1951 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a pivotal post-war year that saw the return of German athletes to international competition and the continued evolution of athletic singles skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1951.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1951",
+      "chunk_id": "data/manual_rag/worlds_1951.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1951 World Figure Skating Championships\n\n## 2. Event Metadata: 1951 World Figure Skating Championships\n* **Event Name:** 1951 World Figure Skating Championships\n* **Location:** Monrepos Outdoor Rink, Milan, Italy\n* **Dates:** February 23 – 25, 1951\n* **Host:** Federazione Italiana Sport del Ghiaccio / ISU\n* **Major Milestone:** This was the first World Championship since World War II where athletes from Germany and Japan were permitted to compete. It also marked the fourth consecutive title for **Dick Button** and the only World title for **Jeannette Altwegg**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1951.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1951",
+      "chunk_id": "data/manual_rag/worlds_1951.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1951 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1951 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1951 World Figure Skating Championships\n**Dick Button** (United States) won his fourth consecutive World gold medal. His dominance was absolute, as he consistently pushed the boundaries of technical difficulty in free skating while maintaining a high standard in compulsory figures. This victory solidified the \"American School\" as the leading force in men's singles.\n* **Gold:** **Dick Button** (United States) — Ordinal: 7\n* **Silver:** **James Grogan** (United States) — Ordinal: 17\n* **Bronze:** **Helmut Seibt** (Austria) — Ordinal: 22\n\n### 3.2 Women's Singles: 1951 World Figure Skating Championships\n**Jeannette Altwegg** (Great Britain) won the gold medal. Known for her impeccable compulsory figures—which often gave her an insurmountable lead before the free skating portion—Altwegg's victory restored British prestige in the ladies' discipline. She defeated the American stars Jacqueline du Bief and Sonya Klopfer.\n* **Gold:** **Jeannette Altwegg** (Great Britain) — Ordinal: 8\n* **Silver:** **Jacqueline du Bief** (France) — Ordinal: 14\n* **Bronze:** **Sonya Klopfer** (United States) — Ordinal: 23\n\n### 3.3 Pairs: 1951 World Figure Skating Championships\n**Ria Baran and Paul Falk** (West Germany) won their first World gold medal. Their win was historically significant as the first German gold since the end of the war. They were pioneers of the \"shadow skating\" style, where both partners perform identical movements in perfect unison without holding hands.\n* **Gold:** **Ria Baran / Paul Falk** (West Germany) — Ordinal: 10\n* **Silver:** **Karol Kennedy / Peter Kennedy** (United States) — Ordinal: 11.5\n* **Bronze:** **Jennifer Nicks / John Nicks** (Great Britain) — Ordinal: 20.5\n\n### 3.4 Ice Dance: 1951 World Figure Skating Championships\n**Note:** In 1951, Ice Dance was still held as an **unofficial** international competition (often referred to as an \"ISU delegate\" event). It would not become an official World Championship discipline until the following year in Paris.\n* **Winners:** **Jean Westwood / Lawrence Demmy** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1951.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1951",
+      "chunk_id": "data/manual_rag/worlds_1951.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1951 World Figure Skating Championships\n\n## 4. Medal Table: 1951 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 2 | 1 | 4 |\n| 2 | **Great Britain (GBR)** | 1 | 0 | 1 | 2 |\n| 3 | **West Germany (FRG)** | 1 | 0 | 0 | 1 |\n| 4 | **France (FRA)** | 0 | 1 | 0 | 1 |\n| 5 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1951.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1951",
+      "chunk_id": "data/manual_rag/worlds_1951.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1951 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1951 World Figure Skating Championships\n`Milan 1951`, `Dick Button 4th gold`, `Jeannette Altwegg title`, `Ria Baran Paul Falk first gold`, `German return to skating`, `Monrepos Outdoor Rink Results`, `ISU World Results 1951`.",
+      "source_path": "data/manual_rag/worlds_1951.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1951",
+      "chunk_id": "data/manual_rag/worlds_1951.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1952 World Figure Skating Championships\n\n## 1. Document Overview: 1952 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1952 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a transformative year for the sport, including the official debut of ice dance as a championship discipline.\n\n---",
+      "source_path": "data/manual_rag/worlds_1952.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1952",
+      "chunk_id": "data/manual_rag/worlds_1952.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1952 World Figure Skating Championships\n\n## 2. Event Metadata: 1952 World Figure Skating Championships\n* **Event Name:** 1952 World Figure Skating Championships\n* **Location:** Vélodrome d'Hiver, Paris, France\n* **Dates:** February 27 – March 1, 1952\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Major Milestone:** This was the first World Championship to officially include **Ice Dance** as a medal discipline. It also served as the competitive farewell for **Dick Button**, who concluded his amateur career with a fifth consecutive title, and **Ria Baran / Paul Falk**, who retired undefeated.\n\n---",
+      "source_path": "data/manual_rag/worlds_1952.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1952",
+      "chunk_id": "data/manual_rag/worlds_1952.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1952 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1952 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1952 World Figure Skating Championships\n**Dick Button** (United States) won his fifth and final World title. Fresh from his second Olympic gold in Oslo, Button demonstrated his technical supremacy by performing the triple loop, a jump he had pioneered. His victory in Paris marked the end of the \"Button Era,\" which fundamentally redefined men's skating through athleticism and speed.\n* **Gold:** **Dick Button** (United States) — Ordinal: 7\n* **Silver:** **James Grogan** (United States) — Ordinal: 19\n* **Bronze:** **Hayes Alan Jenkins** (United States) — Ordinal: 21\n\n### 3.2 Women's Singles: 1952 World Figure Skating Championships\n**Jacqueline du Bief** (France) won the gold medal on home ice, becoming the first French woman to win the World title. Her victory was highly celebrated in Paris, as she defeated the reigning Olympic silver medalist Sonya Klopfer and the rising British star Valda Osborn.\n* **Gold:** **Jacqueline du Bief** (France) — Ordinal: 9\n* **Silver:** **Sonya Klopfer** (United States) — Ordinal: 21\n* **Bronze:** **Virginia Baxter** (United States) — Ordinal: 24\n\n### 3.3 Pairs: 1952 World Figure Skating Championships\n**Ria Baran and Paul Falk** (West Germany) won their second consecutive World gold medal. As the reigning Olympic champions, they remained undefeated in international competition. Their skating was noted for its perfect unison and the introduction of parallel double jumps, which were revolutionary at the time.\n* **Gold:** **Ria Baran / Paul Falk** (West Germany) — Ordinal: 9\n* **Silver:** **Karol Kennedy / Peter Kennedy** (United States) — Ordinal: 23.5\n* **Bronze:** **Jennifer Nicks / John Nicks** (Great Britain) — Ordinal: 24\n\n### 3.4 Ice Dance (Inaugural Championship): 1952 World Figure Skating Championships\n**Jean Westwood and Lawrence Demmy** (Great Britain) made history by winning the first-ever official World title in Ice Dance. This event codified the British dominance of the discipline, which emphasized ballroom technique adapted for the ice.\n* **Gold:** **Jean Westwood / Lawrence Demmy** (Great Britain) — Ordinal: 7\n* **Silver:** **Joan Dewhirst / John Slater** (Great Britain) — Ordinal: 14\n* **Bronze:** **Carol Peters / Daniel Ryan** (United States) — Ordinal: 23\n\n---",
+      "source_path": "data/manual_rag/worlds_1952.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1952",
+      "chunk_id": "data/manual_rag/worlds_1952.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1952 World Figure Skating Championships\n\n## 4. Medal Table: 1952 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 3 | 3 | 7 |\n| 2 | **Great Britain (GBR)** | 1 | 1 | 1 | 3 |\n| 3 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 3 | **West Germany (FRG)** | 1 | 0 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1952.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1952",
+      "chunk_id": "data/manual_rag/worlds_1952.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1952 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1952 World Figure Skating Championships\n`Paris 1952`, `Dick Button final gold`, `Jacqueline du Bief gold`, `Ria Baran Paul Falk`, `Inaugural Ice Dance World Title`, `Westwood Demmy first gold`, `Vélodrome d'Hiver Results`, `ISU World Results 1952`.",
+      "source_path": "data/manual_rag/worlds_1952.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1952",
+      "chunk_id": "data/manual_rag/worlds_1952.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1953 World Figure Skating Championships (Corrected)\n\n## 1. Document Overview: 1953 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1953 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the official transition in men's skating following the Dick Button era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1953.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1953",
+      "chunk_id": "data/manual_rag/worlds_1953.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1953 World Figure Skating Championships (Corrected)\n\n## 2. Event Metadata: 1953 World Figure Skating Championships\n* **Event Name:** 1953 World Figure Skating Championships\n* **Location:** Davos Ice Stadium, Davos, Switzerland\n* **Dates:** February 8 – 15, 1953\n* **Host:** Swiss Skating Federation / ISU\n* **Major Milestone:** Held at the legendary outdoor rink in Davos, this championship saw **Hayes Alan Jenkins** successfully claim the mantle as the world's premier male skater. It also marked the historic first World title for **Tenley Albright**, the first American woman to achieve this feat.\n\n---",
+      "source_path": "data/manual_rag/worlds_1953.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1953",
+      "chunk_id": "data/manual_rag/worlds_1953.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1953 World Figure Skating Championships (Corrected)\n\n## 3. Disciplinary Results: 1953 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1953 World Figure Skating Championships (Corrected)\n**Hayes Alan Jenkins** (United States) won his first World gold medal. While American skaters took the top two spots, the podium was rounded out by the European Champion Carlo Fassi, preventing a total U.S. sweep. Jenkins was noted for his technical precision and command of compulsory figures.\n* **Gold:** **Hayes Alan Jenkins** (United States) — 1929.25 points (Ordinal: 13)\n* **Silver:** **James Grogan** (United States) — 1931.93 points (Ordinal: 16)\n* **Bronze:** **Carlo Fassi** (Italy) — 1727.2 points (Ordinal: 33)\n\n### 3.2 Women's Singles: 1953 World Figure Skating Championships\n**Tenley Albright** (United States) won her first World gold medal, becoming the first American woman to ever win the World Figure Skating title. Her victory in Davos was a landmark moment for U.S. figure skating, breaking the long-standing European hold on the ladies' category.\n* **Gold:** **Tenley Albright** (United States)\n* **Silver:** **Gundi Busch** (West Germany)\n* **Bronze:** **Valda Osborn** (Great Britain)\n\n### 3.3 Pairs: 1953 World Figure Skating Championships\n**Jennifer Nicks and John Nicks** (Great Britain) won the gold medal. The siblings were celebrated for their classical lines and synchronization, which epitomized the British pairs style of the early 1950s. They successfully defeated the rising Canadian pair of Dafoe and Bowden.\n* **Gold:** **Jennifer Nicks / John Nicks** (Great Britain)\n* **Silver:** **Frances Dafoe / Norris Bowden** (Canada)\n* **Bronze:** **Marianna Nagy / László Nagy** (Hungary)\n\n### 3.4 Ice Dance: 1953 World Figure Skating Championships\n**Jean Westwood and Lawrence Demmy** (Great Britain) won their second consecutive World gold medal. Their victory in Davos solidified their position as the dominant architects of competitive ice dance in its early years as an ISU championship discipline.\n* **Gold:** **Jean Westwood / Lawrence Demmy** (Great Britain)\n* **Silver:** **Joan Dewhirst / John Slater** (Great Britain)\n* **Bronze:** **Carol Peters / Daniel Ryan** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1953.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1953",
+      "chunk_id": "data/manual_rag/worlds_1953.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1953 World Figure Skating Championships (Corrected)\n\n## 4. Medal Table: 1953 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 1 | 2 | 5 |\n| 2 | **Great Britain (GBR)** | 2 | 1 | 1 | 4 |\n| 3 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 3 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 5 | **Italy (ITA)** | 0 | 0 | 1 | 1 |\n| 5 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1953.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1953",
+      "chunk_id": "data/manual_rag/worlds_1953.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1953 World Figure Skating Championships (Corrected)\n\n## 5. Key Keywords for RAG Search: 1953 World Figure Skating Championships\n`Davos 1953`, `Hayes Alan Jenkins first gold`, `James Grogan silver`, `Carlo Fassi bronze`, `Tenley Albright first gold`, `Jennifer and John Nicks`, `Westwood Demmy 2nd gold`, `Davos Ice Stadium Results`, `ISU World Results 1953`.",
+      "source_path": "data/manual_rag/worlds_1953.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1953",
+      "chunk_id": "data/manual_rag/worlds_1953.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1954 World Figure Skating Championships\n\n## 1. Document Overview: 1954 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1954 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a critical year where European skaters challenged the post-war North American dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1954.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1954",
+      "chunk_id": "data/manual_rag/worlds_1954.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1954 World Figure Skating Championships\n\n## 2. Event Metadata: 1954 World Figure Skating Championships\n* **Event Name:** 1954 World Figure Skating Championships\n* **Location:** Bislett Stadium, Oslo, Norway\n* **Dates:** February 16 – 19, 1954\n* **Host:** Norwegian Skating Association / ISU\n* **Major Milestone:** Held at the famous Bislett Stadium, this championship was notable for being held outdoors in challenging winter conditions. It featured the first and only World title for **Gundi Busch**, marking a rare interruption in the era of American ladies' dominance, and the second title for **Hayes Alan Jenkins**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1954.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1954",
+      "chunk_id": "data/manual_rag/worlds_1954.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1954 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1954 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1954 World Figure Skating Championships\n**Hayes Alan Jenkins** (United States) successfully defended his title, winning his second consecutive World gold medal. He was praised for his technical consistency and superior compulsory figures, which allowed him to hold off James Grogan and the French champion Alain Giletti.\n* **Gold:** **Hayes Alan Jenkins** (United States)\n* **Silver:** **James Grogan** (United States)\n* **Bronze:** **Alain Giletti** (France)\n\n### 3.2 Women's Singles: 1954 World Figure Skating Championships\n**Gundi Busch** (West Germany) won the gold medal, becoming the first German woman to win the World title. In a significant upset, she defeated the reigning champion Tenley Albright. Busch’s victory was celebrated for its athletic vigor and was a major milestone for West German sports in the post-war era.\n* **Gold:** **Gundi Busch** (West Germany)\n* **Silver:** **Tenley Albright** (United States)\n* **Bronze:** **Erica Batchelor** (Great Britain)\n\n### 3.3 Pairs: 1954 World Figure Skating Championships\n**Frances Dafoe and Norris Bowden** (Canada) won their first World gold medal. Their victory ended the streak of the British and German pairs, introducing a more modern Canadian style that emphasized high-speed unison and innovative transition moves between elements.\n* **Gold:** **Frances Dafoe / Norris Bowden** (Canada)\n* **Silver:** **Silvia Grandjean / Michel Grandjean** (Switzerland)\n* **Bronze:** **Sissy Schwarz / Kurt Oppelt** (Austria)\n\n### 3.4 Ice Dance: 1954 World Figure Skating Championships\n**Jean Westwood and Lawrence Demmy** (Great Britain) won their third consecutive World gold medal. At this stage, the British team was considered technically peerless in the discipline, having won every gold medal since ice dance was added to the World program in 1952.\n* **Gold:** **Jean Westwood / Lawrence Demmy** (Great Britain)\n* **Silver:** **Nesta Davies / Paul Thomas** (Great Britain)\n* **Bronze:** **Carmel Bodel / Edward Bodel** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1954.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1954",
+      "chunk_id": "data/manual_rag/worlds_1954.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1954 World Figure Skating Championships\n\n## 4. Medal Table: 1954 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 1 | 2 | 1 | 4 |\n| 2 | **Great Britain (GBR)** | 1 | 1 | 1 | 3 |\n| 3 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 3 | **West Germany (FRG)** | 1 | 0 | 0 | 1 |\n| 5 | **Switzerland (SUI)** | 0 | 1 | 0 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n| 6 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1954.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1954",
+      "chunk_id": "data/manual_rag/worlds_1954.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1954 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1954 World Figure Skating Championships\n`Oslo 1954`, `Hayes Alan Jenkins 2nd gold`, `Gundi Busch gold`, `Dafoe Bowden first title`, `Jean Westwood Lawrence Demmy`, `Bislett Stadium Results`, `ISU World Results 1954`, `Outdoor World Championships`.",
+      "source_path": "data/manual_rag/worlds_1954.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1954",
+      "chunk_id": "data/manual_rag/worlds_1954.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1955 World Figure Skating Championships\n\n## 1. Document Overview: 1955 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1955 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of the mid-1950s era and the technical progression leading into the 1956 Olympic year.\n\n---",
+      "source_path": "data/manual_rag/worlds_1955.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1955",
+      "chunk_id": "data/manual_rag/worlds_1955.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1955 World Figure Skating Championships\n\n## 2. Event Metadata: 1955 World Figure Skating Championships\n* **Event Name:** 1955 World Figure Skating Championships\n* **Location:** Wiener Eislauf-Verein, Vienna, Austria\n* **Dates:** February 15 – 18, 1955\n* **Host:** Österreichischer Eislaufverband (Austrian Skating Association) / ISU\n* **Major Milestone:** This championship was held at the historic outdoor rink in Vienna, the spiritual home of the \"Viennese School\" of skating. It was notable for the continued dominance of American singles skaters and the legendary British ice dance school.\n\n---",
+      "source_path": "data/manual_rag/worlds_1955.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1955",
+      "chunk_id": "data/manual_rag/worlds_1955.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1955 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1955 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1955 World Figure Skating Championships\n**Hayes Alan Jenkins** (United States) won his third consecutive World gold medal. Jenkins was recognized for his near-perfect compulsory figures, a hallmark of the era, which provided him a lead that was difficult for rivals Ronald Robertson and David Jenkins to overcome in the free skating segment.\n* **Gold:** **Hayes Alan Jenkins** (United States)\n* **Silver:** **Ronald Robertson** (United States)\n* **Bronze:** **David Jenkins** (United States)\n\n### 3.2 Women's Singles: 1955 World Figure Skating Championships\n**Tenley Albright** (United States) reclaimed her World title, winning her second gold medal. After losing to Gundi Busch the previous year, Albright's victory in Vienna re-established her as the favorite for the upcoming Olympics. Her performance was noted for its artistic grace and technical reliability.\n* **Gold:** **Tenley Albright** (United States)\n* **Silver:** **Carol Heiss** (United States)\n* **Bronze:** **Hanna Eigel** (Austria)\n\n### 3.3 Pairs: 1955 World Figure Skating Championships\n**Frances Dafoe and Norris Bowden** (Canada) successfully defended their title, winning their second consecutive World gold medal. They were the premier pair of the mid-50s, known for their synchronized footwork and the introduction of more complex lifts that challenged the traditional European style.\n* **Gold:** **Frances Dafoe / Norris Bowden** (Canada)\n* **Silver:** **Sissy Schwarz / Kurt Oppelt** (Austria)\n* **Bronze:** **Marianna Nagy / László Nagy** (Hungary)\n\n### 3.4 Ice Dance: 1955 World Figure Skating Championships\n**Jean Westwood and Lawrence Demmy** (Great Britain) won their fourth consecutive World gold medal. This victory marked the end of their competitive career as the most dominant ice dance team of the sport's early international history, having won every World title since the discipline was officially introduced in 1952.\n* **Gold:** **Jean Westwood / Lawrence Demmy** (Great Britain)\n* **Silver:** **Pamela Weight / Paul Thomas** (Great Britain)\n* **Bronze:** **Barbara Thompson / Gerard Rigby** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1955.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1955",
+      "chunk_id": "data/manual_rag/worlds_1955.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1955 World Figure Skating Championships\n\n## 4. Medal Table: 1955 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 2 | 1 | 5 |\n| 2 | **Great Britain (GBR)** | 1 | 1 | 1 | 3 |\n| 3 | **Canada (CAN)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 1 | 1 | 2 |\n| 5 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1955.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1955",
+      "chunk_id": "data/manual_rag/worlds_1955.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1955 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1955 World Figure Skating Championships\n`Vienna 1955`, `Hayes Alan Jenkins 3rd gold`, `Tenley Albright 2nd title`, `Dafoe Bowden 2nd gold`, `Westwood Demmy 4th gold`, `Wiener Eislauf-Verein Results`, `ISU World Results 1955`, `British Ice Dance sweep`.",
+      "source_path": "data/manual_rag/worlds_1955.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1955",
+      "chunk_id": "data/manual_rag/worlds_1955.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1956 World Figure Skating Championships\n\n## 1. Document Overview: 1956 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1956 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of the mid-1950s \"American Golden Age\" and the conclusion of the 1956 Olympic season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1956.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1956",
+      "chunk_id": "data/manual_rag/worlds_1956.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1956 World Figure Skating Championships\n\n## 2. Event Metadata: 1956 World Figure Skating Championships\n* **Event Name:** 1956 World Figure Skating Championships\n* **Location:** Garmisch-Partenkirchen, West Germany\n* **Dates:** February 16 – 19, 1956\n* **Host:** Deutsche Eislauf-Union / ISU\n* **Major Milestone:** Held immediately following the 1956 Cortina d'Ampezzo Winter Olympics, this event was the final competitive stage for several legends. It marked the final World title for **Hayes Alan Jenkins** and the first for **Carol Heiss**, representing a \"passing of the torch\" in the singles disciplines.\n\n---",
+      "source_path": "data/manual_rag/worlds_1956.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1956",
+      "chunk_id": "data/manual_rag/worlds_1956.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1956 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1956 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1956 World Figure Skating Championships\n**Hayes Alan Jenkins** (United States) won his fourth consecutive and final World title. His victory in Garmisch-Partenkirchen capped one of the most successful careers in men's skating history, occurring just weeks after his Olympic gold. He narrowly defeated his brother, David Jenkins, and the consistent Ronald Robertson.\n* **Gold:** **Hayes Alan Jenkins** (United States)\n* **Silver:** **Ronald Robertson** (United States)\n* **Bronze:** **David Jenkins** (United States)\n\n### 3.2 Women's Singles: 1956 World Figure Skating Championships\n**Carol Heiss** (United States) won her first World gold medal. In a historic upset, she defeated the reigning Olympic champion Tenley Albright. This victory launched Heiss's five-year undefeated streak on the world stage and signaled the start of her era as the premier female skater.\n* **Gold:** **Carol Heiss** (United States)\n* **Silver:** **Tenley Albright** (United States)\n* **Bronze:** **Ingrid Wendl** (Austria)\n\n### 3.3 Pairs: 1956 World Figure Skating Championships\n**Sissy Schwarz and Kurt Oppelt** (Austria) won the gold medal, adding the World title to their 1956 Olympic gold. Their victory was a triumph for the Viennese school of skating, characterized by classical elegance and musicality, successfully defending against the top Canadian and West German pairs.\n* **Gold:** **Sissy Schwarz / Kurt Oppelt** (Austria)\n* **Silver:** **Frances Dafoe / Norris Bowden** (Canada)\n* **Bronze:** **Marika Kilius / Franz Ningel** (West Germany)\n\n### 3.4 Ice Dance: 1956 World Figure Skating Championships\n**June Markham and Courtney Jones** (Great Britain) won their first World title together, though Courtney Jones was continuing a legacy established with previous partners. This victory maintained the British \"lock\" on the ice dance discipline, which remained largely a European specialty during this period.\n* **Gold:** **Pamela Weight / Paul Thomas** (Great Britain)\n* **Silver:** **June Markham / Courtney Jones** (Great Britain)\n* **Bronze:** **Barbara Thompson / Gerard Rigby** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1956.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1956",
+      "chunk_id": "data/manual_rag/worlds_1956.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1956 World Figure Skating Championships\n\n## 4. Medal Table: 1956 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 2 | 1 | 5 |\n| 2 | **Great Britain (GBR)** | 1 | 1 | 1 | 3 |\n| 3 | **Austria (AUT)** | 1 | 0 | 1 | 2 |\n| 4 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 5 | **West Germany (FRG)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1956.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1956",
+      "chunk_id": "data/manual_rag/worlds_1956.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1956 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1956 World Figure Skating Championships\n`Garmisch-Partenkirchen 1956`, `Hayes Alan Jenkins final gold`, `Carol Heiss first title`, `Schwarz Oppelt 1956`, `Pamela Weight Paul Thomas`, `Post-Olympic Worlds 1956`, `ISU World Results 1956`, `American sweep 1956`.",
+      "source_path": "data/manual_rag/worlds_1956.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1956",
+      "chunk_id": "data/manual_rag/worlds_1956.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1957 World Figure Skating Championships\n\n## 1. Document Overview: 1957 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1957 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the mid-1950s transition and the first World titles for some of the sport's most significant historical figures.\n\n---",
+      "source_path": "data/manual_rag/worlds_1957.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1957",
+      "chunk_id": "data/manual_rag/worlds_1957.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1957 World Figure Skating Championships\n\n## 2. Event Metadata: 1957 World Figure Skating Championships\n* **Event Name:** 1957 World Figure Skating Championships\n* **Location:** Broadmoor World Arena, Colorado Springs, Colorado, USA\n* **Dates:** February 26 – March 2, 1957\n* **Host:** U.S. Figure Skating / ISU\n* **Major Milestone:** This was the first World Championship of the post-1956 Olympic cycle. It is historically significant for the first World title of **David Jenkins** (following his brother Hayes Alan Jenkins) and the first World title for the legendary Canadian pair **Wagner and Paul**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1957.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1957",
+      "chunk_id": "data/manual_rag/worlds_1957.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1957 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1957 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1957 World Figure Skating Championships\n**David Jenkins** (United States) won his first World gold medal. Taking over the mantle from his older brother, David proved his technical dominance by defeating a strong international field, including the rising European star Alain Giletti.\n* **Gold:** **David Jenkins** (United States)\n* **Silver:** **Tim Brown** (United States)\n* **Bronze:** **Alain Giletti** (France)\n\n### 3.2 Women's Singles: 1957 World Figure Skating Championships\n**Carol Heiss** (United States) successfully defended her title, winning her second consecutive World gold medal. She maintained a significant lead over the Austrian skaters Ingrid Wendl and Hanna Walter, establishing herself as the clear successor to Tenley Albright.\n* **Gold:** **Carol Heiss** (United States)\n* **Silver:** **Hanna Eigel** (Austria)\n* **Bronze:** **Ingrid Wendl** (Austria)\n\n### 3.3 Pairs: 1957 World Figure Skating Championships\n**Barbara Wagner and Robert Paul** (Canada) won their first World gold medal. Their victory marked a shift in the pairs discipline toward greater athletic power and synchronization, ending the European dominance of the previous years.\n* **Gold:** **Barbara Wagner / Robert Paul** (Canada)\n* **Silver:** **Marika Kilius / Franz Ningel** (West Germany)\n* **Bronze:** **Maria Jelinek / Otto Jelinek** (Canada)\n\n### 3.4 Ice Dance: 1957 World Figure Skating Championships\n**June Markham and Courtney Jones** (Great Britain) won their first World gold medal. This victory continued Great Britain's unbeaten streak in the discipline, which had existed since the category was first introduced to the World Championships in 1952.\n* **Gold:** **June Markham / Courtney Jones** (Great Britain)\n* **Silver:** **Geraldine Fenton / William McLachlan** (Canada)\n* **Bronze:** **Joan Zamboni / Roland Junso** (United States)\n\n---",
+      "source_path": "data/manual_rag/worlds_1957.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1957",
+      "chunk_id": "data/manual_rag/worlds_1957.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1957 World Figure Skating Championships\n\n## 4. Medal Table: 1957 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **United States (USA)** | 2 | 1 | 1 | 4 |\n| 2 | **Canada (CAN)** | 1 | 1 | 1 | 3 |\n| 3 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 1 | 1 | 2 |\n| 5 | **West Germany (FRG)** | 0 | 1 | 0 | 1 |\n| 6 | **France (FRA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1957.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1957",
+      "chunk_id": "data/manual_rag/worlds_1957.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1957 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1957 World Figure Skating Championships\n`Colorado Springs 1957`, `David Jenkins first gold`, `Carol Heiss 2nd gold`, `Wagner Paul first title`, `June Markham Courtney Jones first title`, `Broadmoor World Arena Results`, `ISU World Results 1957`, `Post-Olympic transition 1957`.",
+      "source_path": "data/manual_rag/worlds_1957.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1957",
+      "chunk_id": "data/manual_rag/worlds_1957.md::chunk_5"
     },
     {
       "text": "# Reference: 1958 World Figure Skating Championships (Corrected)\n\n## 1. Document Overview: 1958 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1958 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of mid-century technical standards and the competitive dominance of the North American singles field.\n\n---",
