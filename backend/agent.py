@@ -169,3 +169,24 @@ def needs_clarification(query: str, history: list[dict]):
                 return True, "missing level"
 
     return False, "sufficient"
+
+def classify_query_intent(query: str, history: list[dict]) -> str:
+    q = query.lower().strip()
+
+    # 1. Comparison questions
+    if any(x in q for x in [" vs ", "versus", "better than", "difference between", "compare"]):
+        return "comparison"
+
+    # 2. Action / coaching questions
+    if any(x in q for x in ["how to", "how do i", "improve", "fix", "practice", "train"]):
+        return "how_to"
+
+    # 3. Symptom / diagnosis questions
+    if any(x in q for x in ["feel", "feels", "unstable", "off", "weird", "problem", "issue"]):
+        return "diagnosis"
+
+    # 4. General explanation questions
+    if any(x in q for x in ["why", "normal", "common", "is it okay", "is it bad"]):
+        return "experience_lookup"
+
+    return "default"

@@ -2,11 +2,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
-from backend.agent import needs_clarification  # NEW
-from backend.agent import build_skater_state
-
-
-
+from backend.agent import (
+    needs_clarification,
+    build_skater_state,
+    classify_query_intent,
+)
 
 import traceback
 import re
@@ -398,11 +398,19 @@ def chat(req: ChatRequest):
                 }
 
         # -------------------------
+        # topic classifier
+        # -------------------------
+
+        intent = classify_query_intent(message, history)
+        print(f"[AGENT] intent={intent}")
+
+        # -------------------------
         # RAG PATH (UNCHANGED)
         # -------------------------
         rag_result = answer_question(
             question=message,
             history=working_history,
+            intent=intent,
         )
 
         retrieved_docs = []

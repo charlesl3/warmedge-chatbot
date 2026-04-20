@@ -207,6 +207,21 @@ def weak_retrieval(top_score: Optional[float]) -> bool:
 def clarify_message(track: str) -> str:
     return "Could you clarify which level you are referring to?"
 
+def rewrite_query_by_intent(query: str, intent: str) -> str:
+    if intent == "how_to":
+        return f"{query} what to try technique steps figure skating"
+
+    if intent == "comparison":
+        return f"{query} comparison pros cons figure skating"
+
+    if intent == "diagnosis":
+        return f"{query} causes similar skating issues figure skating"
+
+    if intent == "experience_lookup":
+        return f"{query} common causes experience figure skating"
+
+    return query
+
 
 # --------------------------------------------------
 # Priority Boost
@@ -251,8 +266,7 @@ def extract_retrieved_doc_ids(retrieval: Dict) -> List[str]:
 # --------------------------------------------------
 # Main Answer
 # --------------------------------------------------
-def answer_question(question: str, history: List[Dict]):
-
+def answer_question(question: str, history: List[Dict], intent: str = "default"):
     if is_blank(question):
         return "Please ask a valid question."
 
@@ -260,10 +274,15 @@ def answer_question(question: str, history: List[Dict]):
         return handle_social_message(question)
 
     normalized = normalize_legacy_terms(question)
+
     retrieval_query, _ = build_retrieval_query(normalized, history)
     retrieval_query = normalize_legacy_terms(retrieval_query)
+    retrieval_query = rewrite_query_by_intent(retrieval_query, intent)
 
     track = infer_track(normalized)
+
+    debug_print("[INTENT]", intent)
+    debug_print("[RETRIEVAL QUERY]", retrieval_query)
 
     query_embedding = EMBED_MODEL.encode(retrieval_query, convert_to_numpy=True)
 
@@ -284,6 +303,7 @@ def answer_question(question: str, history: List[Dict]):
         question=normalized,
         docs=retrieval["results"],
         history=history,
+        intent=intent,
     )
 
     response = run_llm(llm_input)

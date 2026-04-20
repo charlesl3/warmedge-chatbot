@@ -2,11 +2,47 @@ from rag.level_taxonomy import detect_legacy_term
 from backend.agent import build_skater_state
 
 
+def get_intent_instruction(intent: str) -> str:
+    if intent == "how_to":
+        return (
+            "Task mode: actionable coaching.\n"
+            "Give concrete steps the user can try.\n"
+            "Prioritize practical technique advice."
+        )
+
+    if intent == "comparison":
+        return (
+            "Task mode: comparison.\n"
+            "Compare the main options or viewpoints.\n"
+            "Use this structure:\n"
+            "1. Common ground\n"
+            "2. Key differences\n"
+            "3. Recommendation"
+        )
+
+    if intent == "diagnosis":
+        return (
+            "Task mode: diagnosis.\n"
+            "Infer likely causes from the user's described symptoms.\n"
+            "Do not overstate certainty.\n"
+            "List likely causes and what to try."
+        )
+
+    if intent == "experience_lookup":
+        return (
+            "Task mode: explanation.\n"
+            "Explain what commonly causes this issue or situation.\n"
+            "Summarize patterns clearly."
+        )
+
+    return "Task mode: standard skating answer."
+
 def build_llm_input(
     prompt: str,
     question: str,
-    docs: list[str],   # ← changed
-    history: list[dict]
+    docs: list[str],
+    history: list[dict],
+    intent: str = "default",
 ) -> str:
 
     parts = []
@@ -88,6 +124,8 @@ def build_llm_input(
         "- Recommend appropriate stiffness for heavier skaters.\n"
         "- Avoid beginner equipment unless clearly beginner.\n"
     )
+    parts.append("")
+    parts.append(get_intent_instruction(intent))
     parts.append("")
 
     # Final instruction
