@@ -155,9 +155,17 @@ def needs_clarification(query: str, history: list[dict]):
     # 3. RECOMMENDATION DETECTION
     # -------------------------
     is_recommendation = (
-        "recommend" in q or
-        "best" in q or
-        "should i" in q
+            "recommend" in q or
+            "best" in q
+    )
+
+    is_how_to = (
+            "how to" in q or
+            "how do i" in q or
+            "how should i" in q or
+            "practice" in q or
+            "improve" in q or
+            "fix" in q
     )
 
     # -------------------------
@@ -167,6 +175,10 @@ def needs_clarification(query: str, history: list[dict]):
         if not has_skill_signal:
             if not has_prior_skill_signal(history):
                 return True, "missing level"
+
+    # 🚨 NEW: do NOT clarify for how_to
+    if is_how_to:
+        return False, "how_to_safe"
 
     return False, "sufficient"
 
