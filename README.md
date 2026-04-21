@@ -90,36 +90,48 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 
 ------------------------------------------------------------------------
 
-## Engineering Logs
+## Agent Logic (Current)
 
-## DONE
+### 1. Clarification (gatekeeping)
 
-- RAG works (FAISS + embeddings + markdown knowledge units)
-- Prompt builder stable
-- Conversation memory working
-- Reddit + GoldenSkate distilled into structured essays
-- Test renaming layer added (2023 USFS update)
-- Moves in the Field → Skating Skills handled
-- Free Skate → Singles handled
-- Juvenile / Intermediate / etc. → mapped to new level names
-- Automatic clarification of legacy terms in responses
-- Adult vs Standard separation enforced
-- Adult level ladder explicitly defined
-- Standard level ladder explicitly defined
-- All official test tracks listed in system prompt
-- Adult tracks listed (Skills, Singles, Pattern Dance, Free Dance, Solo Free Dance, Pairs)
-- Misspellings tolerated (LLM handles fuzzy input)
-- Prevent silent blending of old + new systems
-- Free Skate ≠ Freestyle rule enforced
-- test contents added: Singles, MITF for standard and adults
-- Model's provider was removed, because of hugging face, so I changed to openai's model
-- more history appending logics
-- added a few good manual units
-- fixed memory issue - it was because the front end did not send back session id
-- added wiki pages for all skaters! - huge!
-- test contents: singles standard split
-- add a feature for users to clean the screen
+- Function: `needs_clarification(query, history)`
+- Purpose: decide whether the system has enough information to answer
 
-## TO DO
+**Behavior:**
+- detects vague or underspecified queries  
+- checks for missing skill level in recommendation questions  
+- uses history to avoid unnecessary clarification  
 
-- competition rag building
+**If triggered:**
+- stops pipeline and asks a follow-up question  
+
+---
+
+### 2. State Construction (user understanding)
+
+- Function: `build_skater_state(query)`
+- Purpose: extract structured user information  
+
+**Includes:**
+- skill level (beginner / intermediate / advanced)  
+- jump signals (axel, double, etc.)  
+- body info (height, weight → categories)  
+- experience type (adult vs standard)  
+- goal (e.g., equipment recommendation)  
+
+**Usage:**
+- used later in prompt to condition answers  
+
+---
+
+### 3. Intent Classification (routing)
+
+- Function: `classify_query_intent(query, history)`
+- Purpose: decide how to process the query  
+
+**Current intents:**
+- `how_to` → actionable improvement  
+- `comparison` → compare options  
+- `diagnosis` → infer causes from symptoms  
+- `experience_lookup` → general explanation  
+- `default` → fallback  
