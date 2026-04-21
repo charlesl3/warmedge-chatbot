@@ -90,17 +90,23 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 
 ------------------------------------------------------------------------
 
+------------------------------------------------------------------------
+
 ## Agent Logic (Current)
 
 ### 1. Clarification (gatekeeping)
 
 - Function: `needs_clarification(query, history)`
-- Purpose: decide whether the system has enough information to answer
+- Purpose: decide whether the system has enough information to answer  
 
 **Behavior:**
 - detects vague or underspecified queries  
 - checks for missing skill level in recommendation questions  
 - uses history to avoid unnecessary clarification  
+
+**Execution update:**
+- runs after intent classification  
+- only triggers when `intent == "default"`  
 
 **If triggered:**
 - stops pipeline and asks a follow-up question  
@@ -121,6 +127,7 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 
 **Usage:**
 - used later in prompt to condition answers  
+- provides implicit context when user input is incomplete  
 
 ---
 
@@ -135,3 +142,43 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 - `diagnosis` → infer causes from symptoms  
 - `experience_lookup` → general explanation  
 - `default` → fallback  
+
+**Role:**
+- executed before clarification  
+- controls retrieval rewriting and response behavior  
+
+---
+
+### 4. Diagnosis Mode (structured reasoning)
+
+- Trigger: `intent == "diagnosis"`  
+
+**Behavior:**
+- enforces structured output:
+  - Likely causes  
+  - What to try  
+  - Notes  
+
+**Purpose:**
+- improves consistency and actionability of responses  
+- aligns output with underlying knowledge structure  
+
+---
+
+### 5. Retrieval Fallback (retry strategy)
+
+- Location: `answer_question()`  
+
+**Behavior:**
+- if initial retrieval is weak:
+  - generate fallback query  
+  - perform second retrieval  
+- if still weak:
+  - trigger clarification  
+
+**Flow:**
+- retrieve → weak → retry → (success → answer) / (fail → clarify)  
+
+**Purpose:**
+- reduces premature clarification  
+- improves robustness for vague but valid queries  

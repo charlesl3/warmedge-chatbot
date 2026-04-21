@@ -16,7 +16,7 @@ from rag.intents import (
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "rag_answer.txt"
 
 TOP_K = 6
-MIN_TOP_SCORE = 0.1
+MIN_TOP_SCORE = 0.6
 DEBUG = True
 
 MERGE_THRESHOLD = 0.60
@@ -207,6 +207,24 @@ def weak_retrieval(top_score: Optional[float]) -> bool:
 def clarify_message(track: str) -> str:
     return "Could you clarify which level you are referring to?"
 
+def build_fallback_query(question: str, intent: str) -> str:
+    q = question.lower().strip()
+
+    if intent == "diagnosis":
+        return f"{q} causes figure skating"
+
+    if intent == "how_to":
+        return f"{q} drills practice figure skating"
+
+    if intent == "comparison":
+        return f"{q} differences figure skating"
+
+    if intent == "experience_lookup":
+        return f"{q} common causes figure skating"
+
+    return f"{q} figure skating"
+
+
 def rewrite_query_by_intent(query: str, intent: str) -> str:
     if intent == "how_to":
         return f"{query} what to try technique steps figure skating"
@@ -294,7 +312,19 @@ def answer_question(question: str, history: List[Dict], intent: str = "default")
     retrieval = boost_with_feedback(query_embedding, retrieval)
 
     if weak_retrieval(retrieval.get("top_score")):
-        return clarify_message(track)
+        fallback_query = build_fallback_query(normalized, intent)
+        debug_print("[FALLBACK QUERY]", fallback_query)
+
+        fallback_embedding = EMBED_MODEL.encode(fallback_query, convert_to_numpy=True)
+        fallback_retrieval = retrieve(fallback_query, k=30, track=track)
+        fallback_retrieval = apply_priority_boost(fallback_retrieval)
+        fallback_retrieval = boost_with_feedback(fallback_embedding, fallback_retrieval)
+
+        if weak_retrieval(fallback_retrieval.get("top_score")):
+            return clarify_message(track)
+
+        retrieval = fallback_retrieval
+        query_embedding = fallback_embedding
 
     prompt = PROMPT_PATH.read_text()
 

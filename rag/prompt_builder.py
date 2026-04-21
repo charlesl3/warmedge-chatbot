@@ -23,9 +23,16 @@ def get_intent_instruction(intent: str) -> str:
     if intent == "diagnosis":
         return (
             "Task mode: diagnosis.\n"
-            "Infer likely causes from the user's described symptoms.\n"
-            "Do not overstate certainty.\n"
-            "List likely causes and what to try."
+            "Analyze the user's issue and structure the answer as follows:\n\n"
+
+            "Likely causes:\n"
+            "- List 2–3 plausible causes\n\n"
+
+            "What to try:\n"
+            "- Give concrete, practical fixes\n\n"
+
+            "Notes:\n"
+            "- Mention uncertainty or when it may differ\n"
         )
 
     if intent == "experience_lookup":
