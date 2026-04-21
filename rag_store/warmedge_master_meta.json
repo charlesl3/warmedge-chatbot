@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7219,
+  "total_vectors": 7354,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,1356 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1908 World Figure Skating Championships\n\n## 1. Document Overview: 1908 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and judge panels for the 1908 World Figure Skating Championships. It is structured for high-precision retrieval, documenting a milestone year that introduced pair skating to the World Championship stage.\n\n---",
+      "source_path": "data/manual_rag/worlds_1908.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1908",
+      "chunk_id": "data/manual_rag/worlds_1908.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1908 World Figure Skating Championships\n\n## 2. Event Metadata: 1908 World Figure Skating Championships\n* **Event Name:** 1908 World Figure Skating Championships\n* **Locations:** * **Singles (Men & Ladies):** Troppau, Austria-Hungary (January 25–26)\n    * **Pairs:** Saint Petersburg, Russian Empire (February 16)\n* **Venue (Pairs):** Yusupovsky Garden, Saint Petersburg\n* **Major Milestone:** 1908 is historically significant as the **first year pair skating was contested** at the World Championships. This year also saw **Ulrich Salchow** win his seventh title, tying the record held by Gilbert Fuchs at the time, and **Lily Kronberger** secure her first World title.\n\n---",
+      "source_path": "data/manual_rag/worlds_1908.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1908",
+      "chunk_id": "data/manual_rag/worlds_1908.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1908 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1908 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1908 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) defeated his long-time rival Gilbert Fuchs in a closely contested battle in Troppau. The rivalry between the \"Swedish School\" (Salchow) and the \"Munich School\" (Fuchs) continued to define the technical progression of the sport.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 9 |\n| 2 | **Gilbert Fuchs** (German Empire) | 12 |\n| 3 | **Heinrich Burger** (German Empire) | 21 |\n\n* **Judges:** Otto Bohatsch (AUT), C. Dorasil (GER), P. Engelhardt (GER), H. D. Faith (GBR), I. Forssling (SWE), Gustav Hügel (AUT), Otto Schöning (GER).\n\n### 3.2 Women's Singles: 1908 World Figure Skating Championships\n**Lily Kronberger** (Hungary) won her first World gold medal. Competing in Troppau, she defeated Elsa Rendschmidt in a small field, beginning her four-year reign as the premier female skater in the world.\n\n| Rank | Name | Points | Places (Ordinals) |\n| :--- | :--- | :---: | :---: |\n| 1 | **Lily Kronberger** (Hungary) | 204.90 | 5 |\n| 2 | **Elsa Rendschmidt** (German Empire) | — | 10 |\n\n* **Judges:** P. Engelhardt (GER), H. D. Faith (GBR), I. Forssling (SWE), Gustav Hügel (AUT), Otto Schöning (GER).\n\n### 3.3 Pairs: 1908 World Figure Skating Championships\nThe inaugural Pairs Championship was held in Saint Petersburg. The German pair **Anna Hübler and Heinrich Burger** made history as the first-ever World Pair Champions, defeating the British duo of Phyllis and James Johnson.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Anna Hübler / Heinrich Burger** (German Empire) | 5 |\n| 2 | **Phyllis Johnson / James Johnson** (Great Britain) | 11.5 |\n| 3 | **Lidia Popova / Alexander Fischer** (Russian Empire) | 13.5 |\n\n* **Judges:** Aleksandr Ivashentsov (RUS), J. Kettnitz (RUS), V. Shnobel (RUS), Vyacheslav Sreznevsky (RUS), Rudolf Sundgrén (RUS).\n\n---",
+      "source_path": "data/manual_rag/worlds_1908.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1908",
+      "chunk_id": "data/manual_rag/worlds_1908.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1908 World Figure Skating Championships\n\n## 4. Medal Table: 1908 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Germany (GER)** | 1 | 2 | 1 | 4 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 5 | **Russia (RUS)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1908.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1908",
+      "chunk_id": "data/manual_rag/worlds_1908.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1908 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1908 World Figure Skating Championships\n`Troppau 1908`, `Saint Petersburg 1908`, `Inaugural Pairs Championship`, `Ulrich Salchow 7th title`, `Lily Kronberger first gold`, `Hübler Burger gold`, `Gilbert Fuchs silver`, `ISU World Results 1908`.",
+      "source_path": "data/manual_rag/worlds_1908.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1908",
+      "chunk_id": "data/manual_rag/worlds_1908.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1909 World Figure Skating Championships\n\n## 1. Document Overview: 1913 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and judge panels for the 1909 World Figure Skating Championships. It is structured for high-precision retrieval, documenting the technical specifics of the early ISU scoring era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1909.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1909",
+      "chunk_id": "data/manual_rag/worlds_1909.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1909 World Figure Skating Championships\n\n## 2. Event Metadata: 1909 World Figure Skating Championships\n* **Event Name:** 1909 World Figure Skating Championships\n* **Locations:** * **Men & Pairs:** Stockholm, Sweden (February 7–8)\n    * **Ladies:** Budapest, Hungary (January 23–24)\n* **Historical Context:** 1909 was the year **Ulrich Salchow** performed his namesake jump, the \"Salchow,\" in competition for the first time. It also marked the second year of official Ladies and Pairs championships.\n\n---",
+      "source_path": "data/manual_rag/worlds_1909.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1909",
+      "chunk_id": "data/manual_rag/worlds_1909.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1909 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1909 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1909 World Figure Skating Championships\n**Ulrich Salchow** secured his 8th title, though he was closely challenged by Per Thorén. Notably, Ernst Herz (Austria) took the bronze, breaking what would have been another Swedish sweep.\n\n| Rank | Name | Points | Places (Ordinals) |\n| :--- | :--- | :---: | :---: |\n| 1 | **Ulrich Salchow** (SWE) | 413.0 | 7 |\n| 2 | **Per Thorén** (SWE) | 407.5 | 10 |\n| 3 | **Ernst Herz** (AUT) | 388.1 | 16 |\n| 4 | **Richard Johansson** (SWE) | — | 20 |\n| 5 | **Fedor Datlin** (RUS) | — | 22 |\n\n* **Judges:** Georg Helfrich, Edward Hörle, O. Sampe, Rudolf Sundgrén, O. C. Thorstensen.\n\n### 3.2 Women's Singles: 1909 World Figure Skating Championships\n**Lily Kronberger** (Hungary) was the sole competitor. Despite being alone in the field, she was required to perform to a championship standard to be awarded the gold. This performance is historic for being one of the first times a skater used musical accompaniment.\n\n* **Competitor:** **Lily Kronberger** (HUN) — **Gold Medal**\n* **Technical Scores:** Compulsory Figures (CF): 769 | Free Skating (FS): 513\n* **Total Score:** 1282 | **Points:** 256.4\n* **Referee:** Imre Szent-Györgyi\n* **Judges:** Carl Fillunger, Georg Helfrich, Edward Hörle, Ludwig Niedermeyer, Oskar Uhlig.\n\n### 3.3 Pairs: 1909 World Figure Skating Championships\nThe British pair **Phyllis and James Johnson** won their first World title, narrowly defeating a predominantly Scandinavian and German-Finnish field.\n\n| Rank | Name | Points | Places (Ordinals) |\n| :--- | :--- | :---: | :---: |\n| 1 | **Phyllis Johnson / James Johnson** (GBR) | 116.0 | 5.5 |\n| 2 | **Valborg Lindahl / Nils Rosenius** (SWE) | 111.0 | 9.5 |\n| 3 | **Gertrud Ström / Richard Johansson** (SWE) | 94.0 | 16 |\n| 4 | **Mimi Grømer / Karl Erikson** (NOR) | — | 22 |\n| 5 | **Alexia Schøien / Yngvar Bryn** (NOR) | 19/27 | 22 |\n\n* **Judges:** August Anderberg, Georg Helfrich, Otto Petterson, Rudolf Sundgrén, O. C. Thorstensen.\n* **Note on Judging:** O. C. Thorstensen notably gave the top two couples identical scores (1.5) and the remaining three identical scores (4.0).\n\n---",
+      "source_path": "data/manual_rag/worlds_1909.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1909",
+      "chunk_id": "data/manual_rag/worlds_1909.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1909 World Figure Skating Championships\n\n## 4. Medal Table: 1909 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 2 | 1 | 4 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 2 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 4 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1909.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1909",
+      "chunk_id": "data/manual_rag/worlds_1909.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1909 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1909 World Figure Skating Championships\n`Stockholm 1909`, `Budapest 1909`, `Lily Kronberger 1282 points`, `Ulrich Salchow 8th title`, `Ernst Herz bronze`, `Phyllis James Johnson gold`, `ISU results 1909`, `first Salchow jump competition`.",
+      "source_path": "data/manual_rag/worlds_1909.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1909",
+      "chunk_id": "data/manual_rag/worlds_1909.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1910 World Figure Skating Championships\n\n## 1. Document Overview: 1910 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1910 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the continuation of the \"Salchow Era\" and the third consecutive world title for Hungary's Lily Kronberger.\n\n---",
+      "source_path": "data/manual_rag/worlds_1910.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1910",
+      "chunk_id": "data/manual_rag/worlds_1910.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1910 World Figure Skating Championships\n\n## 2. Event Metadata: 1910 World Figure Skating Championships\n* **Event Name:** 1910 World Figure Skating Championships\n* **Locations:** * **Men:** Davos, Switzerland (January 29–30)\n    * **Ladies:** Berlin, German Empire (February 4)\n    * **Pairs:** Berlin, German Empire (February 4)\n* **Major Milestone:** 1910 featured the **ninth World title for Ulrich Salchow**, bringing him within one win of his eventual record of ten. This year also highlighted the dominance of the Hungarian school in the ladies' discipline and the emergence of the German-Finnish partnership of Eilers and Jakobsson in the pairs event.\n\n---",
+      "source_path": "data/manual_rag/worlds_1910.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1910",
+      "chunk_id": "data/manual_rag/worlds_1910.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1910 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1910 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1910 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) won the gold medal in Davos. Salchow’s dominance remained absolute, as he secured first-place ordinals from nearly every judge. His performance was a showcase of the \"Swedish School,\" emphasizing athletic jumps and sophisticated edge work that remained the international benchmark.\n* **Gold:** **Ulrich Salchow** (Sweden) — Ordinal: 11\n* **Silver:** **Werner Rittberger** (German Empire) — Ordinal: 14\n* **Bronze:** **Andor Szende** (Hungary) — Ordinal: 20\n\n### 3.2 Women's Singles: 1910 World Figure Skating Championships\n**Lily Kronberger** (Hungary) won her third consecutive World gold medal. Competing in Berlin, she was the sole dominant force in the ladies' field. Kronberger was known for her innovation; she was the first skater to incorporate musical accompaniment into her free skating program, a practice that would later become a mandatory standard.\n* **Gold:** **Lily Kronberger** (Hungary) — Ordinal: 5\n* **Silver:** **Elsa Rendschmidt** (German Empire) — Ordinal: 10\n\n### 3.3 Pairs: 1910 World Figure Skating Championships\n**Anna Hübler and Heinrich Burger** (German Empire) won the gold medal. The reigning Olympic champions (from 1908) successfully defended their world title on home ice in Berlin, defeating the emerging pair of Eilers and Jakobsson. Their program was noted for its speed and pioneering athletic unison.\n* **Gold:** **Anna Hübler / Heinrich Burger** (German Empire) — Ordinal: 8.5\n* **Silver:** **Ludowika Eilers / Walter Jakobsson** (German Empire / Finland) — Ordinal: 9.5\n* **Bronze:** **Phyllis Johnson / James H. Johnson** (Great Britain) — Ordinal: 12\n\n---",
+      "source_path": "data/manual_rag/worlds_1910.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1910",
+      "chunk_id": "data/manual_rag/worlds_1910.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1910 World Figure Skating Championships\n\n## 4. Medal Table: 1910 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **German Empire (GER)** | 1 | 2 | 0 | 3 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 1 | 2 |\n| 4 | **Finland (FIN)*** | 0 | 1 | 0 | 1 |\n| 5 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n*\\*Note: The silver medal in pairs was a joint entry between Germany and Finland.*\n\n---",
+      "source_path": "data/manual_rag/worlds_1910.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1910",
+      "chunk_id": "data/manual_rag/worlds_1910.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1910 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1910 World Figure Skating Championships\n`Davos 1910`, `Berlin 1910`, `Ulrich Salchow 9th gold`, `Lily Kronberger 3rd title`, `Hübler Burger gold`, `Werner Rittberger silver`, `Music in figure skating`, `ISU World Results 1910`.",
+      "source_path": "data/manual_rag/worlds_1910.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1910",
+      "chunk_id": "data/manual_rag/worlds_1910.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1911 World Figure Skating Championships\n\n## 1. Document Overview: 1911 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1911 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year of legendary records and the final title of Ulrich Salchow’s unprecedented decade of dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1911.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1911",
+      "chunk_id": "data/manual_rag/worlds_1911.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1911 World Figure Skating Championships\n\n## 2. Event Metadata: 1911 World Figure Skating Championships\n* **Event Name:** 1911 World Figure Skating Championships\n* **Locations:** * **Men:** Berlin, German Empire (February 2–3)\n    * **Ladies:** Vienna, Austria-Hungary (January 22)\n    * **Pairs:** Vienna, Austria-Hungary (January 22)\n* **Major Milestone:** 1911 was a monumental year in figure skating history. **Ulrich Salchow won his 10th World title**, a record for the most Men's World titles that stands to this day. Additionally, the pairs event featured **Ludowika Eilers and Walter Jakobsson**, who competed as a \"mixed\" pair representing two different nations (Germany and Finland) before marrying later that year.\n\n---",
+      "source_path": "data/manual_rag/worlds_1911.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1911",
+      "chunk_id": "data/manual_rag/worlds_1911.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1911 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1911 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1911 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) secured his 10th and final World gold medal. In a highly competitive event in Berlin, Salchow narrowly defeated the young German Werner Rittberger. The competition was so close that three judges had Salchow first, while three others preferred his rivals, but Salchow's superior total point score and ordinal placement secured his historic victory.\n* **Gold:** **Ulrich Salchow** (Sweden) — Ordinal: 14\n* **Silver:** **Werner Rittberger** (German Empire) — Ordinal: 17\n* **Bronze:** **Fritz Kachler** (Austria) — Ordinal: 20\n\n### 3.2 Women's Singles: 1911 World Figure Skating Championships\n**Lily Kronberger** (Hungary) won her fourth consecutive World gold medal. Competing in Vienna, she remained the dominant force in the ladies' discipline. Notably, this was the first year she was challenged by her compatriot Zsófia Méray-Horváth, who would eventually succeed her.\n* **Gold:** **Lily Kronberger** (Hungary) — Ordinal: 7\n* **Silver:** **Zsófia Méray-Horváth** (Hungary) — Ordinal: 14\n* **Bronze:** **Ludowika Eilers** (German Empire) — Ordinal: 21\n\n### 3.3 Pairs: 1911 World Figure Skating Championships\n**Ludowika Eilers and Walter Jakobsson** won the gold medal. At the time of the competition, they represented two different nations: Eilers for the German Empire and Jakobsson for the Grand Duchy of Finland. They were the only competitors in the category, but they delivered a high-caliber performance that justified the gold.\n* **Gold:** **Ludowika Eilers (GER) / Walter Jakobsson (FIN)** — Ordinal: 5\n* **Note:** After their marriage later in 1911, they competed solely for Finland.\n\n---",
+      "source_path": "data/manual_rag/worlds_1911.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1911",
+      "chunk_id": "data/manual_rag/worlds_1911.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1911 World Figure Skating Championships\n\n## 4. Medal Table: 1911 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Hungary (HUN)** | 1 | 1 | 0 | 2 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **German Empire (GER)*** | 0.5 | 1 | 1 | 2.5 |\n| 4 | **Finland (FIN)*** | 0.5 | 0 | 0 | 0.5 |\n| 5 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n*\\*The Pairs gold is shared between Germany and Finland in historical tallies.*\n\n---",
+      "source_path": "data/manual_rag/worlds_1911.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1911",
+      "chunk_id": "data/manual_rag/worlds_1911.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1911 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1911 World Figure Skating Championships\n`Berlin 1911`, `Vienna 1911`, `Ulrich Salchow 10th gold`, `Lily Kronberger 4th title`, `Ludowika Eilers Walter Jakobsson gold`, `Werner Rittberger silver`, `Salchow record`, `ISU World Results 1911`.",
+      "source_path": "data/manual_rag/worlds_1911.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1911",
+      "chunk_id": "data/manual_rag/worlds_1911.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1912 World Figure Skating Championships\n\n## 1. Document Overview: 1912 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1912 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the transition of leadership in all three major disciplines during the pre-war era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1912.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1912",
+      "chunk_id": "data/manual_rag/worlds_1912.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1912 World Figure Skating Championships\n\n## 2. Event Metadata: 1912 World Figure Skating Championships\n* **Event Name:** 1912 World Figure Skating Championships\n* **Locations:** * **Men:** Manchester, United Kingdom (February 16–17)\n    * **Ladies:** Davos, Switzerland (January 27–28)\n    * **Pairs:** Manchester, United Kingdom (February 16–17)\n* **Major Milestone:** 1912 marked the **first World title for Fritz Kachler**, who would become one of the most decorated Austrian skaters. It also saw the beginning of **Opika von Méray Horváth's** three-year reign as the World Champion.\n\n---",
+      "source_path": "data/manual_rag/worlds_1912.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1912",
+      "chunk_id": "data/manual_rag/worlds_1912.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1912 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1912 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1912 World Figure Skating Championships\n**Fritz Kachler** (Austria) won his first World gold medal in Manchester. Following the retirement of Ulrich Salchow from World competition, the path opened for the \"Viennese School.\" Kachler’s victory was notable for his exceptional precision in the compulsory circles, a discipline he would master throughout his career.\n* **Gold:** **Fritz Kachler** (Austria) — Ordinal: 8\n* **Silver:** **Werner Rittberger** (Germany) — Ordinal: 13\n* **Bronze:** **Andor Szende** (Hungary) — Ordinal: 15\n\n### 3.2 Women's Singles: 1912 World Figure Skating Championships\n**Opika von Méray Horváth** (Hungary) won her first World gold medal. Competing in Davos, she successfully filled the void left by her compatriot Lily Kronberger. Horváth was praised for her athletic jumps and powerful skating style, which began to modernize the ladies' discipline.\n* **Gold:** **Opika von Méray Horváth** (Hungary) — Ordinal: 7\n* **Silver:** **Dorothy Greenhough-Smith** (Great Britain) — Ordinal: 14\n* **Bronze:** **Phyllis Johnson** (Great Britain) — Ordinal: 18\n\n### 3.3 Pairs: 1912 World Figure Skating Championships\n**Phyllis Johnson and James H. Johnson** (Great Britain) won the gold medal. The Johnsons regained the title they had first won in 1909, defeating the Finnish pair Ludovika and Walter Jakobsson. The British pair was celebrated for their innovative synchronization and artistic chemistry.\n* **Gold:** **Phyllis Johnson / James H. Johnson** (Great Britain) — Ordinal: 8.5\n* **Silver:** **Ludovika Jakobsson / Walter Jakobsson** (Finland) — Ordinal: 10\n* **Bronze:** **Alexia Bryn / Yngvar Bryn** (Norway) — Ordinal: 14\n\n---",
+      "source_path": "data/manual_rag/worlds_1912.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1912",
+      "chunk_id": "data/manual_rag/worlds_1912.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1912 World Figure Skating Championships\n\n## 4. Medal Table: 1912 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 1 | 1 | 1 | 3 |\n| 2 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 4 | **Germany (GER)** | 0 | 1 | 1 | 2 |\n| 5 | **Finland (FIN)** | 0 | 1 | 0 | 1 |\n| 6 | **Norway (NOR)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1912.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1912",
+      "chunk_id": "data/manual_rag/worlds_1912.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1912 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1912 World Figure Skating Championships\n`Manchester 1912`, `Davos 1912`, `Fritz Kachler first gold`, `Opika von Méray Horváth first gold`, `Johnson Pair 2nd title`, `Pre-WWI Figure Skating`, `Viennese School dominance`, `ISU World Results 1912`.",
+      "source_path": "data/manual_rag/worlds_1912.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1912",
+      "chunk_id": "data/manual_rag/worlds_1912.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1913 World Figure Skating Championships\n\n## 1. Document Overview: 1913 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1913 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it captures the final period of pre-WWI stability in the sport, dominated by the Austrian and Hungarian schools.\n\n---",
+      "source_path": "data/manual_rag/worlds_1913.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1913",
+      "chunk_id": "data/manual_rag/worlds_1913.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1913 World Figure Skating Championships\n\n## 2. Event Metadata: 1913 World Figure Skating Championships\n* **Event Name:** 1913 World Figure Skating Championships\n* **Locations:** * **Men:** Vienna, Austria (February 23)\n    * **Ladies:** Stockholm, Sweden (February 10–11)\n    * **Pairs:** Stockholm, Sweden (February 10–11)\n* **Major Milestone:** The 1913 season saw the continuation of the legendary **Opika von Méray Horváth's** reign and the second World title for the Finnish-German pair, the **Jakobssons**. It was also a significant year for the host nation, Austria, which performed strongly in the men's event.\n\n---",
+      "source_path": "data/manual_rag/worlds_1913.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1913",
+      "chunk_id": "data/manual_rag/worlds_1913.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1913 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1913 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1913 World Figure Skating Championships\n**Fritz Kachler** (Austria) won his second World gold medal on home ice in Vienna. Kachler was a primary representative of the \"Viennese School,\" which prioritized the geometric perfection of compulsory figures. He successfully defended his title against a strong international field including teammates and Swedish challengers.\n* **Gold:** **Fritz Kachler** (Austria) — Ordinal: 5\n* **Silver:** **Willy Böckl** (Austria) — Ordinal: 13\n* **Bronze:** **Andor Szende** (Hungary) — Ordinal: 16\n\n### 3.2 Women's Singles: 1913 World Figure Skating Championships\n**Opika von Méray Horváth** (Hungary) won her second consecutive World gold medal. In Stockholm, she demonstrated a level of athletic consistency that separated her from the rest of the field. Her victory was nearly unanimous among the panel of judges.\n* **Gold:** **Opika von Méray Horváth** (Hungary) — Ordinal: 5\n* **Silver:** **Phyllis Johnson** (Great Britain) — Ordinal: 17\n* **Bronze:** **Svea Norén** (Sweden) — Ordinal: 17\n* **Note:** Phyllis Johnson secured the silver medal over Svea Norén based on total points.\n\n### 3.3 Pairs: 1913 World Figure Skating Championships\n**Ludovika Jakobsson and Walter Jakobsson** (Finland) won their second World gold medal. The Jakobssons were renowned for their synchronization and the classical elegance of their programs. They defeated the rising Austrian pair and the British pair in a closely contested competition.\n* **Gold:** **Ludovika Jakobsson / Walter Jakobsson** (Finland) — Ordinal: 7\n* **Silver:** **Helene Engelmann / Karl Mejstrik** (Austria) — Ordinal: 11\n* **Bronze:** **Phyllis Johnson / James H. Johnson** (Great Britain) — Ordinal: 12\n\n---",
+      "source_path": "data/manual_rag/worlds_1913.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1913",
+      "chunk_id": "data/manual_rag/worlds_1913.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1913 World Figure Skating Championships\n\n## 4. Medal Table: 1913 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 2 | 0 | 3 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 1 | 2 |\n| 3 | **Finland (FIN)** | 1 | 0 | 0 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 1 | 1 | 2 |\n| 5 | **Sweden (SWE)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1913.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1913",
+      "chunk_id": "data/manual_rag/worlds_1913.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1913 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1913 World Figure Skating Championships\n`Vienna 1913`, `Stockholm 1913`, `Fritz Kachler 2nd gold`, `Opika von Méray Horváth 2nd title`, `Jakobsson Pair gold`, `Phyllis Johnson silver`, `Pre-WWI figure skating`, `ISU World Results 1913`.",
+      "source_path": "data/manual_rag/worlds_1913.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1913",
+      "chunk_id": "data/manual_rag/worlds_1913.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1914 World Figure Skating Championships\n\n## 1. Document Overview: 1914 World Figure Skating Championships\nThis document contains the verified final results and historical milestones of the 1914 World Figure Skating Championships. It is a critical historical record as it represents the **final international competition held before the outbreak of World War I**, which subsequently halted the sport for seven years.\n\n---",
+      "source_path": "data/manual_rag/worlds_1914.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1914",
+      "chunk_id": "data/manual_rag/worlds_1914.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1914 World Figure Skating Championships\n\n## 2. Event Metadata: 1914 World Figure Skating Championships\n* **Event Name:** 1914 World Figure Skating Championships\n* **Locations:** * **Men:** Helsinki, Grand Duchy of Finland (February 21–22)\n    * **Ladies:** St. Moritz, Switzerland (January 24–25)\n    * **Pairs:** St. Moritz, Switzerland (January 24–25)\n* **Major Milestone:** This was the last unified championship of the \"Edwardian Era.\" It featured the final World title for **Götz Sandahl** and the emergence of **Helene Engelmann**, who would dominate the pairs discipline for a decade across the war-time gap.\n\n---",
+      "source_path": "data/manual_rag/worlds_1914.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1914",
+      "chunk_id": "data/manual_rag/worlds_1914.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1914 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1914 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1914 World Figure Skating Championships\n**Götz Sandahl** (Sweden) won the gold medal. Sandahl's victory continued the \"Swedish School\" tradition established by Ulrich Salchow. He narrowly defeated the Austrian Fritz Kachler in a competition defined by extremely high marks in compulsory figures.\n* **Gold:** **Götz Sandahl** (Sweden) — Ordinal: 12\n* **Silver:** **Fritz Kachler** (Austria) — Ordinal: 17\n* **Bronze:** **Willy Böckl** (Austria) — Ordinal: 17\n* **Note:** Kachler took silver over Böckl based on total point calculations.\n\n### 3.2 Women's Singles: 1914 World Figure Skating Championships\n**Opika von Méray Horváth** (Hungary) won her third consecutive World gold medal. Horváth was the second great female champion in history (following Lily Kronberger). Her retirement after this event, coupled with the onset of war, marked the end of the early pioneer era of ladies' skating.\n* **Gold:** **Opika von Méray Horváth** (Hungary) — Ordinal: 6\n* **Silver:** **Angela Hanka** (Austria) — Ordinal: 10\n* **Bronze:** **Phyllis Johnson** (Great Britain) — Ordinal: 14\n\n### 3.3 Pairs: 1914 World Figure Skating Championships\n**Helene Engelmann and Karl Mejstrik** (Austria) won the gold medal. This victory established Engelmann as the premier pair skater of the era. Notably, the silver medalists were the Jakobssons, who would have to wait until after the war (1920/1923) to reclaim their world dominance.\n* **Gold:** **Helene Engelmann / Karl Mejstrik** (Austria) — Ordinal: 7\n* **Silver:** **Ludovika Jakobsson / Walter Jakobsson** (Finland) — Ordinal: 11\n* **Bronze:** **Margaret Metzner / Paul Metzner** (Germany) — Ordinal: 15\n\n---",
+      "source_path": "data/manual_rag/worlds_1914.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1914",
+      "chunk_id": "data/manual_rag/worlds_1914.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1914 World Figure Skating Championships\n\n## 4. Medal Table: 1914 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 2 | 1 | 4 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 4 | **Finland (FIN)** | 0 | 1 | 0 | 1 |\n| 5 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n| 5 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1914.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1914",
+      "chunk_id": "data/manual_rag/worlds_1914.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1914 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1914 World Figure Skating Championships\n`Helsinki 1914`, `St. Moritz 1914`, `Götz Sandahl gold`, `Opika von Méray Horváth 3rd title`, `Helene Engelmann first gold`, `Last Worlds before WWI`, `Pre-war skating results`, `ISU World Results 1914`.",
+      "source_path": "data/manual_rag/worlds_1914.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1914",
+      "chunk_id": "data/manual_rag/worlds_1914.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 1. Document Overview: The Great War Interruption\nThis document summarizes the seven-year hiatus of the World Figure Skating Championships between 1915 and 1921. It documents the impact of geopolitical conflict on international sport and the eventual restoration of the competitive figure skating calendar.\n\n---",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 2. Event Metadata: Suspension Period\n* **Years of Suspension:** 1915, 1916, 1917, 1918, 1919, 1920, 1921\n* **Primary Cause:** **World War I** (The Great War) and its geopolitical aftermath.\n* **Governing Body:** International Skating Union (ISU).\n* **Significant Exception:** The **1920 Summer Olympics** in Antwerp, which featured figure skating as a \"bridge\" event despite the lack of World Championships.\n\n---",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 3. Timeline of the Hiatus\n\n### 3.1 The War Years (1915–1918)\nUpon the escalation of World War I, the ISU suspended all championship activities. The mobilization of male skaters for military service and the severe restrictions on international travel rendered global competition impossible.\n* **Status:** Total Cancellation.\n* **Impact:** Loss of competitive prime for many pre-war athletes and the destruction of various training facilities in Central Europe.\n\n### 3.2 The Immediate Post-War Years (1919–1921)\nFollowing the 1918 Armistice, the ISU faced internal division. Tensions remained high regarding the participation of athletes from the former Central Powers (specifically Austria and Germany), who had historically dominated the sport.\n* **Status:** Administrative Suspension.\n* **Result:** While national championships resumed in some countries, the \"World\" stage remained closed as the ISU reorganized and waited for political stability to return to Europe.\n\n---",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 4. The 1920 Antwerp Olympic Exception\nAlthough no World Championships were held in 1920, figure skating was included in the **Antwerp Summer Games**. This event is historically vital because it allowed the world to see the technical evolution that had occurred privately during the war.\n* **Men's Gold:** Gillis Grafström (Sweden)\n* **Ladies' Gold:** Magda Julin (Sweden)\n* **Pairs' Gold:** Ludovika Jakobsson / Walter Jakobsson (Finland)\n\n\n\n---",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 5. Restoration: 1922\nThe hiatus officially ended in 1922 when the ISU successfully coordinated a multi-location championship, marking a new era of professionalism and athletic rigor in the sport.\n\n| Era | Status | Primary Characteristics |\n| :--- | :--- | :--- |\n| **1900–1914** | Active | Pre-War Classical Period; Rise of Ulrich Salchow. |\n| **1915–1921** | **Suspended** | **Total interruption due to WWI and reconstruction.** |\n| **1922–1939** | Active | The Golden Age; Rise of Grafström, Szabo, and Henie. |\n\n---",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1915–1921 Suspension of World Figure Skating Championships\n\n## 6. Key Keywords for RAG Search: 1915-1921 Hiatus\n`WWI suspension`, `ISU history 1915-1921`, `Cancelled World Championships`, `Antwerp 1920 Figure Skating`, `Post-war sports recovery`, `Great War impact on skating`, `Interwar figure skating transition`.",
+      "source_path": "data/manual_rag/worlds_1921.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1921",
+      "chunk_id": "data/manual_rag/worlds_1921.md::chunk_6"
+    },
+    {
+      "text": "# Reference: 1922 World Figure Skating Championships\n\n## 1. Document Overview: 1922 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1922 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the historic first unified World Championship following the conclusion of World War I.\n\n---",
+      "source_path": "data/manual_rag/worlds_1922.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1922",
+      "chunk_id": "data/manual_rag/worlds_1922.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1922 World Figure Skating Championships\n\n## 2. Event Metadata: 1922 World Figure Skating Championships\n* **Event Name:** 1922 World Figure Skating Championships\n* **Locations:** * **Men:** Stockholm, Sweden (February 11–12)\n    * **Ladies:** Davos, Switzerland (February 4–6)\n    * **Pairs:** Davos, Switzerland (February 4–6)\n* **Major Milestone:** 1922 marked the **official resumption of the World Championships** for all disciplines after a seven-year hiatus (1915–1921) caused by World War I. This year also saw the debut of **Herma Szabo**, who would become the defining female skater of the decade.\n\n---",
+      "source_path": "data/manual_rag/worlds_1922.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1922",
+      "chunk_id": "data/manual_rag/worlds_1922.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1922 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1922 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1922 World Figure Skating Championships\n**Gillis Grafström** (Sweden) won his first World gold medal. Although he had already won Olympic gold in 1920, this was his first opportunity to compete for the World title. He dominated the competition in his home city of Stockholm, showcasing the elegance and revolutionary \"spiral\" techniques that would redefine the sport.\n* **Gold:** **Gillis Grafström** (Sweden) — Ordinal: 7\n* **Silver:** **Fritz Kachler** (Austria) — Ordinal: 8\n* **Bronze:** **Willy Böckl** (Austria) — Ordinal: 15\n\n### 3.2 Women's Singles: 1922 World Figure Skating Championships\n**Herma Szabo** (Austria) won her first World gold medal. Competing in Davos, Szabo established herself as the premier female skater of the post-war era. Her victory was unanimous, signaling the start of a five-year undefeated streak in the World Championships.\n* **Gold:** **Herma Szabo** (Austria) — Ordinal: 5\n* **Silver:** **Svea Norén** (Sweden) — Ordinal: 11\n* **Bronze:** **Margot Moe** (Norway) — Ordinal: 14\n\n### 3.3 Pairs: 1922 World Figure Skating Championships\n**Helene Engelmann and Alfred Berger** (Austria) won the gold medal. Engelmann, who had won the last pre-war title in 1914 with a different partner, returned to the top of the podium with Berger. They defeated the reigning Olympic champions, the Jakobssons, through superior technical difficulty.\n* **Gold:** **Helene Engelmann / Alfred Berger** (Austria) — Ordinal: 6\n* **Silver:** **Ludovika Jakobsson / Walter Jakobsson** (Finland) — Ordinal: 9\n* **Bronze:** **Margaret Metzner / Paul Metzner** (Germany) — Ordinal: 15\n\n---",
+      "source_path": "data/manual_rag/worlds_1922.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1922",
+      "chunk_id": "data/manual_rag/worlds_1922.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1922 World Figure Skating Championships\n\n## 4. Medal Table: 1922 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 2 | 1 | 1 | 4 |\n| 2 | **Sweden (SWE)** | 1 | 1 | 0 | 2 |\n| 3 | **Finland (FIN)** | 0 | 1 | 0 | 1 |\n| 4 | **Norway (NOR)** | 0 | 0 | 1 | 1 |\n| 4 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1922.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1922",
+      "chunk_id": "data/manual_rag/worlds_1922.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1922 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1922 World Figure Skating Championships\n`Stockholm 1922`, `Davos 1922`, `Gillis Grafström first gold`, `Herma Szabo first gold`, `Engelmann Berger gold`, `Post-WWI resumption`, `ISU World Results 1922`, `Viennese School`.",
+      "source_path": "data/manual_rag/worlds_1922.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1922",
+      "chunk_id": "data/manual_rag/worlds_1922.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1923 World Figure Skating Championships\n\n## 1. Document Overview: 1923 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1923 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the second post-war unified competitive season.\n\n---",
+      "source_path": "data/manual_rag/worlds_1923.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1923",
+      "chunk_id": "data/manual_rag/worlds_1923.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1923 World Figure Skating Championships\n\n## 2. Event Metadata: 1923 World Figure Skating Championships\n* **Event Name:** 1923 World Figure Skating Championships\n* **Locations:** * **Men:** Vienna, Austria (January 27–28)\n    * **Ladies:** Vienna, Austria (January 27–28)\n    * **Pairs:** Oslo, Norway (February 4–6)\n* **Major Milestone:** 1923 was a year of intense competition between the established pre-war masters and the emerging post-war stars. It featured the return of the Championships to Vienna, the heart of European skating, and marked the second consecutive World title for **Herma Szabo**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1923.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1923",
+      "chunk_id": "data/manual_rag/worlds_1923.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1923 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1923 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1923 World Figure Skating Championships\n**Fritz Kachler** (Austria) won his third and final World gold medal. Competing on home ice in Vienna, Kachler’s performance was a masterclass in the traditional Viennese style, emphasizing deep edges and intricate compulsory figures. He narrowly defeated his teammate Willy Böckl.\n* **Gold:** **Fritz Kachler** (Austria) — Ordinal: 7\n* **Silver:** **Willy Böckl** (Austria) — Ordinal: 12\n* **Bronze:** **Gösta Sandahl** (Sweden) — Ordinal: 16\n\n### 3.2 Women's Singles: 1923 World Figure Skating Championships\n**Herma Szabo** (Austria) won her second consecutive World gold medal. Szabo continued her undisputed reign in the ladies' discipline. Her technical ability in the compulsory figures provided a lead that her competitors, primarily from the Austrian and British schools, could not overcome in the free skating portion.\n* **Gold:** **Herma Szabo** (Austria) — Ordinal: 6\n* **Silver:** **Gisela Reichmann** (Austria) — Ordinal: 12\n* **Bronze:** **Svea Norén** (Sweden) — Ordinal: 16\n\n### 3.3 Pairs: 1923 World Figure Skating Championships\n**Ludovika Jakobsson and Walter Jakobsson** (Finland) won their third World gold medal. Competing in Oslo, the Jakobssons demonstrated the strength of the Nordic pair skating tradition. They were celebrated for their exceptional unison and the classical maturity of their program.\n* **Gold:** **Ludovika Jakobsson / Walter Jakobsson** (Finland) — Ordinal: 6.5\n* **Silver:** **Alexia Bryn / Yngvar Bryn** (Norway) — Ordinal: 11.5\n* **Bronze:** **Elna Henrikson / Kaj af Ekström** (Sweden) — Ordinal: 12\n\n---",
+      "source_path": "data/manual_rag/worlds_1923.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1923",
+      "chunk_id": "data/manual_rag/worlds_1923.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1923 World Figure Skating Championships\n\n## 4. Medal Table: 1923 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 2 | 2 | 0 | 4 |\n| 2 | **Finland (FIN)** | 1 | 0 | 0 | 1 |\n| 3 | **Norway (NOR)** | 0 | 1 | 0 | 1 |\n| 4 | **Sweden (SWE)** | 0 | 0 | 3 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1923.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1923",
+      "chunk_id": "data/manual_rag/worlds_1923.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1923 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1923 World Figure Skating Championships\n`Vienna 1923`, `Oslo 1923`, `Fritz Kachler 3rd gold`, `Herma Szabo 2nd gold`, `Jakobsson Pair 3rd gold`, `Post-WWI skating`, `Viennese School`, `ISU World Results 1923`.",
+      "source_path": "data/manual_rag/worlds_1923.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1923",
+      "chunk_id": "data/manual_rag/worlds_1923.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1924 World Figure Skating Championships\n\n## 1. Document Overview: 1924 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1924 World Figure Skating Championships. Structured for RAG-based systems, it documents a pivotal year that coincided with the first-ever Winter Olympic Games in Chamonix.\n\n---",
+      "source_path": "data/manual_rag/worlds_1924.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1924",
+      "chunk_id": "data/manual_rag/worlds_1924.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1924 World Figure Skating Championships\n\n## 2. Event Metadata: 1924 World Figure Skating Championships\n* **Event Name:** 1924 World Figure Skating Championships\n* **Locations:** * **Men:** Manchester, United Kingdom (February 26–27)\n    * **Ladies:** Oslo, Norway (February 16–17)\n    * **Pairs:** Manchester, United Kingdom (February 26–27)\n* **Major Milestone:** 1924 was the year of the inaugural Winter Olympics. While the Olympics took place in Chamonix, the World Championships remained the primary annual benchmark for the sport. This year saw the continued dominance of the Austrian school and the third consecutive world title for **Herma Szabo**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1924.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1924",
+      "chunk_id": "data/manual_rag/worlds_1924.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1924 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1924 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1924 World Figure Skating Championships\n**Gillis Grafström** (Sweden) won the gold medal. After winning the Olympic gold in Chamonix just weeks prior, Grafström traveled to Manchester to claim his second World title. His performance was noted for its incredible precision in compulsory figures, a hallmark of his legendary skating style.\n* **Gold:** **Gillis Grafström** (Sweden) — Ordinal: 5\n* **Silver:** **Wilhelm Boeckl** (Austria) — Ordinal: 10\n* **Bronze:** **Ernst Oppacher** (Austria) — Ordinal: 15\n\n### 3.2 Women's Singles: 1924 World Figure Skating Championships\n**Herma Szabo** (Austria) won her third consecutive World gold medal. Competing in Oslo, Szabo was the undisputed leader of the ladies' discipline. Her victory in 1924 further cemented her legacy as the dominant force of the early 1920s, blending athletic power with the refined elegance of the Viennese style.\n* **Gold:** **Herma Szabo** (Austria) — Ordinal: 5\n* **Silver:** **Ellen Brockhöft** (Germany) — Ordinal: 12\n* **Bronze:** **Beatrix Loughran** (United States) — Ordinal: 16\n\n### 3.3 Pairs: 1924 World Figure Skating Championships\n**Helene Engelmann and Alfred Berger** (Austria) won the gold medal. The pair successfully defended their status as the world's best, following their Olympic victory in Chamonix. Their program was celebrated for its unison and technical difficulty, outscoring the British and fellow Austrian challengers in Manchester.\n* **Gold:** **Helene Engelmann / Alfred Berger** (Austria) — Ordinal: 5\n* **Silver:** **Ethel Muckelt / John Page** (Great Britain) — Ordinal: 10\n* **Bronze:** **Elna Henrikson / Kaj af Ekström** (Sweden) — Ordinal: 15\n\n---",
+      "source_path": "data/manual_rag/worlds_1924.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1924",
+      "chunk_id": "data/manual_rag/worlds_1924.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1924 World Figure Skating Championships\n\n## 4. Medal Table: 1924 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 2 | 1 | 1 | 4 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 1 | 2 |\n| 3 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 3 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 5 | **United States (USA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1924.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1924",
+      "chunk_id": "data/manual_rag/worlds_1924.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1924 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1924 World Figure Skating Championships\n`Manchester 1924`, `Oslo 1924`, `Gillis Grafström 2nd gold`, `Herma Szabo 3rd gold`, `Engelmann Berger gold`, `Inaugural Olympic Year`, `Viennese School`, `ISU World Results 1924`.",
+      "source_path": "data/manual_rag/worlds_1924.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1924",
+      "chunk_id": "data/manual_rag/worlds_1924.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1925 World Figure Skating Championships\n\n## 1. Document Overview: 1925 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1925 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year of significant Austrian dominance and the continued technical evolution of the sport in the mid-1920s.\n\n---",
+      "source_path": "data/manual_rag/worlds_1925.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1925",
+      "chunk_id": "data/manual_rag/worlds_1925.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1925 World Figure Skating Championships\n\n## 2. Event Metadata: 1925 World Figure Skating Championships\n* **Event Name:** 1925 World Figure Skating Championships\n* **Locations:** * **Men:** Vienna, Austria (February 14–15)\n    * **Ladies:** Davos, Switzerland (January 31 – February 1)\n    * **Pairs:** Vienna, Austria (February 14–15)\n* **Major Milestone:** 1925 was a year of \"Home Ice\" triumph for the Austrian skating school. The Men's and Pairs' events were held in Vienna, the spiritual home of figure skating at the time. This year also marked the fourth consecutive title for **Herma Szabo** in the Ladies' singles.\n\n---",
+      "source_path": "data/manual_rag/worlds_1925.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1925",
+      "chunk_id": "data/manual_rag/worlds_1925.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1925 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1925 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1925 World Figure Skating Championships\n**Wilhelm Boeckl** (Austria) won the gold medal. After several years of being in the shadow of Gillis Grafström, Boeckl secured his first World title on home ice. He was praised for his technical mastery of compulsory figures and a strong, rhythmic free skating program.\n* **Gold:** **Wilhelm Boeckl** (Austria) — Ordinal: 8\n* **Silver:** **Fritz Kachler** (Austria) — Ordinal: 8\n* **Bronze:** **Otto Preissecker** (Austria) — Ordinal: 14\n* **Note:** The tie for gold between Boeckl and Kachler was decided by total point scores, with Boeckl emerging as the champion.\n\n### 3.2 Women's Singles: 1925 World Figure Skating Championships\n**Herma Szabo** (Austria) won her fourth consecutive World gold medal. Competing in the high-altitude environment of Davos, Szabo maintained her technical superiority. This year also saw the World debut of young **Sonja Henie**, who finished last in the field but gained valuable international experience.\n* **Gold:** **Herma Szabo** (Austria) — Ordinal: 5\n* **Silver:** **Ellen Brockhöft** (Germany) — Ordinal: 10\n* **Bronze:** **Elisabeth Böckel** (Germany) — Ordinal: 15\n\n### 3.3 Pairs: 1925 World Figure Skating Championships\n**Lilly Scholz and Otto Kaiser** (Austria) won the gold medal. They successfully navigated a highly competitive field in Vienna, demonstrating the classic \"Viennese Style\" characterized by elegant posture and synchronized dance-like movements.\n* **Gold:** **Lilly Scholz / Otto Kaiser** (Austria) — Ordinal: 8\n* **Silver:** **Andrée Joly / Pierre Brunet** (France) — Ordinal: 12\n* **Bronze:** **Herma Szabo / Ludwig Wrede** (Austria) — Ordinal: 15\n\n---",
+      "source_path": "data/manual_rag/worlds_1925.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1925",
+      "chunk_id": "data/manual_rag/worlds_1925.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1925 World Figure Skating Championships\n\n## 4. Medal Table: 1925 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 3 | 1 | 2 | 6 |\n| 2 | **Germany (GER)** | 0 | 1 | 1 | 2 |\n| 3 | **France (FRA)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1925.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1925",
+      "chunk_id": "data/manual_rag/worlds_1925.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1925 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1925 World Figure Skating Championships\n`Vienna 1925`, `Davos 1925`, `Wilhelm Boeckl first gold`, `Herma Szabo 4th gold`, `Lilly Scholz Otto Kaiser gold`, `Sonja Henie debut`, `Austrian podium sweep men`, `ISU World Results 1925`.",
+      "source_path": "data/manual_rag/worlds_1925.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1925",
+      "chunk_id": "data/manual_rag/worlds_1925.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1926 World Figure Skating Championships\n\n## 1. Document Overview: 1926 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1926 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the peak of the Herma Szabo era and the emergence of the French pair dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1926.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1926",
+      "chunk_id": "data/manual_rag/worlds_1926.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1926 World Figure Skating Championships\n\n## 2. Event Metadata: 1926 World Figure Skating Championships\n* **Event Name:** 1926 World Figure Skating Championships\n* **Locations:** * **Men:** Berlin, Germany (February 13–14)\n    * **Ladies:** Stockholm, Sweden (February 7–8)\n    * **Pairs:** Berlin, Germany (February 13–14)\n* **Major Milestone:** 1926 was the final year of **Herma Szabo's** absolute reign in the Ladies' singles. It also saw the first World Championship title for the French pair **Andrée Joly and Pierre Brunet**, who would go on to revolutionize the technical aspects of pair skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1926.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1926",
+      "chunk_id": "data/manual_rag/worlds_1926.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1926 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1926 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1926 World Figure Skating Championships\n**Wilhelm Boeckl** (Austria) won his second consecutive World gold medal. Competing in Berlin, Boeckl cemented his status as the successor to the pre-war greats, leading an Austrian podium sweep that highlighted the technical depth of the Vienna school during the mid-1920s.\n* **Gold:** **Wilhelm Boeckl** (Austria) — Ordinal: 7\n* **Silver:** **Otto Preissecker** (Austria) — Ordinal: 11\n* **Bronze:** **John Page** (Great Britain) — Ordinal: 18\n* **Note:** John Page's bronze was a significant milestone for British skating, which had been struggling to medal against the Central European powerhouses.\n\n### 3.2 Women's Singles: 1926 World Figure Skating Championships\n**Herma Szabo** (Austria) won her fifth consecutive World gold medal. In Stockholm, Szabo was unanimous in her victory, with all judges placing her first. Her combination of athletic jumps and traditional school figures remained the gold standard until the rise of Sonja Henie the following year.\n* **Gold:** **Herma Szabo** (Austria) — Ordinal: 5\n* **Silver:** **Sonja Henie** (Norway) — Ordinal: 10\n* **Bronze:** **Kathleen Shaw** (Great Britain) — Ordinal: 16\n* **Note:** This marked the first World medal for 13-year-old Sonja Henie, signaling the beginning of the transition in the sport.\n\n### 3.3 Pairs: 1926 World Figure Skating Championships\n**Andrée Joly and Pierre Brunet** (France) won their first World gold medal. They defeated the defending champions Lilly Scholz and Otto Kaiser by introducing more athletic unison and innovative \"shadow\" movements that moved the discipline away from purely dance-based patterns.\n* **Gold:** **Andrée Joly / Pierre Brunet** (France) — Ordinal: 12\n* **Silver:** **Lilly Scholz / Otto Kaiser** (Austria) — Ordinal: 14\n* **Bronze:** **Herma Szabo / Ludwig Wrede** (Austria) — Ordinal: 15\n\n---",
+      "source_path": "data/manual_rag/worlds_1926.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1926",
+      "chunk_id": "data/manual_rag/worlds_1926.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1926 World Figure Skating Championships\n\n## 4. Medal Table: 1926 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 2 | 1 | 4 |\n| 2 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 3 | **Norway (NOR)** | 0 | 1 | 0 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 0 | 2 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1926.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1926",
+      "chunk_id": "data/manual_rag/worlds_1926.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1926 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1926 World Figure Skating Championships\n`Berlin 1926`, `Stockholm 1926`, `Herma Szabo 5th gold`, `Wilhelm Boeckl 2nd title`, `Andrée Joly Pierre Brunet first gold`, `Sonja Henie silver 1926`, `Pre-war skating results`, `ISU World Results 1926`.",
+      "source_path": "data/manual_rag/worlds_1926.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1926",
+      "chunk_id": "data/manual_rag/worlds_1926.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1927 World Figure Skating Championships\n\n## 1. Document Overview: 1927 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1927 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the beginning of the most dominant era in the history of the ladies' discipline.\n\n---",
+      "source_path": "data/manual_rag/worlds_1927.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1927",
+      "chunk_id": "data/manual_rag/worlds_1927.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1927 World Figure Skating Championships\n\n## 2. Event Metadata: 1927 World Figure Skating Championships\n* **Event Name:** 1927 World Figure Skating Championships\n* **Locations:** * **Men:** Davos, Switzerland (February 5–6)\n    * **Ladies:** Oslo, Norway (February 19–20)\n    * **Pairs:** Vienna, Austria (February 22–23)\n* **Major Milestone:** 1927 is one of the most significant years in figure skating history as it marked the **first World title for Sonja Henie**. At age 14, her victory in Oslo launched a decade of unprecedented dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1927.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1927",
+      "chunk_id": "data/manual_rag/worlds_1927.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1927 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1927 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1927 World Figure Skating Championships\n**Wilhelm Boeckl** (Austria) won his third consecutive World gold medal. Competing in the high-altitude environment of Davos, Boeckl demonstrated superior stamina and technical precision in his compulsory figures, maintaining the \"Viennese School\" dominance over the international field.\n* **Gold:** **Wilhelm Boeckl** (Austria) — Ordinal: 11\n* **Silver:** **Otto Preissecker** (Austria) — Ordinal: 15\n* **Bronze:** **Karl Schäfer** (Austria) — Ordinal: 24\n\n### 3.2 Women's Singles: 1927 World Figure Skating Championships\n**Sonja Henie** (Norway) won her first World gold medal. Her victory was controversial at the time, as three of the five judges were Norwegian and all placed her first, while the Austrian and German judges placed Herma Szabo first. Despite the dispute, this win began Henie's record-setting run of ten consecutive world titles.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 7\n* **Silver:** **Herma Szabo** (Austria) — Ordinal: 8\n* **Bronze:** **Karen Simensen** (Norway) — Ordinal: 17\n\n### 3.3 Pairs: 1927 World Figure Skating Championships\n**Herma Szabo and Ludwig Wrede** (Austria) won the gold medal. Szabo, a legendary figure in women's skating, successfully transitioned her technical skills into the pairs discipline, creating a partnership that emphasized speed and classical Austrian form.\n* **Gold:** **Herma Szabo / Ludwig Wrede** (Austria) — Ordinal: 6.5\n* **Silver:** **Lilly Scholz / Otto Kaiser** (Austria) — Ordinal: 9\n* **Bronze:** **Else Hoppe / Oscar Hoppe** (Czechoslovakia) — Ordinal: 14.5\n\n---",
+      "source_path": "data/manual_rag/worlds_1927.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1927",
+      "chunk_id": "data/manual_rag/worlds_1927.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1927 World Figure Skating Championships\n\n## 4. Medal Table: 1927 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 2 | 3 | 1 | 6 |\n| 2 | **Norway (NOR)** | 1 | 0 | 1 | 2 |\n| 3 | **Czechoslovakia (TCH)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1927.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1927",
+      "chunk_id": "data/manual_rag/worlds_1927.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1927 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1927 World Figure Skating Championships\n`Davos 1927`, `Oslo 1927`, `Vienna 1927`, `Sonja Henie first gold`, `Wilhelm Boeckl 3rd title`, `Herma Szabo silver`, `Schäfer bronze 1927`, `Wartime era figure skating`, `ISU World Results 1927`.",
+      "source_path": "data/manual_rag/worlds_1927.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1927",
+      "chunk_id": "data/manual_rag/worlds_1927.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1928 World Figure Skating Championships\n\n## 1. Document Overview: 1928 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1928 World Figure Skating Championships. Structured for RAG-based systems, it captures the competitive landscape of an Olympic year, where the championships served as a follow-up to the St. Moritz Winter Games.\n\n---",
+      "source_path": "data/manual_rag/worlds_1928.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1928",
+      "chunk_id": "data/manual_rag/worlds_1928.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1928 World Figure Skating Championships\n\n## 2. Event Metadata: 1928 World Figure Skating Championships\n* **Event Name:** 1928 World Figure Skating Championships\n* **Locations:**\n    * **Men:** Berlin, Germany (February 25–26)\n    * **Ladies:** London, United Kingdom (March 5–6)\n    * **Pairs:** London, United Kingdom (March 5–6)\n* **Major Milestone:** 1928 was a landmark Olympic year. The World Championships followed the 1928 Winter Olympics, confirming the dominance of the reigning Olympic champions. This year was also significant for the first meeting of all-time greats **Gillis Grafström** and **Karl Schäfer** at a World Championship event.\n\n---",
+      "source_path": "data/manual_rag/worlds_1928.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1928",
+      "chunk_id": "data/manual_rag/worlds_1928.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1928 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1928 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1928 World Figure Skating Championships\n**Wilhelm Boeckl** (Austria) won his fourth consecutive World title. Boeckl remained the dominant force in amateur skating following the 1924 era, successfully holding off his younger teammate Karl Schäfer and the American challenger Roger Turner. \n* **Gold:** **Wilhelm Boeckl** (Austria) — Ordinal: 5.5\n* **Silver:** **Karl Schäfer** (Austria) — Ordinal: 11.5\n* **Bronze:** **Hugo Distler** (Austria) — Ordinal: 22\n\n### 3.2 Women's Singles: 1928 World Figure Skating Championships\n**Sonja Henie** (Norway) won her second consecutive World gold medal. Competing in London, Henie proved that her victory the previous year was no fluke, defeating the top British and Austrian skaters with a combination of high-speed technical elements and balletic grace.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 6\n* **Silver:** **Maribel Vinson** (United States) — Ordinal: 13\n* **Bronze:** **Fritzi Burger** (Austria) — Ordinal: 15\n\n### 3.3 Pairs: 1928 World Figure Skating Championships\n**Andrée Joly and Pierre Brunet** (France) won their second World gold medal. The French pair continued to revolutionize the discipline with their synchronized \"mirror\" skating and the introduction of more complex lifts, which were far ahead of the more traditional \"side-by-side\" styles of the era.\n* **Gold:** **Andrée Joly / Pierre Brunet** (France) — Ordinal: 7\n* **Silver:** **Lilly Scholz / Otto Kaiser** (Austria) — Ordinal: 8\n* **Bronze:** **Melitta Brunner / Ludwig Wrede** (Austria) — Ordinal: 18\n\n---",
+      "source_path": "data/manual_rag/worlds_1928.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1928",
+      "chunk_id": "data/manual_rag/worlds_1928.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1928 World Figure Skating Championships\n\n## 4. Medal Table: 1928 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 2 | 3 | 6 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 2 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1928.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1928",
+      "chunk_id": "data/manual_rag/worlds_1928.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1928 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1928 World Figure Skating Championships\n`Berlin 1928`, `London 1928`, `Wilhelm Boeckl 4th gold`, `Sonja Henie 2nd title`, `Andrée Joly Pierre Brunet gold`, `Karl Schäfer silver`, `Olympic Year Worlds 1928`, `ISU World Results 1928`.",
+      "source_path": "data/manual_rag/worlds_1928.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1928",
+      "chunk_id": "data/manual_rag/worlds_1928.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1929 World Figure Skating Championships\n\n## 1. Document Overview: 1929 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1929 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final year before the unification of the championships and the third consecutive title for Sonja Henie.\n\n---",
+      "source_path": "data/manual_rag/worlds_1929.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1929",
+      "chunk_id": "data/manual_rag/worlds_1929.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1929 World Figure Skating Championships\n\n## 2. Event Metadata: 1929 World Figure Skating Championships\n* **Event Name:** 1929 World Figure Skating Championships\n* **Locations:** * **Men:** London, United Kingdom (March 4–5)\n    * **Ladies:** Budapest, Hungary (February 2–3)\n    * **Pairs:** Budapest, Hungary (February 2–3)\n* **Major Milestone:** 1929 marked the last year the championships were held at separate locations and dates for Men and Ladies/Pairs. It featured the return of **Gillis Grafström** to the World stage and the continued emergence of the \"Viennese School\" in the ladies' and pairs' disciplines.\n\n---",
+      "source_path": "data/manual_rag/worlds_1929.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1929",
+      "chunk_id": "data/manual_rag/worlds_1929.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1929 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1929 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1929 World Figure Skating Championships\n**Gillis Grafström** (Sweden) won the gold medal. This was his third and final World title. Grafström, legendary for his elegance and mastery of compulsory figures, defeated the rising Austrian star Karl Schäfer, who would go on to dominate the next decade.\n* **Gold:** **Gillis Grafström** (Sweden) — Ordinal: 6\n* **Silver:** **Karl Schäfer** (Austria) — Ordinal: 9\n* **Bronze:** **Ludwig Wrede** (Austria) — Ordinal: 18\n\n### 3.2 Women's Singles: 1929 World Figure Skating Championships\n**Sonja Henie** (Norway) won her third consecutive World gold medal. Competing in Budapest, Henie demonstrated a growing gap between herself and the rest of the field, particularly in the free skating portion where her speed and choreography were unmatched.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 5\n* **Silver:** **Fritzi Burger** (Austria) — Ordinal: 12\n* **Bronze:** **Melitta Brunner** (Austria) — Ordinal: 13\n\n### 3.3 Pairs: 1929 World Figure Skating Championships\n**Lilly Scholz and Otto Kaiser** (Austria) won the gold medal. They were the premier Austrian pair of the late 1920s, known for their classical style and technical precision in an era where the French and Hungarian pairs were beginning to introduce more athletic innovations.\n* **Gold:** **Lilly Scholz / Otto Kaiser** (Austria) — Ordinal: 6\n* **Silver:** **Melitta Brunner / Ludwig Wrede** (Austria) — Ordinal: 13\n* **Bronze:** **Olga Orgonista / Sándor Szalay** (Hungary) — Ordinal: 18\n\n---",
+      "source_path": "data/manual_rag/worlds_1929.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1929",
+      "chunk_id": "data/manual_rag/worlds_1929.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1929 World Figure Skating Championships\n\n## 4. Medal Table: 1929 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 3 | 2 | 6 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 2 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1929.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1929",
+      "chunk_id": "data/manual_rag/worlds_1929.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1929 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1929 World Figure Skating Championships\n`London 1929`, `Budapest 1929`, `Gillis Grafström final gold`, `Sonja Henie 3rd title`, `Scholz Kaiser gold`, `Karl Schäfer silver`, `Interwar skating results`, `ISU World Results 1929`.",
+      "source_path": "data/manual_rag/worlds_1929.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1929",
+      "chunk_id": "data/manual_rag/worlds_1929.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1930 World Figure Skating Championships (Verified Data)\n\n## 1. Document Overview: 1930 World Figure Skating Championships\nThis document contains the verified final results, place totals (ordinals), and historical milestones of the 1930 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first unified World Championship held in the United States.\n\n---",
+      "source_path": "data/manual_rag/worlds_1930.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1930",
+      "chunk_id": "data/manual_rag/worlds_1930.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1930 World Figure Skating Championships (Verified Data)\n\n## 2. Event Metadata: 1930 World Figure Skating Championships\n* **Event Name:** 1930 World Figure Skating Championships\n* **Location:** New York City, New York, United States\n* **Dates:** February 3 – 5, 1930\n* **Host:** United States Figure Skating Association / ISU\n* **Major Milestone:** This was the first year in ISU history that all disciplines were held at the same location and time. It also utilized a single panel of judges across all three competitions.\n\n---",
+      "source_path": "data/manual_rag/worlds_1930.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1930",
+      "chunk_id": "data/manual_rag/worlds_1930.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1930 World Figure Skating Championships (Verified Data)\n\n## 3. Detailed Results: 1930 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1930 World Figure Skating Championships\nKarl Schäfer secured his first World title, leading a field that included prominent North American and European competitors.\n| Rank | Name | Nation | Places (Ordinals) |\n| :--- | :--- | :--- | :---: |\n| 1 | **Karl Schäfer** | Austria | 5 |\n| 2 | **Roger Turner** | United States | 11 |\n| 3 | **Georges Gautschi** | Switzerland | 19 |\n| 4 | **Montgomery Wilson** | Canada | 20 |\n| 5 | **Ludwig Wrede** | Austria | 20 |\n| 6 | **Gail Borden** | United States | 32 |\n| 7 | **Lester Madden** | United States | 35 |\n| 8 | **William Nagle** | United States | 38 |\n* **Judges:** B. Børjeson, Herbert Clarke, J. Edhoffer, J. B. Liberman, J. C. McDougall.\n\n### 3.2 Ladies' Singles: 1930 World Figure Skating Championships\nSonja Henie won her fourth consecutive title. The podium was notable for the inclusion of North American skaters Cecil Smith and Maribel Vinson.\n| Rank | Name | Nation | Places (Ordinals) |\n| :--- | :--- | :--- | :---: |\n| 1 | **Sonja Henie** | Norway | 5 |\n| 2 | **Cecil Smith** | Canada | 12 |\n| 3 | **Maribel Vinson** | United States | 16 |\n| 4 | **Constance Wilson** | Canada | 19 |\n| 5 | **Melitta Brunner** | Austria | 23 |\n| 6 | **Suzanne Davis** | United States | 30 |\n* **Judges:** B. Børjeson, Herbert Clarke, J. Edhoffer, J. B. Liberman, J. C. McDougall.\n\n### 3.3 Pairs Results: 1930 World Figure Skating Championships\n| Rank | Name | Nation | Places (Ordinals) |\n| :--- | :--- | :--- | :---: |\n| 1 | **Andrée Brunet / Pierre Brunet** | France | 6.5 |\n| 2 | **Melitta Brunner / Ludwig Wrede** | Austria | 13.5 |\n| 3 | **Beatrix Loughran / Sherwin Badger** | United States | 16 |\n| 4 | **Constance Samuel / Montgomery Wilson** | Canada | 21 |\n| 5 | **Isobel Rogers / Melville Rogers** | Canada | 25.5 |\n| 6 | **Theresa Weld / Nathaniel Niles** | United States | 30.5 |\n| 7 | **Maude Smith / Jack Eastwood** | Canada | 32.5 |\n| 8 | **Edith Secord / Joseph Savage** | United States | 34.5 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1930.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1930",
+      "chunk_id": "data/manual_rag/worlds_1930.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1930 World Figure Skating Championships (Verified Data)\n\n## 4. Medal Table: 1930 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 2 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 2 | 3 |\n| 5 | **Canada (CAN)** | 0 | 1 | 0 | 1 |\n| 6 | **Switzerland (SUI)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1930.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1930",
+      "chunk_id": "data/manual_rag/worlds_1930.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1930 World Figure Skating Championships (Verified Data)\n\n## 5. Key Keywords for RAG Search: 1930 World Figure Skating Championships\n`New York 1930`, `Unified World Championships`, `Karl Schäfer first gold`, `Sonja Henie 4th gold`, `Roger Turner silver`, `Cecil Smith silver`, `Andrée Brunet Pierre Brunet gold`, `ISU World Results 1930`.",
+      "source_path": "data/manual_rag/worlds_1930.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1930",
+      "chunk_id": "data/manual_rag/worlds_1930.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1931 World Figure Skating Championships\n\n## 1. Document Overview: 1931 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1931 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a critical year in the early 1930s that saw the first World title for the legendary Hungarian pair Rotter and Szollás.\n\n---",
+      "source_path": "data/manual_rag/worlds_1931.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1931",
+      "chunk_id": "data/manual_rag/worlds_1931.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1931 World Figure Skating Championships\n\n## 2. Event Metadata: 1931 World Figure Skating Championships\n* **Event Name:** 1931 World Figure Skating Championships\n* **Location:** Berlin, Germany\n* **Dates:** February 28 – March 1, 1931\n* **Host:** Deutscher Eislauf-Verband / ISU\n* **Major Milestone:** This championship was held at the Berlin Sportpalast. It is significant for marking the **fifth consecutive World title for Sonja Henie** and the **second for Karl Schäfer**. It also marked the beginning of a Hungarian era in pair skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1931.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1931",
+      "chunk_id": "data/manual_rag/worlds_1931.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1931 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1931 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1931 World Figure Skating Championships\n**Karl Schäfer** (Austria) won the gold medal, successfully defending his title from the previous year. Schäfer's performance in Berlin was characterized by his nearly perfect execution of compulsory figures, which allowed him to maintain a comfortable lead over the silver medalist Roger Turner.\n* **Gold:** **Karl Schäfer** (Austria) — Ordinal: 8\n* **Silver:** **Roger Turner** (United States) — Ordinal: 26\n* **Bronze:** **Ernst Baier** (Germany) — Ordinal: 26\n* **Note:** The tie for silver and bronze was broken by total point calculations, where Turner edged out Baier.\n\n### 3.2 Women's Singles: 1931 World Figure Skating Championships\n**Sonja Henie** (Norway) won her fifth consecutive World gold medal. Henie's dominance continued to be the defining story of the ladies' discipline. She defeated Fritzi Burger in a rivalry that had become a staple of the podium during this period.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 8\n* **Silver:** **Fritzi Burger** (Austria) — Ordinal: 17\n* **Bronze:** **Hilde Holovsky** (Austria) — Ordinal: 21\n\n### 3.3 Pairs: 1931 World Figure Skating Championships\n**Emília Rotter and László Szollás** (Hungary) won their first World gold medal. This was a landmark victory as it was the first time a Hungarian pair had ever won the World title. They were praised for their technical innovation and the seamless flow between their elements, narrowly defeating the established Austrian pair.\n* **Gold:** **Emília Rotter / László Szollás** (Hungary) — Ordinal: 13.5\n* **Silver:** **Idi Papez / Karl Zwack** (Austria) — Ordinal: 14.5\n* **Bronze:** **Lilly Gaillard / Willy Petter** (Austria) — Ordinal: 18\n\n### 3.4 Ice Dance: 1931 World Figure Skating Championships\n**Note:** In 1931, Ice Dance was not yet an official discipline of the World Figure Skating Championships.\n\n---",
+      "source_path": "data/manual_rag/worlds_1931.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1931",
+      "chunk_id": "data/manual_rag/worlds_1931.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1931 World Figure Skating Championships\n\n## 4. Medal Table: 1931 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 2 | 2 | 5 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 4 | **United States (USA)** | 0 | 1 | 0 | 1 |\n| 5 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1931.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1931",
+      "chunk_id": "data/manual_rag/worlds_1931.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1931 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1931 World Figure Skating Championships\n`Berlin 1931`, `Karl Schäfer 2nd gold`, `Sonja Henie 5th title`, `Rotter Szollás first gold`, `Berlin Sportpalast Results`, `ISU World Results 1931`, `Hungarian Pair dominance`, `Fritzi Burger silver`.",
+      "source_path": "data/manual_rag/worlds_1931.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1931",
+      "chunk_id": "data/manual_rag/worlds_1931.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1932 World Figure Skating Championships\n\n## 1. Document Overview: 1932 World Figure Skating Championships\nIs document mein 1932 World Figure Skating Championships ke verified final results, scoring data aur historical milestones shamil hain. Yeh RAG-based systems ke liye structure kiya gaya hai, jo pre-WWII era ke skating dominance aur Olympic saal ke transition ko document karta hai.\n\n---",
+      "source_path": "data/manual_rag/worlds_1932.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1932",
+      "chunk_id": "data/manual_rag/worlds_1932.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1932 World Figure Skating Championships\n\n## 2. Event Metadata: 1932 World Figure Skating Championships\n* **Event Name:** 1932 World Figure Skating Championships\n* **Location:** Montreal, Canada\n* **Dates:** February 17 – 20, 1932\n* **Host:** Winter Club of Montreal / ISU\n* **Major Milestone:** Yeh pehli baar tha jab World Championships Canada mein आयोजित (organize) ki gayi thi. 1932 Winter Olympics (Lake Placid) ke turant baad hone ki wajah se, isne North American audience ke beech figure skating ki lokpriyata (popularity) ko badhane mein mahatvapurn bhumika nibhayi.\n\n---",
+      "source_path": "data/manual_rag/worlds_1932.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1932",
+      "chunk_id": "data/manual_rag/worlds_1932.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1932 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1932 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1932 World Figure Skating Championships\n**Karl Schäfer** (Austria) ne apna lagatar teesra (3rd) World gold medal jeeta. Unhone Lake Placid Olympics ke apne gold medal performance ko yahan dohrate huye Gillis Grafström jaise legends ke retirement ke baad apni badshahat kayam rakhi.\n* **Gold:** **Karl Schäfer** (Austria) — Ordinal: 7\n* **Silver:** **Montgomery Wilson** (Canada) — Ordinal: 14\n* **Bronze:** **Ernst Baier** (Germany) — Ordinal: 24\n\n### 3.2 Women's Singles: 1932 World Figure Skating Championships\n**Sonja Henie** (Norway) ne apna lagatar chhatha (6th) World title apne naam kiya. Montreal ki audience unke athletic aur artistic style se prabhavit thi. Is jeet ne unhe itihaas ki sabse dominant female skater ke roop mein sthapit kar diya.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 7\n* **Silver:** **Fritzi Burger** (Austria) — Ordinal: 22\n* **Bronze:** **Constance Wilson-Samuel** (Canada) — Ordinal: 24\n\n### 3.3 Pairs: 1932 World Figure Skating Championships\n**Andrée Brunet aur Pierre Brunet** (France) ne gold medal jeeta. French pair ne apni Olympic victory ke baad Montreal mein bhi apna dabdaba banaye rakha. Unki synchronization aur creative lifts us samay ke hisaab se bahut advance maani jati thi.\n* **Gold:** **Andrée Brunet / Pierre Brunet** (France) — Ordinal: 9\n* **Silver:** **Emília Rotter / László Szollás** (Hungary) — Ordinal: 16\n* **Bronze:** **Beatrix Loughran / Sherwin Badger** (United States) — Ordinal: 22.5\n\n### 3.4 Ice Dance: 1932 World Figure Skating Championships\n**Note:** 1932 mein Ice Dance ek official World Championship discipline nahi thi. Yeh sirf ek social activity ya exhibition tak hi simit thi.\n\n---",
+      "source_path": "data/manual_rag/worlds_1932.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1932",
+      "chunk_id": "data/manual_rag/worlds_1932.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1932 World Figure Skating Championships\n\n## 4. Medal Table: 1932 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 2 | **France (FRA)** | 1 | 0 | 0 | 1 |\n| 4 | **Canada (CAN)** | 0 | 1 | 1 | 2 |\n| 5 | **Hungary (HUN)** | 0 | 1 | 0 | 1 |\n| 6 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| 6 | **United States (USA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1932.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1932",
+      "chunk_id": "data/manual_rag/worlds_1932.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1932 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1932 World Figure Skating Championships\n`Montreal 1932`, `Karl Schäfer 3rd gold`, `Sonja Henie 6th title`, `Brunet Pair gold`, `First Worlds in Canada`, `1932 Figure Skating Results`, `ISU Montreal Results`, `Post-Olympic Worlds 1932`.",
+      "source_path": "data/manual_rag/worlds_1932.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1932",
+      "chunk_id": "data/manual_rag/worlds_1932.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1933 World Figure Skating Championships\n\n## 1. Document Overview: 1933 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1933 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year defined by the continued dominance of the \"Austrian School\" and the seventh title in the historic streak of Sonja Henie.\n\n---",
+      "source_path": "data/manual_rag/worlds_1933.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1933",
+      "chunk_id": "data/manual_rag/worlds_1933.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1933 World Figure Skating Championships\n\n## 2. Event Metadata: 1933 World Figure Skating Championships\n* **Event Name:** 1933 World Figure Skating Championships\n* **Locations:** * **Men:** Zurich, Switzerland (February 11–12)\n    * **Ladies:** Stockholm, Sweden (February 11–12)\n    * **Pairs:** Stockholm, Sweden (February 11–12)\n* **Major Milestone:** The 1933 championships were split between Zurich and Stockholm. This year was significant for marking **Sonja Henie's seventh consecutive title** and **Karl Schäfer's fourth**. It also saw the second consecutive World title for the Hungarian pair Rotter and Szollás.\n\n---",
+      "source_path": "data/manual_rag/worlds_1933.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1933",
+      "chunk_id": "data/manual_rag/worlds_1933.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1933 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1933 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1933 World Figure Skating Championships\n**Karl Schäfer** (Austria) won his fourth consecutive World gold medal. Schäfer's mastery of the compulsory figures provided a substantial lead, which he defended with an athletic free program. He led an Austrian 1-3 finish, with Ernst Baier of Germany preventing a total podium sweep.\n* **Gold:** **Karl Schäfer** (Austria) — Ordinal: 7\n* **Silver:** **Ernst Baier** (Germany) — Ordinal: 11\n* **Bronze:** **Marcus Nikkanen** (Finland) — Ordinal: 17\n\n### 3.2 Women's Singles: 1933 World Figure Skating Championships\n**Sonja Henie** (Norway) won her seventh consecutive World gold medal. Competing in Stockholm, Henie remained technically ahead of the field, though the young British skater Vivi-Anne Hultén (representing Sweden) and the British teenagers began to close the artistic gap.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 5\n* **Silver:** **Vivi-Anne Hultén** (Sweden) — Ordinal: 14\n* **Bronze:** **Hilde Holovsky** (Austria) — Ordinal: 15\n\n### 3.3 Pairs: 1933 World Figure Skating Championships\n**Emília Rotter and László Szollás** (Hungary) won their second World gold medal. They were the most technically advanced pair of the early 1930s, noted for their unison and the introduction of more complex parallel movements that set them apart from the traditional Viennese style of the time.\n* **Gold:** **Emília Rotter / László Szollás** (Hungary) — Ordinal: 7\n* **Silver:** **Idi Papez / Karl Zwack** (Austria) — Ordinal: 8\n* **Bronze:** **Randi Bakke / Christen Christensen** (Norway) — Ordinal: 18\n\n---",
+      "source_path": "data/manual_rag/worlds_1933.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1933",
+      "chunk_id": "data/manual_rag/worlds_1933.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1933 World Figure Skating Championships\n\n## 4. Medal Table: 1933 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 1 | 3 |\n| 2 | **Norway (NOR)** | 1 | 0 | 1 | 2 |\n| 3 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 4 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| 4 | **Sweden (SWE)** | 0 | 1 | 0 | 1 |\n| 6 | **Finland (FIN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1933.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1933",
+      "chunk_id": "data/manual_rag/worlds_1933.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1933 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1933 World Figure Skating Championships\n`Zurich 1933`, `Stockholm 1933`, `Karl Schäfer 4th gold`, `Sonja Henie 7th gold`, `Rotter Szollás 2nd gold`, `Idi Papez Karl Zwack`, `Vivi-Anne Hultén silver`, `ISU World Results 1933`.",
+      "source_path": "data/manual_rag/worlds_1933.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1933",
+      "chunk_id": "data/manual_rag/worlds_1933.md::chunk_5"
+    },
+    {
+      "text": "# Worlds 1934\n# Reference: 1934 World Figure Skating Championships\n\n## 1. Document Overview: 1934 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1934 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a year defined by hometown victories and the continuation of mid-1930s dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1934.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1934",
+      "chunk_id": "data/manual_rag/worlds_1934.md::chunk_1"
+    },
+    {
+      "text": "# Worlds 1934\n# Reference: 1934 World Figure Skating Championships\n\n## 2. Event Metadata: 1934 World Figure Skating Championships\n* **Event Name:** 1934 World Figure Skating Championships\n* **Locations:** * **Men:** Stockholm, Sweden (February 16–18)\n    * **Ladies:** Oslo, Norway (February 10–11)\n    * **Pairs:** Helsinki, Finland (February 23)\n* **Major Milestone:** These championships featured **Sonja Henie** winning her eighth consecutive title in front of a hometown crowd in Oslo. It was also the fifth consecutive title for **Karl Schäfer**. The events were notably spread across three Nordic capitals.\n\n---",
+      "source_path": "data/manual_rag/worlds_1934.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1934",
+      "chunk_id": "data/manual_rag/worlds_1934.md::chunk_2"
+    },
+    {
+      "text": "# Worlds 1934\n# Reference: 1934 World Figure Skating Championships\n\n## 3. Detailed Results: 1934 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1934 World Figure Skating Championships\n**Karl Schäfer** (Austria) won his fifth consecutive World gold medal. Despite an uncharacteristically shaky performance in the compulsory figures, his technical lead was so vast that he maintained first-place marks from nearly all judges. A three-way tie in ordinals for 2nd, 3rd, and 4th place was broken by total point counts.\n* **Gold:** **Karl Schäfer** (Austria) — 384.81 points (Ordinal: 7)\n* **Silver:** **Ernst Baier** (Germany) — 362.87 points (Ordinal: 26)\n* **Bronze:** **Erich Erdös** (Austria) — 360.74 points (Ordinal: 26)\n* **4th:** **Marcus Nikkanen** (Finland) — 357.24 points (Ordinal: 26)\n\n### 3.2 Ladies' Singles: 1934 World Figure Skating Championships\n**Sonja Henie** (Norway) secured her eighth consecutive World title. The competition was held at the Frogner Stadion in Oslo. While Henie faced a technical challenge from Megan Taylor and Vivi-Anne Hultén in the figures, her overall consistency secured another unanimous or near-unanimous victory depending on the segment.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 7\n* **Silver:** **Megan Taylor** (Great Britain) — Ordinal: 19\n* **Bronze:** **Liselotte Landbeck** (Austria) — Ordinal: 20\n\n### 3.3 Pairs Results: 1934 World Figure Skating Championships\n**Emília Rotter and László Szollás** (Hungary) won their third World title. The scoring was exceptionally close, with the judges split between the top three teams. The Hungarians' precision and \"pair-centric\" choreography ultimately edged out the Austrian and German challengers.\n* **Gold:** **Emília Rotter / László Szollás** (Hungary) — Ordinal: 12\n* **Silver:** **Idi Papez / Karl Zwack** (Austria) — Ordinal: 14\n* **Bronze:** **Maxi Herber / Ernst Baier** (Germany) — Ordinal: 18\n\n---",
+      "source_path": "data/manual_rag/worlds_1934.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1934",
+      "chunk_id": "data/manual_rag/worlds_1934.md::chunk_3"
+    },
+    {
+      "text": "# Worlds 1934\n# Reference: 1934 World Figure Skating Championships\n\n## 4. Medal Table: 1934 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 1 | 2 | 4 |\n| 2 | **Hungary (HUN)** | 1 | 0 | 0 | 1 |\n| 2 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 4 | **Germany (GER)** | 0 | 1 | 1 | 2 |\n| 5 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1934.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1934",
+      "chunk_id": "data/manual_rag/worlds_1934.md::chunk_4"
+    },
+    {
+      "text": "# Worlds 1934\n# Reference: 1934 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1934 World Figure Skating Championships\n`Stockholm 1934`, `Oslo 1934`, `Helsinki 1934`, `Sonja Henie 8th gold`, `Karl Schäfer 5th gold`, `Rotter Szollás 3rd title`, `Megan Taylor silver`, `Ernst Baier silver`, `ISU World Results 1934`.",
+      "source_path": "data/manual_rag/worlds_1934.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1934",
+      "chunk_id": "data/manual_rag/worlds_1934.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1935 World Figure Skating Championships\n\n## 1. Document Overview: 1935 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1935 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a peak year of the pre-war era characterized by the continued dominance of the Austrian and Norwegian skating icons.\n\n---",
+      "source_path": "data/manual_rag/worlds_1935.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1935",
+      "chunk_id": "data/manual_rag/worlds_1935.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1935 World Figure Skating Championships\n\n## 2. Event Metadata: 1935 World Figure Skating Championships\n* **Event Name:** 1935 World Figure Skating Championships\n* **Locations:** * **Men:** Budapest, Hungary (February 16–17)\n    * **Ladies:** Vienna, Austria (February 8–11)\n    * **Pairs:** Budapest, Hungary (February 16–17)\n* **Major Milestone:** This was the ninth consecutive World title for **Sonja Henie** and the sixth consecutive for **Karl Schäfer**. The split location between Budapest and Vienna showcased the two primary centers of the European skating world during the 1930s.\n\n---",
+      "source_path": "data/manual_rag/worlds_1935.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1935",
+      "chunk_id": "data/manual_rag/worlds_1935.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1935 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1935 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1935 World Figure Skating Championships\n**Karl Schäfer** (Austria) won his sixth consecutive World gold medal. His victory in Budapest solidified his position as the greatest male skater of his generation, known for blending the rigorous \"Viennese School\" of compulsory figures with athletic and rhythmic free skating.\n* **Gold:** **Karl Schäfer** (Austria) — Ordinal: 8\n* **Silver:** **Jack Dunn** (Great Britain) — Ordinal: 15\n* **Bronze:** **Dénes Pataky** (Hungary) — Ordinal: 15\n\n### 3.2 Women's Singles: 1935 World Figure Skating Championships\n**Sonja Henie** (Norway) won her ninth consecutive World gold medal. Competing in Vienna, she faced stiff competition from the rising British star Cecilia Colledge. Henie’s victory was a testament to her longevity and her ability to evolve her artistic presentation to stay ahead of the technical innovations of the younger skaters.\n* **Gold:** **Sonja Henie** (Norway) — Ordinal: 7\n* **Silver:** **Cecilia Colledge** (Great Britain) — Ordinal: 17\n* **Bronze:** **Vivi-Anne Hultén** (Sweden) — Ordinal: 22\n\n### 3.3 Pairs: 1935 World Figure Skating Championships\n**Emília Rotter and László Szollás** (Hungary) won their fourth and final World gold medal. Competing on home ice in Budapest, the pair delivered a technically flawless performance that emphasized their legendary unison and creative choreography, marking the end of one of the most successful partnerships in the history of the discipline.\n* **Gold:** **Emília Rotter / László Szollás** (Hungary) — Ordinal: 5\n* **Silver:** **Ilse Pausin / Erik Pausin** (Austria) — Ordinal: 12.5\n* **Bronze:** **Lucy Gallo / Rezső Dillinger** (Hungary) — Ordinal: 12.5\n\n---",
+      "source_path": "data/manual_rag/worlds_1935.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1935",
+      "chunk_id": "data/manual_rag/worlds_1935.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1935 World Figure Skating Championships\n\n## 4. Medal Table: 1935 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Hungary (HUN)** | 1 | 0 | 2 | 3 |\n| 2 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 3 | **Norway (NOR)** | 1 | 0 | 0 | 1 |\n| 4 | **Great Britain (GBR)** | 0 | 2 | 0 | 2 |\n| 5 | **Sweden (SWE)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1935.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1935",
+      "chunk_id": "data/manual_rag/worlds_1935.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1935 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1935 World Figure Skating Championships\n`Budapest 1935`, `Vienna 1935`, `Karl Schäfer 6th gold`, `Sonja Henie 9th gold`, `Rotter Szollás 4th gold`, `Cecilia Colledge silver`, `Viennese School`, `ISU World Results 1935`.",
+      "source_path": "data/manual_rag/worlds_1935.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1935",
+      "chunk_id": "data/manual_rag/worlds_1935.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1936 World Figure Skating Championships (Verified Data)\n\n## 1. Document Overview: 1936 World Figure Skating Championships\nThis document contains the verified final results, technical scoring (Compulsory Figures, Free Skating, and Total Points), and judicial data for the 1936 World Figure Skating Championships. It is optimized for RAG-based systems requiring high-precision historical data.\n\n---",
+      "source_path": "data/manual_rag/worlds_1936.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1936",
+      "chunk_id": "data/manual_rag/worlds_1936.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1936 World Figure Skating Championships (Verified Data)\n\n## 2. Event Metadata: 1936 World Figure Skating Championships\n* **Event Name:** 1936 World Figure Skating Championships\n* **Location:** Paris, France\n* **Dates:** February 21 – 22, 1936\n* **Host:** Fédération Française des Sports de Glace / ISU\n* **Key Milestone:** This event marked the 10th and final consecutive World title for Sonja Henie and the 7th consecutive title for Karl Schäfer.\n\n---",
+      "source_path": "data/manual_rag/worlds_1936.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1936",
+      "chunk_id": "data/manual_rag/worlds_1936.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1936 World Figure Skating Championships (Verified Data)\n\n## 3. Detailed Results: 1936 World Figure Skating Championships\n\n### 3.1 Men's Singles (Top 10): 1936 World Figure Skating Championships\n| Rank | Name | Age | CF | FS | Total Points | Places |\n| :--- | :--- | :---: | :---: | :---: | :---: | :---: |\n| 1 | **Karl Schäfer** (AUT) | 26 | 1 | 1 | 383.56 | 6 |\n| 2 | **Graham Sharp** (GBR) | 18 | 2 | 4 | 377.26 | 10 |\n| 3 | **Felix Kaspar** (AUT) | 21 | 3 | 3 | 370.26 | 17 |\n| 4 | **Jack Dunn** (GBR) | 19 | 5 | 2 | 368.94 | 18 |\n| 5 | **Montgomery Wilson** (CAN) | 26 | 4 | 6 | 361.04 | 26 |\n| 6 | **Dénes Pataky** (HUN) | 19 | 6 | 5 | 355.32 | 29 |\n| 7 | **Leopold Linhart** (AUT) | 21 | 10 | 7 | 336.62 | 42 |\n| 8 | **Robin Lee** (USA) | 16 | 7 | 10 | 335.04 | 42 |\n| 9 | **Herbert Alward** (AUT) | — | 8 | 9 | 333.02 | 43 |\n| 10 | **Freddy Mésot** (BEL) | 30 | 9 | 8 | 333.18 | 45 |\n* **Judges:** Louis Barbey, Kenneth Dundas, Rudolf Kaler, Charles Rotch, Fritz Schober.\n\n### 3.2 Ladies' Singles (Top 10): 1936 World Figure Skating Championships\n| Rank | Name | Age | CF | FS | Total Points | Places |\n| :--- | :--- | :---: | :---: | :---: | :---: | :---: |\n| 1 | **Sonja Henie** (NOR) | 23 | 1 | 1 | 398.80 | 7 |\n| 2 | **Megan Taylor** (GBR) | 15 | 2 | 4 | 379.52 | 15 |\n| 3 | **Vivi-Anne Hultén** (SWE) | 24 | 3 | 2 | 376.57 | 21 |\n| 4 | **Emmy Putzinger** (AUT) | 14 | 6 | 3 | 363.43 | 31 |\n| 5 | **Gweneth Butler** (GBR) | 20 | 4 | 11 | 355.62 | 37 |\n| 6 | **Victoria Lindpaintner** (GER) | 17 | 5 | 6 | 356.51 | 37 |\n| 7 | **Mollie Phillips** (GBR) | 28 | 8 | 5 | 343.74 | 53 |\n| 8 | **Mia Macklin** (GBR) | — | 7 | 8 | 345.91 | 55 |\n| 9 | **Pamela Prior** (GBR) | — | 9 | 10 | 339.87 | 69 |\n| 10 | **Etsuko Inada** (JPN) | 11 | 10 | 9 | 337.97 | 73 |\n* **Judges:** Wilhelm Bayerle, B. Børjeson, W. Bowhill, Fernand de Montigny, Charles Rotch, Charles Sabouret, Fritz Schober.\n\n### 3.3 Pairs Results: 1936 World Figure Skating Championships\n| Rank | Name | Age | Total Points | Places |\n| :--- | :--- | :---: | :---: | :---: |\n| 1 | **Maxi Herber / Ernst Baier** (GER) | 15/30 | 11.40 | 5 |\n| 2 | **Ilse Pausin / Erich Pausin** (AUT) | 16/15 | 11.10 | 11 |\n| 3 | **Violet Cliff / Leslie Cliff** (GBR) | 19/27 | 10.72 | 18 |\n| 4 | **Louise Bertram / Stewart Reburn** (CAN) | 27/23 | 10.56 | 20 |\n| 5 | **Maribel Vinson / George Hill** (USA) | 24/28 | 10.54 | 22 |\n| 6 | **Grace Madden / J. Lester Madden** (USA) | 24/26 | 10.04 | 29 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1936.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1936",
+      "chunk_id": "data/manual_rag/worlds_1936.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1936 World Figure Skating Championships (Verified Data)\n\n## 4. Key Keywords for RAG Search: 1936 World Figure Skating Championships\n`Paris 1936`, `Karl Schäfer 7th Title`, `Sonja Henie 10th Title`, `Maxi Herber Ernst Baier First Gold`, `Etsuko Inada Debut`, `Compulsory Figures 1936`, `ISU Official Rankings 1936`, `Paris World Results Figure Skating`.",
+      "source_path": "data/manual_rag/worlds_1936.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1936",
+      "chunk_id": "data/manual_rag/worlds_1936.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1937 World Figure Skating Championships\n\n## 1. Document Overview: 1937 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1937 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a peak period of the \"Austrian and British Schools\" of skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1937.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1937",
+      "chunk_id": "data/manual_rag/worlds_1937.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1937 World Figure Skating Championships\n\n## 2. Event Metadata: 1937 World Figure Skating Championships\n* **Event Name:** 1937 World Figure Skating Championships\n* **Locations:** * **Men:** Vienna, Austria (February 12–13)\n    * **Ladies:** London, United Kingdom (March 1–2)\n    * **Pairs:** London, United Kingdom (March 1–2)\n* **Major Milestone:** The 1937 championships were split between two of the most significant skating capitals of the era. This year is marked by the first World title for **Felix Kaspar** and the continuation of **Cecilia Colledge's** dominance following her Olympic success.\n\n---",
+      "source_path": "data/manual_rag/worlds_1937.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1937",
+      "chunk_id": "data/manual_rag/worlds_1937.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1937 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1937 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1937 World Figure Skating Championships\n**Felix Kaspar** (Austria) won the gold medal on home ice in Vienna. Kaspar represented the height of the \"Viennese School,\" which prioritized explosive jumping ability alongside traditional compulsory figures. He defeated the British champion Graham Sharp in a highly competitive field.\n* **Gold:** **Felix Kaspar** (Austria) — Ordinal: 5\n* **Silver:** **Graham Sharp** (Great Britain) — Ordinal: 10\n* **Bronze:** **Elemér Terták** (Hungary) — Ordinal: 17\n\n### 3.2 Women's Singles: 1937 World Figure Skating Championships\n**Cecilia Colledge** (Great Britain) won the gold medal in London. Colledge was a pioneer of technical innovation, credited with inventing the camel spin and the layback spin. Her victory solidified her as the premier female skater in the world following the retirement of Sonja Henie.\n* **Gold:** **Cecilia Colledge** (Great Britain) — Ordinal: 7\n* **Silver:** **Megan Taylor** (Great Britain) — Ordinal: 14\n* **Bronze:** **Věra Hrubá** (Czechoslovakia) — Ordinal: 21\n\n### 3.3 Pairs: 1937 World Figure Skating Championships\n**Maxi Herber and Ernst Baier** (Germany) won their second consecutive World gold medal. Their partnership was characterized by a level of technical difficulty and athletic unison that revolutionized the discipline, moving pairs skating away from simple side-by-side skating toward integrated, complex maneuvers.\n* **Gold:** **Maxi Herber / Ernst Baier** (Germany) — Ordinal: 8\n* **Silver:** **Ilse Pausin / Erik Pausin** (Austria) — Ordinal: 13\n* **Bronze:** **Violet Cliff / Leslie Cliff** (Great Britain) — Ordinal: 24.5\n\n### 3.4 Ice Dance: 1937 World Figure Skating Championships\n**Note:** Ice Dance was not an official ISU World Championship discipline in 1937. It was still treated as a sub-discipline or a set of proficiency tests within the national governing bodies.\n\n---",
+      "source_path": "data/manual_rag/worlds_1937.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1937",
+      "chunk_id": "data/manual_rag/worlds_1937.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1937 World Figure Skating Championships\n\n## 4. Medal Table: 1937 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 1 | 2 | 1 | 4 |\n| 2 | **Austria (AUT)** | 1 | 1 | 0 | 2 |\n| 3 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n| 4 | **Czechoslovakia (TCH)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1937.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1937",
+      "chunk_id": "data/manual_rag/worlds_1937.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1937 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1937 World Figure Skating Championships\n`Vienna 1937`, `London 1937`, `Felix Kaspar first gold`, `Cecilia Colledge gold`, `Maxi Herber Ernst Baier 2nd gold`, `Viennese School`, `British skating dominance`, `ISU World Results 1937`.",
+      "source_path": "data/manual_rag/worlds_1937.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1937",
+      "chunk_id": "data/manual_rag/worlds_1937.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1938 World Figure Skating Championships\n\n## 1. Document Overview: 1938 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1938 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting a period of intense European competition and the successful defense of multiple world titles.\n\n---",
+      "source_path": "data/manual_rag/worlds_1938.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1938",
+      "chunk_id": "data/manual_rag/worlds_1938.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1938 World Figure Skating Championships\n\n## 2. Event Metadata: 1938 World Figure Skating Championships\n* **Event Name:** 1938 World Figure Skating Championships\n* **Locations:** * **Men:** Berlin, Germany (February 18–19)\n    * **Ladies:** Stockholm, Sweden (February 4–5)\n    * **Pairs:** Berlin, Germany (February 18–19)\n* **Major Milestone:** The 1938 season was notable for the geographical split of the championships and the dominance of the British ladies' and German pairs' programs. It served as a penultimate global meeting before the international sporting calendar was halted by geopolitical events.\n\n---",
+      "source_path": "data/manual_rag/worlds_1938.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1938",
+      "chunk_id": "data/manual_rag/worlds_1938.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1938 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1938 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1938 World Figure Skating Championships\n**Felix Kaspar** (Austria) successfully defended his title, winning his second consecutive World gold medal. Kaspar was renowned for the extraordinary height of his jumps, which was a progressive technical trait for the late 1930s. He led a podium that remained entirely European.\n* **Gold:** **Felix Kaspar** (Austria) — Ordinal: 9\n* **Silver:** **Graham Sharp** (Great Britain) — Ordinal: 12\n* **Bronze:** **Herbert Alward** (Austria) — Ordinal: 32\n\n### 3.2 Women's Singles: 1938 World Figure Skating Championships\n**Megan Taylor** (Great Britain) won her first World gold medal. Her victory was part of a historic British \"sweep\" of the ladies' podium, demonstrating the immense depth of the British National Skating Association's training system during this decade.\n* **Gold:** **Megan Taylor** (Great Britain) — Ordinal: 7\n* **Silver:** **Cecilia Colledge** (Great Britain) — Ordinal: 14\n* **Bronze:** **Hedy Stenuf** (United States) — Ordinal: 21\n* **Note:** While Hedy Stenuf represented the USA, the top two spots remained firmly with the British stars.\n\n### 3.3 Pairs: 1938 World Figure Skating Championships\n**Maxi Herber and Ernst Baier** (Germany) won their third consecutive World gold medal. Competing on home ice in Berlin, they demonstrated the technical innovation that made them the most influential pair of the pre-war era, including their signature synchronized \"shadow\" movements.\n* **Gold:** **Maxi Herber / Ernst Baier** (Germany) — Ordinal: 12\n* **Silver:** **Ilse Pausin / Erik Pausin** (Austria) — Ordinal: 16\n* **Bronze:** **Inge Koch / Günther Noack** (Germany) — Ordinal: 30\n\n### 3.4 Ice Dance: 1938 World Figure Skating Championships\n**Note:** Ice Dance was not a World Championship discipline in 1938. The discipline was still in its developmental stages, primarily as a social and test-based component of skating.\n\n---",
+      "source_path": "data/manual_rag/worlds_1938.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1938",
+      "chunk_id": "data/manual_rag/worlds_1938.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1938 World Figure Skating Championships\n\n## 4. Medal Table: 1938 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 1 | 2 | 0 | 3 |\n| 2 | **Austria (AUT)** | 1 | 1 | 1 | 3 |\n| 3 | **Germany (GER)** | 1 | 0 | 1 | 2 |\n| 4 | **United States (USA)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1938.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1938",
+      "chunk_id": "data/manual_rag/worlds_1938.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1938 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1938 World Figure Skating Championships\n`Berlin 1938`, `Stockholm 1938`, `Felix Kaspar 2nd gold`, `Megan Taylor first gold`, `Maxi Herber Ernst Baier 3rd gold`, `British ladies sweep`, `Interwar figure skating`, `ISU World Results 1938`.",
+      "source_path": "data/manual_rag/worlds_1938.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1938",
+      "chunk_id": "data/manual_rag/worlds_1938.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1939 World Figure Skating Championships\n\n## 1. Document Overview: 1939 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1939 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the final World Championships held before the seven-year suspension (1940–1946) caused by World War II.\n\n---",
+      "source_path": "data/manual_rag/worlds_1939.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1939",
+      "chunk_id": "data/manual_rag/worlds_1939.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1939 World Figure Skating Championships\n\n## 2. Event Metadata: 1939 World Figure Skating Championships\n* **Event Name:** 1939 World Figure Skating Championships\n* **Locations:** * **Men:** Budapest, Hungary (February 17–19)\n    * **Ladies:** Prague, Czechoslovakia (February 11–12)\n    * **Pairs:** Budapest, Hungary (February 17–19)\n* **Major Milestone:** These championships represented the \"End of an Era.\" Due to the impending outbreak of war in Europe, the events were split across two cities. This year marked the final pre-war titles for legends like **Graham Sharp**, **Megan Taylor**, and the pair **Maxi Herber and Ernst Baier**.\n\n---",
+      "source_path": "data/manual_rag/worlds_1939.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1939",
+      "chunk_id": "data/manual_rag/worlds_1939.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1939 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1939 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1939 World Figure Skating Championships\n**Graham Sharp** (Great Britain) won the gold medal, ending the reign of the Austrian school. Sharp was celebrated for his immense technical control in compulsory figures, a hallmark of British skating in the 1930s. He defeated the rising star Freddie Tomlins in a British 1-2 finish.\n* **Gold:** **Graham Sharp** (Great Britain) — Ordinal: 5\n* **Silver:** **Freddie Tomlins** (Great Britain) — Ordinal: 11\n* **Bronze:** **Horst Faber** (Germany) — Ordinal: 15\n\n### 3.2 Women's Singles: 1939 World Figure Skating Championships\n**Megan Taylor** (Great Britain) successfully defended her title, winning her second consecutive World gold medal. Competing in Prague just weeks before the German occupation of the city, Taylor demonstrated superior artistic maturity and technical precision over her teammate Hedy Stenuf.\n* **Gold:** **Megan Taylor** (Great Britain) — Ordinal: 5\n* **Silver:** **Hedy Stenuf** (United States) — Ordinal: 14\n* **Bronze:** **Daphne Walker** (Great Britain) — Ordinal: 15\n\n### 3.3 Pairs: 1939 World Figure Skating Championships\n**Maxi Herber and Ernst Baier** (Germany) won their fourth consecutive World gold medal. They were the undisputed masters of the discipline in the late 1930s, pioneering the \"shadow skating\" technique and athletic lifts that would define the next generation of pair skating.\n* **Gold:** **Maxi Herber / Ernst Baier** (Germany) — Ordinal: 7\n* **Silver:** **Ilse Pausin / Erik Pausin** (Germany) — Ordinal: 13\n* **Bronze:** **Inge Koch / Günther Noack** (Germany) — Ordinal: 24\n\n### 3.4 Ice Dance: 1939 World Figure Skating Championships\n**Note:** Ice Dance did not exist as a World Championship discipline in 1939. It remained a social activity and a national-level competition in Great Britain until the post-war era.\n\n---",
+      "source_path": "data/manual_rag/worlds_1939.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1939",
+      "chunk_id": "data/manual_rag/worlds_1939.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1939 World Figure Skating Championships\n\n## 4. Medal Table: 1939 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 2 | 1 | 1 | 4 |\n| 2 | **Germany (GER)** | 1 | 1 | 2 | 4 |\n| 3 | **United States (USA)** | 0 | 1 | 0 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1939.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1939",
+      "chunk_id": "data/manual_rag/worlds_1939.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1939 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1939 World Figure Skating Championships\n`Budapest 1939`, `Prague 1939`, `Graham Sharp gold`, `Megan Taylor 2nd gold`, `Maxi Herber Ernst Baier 4th gold`, `Pre-war skating finals`, `ISU World Results 1939`, `End of the Interwar Era`.",
+      "source_path": "data/manual_rag/worlds_1939.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1939",
+      "chunk_id": "data/manual_rag/worlds_1939.md::chunk_5"
+    },
+    {
+      "text": "# Reference: The Suspension of the World Figure Skating Championships (1940–1946)\n\n## 1. Document Overview: Wartime Suspension Period\nThis document outlines the seven-year hiatus of the World Figure Skating Championships caused by World War II. It is structured for RAG-based archival systems to explain the historical gap between the 1939 and 1947 competitive seasons, detailing the impact on the sport's trajectory and the shift in global dominance.\n\n---",
+      "source_path": "data/manual_rag/worlds_1940_to_1946.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1940_to_1946",
+      "chunk_id": "data/manual_rag/worlds_1940_to_1946.md::chunk_1"
+    },
+    {
+      "text": "# Reference: The Suspension of the World Figure Skating Championships (1940–1946)\n\n## 2. Event Metadata: The \"Lost Years\"\n* **Period:** 1940 – 1946\n* **Status:** **Cancelled** (Suspended by the International Skating Union - ISU)\n* **Reason:** Global conflict (World War II), destruction of infrastructure, and travel restrictions.\n* **Major Milestone:** This represents the longest interruption in the history of the championships since their inception in 1896. The suspension effectively ended the \"Pre-War Era\" of skating and resulted in the retirement of an entire generation of athletes without a competitive farewell.\n\n---",
+      "source_path": "data/manual_rag/worlds_1940_to_1946.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1940_to_1946",
+      "chunk_id": "data/manual_rag/worlds_1940_to_1946.md::chunk_2"
+    },
+    {
+      "text": "# Reference: The Suspension of the World Figure Skating Championships (1940–1946)\n\n## 3. Impact Analysis: 1940–1946\n\n### 3.1 The \"Lost Generation\"\nAthletes who reached their physical peak during the early 1940s were denied a world stage. Legends of the late 1930s, such as **Graham Sharp** and **Megan Taylor**, saw their prime years consumed by the war. Many male skaters were drafted into military service, while others turned to professional ice revues to maintain their livelihoods.\n\n### 3.2 Geographical Shift in Power\nThe war had a disproportionate impact on European training centers. While European rinks were often repurposed for the war effort or destroyed, North American skaters in the **United States** and **Canada** were able to maintain more consistent training schedules.\n* **North American Advantage:** Domestic championships in the USA and Canada continued through much of the war, allowing for technical progression (such as the development of double jumps) that outpaced European skaters.\n* **The Result:** When international competition resumed in 1947, North American skaters (e.g., **Barbara Ann Scott**, **Dick Button**) were significantly more athletic than their European counterparts, leading to a decade of Western dominance.\n\n### 3.3 Infrastructure and Logistics\n* **Host Cancellations:** The 1940 Championships were originally scheduled for **Oslo** (Men/Pairs) and **Prague** (Ladies). These were formally cancelled following the invasions of Norway and Czechoslovakia.\n* **Post-War Reintegration:** Following the war, the ISU initially banned athletes from **Germany** and **Japan** from competing. They were not reintegrated into the World Championships until 1951.\n\n---",
+      "source_path": "data/manual_rag/worlds_1940_to_1946.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1940_to_1946",
+      "chunk_id": "data/manual_rag/worlds_1940_to_1946.md::chunk_3"
+    },
+    {
+      "text": "# Reference: The Suspension of the World Figure Skating Championships (1940–1946)\n\n## 4. Continuity Table: Championship Gap\n\n| Year | Status | Original Scheduled Host (If applicable) | Reason for Cancellation |\n| :--- | :--- | :--- | :--- |\n| **1940** | **Cancelled** | Oslo (NOR) / Prague (TCH) | Outbreak of WWII |\n| **1941** | **Cancelled** | N/A | Total European Conflict |\n| **1942** | **Cancelled** | N/A | Global Expansion of War |\n| **1943** | **Cancelled** | N/A | Global Expansion of War |\n| **1944** | **Cancelled** | N/A | Global Expansion of War |\n| **1945** | **Cancelled** | N/A | Immediate Post-War Instability |\n| **1946** | **Cancelled** | N/A | ISU Reorganization Period |\n\n---",
+      "source_path": "data/manual_rag/worlds_1940_to_1946.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1940_to_1946",
+      "chunk_id": "data/manual_rag/worlds_1940_to_1946.md::chunk_4"
+    },
+    {
+      "text": "# Reference: The Suspension of the World Figure Skating Championships (1940–1946)\n\n## 5. Key Keywords for RAG Search: 1940-1946 Gap\n`WWII Cancellation`, `World Figure Skating hiatus`, `1940 Oslo cancellation`, `1940 Prague cancellation`, `Lost generation of skaters`, `Post-war skating shift`, `ISU suspension 1940-1946`, `North American dominance origin`.",
+      "source_path": "data/manual_rag/worlds_1940_to_1946.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1940_to_1946",
+      "chunk_id": "data/manual_rag/worlds_1940_to_1946.md::chunk_5"
     },
     {
       "text": "# Reference: 1947 World Figure Skating Championships\n\n## 1. Document Overview: 1947 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1947 World Figure Skating Championships. It is structured for high-precision retrieval and RAG-based systems, documenting the first World Championships held after a seven-year hiatus due to World War II (1940–1946).\n\n---",
