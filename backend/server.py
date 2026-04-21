@@ -341,6 +341,9 @@ def chat(req: ChatRequest):
         # -------------------------
         # AGENT DECISION (NOW HISTORY-AWARE)
         # -------------------------
+        intent = classify_query_intent(message, history)
+        print(f"[AGENT] intent={intent}")
+
         clarify, reason = needs_clarification(message, history)
         print(f"[AGENT] clarify={clarify}, reason={reason}")
 
@@ -360,7 +363,7 @@ def chat(req: ChatRequest):
         # -------------------------
         # SMART CLARIFICATION LOGIC
         # -------------------------
-        if clarify:
+        if clarify and intent == "default":
             # 🚨 NEW: check if prior context exists
             has_prior_context = any(
                 ("axel" in m["content"].lower() or
@@ -401,8 +404,7 @@ def chat(req: ChatRequest):
         # topic classifier
         # -------------------------
 
-        intent = classify_query_intent(message, history)
-        print(f"[AGENT] intent={intent}")
+
 
         # -------------------------
         # RAG PATH (UNCHANGED)
