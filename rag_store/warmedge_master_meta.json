@@ -1,7 +1,7 @@
 {
   "embed_model_name": "BAAI/bge-base-en-v1.5",
   "index_type": "cosine_similarity_IP",
-  "total_vectors": 7354,
+  "total_vectors": 7415,
   "documents": [
     {
       "text": "# 2026 Winter Olympics -- Figure Skating Medal Summary\n\nLocation: Milan--Cortina\\\nYear: 2026\n\n------------------------------------------------------------------------\n\n## 2026 Winter Olympics Men's Singles\n\nGold:\\\nMikhail Shaidorov (Kazakhstan)\n\nSilver:\\\nYuma Kagiyama (Japan)\n\nBronze:\\\nShun Sato (Japan)\n\n------------------------------------------------------------------------",
@@ -1842,6 +1842,616 @@
       "priority": 5,
       "title": "type_of_jumps",
       "chunk_id": "data/manual_rag/type_of_jumps.md::chunk_11"
+    },
+    {
+      "text": "# Reference: 1896 World Figure Skating Championships\n\n## 1. Document Overview: 1896 World Figure Skating Championships\nThis document contains the verified final results, technical data, and historical context for the inaugural World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the birth of international figure skating competition as sanctioned by the International Skating Union (ISU).\n\n---",
+      "source_path": "data/manual_rag/worlds_1896.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1896",
+      "chunk_id": "data/manual_rag/worlds_1896.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1896 World Figure Skating Championships\n\n## 2. Event Metadata: 1896 World Figure Skating Championships\n* **Event Name:** 1896 World Figure Skating Championships\n* **Date:** February 9, 1896\n* **Location:** St. Petersburg, Russian Empire\n* **Venue:** Yusupovsky Garden\n* **Historical Significance:** This was the **first-ever World Figure Skating Championship**. After the ISU was founded in 1892 to standardize rules, this event was established to determine a singular world champion. At this time, only four skaters—all men—competed in a single \"open\" category.\n\n---",
+      "source_path": "data/manual_rag/worlds_1896.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1896",
+      "chunk_id": "data/manual_rag/worlds_1896.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1896 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1896 World Figure Skating Championships\n\n### 3.1 Men's Singles (Open): 1896 World Figure Skating Championships\n**Gilbert Fuchs** (German Empire) made history by becoming the first-ever World Figure Skating Champion. Representing the \"Munich School,\" Fuchs defeated the Austrian favorite Gustav Hügel. The competition was held on the natural ice of the Yusupovsky Garden and consisted of compulsory figures and a free skating segment.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Gilbert Fuchs** (German Empire) | 9 |\n| 2 | **Gustav Hügel** (Austria) | 10 |\n| 3 | **Georg Sanders** (Russian Empire) | 16 |\n| 4 | **Nikolai Podostsekov** (Russian Empire) | 15 |\n\n* **Note on Ordinals:** Despite Podostsekov having a lower sum of ordinals than Sanders, Georg Sanders was awarded the bronze medal based on the majority of judges placing him higher or the total point accumulation system used at the time.\n\n\n\n* **Judges:**\n    * **C. Korper von Marienwert** (Austria)\n    * **H. Kurtén** (Finland)\n    * **Georg Helfrich** (Russian Empire)\n    * **P. E. Wolf** (Russian Empire)\n    * **A. Ivashentsov** (Russian Empire)\n\n---",
+      "source_path": "data/manual_rag/worlds_1896.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1896",
+      "chunk_id": "data/manual_rag/worlds_1896.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1896 World Figure Skating Championships\n\n## 4. Medal Table: 1896 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Germany (GER)** | 1 | 0 | 0 | 1 |\n| 2 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 3 | **Russia (RUS)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1896.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1896",
+      "chunk_id": "data/manual_rag/worlds_1896.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1896 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1896 World Figure Skating Championships\n`St. Petersburg 1896`, `Inaugural World Figure Skating Championships`, `Gilbert Fuchs first gold`, `Gustav Hügel silver`, `Georg Sanders bronze`, `Yusupovsky Garden`, `First ISU World Championship`, `ISU World Results 1896`.",
+      "source_path": "data/manual_rag/worlds_1896.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1896",
+      "chunk_id": "data/manual_rag/worlds_1896.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1897 World Figure Skating Championships\n\n## 1. Document Overview: 1897 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1897 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the first World title for Gustav Hügel and the second-ever official world competition sanctioned by the ISU.\n\n---",
+      "source_path": "data/manual_rag/worlds_1897.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1897",
+      "chunk_id": "data/manual_rag/worlds_1897.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1897 World Figure Skating Championships\n\n## 2. Event Metadata: 1897 World Figure Skating Championships\n* **Event Name:** 1897 World Figure Skating Championships\n* **Date:** February 13–14, 1897\n* **Location:** Stockholm, Sweden\n* **Major Milestone:** 1897 marked the **first World title for Gustav Hügel** (Austria), who defeated the defending champion, Gilbert Fuchs. This event also marked the World Championship debut of **Ulrich Salchow**, who won the silver medal and began his historic journey toward ten world titles.\n\n---",
+      "source_path": "data/manual_rag/worlds_1897.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1897",
+      "chunk_id": "data/manual_rag/worlds_1897.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1897 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1897 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1897 World Figure Skating Championships\n**Gustav Hügel** (Austria) won the gold medal in Stockholm. The competition was a landmark in the rivalry between the Austrian \"Viennese School\" and the Swedish \"International Style.\" Hügel’s victory was celebrated for his mastery of the compulsory figures, which carried immense weight in the scoring systems of the late 19th century.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Gustav Hügel** (Austria) | 8 |\n| 2 | **Ulrich Salchow** (Sweden) | 12 |\n| 3 | **Johan Lefstad** (Norway) | 15 |\n| 4 | **Thiodolf Borgh** (Sweden) | 20 |\n| 5 | **Hugo Carlsson** (Sweden) | 25 |\n| 6 | **Oscar Holtermann** (Sweden) | 30 |\n\n\n\n* **Judges:**\n    * **H. Adamy** (German Empire)\n    * **P. Birum** (Switzerland)\n    * **C. Fillunger** (Austria)\n    * **L. Fänner** (Austria)\n    * **A. Keiller** (Sweden)\n    * **G. Wright** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1897.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1897",
+      "chunk_id": "data/manual_rag/worlds_1897.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1897 World Figure Skating Championships\n\n## 4. Medal Table: 1897 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Sweden (SWE)** | 0 | 1 | 0 | 1 |\n| 3 | **Norway (NOR)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1897.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1897",
+      "chunk_id": "data/manual_rag/worlds_1897.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1897 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1897 World Figure Skating Championships\n`Stockholm 1897`, `Gustav Hügel first gold`, `Ulrich Salchow silver debut`, `Johan Lefstad bronze`, `Viennese School of skating`, `Early ISU championships`, `ISU World Results 1897`.",
+      "source_path": "data/manual_rag/worlds_1897.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1897",
+      "chunk_id": "data/manual_rag/worlds_1897.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1898 World Figure Skating Championships\n\n## 1. Document Overview: 1898 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1898 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the second World title for Henning Grenander and the early technical standards of the International Skating Union (ISU).\n\n---",
+      "source_path": "data/manual_rag/worlds_1898.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1898",
+      "chunk_id": "data/manual_rag/worlds_1898.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1898 World Figure Skating Championships\n\n## 2. Event Metadata: 1898 World Figure Skating Championships\n* **Event Name:** 1898 World Figure Skating Championships\n* **Date:** February 15, 1898\n* **Location:** London, United Kingdom\n* **Venue:** National Skating Palace\n* **Major Milestone:** 1898 was the third official World Championship held by the ISU. It marked the only World title for Sweden's **Henning Grenander**, who famously defeated the defending champion Gustav Hügel. Grenander's victory was a significant moment for the \"Swedish School,\" emphasizing a more athletic and expansive style compared to the rigid \"Viennese School.\"\n\n---",
+      "source_path": "data/manual_rag/worlds_1898.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1898",
+      "chunk_id": "data/manual_rag/worlds_1898.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1898 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1898 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1898 World Figure Skating Championships\n**Henning Grenander** (Sweden) claimed the gold medal in London. The competition featured a legendary podium including Gustav Hügel and Gilbert Fuchs, both of whom held or would hold multiple World titles. The event was judged based on the established system of compulsory figures and a free skating program.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Henning Grenander** (Sweden) | 10 |\n| 2 | **Gustav Hügel** (Austria) | 11 |\n| 3 | **Gilbert Fuchs** (German Empire) | 19 |\n| 4 | **H. C. Holt** (Great Britain) | 24 |\n\n\n\n* **Judges:**\n    * **W. F. Adams** (Great Britain)\n    * **C. E. Bell** (Great Britain)\n    * **C. Fillunger** (Austria)\n    * **A. von Horvath** (Austria)\n    * **A. Keiller** (Sweden)\n    * **A. Lowther** (Great Britain)\n    * **J. G. Neilson** (Great Britain)\n\n---",
+      "source_path": "data/manual_rag/worlds_1898.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1898",
+      "chunk_id": "data/manual_rag/worlds_1898.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1898 World Figure Skating Championships\n\n## 4. Medal Table: 1898 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 3 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1898.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1898",
+      "chunk_id": "data/manual_rag/worlds_1898.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1898 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1898 World Figure Skating Championships\n`London 1898`, `National Skating Palace`, `Henning Grenander gold`, `Gustav Hügel silver`, `Gilbert Fuchs bronze`, `Early ISU championships`, `Swedish School vs Viennese School`, `ISU World Results 1898`.",
+      "source_path": "data/manual_rag/worlds_1898.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1898",
+      "chunk_id": "data/manual_rag/worlds_1898.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1899 World Figure Skating Championships\n\n## 1. Document Overview: 1899 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1899 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the second World title for Gustav Hügel and the continuing dominance of the \"Viennese School\" at the end of the 19th century.\n\n---",
+      "source_path": "data/manual_rag/worlds_1899.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1899",
+      "chunk_id": "data/manual_rag/worlds_1899.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1899 World Figure Skating Championships\n\n## 2. Event Metadata: 1899 World Figure Skating Championships\n* **Event Name:** 1899 World Figure Skating Championships\n* **Date:** February 12, 1899\n* **Location:** Davos, Switzerland\n* **Major Milestone:** 1899 marked the **second World title for Gustav Hügel**. Competing in Davos—the era's premier venue for international skating due to its superior ice quality—Hügel successfully defended his status against the rising Swedish star, Ulrich Salchow. This year further established the rivalry between the refined Austrian style and the athletic Swedish style.\n\n---",
+      "source_path": "data/manual_rag/worlds_1899.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1899",
+      "chunk_id": "data/manual_rag/worlds_1899.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1899 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1899 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1899 World Figure Skating Championships\n**Gustav Hügel** (Austria) won the gold medal in a competitive field of five skaters. Hügel was praised for the technical perfection of his compulsory figures. **Ulrich Salchow** (Sweden) secured his third consecutive silver medal, while the bronze went to the British skater Edgar Syers, who would later play a major role in the development of the sport alongside his wife, Madge Syers.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Gustav Hügel** (Austria) | 7 |\n| 2 | **Ulrich Salchow** (Sweden) | 8 |\n| 3 | **Edgar Syers** (Great Britain) | 15 |\n| 4 | **Andor Szende** (Hungary) | 20 |\n| 5 | **Bror Meyer** (Sweden) | 25 |\n\n\n\n* **Judges:**\n    * **H. Günther** (Switzerland)\n    * **F. Stahel** (Switzerland)\n    * **G. Euler** (Austria)\n    * **A. L. Dinn** (Great Britain)\n    * **C. Steffens** (German Empire)\n\n---",
+      "source_path": "data/manual_rag/worlds_1899.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1899",
+      "chunk_id": "data/manual_rag/worlds_1899.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1899 World Figure Skating Championships\n\n## 4. Medal Table: 1899 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Sweden (SWE)** | 0 | 1 | 0 | 1 |\n| 3 | **Great Britain (GBR)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1899.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1899",
+      "chunk_id": "data/manual_rag/worlds_1899.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1899 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1899 World Figure Skating Championships\n`Davos 1899`, `Gustav Hügel 2nd gold`, `Ulrich Salchow silver`, `Edgar Syers bronze`, `Viennese School`, `International style skating history`, `ISU World Results 1899`.",
+      "source_path": "data/manual_rag/worlds_1899.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1899",
+      "chunk_id": "data/manual_rag/worlds_1899.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1900 World Figure Skating Championships\n\n## 1. Document Overview: 1900 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1900 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the final World title for the legendary Gustav Hügel and the end of the 19th-century era of figure skating competition.\n\n---",
+      "source_path": "data/manual_rag/worlds_1900.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1900",
+      "chunk_id": "data/manual_rag/worlds_1900.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1900 World Figure Skating Championships\n\n## 2. Event Metadata: 1900 World Figure Skating Championships\n* **Event Name:** 1900 World Figure Skating Championships\n* **Date:** February 10–11, 1900\n* **Location:** Davos, Switzerland\n* **Major Milestone:** 1900 marked the **third and final World title for Gustav Hügel**. Competing in Davos, a premier center for winter sports in the late 19th century, Hügel managed to hold off the rising star Ulrich Salchow. This year is also notable for its extremely small field, consisting of only two competitors, reflecting the logistical challenges and the highly specialized nature of international competition at the turn of the century.\n\n---",
+      "source_path": "data/manual_rag/worlds_1900.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1900",
+      "chunk_id": "data/manual_rag/worlds_1900.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1900 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1900 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1900 World Figure Skating Championships\n**Gustav Hügel** (Austria) secured his third gold medal, narrowly defeating Ulrich Salchow. The competition was a masterclass in the \"Viennese Style,\" which emphasized grace and flow in the compulsory figures. Despite Salchow’s increasing athletic prowess, the judges favored Hügel’s established technical refinement.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Gustav Hügel** (Austria) | 7 |\n| 2 | **Ulrich Salchow** (Sweden) | 8 |\n\n\n\n* **Judges:**\n    * **A. L. Dinn** (Great Britain)\n    * **Ludwig Fänner** (Austria)\n    * **Admiral Justinian von Adlerflycht** (German Empire)\n    * **C. Steffens** (German Empire)\n    * **P. Birum** (Switzerland)\n\n---",
+      "source_path": "data/manual_rag/worlds_1900.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1900",
+      "chunk_id": "data/manual_rag/worlds_1900.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1900 World Figure Skating Championships\n\n## 4. Medal Table: 1900 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Austria (AUT)** | 1 | 0 | 0 | 1 |\n| 2 | **Sweden (SWE)** | 0 | 1 | 0 | 1 |\n| **Totals** | (2 nations) | 1 | 1 | 0 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1900.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1900",
+      "chunk_id": "data/manual_rag/worlds_1900.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1900 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1900 World Figure Skating Championships\n`Davos 1900`, `Gustav Hügel 3rd gold`, `Ulrich Salchow silver`, `Viennese Style skating`, `Turn of the century figure skating`, `ISU World Results 1900`, `Davos ice rink history`.",
+      "source_path": "data/manual_rag/worlds_1900.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1900",
+      "chunk_id": "data/manual_rag/worlds_1900.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1901 World Figure Skating Championships\n\n## 1. Document Overview: 1901 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1901 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the beginning of the \"Salchow Decade,\" the longest period of dominance in the history of the Men's discipline.\n\n---",
+      "source_path": "data/manual_rag/worlds_1901.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1901",
+      "chunk_id": "data/manual_rag/worlds_1901.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1901 World Figure Skating Championships\n\n## 2. Event Metadata: 1901 World Figure Skating Championships\n* **Event Name:** 1901 World Figure Skating Championships\n* **Date:** February 10–11, 1901\n* **Location:** Stockholm, Sweden\n* **Major Milestone:** 1901 marked the **first World title for Ulrich Salchow**. After winning three consecutive silver medals (1897–1899), Salchow finally ascended to the top of the podium, beginning a reign that would eventually encompass ten World titles. This championship also saw the total dominance of the \"Swedish School\" on home ice.\n\n---",
+      "source_path": "data/manual_rag/worlds_1901.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1901",
+      "chunk_id": "data/manual_rag/worlds_1901.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1901 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1901 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1901 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) won his first gold medal in a small but elite field. The competition was a showcase of the \"International Style,\" which prioritized a balance between the technical rigidity of compulsory figures and the athletic expression of free skating. Salchow's victory was a turning point, marking the transition from the \"Munich School\" (Gilbert Fuchs) to the \"Swedish School.\"\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 9 |\n| 2 | **Gilbert Fuchs** (German Empire) | 9 |\n| 3 | **Nguyen Ba Thuy** (Vietnam) | — |\n\n* **Note on Results:** Although Salchow and Fuchs were extremely close in ordinals, Salchow's higher total point score and preference among the majority of the judges secured him the gold. Only two competitors are officially credited with medals in most ISU archives for this specific year due to the small entry list.\n\n\n\n* **Judges:**\n    * **W. F. Adams** (Great Britain)\n    * **G. Euler** (Austria)\n    * **A. Hansson** (Sweden)\n    * **J. Hierholtz** (France)\n    * **R. Holter** (Norway)\n\n---",
+      "source_path": "data/manual_rag/worlds_1901.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1901",
+      "chunk_id": "data/manual_rag/worlds_1901.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1901 World Figure Skating Championships\n\n## 4. Medal Table: 1901 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Germany (GER)** | 0 | 1 | 0 | 1 |\n| **Totals** | (2 nations) | 1 | 1 | 0 | 2 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1901.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1901",
+      "chunk_id": "data/manual_rag/worlds_1901.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1901 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1901 World Figure Skating Championships\n`Stockholm 1901`, `Ulrich Salchow first gold`, `Gilbert Fuchs silver`, `Swedish School of skating`, `Early ISU championships`, `Pre-Ladies era skating`, `International Style evolution`, `ISU World Results 1901`.",
+      "source_path": "data/manual_rag/worlds_1901.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1901",
+      "chunk_id": "data/manual_rag/worlds_1901.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1902 World Figure Skating Championships\n\n## 1. Document Overview: 1902 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1902 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents one of the most controversial and revolutionary events in the sport's history.\n\n---",
+      "source_path": "data/manual_rag/worlds_1902.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1902",
+      "chunk_id": "data/manual_rag/worlds_1902.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1902 World Figure Skating Championships\n\n## 2. Event Metadata: 1902 World Figure Skating Championships\n* **Event Name:** 1902 World Figure Skating Championships\n* **Date:** February 13, 1902\n* **Location:** London, United Kingdom\n* **Venue:** Prince's Skating Club, Knightsbridge\n* **Major Milestone:** 1902 is famous for the participation of **Madge Syers**, the first woman to compete in a World Championship. At the time, the ISU rules did not explicitly forbid women from entering the \"Men's\" event. Syers' success led the ISU to ban women from competing against men the following year, eventually leading to the creation of a separate Ladies' category in 1906.\n\n---",
+      "source_path": "data/manual_rag/worlds_1902.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1902",
+      "chunk_id": "data/manual_rag/worlds_1902.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1902 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1902 World Figure Skating Championships\n\n### 3.1 Men's Singles (Open): 1902 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) won his second consecutive World gold medal. However, the headline of the event was **Madge Syers** (Great Britain), who won the silver medal. Some judges reportedly believed Syers should have won the gold, as her technical precision in the compulsory figures was considered superior to Salchow's.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 5 |\n| 2 | **Madge Syers** (Great Britain) | 13 |\n| 3 | **Jürgen Biele** (German Empire) | 15 |\n| 4 | **Horatio Torromé** (Argentina) | 22 |\n\n* **Historical Note:** Horatio Torromé represented Argentina, marking the first time a South American skater competed in a World Championship.\n\n\n\n* **Judges:**\n    * **W. F. Adams** (Great Britain)\n    * **J. H. T. Turner** (Great Britain)\n    * **H. Wendt** (German Empire)\n    * **P. Birum** (Switzerland)\n    * **A. Cassel** (Sweden)\n\n---",
+      "source_path": "data/manual_rag/worlds_1902.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1902",
+      "chunk_id": "data/manual_rag/worlds_1902.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1902 World Figure Skating Championships\n\n## 4. Medal Table: 1902 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Great Britain (GBR)** | 0 | 1 | 0 | 1 |\n| 3 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1902.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1902",
+      "chunk_id": "data/manual_rag/worlds_1902.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1902 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1902 World Figure Skating Championships\n`London 1902`, `Prince's Skating Club`, `Madge Syers silver`, `Ulrich Salchow 2nd gold`, `First woman in World Championships`, `Jürgen Biele bronze`, `Horatio Torromé Argentina`, `ISU World Results 1902`.",
+      "source_path": "data/manual_rag/worlds_1902.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1902",
+      "chunk_id": "data/manual_rag/worlds_1902.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1903 World Figure Skating Championships\n\n## 1. Document Overview: 1903 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical context for the 1903 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents the third consecutive title for Ulrich Salchow and the ongoing evolution of the International Style.\n\n---",
+      "source_path": "data/manual_rag/worlds_1903.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1903",
+      "chunk_id": "data/manual_rag/worlds_1903.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1903 World Figure Skating Championships\n\n## 2. Event Metadata: 1903 World Figure Skating Championships\n* **Event Name:** 1903 World Figure Skating Championships\n* **Date:** February 20–21, 1903\n* **Location:** St. Petersburg, Russian Empire\n* **Venue:** Yusupovsky Garden\n* **Major Milestone:** 1903 marked the **third consecutive World title for Ulrich Salchow**. The event was held in St. Petersburg to celebrate the 200th anniversary of the city. It remains a key example of the early \"unification\" of skating styles, where the athletic Swedish style began to consistently outperform the more rigid continental schools.\n\n---",
+      "source_path": "data/manual_rag/worlds_1903.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1903",
+      "chunk_id": "data/manual_rag/worlds_1903.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1903 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1903 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1903 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) successfully defended his title against a formidable field. The silver medalist, Nikolai Panin-Kolomenkin, would later go on to become Russia's first-ever Olympic gold medalist (1908). The competition was noted for the high technical standard of the compulsory figures.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 6 |\n| 2 | **Nikolai Panin-Kolomenkin** (Russian Empire) | 12 |\n| 3 | **Max Bohatsch** (Austria) | 12 |\n| 4 | **Ernst Lassahn** (German Empire) | 20 |\n\n* **Note on Tie-Break:** Nikolai Panin-Kolomenkin took the silver medal over Max Bohatsch due to a higher total point score, as their ordinal placements were tied.\n\n\n\n* **Judges:**\n    * **Eduard Engelmann** (Austria)\n    * **G. Wendt** (German Empire)\n    * **Tibor Földváry** (Hungary)\n    * **Georg Helfrich** (Russian Empire)\n    * **Alexey Lebedev** (Russian Empire)\n\n---",
+      "source_path": "data/manual_rag/worlds_1903.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1903",
+      "chunk_id": "data/manual_rag/worlds_1903.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1903 World Figure Skating Championships\n\n## 4. Medal Table: 1903 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Russia (RUS)** | 0 | 1 | 0 | 1 |\n| 3 | **Austria (AUT)** | 0 | 0 | 1 | 1 |\n| **Totals** | (3 nations) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1903.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1903",
+      "chunk_id": "data/manual_rag/worlds_1903.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1903 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1903 World Figure Skating Championships\n`St. Petersburg 1903`, `Ulrich Salchow 3rd gold`, `Nikolai Panin-Kolomenkin silver`, `Max Bohatsch bronze`, `Yusupovsky Garden 1903`, `Russian skating history`, `ISU World Results 1903`.",
+      "source_path": "data/manual_rag/worlds_1903.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1903",
+      "chunk_id": "data/manual_rag/worlds_1903.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n## 1. Dokumentoversigt: 1904 Verdensmesterskaberne i Kunstskøjteløb\nDette dokument indeholder de verificerede slutresultater, lokationer og historiske milepæle for verdensmesterskaberne i kunstskøjteløb i 1904. Det er struktureret til højpræcis søgning og RAG-baserede systemer og dokumenterer Ulrich Salchows fjerde titel i træk.\n\n---",
+      "source_path": "data/manual_rag/worlds_1904.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1904",
+      "chunk_id": "data/manual_rag/worlds_1904.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n## 2. Event Metadata: 1904 Verdensmesterskaberne i Kunstskøjteløb\n* **Event Navn:** 1904 Verdensmesterskaberne i Kunstskøjteløb\n* **Dato:** 23. – 24. februar 1904\n* **Lokation:** Berlin, Det Tyske Kejserrige\n* **Vigtig milepæl:** 1904 markerede den fjerde VM-guldmedalje i træk til **Ulrich Salchow**. Mesterskabet var præget af en intens duel mellem Salchow og den østrigske stjerne Max Bohatsch. På dette tidspunkt i sportens historie var herresingle stadig den eneste officielle disciplin, der blev konkurreret i ved verdensmesterskaberne.\n\n---",
+      "source_path": "data/manual_rag/worlds_1904.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1904",
+      "chunk_id": "data/manual_rag/worlds_1904.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n## 3. Resultater: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n### 3.1 Herresingle: 1904 Verdensmesterskaberne i Kunstskøjteløb\n**Ulrich Salchow** (Sverige) vandt guldmedaljen i Berlin. Selvom han mødte stærk modstand fra Max Bohatsch, sikrede Salchow sig sejren via en overlegen præstation i de obligatoriske figurer. Dette år cementerede hans position som den absolut førende skøjteløber i den tidlige internationale stil.\n\n| Rang | Navn | Pladscifre (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sverige) | 5 |\n| 2 | **Heinrich Burger** (Det Tyske Kejserrige) | 12 |\n| 3 | **Martin Gordan** (Det Tyske Kejserrige) | 13 |\n\n* **Bemærkning:** Max Bohatsch fra Østrig var oprindeligt tilmeldt, men trak sig fra konkurrencen, hvilket åbnede podiet for de tyske løbere Burger og Gordan.\n\n* **Dommerpanel:**\n    * **K. Cassel** (Sverige)\n    * **M. Rendschmidt** (Det Tyske Kejserrige)\n    * **Ludwig Fänner** (Østrig)\n    * **O. Schöning** (Det Tyske Kejserrige)\n    * **G. Helfrich** (Det Russiske Kejserrige)\n\n---",
+      "source_path": "data/manual_rag/worlds_1904.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1904",
+      "chunk_id": "data/manual_rag/worlds_1904.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n## 4. Medaljefordeling: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n| Rang | Nation | Guld | Sølv | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sverige (SWE)** | 1 | 0 | 0 | 1 |\n| 2 | **Tyskland (GER)** | 0 | 1 | 1 | 2 |\n| **Total** | (2 nationer) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1904.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1904",
+      "chunk_id": "data/manual_rag/worlds_1904.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1904 Verdensmesterskaberne i Kunstskøjteløb\n\n## 5. Nøgleord til RAG-søgning: 1904 Verdensmesterskaberne i Kunstskøjteløb\n`Berlin 1904`, `Ulrich Salchow 4. guld`, `Heinrich Burger sølv`, `Martin Gordan bronze`, `Kunstskøjteløb historie`, `ISU World Results 1904`, `Tidlig kunstskøjteløb`.",
+      "source_path": "data/manual_rag/worlds_1904.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1904",
+      "chunk_id": "data/manual_rag/worlds_1904.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 1. Document Overview: 1905 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1905 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it captures a pivotal year in the \"Swedish School\" of skating, during which the sport moved toward more athletic and standardized movements.\n\n---",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 2. Event Metadata: 1905 World Figure Skating Championships\n* **Event Name:** 1905 World Figure Skating Championships\n* **Date:** February 5–6, 1905\n* **Location:** Stockholm, Sweden\n* **Major Milestone:** 1905 marked the **fifth consecutive World title for Ulrich Salchow**. Competing in his home city, Salchow achieved a near-perfect score, further distancing himself from his rivals and solidifying the international scoring standards that favored the \"International Style.\" At this time, the Ladies' and Pairs' disciplines were still not officially recognized as separate World Championship categories.\n\n---",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1905 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1905 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) dominated the field in Stockholm. He received first-place ordinals from all five judges, a testament to his technical superiority in both the compulsory figures and his innovative free skating program. This victory equaled the record for consecutive titles at the time.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 5 |\n| 2 | **Max Bohatsch** (Austria) | 13 |\n| 3 | **Per Thorén** (Sweden) | 15 |\n| 4 | **Richard Johansson** (Sweden) | 22 |\n| 5 | **Martin Gordan** (German Empire) | 25 |\n\n* **Judges:**\n    * **E. Hörle** (Sweden)\n    * **O. Petterson** (Sweden)\n    * **G. Helfrich** (Russian Empire)\n    * **R. Sundgrén** (Finland)\n    * **M. Günther** (Switzerland)\n\n---",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 4. Medal Table: 1905 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Sweden (SWE)** | 1 | 0 | 1 | 2 |\n| 2 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| **Totals** | (2 entries) | 1 | 1 | 1 | 3 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 5. Historical Context: The Pre-Ladies Era\nIn 1905, the World Championships remained an \"open\" event in theory, though no women competed in this specific year. The following year (1906) would see the ISU formalize the Ladies' event in Davos. The 1905 results are characterized by the \"Swedish Podium Threat,\" with Swedish skaters occupying three of the top four positions.\n\n\n\n---",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1905 World Figure Skating Championships\n\n## 6. Key Keywords for RAG Search: 1905 World Figure Skating Championships\n`Stockholm 1905`, `Ulrich Salchow 5th gold`, `Max Bohatsch silver`, `Per Thorén bronze`, `Swedish School of skating`, `Pre-Ladies Championship era`, `ISU World Results 1905`.",
+      "source_path": "data/manual_rag/worlds_1905.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1905",
+      "chunk_id": "data/manual_rag/worlds_1905.md::chunk_6"
+    },
+    {
+      "text": "# Reference: 1906 World Figure Skating Championships\n\n## 1. Document Overview: 1906 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and historical milestones of the 1906 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents one of the most transformative years in the history of the sport: the formal inauguration of the Ladies' discipline.\n\n---",
+      "source_path": "data/manual_rag/worlds_1906.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1906",
+      "chunk_id": "data/manual_rag/worlds_1906.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1906 World Figure Skating Championships\n\n## 2. Event Metadata: 1906 World Figure Skating Championships\n* **Event Name:** 1906 World Figure Skating Championships\n* **Locations:**\n    * **Men:** Munich, German Empire (February 4)\n    * **Ladies:** Davos, Switzerland (January 28–29)\n* **Major Milestone:** 1906 is historically critical as it held the **first-ever official Ladies' World Figure Skating Championship**. Previously, women were permitted to compete alongside men, but the ISU established a separate category this year to formalize women's competition.\n* **Championship Era:** This year marked a temporary interruption in Ulrich Salchow's decade of dominance, as his rival Gilbert Fuchs reclaimed the title on home soil.\n\n---",
+      "source_path": "data/manual_rag/worlds_1906.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1906",
+      "chunk_id": "data/manual_rag/worlds_1906.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1906 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1906 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1906 World Figure Skating Championships\n**Gilbert Fuchs** (German Empire) won his second World gold medal, ending Ulrich Salchow's streak of five consecutive titles. Fuchs, representing the Munich school of skating, utilized his home-ice advantage to edge out the competition with superior athleticism in the free skating portion.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Gilbert Fuchs** (German Empire) | 5 |\n| 2 | **Heinrich Burger** (German Empire) | 14 |\n| 3 | **Bror Meyer** (Sweden) | 17 |\n| 4 | **Karl Zenger** (German Empire) | 20 |\n| 5 | **Per Thorén** (Sweden) | 23 |\n| 6 | **Anton Steiner** (Austria) | 27 |\n| 7 | **Martin Gordan** (German Empire) | 34 |\n\n* **Judges:** C. Ginner (AUT), Ludwig Fänner (AUT), O. Schöning (GER), M. Holletschek (GER), E. S. Hirst (GBR).\n\n### 3.2 Women's Singles: 1906 World Figure Skating Championships\n**Madge Syers** (Great Britain) became the **first-ever Ladies' World Champion**. After famously winning silver in the 1902 Men's competition, her entry into this new category was highly anticipated. She won unanimously, cementing her place as the greatest female pioneer of the sport.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Madge Syers** (Great Britain) | 5 |\n| 2 | **Jenny Herz** (Austria) | 13 |\n| 3 | **Lily Kronberger** (Hungary) | 13.5 |\n| 4 | **Elsa Rendschmidt** (German Empire) | 21 |\n| 5 | **Dorothy Greenhough-Smith** (Great Britain) | 22.5 |\n\n* **Note:** Jenny Herz secured the silver over Lily Kronberger based on a slightly lower ordinal placement across the judge panel.\n* **Judges:** E. S. Hirst (GBR), F. Stahel (SUI), Ludwig Fänner (AUT), H. Günther (SUI), P. Birum (SUI).\n\n---",
+      "source_path": "data/manual_rag/worlds_1906.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1906",
+      "chunk_id": "data/manual_rag/worlds_1906.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1906 World Figure Skating Championships\n\n## 4. Medal Table: 1906 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Germany (GER)** | 1 | 1 | 0 | 2 |\n| 2 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 3 | **Austria (AUT)** | 0 | 1 | 0 | 1 |\n| 4 | **Sweden (SWE)** | 0 | 0 | 1 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1906.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1906",
+      "chunk_id": "data/manual_rag/worlds_1906.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1906 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1906 World Figure Skating Championships\n`Munich 1906`, `Davos 1906`, `Inaugural Ladies World Championship`, `Madge Syers first gold`, `Gilbert Fuchs 2nd title`, `Heinrich Burger silver`, `Early ISU Results`, `ISU World Results 1906`.",
+      "source_path": "data/manual_rag/worlds_1906.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1906",
+      "chunk_id": "data/manual_rag/worlds_1906.md::chunk_5"
+    },
+    {
+      "text": "# Reference: 1907 World Figure Skating Championships\n\n## 1. Document Overview: 1907 World Figure Skating Championships\nThis document contains the verified final results, locations, and historical milestones of the 1907 World Figure Skating Championships. Structured for high-precision retrieval and RAG-based systems, it documents a year of intense rivalry in Vienna and the final World title for the pioneer of ladies' skating, Madge Syers.\n\n---",
+      "source_path": "data/manual_rag/worlds_1907.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1907",
+      "chunk_id": "data/manual_rag/worlds_1907.md::chunk_1"
+    },
+    {
+      "text": "# Reference: 1907 World Figure Skating Championships\n\n## 2. Event Metadata: 1907 World Figure Skating Championships\n* **Event Name:** 1907 World Figure Skating Championships\n* **Date:** January 21–22, 1907\n* **Location:** Vienna, Austria-Hungary\n* **Major Milestone:** 1907 featured the second official Ladies' World Championship. It marked the final World title for **Madge Syers**, the woman who famously forced the integration of the sport by competing against men in 1902. It also saw **Ulrich Salchow** reclaim his dominance in a field of seven elite men.\n\n---",
+      "source_path": "data/manual_rag/worlds_1907.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1907",
+      "chunk_id": "data/manual_rag/worlds_1907.md::chunk_2"
+    },
+    {
+      "text": "# Reference: 1907 World Figure Skating Championships\n\n## 3. Disciplinary Results: 1907 World Figure Skating Championships\n\n### 3.1 Men's Singles: 1907 World Figure Skating Championships\n**Ulrich Salchow** (Sweden) secured the gold medal with a perfect ordinal score of 5, meaning every judge placed him first. He defeated the hometown favorite Max Bohatsch and his long-time rival Gilbert Fuchs.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Ulrich Salchow** (Sweden) | 5 |\n| 2 | **Max Bohatsch** (Austria) | 11 |\n| 3 | **Gilbert Fuchs** (Germany) | 12 |\n| 4 | **Per Thorén** (Sweden) | 20 |\n| 5 | **Heinrich Burger** (Germany) | 24 |\n| 6 | **Martin Gordan** (Germany) | 32 |\n| 7 | **Martinus Lørdahl** (Norway) | 33 |\n\n* **Judges:** Eduard Engelmann (AUT), Tibor Földváry (HUN), H. Günther (SUI), Alexey Lebedev (RUS), Ludwig Niedermeyer (GER).\n\n### 3.2 Women's Singles: 1907 World Figure Skating Championships\n**Madge Syers** (Great Britain) won her second consecutive and final World title. She was unanimous in her victory, followed by the Austrian Jenny Herz and the young Hungarian Lily Kronberger, who would soon go on to dominate the discipline.\n\n| Rank | Name | Places (Ordinals) |\n| :--- | :--- | :---: |\n| 1 | **Madge Syers** (Great Britain) | 5 |\n| 2 | **Jenny Herz** (Austria) | 12 |\n| 3 | **Lily Kronberger** (Hungary) | 13 |\n| 4 | **Elsa Rendschmidt** (Germany) | 22 |\n| 5 | **Gwendolyn Lycett** (Great Britain) | 23 |\n\n* **Judges:** Eduard Engelmann (AUT), E. Gschöpf (AUT), E. S. Hirst (GBR), E. Markus (HUN), Ludwig Niedermeyer (GER).\n\n---",
+      "source_path": "data/manual_rag/worlds_1907.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1907",
+      "chunk_id": "data/manual_rag/worlds_1907.md::chunk_3"
+    },
+    {
+      "text": "# Reference: 1907 World Figure Skating Championships\n\n## 4. Medal Table: 1907 World Figure Skating Championships\n\n| Rank | Nation | Gold | Silver | Bronze | Total |\n| :--- | :--- | :---: | :---: | :---: | :---: |\n| 1 | **Great Britain (GBR)** | 1 | 0 | 0 | 1 |\n| 1 | **Sweden (SWE)** | 1 | 0 | 0 | 1 |\n| 3 | **Austria (AUT)** | 0 | 2 | 0 | 2 |\n| 4 | **Germany (GER)** | 0 | 0 | 1 | 1 |\n| 4 | **Hungary (HUN)** | 0 | 0 | 1 | 1 |\n\n---",
+      "source_path": "data/manual_rag/worlds_1907.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1907",
+      "chunk_id": "data/manual_rag/worlds_1907.md::chunk_4"
+    },
+    {
+      "text": "# Reference: 1907 World Figure Skating Championships\n\n## 5. Key Keywords for RAG Search: 1907 World Figure Skating Championships\n`Vienna 1907`, `Ulrich Salchow gold`, `Madge Syers 2nd title`, `Max Bohatsch silver`, `Lily Kronberger bronze`, `Pre-war skating results`, `ISU World Results 1907`.",
+      "source_path": "data/manual_rag/worlds_1907.md",
+      "chunk_type": "manual_chunk",
+      "doc_type": "manual",
+      "source_group": "manual_curated",
+      "priority": 5,
+      "title": "worlds_1907",
+      "chunk_id": "data/manual_rag/worlds_1907.md::chunk_5"
     },
     {
       "text": "# Reference: 1908 World Figure Skating Championships\n\n## 1. Document Overview: 1908 World Figure Skating Championships\nThis document contains the verified final results, scoring data, and judge panels for the 1908 World Figure Skating Championships. It is structured for high-precision retrieval, documenting a milestone year that introduced pair skating to the World Championship stage.\n\n---",
