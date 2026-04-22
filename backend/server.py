@@ -163,6 +163,47 @@ def clean_output(text: str) -> str:
     text = re.sub(r'^#+\s*', '', text, flags=re.MULTILINE)
     return text
 
+# -------------------------
+# Self-repair logic
+# -------------------------
+def should_repair(answer, docs, query):
+    print(f"[REPAIR CHECK] docs={len(docs)}, words={len(answer.split())}")
+
+    weak_phrases = [
+        "it depends",
+        "not sure",
+        "generally",
+        "in some cases"
+    ]
+
+    has_weak_phrase = any(p in answer.lower() for p in weak_phrases)
+
+    print(f"[REPAIR CHECK] weak_phrase={has_weak_phrase}")
+
+    if len(docs) <= 2:
+        return True
+
+    if has_weak_phrase:
+        return True
+
+    if len(answer.split()) < 80:  # <-- increase threshold
+        return True
+
+    return False
+
+
+def repair_query(query: str, intent: str) -> str:
+    if intent == "diagnosis":
+        return query + " figure skating problems caused by edge quality, physical strength, or mental mindsets"
+
+    if intent == "how_to":
+        return query + " step by step technique practice figure skating"
+
+    if intent == "comparison":
+        return query + " differences pros cons figure skating"
+
+    return query + " detailed explanation figure skating"
+
 
 # -------------------------
 # Request schemas
@@ -426,6 +467,30 @@ def chat(req: ChatRequest):
             reply = rag_result
 
         reply = clean_output(reply)
+
+        # -------------------------
+        # SELF-REPAIR (NEW)
+        # -------------------------
+        if should_repair(reply, retrieved_docs, message):
+            print("[AGENT] triggering self-repair")
+
+            repaired_query = repair_query(message, intent)
+
+            repaired_result = answer_question(
+                question=repaired_query,
+                history=working_history,
+                intent=intent,
+            )
+
+            if isinstance(repaired_result, dict):
+                new_reply = clean_output(repaired_result.get("reply", ""))
+                new_docs = repaired_result.get("retrieved_docs", [])
+
+                # simple improvement check
+                if len(new_docs) > len(retrieved_docs):
+                    print("[AGENT] repair improved retrieval")
+                    reply = new_reply
+                    retrieved_docs = new_docs
 
         assistant_message_id = str(uuid.uuid4())
 
