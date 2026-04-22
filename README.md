@@ -182,3 +182,29 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 **Purpose:**
 - reduces premature clarification  
 - improves robustness for vague but valid queries  
+
+### 6. Self-Repair Loop (answer-level retry)
+
+- Location: `/chat` endpoint in `server.py`
+
+**Behavior:**
+- after generating the first answer:
+  - evaluate answer quality (length, vagueness, retrieval strength)
+- if answer is weak:
+  - trigger a second pass (reuse same query, full RAG pipeline)
+- if second pass improves retrieval:
+  - replace original answer
+- otherwise:
+  - keep original answer
+
+**Flow:**
+- retrieve → answer → judge →
+  (strong → return) / (weak → retry → compare → return best)
+
+**Purpose:**
+- fixes weak first-pass answers without user intervention
+- complements retrieval fallback (operates at answer level, not retrieval level)
+- improves robustness when:
+  - answer is too short
+  - retrieval was borderline but not failed
+- preserves UX simplicity (user only sees final answer)
