@@ -203,6 +203,58 @@ def infer_track(question: str) -> str:
 def weak_retrieval(top_score: Optional[float]) -> bool:
     return top_score is None or top_score < MIN_TOP_SCORE
 
+def infer_answer_confidence(retrieval: Dict, k: int) -> str:
+    scores = retrieval.get("scores", [])
+    docs = retrieval.get("results", [])
+    top_score = retrieval.get("top_score")
+
+    # -------------------------
+    # 0. No retrieval
+    # -------------------------
+    if not docs or top_score is None:
+        return "low"
+
+    # -------------------------
+    # 1. Very few docs → low
+    # -------------------------
+    if len(docs) <= 2:
+        return "low"
+
+    # -------------------------
+    # 2. Score spread (key idea)
+    # -------------------------
+    # Strong retrieval = top doc clearly better than others
+    if len(scores) >= 2:
+        gap = scores[0] - scores[1]
+    else:
+        gap = 0.0
+
+    # -------------------------
+    # 3. Average quality
+    # -------------------------
+    avg_score = sum(scores) / len(scores)
+
+    # -------------------------
+    # 4. Heuristics (empirical, not absolute)
+    # -------------------------
+
+    # 🔴 LOW confidence
+    if avg_score < 0.45:
+        return "low"
+
+    if gap < 0.02:
+        # top doc not clearly better → ambiguous retrieval
+        return "low"
+
+    # 🟡 MEDIUM confidence
+    if avg_score < 0.65:
+        return "medium"
+
+    if len(docs) < k:
+        return "medium"
+
+    # 🟢 HIGH confidence
+    return "high"
 
 def clarify_message(track: str) -> str:
     return "Could you clarify which level you are referring to?"
@@ -333,7 +385,10 @@ def answer_question(question, history, intent="default", k=4, answer_plan=None):
     retrieval["sources"] = retrieval["sources"][:k]
     retrieval["scores"] = retrieval["scores"][:k]
 
+    confidence = infer_answer_confidence(retrieval, k)
+
     print(f"[RAG] final k used = {k}, docs passed = {len(retrieval['results'])}")
+    print(f"[CONFIDENCE] {confidence} | top_score={retrieval.get('top_score')}")
 
     llm_input = build_llm_input(
         prompt=prompt,
@@ -342,6 +397,7 @@ def answer_question(question, history, intent="default", k=4, answer_plan=None):
         history=history,
         intent=intent,
         answer_plan=answer_plan,
+        confidence=confidence,
     )
 
     response = run_llm(llm_input)

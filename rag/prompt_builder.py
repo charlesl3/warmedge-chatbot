@@ -108,6 +108,35 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
 
     return "\n".join(lines)
 
+def get_confidence_instruction(confidence: str | None) -> str:
+    if confidence == "high":
+        return (
+            "Confidence behavior: high.\n"
+            "Answer directly and confidently.\n"
+            "Do not mention confidence."
+        )
+
+    if confidence == "medium":
+        return (
+            "Confidence behavior: medium.\n"
+            "Give the most likely answer, but acknowledge that there may be more than one cause or interpretation.\n"
+            "Do not mention confidence."
+        )
+
+    if confidence == "low":
+        return (
+            "Confidence behavior: low.\n"
+            "Avoid sounding overly certain.\n"
+            "Give safe, general guidance first.\n"
+            "If the question depends on missing details, ask one precise follow-up question.\n"
+            "Do not mention confidence."
+        )
+
+    return (
+        "Confidence behavior: normal.\n"
+        "Answer naturally.\n"
+        "Do not mention confidence."
+    )
 
 def build_llm_input(
     prompt: str,
@@ -116,6 +145,7 @@ def build_llm_input(
     history: list[dict],
     intent: str = "default",
     answer_plan: dict | None = None,
+    confidence: str | None = None,
 ) -> str:
 
     parts = []
@@ -204,6 +234,10 @@ def build_llm_input(
 
     parts.append("Answer plan:")
     parts.append(get_answer_plan_instruction(answer_plan))
+    parts.append("")
+
+    parts.append("Confidence behavior:")
+    parts.append(get_confidence_instruction(confidence))
     parts.append("")
 
     # Final instruction
