@@ -6,6 +6,7 @@ from backend.agent import (
     needs_clarification,
     build_skater_state,
     classify_query_intent,
+    choose_k,
 )
 
 import traceback
@@ -384,6 +385,8 @@ def chat(req: ChatRequest):
         # -------------------------
         intent = classify_query_intent(message, history)
         print(f"[AGENT] intent={intent}")
+        k = choose_k(message, intent, state, history)
+        print(f"[AGENT] dynamic k={k}")
 
         clarify, reason = needs_clarification(message, history)
         print(f"[AGENT] clarify={clarify}, reason={reason}")
@@ -454,6 +457,7 @@ def chat(req: ChatRequest):
             question=message,
             history=working_history,
             intent=intent,
+            k=k,
         )
 
         retrieved_docs = []
@@ -467,6 +471,7 @@ def chat(req: ChatRequest):
             reply = rag_result
 
         reply = clean_output(reply)
+        repaired = False
 
         # -------------------------
         # SELF-REPAIR (NEW)
@@ -491,6 +496,7 @@ def chat(req: ChatRequest):
                     print("[AGENT] repair improved retrieval")
                     reply = new_reply
                     retrieved_docs = new_docs
+                    repaired = True
 
         assistant_message_id = str(uuid.uuid4())
 
@@ -529,6 +535,7 @@ def chat(req: ChatRequest):
             "session_id": session_id,
             "message_id": assistant_message_id,
             "sources": retrieved_docs[:2],
+            "repaired": repaired,
             "end": False,
         }
 

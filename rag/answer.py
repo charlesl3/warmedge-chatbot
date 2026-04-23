@@ -284,7 +284,7 @@ def extract_retrieved_doc_ids(retrieval: Dict) -> List[str]:
 # --------------------------------------------------
 # Main Answer
 # --------------------------------------------------
-def answer_question(question: str, history: List[Dict], intent: str = "default"):
+def answer_question(question, history, intent = "default", k=4):
     if is_blank(question):
         return "Please ask a valid question."
 
@@ -308,6 +308,7 @@ def answer_question(question: str, history: List[Dict], intent: str = "default")
 
     retrieval = apply_priority_boost(retrieval)
 
+
     # 🔥 KEY: learning happens here
     retrieval = boost_with_feedback(query_embedding, retrieval)
 
@@ -327,20 +328,24 @@ def answer_question(question: str, history: List[Dict], intent: str = "default")
         query_embedding = fallback_embedding
 
     prompt = PROMPT_PATH.read_text()
+    # 🔥 FINAL TRIM (only place you trim)
+    retrieval["results"] = retrieval["results"][:k]
+    retrieval["sources"] = retrieval["sources"][:k]
+    retrieval["scores"] = retrieval["scores"][:k]
+
+    print(f"[RAG] final k used = {k}, docs passed = {len(retrieval['results'])}")
 
     llm_input = build_llm_input(
         prompt=prompt,
         question=normalized,
-        docs=retrieval["results"],
+        docs=retrieval["results"],  # no [:k] anymore
         history=history,
         intent=intent,
     )
 
     response = run_llm(llm_input)
 
-    # 🔥 CLEAN SIGNAL
-    retrieved_docs = extract_retrieved_doc_ids(retrieval)[:2]
-
+    retrieved_docs = extract_retrieved_doc_ids(retrieval)[:k]
     return {
         "reply": response,
         "retrieved_docs": retrieved_docs,

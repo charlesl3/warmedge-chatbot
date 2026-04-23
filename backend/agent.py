@@ -17,6 +17,51 @@ def extract_weight(q: str):
     return None
 
 
+def choose_k(query: str, intent: str, state: dict, history: list[dict]) -> int:
+    q = query.lower()
+    length = len(q.split())
+
+    # -------------------------
+    # 1. Base on intent
+    # -------------------------
+    if intent == "diagnosis":
+        k = 6
+    elif intent == "how_to":
+        k = 4
+    elif intent == "comparison":
+        k = 4
+    else:
+        k = 5
+
+    # -------------------------
+    # 2. Short / vague queries → increase k
+    # -------------------------
+    if length <= 4:
+        k += 1
+
+    # -------------------------
+    # 3. Strong skill signal → reduce k
+    # -------------------------
+    if state.get("signals"):
+        k -= 1
+
+    # -------------------------
+    # 4. Prior context exists → reduce k
+    # -------------------------
+    has_context = any(
+        ("axel" in m["content"].lower() or
+         re.search(r"\b[1-4][aflst]\b", m["content"].lower()))
+        for m in history if m["role"] == "user"
+    )
+
+    if has_context:
+        k -= 1
+
+    # -------------------------
+    # Clamp range
+    # -------------------------
+    return max(2, min(k, 7))
+
 def extract_height(q: str):
     match_ft = re.search(r"(\d+)\s?(ft|')\s?(\d+)?", q)
     if match_ft:
