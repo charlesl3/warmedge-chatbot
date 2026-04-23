@@ -284,7 +284,7 @@ def extract_retrieved_doc_ids(retrieval: Dict) -> List[str]:
 # --------------------------------------------------
 # Main Answer
 # --------------------------------------------------
-def answer_question(question, history, intent = "default", k=4):
+def answer_question(question, history, intent="default", k=4, answer_plan=None):
     if is_blank(question):
         return "Please ask a valid question."
 
@@ -338,9 +338,10 @@ def answer_question(question, history, intent = "default", k=4):
     llm_input = build_llm_input(
         prompt=prompt,
         question=normalized,
-        docs=retrieval["results"],  # no [:k] anymore
+        docs=retrieval["results"],
         history=history,
         intent=intent,
+        answer_plan=answer_plan,
     )
 
     response = run_llm(llm_input)

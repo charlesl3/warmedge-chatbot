@@ -62,6 +62,7 @@ def choose_k(query: str, intent: str, state: dict, history: list[dict]) -> int:
     # -------------------------
     return max(2, min(k, 7))
 
+
 def extract_height(q: str):
     match_ft = re.search(r"(\d+)\s?(ft|')\s?(\d+)?", q)
     if match_ft:
@@ -227,6 +228,7 @@ def needs_clarification(query: str, history: list[dict]):
 
     return False, "sufficient"
 
+
 def classify_query_intent(query: str, history: list[dict]) -> str:
     q = query.lower().strip()
 
@@ -247,3 +249,85 @@ def classify_query_intent(query: str, history: list[dict]) -> str:
         return "experience_lookup"
 
     return "default"
+
+
+def build_answer_plan(
+    query: str,
+    intent: str,
+    state: dict,
+    history: list[dict],
+    clarify: bool = False,
+) -> dict:
+    q = query.lower().strip()
+    length = len(q.split())
+
+    plan = {
+        "mode": "standard",
+        "depth": "medium",
+        "use_context": False,
+        "avoid_repetition": False,
+        "structure": ["direct answer", "practical guidance"],
+    }
+
+    # -------------------------
+    # 1. Clarification overrides everything
+    # -------------------------
+    if clarify:
+        return {
+            "mode": "clarification",
+            "depth": "short",
+            "use_context": False,
+            "avoid_repetition": False,
+            "structure": ["ask one precise follow-up"],
+        }
+
+    # -------------------------
+    # 2. Intent -> mode mapping
+    # -------------------------
+    if intent == "how_to":
+        plan["mode"] = "coaching"
+        plan["structure"] = ["likely cause", "what to try", "1-2 drills"]
+
+    elif intent == "diagnosis":
+        plan["mode"] = "diagnosis"
+        plan["structure"] = ["possible causes", "how to check", "what to try"]
+
+    elif intent == "comparison":
+        plan["mode"] = "comparison"
+        plan["structure"] = ["common ground", "key differences", "recommendation"]
+
+    elif intent == "experience_lookup":
+        plan["mode"] = "explanation"
+        plan["structure"] = ["direct answer", "why", "practical note"]
+
+    else:
+        plan["mode"] = "standard"
+        plan["structure"] = ["direct answer", "practical guidance"]
+
+    # -------------------------
+    # 3. Short queries -> shorter answers
+    # -------------------------
+    if length <= 4:
+        plan["depth"] = "short"
+
+    # -------------------------
+    # 4. Strong skill signals -> more depth
+    # -------------------------
+    if state.get("signals") and plan["depth"] != "short":
+        plan["depth"] = "detailed"
+
+    # -------------------------
+    # 5. Prior context -> use it, do not repeat
+    # -------------------------
+    has_context = any(
+        ("axel" in m["content"].lower() or
+         re.search(r"\b[1-4][aflst]\b", m["content"].lower()) or
+         any(x in m["content"].lower() for x in ["double", "triple", "quad"]))
+        for m in history if m["role"] == "user"
+    )
+
+    if has_context:
+        plan["use_context"] = True
+        plan["avoid_repetition"] = True
+
+    return plan

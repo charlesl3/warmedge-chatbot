@@ -7,6 +7,7 @@ from backend.agent import (
     build_skater_state,
     classify_query_intent,
     choose_k,
+    build_answer_plan,
 )
 
 import traceback
@@ -385,11 +386,21 @@ def chat(req: ChatRequest):
         # -------------------------
         intent = classify_query_intent(message, history)
         print(f"[AGENT] intent={intent}")
+
         k = choose_k(message, intent, state, history)
         print(f"[AGENT] dynamic k={k}")
 
         clarify, reason = needs_clarification(message, history)
         print(f"[AGENT] clarify={clarify}, reason={reason}")
+
+        answer_plan = build_answer_plan(
+            query=message,
+            intent=intent,
+            state=state,
+            history=history,
+            clarify=clarify,
+        )
+        print(f"[AGENT] answer_plan={answer_plan}")
 
         working_history = history + [{"role": "user", "content": message}]
 
@@ -458,6 +469,7 @@ def chat(req: ChatRequest):
             history=working_history,
             intent=intent,
             k=k,
+            answer_plan=answer_plan,
         )
 
         retrieved_docs = []
@@ -485,6 +497,8 @@ def chat(req: ChatRequest):
                 question=repaired_query,
                 history=working_history,
                 intent=intent,
+                k=k,
+                answer_plan=answer_plan,
             )
 
             if isinstance(repaired_result, dict):
