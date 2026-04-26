@@ -169,7 +169,6 @@ def clean_output(text: str) -> str:
 # Self-repair logic
 # -------------------------
 def should_repair(answer, docs, query):
-    print(f"[REPAIR CHECK] docs={len(docs)}, words={len(answer.split())}")
 
     weak_phrases = [
         "it depends",
@@ -179,8 +178,6 @@ def should_repair(answer, docs, query):
     ]
 
     has_weak_phrase = any(p in answer.lower() for p in weak_phrases)
-
-    print(f"[REPAIR CHECK] weak_phrase={has_weak_phrase}")
 
     if len(docs) <= 2:
         return True
@@ -328,6 +325,12 @@ def chat(req: ChatRequest):
             SESSIONS[session_id] = []
 
         history = list(SESSIONS[session_id])
+        agent_trace = {
+            "input": {
+                "query": message,
+                "history_len": len(history),
+            }
+        }
 
         # -------------------------
         # Blank input
@@ -379,19 +382,28 @@ def chat(req: ChatRequest):
         # BUILD STATE FIRST
         # -------------------------
         state = build_skater_state(message)
-        print("[STATE]", state)
+        agent_trace["state"] = state
 
         # -------------------------
         # AGENT DECISION (NOW HISTORY-AWARE)
         # -------------------------
         intent = classify_query_intent(message, history)
-        print(f"[AGENT] intent={intent}")
+        agent_trace["intent"] = {
+            "label": intent,
+            "is_fallback": (intent == "default")
+        }
 
         k = choose_k(message, intent, state, history)
-        print(f"[AGENT] dynamic k={k}")
+        agent_trace["retrieval"] = {
+            "k": k,
+            "weak": False
+        }
 
         clarify, reason = needs_clarification(message, history)
-        print(f"[AGENT] clarify={clarify}, reason={reason}")
+        agent_trace["clarification"] = {
+            "triggered": clarify,
+            "reason": reason,
+        }
 
         answer_plan = build_answer_plan(
             query=message,
@@ -400,7 +412,7 @@ def chat(req: ChatRequest):
             history=history,
             clarify=clarify,
         )
-        print(f"[AGENT] answer_plan={answer_plan}")
+        agent_trace["plan"] = answer_plan
 
         working_history = history + [{"role": "user", "content": message}]
 
@@ -484,13 +496,17 @@ def chat(req: ChatRequest):
 
         reply = clean_output(reply)
         repaired = False
+        agent_trace["retrieval"]["docs_returned"] = len(retrieved_docs)
+        agent_trace["retrieval"]["weak"] = (len(retrieved_docs) <= 2)
+        agent_trace["retrieval"]["docs_initial"] = len(retrieved_docs)
 
         # -------------------------
         # SELF-REPAIR (NEW)
         # -------------------------
-        if should_repair(reply, retrieved_docs, message):
-            print("[AGENT] triggering self-repair")
+        repair_triggered = False
 
+        if should_repair(reply, retrieved_docs, message):
+            repair_triggered = True
             repaired_query = repair_query(message, intent)
 
             repaired_result = answer_question(
@@ -507,11 +523,20 @@ def chat(req: ChatRequest):
 
                 # simple improvement check
                 if len(new_docs) > len(retrieved_docs):
-                    print("[AGENT] repair improved retrieval")
                     reply = new_reply
                     retrieved_docs = new_docs
                     repaired = True
 
+        agent_trace["repair"] = {
+            "triggered": repair_triggered,
+            "improved": repaired,
+            "docs_after": len(retrieved_docs),
+            "reason": "low_docs" if len(retrieved_docs) <= 2 else "weak_answer"
+        }
+
+        agent_trace["output"] = {
+            "length": len(reply.split())
+        }
         assistant_message_id = str(uuid.uuid4())
 
         working_history.append({
@@ -543,6 +568,10 @@ def chat(req: ChatRequest):
         save_chats(chats)
 
         SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+
+        print("\n=== AGENT TRACE ===")
+        print(json.dumps(agent_trace, indent=2))
+        print("===================\n")
 
         return {
             "reply": reply,

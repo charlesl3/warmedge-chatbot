@@ -104,7 +104,7 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 - checks for missing skill level in recommendation questions  
 - uses history to avoid unnecessary clarification  
 
-**Execution update:**
+**Execution:**
 - runs after intent classification  
 - only triggers when `intent == "default"`  
 
@@ -145,27 +145,50 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 
 **Role:**
 - executed before clarification  
-- controls retrieval rewriting and response behavior  
+- controls downstream behavior and response type  
 
 ---
 
-### 4. Diagnosis Mode (structured reasoning)
+### 4. Answer Planning (response control)
 
-- Trigger: `intent == "diagnosis"`  
+- Function: `build_answer_plan(query, intent, state, history, clarify)`
+- Purpose: determine how the answer should be constructed  
 
 **Behavior:**
-- enforces structured output:
-  - Likely causes  
-  - What to try  
-  - Notes  
+- assigns:
+  - mode (coaching / diagnosis / explanation / comparison / standard / clarification)  
+  - depth (short / medium / detailed)  
+  - structure (e.g., causes → what to try → drills)  
+  - context usage flags (use_context, avoid_repetition)  
 
-**Purpose:**
-- improves consistency and actionability of responses  
-- aligns output with underlying knowledge structure  
+**Execution:**
+- runs after intent and clarification  
+- output is passed into `answer_question(...)`  
+
+**Role:**
+- controls response style independently of retrieval  
+- ensures different query types produce different answer structures  
 
 ---
 
-### 5. Retrieval Fallback (retry strategy)
+### 5. Dynamic Retrieval Depth (adaptive k)
+
+- Function: `choose_k(query, intent, state, history)`
+- Purpose: adjust retrieval depth based on context  
+
+**Behavior:**
+- increases k for short or vague queries  
+- decreases k when strong skill signals exist  
+- decreases k when prior context is present  
+- varies k by intent  
+
+**Execution:**
+- runs before retrieval  
+- determines number of documents retrieved  
+
+---
+
+### 6. Retrieval Fallback (retry strategy)
 
 - Location: `answer_question()`  
 
@@ -179,32 +202,22 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 **Flow:**
 - retrieve → weak → retry → (success → answer) / (fail → clarify)  
 
-**Purpose:**
-- reduces premature clarification  
-- improves robustness for vague but valid queries  
+---
 
-### 6. Self-Repair Loop (answer-level retry)
+### 7. Self-Repair Loop (answer-level retry)
 
 - Location: `/chat` endpoint in `server.py`
 
 **Behavior:**
 - after generating the first answer:
-  - evaluate answer quality (length, vagueness, retrieval strength)
+  - evaluate answer quality (length, vagueness, retrieval strength)  
 - if answer is weak:
-  - trigger a second pass (reuse same query, full RAG pipeline)
+  - trigger a second pass through full RAG pipeline  
 - if second pass improves retrieval:
-  - replace original answer
+  - replace original answer  
 - otherwise:
-  - keep original answer
+  - keep original answer  
 
 **Flow:**
-- retrieve → answer → judge →
+- retrieve → answer → judge →  
   (strong → return) / (weak → retry → compare → return best)
-
-**Purpose:**
-- fixes weak first-pass answers without user intervention
-- complements retrieval fallback (operates at answer level, not retrieval level)
-- improves robustness when:
-  - answer is too short
-  - retrieval was borderline but not failed
-- preserves UX simplicity (user only sees final answer)
