@@ -42,6 +42,32 @@ def preload_rag():
     get_embed_model()
     print("RAG preloaded.")
 
+# -------------------------
+# BAD RUN DETECTOR
+# -------------------------
+def detect_bad_run(trace: dict) -> str | None:
+    try:
+        retrieval = trace.get("retrieval", {})
+        repair = trace.get("repair", {})
+        intent = trace.get("intent", {})
+
+        weak = retrieval.get("weak", False)
+        repair_failed = repair.get("triggered") and not repair.get("improved")
+        fallback_intent = intent.get("is_fallback", False)
+
+        if weak and repair_failed:
+            return "low retrieval + repair failed"
+
+        if weak:
+            return "low retrieval"
+
+        if fallback_intent:
+            return "intent fallback"
+
+        return None
+
+    except Exception:
+        return None
 
 # -------------------------
 # CORS
@@ -572,6 +598,11 @@ def chat(req: ChatRequest):
         print("\n=== AGENT TRACE ===")
         print(json.dumps(agent_trace, indent=2))
         print("===================\n")
+        
+        issue = detect_bad_run(agent_trace)
+
+        if issue:
+            print(f"⚠️ BAD RUN DETECTED: {issue}")
 
         return {
             "reply": reply,
