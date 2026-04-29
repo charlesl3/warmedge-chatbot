@@ -8,6 +8,8 @@ from backend.agent import (
     classify_query_intent,
     choose_k,
     build_answer_plan,
+    should_generate_followup,
+    build_followup_prompt,
 )
 
 import traceback
@@ -26,7 +28,7 @@ from rag.intents import (
 )
 
 from rag.retriever import load_index_and_meta, get_embed_model
-
+from rag.llm import run_llm
 from backend.chat_storage import load_chats, save_chats, ensure_chat_session
 
 
@@ -563,6 +565,49 @@ def chat(req: ChatRequest):
         agent_trace["output"] = {
             "length": len(reply.split())
         }
+
+        # -------------------------
+        # SMART LLM FOLLOW-UP
+        # -------------------------
+        followup = None
+
+        if should_generate_followup(
+                query=message,
+                intent=intent,
+                state=state,
+                agent_trace=agent_trace,
+                reply=reply,
+        ):
+            try:
+                followup_prompt = build_followup_prompt(
+                    query=message,
+                    answer=reply,
+                    intent=intent,
+                    state=state,
+                    history=working_history,
+                )
+
+                raw_followup = clean_output(run_llm(followup_prompt)).strip()
+
+                if raw_followup and raw_followup.upper() != "NONE":
+                    # Safety: keep only one short question
+                    raw_followup = raw_followup.split("\n")[0].strip()
+
+                    if "?" in raw_followup:
+                        raw_followup = raw_followup[: raw_followup.find("?") + 1]
+
+                    if raw_followup.endswith("?") and len(raw_followup.split()) <= 25:
+                        followup = raw_followup
+                        reply = reply + "\n\n" + followup
+
+            except Exception as e:
+                print("[FOLLOWUP] skipped due to error:", str(e))
+
+        agent_trace["followup"] = {
+            "triggered": followup is not None,
+            "text": followup,
+        }
+
         assistant_message_id = str(uuid.uuid4())
 
         working_history.append({
@@ -598,7 +643,7 @@ def chat(req: ChatRequest):
         print("\n=== AGENT TRACE ===")
         print(json.dumps(agent_trace, indent=2))
         print("===================\n")
-        
+
         issue = detect_bad_run(agent_trace)
 
         if issue:

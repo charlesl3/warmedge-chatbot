@@ -221,3 +221,31 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 **Flow:**
 - retrieve → answer → judge →  
   (strong → return) / (weak → retry → compare → return best)
+
+### 8. Smart Follow-up Layer (LLM-powered continuation)
+
+- Location: `/chat` in `server.py` + helpers in `agent.py`
+
+**Behavior:**
+- after final answer (post self-repair):
+  - decide if a follow-up is useful based on:
+    - intent (how_to / diagnosis / comparison)  
+    - missing user context (e.g., skill level)  
+    - weak or repaired retrieval  
+- if triggered:
+  - build a structured prompt (query + answer + intent + state + recent history)  
+  - call LLM to generate **one short, specific follow-up question**  
+  - append to the answer  
+- otherwise:
+  - return answer as-is  
+
+**Constraints:**
+- at most **one** question  
+- short (≤ ~20 words)  
+- context-aware and skating-specific  
+- no generic phrasing  
+- does not modify original answer  
+
+**Flow:**
+- retrieve → answer → repair →  
+  followup_decision → (no → return) / (yes → LLM_generate → append → return)

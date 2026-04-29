@@ -331,3 +331,99 @@ def build_answer_plan(
         plan["avoid_repetition"] = True
 
     return plan
+
+# -------------------------
+# SMART FOLLOW-UP LOGIC
+# -------------------------
+
+def should_generate_followup(
+    query: str,
+    intent: str,
+    state: dict,
+    agent_trace: dict,
+    reply: str,
+) -> bool:
+    q = query.lower().strip()
+
+    # Do not add follow-up to very short social-ish replies
+    if len(reply.split()) < 25:
+        return False
+
+    # Do not follow up after direct clarification
+    if agent_trace.get("clarification", {}).get("triggered"):
+        return False
+
+    # Most valuable cases
+    if intent in ["how_to", "diagnosis", "comparison"]:
+        return True
+
+    # Unknown user level is a useful reason to invite continuation
+    if state.get("skill_level") == "unknown":
+        return True
+
+    # Weak retrieval / repair means we should invite more detail
+    if agent_trace.get("retrieval", {}).get("weak"):
+        return True
+
+    if agent_trace.get("repair", {}).get("triggered"):
+        return True
+
+    return False
+
+
+def build_followup_prompt(
+    query: str,
+    answer: str,
+    intent: str,
+    state: dict,
+    history: list[dict],
+) -> str:
+    recent_history = history[-6:] if history else []
+
+    history_text = "\n".join(
+        f"{m.get('role', '')}: {m.get('content', '')}"
+        for m in recent_history
+    )
+
+    return f"""
+You are WarmGPT, a practical figure skating assistant.
+
+Your job is to write ONE short follow-up question that naturally continues the conversation.
+
+User's latest question:
+{query}
+
+WarmGPT's answer:
+{answer}
+
+Intent:
+{intent}
+
+Detected skater state:
+- skill_level: {state.get("skill_level")}
+- signals: {state.get("signals")}
+- jump_level: {state.get("jump_level")}
+- body: {state.get("height_class")}, {state.get("weight_class")}
+- experience_type: {state.get("experience_type")}
+- goal: {state.get("goal")}
+
+Recent conversation:
+{history_text}
+
+Rules:
+- Output exactly ONE follow-up question.
+- Maximum 22 words.
+- Make it specific to the user's skating situation.
+- Do NOT repeat the answer.
+- Do NOT ask "Do you want me to..." or "Would you like me to..."
+- Do NOT ask multiple questions.
+- Do NOT mention sources, retrieval, confidence, or internal logic.
+- If no useful follow-up exists, output exactly: NONE
+
+Good examples (these are just some examples, do not just copy these for all questions):
+- Where does it usually break down for you: takeoff, landing, or the setup edge?
+- Are you working on this for practice, a test, or competition?
+- Does it happen more when you are tired or even at the start of the session?
+
+Output only the follow-up question or NONE.
+""".strip()
