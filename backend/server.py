@@ -415,7 +415,30 @@ def chat(req: ChatRequest):
         # -------------------------
         # AGENT DECISION (NOW HISTORY-AWARE)
         # -------------------------
-        intent = classify_query_intent(message, history)
+        # -------------------------
+        # CONTEXTUAL INTENT FIX (NEW)
+        # -------------------------
+        def is_short_answer(msg: str):
+            return len(msg.split()) <= 3
+
+        last_assistant = next(
+            (m for m in reversed(history) if m["role"] == "assistant"),
+            None
+        )
+
+        is_answering_clarification = (
+                last_assistant and
+                "which" in last_assistant["content"].lower() and
+                is_short_answer(message)
+        )
+
+        if is_answering_clarification:
+            # inherit previous intent (very important)
+            intent = "diagnosis"
+        else:
+            intent = classify_query_intent(message, history)
+
+
         agent_trace["intent"] = {
             "label": intent,
             "is_fallback": (intent == "default")
