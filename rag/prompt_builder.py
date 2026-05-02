@@ -266,6 +266,23 @@ def build_llm_input(
     parts.append("\n".join(style_lines))
     parts.append("")
 
+    # -------------------------
+    # QUICK DRILL (NEW)
+    # -------------------------
+    drill_lines = []
+
+    if intent in ["how_to", "diagnosis"]:
+        drill_lines.append(
+            "Include one very simple 'Quick drill' the skater can try immediately."
+        )
+        drill_lines.append(
+            "Keep it to 1–2 lines. Do not give multiple drills."
+        )
+
+    parts.append("Drill:")
+    parts.append("\n".join(drill_lines))
+    parts.append("")
+
     parts.append("Confidence behavior:")
     parts.append(get_confidence_instruction(confidence))
     parts.append("")
