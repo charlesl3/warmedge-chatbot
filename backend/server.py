@@ -418,6 +418,13 @@ def chat(req: ChatRequest):
         # -------------------------
         # CONTEXTUAL INTENT FIX (NEW)
         # -------------------------
+        def looks_like_question(text: str):
+            text = text.lower()
+            return (
+                    "?" in text or
+                    text.startswith(("which", "what", "where", "when", "how", "is", "are", "do", "does", "can"))
+            )
+
         def is_short_answer(msg: str):
             return len(msg.split()) <= 3
 
@@ -428,7 +435,7 @@ def chat(req: ChatRequest):
 
         is_answering_clarification = (
                 last_assistant and
-                "which" in last_assistant["content"].lower() and
+                looks_like_question(last_assistant["content"]) and
                 is_short_answer(message)
         )
 
