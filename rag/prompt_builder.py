@@ -234,6 +234,36 @@ def build_llm_input(
 
     parts.append("Answer plan:")
     parts.append(get_answer_plan_instruction(answer_plan))
+    # -------------------------
+    # STYLE ADAPTATION (NEW)
+    # -------------------------
+    style_lines = []
+
+    # 1. Very short factual queries → concise
+    if intent == "experience_lookup" and len(question.split()) <= 5:
+        style_lines.append("Keep the answer very concise (2–4 sentences).")
+
+    # 2. Coaching → structured + actionable
+    elif intent == "how_to":
+        style_lines.append("Use short structured sections or bullets.")
+        style_lines.append("Prioritize actionable steps over explanation.")
+
+    # 3. Diagnosis → structured reasoning
+    elif intent == "diagnosis":
+        style_lines.append("Clearly separate causes and fixes.")
+        style_lines.append("Avoid long paragraphs.")
+
+    # 4. Comparison → clean structure
+    elif intent == "comparison":
+        style_lines.append("Use a clean comparison structure.")
+        style_lines.append("Avoid unnecessary explanation.")
+
+    # 5. Default → balanced
+    else:
+        style_lines.append("Keep the answer clear and moderately concise.")
+
+    parts.append("Style:")
+    parts.append("\n".join(style_lines))
     parts.append("")
 
     parts.append("Confidence behavior:")
