@@ -232,6 +232,21 @@ def needs_clarification(query: str, history: list[dict]):
 def classify_query_intent(query: str, history: list[dict]) -> str:
     q = query.lower().strip()
 
+    # -------------------------
+    # FRONTEND CHIP MODE HINTS
+    # -------------------------
+    if "mode: drills" in q:
+        return "how_to"
+
+    if "mode: diagnose" in q:
+        return "diagnosis"
+
+    if "mode: deeper" in q:
+        return "experience_lookup"
+
+    if "mode: simplify" in q:
+        return "default"
+
     # 1. Comparison questions
     if any(x in q for x in [" vs ", "versus", "better than", "difference between", "compare"]):
         return "comparison"
