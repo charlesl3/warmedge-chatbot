@@ -91,6 +91,39 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
+## Additional Features
+
+### 1. Chip Mode Routing (light transformation layer)
+
+- Functions: `detect_transform_mode(message)`, `classify_query_intent(...)`
+- Purpose: allow user to control **how the answer is generated**, not just what is asked  
+
+**Behavior:**
+- frontend injects `Mode: simplify / deeper / drills / diagnose`
+- backend detects mode and routes execution accordingly  
+- distinguishes:
+  - transformation tasks (simplify, deeper)  
+  - normal RAG queries (drills, diagnose)
+
+**Execution:**
+- runs before `answer_question(...)` in `/chat`
+- branches into:
+  - simplify → rewrite path (no RAG)
+  - deeper → hybrid path (RAG + merge)
+  - others → unchanged RAG pipeline, just a new regular query  
+
+**If triggered:**
+- simplify:
+  - rewrites last assistant answer only  
+- deeper:
+  - combines last answer + new retrieval, then merges  
+- drills / diagnose:
+  - mapped to `how_to` / `diagnosis` intent  
+
+**Effect:**
+- introduces a lightweight “agent-like” routing layer  
+- improves consistency (no unnecessary re-retrieval)  
+- enables controlled depth expansion without breaking RAG  
 
 ## Agent Logic (Current)
 
