@@ -193,6 +193,23 @@ def clean_output(text: str) -> str:
     text = re.sub(r'^#+\s*', '', text, flags=re.MULTILINE)
     return text
 
+def detect_transform_mode(message: str) -> str | None:
+    q = message.lower()
+
+    if "mode: simplify" in q:
+        return "simplify"
+
+    if "mode: deeper" in q:
+        return "deeper"
+
+    return None
+
+
+def get_last_assistant_answer(history):
+    for m in reversed(history):
+        if m.get("role") == "assistant":
+            return m.get("content")
+    return None
 # -------------------------
 # Self-repair logic
 # -------------------------
@@ -541,6 +558,112 @@ def chat(req: ChatRequest):
             k=k,
             answer_plan=answer_plan,
         )
+
+        transform_mode = detect_transform_mode(message)
+
+        # -------------------------
+        # SIMPLIFY: NO RAG
+        # -------------------------
+        if transform_mode == "simplify":
+            last_answer = get_last_assistant_answer(history)
+
+            if last_answer:
+                prompt = f"""
+        Rewrite the following answer more simply and concisely.
+        Keep the meaning but reduce complexity and length.
+
+        Answer:
+        {last_answer}
+        """.strip()
+
+                reply = clean_output(run_llm(prompt))
+                assistant_message_id = str(uuid.uuid4())
+
+                working_history.append({
+                    "role": "assistant",
+                    "content": reply
+                })
+
+                chats = load_chats()
+                chats = ensure_chat_session(chats, session_id, message)
+
+                chats[session_id]["messages"].append({
+                    "id": assistant_message_id,
+                    "role": "assistant",
+                    "content": reply
+                })
+
+                save_chats(chats)
+                SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+
+                return {
+                    "reply": reply,
+                    "session_id": session_id,
+                    "message_id": assistant_message_id,
+                    "end": False,
+                }
+                # -------------------------
+                # DEEPER: RAG + MERGE
+                # -------------------------
+                if transform_mode == "deeper":
+                    last_answer = get_last_assistant_answer(history)
+
+                    if last_answer:
+                        rag_result = answer_question(
+                            question=message,
+                            history=working_history,
+                            intent="experience_lookup",
+                            k=max(k, 5),
+                            answer_plan=answer_plan,
+                        )
+
+                        rag_text = rag_result.get("reply", "") if isinstance(rag_result, dict) else rag_result
+
+                        merge_prompt = f"""
+        You are expanding an existing skating answer.
+
+        Base answer:
+        {last_answer}
+
+        Additional information:
+        {rag_text}
+
+        Write ONE deeper, unified answer.
+
+        Rules:
+        - Keep useful parts of the base answer
+        - Add technical reasoning, mechanics, and nuance
+        - Avoid repetition
+        - Do NOT mention sources or retrieval
+        """.strip()
+
+                        reply = clean_output(run_llm(merge_prompt))
+                        assistant_message_id = str(uuid.uuid4())
+
+                        working_history.append({
+                            "role": "assistant",
+                            "content": reply
+                        })
+
+                        chats = load_chats()
+                        chats = ensure_chat_session(chats, session_id, message)
+
+                        chats[session_id]["messages"].append({
+                            "id": assistant_message_id,
+                            "role": "assistant",
+                            "content": reply
+                        })
+
+                        save_chats(chats)
+                        SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+
+                        return {
+                            "reply": reply,
+                            "session_id": session_id,
+                            "message_id": assistant_message_id,
+                            "end": False,
+                        }
+
 
         retrieved_docs = []
         query_embedding = None
