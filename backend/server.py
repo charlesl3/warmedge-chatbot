@@ -602,67 +602,67 @@ def chat(req: ChatRequest):
                     "message_id": assistant_message_id,
                     "end": False,
                 }
-                # -------------------------
-                # DEEPER: RAG + MERGE
-                # -------------------------
-                if transform_mode == "deeper":
-                    last_answer = get_last_assistant_answer(history)
+            # -------------------------
+            # DEEPER: RAG + MERGE
+            # -------------------------
+        if transform_mode == "deeper":
+            last_answer = get_last_assistant_answer(history)
 
-                    if last_answer:
-                        rag_result = answer_question(
-                            question=message,
-                            history=working_history,
-                            intent="experience_lookup",
-                            k=max(k, 5),
-                            answer_plan=answer_plan,
-                        )
+            if last_answer:
+                rag_result = answer_question(
+                    question=message,
+                    history=working_history,
+                    intent="experience_lookup",
+                    k=max(k, 5),
+                    answer_plan=answer_plan,
+                )
 
-                        rag_text = rag_result.get("reply", "") if isinstance(rag_result, dict) else rag_result
+                rag_text = rag_result.get("reply", "") if isinstance(rag_result, dict) else rag_result
 
-                        merge_prompt = f"""
-        You are expanding an existing skating answer.
+                merge_prompt = f"""
+You are expanding an existing skating answer.
 
-        Base answer:
-        {last_answer}
+Base answer:
+{last_answer}
 
-        Additional information:
-        {rag_text}
+Additional information:
+{rag_text}
 
-        Write ONE deeper, unified answer.
+Write ONE deeper, unified answer.
 
-        Rules:
-        - Keep useful parts of the base answer
-        - Add technical reasoning, mechanics, and nuance
-        - Avoid repetition
-        - Do NOT mention sources or retrieval
-        """.strip()
+Rules:
+- Keep useful parts of the base answer
+- Add technical reasoning, mechanics, and nuance
+- Avoid repetition
+- Do NOT mention sources or retrieval
+""".strip()
 
-                        reply = clean_output(run_llm(merge_prompt))
-                        assistant_message_id = str(uuid.uuid4())
+                reply = clean_output(run_llm(merge_prompt))
+                assistant_message_id = str(uuid.uuid4())
 
-                        working_history.append({
-                            "role": "assistant",
-                            "content": reply
-                        })
+                working_history.append({
+                    "role": "assistant",
+                    "content": reply
+                })
 
-                        chats = load_chats()
-                        chats = ensure_chat_session(chats, session_id, message)
+                chats = load_chats()
+                chats = ensure_chat_session(chats, session_id, message)
 
-                        chats[session_id]["messages"].append({
-                            "id": assistant_message_id,
-                            "role": "assistant",
-                            "content": reply
-                        })
+                chats[session_id]["messages"].append({
+                    "id": assistant_message_id,
+                    "role": "assistant",
+                    "content": reply
+                })
 
-                        save_chats(chats)
-                        SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+                save_chats(chats)
+                SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
 
-                        return {
-                            "reply": reply,
-                            "session_id": session_id,
-                            "message_id": assistant_message_id,
-                            "end": False,
-                        }
+                return {
+                    "reply": reply,
+                    "session_id": session_id,
+                    "message_id": assistant_message_id,
+                    "end": False,
+                }
 
 
         retrieved_docs = []
