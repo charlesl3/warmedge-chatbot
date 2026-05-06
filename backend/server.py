@@ -71,6 +71,73 @@ def detect_bad_run(trace: dict) -> str | None:
     except Exception:
         return None
 
+def print_compact_trace(trace: dict):
+
+    input_ = trace.get("input", {})
+    state = trace.get("state", {})
+    intent = trace.get("intent", {})
+    clarification = trace.get("clarification", {})
+    plan = trace.get("plan", {})
+    retrieval = trace.get("retrieval", {})
+    repair = trace.get("repair", {})
+    output = trace.get("output", {})
+    followup = trace.get("followup", {})
+
+    print("\n==================================================")
+
+    # -------------------------
+    # INPUT
+    # -------------------------
+    print("[INPUT]")
+    print(f"query        : {input_.get('query')}")
+    print(f"history_len  : {input_.get('history_len')}")
+
+    # -------------------------
+    # STATE
+    # -------------------------
+    print("\n[STATE]")
+    print(f"skill_level  : {state.get('skill_level')}")
+    print(f"signals      : {state.get('signals')}")
+    print(f"jump_level   : {state.get('jump_level')}")
+    print(f"experience   : {state.get('experience_type')}")
+    print(f"goal         : {state.get('goal')}")
+
+    # -------------------------
+    # AGENT
+    # -------------------------
+    print("\n[AGENT]")
+    print(f"intent       : {intent.get('label')}")
+    print(f"fallback     : {intent.get('is_fallback')}")
+    print(f"clarify      : {clarification.get('triggered')}")
+    print(f"clarify_why  : {clarification.get('reason')}")
+    print(f"mode         : {plan.get('mode')}")
+    print(f"depth        : {plan.get('depth')}")
+
+    # -------------------------
+    # RAG
+    # -------------------------
+    print("\n[RAG]")
+    print(f"k            : {retrieval.get('k')}")
+    print(f"docs_initial : {retrieval.get('docs_initial')}")
+    print(f"docs_final   : {retrieval.get('docs_returned')}")
+    print(f"weak         : {retrieval.get('weak')}")
+
+    # -------------------------
+    # REPAIR
+    # -------------------------
+    print("\n[REPAIR]")
+    print(f"triggered    : {repair.get('triggered')}")
+    print(f"improved     : {repair.get('improved')}")
+    print(f"reason       : {repair.get('reason')}")
+
+    # -------------------------
+    # OUTPUT
+    # -------------------------
+    print("\n[OUTPUT]")
+    print(f"length       : {output.get('length')}")
+    print(f"followup     : {followup.get('triggered')}")
+
+    print("==================================================\n")
 # -------------------------
 # CORS
 # -------------------------
@@ -712,7 +779,15 @@ Rules:
             "triggered": repair_triggered,
             "improved": repaired,
             "docs_after": len(retrieved_docs),
-            "reason": "low_docs" if len(retrieved_docs) <= 2 else "weak_answer"
+            "reason": (
+                "none"
+                if not repair_triggered
+                else (
+                    "low_docs"
+                    if len(retrieved_docs) <= 2
+                    else "weak_answer"
+                )
+            )
         }
 
         agent_trace["output"] = {
@@ -793,9 +868,7 @@ Rules:
 
         SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
 
-        print("\n=== AGENT TRACE ===")
-        print(json.dumps(agent_trace, indent=2))
-        print("===================\n")
+        print_compact_trace(agent_trace)
 
         issue = detect_bad_run(agent_trace)
 

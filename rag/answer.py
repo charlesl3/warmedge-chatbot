@@ -91,10 +91,8 @@ def boost_with_feedback(query_embedding: np.ndarray, retrieval: Dict) -> Dict:
     retrieval["sources"] = [r[2] for r in ranked]
     retrieval["top_score"] = retrieval["scores"][0] if retrieval["scores"] else None
 
-    if DEBUG:
-        debug_print("\n===== FEEDBACK BOOST DEBUG =====")
-        debug_print("Boosted docs:", doc_boost)
-        debug_print("===============================\n")
+    if DEBUG and doc_boost:
+        debug_print(f"[FEEDBACK] boosted_docs={len(doc_boost)}")
 
     return retrieval
 
@@ -352,7 +350,7 @@ def answer_question(question, history, intent="default", k=4, answer_plan=None):
     track = infer_track(normalized)
 
     debug_print("[INTENT]", intent)
-    debug_print("[RETRIEVAL QUERY]", retrieval_query)
+    debug_print(f"[QUERY] {retrieval_query}")
 
     query_embedding = EMBED_MODEL.encode(retrieval_query, convert_to_numpy=True)
 
@@ -387,8 +385,15 @@ def answer_question(question, history, intent="default", k=4, answer_plan=None):
 
     confidence = infer_answer_confidence(retrieval, k)
 
-    print(f"[RAG] final k used = {k}, docs passed = {len(retrieval['results'])}")
-    print(f"[CONFIDENCE] {confidence} | top_score={retrieval.get('top_score')}")
+    top_score = retrieval.get("top_score")
+
+    if top_score is not None:
+        top_score = round(float(top_score), 3)
+
+    print(
+        f"[RAG] k={k} docs={len(retrieval['results'])} "
+        f"confidence={confidence} top_score={top_score}"
+    )
 
     llm_input = build_llm_input(
         prompt=prompt,
