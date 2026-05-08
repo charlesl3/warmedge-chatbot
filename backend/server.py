@@ -541,10 +541,15 @@ def chat(req: ChatRequest):
             "weak": False
         }
 
-        clarify, reason = needs_clarification(message, history)
+        clarify, reason, clarification_question = needs_clarification(
+            message,
+            history,
+            state=state,
+        )
         agent_trace["clarification"] = {
             "triggered": clarify,
             "reason": reason,
+            "question": clarification_question,
         }
 
         answer_plan = build_answer_plan(
@@ -572,7 +577,7 @@ def chat(req: ChatRequest):
         # -------------------------
         # SMART CLARIFICATION LOGIC
         # -------------------------
-        if clarify and intent == "default":
+        if clarify:
             # 🚨 NEW: check if prior context exists
             has_prior_context = any(
                 ("axel" in m["content"].lower() or
@@ -581,9 +586,8 @@ def chat(req: ChatRequest):
             )
 
             if not has_prior_context:
-                reply = (
-                    "Could you tell me your level and what you want to use it for? "
-                    "I can give a more precise answer."
+                reply = clarification_question or (
+                    "Could you share one more detail so I can answer accurately?"
                 )
 
                 assistant_message_id = str(uuid.uuid4())

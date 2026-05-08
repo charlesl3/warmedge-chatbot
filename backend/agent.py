@@ -1,4 +1,5 @@
 import re
+from rag.llm import run_llm
 
 
 # -------------------------
@@ -166,25 +167,154 @@ def has_prior_skill_signal(history):
 
     return False
 
+# -------------------------
+# THIN LLM CLARIFICATION CONTROLLER
+# -------------------------
 
+# -------------------------
+# SEMANTIC CLARIFICATION CONTROLLER
+# -------------------------
+
+def semantic_clarification_check(query: str, history: list[dict], state: dict | None = None) -> dict:
+    """
+    Thin LLM controller.
+    It does NOT answer the user.
+    It only gives a semantic clarification decision.
+    Backend remains the final authority.
+    """
+
+    recent_history = history[-6:] if history else []
+    history_text = "\n".join(
+        f"{m.get('role', '')}: {m.get('content', '')}"
+        for m in recent_history
+    )
+
+    prompt = f"""
+You are a backend clarification controller for WarmGPT, a figure skating assistant.
+
+Do NOT answer the user.
+Only decide whether the latest user message needs clarification before WarmGPT answers.
+
+Use EXACTLY this format:
+
+TASK: one short task type
+NEEDS_CLARIFICATION: YES or NO
+ENOUGH_FOR_USEFUL_ANSWER: YES or NO
+REASON: one short reason
+QUESTION: one short clarification question, or NONE
+
+User message:
+{query}
+
+Recent conversation:
+{history_text}
+
+Detected state:
+{state or {}}
+
+Rules:
+- Ask clarification only if answering now would likely be useless, misleading, or badly personalized.
+- Do NOT ask clarification merely because more detail could improve the answer.
+- Equipment recommendation questions usually need skating level if no level is known; if no level is known, clarification is needed
+- Technique/how-to questions usually can be answered without clarification.
+- If the user is answering a previous clarification with a short answer, do NOT ask another clarification.
+- If enough information exists for a useful answer, set NEEDS_CLARIFICATION to NO.
+- For ambiguous skating terms like loop, clarify only when the message is too short to infer meaning.
+""".strip()
+
+    try:
+        raw = run_llm(prompt).strip()
+        upper = raw.upper()
+
+        needs = "NEEDS_CLARIFICATION: YES" in upper
+        enough = "ENOUGH_FOR_USEFUL_ANSWER: YES" in upper
+
+        reason_match = re.search(r"REASON:\s*(.*)", raw, re.IGNORECASE)
+        question_match = re.search(r"QUESTION:\s*(.*)", raw, re.IGNORECASE)
+
+        reason = reason_match.group(1).strip() if reason_match else "semantic_controller"
+        question = question_match.group(1).strip() if question_match else ""
+
+        if question.upper() == "NONE":
+            question = ""
+
+        return {
+            "needs_clarification": needs,
+            "enough_for_useful_answer": enough,
+            "reason": reason,
+            "clarification_question": question,
+            "raw": raw,
+        }
+
+    except Exception as e:
+        print("[CLARIFICATION CONTROLLER] skipped:", str(e))
+        return {
+            "needs_clarification": False,
+            "enough_for_useful_answer": True,
+            "reason": "semantic_controller_error",
+            "clarification_question": "",
+            "raw": "",
+        }
 # -------------------------
 # CLARIFICATION LOGIC
 # -------------------------
 
-def needs_clarification(query: str, history: list[dict]):
+def needs_clarification(query: str, history: list[dict], state: dict | None = None):
     q = query.lower()
     tokens = q.split()
 
     # -------------------------
-    # 1. VAGUE SHORT QUERIES
+    # 0. If user is answering a previous clarification, do NOT clarify again
+    # -------------------------
+    last_assistant = next(
+        (m for m in reversed(history) if m.get("role") == "assistant"),
+        None
+    )
+
+    if last_assistant:
+        last_text = last_assistant.get("content", "").lower()
+
+        looks_like_clarification = (
+            "could you tell me" in last_text
+            or "what level" in last_text
+            or "which one" in last_text
+            or last_text.endswith("?")
+        )
+
+        if looks_like_clarification and len(tokens) <= 4:
+            return False, "answering_previous_clarification", ""
+
+    # -------------------------
+    # 1. Hard-coded high-confidence domain ambiguity
+    # -------------------------
+    if q.strip() == "loop":
+        return True, "ambiguous_term_loop", "Do you mean the loop jump or the loop turn?"
+
+    # -------------------------
+    # 2. Vague short query
     # -------------------------
     vague_patterns = ["this", "that", "which", "should"]
 
     if len(tokens) <= 2 and any(p in tokens for p in vague_patterns):
-        return True, "vague short query"
+        return True, "vague short query", "What are you referring to?"
 
     # -------------------------
-    # 2. SKILL SIGNALS
+    # 3. Semantic LLM controller
+    # -------------------------
+    semantic = semantic_clarification_check(query, history, state)
+
+    if (
+        semantic.get("needs_clarification")
+        and not semantic.get("enough_for_useful_answer")
+    ):
+        question = semantic.get("clarification_question") or (
+            "Could you share one more detail so I can answer accurately?"
+        )
+
+        return True, semantic.get("reason", "semantic_clarification"), question
+
+    # -------------------------
+    # 4. Deterministic fallback rules
     # -------------------------
     def has_jump_signal():
         if "axel" in q:
@@ -197,37 +327,37 @@ def needs_clarification(query: str, history: list[dict]):
 
     has_skill_signal = has_jump_signal()
 
-    # -------------------------
-    # 3. RECOMMENDATION DETECTION
-    # -------------------------
     is_recommendation = (
-            "recommend" in q or
-            "best" in q
+        "recommend" in q
+        or "best" in q
+        or "buy" in q
+        or "upgrade" in q
+        or "new boots" in q
+        or "new skates" in q
+        or "what skates" in q
+        or "what boots" in q
+        or "shopping" in q
+        or "setup" in q
     )
 
     is_how_to = (
-            "how to" in q or
-            "how do i" in q or
-            "how should i" in q or
-            "practice" in q or
-            "improve" in q or
-            "fix" in q
+        "how to" in q
+        or "how do i" in q
+        or "how should i" in q
+        or "practice" in q
+        or "improve" in q
+        or "fix" in q
     )
 
-    # -------------------------
-    # 4. HISTORY-AWARE DECISION
-    # -------------------------
+    if is_how_to:
+        return False, "how_to_safe", ""
+
     if is_recommendation:
         if not has_skill_signal:
             if not has_prior_skill_signal(history):
-                return True, "missing level"
+                return True, "missing level", "What level are you currently skating at?"
 
-    # 🚨 NEW: do NOT clarify for how_to
-    if is_how_to:
-        return False, "how_to_safe"
-
-    return False, "sufficient"
-
+    return False, "sufficient", ""
 
 def classify_query_intent(query: str, history: list[dict]) -> str:
     q = query.lower().strip()
