@@ -109,7 +109,10 @@ def print_compact_trace(trace: dict):
     print(f"intent       : {intent.get('label')}")
     print(f"fallback     : {intent.get('is_fallback')}")
     print(f"clarify      : {clarification.get('triggered')}")
+    print(f"clarify_q    : {clarification.get('question')}")
     print(f"clarify_why  : {clarification.get('reason')}")
+    print(f"clarify_cnt  : {trace.get('clarification_state', {}).get('count')}")
+    print(f"force_answer : {trace.get('clarification_state', {}).get('force_answer')}")
     print(f"mode         : {plan.get('mode')}")
     print(f"depth        : {plan.get('depth')}")
 
@@ -160,8 +163,10 @@ app.add_middleware(
 # -------------------------
 SESSIONS = {}
 LAST_RAG_CONTEXT = {}
+CLARIFICATION_STATE = {}
 
 MAX_TURNS = 4
+MAX_CLARIFICATIONS = 1
 MAX_RAG_CONTEXT_PER_SESSION = 50
 
 
@@ -435,8 +440,15 @@ def chat(req: ChatRequest):
 
         if session_id not in SESSIONS:
             SESSIONS[session_id] = []
+        if session_id not in CLARIFICATION_STATE:
+            CLARIFICATION_STATE[session_id] = {
+                "count": 0,
+                "force_answer": False,
+                "last_reason": None,
+            }
 
         history = list(SESSIONS[session_id])
+        clarification_state = CLARIFICATION_STATE[session_id]
         agent_trace = {
             "input": {
                 "query": message,
@@ -524,8 +536,18 @@ def chat(req: ChatRequest):
         )
 
         if is_answering_clarification:
-            # inherit previous intent (very important)
+
+            # ------------------------------------------------
+            # IMPORTANT:
+            # User already responded to clarification.
+            # We now FORCE ANSWER MODE to prevent
+            # endless clarification recursion.
+            # ------------------------------------------------
+            clarification_state["force_answer"] = True
+
+            # inherit previous intent
             intent = "diagnosis"
+
         else:
             intent = classify_query_intent(message, history)
 
@@ -546,10 +568,30 @@ def chat(req: ChatRequest):
             history,
             state=state,
         )
+
+        # ------------------------------------------------
+        # Clarification convergence logic
+        # ------------------------------------------------
+
+        if clarification_state["force_answer"]:
+            clarify = False
+            reason = "force_answer_mode"
+            clarification_question = ""
+
+        if clarification_state["count"] >= MAX_CLARIFICATIONS:
+            clarify = False
+            reason = "clarification_budget_exceeded"
+            clarification_question = ""
+
         agent_trace["clarification"] = {
             "triggered": clarify,
             "reason": reason,
             "question": clarification_question,
+        }
+
+        agent_trace["clarification_state"] = {
+            "count": clarification_state["count"],
+            "force_answer": clarification_state["force_answer"],
         }
 
         answer_plan = build_answer_plan(
@@ -592,6 +634,7 @@ def chat(req: ChatRequest):
 
                 assistant_message_id = str(uuid.uuid4())
 
+
                 working_history.append({
                     "role": "assistant",
                     "content": reply
@@ -605,6 +648,8 @@ def chat(req: ChatRequest):
                 save_chats(chats)
 
                 SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+                clarification_state["count"] += 1
+                clarification_state["last_reason"] = reason
 
                 return {
                     "reply": reply,
@@ -841,6 +886,13 @@ Rules:
         }
 
         assistant_message_id = str(uuid.uuid4())
+
+        # ------------------------------------------------
+        # Successful real answer resets clarification state
+        # ------------------------------------------------
+        clarification_state["count"] = 0
+        clarification_state["force_answer"] = False
+        clarification_state["last_reason"] = None
 
         working_history.append({
             "role": "assistant",

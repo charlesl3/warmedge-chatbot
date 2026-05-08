@@ -190,37 +190,111 @@ def semantic_clarification_check(query: str, history: list[dict], state: dict | 
     )
 
     prompt = f"""
-You are a backend clarification controller for WarmGPT, a figure skating assistant.
+    You are a backend clarification controller for WarmGPT, a figure skating assistant.
 
-Do NOT answer the user.
-Only decide whether the latest user message needs clarification before WarmGPT answers.
+    Do NOT answer the user.
+    Only decide whether the latest user message needs clarification before WarmGPT answers.
 
-Use EXACTLY this format:
+    Use EXACTLY this format:
 
-TASK: one short task type
-NEEDS_CLARIFICATION: YES or NO
-ENOUGH_FOR_USEFUL_ANSWER: YES or NO
-REASON: one short reason
-QUESTION: one short clarification question, or NONE
+    TASK: one short task type
+    NEEDS_CLARIFICATION: YES or NO
+    ENOUGH_FOR_USEFUL_ANSWER: YES or NO
+    REASON: one short reason
+    QUESTION: one short clarification question, or NONE
 
-User message:
-{query}
+    User message:
+    {query}
 
-Recent conversation:
-{history_text}
+    Recent conversation:
+    {history_text}
 
-Detected state:
-{state or {}}
+    Detected state:
+    {state or {} }
 
-Rules:
-- Ask clarification only if answering now would likely be useless, misleading, or badly personalized.
-- Do NOT ask clarification merely because more detail could improve the answer.
-- Equipment recommendation questions usually need skating level if no level is known; if no level is known, clarification is needed
-- Technique/how-to questions usually can be answered without clarification.
-- If the user is answering a previous clarification with a short answer, do NOT ask another clarification.
-- If enough information exists for a useful answer, set NEEDS_CLARIFICATION to NO.
-- For ambiguous skating terms like loop, clarify only when the message is too short to infer meaning.
-""".strip()
+    Examples:
+
+    Example 1
+    User:
+    What skates should I buy?
+
+    Output:
+    TASK: equipment_recommendation
+    NEEDS_CLARIFICATION: YES
+    ENOUGH_FOR_USEFUL_ANSWER: NO
+    REASON: skating level missing
+    QUESTION: What level are you currently skating at?
+
+    Example 2
+    User:
+    I am advanced.
+
+    Output:
+    TASK: clarification_response
+    NEEDS_CLARIFICATION: NO
+    ENOUGH_FOR_USEFUL_ANSWER: YES
+    REASON: enough information provided
+    QUESTION: NONE
+
+    Example 3
+    User:
+    How do I stop scraping on salchow?
+
+    Output:
+    TASK: technique_help
+    NEEDS_CLARIFICATION: NO
+    ENOUGH_FOR_USEFUL_ANSWER: YES
+    REASON: enough information for useful coaching
+    QUESTION: NONE
+
+    Example 4
+    User:
+    Thinking about upgrading my boots.
+
+    Output:
+    TASK: equipment_recommendation
+    NEEDS_CLARIFICATION: YES
+    ENOUGH_FOR_USEFUL_ANSWER: NO
+    REASON: skating level missing
+    QUESTION: What level are you currently skating at?
+
+    Example 5
+    User:
+    loop
+
+    Output:
+    TASK: ambiguous_term
+    NEEDS_CLARIFICATION: YES
+    ENOUGH_FOR_USEFUL_ANSWER: NO
+    REASON: loop may refer to jump or turn
+    QUESTION: Do you mean the loop jump or the loop turn?
+
+    Example 6
+    User:
+    What skates do you recommend?
+    Assistant:
+    What level are you currently skating at?
+    User:
+    Advanced
+
+    Output:
+    TASK: equipment_recommendation
+    NEEDS_CLARIFICATION: NO
+    ENOUGH_FOR_USEFUL_ANSWER: YES
+    REASON: enough information for useful recommendation
+    QUESTION: NONE
+
+    Rules:
+    - Ask clarification only if answering now would likely be useless, misleading, or badly personalized.
+    - Do NOT ask clarification merely because more detail could improve the answer.
+    - Equipment recommendation questions usually need skating level if no level is known.
+    - Technique/how-to questions usually can be answered without clarification.
+    - If the user is answering a previous clarification with a short answer, do NOT ask another clarification.
+    - If enough information exists for a useful answer, set NEEDS_CLARIFICATION to NO.
+    - For ambiguous skating terms like loop, clarify only when the message is too short to infer meaning.
+    - Prefer answering over over-clarifying.
+    - One clarification is usually enough.
+    """.strip()
 
     try:
         raw = run_llm(prompt).strip()
