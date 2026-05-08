@@ -125,7 +125,7 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 - improves consistency (no unnecessary re-retrieval)  
 - enables controlled depth expansion without breaking RAG  
 
-## Agent Logic (Current)
+## Agent Logic v1
 
 ### 1. Clarification (gatekeeping)
 
@@ -282,3 +282,51 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 **Flow:**
 - retrieve → answer → repair →  
   followup_decision → (no → return) / (yes → LLM_generate → append → return)
+
+## Agent Logic v2.0
+
+### 1. Clarification (gatekeeping)
+
+- Purpose:
+  decide whether the system has enough information to generate a useful answer before running full RAG.
+
+- Main functions:
+  - `semantic_clarification_check()`
+    - thin semantic LLM controller
+  - `needs_clarification()`
+    - backend clarification gatekeeper
+
+- v2 improvements:
+  - moved from keyword-based clarification
+    - `"recommend" in query`
+  - to semantic clarification understanding
+    - `thinking about upgrading my boots`
+
+- Trigger examples:
+  - missing skating level for equipment recommendations
+  - ambiguous short domain terms (`loop`)
+  - vague references (`which one?`)
+
+- Usually does NOT clarify:
+  - technique/how-to questions
+  - factual questions
+  - short replies to previous clarification
+
+- Convergence logic:
+  - uses:
+    - `MAX_CLARIFICATIONS`
+    - `force_answer`
+  - prevents endless clarification loops
+  - forces answering after enough clarification
+
+- Conversation-state awareness:
+  - detects when user is replying to a clarification question
+  - activates:
+    - `force_answer = True`
+
+- Philosophy:
+  - clarify only when answer would become:
+    - misleading
+    - useless
+    - badly personalized
+  - prefer useful answers over excessive questioning
