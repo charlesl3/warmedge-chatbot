@@ -1,5 +1,5 @@
 import re
-from rag.llm import run_llm
+from backend.generation.llm import run_llm
 
 
 # -------------------------

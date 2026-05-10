@@ -2,16 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
-from backend.agent import (
-    needs_clarification,
-    build_skater_state,
-    classify_query_intent,
-    build_intent_profile,
-    choose_k,
-    build_answer_plan,
-    should_generate_followup,
-    build_followup_prompt,
-)
 
 import traceback
 import re
@@ -20,17 +10,34 @@ import os
 import json
 import math
 
-from rag.answer import answer_question
-from rag.intents import (
+from backend.agents.agent import (
+    needs_clarification,
+    build_skater_state,
+    build_intent_profile,
+    choose_k,
+    build_answer_plan,
+    should_generate_followup,
+    build_followup_prompt,
+)
+
+from backend.generation.answer import answer_question
+
+from backend.taxonomy.intents import (
     is_blank,
     is_social_message,
     is_farewell,
     handle_social_message,
 )
 
-from rag.retriever import load_index_and_meta, get_embed_model
-from rag.llm import run_llm
-from backend.chat_storage import load_chats, save_chats, ensure_chat_session
+from backend.retrieval.feedback_memory import (
+    load_feedback_memory,
+    save_feedback_memory,
+    add_feedback_example,
+)
+
+from backend.retrieval.retriever import load_index_and_meta, get_embed_model
+from backend.generation.llm import run_llm
+from backend.memory.chat_storage import load_chats, save_chats, ensure_chat_session
 
 
 app = FastAPI()
@@ -54,14 +61,17 @@ def detect_bad_run(trace: dict) -> str | None:
         repair = trace.get("repair", {})
         intent = trace.get("intent", {})
 
-        weak = retrieval.get("weak", False)
-        repair_failed = repair.get("triggered") and not repair.get("improved")
+        status = retrieval.get("status")
+        repair_failed = (
+                repair.get("triggered")
+                and repair.get("status") == "failed"
+        )
         fallback_intent = intent.get("is_fallback", False)
 
-        if weak and repair_failed:
+        if status == "weak" and repair_failed:
             return "low retrieval + repair failed"
 
-        if weak:
+        if status == "weak":
             return "low retrieval"
 
         if fallback_intent:
@@ -81,6 +91,8 @@ def print_compact_trace(trace: dict):
     plan = trace.get("plan", {})
     retrieval = trace.get("retrieval", {})
     repair = trace.get("repair", {})
+    query_profile = trace.get("query_profile", {})
+    fallback = trace.get("fallback", {})
     output = trace.get("output", {})
     followup = trace.get("followup", {})
 
@@ -114,28 +126,51 @@ def print_compact_trace(trace: dict):
     print(f"fallback     : {intent.get('is_fallback')}")
     print(f"clarify      : {clarification.get('triggered')}")
     print(f"clarify_q    : {clarification.get('question')}")
-    print(f"clarify_why  : {clarification.get('reason')}")
+    print(f"clarify_candidate_reason  : {clarification.get('reason')}")
     print(f"clarify_cnt  : {trace.get('clarification_state', {}).get('count')}")
     print(f"force_answer : {trace.get('clarification_state', {}).get('force_answer')}")
     print(f"mode         : {plan.get('mode')}")
     print(f"depth        : {plan.get('depth')}")
 
     # -------------------------
+    # QUERY PROFILE
+    # -------------------------
+    print("\n[QUERY PROFILE]")
+    print(f"primary_query: {query_profile.get('primary_query')}")
+    print(f"topic        : {query_profile.get('topic')}")
+    print(f"track        : {query_profile.get('track')}")
+    print(f"merged       : {query_profile.get('used_history_merge')}")
+
+
+    # -------------------------
     # RAG
     # -------------------------
-    print("\n[RAG]")
+    print("\n[RETRIEVAL]")
     print(f"k            : {retrieval.get('k')}")
-    print(f"docs_initial : {retrieval.get('docs_initial')}")
-    print(f"docs_final   : {retrieval.get('docs_returned')}")
-    print(f"weak         : {retrieval.get('weak')}")
+    print(f"docs         : {retrieval.get('docs_returned')}")
+    print(f"status       : {retrieval.get('status')}")
+    print(f"top_score    : {retrieval.get('top_score')}")
+    print(f"confidence   : {retrieval.get('confidence')}")
+    print(f"reason       : {retrieval.get('reason')}")
+
+    # -------------------------
+    # FALLBACK
+    # -------------------------
+    print("\n[FALLBACK]")
+    print(f"triggered    : {fallback.get('triggered')}")
+    print(f"strategy     : {fallback.get('strategy')}")
+    print(f"reason       : {fallback.get('reason')}")
+    print(f"eval_reason  : {fallback.get('evaluation_reason')}")
+
+
 
     # -------------------------
     # REPAIR
     # -------------------------
     print("\n[REPAIR]")
     print(f"triggered    : {repair.get('triggered')}")
-    print(f"improved     : {repair.get('improved')}")
     print(f"reason       : {repair.get('reason')}")
+    print(f"status       : {repair.get('status')}")
 
     # -------------------------
     # OUTPUT
@@ -177,7 +212,7 @@ MAX_RAG_CONTEXT_PER_SESSION = 50
 # -------------------------
 # Feedback memory storage
 # -------------------------
-FEEDBACK_PATH = "backend/feedback_memory.json"
+FEEDBACK_PATH = "backend/memory/feedback_memory.json"
 
 MAX_EXAMPLES_PER_DOC = 5
 MAX_DOC_GROUPS = 100
@@ -195,12 +230,6 @@ def load_feedback_memory():
         return []
 
 
-def save_feedback_memory(memory):
-    os.makedirs(os.path.dirname(FEEDBACK_PATH), exist_ok=True)
-
-    with open(FEEDBACK_PATH, "w", encoding="utf-8") as f:
-        json.dump(memory, f, ensure_ascii=False, indent=2)
-
 
 def cosine_similarity(a, b):
     if not a or not b:
@@ -217,48 +246,6 @@ def cosine_similarity(a, b):
         return 0.0
 
     return dot / (norm_a * norm_b)
-
-
-def add_feedback_example(memory, query, embedding, docs):
-    if not query or not embedding or not docs:
-        return memory
-
-    doc_set = set(docs)
-
-    for doc_id in doc_set:
-        group = next((g for g in memory if g.get("doc") == doc_id), None)
-
-        if group is None:
-            memory.append({
-                "doc": doc_id,
-                "examples": [
-                    {
-                        "query": query,
-                        "embedding": embedding
-                    }
-                ]
-            })
-            continue
-
-        examples = group.get("examples", [])
-
-        max_sim = 0.0
-        for ex in examples:
-            sim = cosine_similarity(embedding, ex.get("embedding", []))
-            if sim > max_sim:
-                max_sim = sim
-
-        if max_sim < SIMILARITY_DUP_THRESHOLD:
-            examples.append({
-                "query": query,
-                "embedding": embedding
-            })
-
-        group["examples"] = examples[-MAX_EXAMPLES_PER_DOC:]
-
-    return memory[-MAX_DOC_GROUPS:]
-
-
 # -------------------------
 # Output cleaning
 # -------------------------
@@ -286,44 +273,6 @@ def get_last_assistant_answer(history):
         if m.get("role") == "assistant":
             return m.get("content")
     return None
-# -------------------------
-# Self-repair logic
-# -------------------------
-def should_repair(answer, docs, query):
-
-    weak_phrases = [
-        "it depends",
-        "not sure",
-        "generally",
-        "in some cases"
-    ]
-
-    has_weak_phrase = any(p in answer.lower() for p in weak_phrases)
-
-    if len(docs) <= 2:
-        return True
-
-    if has_weak_phrase:
-        return True
-
-    if len(answer.split()) < 80:  # <-- increase threshold
-        return True
-
-    return False
-
-
-def repair_query(query: str, intent: str) -> str:
-    if intent == "diagnosis":
-        return query + " figure skating problems caused by edge quality, physical strength, or mental mindsets"
-
-    if intent == "how_to":
-        return query + " step by step technique practice figure skating"
-
-    if intent == "comparison":
-        return query + " differences pros cons figure skating"
-
-    return query + " detailed explanation figure skating"
-
 
 # -------------------------
 # Request schemas
@@ -569,10 +518,6 @@ def chat(req: ChatRequest):
         }
 
         k = choose_k(message, intent, state, history)
-        agent_trace["retrieval"] = {
-            "k": k,
-            "weak": False
-        }
 
         clarify, reason, clarification_question = needs_clarification(
             message,
@@ -686,6 +631,8 @@ def chat(req: ChatRequest):
             intent=intent,
             k=k,
             answer_plan=answer_plan,
+            intent_profile=intent_profile,
+            state=state,
         )
 
         transform_mode = detect_transform_mode(message)
@@ -805,56 +752,36 @@ Rules:
             reply = rag_result
 
         reply = clean_output(reply)
-        repaired = False
-        agent_trace["retrieval"]["docs_returned"] = len(retrieved_docs)
-        agent_trace["retrieval"]["weak"] = (len(retrieved_docs) <= 2)
-        agent_trace["retrieval"]["docs_initial"] = len(retrieved_docs)
+        fallback_trace = {}
+        repair_trace = {}
+        retrieval_eval = {}
+        retrieval_profile = {}
 
-        # -------------------------
-        # SELF-REPAIR (NEW)
-        # -------------------------
-        repair_triggered = False
+        if isinstance(rag_result, dict):
+            fallback_trace = rag_result.get("fallback", {})
+            repair_trace = rag_result.get("repair", {})
+            retrieval_eval = rag_result.get("retrieval_eval", {})
+            retrieval_profile = rag_result.get("retrieval_profile", {})
 
-        if should_repair(reply, retrieved_docs, message):
-            repair_triggered = True
-            repaired_query = repair_query(message, intent)
+        agent_trace["query_profile"] = retrieval_profile
 
-            repaired_result = answer_question(
-                question=repaired_query,
-                history=working_history,
-                intent=intent,
-                k=k,
-                answer_plan=answer_plan,
-            )
-
-            if isinstance(repaired_result, dict):
-                new_reply = clean_output(repaired_result.get("reply", ""))
-                new_docs = repaired_result.get("retrieved_docs", [])
-
-                # simple improvement check
-                if len(new_docs) > len(retrieved_docs):
-                    reply = new_reply
-                    retrieved_docs = new_docs
-                    repaired = True
-
-        agent_trace["repair"] = {
-            "triggered": repair_triggered,
-            "improved": repaired,
-            "docs_after": len(retrieved_docs),
-            "reason": (
-                "none"
-                if not repair_triggered
-                else (
-                    "low_docs"
-                    if len(retrieved_docs) <= 2
-                    else "weak_answer"
-                )
-            )
+        agent_trace["retrieval"] = {
+            "k": k,
+            "docs_returned": len(retrieved_docs),
+            "status": retrieval_eval.get("status"),
+            "confidence": retrieval_eval.get("confidence"),
+            "reason": retrieval_eval.get("reason"),
+            "top_score": retrieval_eval.get("top_score"),
         }
+
+        agent_trace["fallback"] = fallback_trace
+
+        agent_trace["repair"] = repair_trace
 
         agent_trace["output"] = {
             "length": len(reply.split())
         }
+
 
         # -------------------------
         # SMART LLM FOLLOW-UP
@@ -949,7 +876,7 @@ Rules:
             "session_id": session_id,
             "message_id": assistant_message_id,
             "sources": retrieved_docs[:2],
-            "repaired": repaired,
+            "repaired": repair_trace.get("triggered", False),
             "end": False,
         }
 

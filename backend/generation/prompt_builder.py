@@ -1,6 +1,5 @@
-from rag.level_taxonomy import detect_legacy_term
-from backend.agent import build_skater_state
-
+from backend.taxonomy.level_taxonomy import detect_legacy_term
+from backend.agents.agent import build_skater_state
 
 def get_intent_instruction(intent: str) -> str:
     if intent == "how_to":

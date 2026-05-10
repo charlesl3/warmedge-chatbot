@@ -5,11 +5,10 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-
 # --------------------------------------------------
 # Paths
 # --------------------------------------------------
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 STORE_DIR = PROJECT_ROOT / "rag_store"
 
 INDEX_PATH = STORE_DIR / "warmedge_master_index.faiss"

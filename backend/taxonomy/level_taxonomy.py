@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-TAXONOMY_PATH = BASE_DIR / "taxonomy" / "usfs_levels_2023.json"
+TAXONOMY_PATH = BASE_DIR / "usfs_levels_2023.json"
 
 with open(TAXONOMY_PATH, "r") as f:
     LEVEL_TAXONOMY = json.load(f)

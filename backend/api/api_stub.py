@@ -1,13 +1,12 @@
 from typing import List, Dict
 
-from rag.answer import answer_question
-from rag.intents import (
+from backend.generation.answer import answer_question
+from backend.taxonomy.intents import (
     is_blank,
     is_social_message,
     is_farewell,
     handle_social_message,
 )
-
 
 def chat_api(
     message: str,
@@ -37,10 +36,12 @@ def chat_api(
         }
 
     # 3️⃣ Real skating question → RAG brain
-    reply = answer_question(
+    result = answer_question(
         question=message,
         history=history,
     )
+
+    reply = result.get("reply", "") if isinstance(result, dict) else result
 
     return {
         "reply": reply,

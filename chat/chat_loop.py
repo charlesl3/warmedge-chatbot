@@ -14,8 +14,8 @@ logging.set_verbosity_error()
 # -------------------------
 # RAG imports
 # -------------------------
-from rag.answer import answer_question
-from rag.intents import (
+from backend.generation.answer import answer_question
+from backend.taxonomy.intents import (
     is_blank,
     is_social_message,
     is_farewell,
@@ -107,10 +107,12 @@ def main():
         )
         t.start()
 
-        reply = answer_question(
+        result = answer_question(
             question=user_input,
             history=history,
         )
+
+        reply = result.get("reply", "") if isinstance(result, dict) else result
 
         stop_event.set()
         t.join()
