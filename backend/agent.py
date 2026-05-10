@@ -469,6 +469,140 @@ def classify_query_intent(query: str, history: list[dict]) -> str:
 
     return "default"
 
+def build_intent_profile(query: str, history: list[dict], state: dict | None = None) -> dict:
+    """
+    Intent v2:
+    Uses a thin semantic controller to produce a richer intent profile.
+    Keeps primary_intent compatible with the old intent system.
+    """
+
+    fallback_intent = classify_query_intent(query, history)
+
+    recent_history = history[-6:] if history else []
+    history_text = "\n".join(
+        f"{m.get('role', '')}: {m.get('content', '')}"
+        for m in recent_history
+    )
+
+    prompt = f"""
+You are a backend intent controller for WarmGPT, a figure skating assistant.
+
+Do NOT answer the user.
+Classify the user's latest message for routing and answer planning.
+
+Use EXACTLY this format:
+
+PRIMARY_INTENT: one of how_to, diagnosis, comparison, experience_lookup, default
+SECONDARY_INTENTS: comma-separated list or NONE
+TOPIC: short topic label
+REASON: short reason
+
+User message:
+{query}
+
+Recent conversation:
+{history_text}
+
+Detected state:
+{state or {}}
+
+Examples:
+
+User:
+How do I stop scraping on salchow?
+
+Output:
+PRIMARY_INTENT: how_to
+SECONDARY_INTENTS: diagnosis
+TOPIC: salchow_takeoff
+REASON: user wants a practical fix for a skating issue
+
+User:
+My spin got worse after changing blades.
+
+Output:
+PRIMARY_INTENT: diagnosis
+SECONDARY_INTENTS: equipment, how_to
+TOPIC: blade_change_spin_issue
+REASON: user describes a problem likely related to equipment transition and technique adaptation
+
+User:
+Edea Chorus vs Ice Fly?
+
+Output:
+PRIMARY_INTENT: comparison
+SECONDARY_INTENTS: equipment
+TOPIC: boot_comparison
+REASON: user is comparing two boot models
+
+User:
+Why do my skates feel unstable?
+
+Output:
+PRIMARY_INTENT: diagnosis
+SECONDARY_INTENTS: experience_lookup
+TOPIC: skate_instability
+REASON: user asks about a symptom and possible causes
+
+Rules:
+- Choose only one PRIMARY_INTENT.
+- Use SECONDARY_INTENTS when the query mixes multiple needs.
+- Prefer how_to when the user wants steps, drills, or improvement.
+- Prefer diagnosis when the user describes a problem, symptom, or something feeling wrong.
+- Prefer comparison when the user asks vs, better, difference, or compare.
+- Prefer experience_lookup when the user asks why, whether something is normal, common, okay, or bad.
+- Use default only if none of the above clearly fit.
+""".strip()
+
+    try:
+        raw = run_llm(prompt).strip()
+
+        primary_match = re.search(r"PRIMARY_INTENT:\s*(.*)", raw, re.IGNORECASE)
+        secondary_match = re.search(r"SECONDARY_INTENTS:\s*(.*)", raw, re.IGNORECASE)
+        topic_match = re.search(r"TOPIC:\s*(.*)", raw, re.IGNORECASE)
+        reason_match = re.search(r"REASON:\s*(.*)", raw, re.IGNORECASE)
+
+        primary = primary_match.group(1).strip() if primary_match else fallback_intent
+        primary = primary.lower()
+
+        allowed = {"how_to", "diagnosis", "comparison", "experience_lookup", "default"}
+        if primary not in allowed:
+            primary = fallback_intent
+
+        secondary_raw = secondary_match.group(1).strip() if secondary_match else "NONE"
+
+        if secondary_raw.upper() == "NONE":
+            secondary = []
+        else:
+            secondary = [
+                x.strip().lower()
+                for x in secondary_raw.split(",")
+                if x.strip()
+            ]
+
+        topic = topic_match.group(1).strip() if topic_match else "unknown"
+        reason = reason_match.group(1).strip() if reason_match else "semantic_intent"
+
+        return {
+            "primary_intent": primary,
+            "secondary_intents": secondary,
+            "topic": topic,
+            "reason": reason,
+            "raw": raw,
+            "fallback_intent": fallback_intent,
+        }
+
+    except Exception as e:
+        print("[INTENT CONTROLLER] skipped:", str(e))
+        return {
+            "primary_intent": fallback_intent,
+            "secondary_intents": [],
+            "topic": "unknown",
+            "reason": "intent_controller_error",
+            "raw": "",
+            "fallback_intent": fallback_intent,
+        }
+
 
 def build_answer_plan(
     query: str,
@@ -476,6 +610,7 @@ def build_answer_plan(
     state: dict,
     history: list[dict],
     clarify: bool = False,
+    intent_profile: dict | None = None,
 ) -> dict:
     q = query.lower().strip()
     length = len(q.split())
@@ -548,6 +683,25 @@ def build_answer_plan(
     if has_context:
         plan["use_context"] = True
         plan["avoid_repetition"] = True
+
+    # -------------------------
+    # 6. Intent v2 enrichment
+    # -------------------------
+    if intent_profile:
+        secondary = intent_profile.get("secondary_intents", [])
+        topic = intent_profile.get("topic", "unknown")
+
+        plan["intent_profile"] = intent_profile
+        plan["topic"] = topic
+
+        if "equipment" in secondary:
+            plan["structure"].append("equipment note")
+
+        if "how_to" in secondary and "what to try" not in plan["structure"]:
+            plan["structure"].append("what to try")
+
+        if "diagnosis" in secondary and "possible causes" not in plan["structure"]:
+            plan["structure"].insert(0, "possible causes")
 
     return plan
 

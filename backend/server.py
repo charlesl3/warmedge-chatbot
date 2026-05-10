@@ -6,6 +6,7 @@ from backend.agent import (
     needs_clarification,
     build_skater_state,
     classify_query_intent,
+    build_intent_profile,
     choose_k,
     build_answer_plan,
     should_generate_followup,
@@ -107,6 +108,9 @@ def print_compact_trace(trace: dict):
     # -------------------------
     print("\n[AGENT]")
     print(f"intent       : {intent.get('label')}")
+    profile = intent.get("profile", {})
+    print(f"secondary    : {profile.get('secondary_intents')}")
+    print(f"topic        : {profile.get('topic')}")
     print(f"fallback     : {intent.get('is_fallback')}")
     print(f"clarify      : {clarification.get('triggered')}")
     print(f"clarify_q    : {clarification.get('question')}")
@@ -536,25 +540,32 @@ def chat(req: ChatRequest):
         )
 
         if is_answering_clarification:
-
-            # ------------------------------------------------
-            # IMPORTANT:
-            # User already responded to clarification.
-            # We now FORCE ANSWER MODE to prevent
-            # endless clarification recursion.
-            # ------------------------------------------------
             clarification_state["force_answer"] = True
 
-            # inherit previous intent
-            intent = "diagnosis"
+            intent_profile = {
+                "primary_intent": "diagnosis",
+                "secondary_intents": [],
+                "topic": "clarification_response",
+                "reason": "user answered previous clarification",
+                "raw": "",
+                "fallback_intent": "diagnosis",
+            }
+
+            intent = intent_profile["primary_intent"]
 
         else:
-            intent = classify_query_intent(message, history)
+            intent_profile = build_intent_profile(
+                message,
+                history,
+                state=state,
+            )
 
+            intent = intent_profile["primary_intent"]
 
         agent_trace["intent"] = {
             "label": intent,
-            "is_fallback": (intent == "default")
+            "is_fallback": (intent == "default"),
+            "profile": intent_profile,
         }
 
         k = choose_k(message, intent, state, history)
@@ -600,7 +611,9 @@ def chat(req: ChatRequest):
             state=state,
             history=history,
             clarify=clarify,
+            intent_profile=intent_profile,
         )
+
         agent_trace["plan"] = answer_plan
 
         working_history = history + [{"role": "user", "content": message}]
