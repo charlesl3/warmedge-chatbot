@@ -16,7 +16,7 @@ from backend.agents.agent import (
     build_intent_profile,
     choose_k,
     build_answer_plan,
-    should_generate_followup,
+    build_followup_decision,
     build_followup_prompt,
 )
 
@@ -178,7 +178,8 @@ def print_compact_trace(trace: dict):
     print("\n[OUTPUT]")
     print(f"length       : {output.get('length')}")
     print(f"followup     : {followup.get('triggered')}")
-
+    print(f"followup_reason : {followup.get('decision', {}).get('reason')}")
+    print(f"followup_type   : {followup.get('decision', {}).get('type')}")
     print("==================================================\n")
 # -------------------------
 # CORS
@@ -788,13 +789,15 @@ Rules:
         # -------------------------
         followup = None
 
-        if should_generate_followup(
-                query=message,
-                intent=intent,
-                state=state,
-                agent_trace=agent_trace,
-                reply=reply,
-        ):
+        followup_decision = build_followup_decision(
+            query=message,
+            intent=intent,
+            state=state,
+            agent_trace=agent_trace,
+            reply=reply,
+        )
+
+        if followup_decision.get("generate"):
             try:
                 followup_prompt = build_followup_prompt(
                     query=message,
@@ -802,6 +805,8 @@ Rules:
                     intent=intent,
                     state=state,
                     history=working_history,
+                    followup_decision=followup_decision,
+                    agent_trace=agent_trace,
                 )
 
                 raw_followup = clean_output(run_llm(followup_prompt)).strip()
@@ -823,6 +828,7 @@ Rules:
         agent_trace["followup"] = {
             "triggered": followup is not None,
             "text": followup,
+            "decision": followup_decision,
         }
 
         assistant_message_id = str(uuid.uuid4())

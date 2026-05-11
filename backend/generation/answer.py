@@ -73,6 +73,31 @@ def answer_question(
     )
 
     # ---------------------------------
+    # DEBUG: retrieved topics
+    # ---------------------------------
+
+    print("\n[RETRIEVED DOCS]")
+    print(f"query: {profile.primary_query}")
+
+    for i, meta in enumerate(retrieval.get("sources", [])[:8], start=1):
+
+        title = (
+                meta.get("title")
+                or meta.get("source_group")
+                or meta.get("source_path")
+                or "unknown"
+        )
+
+        score = retrieval.get("scores", [None])[i - 1]
+
+        if isinstance(score, float):
+            score = round(score, 3)
+
+        print(f"{i}. ({score}) {title}")
+
+    print("")
+
+    # ---------------------------------
     # retrieval evaluation
     # ---------------------------------
 

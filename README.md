@@ -516,3 +516,69 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
   - retrieval should reconstruct conversational intent
   - not blindly concatenate recent messages
   - prioritize retrieval precision over excessive memory inheritance
+
+### 5. Smart Follow-Up Agent (conversation continuation)
+
+- Purpose:
+  decide whether the conversation should continue after the main answer, and generate a targeted follow-up only when useful.
+
+- Main functions:
+  - `build_followup_decision()`
+    - backend continuation-state controller
+  - `build_followup_prompt()`
+    - strategy-aware follow-up generation prompt
+
+- v3 improvements:
+  - moved from:
+    - simple intent-based follow-up triggering
+  - to:
+    - state-aware continuation reasoning
+
+- Uses system state from:
+  - retrieval evaluation
+  - fallback recovery
+  - repair results
+  - clarification state
+  - retrieval merge state
+  - confidence estimation
+
+- Follow-up reasons:
+  - `retrieval_ambiguity`
+  - `repair_recovery`
+  - `context_continuation`
+  - `missing_user_state`
+  - `progression_coaching`
+
+- Trigger examples:
+  - ambiguous skating symptoms
+  - repaired but still uncertain answers
+  - context-dependent continuation queries
+  - missing useful skating state
+  - medium-confidence diagnosis/coaching answers
+
+- Usually does NOT follow up:
+  - high-confidence resolved answers
+  - clarification-active conversations
+  - short factual answers
+  - fully resolved retrieval situations
+
+- Clarification interaction:
+  - clarification and follow-up are mutually exclusive
+  - prevents stacked questioning behavior
+  - avoids conversational instability
+
+- Conversation-state awareness:
+  - uses:
+    - `used_history_merge`
+    - retrieval confidence
+    - fallback traces
+    - repair traces
+  - detects unresolved conversational state
+
+- Philosophy:
+  - follow-up should resolve remaining uncertainty
+  - continuation should be targeted, not generic
+  - avoid:
+    - engagement fluff
+    - repetitive questions
+    - unnecessary continuation pressure

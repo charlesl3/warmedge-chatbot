@@ -709,39 +709,116 @@ def build_answer_plan(
 # SMART FOLLOW-UP LOGIC
 # -------------------------
 
-def should_generate_followup(
+def build_followup_decision(
     query: str,
     intent: str,
     state: dict,
     agent_trace: dict,
     reply: str,
-) -> bool:
-    q = query.lower().strip()
+) -> dict:
+    """
+    Decide whether to generate a follow-up and why.
+    Follow-up is now state-aware, not only intent-based.
+    """
 
-    # Do not add follow-up to very short social-ish replies
+    # 1. Too short: no follow-up
     if len(reply.split()) < 25:
-        return False
+        return {
+            "generate": False,
+            "reason": "reply_too_short",
+            "type": "none",
+        }
 
-    # Do not follow up after direct clarification
-    if agent_trace.get("clarification", {}).get("triggered"):
-        return False
+    clarification = agent_trace.get("clarification", {})
+    clarification_state = agent_trace.get("clarification_state", {})
 
-    # Most valuable cases
+    # 2. Clarification and follow-up are mutually exclusive
+    if (
+        clarification.get("triggered")
+        or clarification_state.get("force_answer")
+        or clarification_state.get("count", 0) > 0
+    ):
+        return {
+            "generate": False,
+            "reason": "clarification_active",
+            "type": "none",
+        }
+
+    retrieval = agent_trace.get("retrieval", {})
+    fallback = agent_trace.get("fallback", {})
+    repair = agent_trace.get("repair", {})
+    query_profile = agent_trace.get("query_profile", {})
+
+    retrieval_status = retrieval.get("status")
+    confidence = retrieval.get("confidence")
+    retrieval_reason = retrieval.get("reason")
+
+    # 3. Suppress when conversation is already resolved
+    if (
+        retrieval_status == "good"
+        and confidence == "high"
+        and not repair.get("triggered")
+        and not fallback.get("triggered")
+    ):
+        return {
+            "generate": False,
+            "reason": "resolved_high_confidence",
+            "type": "none",
+        }
+
+    # 4. Retrieval ambiguity
+    if retrieval_reason == "ambiguous_scores" or confidence == "medium":
+        return {
+            "generate": True,
+            "reason": "retrieval_ambiguity",
+            "type": "diagnostic_narrowing",
+        }
+
+    # 5. Fallback recovery
+    if fallback.get("triggered"):
+        return {
+            "generate": True,
+            "reason": "fallback_recovery",
+            "type": "retrieval_recovery",
+        }
+
+    # 6. Repair recovery
+    if repair.get("triggered"):
+        return {
+            "generate": True,
+            "reason": repair.get("reason", "repair_recovery"),
+            "type": "repair_recovery",
+        }
+
+    # 7. Context continuation
+    if query_profile.get("used_history_merge"):
+        return {
+            "generate": True,
+            "reason": "used_history_merge",
+            "type": "context_continuation",
+        }
+
+    # 8. Missing user state
+    if state.get("skill_level") == "unknown" and intent in ["how_to", "diagnosis", "comparison"]:
+        return {
+            "generate": True,
+            "reason": "missing_user_state",
+            "type": "state_collection",
+        }
+
+    # 9. Default useful coaching continuation
     if intent in ["how_to", "diagnosis", "comparison"]:
-        return True
+        return {
+            "generate": True,
+            "reason": "coaching_continuation",
+            "type": "progression_coaching",
+        }
 
-    # Unknown user level is a useful reason to invite continuation
-    if state.get("skill_level") == "unknown":
-        return True
-
-    # Weak retrieval / repair means we should invite more detail
-    if agent_trace.get("retrieval", {}).get("weak"):
-        return True
-
-    if agent_trace.get("repair", {}).get("triggered"):
-        return True
-
-    return False
+    return {
+        "generate": False,
+        "reason": "not_needed",
+        "type": "none",
+    }
 
 
 def build_followup_prompt(
@@ -750,6 +827,8 @@ def build_followup_prompt(
     intent: str,
     state: dict,
     history: list[dict],
+    followup_decision: dict | None = None,
+    agent_trace: dict | None = None,
 ) -> str:
     recent_history = history[-6:] if history else []
 
@@ -772,6 +851,19 @@ WarmGPT's answer:
 Intent:
 {intent}
 
+Follow-up decision:
+- reason: {(followup_decision or {}).get("reason")}
+- type: {(followup_decision or {}).get("type")}
+
+System state:
+- retrieval_status: {(agent_trace or {}).get("retrieval", {}).get("status")}
+- retrieval_reason: {(agent_trace or {}).get("retrieval", {}).get("reason")}
+- confidence: {(agent_trace or {}).get("retrieval", {}).get("confidence")}
+- fallback_triggered: {(agent_trace or {}).get("fallback", {}).get("triggered")}
+- repair_triggered: {(agent_trace or {}).get("repair", {}).get("triggered")}
+- repair_reason: {(agent_trace or {}).get("repair", {}).get("reason")}
+- used_history_merge: {(agent_trace or {}).get("query_profile", {}).get("used_history_merge")}
+
 Detected skater state:
 - skill_level: {state.get("skill_level")}
 - signals: {state.get("signals")}
@@ -792,6 +884,13 @@ Rules:
 - Do NOT ask multiple questions.
 - Do NOT mention sources, retrieval, confidence, or internal logic.
 - If no useful follow-up exists, output exactly: NONE
+Follow-up strategy rules:
+- If type is diagnostic_narrowing, ask about the most useful missing symptom/detail.
+- If type is retrieval_recovery, ask for the missing detail that would make the answer more specific.
+- If type is repair_recovery, ask about the dimension that remains most uncertain.
+- If type is context_continuation, continue the same thread instead of restarting the topic.
+- If type is state_collection, ask for skating level, equipment, or goal only if genuinely useful.
+- If type is progression_coaching, ask what part breaks down next.
 
 Good examples (these are just some examples, do not just copy these for all questions):
 - Where does it usually break down for you: takeoff, landing, or the setup edge?
