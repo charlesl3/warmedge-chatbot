@@ -459,3 +459,60 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 - Philosophy:
   - repair should improve answer quality
   - not secretly rerun retrieval
+
+### 4. Retrieval Query Construction + Conversational Merge
+
+- Purpose:
+  build a stable retrieval query before retrieval execution.
+
+- Main functions:
+  - `build_retrieval_profile()`
+  - `maybe_merge_history()`
+  - `is_self_contained_query()`
+  - `is_incomplete_continuation()`
+
+- Responsibilities:
+  - query normalization
+  - intent-aware enrichment
+  - topic-aware enrichment
+  - conversational context reconstruction
+
+- v2 improvements:
+  - moved from blind history concatenation
+  - to semantic merge gating
+  - semantic query mutation now happens ONLY here
+
+- Merge philosophy:
+  - merge only when current query depends on previous context
+  - avoid unrelated conversational contamination
+
+- Usually merges:
+  - short incomplete replies
+    - `Jackson`
+    - `only on the right foot`
+    - `that edge`
+  - context-dependent continuations
+
+- Usually does NOT merge:
+  - self-contained descriptive questions
+  - clear topic pivots
+  - fully specified equipment/technique questions
+
+- Previous issue:
+  - semantically related but unrelated skating topics could merge
+    - `loop turn`
+    - `lutz scratching`
+  - caused retrieval noise and ambiguous retrieval scores
+
+- Current approach:
+  - first checks:
+    - semantic completeness
+  - then checks:
+    - conversational dependency
+  - embeddings now act only as:
+    - soft merge fallback
+
+- Philosophy:
+  - retrieval should reconstruct conversational intent
+  - not blindly concatenate recent messages
+  - prioritize retrieval precision over excessive memory inheritance
