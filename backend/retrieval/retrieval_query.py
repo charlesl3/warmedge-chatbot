@@ -10,8 +10,6 @@ from backend.retrieval.query_utils import (
 from backend.retrieval.retriever import EMBED_MODEL
 
 
-MERGE_THRESHOLD = 0.60
-FALLBACK_SHORT_THRESHOLD = 0.40
 
 
 @dataclass(frozen=True)
@@ -33,38 +31,239 @@ def infer_track(question: str) -> str:
         return "adult"
     return "standard"
 
+SOFT_MERGE_THRESHOLD = 0.72
 
-def maybe_merge_history(question: str, history: list[dict]) -> Tuple[str, bool]:
-    user_msgs = [m["content"] for m in history if m["role"] == "user"]
+
+JUMP_TERMS = [
+    "lutz",
+    "flip",
+    "salchow",
+    "toe loop",
+    "loop",
+    "axel",
+    "waltz jump",
+    "single",
+    "double",
+    "triple",
+    "quad",
+]
+
+
+EQUIPMENT_TERMS = [
+    "jackson",
+    "edea",
+    "riedell",
+    "risport",
+    "graf",
+    "mk",
+    "john wilson",
+    "wilson",
+    "blade",
+    "boot",
+    "boots",
+]
+
+
+PROBLEM_TERMS = [
+    "scrape",
+    "scraping",
+    "scratch",
+    "scratches",
+    "pull",
+    "pulls",
+    "inside",
+    "outside",
+    "unstable",
+    "loose",
+    "pain",
+    "hurt",
+    "switch",
+    "switched",
+    "change",
+    "changed",
+]
+
+
+INCOMPLETE_REFERENCES = [
+    "it",
+    "this",
+    "that",
+    "those",
+    "them",
+    "same",
+    "one",
+    "only",
+    "still",
+    "right foot",
+    "left foot",
+]
+
+
+def is_self_contained_query(question: str) -> bool:
+
+    q = question.lower()
+    words = q.split()
+
+    has_jump = any(term in q for term in JUMP_TERMS)
+
+    has_equipment = any(
+        term in q
+        for term in EQUIPMENT_TERMS
+    )
+
+    has_problem = any(
+        term in q
+        for term in PROBLEM_TERMS
+    )
+
+    # Long descriptive skating question
+    if (
+        len(words) >= 10
+        and has_problem
+        and (has_jump or has_equipment)
+    ):
+        return True
+
+    # Explicit jump problem
+    if len(words) >= 8 and has_jump:
+        return True
+
+    # Explicit equipment issue
+    if (
+        len(words) >= 8
+        and has_equipment
+        and has_problem
+    ):
+        return True
+
+    return False
+
+
+def is_incomplete_continuation(question: str) -> bool:
+
+    q = question.lower().strip()
+    words = q.split()
+
+    # Single-word or tiny continuation
+    if len(words) <= 3:
+        return True
+
+    # Context-dependent fragments
+    if (
+        len(words) <= 7
+        and any(ref in q for ref in INCOMPLETE_REFERENCES)
+    ):
+        return True
+
+    # Examples:
+    # "only on the right foot"
+    # "it still pulls inside"
+    if (
+        len(words) <= 8
+        and any(ref in q for ref in INCOMPLETE_REFERENCES)
+    ):
+        return True
+
+    return False
+
+def maybe_merge_history(
+    question: str,
+    history: list[dict],
+) -> Tuple[str, bool]:
+
+    user_msgs = [
+        m["content"]
+        for m in history
+        if m["role"] == "user"
+    ]
 
     if len(user_msgs) < 2:
         return question, False
 
-    previous_user = user_msgs[-2]
+    previous_user = normalize_legacy_terms(
+        user_msgs[-2]
+    )
+
+    # -------------------------------------------------
+    # 1. Current query already self-contained
+    # -------------------------------------------------
+    # Example:
+    # "I switched from Jackson to Edea
+    # and now my lutz scratches"
+    #
+    # Do NOT inherit old conversational context.
+    # -------------------------------------------------
+
+    if is_self_contained_query(question):
+        return question, False
+
+    # -------------------------------------------------
+    # 2. Clearly incomplete continuation
+    # -------------------------------------------------
+    # Example:
+    # "Jackson"
+    # "only on the right foot"
+    #
+    # Merge aggressively.
+    # -------------------------------------------------
+
+    if is_incomplete_continuation(question):
+
+        merged = build_weighted_merged_query(
+            previous_user,
+            question,
+        )
+
+        return merged, True
+
+    # -------------------------------------------------
+    # 3. Brand conflict protection
+    # -------------------------------------------------
 
     prev_brand = extract_brand(previous_user)
     curr_brand = extract_brand(question)
 
-    if prev_brand and curr_brand and prev_brand != curr_brand:
+    if (
+        prev_brand
+        and curr_brand
+        and prev_brand != curr_brand
+    ):
         return question, False
 
-    emb_prev = EMBED_MODEL.encode(previous_user, convert_to_numpy=True)
-    emb_curr = EMBED_MODEL.encode(question, convert_to_numpy=True)
+    # -------------------------------------------------
+    # 4. Soft semantic merge
+    # -------------------------------------------------
+    # Only for uncertain middle cases.
+    # -------------------------------------------------
 
-    merged_plain = previous_user + " " + question
-    emb_merged = EMBED_MODEL.encode(merged_plain, convert_to_numpy=True)
+    emb_prev = EMBED_MODEL.encode(
+        previous_user,
+        convert_to_numpy=True,
+    )
 
-    sim_prev_curr = cosine_sim(emb_prev, emb_curr)
-    sim_prev_merged = cosine_sim(emb_prev, emb_merged)
+    emb_curr = EMBED_MODEL.encode(
+        question,
+        convert_to_numpy=True,
+    )
 
-    if sim_prev_merged > MERGE_THRESHOLD:
-        return build_weighted_merged_query(previous_user, question), True
+    sim_prev_curr = cosine_sim(
+        emb_prev,
+        emb_curr,
+    )
 
-    if len(question.split()) <= 6 and sim_prev_curr > FALLBACK_SHORT_THRESHOLD:
-        return build_weighted_merged_query(previous_user, question), True
+    if (
+        sim_prev_curr > SOFT_MERGE_THRESHOLD
+        and len(question.split()) <= 10
+    ):
+
+        merged = build_weighted_merged_query(
+            previous_user,
+            question,
+        )
+
+        return merged, True
 
     return question, False
-
 
 def build_intent_query_suffix(intent: str) -> str:
     if intent == "how_to":
