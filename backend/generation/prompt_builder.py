@@ -264,6 +264,15 @@ def build_llm_input(
     parts.append("Style:")
     parts.append("\n".join(style_lines))
     parts.append("")
+    parts.append(
+        "Formatting rules:\n"
+        "- Prefer clean Markdown headings and bullet points.\n"
+        "- Avoid Markdown tables unless explicitly requested.\n"
+        "- Avoid raw HTML tags like <br>.\n"
+        "- Use short sections instead of large tables.\n"
+        "- Keep formatting stable for chat-style rendering.\n"
+    )
+    parts.append("")
 
     # -------------------------
     # QUICK DRILL (NEW)
