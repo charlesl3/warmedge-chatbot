@@ -18,51 +18,86 @@ def extract_weight(q: str):
     return None
 
 
-def choose_k(query: str, intent: str, state: dict, history: list[dict]) -> int:
-    q = query.lower()
+def build_retrieval_strategy(
+    query: str,
+    intent_profile: dict,
+    state: dict,
+    history: list[dict],
+) -> dict:
+    q = query.lower().strip()
     length = len(q.split())
 
-    # -------------------------
-    # 1. Base on intent
-    # -------------------------
-    if intent == "diagnosis":
-        k = 6
-    elif intent == "how_to":
-        k = 4
-    elif intent == "comparison":
-        k = 4
-    else:
-        k = 5
+    primary = intent_profile.get("primary_intent", "default")
+    secondary = intent_profile.get("secondary_intents", [])
+    topic = intent_profile.get("topic", "unknown")
 
-    # -------------------------
-    # 2. Short / vague queries → increase k
-    # -------------------------
+    strategy = {
+        "k": 5,
+        "reason": [],
+        "exploration": "medium",
+    }
+
+    # Broad / ambiguous diagnosis needs more evidence
+    if primary == "diagnosis":
+        strategy["k"] = 6
+        strategy["exploration"] = "high"
+        strategy["reason"].append("primary_diagnosis")
+
+    # Specific comparison should stay tighter
+    elif primary == "comparison":
+        strategy["k"] = 4
+        strategy["exploration"] = "low"
+        strategy["reason"].append("primary_comparison")
+
+    # How-to usually needs enough context but not too broad
+    elif primary == "how_to":
+        strategy["k"] = 5
+        strategy["exploration"] = "medium"
+        strategy["reason"].append("primary_how_to")
+
+    # Mixed intent: diagnosis + equipment is usually broader
+    if primary == "diagnosis" and "equipment" in secondary:
+        strategy["k"] += 1
+        strategy["reason"].append("diagnosis_with_equipment")
+
+    # Mixed intent: comparison + equipment should remain precise
+    if primary == "comparison" and "equipment" in secondary:
+        strategy["k"] -= 1
+        strategy["reason"].append("comparison_with_equipment_precision")
+
+    # Short vague queries need more exploration
     if length <= 4:
-        k += 1
+        strategy["k"] += 1
+        strategy["reason"].append("short_query")
 
-    # -------------------------
-    # 3. Strong skill signal → reduce k
-    # -------------------------
+    # Strong skill signals make query more specific
     if state.get("signals"):
-        k -= 1
+        strategy["k"] -= 1
+        strategy["reason"].append("strong_skill_signal")
 
-    # -------------------------
-    # 4. Prior context exists → reduce k
-    # -------------------------
+    # Topic-specific queries can be tighter
+    if topic not in ["unknown", "general"] and length >= 5:
+        strategy["k"] -= 1
+        strategy["reason"].append("specific_topic")
+
+    # Prior context reduces need for broad retrieval
     has_context = any(
-        ("axel" in m["content"].lower() or
-         re.search(r"\b[1-4][aflst]\b", m["content"].lower()))
-        for m in history if m["role"] == "user"
+        (
+            "axel" in m["content"].lower()
+            or re.search(r"\b[1-4][aflst]\b", m["content"].lower())
+            or any(x in m["content"].lower() for x in ["double", "triple", "quad"])
+        )
+        for m in history
+        if m["role"] == "user"
     )
 
     if has_context:
-        k -= 1
+        strategy["k"] -= 1
+        strategy["reason"].append("prior_skill_context")
 
-    # -------------------------
-    # Clamp range
-    # -------------------------
-    return max(2, min(k, 7))
+    strategy["k"] = max(2, min(strategy["k"], 8))
 
+    return strategy
 
 def extract_height(q: str):
     match_ft = re.search(r"(\d+)\s?(ft|')\s?(\d+)?", q)

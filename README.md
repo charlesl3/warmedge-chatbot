@@ -582,3 +582,46 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
     - engagement fluff
     - repetitive questions
     - unnecessary continuation pressure
+
+### 6. Retrieval Strategy Builder (retrieval orchestration)
+
+- Purpose:
+  build retrieval behavior before RAG retrieval.
+
+- Main functions:
+  - `build_retrieval_strategy()`
+
+- Responsibilities:
+  - determine:
+    - retrieval breadth
+    - exploration level
+    - retrieval precision
+    - retrieval `k`
+
+- v2 improvements:
+  - moved from:
+    - flat intent → `k`
+  - to:
+    - semantic retrieval strategy
+
+- Uses:
+  - primary intent
+  - secondary intents
+  - topic
+  - skater state
+  - prior context
+
+- Strategy signals:
+  - `primary_diagnosis`
+  - `diagnosis_with_equipment`
+  - `comparison_with_equipment_precision`
+  - `strong_skill_signal`
+  - `specific_topic`
+
+- Philosophy:
+  - retrieval behavior should depend on:
+    - semantic uncertainty
+    - topic specificity
+    - mixed intent composition
+  - not only:
+    - one flat intent

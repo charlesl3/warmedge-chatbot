@@ -14,7 +14,7 @@ from backend.agents.agent import (
     needs_clarification,
     build_skater_state,
     build_intent_profile,
-    choose_k,
+    build_retrieval_strategy,
     build_answer_plan,
     build_followup_decision,
     build_followup_prompt,
@@ -95,6 +95,7 @@ def print_compact_trace(trace: dict):
     fallback = trace.get("fallback", {})
     output = trace.get("output", {})
     followup = trace.get("followup", {})
+    retrieval_strategy = trace.get("retrieval_strategy", {})
 
     print("\n==================================================")
 
@@ -152,6 +153,10 @@ def print_compact_trace(trace: dict):
     print(f"top_score    : {retrieval.get('top_score')}")
     print(f"confidence   : {retrieval.get('confidence')}")
     print(f"reason       : {retrieval.get('reason')}")
+
+    print(f"strategy_k   : {retrieval_strategy.get('k')}")
+    print(f"strategy_exp : {retrieval_strategy.get('exploration')}")
+    print(f"strategy_why : {retrieval_strategy.get('reason')}")
 
     # -------------------------
     # FALLBACK
@@ -518,7 +523,17 @@ def chat(req: ChatRequest):
             "profile": intent_profile,
         }
 
-        k = choose_k(message, intent, state, history)
+
+        retrieval_strategy = build_retrieval_strategy(
+            query=message,
+            intent_profile=intent_profile,
+            state=state,
+            history=history,
+        )
+
+        agent_trace["retrieval_strategy"] = retrieval_strategy
+
+        k = retrieval_strategy["k"]
 
         clarify, reason, clarification_question = needs_clarification(
             message,
