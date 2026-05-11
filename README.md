@@ -330,3 +330,132 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
     - useless
     - badly personalized
   - prefer useful answers over excessive questioning
+
+
+## 2. Answer Plan Builder (generation planning)
+
+- Purpose:
+  build a lightweight answer-generation strategy before LLM generation.
+
+- Main functions:
+  - `build_answer_plan()`
+
+- Responsibilities:
+  - determine:
+    - response structure
+    - coaching depth
+    - diagnosis framing
+    - practical-action emphasis
+    - tone softening
+
+- v2 improvements:
+  - moved from static prompt behavior
+  - to dynamic answer planning
+  - answer structure now adapts to:
+    - intent
+    - secondary intents
+    - user state
+    - topic
+
+- Example plan signals:
+  - `"what_to_try"`
+  - `"likely_causes"`
+  - `"equipment_note"`
+  - `"confidence_softening"`
+
+- Philosophy:
+  - generation should not use:
+    - one-prompt-fits-all
+  - build an answer strategy first
+  - then let the LLM execute the plan
+
+
+---
+
+## 3. Retrieval Query Construction + Fallback + Repair
+
+### Retrieval Query Construction
+
+- Purpose:
+  build the complete immutable retrieval profile before retrieval.
+
+- Main functions:
+  - `build_retrieval_profile()`
+  - `maybe_merge_history()`
+
+- Responsibilities:
+  - semantic query construction
+  - terminology normalization
+  - history-aware merging
+  - intent-aware enrichment
+  - topic-aware enrichment
+
+- v2 improvements:
+  - semantic query mutation now happens ONLY here
+  - removed:
+    - hidden fallback rewriting
+    - repair-time query rewriting
+    - scattered intent injection
+
+- Philosophy:
+  - retrieval semantics should freeze before retrieval
+  - avoid hidden query mutation later in pipeline
+
+
+### Retrieval Evaluator + Fallback
+
+- Purpose:
+  evaluate retrieval quality before generation and recover weak retrieval mechanically.
+
+- Main functions:
+  - `evaluate_retrieval_quality()`
+  - `apply_fallback_if_needed()`
+
+- Retrieval checks:
+  - top score
+  - score ambiguity
+  - document count
+  - retrieval confidence
+
+- v2 improvements:
+  - fallback separated completely from repair
+  - fallback now modifies:
+    - retrieval strategy only
+  - fallback does NOT modify:
+    - semantic query meaning
+
+- Example fallback actions:
+  - increase retrieval pool
+  - use alternate prebuilt query variants
+  - broaden retrieval depth
+
+- Philosophy:
+  - weak retrieval is a retrieval problem
+  - recover retrieval before generation
+
+
+### Answer Evaluator + Repair
+
+- Purpose:
+  evaluate generated answers and repair weak answers after generation.
+
+- Main functions:
+  - `evaluate_answer_quality()`
+  - `repair_answer()`
+
+- Evaluation checks:
+  - vague language
+  - weak structure
+  - missing practical guidance
+  - unsupported reasoning
+
+- v2 improvements:
+  - removed:
+    - repair-time retrieval reruns
+    - repair-time query rewriting
+  - repair now modifies:
+    - generation behavior only
+
+- Philosophy:
+  - repair should improve answer quality
+  - not secretly rerun retrieval
