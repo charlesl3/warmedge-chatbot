@@ -156,6 +156,7 @@ def answer_question(
         docs=retrieval["results"],
         intent=intent,
         answer_plan=answer_plan,
+        intent_profile=intent_profile,
     )
 
     repair_trace = {
@@ -176,6 +177,7 @@ def answer_question(
             docs=retrieval["results"],
             intent=intent,
             answer_plan=answer_plan,
+            intent_profile=intent_profile,
             reason=answer_eval.get("reason"),
         )
 

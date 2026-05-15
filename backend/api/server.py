@@ -124,6 +124,7 @@ def print_compact_trace(trace: dict):
     profile = intent.get("profile", {})
     print(f"secondary    : {profile.get('secondary_intents')}")
     print(f"topic        : {profile.get('topic')}")
+    print(f"focus_terms  : {profile.get('focus_terms')}")
     print(f"fallback     : {intent.get('is_fallback')}")
     print(f"clarify      : {clarification.get('triggered')}")
     print(f"clarify_q    : {clarification.get('question')}")
@@ -132,6 +133,7 @@ def print_compact_trace(trace: dict):
     print(f"force_answer : {trace.get('clarification_state', {}).get('force_answer')}")
     print(f"mode         : {plan.get('mode')}")
     print(f"depth        : {plan.get('depth')}")
+
 
     # -------------------------
     # QUERY PROFILE
@@ -176,6 +178,8 @@ def print_compact_trace(trace: dict):
     print(f"triggered    : {repair.get('triggered')}")
     print(f"reason       : {repair.get('reason')}")
     print(f"status       : {repair.get('status')}")
+    print(f"focus_cov    : {repair.get('focus_coverage')}")
+    print(f"missing_focus: {repair.get('missing_focus_terms')}")
 
     # -------------------------
     # OUTPUT

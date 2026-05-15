@@ -530,6 +530,7 @@ Use EXACTLY this format:
 PRIMARY_INTENT: one of how_to, diagnosis, comparison, experience_lookup, default
 SECONDARY_INTENTS: comma-separated list or NONE
 TOPIC: short topic label
+FOCUS_TERMS: comma-separated list or NONE
 REASON: short reason
 
 User message:
@@ -543,6 +544,8 @@ Detected state:
 
 Examples:
 
+Examples:
+
 User:
 How do I stop scraping on salchow?
 
@@ -550,7 +553,9 @@ Output:
 PRIMARY_INTENT: how_to
 SECONDARY_INTENTS: diagnosis
 TOPIC: salchow_takeoff
+FOCUS_TERMS: salchow, scraping, takeoff
 REASON: user wants a practical fix for a skating issue
+
 
 User:
 My spin got worse after changing blades.
@@ -559,7 +564,9 @@ Output:
 PRIMARY_INTENT: diagnosis
 SECONDARY_INTENTS: equipment, how_to
 TOPIC: blade_change_spin_issue
+FOCUS_TERMS: spin, blades, blade change
 REASON: user describes a problem likely related to equipment transition and technique adaptation
+
 
 User:
 Edea Chorus vs Ice Fly?
@@ -568,7 +575,9 @@ Output:
 PRIMARY_INTENT: comparison
 SECONDARY_INTENTS: equipment
 TOPIC: boot_comparison
+FOCUS_TERMS: edea chorus, ice fly, boots
 REASON: user is comparing two boot models
+
 
 User:
 Why do my skates feel unstable?
@@ -577,6 +586,7 @@ Output:
 PRIMARY_INTENT: diagnosis
 SECONDARY_INTENTS: experience_lookup
 TOPIC: skate_instability
+FOCUS_TERMS: skates, unstable
 REASON: user asks about a symptom and possible causes
 
 Rules:
@@ -587,6 +597,11 @@ Rules:
 - Prefer comparison when the user asks vs, better, difference, or compare.
 - Prefer experience_lookup when the user asks why, whether something is normal, common, okay, or bad.
 - Use default only if none of the above clearly fit.
+- FOCUS_TERMS should contain only semantically important skating concepts.
+- Ignore filler words and generic verbs.
+- Prefer multi-word skating phrases when appropriate.
+- Include skater type or level if important.
+- Maximum 5 focus terms.
 """.strip()
 
     try:
@@ -596,6 +611,12 @@ Rules:
         secondary_match = re.search(r"SECONDARY_INTENTS:\s*(.*)", raw, re.IGNORECASE)
         topic_match = re.search(r"TOPIC:\s*(.*)", raw, re.IGNORECASE)
         reason_match = re.search(r"REASON:\s*(.*)", raw, re.IGNORECASE)
+        focus_match = re.search(
+            r"FOCUS_TERMS:\s*(.*)",
+            raw,
+            re.IGNORECASE
+        )
+
 
         primary = primary_match.group(1).strip() if primary_match else fallback_intent
         primary = primary.lower()
@@ -615,6 +636,20 @@ Rules:
                 if x.strip()
             ]
 
+        focus_raw = (
+            focus_match.group(1).strip()
+            if focus_match else "NONE"
+        )
+
+        if focus_raw.upper() == "NONE":
+            focus_terms = []
+        else:
+            focus_terms = [
+                x.strip().lower()
+                for x in focus_raw.split(",")
+                if x.strip()
+            ]
+
         topic = topic_match.group(1).strip() if topic_match else "unknown"
         reason = reason_match.group(1).strip() if reason_match else "semantic_intent"
 
@@ -622,6 +657,7 @@ Rules:
             "primary_intent": primary,
             "secondary_intents": secondary,
             "topic": topic,
+            "focus_terms": focus_terms,
             "reason": reason,
             "raw": raw,
             "fallback_intent": fallback_intent,

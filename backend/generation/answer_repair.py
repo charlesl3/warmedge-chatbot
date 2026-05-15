@@ -1,7 +1,14 @@
 from backend.generation.llm import run_llm
 
 
-def evaluate_answer_quality(answer: str, docs: list[str], intent: str, answer_plan: dict | None = None) -> dict:
+def evaluate_answer_quality(
+    answer: str,
+    docs: list[str],
+    intent: str,
+    answer_plan: dict | None = None,
+    intent_profile: dict | None = None,
+) -> dict:
+
     weak_phrases = [
         "it depends",
         "not sure",
@@ -10,6 +17,9 @@ def evaluate_answer_quality(answer: str, docs: list[str], intent: str, answer_pl
     ]
 
     lower = answer.lower()
+    focus_terms = (
+            intent_profile or {}
+    ).get("focus_terms", [])
     has_weak_phrase = any(p in lower for p in weak_phrases)
 
     if len(answer.split()) < 80 and intent in ["how_to", "diagnosis", "comparison"]:
@@ -25,6 +35,24 @@ def evaluate_answer_quality(answer: str, docs: list[str], intent: str, answer_pl
             "reason": "vague_language",
             "should_repair": True,
         }
+    if focus_terms:
+        matched_terms = [
+            term for term in focus_terms
+            if term.lower() in lower
+        ]
+
+        coverage = len(matched_terms) / max(len(focus_terms), 1)
+
+        if coverage < 0.5:
+            return {
+                "status": "weak",
+                "reason": "missing_query_focus",
+                "missing_focus_terms": [
+                    t for t in focus_terms
+                    if t not in matched_terms
+                ],
+                "should_repair": True,
+            }
 
     if intent == "diagnosis":
         expected = ["cause", "try"]
@@ -50,6 +78,7 @@ def repair_answer(
     docs: list[str],
     intent: str,
     answer_plan: dict | None,
+    intent_profile: dict | None,
     reason: str,
 ) -> str:
     """
@@ -59,6 +88,9 @@ def repair_answer(
     """
 
     context = "\n\n".join(docs)
+    focus_terms = (
+            intent_profile or {}
+    ).get("focus_terms", [])
 
     prompt = f"""
 You are WarmGPT, a practical figure skating assistant.
@@ -85,12 +117,16 @@ Intent:
 Answer plan:
 {answer_plan or {}}
 
+Important semantic focus terms:
+{focus_terms}
+
 Repair rules:
 - Be more specific and practical.
 - Keep the answer grounded in the retrieved context.
 - If this is diagnosis, clearly separate likely causes and what to try.
 - If this is how-to, give concrete steps.
 - Avoid vague filler like "it depends" unless you explain what it depends on.
+- Preserve the important semantic focus terms from the original query.
 """.strip()
 
     return run_llm(prompt)

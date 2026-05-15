@@ -434,8 +434,6 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
   - recover retrieval before generation
 
 
-### Answer Evaluator + Repair
-
 - Purpose:
   evaluate generated answers and repair weak answers after generation.
 
@@ -448,17 +446,35 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
   - weak structure
   - missing practical guidance
   - unsupported reasoning
+  - missing semantic focus coverage from the original query
+
+- Focus term system:
+  - semantic focus terms are extracted upstream by the intent controller
+  - repair evaluation checks whether generated answers remain anchored to important query concepts
+  - examples:
+    - adult
+    - camel spin
+    - blade change
+    - outside edge
+    - Edea Chorus
+  - prevents:
+    - generic but fluent answers
+    - semantic drift
+    - incomplete comparisons
 
 - v2 improvements:
   - removed:
     - repair-time retrieval reruns
     - repair-time query rewriting
+  - added:
+    - semantic focus-term coverage checks
   - repair now modifies:
     - generation behavior only
 
 - Philosophy:
   - repair should improve answer quality
-  - not secretly rerun retrieval
+  - repair should preserve semantic alignment with the original user request
+  - repair should not secretly rerun retrieval
 
 ### 4. Retrieval Query Construction + Conversational Merge
 
