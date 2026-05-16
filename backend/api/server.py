@@ -499,19 +499,26 @@ def chat(req: ChatRequest):
         )
 
         if is_answering_clarification:
+
             clarification_state["force_answer"] = True
 
-            intent_profile = {
-                "primary_intent": "diagnosis",
-                "secondary_intents": [],
-                "topic": "clarification_response",
-                "reason": "user answered previous clarification",
-                "raw": "",
-                "fallback_intent": "diagnosis",
-            }
+            previous_user_query = next(
+                (
+                    m["content"]
+                    for m in reversed(history)
+                    if m["role"] == "user"
+                ),
+                ""
+            )
 
-            intent = intent_profile["primary_intent"]
+            previous_profile = build_intent_profile(
+                previous_user_query,
+                history,
+                state=state,
+            )
 
+            intent_profile = previous_profile
+            intent = previous_profile["primary_intent"]
         else:
             intent_profile = build_intent_profile(
                 message,
