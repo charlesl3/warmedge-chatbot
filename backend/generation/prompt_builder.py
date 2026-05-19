@@ -145,6 +145,7 @@ def build_llm_input(
     intent: str = "default",
     answer_plan: dict | None = None,
     confidence: str | None = None,
+user_profile: dict | None = None,
 ) -> str:
 
     parts = []
@@ -294,6 +295,69 @@ def build_llm_input(
     parts.append("Confidence behavior:")
     parts.append(get_confidence_instruction(confidence))
     parts.append("")
+
+    # -------------------------
+    # PROFILE PERSONALIZATION
+    # -------------------------
+
+    if user_profile:
+
+        skater_level = (
+            user_profile.get("skater_level")
+            or "beginner"
+        )
+
+        first_name = (
+            user_profile.get("first_name")
+            or "Skater"
+        )
+
+        parts.append("User profile:")
+        parts.append(f"- Name: {first_name}")
+        parts.append(f"- Skater level: {skater_level}")
+        parts.append("")
+
+        if skater_level == "beginner":
+
+            parts.append(
+                "Explanation style:\n"
+                "- Explain skating terminology clearly.\n"
+                "- Avoid assuming advanced skating knowledge.\n"
+                "- Prioritize safety and basic understanding.\n"
+                "- You may smartly encourage the skater to enjoy their figure skating journey as a beginner, when it is good to do so\n"
+            )
+
+        elif skater_level == "intermediate":
+
+            parts.append(
+                "Explanation style:\n"
+                "- Use moderate skating terminology naturally.\n"
+                "- Balance explanation and technical detail.\n"
+                "- You may smartly acknowledge that the skater is an intermediate-level skater and encourage them to be confident towards advanced levels, when it is good to do so\n"
+            )
+
+        elif skater_level == "advanced":
+
+            parts.append(
+                "Explanation style:\n"
+                "- User is an advanced skater.\n"
+                "- Use technical skating terminology naturally.\n"
+                "- Avoid oversimplifying mechanics.\n"
+                "- Include nuanced technique reasoning when useful.\n"
+                "- You may smartly acknowledge or praise that the skater is an advanced-level skater, when it is good to do so\n"
+            )
+
+        elif skater_level == "non_skater":
+
+            parts.append(
+                "Explanation style:\n"
+                "- Do not assume skating background.\n"
+                "- Explain tests, jumps, and skating structure clearly.\n"
+                "- Use beginner-friendly language.\n"
+                "- You may smartly thank or encourage them to know more about figure skating, when it is good to do so\n"
+            )
+
+        parts.append("")
 
     # Final instruction
     parts.append(

@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
+from supabase import create_client
+from dotenv import load_dotenv
 
 import traceback
 import re
@@ -38,9 +40,17 @@ from backend.retrieval.feedback_memory import (
 from backend.retrieval.retriever import load_index_and_meta, get_embed_model
 from backend.generation.llm import run_llm
 from backend.memory.chat_storage import load_chats, save_chats, ensure_chat_session
+load_dotenv()
 
 
 app = FastAPI()
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
+
+supabase = create_client(
+    SUPABASE_URL,
+    SUPABASE_SERVICE_KEY,
+)
 
 # -------------------------
 # PRELOAD RAG AT STARTUP
@@ -287,6 +297,51 @@ def get_last_assistant_answer(history):
 # -------------------------
 # Request schemas
 # -------------------------
+# -------------------------
+# Auth helper
+# -------------------------
+def extract_bearer_token(authorization: str | None) -> str | None:
+    if not authorization:
+        return None
+
+    if not authorization.startswith("Bearer "):
+        return None
+
+    return authorization.replace("Bearer ", "").strip()
+
+def get_authenticated_user(token: str):
+
+    try:
+        user_response = supabase.auth.get_user(token)
+
+        if user_response.user is None:
+            return None
+
+        return user_response.user
+
+    except Exception as e:
+        print("[AUTH ERROR]", str(e))
+        return None
+
+def load_user_profile(user_id: str):
+
+    try:
+
+        response = (
+            supabase
+            .table("profiles")
+            .select("*")
+            .eq("id", user_id)
+            .single()
+            .execute()
+        )
+
+        return response.data
+
+    except Exception as e:
+        print("[PROFILE LOAD ERROR]", str(e))
+        return None
+
 class ChatRequest(BaseModel):
     message: str
     session_id: str | None = None
@@ -395,9 +450,53 @@ def get_chats():
 # Chat endpoint
 # -------------------------
 @app.post("/chat")
-def chat(req: ChatRequest):
-
+def chat(
+    req: ChatRequest,
+    authorization: str | None = Header(default=None),
+):
     try:
+        token = extract_bearer_token(authorization)
+
+        authenticated_user = None
+
+        if token:
+
+            authenticated_user = get_authenticated_user(token)
+            user_id = None
+            user_email = None
+
+            if authenticated_user:
+                user_id = authenticated_user.id
+                user_email = authenticated_user.email
+
+            if authenticated_user:
+                print("[AUTH] verified user")
+                print("[AUTH] user id:", authenticated_user.id)
+                print("[AUTH] email:", authenticated_user.email)
+                user_profile = load_user_profile(
+                    authenticated_user.id
+                )
+
+                print("[PROFILE]", user_profile)
+
+                if user_profile:
+                    print(
+                        "[PROFILE] name:",
+                        user_profile.get("first_name"),
+                    )
+
+                    print(
+                        "[PROFILE] skater_level:",
+                        user_profile.get("skater_level"),
+                    )
+
+            else:
+                print("[AUTH] invalid token")
+
+        else:
+            print("[AUTH] no bearer token")
+            user_profile = None
+
         message = req.message.strip()
         session_id = req.session_id or str(uuid.uuid4())
 
@@ -660,6 +759,7 @@ def chat(req: ChatRequest):
             answer_plan=answer_plan,
             intent_profile=intent_profile,
             state=state,
+            user_profile=user_profile,
         )
 
         transform_mode = detect_transform_mode(message)
