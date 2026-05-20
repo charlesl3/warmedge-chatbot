@@ -3,3 +3,4 @@ uvicorn
 sentence-transformers
 faiss-cpu
 requests
+supabase>=2.0.0
