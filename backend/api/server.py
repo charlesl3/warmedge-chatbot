@@ -96,6 +96,7 @@ def print_compact_trace(trace: dict):
 
     input_ = trace.get("input", {})
     state = trace.get("state", {})
+    profile_info = trace.get("profile", {})
     intent = trace.get("intent", {})
     clarification = trace.get("clarification", {})
     plan = trace.get("plan", {})
@@ -117,10 +118,17 @@ def print_compact_trace(trace: dict):
     print(f"history_len  : {input_.get('history_len')}")
 
     # -------------------------
+    # PROFILE
+    # -------------------------
+    print("\n[PROFILE]")
+    print(f"name         : {profile_info.get('name')}")
+    print(f"skater_level : {profile_info.get('skater_level')}  # persistent, user-selected")
+
+    # -------------------------
     # STATE
     # -------------------------
     print("\n[STATE]")
-    print(f"skill_level  : {state.get('skill_level')}")
+    print(f"query_level  : {state.get('skill_level')}  # transient, inferred from current message")
     print(f"signals      : {state.get('signals')}")
     print(f"jump_level   : {state.get('jump_level')}")
     print(f"experience   : {state.get('experience_type')}")
@@ -515,7 +523,11 @@ def chat(
             "input": {
                 "query": message,
                 "history_len": len(history),
-            }
+            },
+            "profile": {
+                "name": user_profile.get("first_name") if user_profile else None,
+                "skater_level": user_profile.get("skater_level") if user_profile else None,
+            },
         }
 
         # -------------------------

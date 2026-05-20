@@ -213,8 +213,8 @@ user_profile: dict | None = None,
     # ---- Inject inferred state ----
     state = build_skater_state(question)
 
-    parts.append("User skating profile:")
-    parts.append(f"- Skill level: {state.get('skill_level')}")
+    parts.append("Current query-derived skating context:")
+    parts.append(f"- Query-implied level: {state.get('skill_level')}")
     parts.append(f"- Signals: {state.get('signals')}")
     parts.append(f"- Jump level: {state.get('jump_level')}")
     parts.append(f"- Body: {state.get('height_class')}, {state.get('weight_class')}")
@@ -312,9 +312,11 @@ user_profile: dict | None = None,
             or "Skater"
         )
 
-        parts.append("User profile:")
+        parts.append("Persistent user profile for response style only:")
         parts.append(f"- Name: {first_name}")
         parts.append(f"- Skater level: {skater_level}")
+        parts.append(
+            "- Use this profile to tune explanation depth and tone, not to override the current query context.")
         parts.append("")
 
         if skater_level == "beginner":
@@ -360,6 +362,14 @@ user_profile: dict | None = None,
         parts.append("")
 
     # Final instruction
+    parts.append(
+        "Profile/context distinction:\n"
+        "- Persistent user profile controls response style and assumed explanation depth.\n"
+        "- Current query-derived context controls the specific skating situation being answered.\n"
+        "- If they differ, respect both: an advanced skater may ask a basic drill question, and a beginner may ask about advanced topics.\n"
+    )
+    parts.append("")
+
     parts.append(
         "Reply naturally as an experienced figure skater.\n"
         "Do not mention sources, forums, or internal processing."
