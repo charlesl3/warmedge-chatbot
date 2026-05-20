@@ -465,6 +465,7 @@ def chat(
     try:
         token = extract_bearer_token(authorization)
 
+        user_profile = None
         authenticated_user = None
 
         if token:
