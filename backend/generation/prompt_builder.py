@@ -62,8 +62,8 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
         lines.append("Treat this as a practical coaching question.")
         lines.append("Start with the most likely cause or key issue.")
         lines.append("Then give concrete steps the user can try.")
-        lines.append("Include at most 1-2 drills.")
-        lines.append("Avoid turning this into a long lecture.")
+        lines.append("Prioritize useful correction cues and practical drills.")
+        lines.append("Stay organized and practical.")
 
     elif mode == "diagnosis":
         lines.append("Treat this as a diagnosis-style question.")
@@ -87,14 +87,13 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
         lines.append("Answer directly and practically.")
 
     if depth == "short":
-        lines.append("Keep the answer brief.")
-        lines.append("Prefer one short paragraph or a very short structured answer.")
+        lines.append("Give a brief but complete answer.")
 
     elif depth == "detailed":
-        lines.append("You may give a fuller answer, but stay organized and practical.")
+        lines.append("Give a well-developed long answer with practical nuance, reasoning, and examples where useful.")
 
     else:
-        lines.append("Keep the answer moderately detailed.")
+        lines.append("Give a thoughtful, moderately developed answer.")
 
     if use_context:
         lines.append("Use the earlier conversation context when it is relevant.")
@@ -235,36 +234,6 @@ user_profile: dict | None = None,
     parts.append("Answer plan:")
     parts.append(get_answer_plan_instruction(answer_plan))
     # -------------------------
-    # STYLE ADAPTATION (NEW)
-    # -------------------------
-    style_lines = []
-
-    # 1. Very short factual queries → concise
-    if intent == "experience_lookup" and len(question.split()) <= 5:
-        style_lines.append("Keep the answer very concise (2–4 sentences).")
-
-    # 2. Coaching → structured + actionable
-    elif intent == "how_to":
-        style_lines.append("Use short structured sections or bullets.")
-        style_lines.append("Prioritize actionable steps over explanation.")
-
-    # 3. Diagnosis → structured reasoning
-    elif intent == "diagnosis":
-        style_lines.append("Clearly separate causes and fixes.")
-        style_lines.append("Avoid long paragraphs.")
-
-    # 4. Comparison → clean structure
-    elif intent == "comparison":
-        style_lines.append("Use a clean comparison structure.")
-        style_lines.append("Avoid unnecessary explanation.")
-
-    # 5. Default → balanced
-    else:
-        style_lines.append("Keep the answer clear and moderately concise.")
-
-    parts.append("Style:")
-    parts.append("\n".join(style_lines))
-    parts.append("")
     parts.append(
         "Formatting rules:\n"
         "- Prefer clean Markdown headings and bullet points.\n"
@@ -282,10 +251,7 @@ user_profile: dict | None = None,
 
     if intent in ["how_to", "diagnosis"]:
         drill_lines.append(
-            "Include one very simple 'Quick drill' the skater can try immediately."
-        )
-        drill_lines.append(
-            "Keep it to 1–2 lines. Do not give multiple drills."
+            "Include practical drills or correction cues when they genuinely help."
         )
 
     parts.append("Drill:")

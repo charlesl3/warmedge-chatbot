@@ -22,12 +22,6 @@ def evaluate_answer_quality(
     ).get("focus_terms", [])
     has_weak_phrase = any(p in lower for p in weak_phrases)
 
-    if len(answer.split()) < 80 and intent in ["how_to", "diagnosis", "comparison"]:
-        return {
-            "status": "weak",
-            "reason": "too_short",
-            "should_repair": True,
-        }
 
     if has_weak_phrase:
         return {
