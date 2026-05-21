@@ -87,15 +87,15 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
         lines.append("Answer directly and practically.")
 
     if depth == "short":
-        lines.append("Give a concise but complete answer.")
+        lines.append("Give a brief but complete answer.")
 
     elif depth == "detailed":
         lines.append(
-            "Give a well-developed answer with practical nuance, reasoning, and useful examples where appropriate."
+            "Give a well-developed, well-organized, and long answer with practical nuance, reasoning, and useful examples where appropriate."
         )
 
     else:
-        lines.append("Give a thoughtful, moderately developed answer.")
+        lines.append("Give a thoughtful, well-organized, and moderately developed answer.")
 
     if use_context:
         lines.append("Use the earlier conversation context when it is relevant.")
