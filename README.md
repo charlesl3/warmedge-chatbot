@@ -641,3 +641,68 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
     - mixed intent composition
   - not only:
     - one flat intent
+
+# WarmGPT V2 - user signup/login features
+
+- Supabase auth + persistent sessions
+- Persistent skater profiles
+- Profile-aware generation
+- Semantic profile evolution
+- Human-confirmed memory mutation
+- Async backend persistence
+
+---
+
+## Dual-State Architecture
+
+### Persistent Profile
+Long-term skater identity.
+
+### Transient Query State
+Per-message inferred skating context.
+
+Key decision:
+persistent identity and transient conversation context are separated.
+
+---
+
+## Semantic Memory Pipeline
+
+```text
+User Message
+    ↓
+LLM Semantic Detection
+    ↓
+Strict Validation
+    ↓
+Frontend Confirmation
+    ↓
+Async Backend Persistence
+```
+
+---
+
+## Canonical Skill Normalization
+
+```text
+"1fl"        → 1F
+"double sal" → 2S
+"ax-el"      → 1A
+```
+
+Key decision:
+persistent storage remains canonicalized.
+
+---
+
+## Backend Trust Boundary
+
+Frontend:
+- UI
+- interaction
+
+Backend:
+- semantic authority
+- validation
+- persistence
+

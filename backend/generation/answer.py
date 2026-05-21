@@ -39,6 +39,7 @@ def answer_question(
     intent_profile=None,
     state=None,
     user_profile=None,
+profile_update_candidate=None,
 ):
 
     # ---------------------------------
@@ -225,4 +226,6 @@ def answer_question(
 
         "repair":
             repair_trace,
+        "profile_update_candidate":
+            profile_update_candidate,
     }

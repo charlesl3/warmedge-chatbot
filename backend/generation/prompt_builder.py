@@ -313,10 +313,30 @@ user_profile: dict | None = None,
         )
 
         parts.append("Persistent user profile for response style only:")
-        parts.append(f"- Name: {first_name}")
-        parts.append(f"- Skater level: {skater_level}")
+        highest_jump = (
+                user_profile.get("highest_jump")
+                or "unknown"
+        )
+
+        highest_test_level = (
+                user_profile.get("highest_test_level")
+                or "unknown"
+        )
+
+        parts.append(f"- Highest jump: {highest_jump}")
+        parts.append(f"- Highest test level: {highest_test_level}")
         parts.append(
             "- Use this profile to tune explanation depth and tone, not to override the current query context.")
+        parts.append("")
+        parts.append(
+            "Use highest jump and test level as supporting context "
+            "for the user's likely skating background and technical familiarity."
+        )
+
+        parts.append(
+            "Do not rigidly assume ability from these fields alone."
+        )
+
         parts.append("")
 
         if skater_level == "beginner":

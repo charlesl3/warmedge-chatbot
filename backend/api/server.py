@@ -1,9 +1,12 @@
-from fastapi import FastAPI, Header
+from fastapi import FastAPI, Header, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from supabase import create_client
 from dotenv import load_dotenv
+from backend.profile.profile_update_detector import (
+    detect_profile_update_candidate,
+)
 
 import traceback
 import re
@@ -122,8 +125,8 @@ def print_compact_trace(trace: dict):
     # -------------------------
     print("\n[PROFILE]")
     print(f"name         : {profile_info.get('name')}")
-    print(f"skater_level : {profile_info.get('skater_level')}  # persistent, user-selected")
-
+    print(f"highest_jump : {profile_info.get('highest_jump')}")
+    print(f"test_level   : {profile_info.get('highest_test_level')}")
     # -------------------------
     # STATE
     # -------------------------
@@ -198,6 +201,42 @@ def print_compact_trace(trace: dict):
     print(f"status       : {repair.get('status')}")
     print(f"focus_cov    : {repair.get('focus_coverage')}")
     print(f"missing_focus: {repair.get('missing_focus_terms')}")
+
+
+    # -------------------------
+    # PROFILE UPDATE
+    # -------------------------
+
+    profile_update = trace.get(
+        "profile_update_candidate"
+    )
+
+    print("\n[PROFILE UPDATE]")
+
+    if profile_update:
+
+        print(
+            f"field        : {profile_update.get('field')}"
+        )
+
+        print(
+            f"old_value    : {profile_update.get('old_value')}"
+        )
+
+        print(
+            f"new_value    : {profile_update.get('new_value')}"
+        )
+
+        print(
+            f"confidence   : {profile_update.get('confidence')}"
+        )
+
+        print(
+            f"reason       : {profile_update.get('reason')}"
+        )
+
+    else:
+        print("candidate    : none")
 
     # -------------------------
     # OUTPUT
@@ -350,10 +389,36 @@ def load_user_profile(user_id: str):
         print("[PROFILE LOAD ERROR]", str(e))
         return None
 
+def perform_profile_update(user_id: str, field: str, new_value: str):
+    try:
+        print("[ASYNC PROFILE UPDATE START]")
+        print("[ASYNC PROFILE UPDATE] user_id:", user_id)
+        print("[ASYNC PROFILE UPDATE] field:", field)
+        print("[ASYNC PROFILE UPDATE] new_value:", new_value)
+
+        (
+            supabase
+            .table("profiles")
+            .update({
+                field: new_value,
+                "updated_at": "now()",
+            })
+            .eq("id", user_id)
+            .execute()
+        )
+
+        print("[ASYNC PROFILE UPDATE DONE]")
+
+    except Exception as e:
+        print("[ASYNC PROFILE UPDATE ERROR]", str(e))
+
 class ChatRequest(BaseModel):
     message: str
     session_id: str | None = None
 
+class ProfileUpdateRequest(BaseModel):
+    field: str
+    new_value: str
 
 class HelpfulFeedbackRequest(BaseModel):
     session_id: str
@@ -498,6 +563,15 @@ def chat(
                         "[PROFILE] skater_level:",
                         user_profile.get("skater_level"),
                     )
+                    print(
+                        "[PROFILE] highest_jump:",
+                        user_profile.get("highest_jump"),
+                    )
+
+                    print(
+                        "[PROFILE] highest_test_level:",
+                        user_profile.get("highest_test_level"),
+                    )
 
             else:
                 print("[AUTH] invalid token")
@@ -526,9 +600,11 @@ def chat(
                 "history_len": len(history),
             },
             "profile": {
-                "name": user_profile.get("first_name") if user_profile else None,
-                "skater_level": user_profile.get("skater_level") if user_profile else None,
-            },
+    "name": user_profile.get("first_name") if user_profile else None,
+    "skater_level": user_profile.get("skater_level") if user_profile else None,
+    "highest_jump": user_profile.get("highest_jump") if user_profile else None,
+    "highest_test_level": user_profile.get("highest_test_level") if user_profile else None,
+},
         }
 
         # -------------------------
@@ -582,6 +658,16 @@ def chat(
         # -------------------------
         state = build_skater_state(message)
         agent_trace["state"] = state
+        profile_update_candidate = (
+            detect_profile_update_candidate(
+                query=message,
+                user_profile=user_profile,
+            )
+        )
+
+        agent_trace["profile_update_candidate"] = (
+            profile_update_candidate
+        )
 
         # -------------------------
         # AGENT DECISION (NOW HISTORY-AWARE)
@@ -773,6 +859,7 @@ def chat(
             intent_profile=intent_profile,
             state=state,
             user_profile=user_profile,
+            profile_update_candidate=profile_update_candidate,
         )
 
         transform_mode = detect_transform_mode(message)
@@ -883,11 +970,26 @@ Rules:
 
         retrieved_docs = []
         query_embedding = None
+        profile_update_candidate_response = None
 
         if isinstance(rag_result, dict):
+
             reply = rag_result.get("reply", "")
-            retrieved_docs = rag_result.get("retrieved_docs", [])
-            query_embedding = rag_result.get("query_embedding")
+
+            retrieved_docs = rag_result.get(
+                "retrieved_docs",
+                [],
+            )
+
+            query_embedding = rag_result.get(
+                "query_embedding"
+            )
+
+            profile_update_candidate_response = (
+                rag_result.get(
+                    "profile_update_candidate"
+                )
+            )
         else:
             reply = rag_result
 
@@ -1022,6 +1124,8 @@ Rules:
             "message_id": assistant_message_id,
             "sources": retrieved_docs[:2],
             "repaired": repair_trace.get("triggered", False),
+            "profile_update_candidate":
+                profile_update_candidate_response,
             "end": False,
         }
 
@@ -1073,3 +1177,71 @@ def clear_all_chats():
     LAST_RAG_CONTEXT = {}
 
     return {"status": "all chats cleared"}
+
+
+@app.post("/profile/update")
+def update_profile(
+    req: ProfileUpdateRequest,
+    background_tasks: BackgroundTasks,
+    authorization: str | None = Header(default=None),
+):
+    try:
+        token = extract_bearer_token(authorization)
+
+        if not token:
+            return {"success": False, "error": "Missing auth token"}
+
+        authenticated_user = get_authenticated_user(token)
+
+        if not authenticated_user:
+            return {"success": False, "error": "Invalid auth token"}
+
+        user_profile = load_user_profile(authenticated_user.id)
+
+        if not user_profile:
+            return {"success": False, "error": "Profile not found"}
+
+        if req.field != "highest_jump":
+            return {"success": False, "error": "Unsupported profile field"}
+
+        current_jump = user_profile.get("highest_jump")
+
+        # reuse your detector/ranking logic indirectly by allowing only backend-approved values
+        allowed_jumps = [
+            "waltz",
+            "1T", "1S", "1Lo", "1F", "1Lz", "1A",
+            "2T", "2S", "2Lo", "2F", "2Lz", "2A",
+            "3T", "3S", "3Lo", "3F", "3Lz", "3A",
+        ]
+
+        if req.new_value not in allowed_jumps:
+            return {"success": False, "error": "Invalid jump value"}
+
+        def rank(jump):
+            if not jump:
+                return -1
+            try:
+                return allowed_jumps.index(jump)
+            except ValueError:
+                return -1
+
+        if rank(req.new_value) <= rank(current_jump):
+            return {"success": False, "error": "Update is not upward progression"}
+
+        background_tasks.add_task(
+            perform_profile_update,
+            authenticated_user.id,
+            req.field,
+            req.new_value,
+        )
+
+        return {
+            "success": True,
+            "queued": True,
+            "field": req.field,
+            "new_value": req.new_value,
+        }
+
+    except Exception as e:
+        print("[PROFILE UPDATE ERROR]", str(e))
+        return {"success": False, "error": str(e)}
