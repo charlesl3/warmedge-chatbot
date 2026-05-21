@@ -87,10 +87,12 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
         lines.append("Answer directly and practically.")
 
     if depth == "short":
-        lines.append("Give a brief but complete answer.")
+        lines.append("Give a concise but complete answer.")
 
     elif depth == "detailed":
-        lines.append("Give a well-developed long answer with practical nuance, reasoning, and examples where useful.")
+        lines.append(
+            "Give a well-developed answer with practical nuance, reasoning, and useful examples where appropriate."
+        )
 
     else:
         lines.append("Give a thoughtful, moderately developed answer.")
@@ -221,10 +223,9 @@ user_profile: dict | None = None,
     parts.append("")
 
     parts.append(
-        "Important rules:\n"
-        "- Do NOT treat Axel or above as beginner.\n"
-        "- Recommend appropriate stiffness for heavier skaters.\n"
-        "- Avoid beginner equipment unless clearly beginner.\n"
+        "Important skating assumptions:\n"
+        "- Axel or above is not beginner level.\n"
+        "- Equipment recommendations should match realistic support needs.\n"
     )
     parts.append("")
 

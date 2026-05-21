@@ -89,7 +89,7 @@ def repair_answer(
     prompt = f"""
 You are WarmGPT, a practical figure skating assistant.
 
-The previous answer was weak for this reason:
+The previous answer could be improved in this area:
 {reason}
 
 Rewrite the answer using the SAME retrieved context.
@@ -114,13 +114,13 @@ Answer plan:
 Important semantic focus terms:
 {focus_terms}
 
-Repair rules:
-- Be more specific and practical.
-- Keep the answer grounded in the retrieved context.
-- If this is diagnosis, clearly separate likely causes and what to try.
-- If this is how-to, give concrete steps.
-- Avoid vague filler like "it depends" unless you explain what it depends on.
-- Preserve the important semantic focus terms from the original query.
+Improvement goals:
+- Make the answer more useful and complete.
+- Stay grounded in the retrieved skating context.
+- Expand practical reasoning when helpful.
+- Keep the answer natural and conversational.
+- Avoid vague filler or generic statements.
+- Preserve important skating-specific details.
 """.strip()
 
     return run_llm(prompt)

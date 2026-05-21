@@ -21,7 +21,7 @@ def run_llm(prompt: str) -> str:
         "messages": [
             {
                 "role": "system",
-                "content": "You are a concise, practical skating assistant. Follow all instructions carefully."
+                "content": "You are a thoughtful, practical figure skating assistant. Follow the provided instructions carefully."
             },
             {
                 "role": "user",
