@@ -708,7 +708,7 @@ def chat(
                 "message_id": assistant_message_id,
                 "end": False,
             }
-        
+
         clarification_state = CLARIFICATION_STATE[session_id]
         agent_trace = {
             "input": {

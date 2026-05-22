@@ -28,7 +28,7 @@ def run_llm(prompt: str) -> str:
                 "content": prompt
             }
         ],
-        "max_tokens": 1500,
+        "max_tokens": 4000,
         "temperature": 0.1,
     }
 
