@@ -474,11 +474,6 @@ def classify_query_intent(query: str, history: list[dict]) -> str:
     # -------------------------
     # FRONTEND CHIP MODE HINTS
     # -------------------------
-    if "mode: drills" in q:
-        return "how_to"
-
-    if "mode: diagnose" in q:
-        return "diagnosis"
 
     if "mode: deeper" in q:
         return "experience_lookup"
