@@ -23,6 +23,7 @@ from backend.agents.agent import (
     build_answer_plan,
     build_followup_decision,
     build_followup_prompt,
+semantic_clarification_attachment_check,
 )
 
 from backend.generation.answer import answer_question
@@ -591,6 +592,10 @@ def chat(
                 "count": 0,
                 "force_answer": False,
                 "last_reason": None,
+                "active": False,
+                "original_query": None,
+                "question": None,
+                "resolved_query": None,
             }
 
         history = list(SESSIONS[session_id])
@@ -789,58 +794,55 @@ def chat(
         # AGENT DECISION (NOW HISTORY-AWARE)
         # -------------------------
         # -------------------------
-        # CONTEXTUAL INTENT FIX (NEW)
-        # -------------------------
-        def looks_like_question(text: str):
-            text = text.lower()
-            return (
-                    "?" in text or
-                    text.startswith(("which", "what", "where", "when", "how", "is", "are", "do", "does", "can"))
+
+        effective_message = message
+        clarification_attachment = {
+            "active": clarification_state.get("active", False),
+            "matched": False,
+            "reason": None,
+            "resolved_query": None,
+        }
+
+        if clarification_state.get("active"):
+            attachment = semantic_clarification_attachment_check(
+                original_query=clarification_state.get("original_query") or "",
+                clarification_question=clarification_state.get("question") or "",
+                user_reply=message,
             )
 
-        def is_short_answer(msg: str):
-            return len(msg.split()) <= 3
+            clarification_attachment.update({
+                "matched": attachment.get("is_answering", False),
+                "reason": attachment.get("reason"),
+                "resolved_query": attachment.get("resolved_query"),
+                "confidence": attachment.get("confidence"),
+            })
 
-        last_assistant = next(
-            (m for m in reversed(history) if m["role"] == "assistant"),
-            None
+            if (
+                    attachment.get("is_answering")
+                    and attachment.get("confidence") in ["high", "medium"]
+            ):
+                effective_message = attachment.get("resolved_query") or message
+                clarification_state["force_answer"] = True
+                clarification_state["resolved_query"] = effective_message
+
+        state = build_skater_state(effective_message)
+        agent_trace["state"] = state
+        agent_trace["clarification_attachment"] = clarification_attachment
+
+        profile_update_candidate = detect_profile_update_candidate(
+            query=message,
+            user_profile=user_profile,
         )
 
-        is_answering_clarification = (
-                last_assistant and
-                looks_like_question(last_assistant["content"]) and
-                is_short_answer(message)
+        agent_trace["profile_update_candidate"] = profile_update_candidate
+
+        intent_profile = build_intent_profile(
+            effective_message,
+            history,
+            state=state,
         )
 
-        if is_answering_clarification:
-
-            clarification_state["force_answer"] = True
-
-            previous_user_query = next(
-                (
-                    m["content"]
-                    for m in reversed(history)
-                    if m["role"] == "user"
-                ),
-                ""
-            )
-
-            previous_profile = build_intent_profile(
-                previous_user_query,
-                history,
-                state=state,
-            )
-
-            intent_profile = previous_profile
-            intent = previous_profile["primary_intent"]
-        else:
-            intent_profile = build_intent_profile(
-                message,
-                history,
-                state=state,
-            )
-
-            intent = intent_profile["primary_intent"]
+        intent = intent_profile["primary_intent"]
 
         agent_trace["intent"] = {
             "label": intent,
@@ -850,7 +852,7 @@ def chat(
 
 
         retrieval_strategy = build_retrieval_strategy(
-            query=message,
+            query=effective_message,
             intent_profile=intent_profile,
             state=state,
             history=history,
@@ -861,7 +863,7 @@ def chat(
         k = retrieval_strategy["k"]
 
         clarify, reason, clarification_question = needs_clarification(
-            message,
+            effective_message,
             history,
             state=state,
         )
@@ -892,7 +894,7 @@ def chat(
         }
 
         answer_plan = build_answer_plan(
-            query=message,
+            query=effective_message,
             intent=intent,
             state=state,
             history=history,
@@ -947,6 +949,9 @@ def chat(
                 save_chats(chats)
 
                 SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
+                clarification_state["active"] = True
+                clarification_state["original_query"] = message
+                clarification_state["question"] = reply
                 clarification_state["count"] += 1
                 clarification_state["last_reason"] = reason
 
@@ -967,7 +972,7 @@ def chat(
         # RAG PATH (UNCHANGED)
         # -------------------------
         rag_result = answer_question(
-            question=message,
+            question=effective_message,
             history=working_history,
             intent=intent,
             k=k,
@@ -1049,7 +1054,7 @@ def chat(
         followup = None
 
         followup_decision = build_followup_decision(
-            query=message,
+            query=effective_message,
             intent=intent,
             state=state,
             agent_trace=agent_trace,
@@ -1059,7 +1064,7 @@ def chat(
         if followup_decision.get("generate"):
             try:
                 followup_prompt = build_followup_prompt(
-                    query=message,
+                    query=effective_message,
                     answer=reply,
                     intent=intent,
                     state=state,
@@ -1098,6 +1103,10 @@ def chat(
         clarification_state["count"] = 0
         clarification_state["force_answer"] = False
         clarification_state["last_reason"] = None
+        clarification_state["active"] = False
+        clarification_state["original_query"] = None
+        clarification_state["question"] = None
+        clarification_state["resolved_query"] = None
 
         working_history.append({
             "role": "assistant",

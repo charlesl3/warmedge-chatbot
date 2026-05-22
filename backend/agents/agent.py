@@ -364,6 +364,75 @@ def semantic_clarification_check(query: str, history: list[dict], state: dict | 
             "clarification_question": "",
             "raw": "",
         }
+
+
+def semantic_clarification_attachment_check(
+    original_query: str,
+    clarification_question: str,
+    user_reply: str,
+) -> dict:
+    prompt = f"""
+You are a backend clarification attachment checker for WarmGPT.
+
+Do NOT answer the user.
+
+Decide whether the latest user reply is answering the previous clarification question.
+
+Use EXACTLY this format:
+
+IS_ANSWERING: YES or NO
+CONFIDENCE: high, medium, or low
+RESOLVED_QUERY: one sentence combining the original query and the user's clarification answer
+REASON: one short reason
+
+Original user query:
+{original_query}
+
+Clarification question asked by assistant:
+{clarification_question}
+
+Latest user reply:
+{user_reply}
+
+Rules:
+- If the reply gives level, skill, jump ability, test level, body detail, boot preference, budget, goal, or any missing detail requested by the clarification, answer YES.
+- The reply can be indirect. For example, "I can do double salchow" answers "What level are you?"
+- Do NOT treat the reply as a new standalone question unless it clearly asks a new unrelated question.
+- Preserve the original query as the main topic.
+- The resolved query should keep the original user goal and add the clarification answer as context.
+""".strip()
+
+    try:
+        raw = run_llm(prompt).strip()
+        upper = raw.upper()
+
+        is_answering = "IS_ANSWERING: YES" in upper
+
+        confidence_match = re.search(r"CONFIDENCE:\s*(.*)", raw, re.IGNORECASE)
+        resolved_match = re.search(r"RESOLVED_QUERY:\s*(.*)", raw, re.IGNORECASE)
+        reason_match = re.search(r"REASON:\s*(.*)", raw, re.IGNORECASE)
+
+        confidence = confidence_match.group(1).strip().lower() if confidence_match else "low"
+        resolved_query = resolved_match.group(1).strip() if resolved_match else original_query
+        reason = reason_match.group(1).strip() if reason_match else "semantic_attachment"
+
+        return {
+            "is_answering": is_answering,
+            "confidence": confidence,
+            "resolved_query": resolved_query,
+            "reason": reason,
+            "raw": raw,
+        }
+
+    except Exception as e:
+        print("[CLARIFICATION ATTACHMENT] skipped:", str(e))
+        return {
+            "is_answering": False,
+            "confidence": "low",
+            "resolved_query": original_query,
+            "reason": "attachment_checker_error",
+            "raw": "",
+        }
 # -------------------------
 # CLARIFICATION LOGIC
 # -------------------------

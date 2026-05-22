@@ -706,3 +706,16 @@ Backend:
 - validation
 - persistence
 
+## Debugging Agents
+
+### fixed clarification + follow up question bug
+- Discovered semantic drift caused by parallel agent interactions after introducing jump detection and profile-update agents
+- Found that clarification follow-up replies were sometimes incorrectly treated as standalone intents
+- Observed retrieval and answer planning drifting away from the original unresolved question during clarification flows
+- Identified weak clarification-attachment logic and lack of conversational anchor preservation as core causes
+- Added explicit clarification state tracking instead of heuristic question-based inference
+- Added semantic clarification attachment resolution using LLM reasoning
+- Introduced conversational anchor preservation before downstream retrieval/planning/state extraction
+- Switched downstream routing to use resolved conversational query instead of raw latest user message
+- Prevented jump/profile semantic agents from hijacking clarification follow-up turns into unrelated semantic topics
+- Established lightweight orchestration guidance across parallel semantic agents to stabilize multi-agent conversational behavior
