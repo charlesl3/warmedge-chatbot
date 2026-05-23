@@ -146,7 +146,8 @@ def build_llm_input(
     intent: str = "default",
     answer_plan: dict | None = None,
     confidence: str | None = None,
-user_profile: dict | None = None,
+    user_profile: dict | None = None,
+    user_topic_memory: list[str] | None = None,
 ) -> str:
 
     parts = []
@@ -345,6 +346,27 @@ user_profile: dict | None = None,
                 "- Use beginner-friendly language.\n"
                 "- You may smartly thank or encourage them to know more about figure skating, when it is good to do so\n"
             )
+
+        parts.append("")
+
+    # -------------------------
+    # RECURRING USER TOPICS
+    # -------------------------
+
+    if user_topic_memory:
+
+        parts.append("[RECENT TOPICS USER FOCUSING ON]")
+
+        for topic in user_topic_memory:
+            parts.append(f"- {topic}")
+
+        parts.append("")
+
+        parts.append(
+            "These recurring skating interests are soft contextual signals only.\n"
+            "Use them subtly when relevant.\n"
+            "Do not force them into unrelated answers."
+        )
 
         parts.append("")
 

@@ -39,7 +39,8 @@ def answer_question(
     intent_profile=None,
     state=None,
     user_profile=None,
-profile_update_candidate=None,
+    user_topic_memory=None,
+    profile_update_candidate=None,
 ):
 
     # ---------------------------------
@@ -146,6 +147,7 @@ profile_update_candidate=None,
         answer_plan=answer_plan,
         confidence=confidence,
         user_profile=user_profile,
+        user_topic_memory=user_topic_memory,
     )
 
     response = run_llm(llm_input)

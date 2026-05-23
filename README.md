@@ -706,6 +706,20 @@ Backend:
 - validation
 - persistence
 
+---
+
+## User contents storage 1 - frequently asked topics
+
+- Added silent async recurring-topic memory for authenticated users
+- Introduced lightweight LLM-based topic extraction with normalized skating-domain tags
+- Built persistent semantic memory layer using Supabase (`user_topic_memory`)
+- Separated long-term skating interests from temporary mechanics/symptoms
+- Added soft recurring-topic prompt injection (`[RECENT USER FOCUS]`) for lightweight personalization
+- Ensured all topic extraction + DB writes run asynchronously after response generation
+- Kept semantic memory invisible to frontend and non-blocking to Q&A latency
+- Cleaned architecture by consolidating active user state into `profiles` table
+
+
 ## Debugging Agents
 
 ### fixed clarification + follow up question bug

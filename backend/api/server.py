@@ -7,6 +7,13 @@ from dotenv import load_dotenv
 from backend.profile.profile_update_detector import (
     detect_profile_update_candidate,
 )
+from backend.profile.topic_memory import (
+    update_topic_memory,
+)
+
+from backend.profile.topic_retrieval import (
+    load_user_topics,
+)
 
 import traceback
 import re
@@ -526,6 +533,7 @@ def get_chats():
 @app.post("/chat")
 def chat(
     req: ChatRequest,
+    background_tasks: BackgroundTasks,
     authorization: str | None = Header(default=None),
 ):
     try:
@@ -573,6 +581,10 @@ def chat(
                         "[PROFILE] highest_test_level:",
                         user_profile.get("highest_test_level"),
                     )
+                    user_topic_memory = load_user_topics(
+                        supabase,
+                        authenticated_user.id,
+                    )
 
             else:
                 print("[AUTH] invalid token")
@@ -581,6 +593,8 @@ def chat(
             print("[AUTH] no bearer token")
             user_profile = None
 
+        if not authenticated_user:
+            user_topic_memory = []
         message = req.message.strip()
         session_id = req.session_id or str(uuid.uuid4())
         transform_mode = detect_transform_mode(message)
@@ -980,6 +994,7 @@ def chat(
             intent_profile=intent_profile,
             state=state,
             user_profile=user_profile,
+            user_topic_memory=user_topic_memory,
             profile_update_candidate=profile_update_candidate,
         )
 
@@ -1145,6 +1160,17 @@ def chat(
         if issue:
             print(f"⚠️ BAD RUN DETECTED: {issue}")
 
+        # -------------------------
+        # ASYNC TOPIC MEMORY
+        # -------------------------
+
+        if authenticated_user:
+            background_tasks.add_task(
+                update_topic_memory,
+                supabase,
+                authenticated_user.id,
+                message,
+            )
         return {
             "reply": reply,
             "session_id": session_id,
