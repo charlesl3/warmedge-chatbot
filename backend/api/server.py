@@ -15,6 +15,14 @@ from backend.profile.topic_retrieval import (
     load_user_topics,
 )
 
+from backend.tracker.blade_tracker import (
+    get_tracker_state,
+    log_skating_session,
+    mark_blades_sharpened,
+    update_threshold,
+    delete_skating_session,
+)
+
 import traceback
 import re
 import uuid
@@ -432,13 +440,184 @@ class HelpfulFeedbackRequest(BaseModel):
     session_id: str
     message_id: str
 
+class SkatingSessionRequest(BaseModel):
+    hours: float
+    session_date: str | None = None
+    note: str | None = None
 
+
+class SharpenedRequest(BaseModel):
+    sharpened_at: str | None = None
+
+
+class BladeThresholdRequest(BaseModel):
+    threshold_hours: float
+
+class DeleteSkatingSessionRequest(BaseModel):
+    session_date: str
 # -------------------------
 # Health check
 # -------------------------
 @app.get("/")
 def root():
     return {"status": "ok"}
+
+def require_authenticated_user(authorization: str | None):
+    token = extract_bearer_token(authorization)
+
+    if not token:
+        return None
+
+    return get_authenticated_user(token)
+
+
+@app.get("/blade-tracker")
+def get_blade_tracker(
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        print("\n[BLADE TRACKER API] GET /blade-tracker")
+        print("user_id:", user.id)
+
+        data = get_tracker_state(
+            supabase,
+            user.id,
+        )
+
+        return {
+            "success": True,
+            "tracker": data,
+        }
+
+    except Exception as e:
+        print("[BLADE TRACKER API ERROR]", str(e))
+        return {"success": False, "error": str(e)}
+
+
+@app.post("/blade-tracker/session")
+def add_skating_session(
+    req: SkatingSessionRequest,
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        print("\n[BLADE TRACKER API] POST /blade-tracker/session")
+        print("user_id:", user.id)
+        print("hours:", req.hours)
+
+        data = log_skating_session(
+            supabase=supabase,
+            user_id=user.id,
+            hours=req.hours,
+            session_date=req.session_date,
+            note=req.note,
+        )
+
+        return {
+            "success": True,
+            "tracker": data,
+        }
+
+    except Exception as e:
+        print("[BLADE TRACKER API ERROR]", str(e))
+        return {"success": False, "error": str(e)}
+
+
+@app.delete("/blade-tracker/session")
+def delete_session(
+    req: DeleteSkatingSessionRequest,
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        data = delete_skating_session(
+            supabase=supabase,
+            user_id=user.id,
+            session_date=req.session_date,
+        )
+
+        return {
+            "success": True,
+            "tracker": data,
+        }
+
+    except Exception as e:
+        print("[BLADE TRACKER DELETE ERROR]", str(e))
+        return {"success": False, "error": str(e)}
+    
+@app.post("/blade-tracker/sharpened")
+def sharpen_blades(
+    req: SharpenedRequest,
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        print("\n[BLADE TRACKER API] POST /blade-tracker/sharpened")
+        print("user_id:", user.id)
+        print("sharpened_at:", req.sharpened_at)
+
+        data = mark_blades_sharpened(
+            supabase=supabase,
+            user_id=user.id,
+            sharpened_at=req.sharpened_at,
+        )
+
+        return {
+            "success": True,
+            "tracker": data,
+        }
+
+    except Exception as e:
+        print("[BLADE TRACKER API ERROR]", str(e))
+        return {"success": False, "error": str(e)}
+
+
+@app.patch("/blade-tracker/threshold")
+def set_blade_threshold(
+    req: BladeThresholdRequest,
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        print("\n[BLADE TRACKER API] PATCH /blade-tracker/threshold")
+        print("user_id:", user.id)
+        print("threshold_hours:", req.threshold_hours)
+
+        data = update_threshold(
+            supabase=supabase,
+            user_id=user.id,
+            threshold_hours=req.threshold_hours,
+        )
+
+        return {
+            "success": True,
+            "tracker": data,
+        }
+
+    except Exception as e:
+        print("[BLADE TRACKER API ERROR]", str(e))
+        return {"success": False, "error": str(e)}
 
 
 # -------------------------
