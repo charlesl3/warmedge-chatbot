@@ -1,4 +1,5 @@
 from datetime import date
+from datetime import datetime
 
 
 def _today_str():
@@ -112,17 +113,22 @@ def get_tracker_state(supabase, user_id: str):
 
 def log_skating_session(
     supabase,
-    user_id: str,
-    hours: float,
-    session_date: str | None = None,
-    note: str | None = None,
+    user_id,
+    hours,
+    session_date=None,
+    note=None,
 ):
-    if hours <= 0:
-        raise ValueError("Hours must be positive.")
+
 
     active_cycle = ensure_active_cycle(supabase, user_id)
 
     target_date = session_date or _today_str()
+    # normalize empty notes
+    if note:
+        note = note.strip()
+
+    if note == "":
+        note = None
 
     existing = (
         supabase
@@ -135,6 +141,25 @@ def log_skating_session(
     )
 
     rows = existing.data or []
+
+    # -------------------------
+    # 0 HOURS = DELETE SESSION
+    # -------------------------
+
+    if hours <= 0:
+
+        if rows:
+            (
+                supabase
+                .table("skating_sessions")
+                .delete()
+                .eq("id", rows[0]["id"])
+                .execute()
+            )
+
+            print("\n[BLADE TRACKER] deleted session via 0 hours")
+
+        return get_tracker_state(supabase, user_id)
 
     if rows:
 
@@ -214,7 +239,6 @@ def mark_blades_sharpened(
             "is_active": False,
             "ended_at": sharpened_at or _today_str(),
             "total_hours": total_hours,
-            "updated_at": "now()",
         })
         .eq("id", active_cycle["id"])
         .execute()
@@ -254,7 +278,6 @@ def update_threshold(
         .table("blade_tracker_settings")
         .update({
             "threshold_hours": threshold_hours,
-            "updated_at": "now()",
         })
         .eq("user_id", user_id)
         .execute()

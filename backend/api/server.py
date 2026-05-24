@@ -527,8 +527,22 @@ def add_skating_session(
             "tracker": data,
         }
 
+
     except Exception as e:
-        print("[BLADE TRACKER API ERROR]", str(e))
+
+        print("\n===== BLADE TRACKER SESSION ERROR =====")
+
+        traceback.print_exc()
+
+        print("=======================================\n")
+
+        return {
+
+            "success": False,
+
+            "error": str(e),
+
+        }
         return {"success": False, "error": str(e)}
 
 
@@ -557,7 +571,7 @@ def delete_session(
     except Exception as e:
         print("[BLADE TRACKER DELETE ERROR]", str(e))
         return {"success": False, "error": str(e)}
-    
+
 @app.post("/blade-tracker/sharpened")
 def sharpen_blades(
     req: SharpenedRequest,
