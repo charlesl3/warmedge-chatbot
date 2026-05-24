@@ -7,8 +7,10 @@ from dotenv import load_dotenv
 from backend.profile.profile_update_detector import (
     detect_profile_update_candidate,
 )
+
 from backend.profile.topic_memory import (
     update_topic_memory,
+    distill_all_users,
 )
 
 from backend.profile.topic_retrieval import (
@@ -180,6 +182,7 @@ def print_compact_trace(trace: dict):
     print(f"topic        : {query_profile.get('topic')}")
     print(f"track        : {query_profile.get('track')}")
     print(f"merged       : {query_profile.get('used_history_merge')}")
+    print(f"user_topics  : {query_profile.get('user_topics')}")
 
 
     # -------------------------
@@ -455,6 +458,7 @@ class BladeThresholdRequest(BaseModel):
 
 class DeleteSkatingSessionRequest(BaseModel):
     session_date: str
+
 # -------------------------
 # Health check
 # -------------------------
@@ -1424,6 +1428,28 @@ def clear_all_chats():
 
     return {"status": "all chats cleared"}
 
+@app.post("/internal/topics/distill-all")
+def distill_all_topics():
+
+    try:
+
+        result = distill_all_users(
+            supabase=supabase,
+        )
+
+        return result
+
+    except Exception as e:
+
+        print(
+            "[GLOBAL TOPIC DISTILL API ERROR]",
+            str(e),
+        )
+
+        return {
+            "success": False,
+            "error": str(e),
+        }
 
 @app.post("/profile/update")
 def update_profile(
