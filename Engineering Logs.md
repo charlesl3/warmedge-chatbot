@@ -1,5 +1,5 @@
 
-# WarmGPT Engineering Logss
+# WarmGPT Engineering Logs
 
 ## Engineering Log — 2026-05-24
 
