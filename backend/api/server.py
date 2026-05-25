@@ -361,6 +361,63 @@ def get_last_assistant_answer(history):
     return None
 
 # -------------------------
+# STRICT TRACKER QUERY ROUTER
+# -------------------------
+
+def is_sharpening_tracker_query(message: str) -> bool:
+    q = message.lower().strip()
+    q = re.sub(r"[^\w\s]", "", q)
+    q = re.sub(r"\s+", " ", q)
+
+    exact_patterns = {
+        "when was my last sharpening",
+        "when did i last sharpen",
+        "when did i last sharpen my blades",
+        "when did i last get my blades sharpened",
+        "when was the last time i sharpened",
+        "when was the last time i sharpened my blades",
+        "how many hours since last sharpening",
+        "how many hours since my last sharpening",
+        "how many hours since i sharpened",
+        "how many hours since i sharpened my blades",
+        "hours since last sharpening",
+        "hours since my last sharpening",
+    }
+
+    if q in exact_patterns:
+        return True
+
+    regex_patterns = [
+        r"^when (was|is) my last sharpen(ing)?$",
+        r"^when did i last sharpen( my blades)?$",
+        r"^how many hours since (my )?last sharpen(ing)?$",
+        r"^how many hours since i sharpened( my blades)?$",
+        r"^hours since (my )?last sharpen(ing)?$",
+    ]
+
+    return any(
+        re.match(pattern, q)
+        for pattern in regex_patterns
+    )
+
+
+def build_sharpening_tracker_reply(tracker: dict) -> str:
+    last_sharpened_at = tracker.get("last_sharpened_at")
+    hours = float(
+        tracker.get("hours_since_sharpening") or 0
+    )
+
+    if not last_sharpened_at:
+        return (
+            "I do not have a recorded sharpening date yet. "
+            f"You have logged {hours:g} skating hours in the current blade cycle."
+        )
+
+    return (
+        f"Your last recorded sharpening was on {last_sharpened_at}. "
+        f"You have skated {hours:g} hours since then."
+    )
+# -------------------------
 # Request schemas
 # -------------------------
 # -------------------------
@@ -793,6 +850,74 @@ def chat(
         if not authenticated_user:
             user_topic_memory = []
         message = req.message.strip()
+
+        # -------------------------
+        # STRICT TRACKER TOOL ROUTE
+        # -------------------------
+
+        if is_sharpening_tracker_query(message):
+
+            if not authenticated_user:
+                return {
+                    "reply": "Please log in so I can check your blade tracker.",
+                    "session_id": req.session_id or str(uuid.uuid4()),
+                    "end": False,
+                }
+
+            tracker = get_tracker_state(
+                supabase=supabase,
+                user_id=authenticated_user.id,
+            )
+
+            reply = build_sharpening_tracker_reply(tracker)
+
+            session_id = req.session_id or str(uuid.uuid4())
+            assistant_message_id = str(uuid.uuid4())
+            user_message_id = str(uuid.uuid4())
+
+            history = SESSIONS.get(session_id, [])
+
+            history.append({
+                "role": "user",
+                "content": message,
+            })
+
+            history.append({
+                "role": "assistant",
+                "content": reply,
+            })
+
+            chats = load_chats()
+            chats = ensure_chat_session(chats, session_id, message)
+
+            chats[session_id]["messages"].append({
+                "id": user_message_id,
+                "role": "user",
+                "content": message,
+            })
+
+            chats[session_id]["messages"].append({
+                "id": assistant_message_id,
+                "role": "assistant",
+                "content": reply,
+            })
+
+            save_chats(chats)
+
+            SESSIONS[session_id] = history[-MAX_TURNS * 2:]
+
+            print("\n[TRACKER TOOL ROUTE]")
+            print("type: sharpening_lookup")
+            print("query:", message)
+            print("reply:", reply)
+
+            return {
+                "reply": reply,
+                "session_id": session_id,
+                "message_id": assistant_message_id,
+                "end": False,
+            }
+
         session_id = req.session_id or str(uuid.uuid4())
         transform_mode = detect_transform_mode(message)
 
