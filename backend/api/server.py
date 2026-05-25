@@ -364,41 +364,96 @@ def get_last_assistant_answer(history):
 # STRICT TRACKER QUERY ROUTER
 # -------------------------
 
-def is_sharpening_tracker_query(message: str) -> bool:
-    q = message.lower().strip()
-    q = re.sub(r"[^\w\s]", "", q)
-    q = re.sub(r"\s+", " ", q)
+# -------------------------
+# TRACKER QUERY CLASSIFIER
+# -------------------------
 
-    exact_patterns = {
-        "when was my last sharpening",
-        "when did i last sharpen",
-        "when did i last sharpen my blades",
-        "when did i last get my blades sharpened",
-        "when was the last time i sharpened",
-        "when was the last time i sharpened my blades",
-        "how many hours since last sharpening",
-        "how many hours since my last sharpening",
-        "how many hours since i sharpened",
-        "how many hours since i sharpened my blades",
-        "hours since last sharpening",
-        "hours since my last sharpening",
-    }
+def classify_tracker_query(message: str) -> dict:
 
-    if q in exact_patterns:
-        return True
+    prompt = f"""
+You are a STRICT skating tracker query classifier.
 
-    regex_patterns = [
-        r"^when (was|is) my last sharpen(ing)?$",
-        r"^when did i last sharpen( my blades)?$",
-        r"^how many hours since (my )?last sharpen(ing)?$",
-        r"^how many hours since i sharpened( my blades)?$",
-        r"^hours since (my )?last sharpen(ing)?$",
-    ]
+Your ONLY job:
+Detect whether the user is EXPLICITLY asking
+to retrieve sharpening tracker information.
 
-    return any(
-        re.match(pattern, q)
-        for pattern in regex_patterns
-    )
+Allowed tracker retrievals:
+- last sharpening date
+- hours since sharpening
+Only trigger if the user's question can be answered DIRECTLY and FULLY using these tracker fields alone.
+
+Do NOT trigger for:
+- comparative timeline questions
+- reasoning questions
+- boot-change chronology
+- equipment history
+- advice
+- diagnostics
+- indirect sharpening discussion
+
+Examples that SHOULD trigger:
+
+- When was my last sharpening?
+- When did I last sharpen?
+- How many hours since my last sharpening?
+- 我上次磨刀是什么时候？
+- Depuis combien d’heures ai-je patiné depuis mon dernier aiguisage ?
+
+Examples that should NOT trigger:
+
+- Should I sharpen my blades?
+- My sharpening feels weird.
+- How often should I sharpen?
+- My edges feel dull.
+- I hate my sharpening lately.
+- Is this a sharpening issue?
+- Wait, have I even sharpened since switching boots?
+
+Return EXACTLY one of these:
+
+TRACKER_QUERY: YES
+TYPE: sharpening_lookup
+
+OR
+
+TRACKER_QUERY: NO
+TYPE: none
+
+User message:
+{message}
+""".strip()
+
+    try:
+
+        raw = run_llm(prompt).strip()
+
+        print("\n[TRACKER CLASSIFIER]")
+        print(raw)
+
+        normalized = raw.upper()
+
+        if (
+            "TRACKER_QUERY: YES" in normalized
+            and "SHARPENING_LOOKUP" in normalized
+        ):
+            return {
+                "tracker_query": True,
+                "type": "sharpening_lookup",
+            }
+
+        return {
+            "tracker_query": False,
+            "type": "none",
+        }
+
+    except Exception as e:
+
+        print("[TRACKER CLASSIFIER ERROR]", str(e))
+
+        return {
+            "tracker_query": False,
+            "type": "none",
+        }
 
 
 def build_sharpening_tracker_reply(tracker: dict) -> str:
@@ -855,7 +910,9 @@ def chat(
         # STRICT TRACKER TOOL ROUTE
         # -------------------------
 
-        if is_sharpening_tracker_query(message):
+        tracker_route = classify_tracker_query(message)
+
+        if tracker_route["tracker_query"]:
 
             if not authenticated_user:
                 return {
