@@ -472,9 +472,99 @@ def build_sharpening_tracker_reply(tracker: dict) -> str:
         f"Your last recorded sharpening was on {last_sharpened_at}. "
         f"You have skated {hours:g} hours since then."
     )
+
 # -------------------------
-# Request schemas
+# SOFT TRACKER CONTEXT
 # -------------------------
+
+def should_inject_sharpening_context(
+    query: str,
+) -> bool:
+
+    prompt = f"""
+You are a STRICT skating sharpening relevance classifier.
+
+Your ONLY job:
+Decide whether blade sharpness or edge wear could plausibly
+be relevant to the user's skating issue.
+
+Return ONLY:
+
+RELEVANT: YES
+
+OR
+
+RELEVANT: NO
+
+Trigger ONLY for things like:
+- slipping edges
+- scratchy turns
+- unstable edges
+- rocker weirdness
+- edge inconsistency
+- blade feel problems
+- scraping takeoffs
+- edge grip problems
+
+Do NOT trigger for:
+- choreography
+- music
+- competition stress
+- mental blocks
+- costumes
+- general jump advice
+- unrelated technique discussions
+
+User query:
+{query}
+""".strip()
+
+    try:
+
+        raw = run_llm(prompt).strip().upper()
+
+        print("\n[SHARPENING RELEVANCE]")
+        print(raw)
+
+        return "RELEVANT: YES" in raw
+
+    except Exception as e:
+
+        print("[SHARPENING RELEVANCE ERROR]", str(e))
+
+        return False
+
+
+def build_soft_sharpening_context(
+    tracker: dict,
+) -> str | None:
+
+    hours = float(
+        tracker.get("hours_since_sharpening") or 0
+    )
+
+    threshold = float(
+        tracker.get("threshold_hours") or 40
+    )
+
+    ratio = hours / threshold if threshold > 0 else 0
+
+    # -------------------------
+    # GATE 2
+    # ONLY mention if notable
+    # -------------------------
+
+    if ratio < 0.75:
+        return None
+
+    rounded_hours = round(hours)
+
+    return (
+        f"\n\nYou have also logged around "
+        f"{rounded_hours} hours since your last sharpening, "
+        f"so edge wear could potentially be contributing as well."
+    )
+
 # -------------------------
 # Auth helper
 # -------------------------
@@ -1411,6 +1501,41 @@ def chat(
             reply = rag_result
 
         reply = clean_output(reply)
+        # -------------------------
+        # SOFT SHARPENING CONTEXT
+        # -------------------------
+
+        try:
+
+            if authenticated_user:
+
+                relevance = should_inject_sharpening_context(
+                    message
+                )
+
+                if relevance:
+
+                    tracker = get_tracker_state(
+                        supabase=supabase,
+                        user_id=authenticated_user.id,
+                    )
+
+                    tracker_context = (
+                        build_soft_sharpening_context(
+                            tracker
+                        )
+                    )
+
+                    if tracker_context:
+
+                        reply += tracker_context
+
+                        print("\n[SOFT TRACKER CONTEXT]")
+                        print(tracker_context)
+
+        except Exception as e:
+
+            print("[SOFT TRACKER INJECTION ERROR]", str(e))
         fallback_trace = {}
         repair_trace = {}
         retrieval_eval = {}
