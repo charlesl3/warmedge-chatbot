@@ -43,6 +43,7 @@ from backend.agents.agent import (
     build_followup_decision,
     build_followup_prompt,
     semantic_clarification_attachment_check,
+    detect_interaction_sentiment,
 )
 
 from backend.generation.answer import answer_question
@@ -1123,6 +1124,7 @@ def chat(
             }
 
         history = list(SESSIONS[session_id])
+        interaction_sentiment = None
 
         # -------------------------
         # TRANSFORM MODES
@@ -1339,6 +1341,14 @@ def chat(
                 clarification_state["resolved_query"] = effective_message
 
         state = build_skater_state(effective_message)
+
+        interaction_sentiment = detect_interaction_sentiment(effective_message)
+
+        print("\n[INTERACTION SENTIMENT]")
+        print(f"label      : {interaction_sentiment['label']}")
+        print(f"compound   : {interaction_sentiment['compound']}")
+        agent_trace["interaction_sentiment"] = interaction_sentiment
+
         agent_trace["state"] = state
         agent_trace["clarification_attachment"] = clarification_attachment
 
@@ -1498,6 +1508,7 @@ def chat(
             user_profile=user_profile,
             user_topic_memory=user_topic_memory,
             tracker_reasoning_context=tracker_reasoning_context,
+            interaction_sentiment=interaction_sentiment,
         )
 
         # -------------------------

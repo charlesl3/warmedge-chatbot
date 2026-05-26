@@ -110,6 +110,7 @@ def build_llm_input(
     user_profile: dict | None = None,
     user_topic_memory: list[str] | None = None,
     tracker_reasoning_context: str | None = None,
+interaction_sentiment: dict | None = None,
 ) -> str:
 
     parts = []
@@ -246,6 +247,40 @@ def build_llm_input(
     parts.append("Confidence behavior:")
     parts.append(get_confidence_instruction(confidence))
     parts.append("")
+
+    # -------------------------
+    # INTERACTION SENTIMENT
+    # -------------------------
+
+    if interaction_sentiment:
+
+        label = interaction_sentiment.get("label")
+
+        parts.append("Interaction tone guidance:")
+
+        if label == "negative":
+
+            parts.append(
+                "- The user may be frustrated or discouraged.\n"
+                "- Respond calmly and diagnostically.\n"
+                "- Avoid sounding dismissive or overly harsh.\n"
+                "- Focus on stabilization and practical clarity."
+            )
+
+        elif label == "positive":
+
+            parts.append(
+                "- The user sounds positive or excited.\n"
+                "- Match the energy naturally while staying grounded."
+            )
+
+        else:
+
+            parts.append(
+                "- Respond naturally and practically."
+            )
+
+        parts.append("")
 
     # -------------------------
     # PROFILE PERSONALIZATION

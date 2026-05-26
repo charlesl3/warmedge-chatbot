@@ -1,6 +1,8 @@
 import re
 from backend.generation.llm import run_llm
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+sentiment_analyzer = SentimentIntensityAnalyzer()
 
 # -------------------------
 # SKATER STATE BUILDER
@@ -181,6 +183,26 @@ def build_skater_state(query: str):
 
     return state
 
+def detect_interaction_sentiment(query: str) -> dict:
+
+    scores = sentiment_analyzer.polarity_scores(query)
+
+    compound = scores["compound"]
+
+    if compound <= -0.5:
+        label = "negative"
+
+    elif compound >= 0.5:
+        label = "positive"
+
+    else:
+        label = "neutral"
+
+    return {
+        "label": label,
+        "compound": compound,
+        "raw": scores,
+    }
 
 # -------------------------
 # HELPER: HISTORY CHECK

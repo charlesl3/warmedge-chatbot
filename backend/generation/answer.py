@@ -58,6 +58,7 @@ def answer_question(
     user_topic_memory=None,
     profile_update_candidate=None,
     tracker_reasoning_context=None,
+interaction_sentiment=None,
 ):
 
     # ---------------------------------
@@ -169,6 +170,7 @@ def answer_question(
         user_topic_memory=user_topic_memory,
         tracker_reasoning_context=
         tracker_reasoning_context,
+        interaction_sentiment=interaction_sentiment,
     )
 
     generation_timer = start_timer()
