@@ -342,20 +342,36 @@ def build_tracker_reasoning_context(
     # -------------------------
 
     if ratio <= 0.35:
-        explanation = (
-            "The skater is still relatively early in the "
-            "current sharpening cycle."
-            if subtle else
-            "Blade dullness is less likely to be the "
-            "primary cause unless there are sharpening "
-            "quality or mounting issues."
-        )
+
+        if subtle:
+            explanation = (
+                "The skater is still relatively early "
+                "in the current sharpening cycle."
+            )
+
+        else:
+            explanation = (
+                "True blade dullness is less likely "
+                "unless the sharpening quality was uneven, "
+                "the blade was damaged, or recent skating "
+                "sessions were not fully logged."
+            )
+
+        # encourage better tracking if hours are still very low
+        if hours < 10:
+            logging_hint = (
+                " Keeping skating sessions updated will help "
+                "WarmGPT estimate blade wear more accurately."
+            )
+        else:
+            logging_hint = ""
 
         return (
             f"The skater has only logged "
             f"{hours:g} skating hours since the last sharpening "
             f"(threshold: {threshold:g} hours). "
             f"{explanation}"
+            f"{logging_hint}"
         )
 
     # -------------------------
