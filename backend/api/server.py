@@ -23,6 +23,7 @@ from backend.tracker.blade_tracker import (
     mark_blades_sharpened,
     update_threshold,
     delete_skating_session,
+    build_tracker_reasoning_context,
 )
 
 import traceback
@@ -31,6 +32,7 @@ import uuid
 import os
 import json
 import math
+import time
 
 from backend.agents.agent import (
     needs_clarification,
@@ -40,7 +42,7 @@ from backend.agents.agent import (
     build_answer_plan,
     build_followup_decision,
     build_followup_prompt,
-semantic_clarification_attachment_check,
+    semantic_clarification_attachment_check,
 )
 
 from backend.generation.answer import answer_question
@@ -82,6 +84,20 @@ def preload_rag():
     load_index_and_meta()
     get_embed_model()
     print("RAG preloaded.")
+
+
+# -------------------------
+# LATENCY TIMER
+# -------------------------
+
+def start_timer():
+    return time.perf_counter()
+
+def end_timer(start):
+    return round(
+        time.perf_counter() - start,
+        3,
+    )
 
 # -------------------------
 # BAD RUN DETECTOR
@@ -129,7 +145,6 @@ def print_compact_trace(trace: dict):
     followup = trace.get("followup", {})
     retrieval_strategy = trace.get("retrieval_strategy", {})
 
-    print("\n==================================================")
 
     # -------------------------
     # INPUT
@@ -182,7 +197,6 @@ def print_compact_trace(trace: dict):
     print(f"topic        : {query_profile.get('topic')}")
     print(f"track        : {query_profile.get('track')}")
     print(f"merged       : {query_profile.get('used_history_merge')}")
-    print(f"user_topics  : {query_profile.get('user_topics')}")
 
 
     # -------------------------
@@ -207,7 +221,6 @@ def print_compact_trace(trace: dict):
     print(f"triggered    : {fallback.get('triggered')}")
     print(f"strategy     : {fallback.get('strategy')}")
     print(f"reason       : {fallback.get('reason')}")
-    print(f"eval_reason  : {fallback.get('evaluation_reason')}")
 
 
 
@@ -217,9 +230,7 @@ def print_compact_trace(trace: dict):
     print("\n[REPAIR]")
     print(f"triggered    : {repair.get('triggered')}")
     print(f"reason       : {repair.get('reason')}")
-    print(f"status       : {repair.get('status')}")
-    print(f"focus_cov    : {repair.get('focus_coverage')}")
-    print(f"missing_focus: {repair.get('missing_focus_terms')}")
+
 
 
     # -------------------------
@@ -265,7 +276,6 @@ def print_compact_trace(trace: dict):
     print(f"followup     : {followup.get('triggered')}")
     print(f"followup_reason : {followup.get('decision', {}).get('reason')}")
     print(f"followup_type   : {followup.get('decision', {}).get('type')}")
-    print("==================================================\n")
 # -------------------------
 # CORS
 # -------------------------
@@ -305,33 +315,9 @@ MAX_DOC_GROUPS = 100
 SIMILARITY_DUP_THRESHOLD = 0.90
 
 
-def load_feedback_memory():
-    if not os.path.exists(FEEDBACK_PATH):
-        return []
-
-    try:
-        with open(FEEDBACK_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return []
 
 
 
-def cosine_similarity(a, b):
-    if not a or not b:
-        return 0.0
-
-    if len(a) != len(b):
-        return 0.0
-
-    dot = sum(x * y for x, y in zip(a, b))
-    norm_a = math.sqrt(sum(x * x for x in a))
-    norm_b = math.sqrt(sum(y * y for y in b))
-
-    if norm_a == 0 or norm_b == 0:
-        return 0.0
-
-    return dot / (norm_a * norm_b)
 # -------------------------
 # Output cleaning
 # -------------------------
@@ -360,9 +346,6 @@ def get_last_assistant_answer(history):
             return m.get("content")
     return None
 
-# -------------------------
-# STRICT TRACKER QUERY ROUTER
-# -------------------------
 
 # -------------------------
 # TRACKER QUERY CLASSIFIER
@@ -427,8 +410,6 @@ User message:
 
         raw = run_llm(prompt).strip()
 
-        print("\n[TRACKER CLASSIFIER]")
-        print(raw)
 
         normalized = raw.upper()
 
@@ -523,8 +504,10 @@ User query:
 
         raw = run_llm(prompt).strip().upper()
 
-        print("\n[SHARPENING RELEVANCE]")
-        print(raw)
+        print(
+            f"[TRACKER] "
+            f"relevance={'yes' if 'RELEVANT: YES' in raw else 'no'}"
+        )
 
         return "RELEVANT: YES" in raw
 
@@ -534,36 +517,6 @@ User query:
 
         return False
 
-
-def build_soft_sharpening_context(
-    tracker: dict,
-) -> str | None:
-
-    hours = float(
-        tracker.get("hours_since_sharpening") or 0
-    )
-
-    threshold = float(
-        tracker.get("threshold_hours") or 40
-    )
-
-    ratio = hours / threshold if threshold > 0 else 0
-
-    # -------------------------
-    # GATE 2
-    # ONLY mention if notable
-    # -------------------------
-
-    if ratio < 0.75:
-        return None
-
-    rounded_hours = round(hours)
-
-    return (
-        f"\n\nYou have also logged around "
-        f"{rounded_hours} hours since your last sharpening, "
-        f"so edge wear could potentially be contributing as well."
-    )
 
 # -------------------------
 # Auth helper
@@ -749,7 +702,6 @@ def add_skating_session(
             "error": str(e),
 
         }
-        return {"success": False, "error": str(e)}
 
 
 @app.delete("/blade-tracker/session")
@@ -935,11 +887,16 @@ def chat(
     background_tasks: BackgroundTasks,
     authorization: str | None = Header(default=None),
 ):
+    request_timer = start_timer()
+    print("\n━━━━━━━━━━ NEW REQUEST ━━━━━━━━━━")
+    print(f"[QUERY] {req.message}")
     try:
         token = extract_bearer_token(authorization)
 
         user_profile = None
         authenticated_user = None
+        tracker_reasoning_context = None
+        user_topic_memory = []
 
         if token:
 
@@ -985,6 +942,7 @@ def chat(
                         authenticated_user.id,
                     )
 
+
             else:
                 print("[AUTH] invalid token")
 
@@ -995,12 +953,95 @@ def chat(
         if not authenticated_user:
             user_topic_memory = []
         message = req.message.strip()
+        # -------------------------
+        # OPTIONAL TRACKER CONTEXT
+        # -------------------------
+
+
+        try:
+
+            blade_keywords = [
+
+                "blade",
+                "blades",
+                "edge",
+                "edges",
+                "sharpen",
+                "sharpend",
+                "sharpened",
+                "sharpening",
+                "sharp",
+                "hollow",
+                "rocker",
+                "dull",
+                "flat",
+                "slipping",
+                "slippery",
+
+            ]
+
+            possible_blade_query = any(
+                x in message.lower()
+                for x in blade_keywords
+            )
+            if authenticated_user and possible_blade_query:
+
+
+                sharpening_timer = start_timer()
+
+                relevance = (
+                    should_inject_sharpening_context(
+                        message
+                    )
+                )
+
+                print(
+                    f"[LATENCY] sharpening_relevance: "
+                    f"{end_timer(sharpening_timer)}s"
+                )
+
+                if relevance:
+                    tracker_state = get_tracker_state(
+                        supabase=supabase,
+                        user_id=authenticated_user.id,
+                    )
+
+                    subtle_tracker_context = (
+                            "should" not in message.lower()
+                            and "sharpen" not in message.lower()
+                    )
+
+                    tracker_reasoning_context = (
+                        build_tracker_reasoning_context(
+                            tracker_state,
+                            subtle=subtle_tracker_context,
+                        )
+                    )
+
+                    print("\n[TRACKER REASONING CONTEXT]")
+                    print(tracker_reasoning_context)
+
+        except Exception as e:
+
+            print(
+                "[TRACKER REASONING ERROR]",
+                str(e),
+            )
 
         # -------------------------
         # STRICT TRACKER TOOL ROUTE
         # -------------------------
 
+
+
+        tracker_timer = start_timer()
+
         tracker_route = classify_tracker_query(message)
+
+        print(
+            f"[LATENCY] tracker_classifier: "
+            f"{end_timer(tracker_timer)}s"
+        )
 
         if tracker_route["tracker_query"]:
 
@@ -1260,18 +1301,7 @@ def chat(
         # -------------------------
         # BUILD STATE FIRST
         # -------------------------
-        state = build_skater_state(message)
-        agent_trace["state"] = state
-        profile_update_candidate = (
-            detect_profile_update_candidate(
-                query=message,
-                user_profile=user_profile,
-            )
-        )
 
-        agent_trace["profile_update_candidate"] = (
-            profile_update_candidate
-        )
 
         # -------------------------
         # AGENT DECISION (NOW HISTORY-AWARE)
@@ -1312,9 +1342,17 @@ def chat(
         agent_trace["state"] = state
         agent_trace["clarification_attachment"] = clarification_attachment
 
+        profile_update_timer = start_timer()
+
         profile_update_candidate = detect_profile_update_candidate(
-            query=message,
+            query=effective_message,
             user_profile=user_profile,
+        )
+
+        print("\n[PROFILE UPDATE CHECK]")
+        print(
+            f"[LATENCY] profile_update: "
+            f"{end_timer(profile_update_timer)}s"
         )
 
         agent_trace["profile_update_candidate"] = profile_update_candidate
@@ -1445,18 +1483,13 @@ def chat(
                     "end": False,
                 }
 
-        # -------------------------
-        # topic classifier
-        # -------------------------
-
-
 
         # -------------------------
         # RAG PATH (UNCHANGED)
         # -------------------------
         rag_result = answer_question(
-            question=effective_message,
-            history=working_history,
+            question=message,
+            history=history,
             intent=intent,
             k=k,
             answer_plan=answer_plan,
@@ -1464,10 +1497,8 @@ def chat(
             state=state,
             user_profile=user_profile,
             user_topic_memory=user_topic_memory,
-            profile_update_candidate=profile_update_candidate,
+            tracker_reasoning_context=tracker_reasoning_context,
         )
-
-        transform_mode = detect_transform_mode(message)
 
         # -------------------------
         # SIMPLIFY: NO RAG
@@ -1501,41 +1532,7 @@ def chat(
             reply = rag_result
 
         reply = clean_output(reply)
-        # -------------------------
-        # SOFT SHARPENING CONTEXT
-        # -------------------------
 
-        try:
-
-            if authenticated_user:
-
-                relevance = should_inject_sharpening_context(
-                    message
-                )
-
-                if relevance:
-
-                    tracker = get_tracker_state(
-                        supabase=supabase,
-                        user_id=authenticated_user.id,
-                    )
-
-                    tracker_context = (
-                        build_soft_sharpening_context(
-                            tracker
-                        )
-                    )
-
-                    if tracker_context:
-
-                        reply += tracker_context
-
-                        print("\n[SOFT TRACKER CONTEXT]")
-                        print(tracker_context)
-
-        except Exception as e:
-
-            print("[SOFT TRACKER INJECTION ERROR]", str(e))
         fallback_trace = {}
         repair_trace = {}
         retrieval_eval = {}
@@ -1592,7 +1589,17 @@ def chat(
                     agent_trace=agent_trace,
                 )
 
-                raw_followup = clean_output(run_llm(followup_prompt)).strip()
+                followup_timer = start_timer()
+
+                raw_followup = clean_output(
+                    run_llm(followup_prompt)
+                ).strip()
+
+                print("\n[FOLLOWUP]")
+                print(
+                    f"[LATENCY] followup_generation: "
+                    f"{end_timer(followup_timer)}s"
+                )
 
                 if raw_followup and raw_followup.upper() != "NONE":
                     # Safety: keep only one short question
@@ -1657,12 +1664,19 @@ def chat(
 
         SESSIONS[session_id] = working_history[-MAX_TURNS * 2:]
 
-        print_compact_trace(agent_trace)
+
+        bad_reason = detect_bad_run(agent_trace)
+
+        if bad_reason:
+            print(
+                f"\n⚠️ BAD RUN DETECTED: "
+                f"{bad_reason}"
+            )
+
+            print_compact_trace(agent_trace)
 
         issue = detect_bad_run(agent_trace)
 
-        if issue:
-            print(f"⚠️ BAD RUN DETECTED: {issue}")
 
         # -------------------------
         # ASYNC TOPIC MEMORY
@@ -1675,6 +1689,12 @@ def chat(
                 authenticated_user.id,
                 message,
             )
+        print(
+            f"[LATENCY] total_request: "
+            
+            f"{end_timer(request_timer)}s"
+        )
+        print("━━━━━━━━━━ REQUEST END ━━━━━━━━━━\n")
         return {
             "reply": reply,
             "session_id": session_id,

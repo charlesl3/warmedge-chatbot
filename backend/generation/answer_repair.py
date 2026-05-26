@@ -37,7 +37,7 @@ def evaluate_answer_quality(
 
         coverage = len(matched_terms) / max(len(focus_terms), 1)
 
-        if coverage < 0.5:
+        if coverage < 0.25:
             return {
                 "status": "weak",
                 "reason": "missing_query_focus",
@@ -45,17 +45,6 @@ def evaluate_answer_quality(
                     t for t in focus_terms
                     if t not in matched_terms
                 ],
-                "should_repair": True,
-            }
-
-    if intent == "diagnosis":
-        expected = ["cause", "try"]
-        missing = [x for x in expected if x not in lower]
-        if missing:
-            return {
-                "status": "weak",
-                "reason": "missing_diagnosis_structure",
-                "missing": missing,
                 "should_repair": True,
             }
 

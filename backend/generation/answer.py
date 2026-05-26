@@ -9,6 +9,8 @@ from backend.taxonomy.intents import (
     handle_social_message,
 )
 
+import time
+
 from backend.retrieval.retrieval_query import build_retrieval_profile
 from backend.retrieval.retrieval_pipeline import (
     execute_retrieval,
@@ -29,6 +31,20 @@ PROMPT_PATH = (
     / "rag_answer.txt"
 )
 
+# -------------------------
+# LOCAL LATENCY TIMER
+# -------------------------
+
+def start_timer():
+    return time.perf_counter()
+
+
+def end_timer(start):
+    return round(
+        time.perf_counter() - start,
+        3,
+    )
+
 
 def answer_question(
     question,
@@ -41,6 +57,7 @@ def answer_question(
     user_profile=None,
     user_topic_memory=None,
     profile_update_candidate=None,
+    tracker_reasoning_context=None,
 ):
 
     # ---------------------------------
@@ -96,9 +113,11 @@ def answer_question(
         if isinstance(score, float):
             score = round(score, 3)
 
-        print(f"{i}. ({score}) {title}")
-
-    print("")
+        print(
+            f"{i}. "
+            f"{score} | "
+            f"{title[:55]}"
+        )
 
     # ---------------------------------
     # retrieval evaluation
@@ -148,9 +167,16 @@ def answer_question(
         confidence=confidence,
         user_profile=user_profile,
         user_topic_memory=user_topic_memory,
+        tracker_reasoning_context=
+        tracker_reasoning_context,
     )
 
+    generation_timer = start_timer()
     response = run_llm(llm_input)
+    print(
+        f"[LATENCY] main_generation: "
+        f"{end_timer(generation_timer)}s"
+    )
 
     # ---------------------------------
     # answer evaluation
@@ -174,8 +200,11 @@ def answer_question(
     # repair
     # ---------------------------------
 
-    if answer_eval.get("should_repair"):
-
+    if (
+            answer_eval.get("should_repair")
+            and confidence != "high"
+    ):
+        repair_timer = start_timer()
         response = repair_answer(
             original_answer=response,
             question=profile.normalized_question,
@@ -184,6 +213,10 @@ def answer_question(
             answer_plan=answer_plan,
             intent_profile=intent_profile,
             reason=answer_eval.get("reason"),
+        )
+        print(
+            f"[LATENCY] repair_generation: "
+            f"{end_timer(repair_timer)}s"
         )
 
         repair_trace = {

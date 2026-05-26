@@ -1,45 +1,6 @@
 from backend.taxonomy.level_taxonomy import detect_legacy_term
 from backend.agents.agent import build_skater_state
 
-# def get_intent_instruction(intent: str) -> str:
-#     if intent == "how_to":
-#         return (
-#             "Task mode: actionable coaching.\n"
-#             "Give concrete steps the user can try.\n"
-#             "Prioritize practical technique advice."
-#         )
-#
-#     if intent == "comparison":
-#         return (
-#             "Task mode: comparison.\n"
-#             "Compare the main options or viewpoints.\n"
-#             "Use this structure:\n"
-#             "1. Common ground\n"
-#             "2. Key differences\n"
-#             "3. Recommendation"
-#         )
-#
-#     if intent == "diagnosis":
-#         return (
-#             "Task mode: diagnosis.\n"
-#             "Analyze the user's issue and structure the answer as follows:\n\n"
-#             "Likely causes:\n"
-#             "- List 2–3 plausible causes\n\n"
-#             "What to try:\n"
-#             "- Give concrete, practical fixes\n\n"
-#             "Notes:\n"
-#             "- Mention uncertainty or when it may differ\n"
-#         )
-#
-#     if intent == "experience_lookup":
-#         return (
-#             "Task mode: explanation.\n"
-#             "Explain what commonly causes this issue or situation.\n"
-#             "Summarize patterns clearly."
-#         )
-#
-#     return "Task mode: standard skating answer."
-
 
 def get_answer_plan_instruction(answer_plan: dict | None) -> str:
     if not answer_plan:
@@ -148,6 +109,7 @@ def build_llm_input(
     confidence: str | None = None,
     user_profile: dict | None = None,
     user_topic_memory: list[str] | None = None,
+    tracker_reasoning_context: str | None = None,
 ) -> str:
 
     parts = []
@@ -203,6 +165,27 @@ def build_llm_input(
     parts.append("User question:")
     parts.append(question.strip())
     parts.append("")
+
+    # -------------------------
+    # TRACKER REASONING CONTEXT
+    # -------------------------
+
+    if tracker_reasoning_context:
+        parts.append(
+            "IMPORTANT SKATER STATE:"
+        )
+
+        parts.append(
+            tracker_reasoning_context
+        )
+
+        parts.append(
+            "This skating state information is trusted "
+            "and should override generic sharpening assumptions "
+            "when relevant to the user's issue."
+        )
+
+        parts.append("")
 
     # Retrieved documents
     parts.append("Relevant skating knowledge:")

@@ -24,8 +24,6 @@ def load_user_topics(
             if row.get("score", 0) >= 2
         ]
 
-        print("\n[USER TOPIC MEMORY]")
-        print("topics:", topics)
 
         return topics
 

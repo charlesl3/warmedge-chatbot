@@ -70,8 +70,6 @@ User query:
 
         raw = run_llm(prompt).strip().lower()
 
-        print("\n[TOPIC RAW]")
-        print(raw)
 
         raw = raw.replace("\n", ",")
 
@@ -106,9 +104,6 @@ User query:
 
         topics = topics[:MAX_TOPICS_PER_QUERY]
 
-        print("[TOPIC PARSED]")
-        print(topics)
-
         return topics
 
     except Exception as e:
@@ -130,13 +125,9 @@ def update_topic_memory(
 
     try:
 
-        print("\n[TOPIC MEMORY ASYNC START]")
-        print("query:", query)
 
         topics = extract_topics(query)
 
-        print("[TOPIC MEMORY TOPICS]")
-        print(topics)
 
         if not topics:
 
@@ -212,7 +203,6 @@ def update_topic_memory(
                     f"[TOPIC MEMORY INSERTED] {topic}"
                 )
 
-        print("[TOPIC MEMORY ASYNC DONE]")
 
     except Exception as e:
 

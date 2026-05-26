@@ -275,16 +275,50 @@ def detect_profile_update_candidate(
 
     q = query.lower()
 
-    vague_patterns = [
-        "want to learn",
-        "thinking about",
-        "maybe",
-        "someday",
-        "trying to learn",
-        "hope to",
+    # -------------------------
+    # REQUIRE EXPLICIT PROFILE SIGNAL
+    # -------------------------
+
+    strong_profile_signals = [
+
+        "i landed",
+        "i can do",
+        "my highest jump",
+        "my highest test",
+        "i passed",
+        "passed my",
+        "i am landing",
+
     ]
 
-    if any(x in q for x in vague_patterns):
+    if not any(
+            x in q
+            for x in strong_profile_signals
+    ):
+        return None
+
+    # -------------------------
+    # REJECT VAGUE DISCUSSION
+    # -------------------------
+
+    vague_patterns = [
+
+        "double jumps",
+        "working on",
+        "trying to",
+        "want to",
+        "hope to",
+        "thinking about",
+        "someday",
+        "learning",
+        "practicing",
+
+    ]
+
+    if any(
+            x in q
+            for x in vague_patterns
+    ):
         return None
 
     # ---------------------------------
@@ -425,8 +459,6 @@ REASON: user explicitly states current jump ability
 
         raw = run_llm(prompt)
 
-        print("[PROFILE UPDATE RAW]")
-        print(raw)
 
         upper = raw.upper()
 
@@ -473,6 +505,12 @@ REASON: user explicitly states current jump ability
 
         new_value = normalize_jump_name(raw_value)
 
+        if (
+                not new_value
+                or raw_value.upper() == "NONE"
+        ):
+            return None
+
         if field == "highest_jump" and not new_value:
             return None
 
@@ -512,6 +550,8 @@ REASON: user explicitly states current jump ability
                 <= test_rank(current_test)
             ):
                 return None
+        print("[PROFILE UPDATE RAW]")
+        print(raw)
 
         return {
             "field": field,

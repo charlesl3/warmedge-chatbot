@@ -90,8 +90,6 @@ def get_tracker_state(supabase, user_id: str):
     should_sharpen = total_hours >= threshold
 
     print("\n[BLADE TRACKER STATE]")
-    print("user_id:", user_id)
-    print("cycle_id:", active_cycle["id"])
     print("hours:", total_hours)
     print("threshold:", threshold)
     print("should_sharpen:", should_sharpen)
@@ -309,3 +307,78 @@ def delete_skating_session(
     print("date:", session_date)
 
     return get_tracker_state(supabase, user_id)
+
+# -------------------------
+# TRACKER REASONING CONTEXT
+# -------------------------
+
+def build_tracker_reasoning_context(
+    tracker_state: dict,
+    subtle: bool = False,
+):
+
+    hours = float(
+        tracker_state.get(
+            "hours_since_sharpening"
+        ) or 0
+    )
+
+    threshold = float(
+        tracker_state.get(
+            "threshold_hours"
+        ) or 40
+    )
+
+    last_sharpened = (
+        tracker_state.get(
+            "last_sharpened_at"
+        )
+    )
+
+    ratio = hours / threshold if threshold > 0 else 0
+
+    # -------------------------
+    # LOW HOURS
+    # -------------------------
+
+    if ratio <= 0.35:
+        explanation = (
+            "The skater is still relatively early in the "
+            "current sharpening cycle."
+            if subtle else
+            "Blade dullness is less likely to be the "
+            "primary cause unless there are sharpening "
+            "quality or mounting issues."
+        )
+
+        return (
+            f"The skater has only logged "
+            f"{hours:g} skating hours since the last sharpening "
+            f"(threshold: {threshold:g} hours). "
+            f"{explanation}"
+        )
+
+    # -------------------------
+    # MID HOURS
+    # -------------------------
+
+    if ratio <= 0.75:
+
+        return (
+            f"The skater has logged "
+            f"{hours:g} hours since the last sharpening "
+            f"(threshold: {threshold:g} hours). "
+            f"Moderate edge wear could plausibly contribute "
+            f"to skating inconsistencies."
+        )
+
+    # -------------------------
+    # HIGH HOURS
+    # -------------------------
+
+    return (
+        f"The skater has logged "
+        f"{hours:g} skating hours since the last sharpening "
+        f"(threshold: {threshold:g} hours). "
+        f"Blade wear or dullness is now a plausible contributing factor."
+    )
