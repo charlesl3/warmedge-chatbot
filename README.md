@@ -733,3 +733,4 @@ Backend:
 - Switched downstream routing to use resolved conversational query instead of raw latest user message
 - Prevented jump/profile semantic agents from hijacking clarification follow-up turns into unrelated semantic topics
 - Established lightweight orchestration guidance across parallel semantic agents to stabilize multi-agent conversational behavior
+- Added state-aware sharpening reasoning: WarmGPT now evaluates whether logged skating hours realistically support blade dullness, explains possible mismatches (under-logging, bad sharpening, mounting issues), and softly encourages better session tracking for more accurate equipment awareness.
