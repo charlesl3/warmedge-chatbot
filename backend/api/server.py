@@ -76,6 +76,17 @@ supabase = create_client(
     SUPABASE_SERVICE_KEY,
 )
 
+
+def strip_thinking(text: str) -> str:
+    text = re.sub(
+        r"<think>.*?</think>",
+        "",
+        text,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+
+    return text.strip()
+
 # -------------------------
 # PRELOAD RAG AT STARTUP
 # -------------------------
@@ -317,7 +328,16 @@ SIMILARITY_DUP_THRESHOLD = 0.90
 
 
 
+def strip_thinking(text: str) -> str:
 
+    text = re.sub(
+        r"<think>.*?</think>",
+        "",
+        text,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+
+    return text.strip()
 
 # -------------------------
 # Output cleaning
@@ -1543,6 +1563,7 @@ def chat(
             reply = rag_result
 
         reply = clean_output(reply)
+        reply = strip_thinking(reply)
 
         fallback_trace = {}
         repair_trace = {}

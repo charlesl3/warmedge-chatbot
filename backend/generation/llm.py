@@ -1,7 +1,7 @@
 import os
 import requests
 
-MODEL_NAME = "meta-llama/Llama-3.1-70B-Instruct"
+MODEL_NAME = "openai/gpt-oss-20b"
 
 API_URL = "https://router.huggingface.co/v1/chat/completions"
 
@@ -29,7 +29,7 @@ def run_llm(prompt: str) -> str:
                 "content": prompt
             }
         ],
-        "max_tokens": 2500,
+        "max_tokens": 3000,
         "temperature": 0.1,
     }
 
