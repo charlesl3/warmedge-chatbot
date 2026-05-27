@@ -21,3 +21,15 @@
 - Reduced backend request latency from roughly ~10s to ~4s.
 - Cleaned backend observability/logging into a more production-style request trace format.
 - Identified orchestration/side-agent overhead as the new primary bottleneck rather than retrieval or generation.
+
+## Engineering Log — 2026-05-26
+
+- Refined WarmGPT glassmorphism chat UI across desktop, mobile, and iPad layouts.
+- Fixed assistant avatar sizing, glow layering, and “huge logo during thinking” rendering bug.
+- Restored edit/copy/read-aloud action controls with responsive visibility behavior across devices.
+- Improved light-theme tooltip styling and overall interaction polish.
+- Refined jump progression/profile-update detection after over-aggressive optimization.
+- Debugged explicit progression signals such as “I landed my axel jump today”.
+- Added backend `<think>...</think>` stripping to prevent reasoning traces leaking into frontend responses.
+- Added additional request-trace debugging for retrieval, profile-update, and follow-up pipelines.
+- Evaluated HuggingFace/provider model behavior and response quality tradeoffs for WarmGPT generation.
