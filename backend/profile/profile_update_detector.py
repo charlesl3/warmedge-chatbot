@@ -279,23 +279,28 @@ def detect_profile_update_candidate(
     # REQUIRE EXPLICIT PROFILE SIGNAL
     # -------------------------
 
-    strong_profile_signals = [
+    landing_signal = (
+            (
+                    "landed" in q
+                    or "landing" in q
+                    or "can do" in q
+                    or "passed" in q
+            )
+            and
+            (
+                    "axel" in q
+                    or re.search(
+                r"\b[1234](a|t|s|f|lo|lz)\b",
+                q,
+            )
+                    or "double" in q
+                    or "triple" in q
+            )
+    )
 
-        "i landed",
-        "i can do",
-        "my highest jump",
-        "my highest test",
-        "i passed",
-        "passed my",
-        "i am landing",
-
-    ]
-
-    if not any(
-            x in q
-            for x in strong_profile_signals
-    ):
+    if not landing_signal:
         return None
+
 
     # -------------------------
     # REJECT VAGUE DISCUSSION
@@ -315,9 +320,9 @@ def detect_profile_update_candidate(
 
     ]
 
-    if any(
-            x in q
-            for x in vague_patterns
+    if (
+            any(x in q for x in vague_patterns)
+            and not landing_signal
     ):
         return None
 
@@ -499,11 +504,11 @@ REASON: user explicitly states current jump ability
         )
 
         raw_value = (
-            value_match.group(1).strip()
+            value_match.group(1).strip().splitlines()[0]
             if value_match else "NONE"
         )
 
-        new_value = normalize_jump_name(raw_value)
+        new_value = raw_value.strip()
 
         if (
                 not new_value

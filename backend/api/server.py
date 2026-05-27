@@ -1712,8 +1712,10 @@ def chat(
             "message_id": assistant_message_id,
             "sources": retrieved_docs[:2],
             "repaired": repair_trace.get("triggered", False),
+
             "profile_update_candidate":
-                profile_update_candidate_response,
+                profile_update_candidate,
+
             "end": False,
         }
 
