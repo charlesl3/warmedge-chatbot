@@ -24,7 +24,7 @@ def get_answer_plan_instruction(answer_plan: dict | None) -> str:
         lines.append("Start with the most likely cause or key issue.")
         lines.append("Then give concrete steps the user can try.")
         lines.append("Prioritize useful correction cues and practical drills.")
-        lines.append("Stay organized and practical.")
+        lines.append("Stay fluid, conversational, and coaching-oriented.")
 
     elif mode == "diagnosis":
         lines.append("Treat this as a diagnosis-style question.")
@@ -220,13 +220,40 @@ interaction_sentiment: dict | None = None,
     parts.append("Answer plan:")
     parts.append(get_answer_plan_instruction(answer_plan))
     # -------------------------
+    # parts.append(
+    #     "Formatting rules:\n"
+    #     "- NEVER use Markdown tables.\n"
+    #     "- NEVER use pipe-style formatting like | column | value |.\n"
+    #     "- Use clean headings, short paragraphs, bullets, and spacing instead.\n"
+    #     "- Prefer elegant chat-style formatting over academic or document formatting.\n"
+    #     "- Avoid spreadsheet-like structure.\n"
+    #     "- Avoid raw HTML tags like <br>.\n"
+    #     "- Keep formatting visually clean and modern for conversational UI.\n"
+    # )
+
     parts.append(
-        "Formatting rules:\n"
-        "- Prefer clean Markdown headings and bullet points.\n"
-        "- Avoid Markdown tables unless explicitly requested.\n"
-        "- Avoid raw HTML tags like <br>.\n"
-        "- Use short sections instead of large tables.\n"
-        "- Keep formatting stable for chat-style rendering.\n"
+        "Formatting rules (HIGH PRIORITY):\n"
+        "- Markdown tables are STRICTLY FORBIDDEN.\n"
+        "- NEVER output lines containing repeated pipe separators like:\n"
+        "  | text | text |\n"
+        "- NEVER generate table headers, alignment rows, or spreadsheet layouts.\n"
+        "- If information would normally be shown in a table, convert it into:\n"
+        "  • bullets\n"
+        "  • mini sections\n"
+        "  • short labeled paragraphs\n"
+        "- The response must look like a modern chat conversation, NOT a document or report.\n"
+        "- Prefer:\n"
+        "  • short titled sections\n"
+        "  • bullets\n"
+        "  • spacing\n"
+        "  • coaching-style flow\n"
+        "- Avoid:\n"
+        "  • academic formatting\n"
+        "  • report formatting\n"
+        "  • tables\n"
+        "  • matrix layouts\n"
+        "  • dense outlines\n"
+        "- Do not use raw HTML.\n"
     )
     parts.append("")
 
@@ -394,6 +421,13 @@ interaction_sentiment: dict | None = None,
         "- Persistent user profile controls response style and assumed explanation depth.\n"
         "- Current query-derived context controls the specific skating situation being answered.\n"
         "- If they differ, respect both: an advanced skater may ask a basic drill question, and a beginner may ask about advanced topics.\n"
+    )
+    parts.append("")
+
+    parts.append(
+        "Before finalizing the answer:\n"
+        "- Scan the response for any '|' characters.\n"
+        "- If pipe-style formatting appears, rewrite that section into bullets before responding.\n"
     )
     parts.append("")
 

@@ -349,6 +349,34 @@ def clean_output(text: str) -> str:
     text = re.sub(r'^#+\s*', '', text, flags=re.MULTILINE)
     return text
 
+def remove_markdown_tables(text: str) -> str:
+
+    lines = text.splitlines()
+
+    cleaned = []
+
+    for line in lines:
+
+        stripped = line.strip()
+
+        # remove markdown table rows
+        if (
+            "|" in stripped
+            and stripped.count("|") >= 2
+        ):
+            continue
+
+        # remove markdown alignment rows
+        if re.match(
+            r"^\s*[:\-| ]+\s*$",
+            stripped
+        ):
+            continue
+
+        cleaned.append(line)
+
+    return "\n".join(cleaned)
+
 def detect_transform_mode(message: str) -> str | None:
     q = message.lower()
 
@@ -1233,7 +1261,11 @@ def chat(
         {last_answer}
         """.strip()
 
-            reply = clean_output(run_llm(prompt))
+            reply = clean_output(
+                run_llm(prompt)
+            )
+
+            reply = remove_markdown_tables(reply)
 
             assistant_message_id = str(uuid.uuid4())
 
@@ -1565,6 +1597,7 @@ def chat(
             reply = rag_result
 
         reply = clean_output(reply)
+        reply = remove_markdown_tables(reply)
         reply = strip_thinking(reply)
 
         fallback_trace = {}
