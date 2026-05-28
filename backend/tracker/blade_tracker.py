@@ -549,6 +549,7 @@ def build_focus_statistics(
         "Lesson": 0,
         "For Fun": 0,
     }
+    total_sessions = len(filtered)
 
     for row in filtered:
 
@@ -561,4 +562,23 @@ def build_focus_statistics(
             if focus in counts:
                 counts[focus] += 1
 
-    return counts
+    result = {}
+
+    for key, value in counts.items():
+
+        percentage = 0
+
+        if total_sessions > 0:
+            percentage = round(
+                (value / total_sessions) * 100
+            )
+
+        result[key] = {
+            "count": value,
+            "percentage": percentage,
+        }
+
+    return {
+        "total_sessions": total_sessions,
+        "focuses": result,
+    }
