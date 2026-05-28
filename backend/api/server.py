@@ -802,6 +802,9 @@ def sharpen_blades(
             sharpened_at=req.sharpened_at,
         )
 
+        print("[SHARPEN RESULT]")
+        print(data)
+
         return {
             "success": True,
             "tracker": data,

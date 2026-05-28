@@ -120,9 +120,10 @@ def get_tracker_state(supabase, user_id: str):
         "hours_since_sharpening": total_hours,
         "should_sharpen": should_sharpen,
 
-        "last_sharpened_at": active_cycle.get(
-            "sharpened_at"
-        ),
+        "last_sharpened_at": (
+    active_cycle.get("sharpened_at")
+    or active_cycle.get("ended_at")
+),
 
         "active_cycle": active_cycle,
 
