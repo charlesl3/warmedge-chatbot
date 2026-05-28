@@ -623,6 +623,7 @@ class SkatingSessionRequest(BaseModel):
     hours: float
     session_date: str | None = None
     note: str | None = None
+    practice_focus: list[str] | None = None
 
 
 class SharpenedRequest(BaseModel):
@@ -700,6 +701,7 @@ def add_skating_session(
             hours=req.hours,
             session_date=req.session_date,
             note=req.note,
+            practice_focus=req.practice_focus,
         )
 
         return {

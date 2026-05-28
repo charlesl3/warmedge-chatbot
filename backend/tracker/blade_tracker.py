@@ -72,7 +72,11 @@ def get_tracker_state(supabase, user_id: str):
     settings = ensure_tracker_settings(supabase, user_id)
     active_cycle = ensure_active_cycle(supabase, user_id)
 
-    sessions = (
+    # -------------------------
+    # CURRENT ACTIVE CYCLE SESSIONS
+    # -------------------------
+
+    cycle_sessions = (
         supabase
         .table("skating_sessions")
         .select("*")
@@ -82,17 +86,34 @@ def get_tracker_state(supabase, user_id: str):
         .execute()
     )
 
-    session_rows = sessions.data or []
+    cycle_session_rows = cycle_sessions.data or []
 
-    total_hours = sum(float(row.get("hours") or 0) for row in session_rows)
+    # -------------------------
+    # RECENT ALL SESSIONS
+    # -------------------------
+
+    recent_sessions = (
+        supabase
+        .table("skating_sessions")
+        .select("*")
+        .eq("user_id", user_id)
+        .order("session_date", desc=True)
+        .limit(60)
+        .execute()
+    )
+
+    recent_session_rows = recent_sessions.data or []
+
+
+
+    total_hours = sum(
+        float(row.get("hours") or 0)
+        for row in cycle_session_rows
+    )
     threshold = float(settings.get("threshold_hours") or 40)
 
     should_sharpen = total_hours >= threshold
 
-    print("\n[BLADE TRACKER STATE]")
-    print("hours:", total_hours)
-    print("threshold:", threshold)
-    print("should_sharpen:", should_sharpen)
 
     return {
         "threshold_hours": threshold,
@@ -105,7 +126,8 @@ def get_tracker_state(supabase, user_id: str):
 
         "active_cycle": active_cycle,
 
-        "sessions": session_rows[:20],
+        "current_cycle_sessions": cycle_session_rows,
+"sessions": recent_session_rows,
     }
 
 
@@ -115,6 +137,7 @@ def log_skating_session(
     hours,
     session_date=None,
     note=None,
+    practice_focus=None,
 ):
 
 
@@ -169,6 +192,7 @@ def log_skating_session(
             .update({
                 "hours": hours,
                 "note": note,
+                "practice_focus": practice_focus or [],
             })
             .eq("id", keep_id)
             .execute()
@@ -198,15 +222,17 @@ def log_skating_session(
                 "session_date": target_date,
                 "hours": hours,
                 "note": note,
+                "practice_focus": practice_focus or [],
             })
             .execute()
         )
 
         print("\n[BLADE TRACKER] created new session")
 
-    print("\n[BLADE TRACKER] logged session")
-    print("hours:", hours)
-    print("date:", session_date or _today_str())
+    print(
+        f"[BLADE TRACKER] session logged | {hours} hrs | {session_date or _today_str()}"
+    )
+
 
     return get_tracker_state(supabase, user_id)
 
@@ -242,7 +268,7 @@ def mark_blades_sharpened(
         .execute()
     )
 
-    (
+    new_cycle = (
         supabase
         .table("blade_sharpen_cycles")
         .insert({
@@ -252,6 +278,43 @@ def mark_blades_sharpened(
             "total_hours": 0,
         })
         .execute()
+    )
+
+    new_cycle_row = new_cycle.data[0]
+
+    new_cycle_id = new_cycle_row["id"]
+
+    cutoff_date = sharpened_at or _today_str()
+
+    # -----------------------------------
+    # MOVE FUTURE SESSIONS INTO NEW CYCLE
+    # -----------------------------------
+
+    future_sessions = (
+        supabase
+        .table("skating_sessions")
+        .select("*")
+        .eq("user_id", user_id)
+        .gte("session_date", cutoff_date)
+        .execute()
+    )
+
+    future_rows = future_sessions.data or []
+
+    for row in future_rows:
+        (
+            supabase
+            .table("skating_sessions")
+            .update({
+                "cycle_id": new_cycle_id
+            })
+            .eq("id", row["id"])
+            .execute()
+        )
+
+    print(
+        "[BLADE TRACKER] moved future sessions:",
+        len(future_rows)
     )
 
     print("\n[BLADE TRACKER] marked sharpened")
