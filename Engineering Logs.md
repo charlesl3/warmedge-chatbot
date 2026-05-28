@@ -33,3 +33,17 @@
 - Added backend `<think>...</think>` stripping to prevent reasoning traces leaking into frontend responses.
 - Added additional request-trace debugging for retrieval, profile-update, and follow-up pipelines.
 - Evaluated HuggingFace/provider model behavior and response quality tradeoffs for WarmGPT generation.
+
+## Engineering Log — 2026-05-27
+
+- Refactored blade tracker backend architecture to properly separate historical skating sessions from active sharpening-cycle sessions.
+- Fixed major retroactive sharpening bug where inserting a historical sharpening event incorrectly reset future accumulated skating hours to zero.
+- Added automatic reassignment of future skating sessions into newly created sharpening cycles after retroactive sharpening edits.
+- Stabilized tracker persistence and resolved session disappearance issues caused by active-cycle-only filtering.
+- Added stronger skating-session lifecycle handling including duplicate cleanup, zero-hour deletion behavior, and session overwrite consistency.
+- Redesigned skating calendar interaction flow with inline modify/delete session actions and cleaner edit-state behavior.
+- Refined tracker progress-bar rendering, responsive sizing, and glassmorphism visual consistency across desktop layouts.
+- Unified sharpening/session action-button styling and hover behavior across tracker workflows.
+- Reduced oversized desktop calendar rendering using centered responsive width constraints.
+- Cleaned temporary backend debugging instrumentation after tracker architecture stabilization.
+- Continued frontend glassmorphism refinement across tracker surfaces, gradients, shadows, hover states, and responsive interaction details.
