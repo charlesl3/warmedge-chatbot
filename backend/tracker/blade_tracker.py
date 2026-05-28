@@ -129,6 +129,22 @@ def get_tracker_state(supabase, user_id: str):
 
         "current_cycle_sessions": cycle_session_rows,
 "sessions": recent_session_rows,
+        "focus_statistics": {
+            "week": build_focus_statistics(
+                recent_session_rows,
+                "week",
+            ),
+
+            "month": build_focus_statistics(
+                recent_session_rows,
+                "month",
+            ),
+
+            "year": build_focus_statistics(
+                recent_session_rows,
+                "year",
+            ),
+        },
     }
 
 
@@ -462,3 +478,87 @@ def build_tracker_reasoning_context(
         f"(threshold: {threshold:g} hours). "
         f"Blade wear or dullness is now a plausible contributing factor."
     )
+
+
+def build_focus_statistics(
+    sessions: list,
+    period: str = "year",
+):
+
+    today = date.today()
+
+    # -------------------------
+    # FILTER RANGE
+    # -------------------------
+
+    filtered = []
+
+    for row in sessions:
+
+        raw_date = row.get("session_date")
+
+        if not raw_date:
+            continue
+
+        try:
+            d = datetime.strptime(
+                raw_date,
+                "%Y-%m-%d"
+            ).date()
+
+        except:
+            continue
+
+        include = False
+
+        # THIS WEEK
+        if period == "week":
+
+            include = (
+                d.isocalendar()[1]
+                == today.isocalendar()[1]
+                and d.year == today.year
+            )
+
+        # THIS MONTH
+        elif period == "month":
+
+            include = (
+                d.month == today.month
+                and d.year == today.year
+            )
+
+        # THIS YEAR
+        else:
+
+            include = (
+                d.year == today.year
+            )
+
+        if include:
+            filtered.append(row)
+
+    # -------------------------
+    # COUNT FOCUS TAGS
+    # -------------------------
+
+    counts = {
+        "Jumps": 0,
+        "Spins": 0,
+        "Moves": 0,
+        "Lesson": 0,
+        "For Fun": 0,
+    }
+
+    for row in filtered:
+
+        focuses = row.get(
+            "practice_focus"
+        ) or []
+
+        for focus in focuses:
+
+            if focus in counts:
+                counts[focus] += 1
+
+    return counts
