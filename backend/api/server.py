@@ -666,6 +666,8 @@ class DeleteSkatingSessionRequest(BaseModel):
 
 class SkaterSummaryRequest(BaseModel):
     pass
+class SkaterIdentityRequest(BaseModel):
+    pass
 
 # -------------------------
 # Health check
@@ -681,6 +683,52 @@ def require_authenticated_user(authorization: str | None):
         return None
 
     return get_authenticated_user(token)
+
+def parse_identity_labels(raw: str) -> list[str]:
+    raw = strip_thinking(raw)
+    raw = clean_output(raw)
+
+    try:
+        parsed = json.loads(raw)
+
+        if isinstance(parsed, dict):
+            labels = parsed.get("labels", [])
+        elif isinstance(parsed, list):
+            labels = parsed
+        else:
+            labels = []
+
+    except Exception:
+        labels = [
+            line.strip("-•0123456789. ").strip()
+            for line in raw.splitlines()
+            if line.strip()
+        ]
+
+    cleaned = []
+
+    for label in labels:
+        if not isinstance(label, str):
+            continue
+
+        label = re.sub(r"[^A-Za-z0-9 '\-]", "", label).strip()
+        label = re.sub(r"\s+", " ", label)
+
+        if not label:
+            continue
+
+        if len(label.split()) > 4:
+            continue
+
+        if label.lower() in [x.lower() for x in cleaned]:
+            continue
+
+        cleaned.append(label)
+
+    if not cleaned:
+        cleaned = ["Emerging Skater", "Curious Observer", "Future Pattern Finder"]
+
+    return cleaned[:5]
 
 @app.post("/skater-summary")
 def generate_skater_summary(
@@ -767,6 +815,126 @@ Rules:
     except Exception as e:
         traceback.print_exc()
         return {"success": False, "error": str(e)}
+
+
+@app.post("/skater-identity")
+def generate_skater_identity(
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        tracker = get_tracker_state(
+            supabase,
+            user.id,
+        )
+
+        topics = load_user_topics(
+            supabase,
+            user.id,
+            limit=12,
+        )
+
+        profile_res = (
+            supabase
+            .table("profiles")
+            .select("first_name, skater_level, highest_jump, highest_test_level")
+            .eq("id", user.id)
+            .single()
+            .execute()
+        )
+
+        profile = profile_res.data or {}
+
+        recent_sessions = tracker.get("sessions", [])[:30]
+        focus_statistics = tracker.get("focus_statistics", {})
+
+        prompt = f"""
+You are WarmGPT's skater identity label generator.
+
+Your task:
+Generate 3 to 5 short identity labels (noun) for this skater.
+
+These labels will be rendered as chic name cards.
+They must NOT be paragraphs.
+They must NOT include explanations.
+
+Data source:
+Use only the profile, skating logs, practice focus statistics, and recurring question topics below.
+
+User profile:
+- First name: {profile.get("first_name") or "Skater"}
+- Skater level: {profile.get("skater_level") or "unknown"}
+- Highest jump: {profile.get("highest_jump") or "unknown"}
+- Highest test level: {profile.get("highest_test_level") or "unknown"}
+
+Recurring skating question topics:
+{topics}
+
+Practice focus statistics:
+{focus_statistics}
+
+Recent skating sessions:
+{recent_sessions}
+
+Style rules:
+- Return ONLY valid JSON.
+- Format exactly: {{"labels": ["Label One", "Label Two", "Label Three"]}}
+- 3 to 5 labels.
+- Be super creative! 
+- Each label must be 1 to 4 words.
+- No emojis.
+- No markdown.
+- No explanations.
+- No percentages.
+- No medical language.
+- Make the labels elegant, slightly unusual, warm, and memorable.
+- Avoid corporate-sounding labels like Dedicated Learner unless clearly deserved.
+- It is okay if a label feels a little oddly specific but still flattering and related.
+- If the user has little data, still give positive early-stage labels.
+- Do not shame low activity.
+- Do not mention missing data.
+
+Good label style (not limited to the above labels, be creative!):
+- Pattern Collector
+- Quiet Grinder
+- Edge Detective
+- Technical Dreamer
+- Ice Theorist
+- Methodical Skater
+- Future Pattern Finder
+- Curious Blade Mind
+- Detail Chaser
+- Soft Power Skater
+
+
+Bad label style (not limited to the above labels):
+- Good Skater
+- Beginner Skater
+- Data Missing
+- No Sessions Logged
+- Lazy Skater
+- User Profile
+""".strip()
+
+        raw = run_llm(prompt)
+        labels = parse_identity_labels(raw)
+
+        return {
+            "success": True,
+            "labels": labels,
+        }
+
+    except Exception as e:
+        print("[SKATER IDENTITY ERROR]", str(e))
+        traceback.print_exc()
+        return {
+            "success": False,
+            "error": str(e),
+        }
 
 
 @app.get("/blade-tracker")
