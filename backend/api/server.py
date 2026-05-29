@@ -664,6 +664,9 @@ class BladeThresholdRequest(BaseModel):
 class DeleteSkatingSessionRequest(BaseModel):
     session_date: str
 
+class SkaterSummaryRequest(BaseModel):
+    pass
+
 # -------------------------
 # Health check
 # -------------------------
@@ -678,6 +681,92 @@ def require_authenticated_user(authorization: str | None):
         return None
 
     return get_authenticated_user(token)
+
+@app.post("/skater-summary")
+def generate_skater_summary(
+    authorization: str | None = Header(default=None),
+):
+    try:
+        user = require_authenticated_user(authorization)
+
+        if not user:
+            return {"success": False, "error": "Unauthorized"}
+
+        tracker = get_tracker_state(
+            supabase,
+            user.id,
+        )
+
+        topics = load_user_topics(
+            supabase,
+            user.id,
+            limit=8,
+        )
+
+        profile_res = (
+            supabase
+            .table("profiles")
+            .select("first_name, skater_level, highest_jump, highest_test_level")
+            .eq("id", user.id)
+            .single()
+            .execute()
+        )
+
+        profile = profile_res.data or {}
+
+        recent_sessions = tracker.get("sessions", [])[:20]
+        focus_statistics = tracker.get("focus_statistics", {})
+
+        prompt = f"""
+You are WarmGPT's lightweight skater summary module.
+
+This is NOT a RAG answer.
+Do not retrieve external skating knowledge.
+Summarize the user's own skating pattern based only on the provided data.
+
+User profile:
+- First name: {profile.get("first_name") or "Skater"}
+- Skater level: {profile.get("skater_level") or "unknown"}
+- Highest jump: {profile.get("highest_jump") or "unknown"}
+- Highest test level: {profile.get("highest_test_level") or "unknown"}
+
+Frequent skating topics:
+{topics}
+
+Practice focus statistics:
+{focus_statistics}
+
+Recent skating sessions:
+{recent_sessions}
+
+Write a concise, warm, useful skating summary.
+
+Rules:
+- 100-150 words.
+- max 2 paragraphs
+- Mention the user's dominant practice patterns.
+- Mention one possible imbalance or neglected area if visible.
+- Mention frequent topics only if they are available.
+- Do not overclaim.
+- Do not sound medical.
+- Do not use markdown tables.
+- Be kind, be nice, be encouraging
+- Use short paragraphs or bullets.
+- End with one gentle next-step suggestion.
+""".strip()
+
+        summary = run_llm(prompt)
+        summary = strip_thinking(summary)
+
+        return {
+            "success": True,
+            "summary": summary,
+            "topics": topics,
+        }
+
+    except Exception as e:
+        traceback.print_exc()
+        return {"success": False, "error": str(e)}
 
 
 @app.get("/blade-tracker")
