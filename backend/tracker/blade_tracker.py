@@ -76,12 +76,22 @@ def get_tracker_state(supabase, user_id: str):
     # CURRENT ACTIVE CYCLE SESSIONS
     # -------------------------
 
-    cycle_sessions = (
+    active_sharpened_at = active_cycle.get("sharpened_at")
+
+    cycle_query = (
         supabase
         .table("skating_sessions")
         .select("*")
         .eq("user_id", user_id)
-        .eq("cycle_id", active_cycle["id"])
+    )
+
+    if active_sharpened_at:
+        cycle_query = cycle_query.gte("session_date", active_sharpened_at)
+    else:
+        cycle_query = cycle_query.eq("cycle_id", active_cycle["id"])
+
+    cycle_sessions = (
+        cycle_query
         .order("session_date", desc=True)
         .execute()
     )

@@ -742,11 +742,11 @@ Recent skating sessions:
 Write a concise, warm, useful skating summary.
 
 Rules:
-- 100-150 words.
+- max 150 words.
 - max 2 paragraphs
 - Mention the user's dominant practice patterns.
 - Mention one possible imbalance or neglected area if visible.
-- Mention frequent topics only if they are available.
+- Mention frequent asked topics only if they are available.
 - Do not overclaim.
 - Do not sound medical.
 - Do not use markdown tables.
