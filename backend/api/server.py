@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from supabase import create_client
+import random
+import json
 from dotenv import load_dotenv
 from backend.profile.profile_update_detector import (
     detect_profile_update_candidate,
@@ -669,6 +671,9 @@ class SkaterSummaryRequest(BaseModel):
 class SkaterIdentityRequest(BaseModel):
     pass
 
+class QuickSkateIdeaRequest(BaseModel):
+    pass
+
 # -------------------------
 # Health check
 # -------------------------
@@ -935,6 +940,176 @@ Bad label style (not limited to the above labels):
             "success": False,
             "error": str(e),
         }
+
+
+@app.post("/quick-skate-idea")
+def quick_skate_idea(
+    authorization: str | None = Header(default=None),
+):
+    try:
+
+        # ---------------------------------
+        # GUEST MODE
+        # ---------------------------------
+
+        if not authorization:
+
+            guest_pool = [
+                "Give your spins some attention today.",
+                "Spend 20 minutes refining edge quality.",
+                "Film one skating element and review it.",
+                "Try a relaxed free-skate session.",
+                "Work on turns and flow across the ice.",
+                "Revisit a skill you have not practiced recently.",
+                "Choose one skating weakness and focus only on that.",
+                "Do a short program run-through.",
+                "Spend time improving posture and presentation.",
+                "Have a fun session with no specific goal."
+            ]
+
+            return {
+                "success": True,
+                "idea": random.choice(guest_pool),
+                "mode": "guest",
+            }
+
+        # ---------------------------------
+        # AUTH USER
+        # ---------------------------------
+
+        user = require_authenticated_user(
+            authorization
+        )
+
+        if not user:
+            return {
+                "success": False,
+                "error": "Unauthorized",
+            }
+
+        tracker = get_tracker_state(
+            supabase,
+            user.id,
+        )
+
+        focus_stats = (
+            tracker
+            .get("focus_statistics", {})
+            .get("week", {})
+        )
+
+        recent_sessions = (
+            tracker
+            .get("sessions", [])
+        )[:20]
+
+        # ---------------------------------
+        # NO DATA YET
+        # ---------------------------------
+
+        if not recent_sessions:
+
+            guest_pool = [
+                "Start with whichever skill sounds most fun today.",
+                "Spend 20 minutes exploring edge quality.",
+                "Choose one spin and make it today's project.",
+                "Film a skating element and observe it closely.",
+                "Try a relaxed skill-building session."
+            ]
+
+            return {
+                "success": True,
+                "idea": random.choice(guest_pool),
+                "mode": "new_skater",
+            }
+
+        # ---------------------------------
+        # LLM GENERATION
+        # ---------------------------------
+
+        prompt = f"""
+You are WarmGPT's Quick Skate Thinker.
+
+Your job:
+Suggest ONE thing the skater could focus on practicing today.
+
+The suggestion should be:
+
+- warm
+- coach-like
+- encouraging
+- practical
+- one sentence only
+
+This is NOT a diagnosis.
+
+This is NOT a training plan.
+
+Think of it like a friendly skating nudge.
+
+The recommendation should be:
+
+50% random
+50% informed by recent skating behavior
+
+Weekly focus statistics:
+{json.dumps(focus_stats, indent=2)}
+
+Recent sessions:
+{json.dumps(recent_sessions[:10], indent=2)}
+
+Rules:
+
+- Return ONLY the skating suggestion.
+- Maximum 18 words.
+- No numbering.
+- No quotation marks.
+- No markdown.
+- No emojis.
+- No explanations.
+- Avoid sounding repetitive.
+- Sometimes encourage neglected focuses.
+- Sometimes encourage variety.
+- Sometimes encourage recovery or enjoyment.
+
+Examples:
+
+Give your spins some attention today.
+
+A jump-focused session might be worthwhile.
+
+Revisit edge quality before adding more speed.
+
+Today feels like a good day for a relaxed program run-through.
+
+Try refining turns instead of chasing new elements today.
+""".strip()
+
+        idea = run_llm(prompt)
+
+        idea = strip_thinking(idea)
+        idea = clean_output(idea)
+
+        return {
+            "success": True,
+            "idea": idea.strip(),
+            "mode": "personalized",
+        }
+
+    except Exception as e:
+
+        print(
+            "[QUICK SKATE IDEA ERROR]",
+            str(e)
+        )
+
+        traceback.print_exc()
+
+        return {
+            "success": False,
+            "error": str(e),
+        }
+
 
 
 @app.get("/blade-tracker")
