@@ -66,3 +66,15 @@
 - Restored sharpening-threshold progress visualization with dynamic color transitions and overdue-warning support.
 - Refined tracker-card layouts, spacing, typography, hover behavior, and glassmorphism styling for improved visual consistency across the skating dashboard.
 - Reduced repetitive UI elements between calendar views and summary views to create a clearer distinction between detailed tracking and high-level skating insights.
+
+## Engineering Log — 2026-05-29
+
+- Added a skating-specific weekly streak system based on consistency rather than daily activity, requiring at least 3 logged skating sessions per week to maintain a streak.
+- Defined Monday as the start of the skating week and excluded the current unfinished week from streak-break evaluation to prevent premature streak resets.
+- Investigated and corrected multiple weekly-streak calculation issues involving week bucketing, date grouping, and active-week handling.
+- Integrated streak visibility directly into the existing Progress card as a compact status badge rather than introducing a separate gamification widget.
+- Added automatic milestone generation driven by cumulative logged skating hours instead of using hardcoded milestone targets.
+- Implemented progressive milestone thresholds (10, 25, 50, 100, 250, 500, and 1000 hours) with automatic advancement as skating hours accumulate.
+- Connected milestone calculations to live tracker statistics so milestone targets update automatically based on session history.
+- Refined the Progress dashboard philosophy to emphasize meaningful skating consistency and long-term development rather than app-usage metrics or daily-login streaks.
+- Continued refinement of blade-quality analytics, sharpening usage tracking, and progress-card presentation for improved cohesion between training, equipment, and progression metrics.

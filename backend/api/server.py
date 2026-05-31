@@ -890,6 +890,7 @@ Style rules:
 - Format exactly: {{"labels": ["Label One", "Label Two", "Label Three"]}}
 - 3 to 5 labels.
 - Be super creative! 
+- Be super cool or even in fantasy!
 - Each label must be 1 to 4 words.
 - No emojis.
 - No markdown.
@@ -914,6 +915,8 @@ Good label style (not limited to the above labels, be creative!):
 - Curious Blade Mind
 - Detail Chaser
 - Soft Power Skater
+- Single God
+- Double God
 
 
 Bad label style (not limited to the above labels):
