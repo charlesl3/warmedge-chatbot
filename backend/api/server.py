@@ -674,6 +674,23 @@ class SkaterIdentityRequest(BaseModel):
 class QuickSkateIdeaRequest(BaseModel):
     pass
 
+class CreateStudentRequest(BaseModel):
+    name: str
+
+    track: str | None = None
+
+    moves_level: str | None = None
+    freeskate_level: str | None = None
+    dance_level: str | None = None
+
+
+class UpdateStudentRequest(BaseModel):
+    track: str | None = None
+
+    moves_level: str | None = None
+    freeskate_level: str | None = None
+    dance_level: str | None = None
+
 # -------------------------
 # Health check
 # -------------------------
@@ -1113,6 +1130,131 @@ Try refining turns instead of chasing new elements today.
             "error": str(e),
         }
 
+@app.get("/coach/students")
+def get_students(
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(
+        authorization
+    )
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized"
+        }
+
+    res = (
+        supabase
+        .table("coach_students")
+        .select("*")
+        .eq("coach_id", user.id)
+        .order("created_at")
+        .execute()
+    )
+
+    return {
+        "success": True,
+        "students": res.data
+    }
+
+@app.post("/coach/students")
+def create_student(
+    request: CreateStudentRequest,
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(
+        authorization
+    )
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized"
+        }
+
+    result = (
+        supabase
+        .table("coach_students")
+        .insert({
+            "coach_id": user.id,
+            "name": request.name,
+
+            "track": request.track,
+
+            "moves_level": request.moves_level,
+            "freeskate_level": request.freeskate_level,
+            "dance_level": request.dance_level,
+        })
+        .execute()
+    )
+
+    return {
+        "success": True,
+        "student": result.data[0]
+    }
+
+
+@app.patch("/coach/students/{student_id}")
+def update_student(
+    student_id: str,
+    request: UpdateStudentRequest,
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(authorization)
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized",
+        }
+
+    result = (
+        supabase
+        .table("coach_students")
+        .update({
+            "track": request.track,
+            "moves_level": request.moves_level,
+            "freeskate_level": request.freeskate_level,
+            "dance_level": request.dance_level,
+        })
+        .eq("id", student_id)
+        .eq("coach_id", user.id)
+        .execute()
+    )
+
+    return {
+        "success": True,
+        "student": result.data[0] if result.data else None,
+    }
+
+@app.delete("/coach/students/{student_id}")
+def delete_student(
+    student_id: str,
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(
+        authorization
+    )
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized"
+        }
+
+    (
+        supabase
+        .table("coach_students")
+        .delete()
+        .eq("id", student_id)
+        .eq("coach_id", user.id)
+        .execute()
+    )
+
+    return {
+        "success": True
+    }
 
 
 @app.get("/blade-tracker")
