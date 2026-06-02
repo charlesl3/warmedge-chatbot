@@ -691,6 +691,16 @@ class UpdateStudentRequest(BaseModel):
     freeskate_level: str | None = None
     dance_level: str | None = None
 
+class CreateLessonRequest(BaseModel):
+    student_id: str
+    lesson_datetime: str
+    timezone: str
+    duration_minutes: int | None = None
+
+class UpdateLessonRequest(BaseModel):
+    lesson_note: str | None = None
+    status: str | None = None
+
 # -------------------------
 # Health check
 # -------------------------
@@ -2493,3 +2503,72 @@ def update_profile(
     except Exception as e:
         print("[PROFILE UPDATE ERROR]", str(e))
         return {"success": False, "error": str(e)}
+
+@app.post("/coach/lessons")
+def create_lesson(
+    request: CreateLessonRequest,
+    authorization: str | None = Header(default=None),
+):
+
+    user = require_authenticated_user(authorization)
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized",
+        }
+
+    lesson = (
+        supabase
+        .table("coach_lessons")
+        .insert({
+            "coach_id": user.id,
+            "student_id": request.student_id,
+            "lesson_datetime": request.lesson_datetime,
+            "timezone": request.timezone,
+            "duration_minutes": request.duration_minutes,
+        })
+        .execute()
+    )
+
+
+    return {
+        "success": True,
+        "lesson": lesson.data,
+    }
+
+@app.get("/coach/lessons")
+def get_lessons(
+    authorization: str | None = Header(default=None),
+):
+
+    user = require_authenticated_user(authorization)
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized",
+        }
+
+    result = (
+        supabase
+        .table("coach_lessons")
+        .select("""
+            *,
+            coach_students (
+                id,
+                name
+            )
+        """)
+        .eq("coach_id", user.id)
+        .order(
+            "lesson_datetime",
+            desc=False
+        )
+        .execute()
+    )
+
+    return {
+        "success": True,
+        "lessons": result.data,
+    }
