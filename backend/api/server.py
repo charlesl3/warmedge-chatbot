@@ -822,17 +822,24 @@ Recent skating sessions:
 Write a concise, warm, useful skating summary.
 
 Rules:
-- max 150 words.
-- max 2 paragraphs
-- Mention the user's dominant practice patterns.
-- Mention one possible imbalance or neglected area if visible.
-- Mention frequent asked topics only if they are available.
-- Do not overclaim.
-- Do not sound medical.
-- Do not use markdown tables.
-- Be kind, be nice, be encouraging
-- Use short paragraphs or bullets.
-- End with one gentle next-step suggestion.
+
+* Maximum 200 words.
+* Maximum 2 short paragraphs.
+* Keep it warm and encouraging.
+* Mention the user's dominant practice patterns if visible from the data.
+* If the user frequently asks celebrity skaters or their role models, encourage the user to learn from them and love skating like them
+* Mention one possible imbalance, neglected area, or opportunity for improvement if supported by the data.
+* Mention commonly asked topics only if they are available.
+* If there are no logged skating sessions during the current calendar week or 4 consecutive days, briefly and warmly encourage the user to get back on the ice and continue building consistency.
+* If the user has skated this week, do not add a skating reminder.
+* Do not assume reasons for missing sessions.
+* Do not overclaim or infer information that is not supported by the data.
+* Do not sound medical, clinical, or judgmental.
+* Do not use markdown tables.
+* Use a supportive, encouraging coaching tone.
+* Prefer short paragraphs or concise bullets.
+* End with one gentle, actionable next-step suggestion.
+
 """.strip()
 
         summary = run_llm(prompt)
