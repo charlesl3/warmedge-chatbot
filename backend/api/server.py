@@ -698,8 +698,10 @@ class CreateLessonRequest(BaseModel):
     duration_minutes: int | None = None
 
 class UpdateLessonRequest(BaseModel):
-    lesson_note: str | None = None
-    status: str | None = None
+    student_id: str | None = None
+    lesson_datetime: str | None = None
+    timezone: str | None = None
+    duration_minutes: int | None = None
 
 # -------------------------
 # Health check
@@ -2578,4 +2580,85 @@ def get_lessons(
     return {
         "success": True,
         "lessons": result.data,
+    }
+
+
+@app.patch("/coach/lessons/{lesson_id}")
+def update_lesson(
+    lesson_id: str,
+    request: UpdateLessonRequest,
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(authorization)
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized",
+        }
+
+    update_data = {}
+
+    if request.student_id is not None:
+        update_data["student_id"] = request.student_id
+
+    if request.lesson_datetime is not None:
+        update_data["lesson_datetime"] = request.lesson_datetime
+
+    if request.timezone is not None:
+        update_data["timezone"] = request.timezone
+
+    update_data["duration_minutes"] = request.duration_minutes
+
+    result = (
+        supabase
+        .table("coach_lessons")
+        .update(update_data)
+        .eq("id", lesson_id)
+        .eq("coach_id", user.id)
+        .execute()
+    )
+
+    if not result.data:
+        return {
+            "success": False,
+            "error": "Lesson not found or not owned by this coach",
+        }
+
+    return {
+        "success": True,
+        "lesson": result.data[0],
+    }
+
+@app.delete("/coach/lessons/{lesson_id}")
+def delete_lesson(
+    lesson_id: str,
+    authorization: str | None = Header(default=None),
+):
+    user = require_authenticated_user(authorization)
+
+    if not user:
+        return {
+            "success": False,
+            "error": "Unauthorized",
+        }
+
+    result = (
+        supabase
+        .table("coach_lessons")
+        .delete()
+        .eq("id", lesson_id)
+        .eq("coach_id", user.id)
+        .execute()
+    )
+
+    if not result.data:
+        return {
+            "success": False,
+            "error": "Lesson not found or not owned by this coach",
+        }
+
+    return {
+        "success": True,
+        "deleted_lesson_id": lesson_id,
     }
